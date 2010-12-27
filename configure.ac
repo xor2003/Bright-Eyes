@@ -485,16 +485,6 @@ AC_CHECK_FUNC([mprotect],[AC_DEFINE(C_HAVE_MPROTECT,1)])
 dnl Check for realpath. Used on Linux
 AC_CHECK_FUNCS([realpath])
 
-AH_TEMPLATE(DOSBOX_SCHICK,[Define to 1 to disable DSA1 customization])
-AC_ARG_ENABLE(schick,AC_HELP_STRING([--disable-schick],[Disable DSA1 customization]), disable_schick=no)
-AC_MSG_CHECKING(for DSA1 customization will be enabled)
-if test x$disable_schick = xno ; then
-	AC_MSG_RESULT(no)
-else
-	AC_MSG_RESULT(yes)
-	AC_DEFINE(DOSBOX_SCHICK, 1)
-fi
-
 dnl Setpriority
 AH_TEMPLATE(C_SET_PRIORITY,[Define to 1 if you have setpriority support])
 AC_MSG_CHECKING(for setpriority support)
