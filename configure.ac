@@ -578,5 +578,6 @@ docs/Makefile
 src/custom/Makefile
 src/custom/schick/Makefile
 src/custom/schick/rewrite_m302de/Makefile
+src/custom/schick/rewrite_g105de/Makefile
 ])
 AC_OUTPUT
