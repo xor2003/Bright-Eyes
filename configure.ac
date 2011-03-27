@@ -485,6 +485,16 @@ AC_CHECK_FUNC([mprotect],[AC_DEFINE(C_HAVE_MPROTECT,1)])
 dnl Check for realpath. Used on Linux
 AC_CHECK_FUNCS([realpath])
 
+AH_TEMPLATE(DOSBOX_CUSTOM,[Define to 1 to enable DOSBox custom])
+AC_ARG_ENABLE(custom,AC_HELP_STRING([--disable-custom],[Disable DOSBox custom]),, enable_custom=yes)
+AC_MSG_CHECKING(wheter DOSBox custom will be enabled)
+if test x$enable_custom = xyes ; then
+	AC_MSG_RESULT(yes)
+	AC_DEFINE(DOSBOX_CUSTOM, 1)
+else
+	AC_MSG_RESULT(no)
+fi
+
 dnl Setpriority
 AH_TEMPLATE(C_SET_PRIORITY,[Define to 1 if you have setpriority support])
 AC_MSG_CHECKING(for setpriority support)
