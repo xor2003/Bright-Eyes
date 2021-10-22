@@ -8,6 +8,8 @@
 #include "regs.h"
 #include "custom.h"
 #include "custom_hooks.h"
+
+#include "asm.h"
 static Bit8u custom_runs;
 
 static Bit8u schick_runs;
@@ -94,6 +96,24 @@ void custom_init(Section *sec)
 //	custom_prog *p_current = new custom_prog;
 	sec->AddDestroyFunction(&custom_exit);
 	fprintf(stderr, "Bright Eyes, build date %s\n", __DATE__);
+
+//struct _STATE* _state;
+X86_REGREF
+/*
+	fprintf(stderr, "CF=%d\n", GET_CF());
+        R(MOV(eax,3));
+        R(SUB(eax,4));
+	fprintf(stderr, "CF=%d\n", GET_CF());
+*/
+        R(MOV(ah,0x2c));
+        R(_INT(0x21));
+	fprintf(stderr, "%d:%d:%d\n", ch,cl,dh);
+        R(MOV(ax,0x3000));
+        R(_INT(0x21));
+	fprintf(stderr, "DOS:%d\n", al);
+        R(MOV(ah,2));
+        R(MOV(dl,'R'));
+        R(_INT(0x21));
 }
 
 #endif /* DOSBOX_CUSTOM */
