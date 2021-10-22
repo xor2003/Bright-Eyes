@@ -223,7 +223,7 @@ cs=0x1010;eip=0x000309; 	R(SHR(ax, 1));	// 647 shr     ax, 1
 cs=0x1010;eip=0x00030b; 	R(SHR(ax, 1));	// 648 shr     ax, 1 
 cs=0x1010;eip=0x00030d; 	R(SHR(ax, 1));	// 649 shr     ax, 1 
 cs=0x1010;eip=0x00030f; 	R(PUSH(bx));	// 650 push    bx 
-cs=0x1010;eip=0x000310; 	R(MOV(bh, 0x0A0));	// 651 mov     bh, 0A0h ; ' ' 
+cs=0x1010;eip=0x000310; 	R(MOV(bh, 0x0A0));	// 651 mov     bh, 0A0h ; 'ï¿½' 
 cs=0x1010;eip=0x000312; 	R(MUL1_1(bh));	// 652 mul     bh 
 cs=0x1010;eip=0x000314; 	R(POP(bx));	// 653 pop     bx 
 cs=0x1010;eip=0x000315; 	R(AND(dx, 0x0FF));	// 654 and     dx, 0FFh 
@@ -242,14 +242,14 @@ cs=0x1010;eip=0x000148; 	R(POP(bx));	// 344 pop     bx
 cs=0x1010;eip=0x000149; 	R(RETN);	// 345 retn 
 shiftsnake:	// 463 
 cs=0x1010;eip=0x0001f6; 	R(MOV(bx, offset(data,head)));	// 464 mov     bx, offset head 
-cs=0x1010;eip=0x0001f9; 	ax = 0;AFFECT_ZF(0); AFFECT_SF(ax,0);	// 465 xor     ax, ax 
+cs=0x1010;eip=0x0001f9; 	ax = 0;AFFECT_ZFifz(0); AFFECT_SF(ax,0);	// 465 xor     ax, ax 
 cs=0x1010;eip=0x0001fb; 	R(MOV(al, *(raddr(ds,bx))));	// 466 mov     al, [bx] 
 cs=0x1010;eip=0x0001fd; 	R(PUSH(ax));	// 467 push    ax 
 cs=0x1010;eip=0x0001fe; 	R(INC(bx));	// 468 inc     bx 
 cs=0x1010;eip=0x0001ff; 	R(MOV(ax, *(dw*)(raddr(ds,bx))));	// 469 mov     ax, [bx] 
 cs=0x1010;eip=0x000201; 	R(INC(bx));	// 470 inc     bx 
 cs=0x1010;eip=0x000202; 	R(INC(bx));	// 471 inc     bx 
-cs=0x1010;eip=0x000203; 	cx = 0;AFFECT_ZF(0); AFFECT_SF(cx,0);	// 472 xor     cx, cx 
+cs=0x1010;eip=0x000203; 	cx = 0;AFFECT_ZFifz(0); AFFECT_SF(cx,0);	// 472 xor     cx, cx 
 cs=0x1010;eip=0x000205; loc_10305:	// 4386 
 cs=0x1010;eip=0x000205; 	R(MOV(si, *(dw*)(raddr(ds,bx))));	// 475 mov     si, [bx] 
 cs=0x1010;eip=0x000207; 	R(TEST(*(dw*)(raddr(ds,bx)), si));	// 476 test    [bx], si 
@@ -314,7 +314,7 @@ cs=0x1010;eip=0x00026c; 	R(INC(gameover));	// 545 inc     gameover
 cs=0x1010;eip=0x000270; 	R(RETN);	// 546 retn 
 cs=0x1010;eip=0x000271; loc_10371:	// 4393 
 cs=0x1010;eip=0x000271; 	R(MOV(al, segmentcount));	// 550 mov     al, segmentcount 
-cs=0x1010;eip=0x000274; 	ah = 0;AFFECT_ZF(0); AFFECT_SF(ah,0);	// 551 xor     ah, ah 
+cs=0x1010;eip=0x000274; 	ah = 0;AFFECT_ZFifz(0); AFFECT_SF(ah,0);	// 551 xor     ah, ah 
 cs=0x1010;eip=0x000276; 	R(bx = offset(data,body));	// 552 lea     bx, body 
 cs=0x1010;eip=0x00027a; 	R(MOV(cx, 3));	// 553 mov     cx, 3 
 cs=0x1010;eip=0x00027d; 	R(MUL1_2(cx));	// 554 mul     cx 
@@ -340,7 +340,7 @@ cs=0x1010;eip=0x000157; __disp=m2c::ksetcursorpos;
 	R(CALL(_group1));	// 357 call    setcursorpos 
 cs=0x1010;eip=0x00015a; 	R(MOV(al, segmentcount));	// 358 mov     al, segmentcount 
 cs=0x1010;eip=0x00015d; 	R(DEC(al));	// 359 dec     al 
-cs=0x1010;eip=0x00015f; 	ah = 0;AFFECT_ZF(0); AFFECT_SF(ah,0);	// 360 xor     ah, ah 
+cs=0x1010;eip=0x00015f; 	ah = 0;AFFECT_ZFifz(0); AFFECT_SF(ah,0);	// 360 xor     ah, ah 
 cs=0x1010;eip=0x000161; __disp=m2c::kdispnum;
 	R(CALL(_group1));	// 361 call    dispnum 
 cs=0x1010;eip=0x000164; 	R(si = offset(data,head));	// 362 lea     si, head 
@@ -379,7 +379,7 @@ cs=0x1010;eip=0x000334; 	R(SHR(ax, 1));	// 677 shr     ax, 1
 cs=0x1010;eip=0x000336; 	R(SHR(ax, 1));	// 678 shr     ax, 1 
 cs=0x1010;eip=0x000338; 	R(SHR(ax, 1));	// 679 shr     ax, 1 
 cs=0x1010;eip=0x00033a; 	R(PUSH(bx));	// 680 push    bx 
-cs=0x1010;eip=0x00033b; 	R(MOV(bh, 0x0A0));	// 681 mov     bh, 0A0h ; ' ' 
+cs=0x1010;eip=0x00033b; 	R(MOV(bh, 0x0A0));	// 681 mov     bh, 0A0h ; 'ï¿½' 
 cs=0x1010;eip=0x00033d; 	R(MUL1_1(bh));	// 682 mul     bh 
 cs=0x1010;eip=0x00033f; 	R(POP(bx));	// 683 pop     bx 
 cs=0x1010;eip=0x000340; 	R(AND(dx, 0x0FF));	// 684 and     dx, 0FFh 
@@ -402,7 +402,7 @@ readchar:	// 387
 cs=0x1010;eip=0x00018c; 	R(MOV(ah, 1));	// 388 mov     ah, 1 
 cs=0x1010;eip=0x00018e; 	R(_INT(0x16));	// 389 int     16h             ; KEYBOARD - CHECK BUFFER, DO NOT CLEAR 
 cs=0x1010;eip=0x000190; 		R(JNZ(loc_10295));	// 393 jnz     short loc_10295 
-cs=0x1010;eip=0x000192; 	dl = 0;AFFECT_ZF(0); AFFECT_SF(dl,0);	// 394 xor     dl, dl 
+cs=0x1010;eip=0x000192; 	dl = 0;AFFECT_ZFifz(0); AFFECT_SF(dl,0);	// 394 xor     dl, dl 
 cs=0x1010;eip=0x000194; 	R(RETN);	// 395 retn 
 cs=0x1010;eip=0x000195; loc_10295:	// 4380 
 cs=0x1010;eip=0x000195; 	R(MOV(ah, 0));	// 399 mov     ah, 0 
@@ -412,7 +412,7 @@ cs=0x1010;eip=0x00019b; 	R(RETN);	// 403 retn
 dispnum:	// 314 
 cs=0x1010;eip=0x00012a; 	R(TEST(ax, ax));	// 316 test    ax, ax 
 cs=0x1010;eip=0x00012c; 		R(JZ(loc_1023e));	// 317 jz      short loc_1023E 
-cs=0x1010;eip=0x00012e; 	dx = 0;AFFECT_ZF(0); AFFECT_SF(dx,0);	// 318 xor     dx, dx 
+cs=0x1010;eip=0x00012e; 	dx = 0;AFFECT_ZFifz(0); AFFECT_SF(dx,0);	// 318 xor     dx, dx 
 cs=0x1010;eip=0x000130; 	R(MOV(bx, 10));	// 319 mov     bx, 10 
 cs=0x1010;eip=0x000133; 	R(DIV2(bx));	// 320 div     bx 
 cs=0x1010;eip=0x000135; 	R(PUSH(dx));	// 321 push    dx 
@@ -438,7 +438,7 @@ cs=0x1010;eip=0x0002de; 	R(SHR(ax, 1));	// 617 shr     ax, 1
 cs=0x1010;eip=0x0002e0; 	R(SHR(ax, 1));	// 618 shr     ax, 1 
 cs=0x1010;eip=0x0002e2; 	R(SHR(ax, 1));	// 619 shr     ax, 1 
 cs=0x1010;eip=0x0002e4; 	R(PUSH(bx));	// 620 push    bx 
-cs=0x1010;eip=0x0002e5; 	R(MOV(bh, 0x0A0));	// 621 mov     bh, 0A0h ; ' ' 
+cs=0x1010;eip=0x0002e5; 	R(MOV(bh, 0x0A0));	// 621 mov     bh, 0A0h ; 'ï¿½' 
 cs=0x1010;eip=0x0002e7; 	R(MUL1_1(bh));	// 622 mul     bh 
 cs=0x1010;eip=0x0002e9; 	R(POP(bx));	// 623 pop     bx 
 cs=0x1010;eip=0x0002ea; 	R(AND(dx, 0x0FF));	// 624 and     dx, 0FFh 
@@ -468,8 +468,8 @@ cs=0x1010;eip=0x0000b2; 	R(MOV(ah, 0));	// 243 mov     ah, 0
 cs=0x1010;eip=0x0000b4; 	R(_INT(0x1A));	// 244 int     1Ah             ; CLOCK - GET TIME OF DAY 
 cs=0x1010;eip=0x0000b6; 	R(PUSH(dx));	// 249 push    dx 
 cs=0x1010;eip=0x0000b7; 	R(MOV(ax, dx));	// 250 mov     ax, dx 
-cs=0x1010;eip=0x0000b9; 	dx = 0;AFFECT_ZF(0); AFFECT_SF(dx,0);	// 251 xor     dx, dx 
-cs=0x1010;eip=0x0000bb; 	bh = 0;AFFECT_ZF(0); AFFECT_SF(bh,0);	// 252 xor     bh, bh 
+cs=0x1010;eip=0x0000b9; 	dx = 0;AFFECT_ZFifz(0); AFFECT_SF(dx,0);	// 251 xor     dx, dx 
+cs=0x1010;eip=0x0000bb; 	bh = 0;AFFECT_ZFifz(0); AFFECT_SF(bh,0);	// 252 xor     bh, bh 
 cs=0x1010;eip=0x0000bd; 	R(MOV(bl, 15));	// 253 mov     bl, 15 
 cs=0x1010;eip=0x0000bf; 	R(DEC(bl));	// 254 dec     bl 
 cs=0x1010;eip=0x0000c1; 	R(DIV2(bx));	// 255 div     bx 
@@ -478,8 +478,8 @@ cs=0x1010;eip=0x0000c7; 	R(INC(fruity));	// 257 inc     fruity
 cs=0x1010;eip=0x0000cb; 	R(POP(ax));	// 258 pop     ax 
 cs=0x1010;eip=0x0000cc; 	R(MOV(bl, 40));	// 259 mov     bl, 40 
 cs=0x1010;eip=0x0000ce; 	R(DEC(dl));	// 260 dec     dl 
-cs=0x1010;eip=0x0000d0; 	bh = 0;AFFECT_ZF(0); AFFECT_SF(bh,0);	// 261 xor     bh, bh 
-cs=0x1010;eip=0x0000d2; 	dx = 0;AFFECT_ZF(0); AFFECT_SF(dx,0);	// 262 xor     dx, dx 
+cs=0x1010;eip=0x0000d0; 	bh = 0;AFFECT_ZFifz(0); AFFECT_SF(bh,0);	// 261 xor     bh, bh 
+cs=0x1010;eip=0x0000d2; 	dx = 0;AFFECT_ZFifz(0); AFFECT_SF(dx,0);	// 262 xor     dx, dx 
 cs=0x1010;eip=0x0000d4; 	R(DIV2(bx));	// 263 div     bx 
 cs=0x1010;eip=0x0000d6; 	R(MOV(fruitx, dl));	// 264 mov     fruitx, dl 
 cs=0x1010;eip=0x0000da; 	R(INC(fruitx));	// 265 inc     fruitx 

@@ -29,8 +29,11 @@
  #endif
 #endif
 
+#ifdef DOSBOX
 #include "regs.h"
+#include "cpu.h"
 #include "mem.h"
+#endif
 
 // Types
 #ifdef __BORLANDC__
@@ -257,7 +260,7 @@ _DF:1,
 _OF:1;
 public:
 #define REGDEF_flags(Z) \
-    bool set##Z##F(bool i){return _##Z##F=i;} \
+    bool set##Z##F(bool i){return (_##Z##F=i);} \
     bool get##Z##F(){return _##Z##F;}
     void reset(){_CF=false;_PF=false;_AF=false;_ZF=false;_SF=false;_TF=false;
     _IF=false;_DF=false;_OF=false;}
@@ -268,7 +271,7 @@ public:
  REGDEF_flags(Z)
  REGDEF_flags(S)
  REGDEF_flags(T)
- REGDEF_flags(I)
+// REGDEF_flags(I)
  REGDEF_flags(D)
  REGDEF_flags(O)
 };
@@ -342,8 +345,8 @@ dw _source;
 #define PUSH(a) {stackPointer-=sizeof(a); memcpy (&m.stack[stackPointer], &a, sizeof (a));  assert(stackPointer>8);}
 */
 #ifdef DOSBOX
- #define PUSH(a) CPU_Push16(a);
- #define POP(a) CPU_Pop16(a);
+ #define PUSH(a) {CPU_Push16(a);}
+ #define POP(a) {a = CPU_Pop16();}
 #else
 
 #ifdef DEBUG
@@ -369,12 +372,12 @@ dw _source;
 #define GET_SF() flags.getSF()
 #define GET_ZF() flags.getZF()
 #define GET_PF() flags.getPF()
-#define AFFECT_ZFifz(a) {flags.setZF((a)==0);}
-#define AFFECT_CF(a) {flags.setCF(a);}
-#define AFFECT_AF(a) {flags.setAF(a);}
-#define AFFECT_OF(a) {flags.setOF(a);}
+#define AFFECT_ZFifz(a) flags.setZF((a)==0)
+#define AFFECT_CF(a) flags.setCF(a)
+#define AFFECT_AF(a) flags.setAF(a)
+#define AFFECT_OF(a) flags.setOF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (bitsizeof(f)-1)) )
-#define AFFECT_SF(f, a) {flags.setSF(ISNEGATIVE(f,a));}
+#define AFFECT_SF(f, a) flags.setSF(ISNEGATIVE(f,a))
 
 #define CMP(a,b) {dd averytemporary=((a)-(b))& m2c::MASK[sizeof(a)]; \
 		AFFECT_CF((averytemporary)>(a)); \
@@ -388,32 +391,32 @@ dw _source;
 
 #define XOR(a,b) {a=(a)^(b); \
 		AFFECT_ZFifz(a); \
-		AFFECT_SF(a,a) \
+		AFFECT_SF(a,a); \
 		AFFECT_CF(0);}
 
 #define AND(a,b) {a=(a)&(b); \
 		AFFECT_ZFifz(a); \
-		AFFECT_SF(a,a) \
+		AFFECT_SF(a,a); \
 		AFFECT_CF(0);}
 
 #define NEG(a) {AFFECT_CF((a)!=0); \
 		a=-a;\
 		AFFECT_ZFifz(a); \
-		AFFECT_SF(a,a)}
+		AFFECT_SF(a,a);}
 
 #define TEST(a,b) {AFFECT_ZFifz((a)&(b)); \
 		AFFECT_CF(0); \
-		AFFECT_SF(a,(a)&(b))}
+		AFFECT_SF(a,(a)&(b));}
 
 #define SHR(a,b) {if (b) {AFFECT_CF((a>>(b-1))&1);\
 		a=a>>b;\
 		AFFECT_ZFifz(a);\
-		AFFECT_SF(a,a)}}
+		AFFECT_SF(a,a);}}
 
 #define SHL(a,b) {if (b) {AFFECT_CF((a) & (1 << (bitsizeof(a)-(b))));\
 		a=a<<b;\
 		AFFECT_ZFifz(a);\
-		AFFECT_SF(a,a)}}
+		AFFECT_SF(a,a);}}
 
 #define ROR(a,b) {if (b) {AFFECT_CF(((a)>>(shiftmodule(a,b)-1))&1);\
 		a=((a)>>(shiftmodule(a,b)) | a<<(bitsizeof(a)-(shiftmodule(a,b))));}}
@@ -684,7 +687,7 @@ else
 #define IMUL3_2(a,b,c) {int32_t averytemporary = ((int16_t)(b)) * ((int16_t)(c)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>= -32768)  && (averytemporary<=32767)?false:true));}
 #define IMUL3_4(a,b,c) {int64_t averytemporary = ((int64_t)(b)) * ((int32_t)(c)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>=-((int64_t)(2147483647)+1)) && (averytemporary<=(int64_t)2147483647)?false:true));}
 
-#define MUL1_1(a) {ax=(dw)al*(a); AFFECT_OF(AFFECT_CF(ah;}
+#define MUL1_1(a) {ax=(dw)al*(a); AFFECT_OF(AFFECT_CF(ah));}
 #define MUL1_2(a) {dd averytemporary=(dd)ax*(a);ax=averytemporary;dx=averytemporary>>16; AFFECT_OF(AFFECT_CF(dx));}
 #define MUL1_4(a) {dq averytemporary=(dq)eax*(a);eax=averytemporary;edx=averytemporary>>32; AFFECT_OF(AFFECT_CF(edx));}
 #define MUL2_2(a,b) {dd averytemporary=(dd)(a)*(b);a=averytemporary; AFFECT_OF(AFFECT_CF(averytemporary>>16));}
@@ -960,7 +963,7 @@ void MOV_(D* dest, const S& src)
 
 // dosbox logcpu format
     #define R(a) {m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     CF   ,ZF   ,SF   ,OF   ,AF   ,PF,   IF);} \
+                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), 0 );} \
 	a 
 
 #else
