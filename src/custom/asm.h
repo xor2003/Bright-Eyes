@@ -96,13 +96,41 @@ namespace m2c {
 extern FILE * logDebug;
 
 // Asm functions
+#ifdef DOSBOX
+static int log_debug(const char *format, ...)
+{
+    int result;
+    va_list args;
+
+    va_start(args, format);
+    result = vfprintf(stderr, format, args);
+    //printf("\n");
+    va_end(args);
+
+    return result;
+}
+static int log_error(const char *format, ...)
+{
+    int result;
+    va_list args;
+
+    va_start(args, format);
+    result = vfprintf(stderr, format, args);
+    //printf("\n");
+    va_end(args);
+
+    return result;
+}
+static const char* log_spaces(int n){return "";}
+
+#else
 void log_error(const char *fmt, ...);
 void log_debug(const char *fmt, ...);
 void log_info(const char *fmt, ...);
 void log_debug2(const char *fmt, ...);
 
 const char* log_spaces(int n);
-
+#endif
 
 #define VGARAM_SIZE (320*200)
 
@@ -313,12 +341,12 @@ dd& ebp =  cpu_regs.regs[REGI_BP].dword[DW_INDEX]; \
  \
 dw& ip =  cpu_regs.ip.word[W_INDEX]; \
 dd& eip =  cpu_regs.ip.dword[DW_INDEX]; \
-dw& cs = Segs.val[cs]; \
-dw& ds = Segs.val[ds]; \
-dw& es = Segs.val[es]; \
-dw& fs = Segs.val[fs]; \
-dw& gs = Segs.val[gs]; \
-dw& ss = Segs.val[ss]; \
+dw& cs = Segs.val[SegNames::cs]; \
+dw& ds = Segs.val[SegNames::ds]; \
+dw& es = Segs.val[SegNames::es]; \
+dw& fs = Segs.val[SegNames::fs]; \
+dw& gs = Segs.val[SegNames::gs]; \
+dw& ss = Segs.val[SegNames::ss]; \
                       \
 m2c::eflags& flags= *(m2c::eflags*)&cpu_regs.flags; \
 dd& stackPointer = esp;\
