@@ -3,7 +3,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -O0 -mno-ms-bitfields
 SUBDIRS = 
 
 noinst_LIBRARIES = libsrc.a
-libsrc_a_SOURCES = _data.cpp  _data.h  Makefile.am  snake.cpp  snake.h
+libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  snake.cpp  snake.h
 
 #EXTRA_DIST = schick.h
 

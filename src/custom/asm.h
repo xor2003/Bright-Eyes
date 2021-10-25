@@ -121,6 +121,18 @@ static int log_error(const char *format, ...)
 
     return result;
 }
+static int log_info(const char *format, ...)
+{
+    int result;
+    va_list args;
+
+    va_start(args, format);
+    result = vfprintf(stderr, format, args);
+    //printf("\n");
+    va_end(args);
+
+    return result;
+}
 static const char* log_spaces(int n){return "";}
 
 #else
