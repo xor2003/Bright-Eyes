@@ -7,7 +7,7 @@
 #pragma pack(push, 1)
 namespace m2c{
 struct Memory{
-db dummy1[65536];
+db dummy1[0x1dd0];
 db data[0];
 char msg[28];
 db instructions;
@@ -81,7 +81,7 @@ db dummy56;
 db dummy57;
 db dummy58;
 db seg001[0];
-
+db filll[1024*1024*16];
                         db stack[STACK_SIZE];
                         db heap[HEAP_SIZE];
                 };

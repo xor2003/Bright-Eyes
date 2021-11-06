@@ -10,10 +10,11 @@
 #include "custom_hooks.h"
 
 #include "asm.h"
+#include "init.h"
+
 static Bit8u custom_runs;
 
-static Bit8u schick_runs;
-static Bit8u schweif_runs;
+static Bit8u init_runs;
 Bit16u custom_oldCS, custom_oldIP;
 //static class custom_prog running_progs[2];
 
@@ -29,13 +30,9 @@ void custom_init_prog(char *name, Bit16u relocate, Bit16u init_cs, Bit16u init_i
 */
 
 	/* run all detectors */
-	if (init_schick(name, relocate, init_cs, init_ip)) {
+	if (masm2c_init(name, relocate, init_cs, init_ip)) {
 		custom_runs++;
-		schick_runs++;
-	}
-	if (schweif_init(name, relocate, init_cs, init_ip)) {
-		custom_runs++;
-		schweif_runs++;
+		init_runs++;
 	}
 }
 
@@ -45,43 +42,37 @@ void custom_exit_prog(Bit8u exitcode)
 		return;
 
 	custom_runs--;
-	if (schick_runs) {
-		exit_schick(exitcode);
-		schick_runs--;
-	}
-	if (schweif_runs) {
-		schweif_exit(exitcode);
-		schweif_runs--;
+	if (init_runs) {
+		masm2c_exit(exitcode);
+		init_runs--;
 	}
 }
 
 int custom_calln(Bit16u IP)
 {
+	return 0;
+/*
         custom_oldCS = SegValue(cs);
 	custom_oldIP = reg_ip;
 	if (!custom_runs)
 		return 0;
 
-	if (schick_runs)
-		return schick_calln16(IP);
-
-	if (schweif_runs)
-		return schweif_calln(IP);
+	if (init_runs)
+		return init_calln16(IP);
 
 	return 0;
+*/
 }
 
 int custom_callf(Bitu CS, Bitu IP)
 {
-        custom_oldCS = SegValue(cs);
+        custom_oldCS = cs; //SegValue(cs);
 	custom_oldIP = reg_ip;
 	if (!custom_runs)
 		return 0;
 
-	if (schick_runs)
-		return schick_callf(CS, IP);
-	if (schweif_runs)
-		return schweif_callf(CS, IP);
+	if (init_runs)
+           return init_callf(CS, IP);
 
 	return 0;
 }
@@ -95,7 +86,7 @@ void custom_init(Section *sec)
 {
 //	custom_prog *p_current = new custom_prog;
 	sec->AddDestroyFunction(&custom_exit);
-	fprintf(stderr, "Bright Eyes, build date %s\n", __DATE__);
+	fprintf(stderr, "Masm2c/DOSBOX lib, build date %s\n", __DATE__);
 
 //struct _STATE* _state;
 X86_REGREF
@@ -110,10 +101,20 @@ X86_REGREF
 	fprintf(stderr, "%d:%d:%d\n", ch,cl,dh);
         R(MOV(ax,0x3000));
         R(_INT(0x21));
-	fprintf(stderr, "DOS:%d\n", al);
+	fprintf(stderr, "DOS ver:%d\n", al);
         R(MOV(ah,2));
         R(MOV(dl,'R'));
         R(_INT(0x21));
 }
 
+void custom_init_entrypoint(char *name, Bit16u relocate)
+{
+	if (!custom_runs)
+		return;
+
+	if (init_runs) {
+                init_entrypoint(relocate);
+	}
+
+}
 #endif /* DOSBOX_CUSTOM */

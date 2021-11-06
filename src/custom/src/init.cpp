@@ -56,7 +56,7 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 
 	init_get_fname(fname, name);
 
-	//if (strcmp(fname, "snake.exe"))) return false;
+	if (strcmp(fname, "snake.exe")) return false;
 
 	/* Check CS:IP in the EXE-Header are 0:0
 	 * and the first executed instruction is mov dx,i16 */
@@ -169,4 +169,12 @@ int init_calln16(unsigned offs) {
 	}
 
 	return ret;
+}
+
+//namespace m2c{ m2cf* _ENTRY_POINT_; }
+void init_entrypoint(Bit16u relocate)
+{
+   m2c::log_debug("Starting program\n");
+   m2c::Initializer();
+  (*m2c::_ENTRY_POINT_)(0,0);
 }

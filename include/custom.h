@@ -26,6 +26,7 @@ void custom_init(Section *sec);
 /* prototypes for Execution operations */
 void custom_init_prog(char *, Bit16u, Bit16u, Bit16u);
 void custom_exit_prog(Bit8u);
+void custom_init_entrypoint(char *, Bit16u);
 
 /* prototypes for CPU operations */
 int custom_callf(Bitu, Bitu);
@@ -38,6 +39,7 @@ static inline void custom_init(Section *sec) { }
 /* prototypes for Execution operations */
 static inline void
 custom_init_prog(char *name, Bit16u relocate, Bit16u init_cs, Bit16u init_ip) { }
+static inline void custom_init_entrypoint(char *, Bit16u) { }
 
 static inline void custom_exit_prog(Bit8u exitcode) { }
 

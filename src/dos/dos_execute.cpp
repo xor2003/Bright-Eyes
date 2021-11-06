@@ -504,6 +504,9 @@ bool DOS_Execute(char * name,PhysPt block_pt,Bit8u flags) {
 		DOS_MCB pspmcb(dos.psp()-1);
 		pspmcb.SetFileName(stripname);
 		DOS_UpdatePSPName();
+
+		custom_init_entrypoint(name,loadseg);
+
 		return true;
 	}
 	return false;

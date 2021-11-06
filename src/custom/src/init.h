@@ -105,6 +105,7 @@ void BE_cleanup();
 
 int init_callf(unsigned selector, unsigned offs);
 
+void init_entrypoint(Bit16u relocate);
 //void init_status_init();
 void init_status_exit();
 void init_status_enable();

@@ -6,7 +6,7 @@ struct Memory& m = mm;
 db(& stack)[STACK_SIZE]=m.stack;
 db(& heap)[HEAP_SIZE]=m.heap;
 }
-db (& dummy1)[65536] = m2c::m.dummy1;
+db (& dummy1)[0x1dd0] = m2c::m.dummy1;
 db (& data)[0] = m2c::m.data;
 char (& msg)[28] = m2c::m.msg;
 db& instructions = m2c::m.instructions;
