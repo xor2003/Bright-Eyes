@@ -107,14 +107,13 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 
 void masm2c_exit(unsigned char exit)
 {
-	{
 		init++;
 		datseg = datseg_bak;
 		datseg_bak = 0;
 		p_datseg = p_datseg_bak;
 		p_datseg_bak = NULL;
 //		reloc_gen = 0;
-		m2c::log_info("Gen beendet\nProfiling geht weiter\n");
+		m2c::log_info("masm2c_exit Exiting\n");
 
 /*		if (init_get_version((char*)p_datseg) == 302 && !init_is_en()) 
                 {
@@ -122,21 +121,6 @@ void masm2c_exit(unsigned char exit)
 			init_timer_enable();
 		}
 */
-		return;
-	}
-
-	if (init) {
-		init--;
-
-/*		if (init_get_version((char*)p_datseg) == 302 && !init_is_en()) 
-                {
-			init_status_exit();
-			init_timer_disable();
-			reloc_game = 0;
-		}
- */
-	}
-	m2c::log_info("DSA1 Fehlercode %d\nProfiler beendet\n", exit);
 }
 
 int init_callf(unsigned selector, unsigned offs)

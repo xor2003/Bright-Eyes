@@ -11,6 +11,7 @@
 
 #include "asm.h"
 #include "init.h"
+#include <unistd.h>
 
 static Bit8u custom_runs;
 
@@ -114,6 +115,9 @@ void custom_init_entrypoint(char *name, Bit16u relocate)
 
 	if (init_runs) {
                 init_entrypoint(relocate);
+		printf("Succesful exit\n");
+                sleep(120);
+                exit(0);
 	}
 
 }

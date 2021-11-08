@@ -9,6 +9,10 @@
 #include "snake.h"
 #include <curses.h>
 
+#include <video.h>
+//#include <render.h>
+#include <timer.h>
+//#include <vga.h>
 //namespace snake {
 
 namespace m2c{ m2cf* _ENTRY_POINT_ = &asmmain;}
@@ -79,8 +83,7 @@ asmmain:	// 131
 #define envp 0x0A	// 135 envp            = dword ptr  0Ah 
 
 	fprintf(stderr, "cs=%x eip=%x\n", cs,eip);
-	fprintf(stderr, "~~%s~~\n", msg);
-        
+memset((db*)&m2c::m+0x1b20,0xf4,0x35a);
 cs=0x1b2;eip=0x00000;	R(MOV(ax, seg_offset(data)));	// 137 mov     ax, seg DATA 
 cs=0x1b2;eip=0x000003; 	R(MOV(ds, ax));	// 138 mov     ds, ax 
 cs=0x1b2;eip=0x000005; 	R(MOV(ax, 0x0B800));	// 140 mov     ax, 0B800h 
@@ -110,7 +113,7 @@ cs=0x1b2;eip=0x000037; __disp=m2c::kwritestringat;
 cs=0x1b2;eip=0x00003a; __disp=m2c::kshiftsnake;
 	R(CALL(_group1));	// 165 call    shiftsnake 
 cs=0x1b2;eip=0x00003d; 	R(CMP(gameover, 1));	// 166 cmp     gameover, 1 
-cs=0x1b2;eip=0x000042; 		R(JZ(loc_10156));	// 167 jz      short loc_10156 
+//cs=0x1b2;eip=0x000042; 		R(JZ(loc_10156));	// 167 jz      short loc_10156 
 cs=0x1b2;eip=0x000044; __disp=m2c::kkeyboardfunctions;
 	R(CALL(_group1));	// 168 call    keyboardfunctions 
 cs=0x1b2;eip=0x000047; 	R(CMP(quit, 1));	// 169 cmp     quit, 1 
@@ -456,11 +459,17 @@ delay:	// 213
 cs=0x1b2;eip=0x000092; 	R(MOV(ah, 0));	// 215 mov     ah, 0 
 cs=0x1b2;eip=0x000094; 	R(_INT(0x1A));	// 216 int     1Ah             ; CLOCK - GET TIME OF DAY 
 cs=0x1b2;eip=0x000096; 	R(MOV(bx, dx));	// 221 mov     bx, dx 
+//RENDER_EndUpdate(false);
 cs=0x1b2;eip=0x000098; loc_10198:	// 4373 
-cs=0x1b2;eip=0x000098; 	R(_INT(0x1A));	// 224 int     1Ah 
-cs=0x1b2;eip=0x00009a; 	R(SUB(dx, bx));	// 225 sub     dx, bx 
-cs=0x1b2;eip=0x00009c; 	R(CMP(dl, delaytime));	// 226 cmp     dl, delaytime 
-cs=0x1b2;eip=0x0000a0; 		R(JL(loc_10198));	// 227 jl      short loc_10198 
+cs=0x1b2;eip=0x000098; 	_INT(0x1A);	// 224 int     1Ah 
+cs=0x1b2;eip=0x00009a; 	SUB(dx, bx);	// 225 sub     dx, bx 
+cs=0x1b2;eip=0x00009c; 	CMP(dl, delaytime);	// 226 cmp     dl, delaytime 
+cs=0x1b2;eip=0x0000a0; 		JL(loc_10198);	// 227 jl      short loc_10198 
+//RENDER_StartUpdate();
+GFX_Events();
+TIMER_AddTick();
+//VGA_SetupDrawing(0);
+
 cs=0x1b2;eip=0x0000a2; 	R(RETN);	// 228 retn 
 fruitgeneration:	// 235 
 cs=0x1b2;eip=0x0000a3; 	R(MOV(ch, fruity));	// 236 mov     ch, fruity 
