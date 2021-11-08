@@ -7,7 +7,7 @@
 #pragma pack(push, 1)
 namespace m2c{
 struct Memory{
-db dummy1[0x1dd0];
+db dummy1[0x1a20];
 db data[0];
 char msg[28];
 db instructions;

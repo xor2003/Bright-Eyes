@@ -934,12 +934,12 @@ void MOV_(D* dest, const S& src)
 
  #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected %x.\n",averytemporary9);exit(1);} \
 	m2c::log_debug("after ret %x\n",stackPointer); \
-	--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);return;}
+	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}return;}
 
  #define RETF {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected %x.\n",averytemporary9);exit(1);} \
 	dw averytemporary11;POP(averytemporary11); \
 	m2c::log_debug("after retf %x\n",stackPointer); \
-	--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);return;}
+	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}return;}
 #else
 
  #define RET {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11);  \
@@ -973,7 +973,7 @@ void MOV_(D* dest, const S& src)
  #define CALL(label) \
 	{ m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8); \
 	  m2c::log_debug("after call %x\n",stackPointer); \
-	  ++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);\
+	  if (_state){++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}\
 	  label(__disp, _state); \
 	}
 #else
