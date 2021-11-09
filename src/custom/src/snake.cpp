@@ -9,10 +9,7 @@
 #include "snake.h"
 #include <curses.h>
 
-#include <video.h>
-//#include <render.h>
-#include <timer.h>
-//#include <vga.h>
+#include <mem.h>
 //namespace snake {
 
 namespace m2c{ m2cf* _ENTRY_POINT_ = &asmmain;}
@@ -83,13 +80,14 @@ asmmain:	// 131
 #define envp 0x0A	// 135 envp            = dword ptr  0Ah 
 
 	fprintf(stderr, "cs=%x eip=%x\n", cs,eip);
-memset((db*)&m2c::m+0x1b20,0xf4,0x35a);
+memset((db*)&m2c::m+0x1b20,0xf4,0x35a); // erase emulated code
 cs=0x1b2;eip=0x00000;	R(MOV(ax, seg_offset(data)));	// 137 mov     ax, seg DATA 
 cs=0x1b2;eip=0x000003; 	R(MOV(ds, ax));	// 138 mov     ds, ax 
 cs=0x1b2;eip=0x000005; 	R(MOV(ax, 0x0B800));	// 140 mov     ax, 0B800h 
 cs=0x1b2;eip=0x000008; 	R(MOV(es, ax));	// 141 mov     es, ax 
 cs=0x1b2;eip=0x00000a; 	R(MOV(ax, 3));	// 143 mov     ax, 3 
 cs=0x1b2;eip=0x00000d; 	R(_INT(0x10));	// 144 int     10h             ; - VIDEO - SET VIDEO MODE 
+
 cs=0x1b2;eip=0x00000f; 	R(bx = offset(data,msg));	// 146 lea     bx, msg         ; "Welcome to the snake game!!" 
 cs=0x1b2;eip=0x000013; 	R(MOV(dx, 0));	// 147 mov     dx, 0 
 cs=0x1b2;eip=0x000016; __disp=m2c::kwritestringat;
@@ -113,7 +111,7 @@ cs=0x1b2;eip=0x000037; __disp=m2c::kwritestringat;
 cs=0x1b2;eip=0x00003a; __disp=m2c::kshiftsnake;
 	R(CALL(_group1));	// 165 call    shiftsnake 
 cs=0x1b2;eip=0x00003d; 	R(CMP(gameover, 1));	// 166 cmp     gameover, 1 
-//cs=0x1b2;eip=0x000042; 		R(JZ(loc_10156));	// 167 jz      short loc_10156 
+cs=0x1b2;eip=0x000042; 		R(JZ(loc_10156));	// 167 jz      short loc_10156 
 cs=0x1b2;eip=0x000044; __disp=m2c::kkeyboardfunctions;
 	R(CALL(_group1));	// 168 call    keyboardfunctions 
 cs=0x1b2;eip=0x000047; 	R(CMP(quit, 1));	// 169 cmp     quit, 1 
@@ -238,6 +236,7 @@ cs=0x1b2;eip=0x000319; 	R(SHL(dx, 1));	// 655 shl     dx, 1
 cs=0x1b2;eip=0x00031b; 	R(ADD(ax, dx));	// 656 add     ax, dx 
 cs=0x1b2;eip=0x00031d; 	R(MOV(di, ax));	// 657 mov     di, ax 
 cs=0x1b2;eip=0x00031f; 	R(MOV(bl, *(raddr(es,di))));	// 658 mov     bl, es:[di] 
+bl=real_readb(es,di);
 cs=0x1b2;eip=0x000322; 	R(POP(dx));	// 659 pop     dx 
 cs=0x1b2;eip=0x000323; 	R(RETN);	// 660 retn 
 setcursorpos:	// 337 
@@ -398,6 +397,8 @@ cs=0x1b2;eip=0x00034a; 	R(MOV(al, *(raddr(ds,bx))));	// 690 mov     al, [bx]
 cs=0x1b2;eip=0x00034c; 	R(TEST(al, al));	// 691 test    al, al 
 cs=0x1b2;eip=0x00034e; 		R(JZ(loc_10458));	// 692 jz      short loc_10458 
 cs=0x1b2;eip=0x000350; 	R(MOV(*(raddr(es,di)), al));	// 693 mov     es:[di], al 
+real_writeb(es,di,al);
+
 cs=0x1b2;eip=0x000353; 	R(INC(di));	// 694 inc     di 
 cs=0x1b2;eip=0x000354; 	R(INC(di));	// 695 inc     di 
 cs=0x1b2;eip=0x000355; 	R(INC(bx));	// 696 inc     bx 
@@ -452,24 +453,21 @@ cs=0x1b2;eip=0x0002ea; 	R(AND(dx, 0x0FF));	// 624 and     dx, 0FFh
 cs=0x1b2;eip=0x0002ee; 	R(SHL(dx, 1));	// 625 shl     dx, 1 
 cs=0x1b2;eip=0x0002f0; 	R(ADD(ax, dx));	// 626 add     ax, dx 
 cs=0x1b2;eip=0x0002f2; 	R(MOV(di, ax));	// 627 mov     di, ax 
-cs=0x1b2;eip=0x0002f4; 	R(MOV(*(raddr(es,di)), bl));	// 628 mov     es:[di], bl 
+//cs=0x1b2;eip=0x0002f4; 	R(MOV(*(raddr(es,di)), bl));	// 628 mov     es:[di], bl 
+//mem_writeb(reinterpret_cast<PhysPt>(raddr(es,di)), bl);
+real_writeb(es,di,bl);
 cs=0x1b2;eip=0x0002f7; 	R(POP(dx));	// 629 pop     dx 
+
 cs=0x1b2;eip=0x0002f8; 	R(RETN);	// 630 retn 
 delay:	// 213 
 cs=0x1b2;eip=0x000092; 	R(MOV(ah, 0));	// 215 mov     ah, 0 
 cs=0x1b2;eip=0x000094; 	R(_INT(0x1A));	// 216 int     1Ah             ; CLOCK - GET TIME OF DAY 
 cs=0x1b2;eip=0x000096; 	R(MOV(bx, dx));	// 221 mov     bx, dx 
-//RENDER_EndUpdate(false);
 cs=0x1b2;eip=0x000098; loc_10198:	// 4373 
 cs=0x1b2;eip=0x000098; 	_INT(0x1A);	// 224 int     1Ah 
 cs=0x1b2;eip=0x00009a; 	SUB(dx, bx);	// 225 sub     dx, bx 
 cs=0x1b2;eip=0x00009c; 	CMP(dl, delaytime);	// 226 cmp     dl, delaytime 
 cs=0x1b2;eip=0x0000a0; 		JL(loc_10198);	// 227 jl      short loc_10198 
-//RENDER_StartUpdate();
-GFX_Events();
-TIMER_AddTick();
-//VGA_SetupDrawing(0);
-
 cs=0x1b2;eip=0x0000a2; 	R(RETN);	// 228 retn 
 fruitgeneration:	// 235 
 cs=0x1b2;eip=0x0000a3; 	R(MOV(ch, fruity));	// 236 mov     ch, fruity 
