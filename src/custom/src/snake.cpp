@@ -236,7 +236,6 @@ cs=0x1b2;eip=0x000319; 	R(SHL(dx, 1));	// 655 shl     dx, 1
 cs=0x1b2;eip=0x00031b; 	R(ADD(ax, dx));	// 656 add     ax, dx 
 cs=0x1b2;eip=0x00031d; 	R(MOV(di, ax));	// 657 mov     di, ax 
 cs=0x1b2;eip=0x00031f; 	R(MOV(bl, *(raddr(es,di))));	// 658 mov     bl, es:[di] 
-bl=real_readb(es,di);
 cs=0x1b2;eip=0x000322; 	R(POP(dx));	// 659 pop     dx 
 cs=0x1b2;eip=0x000323; 	R(RETN);	// 660 retn 
 setcursorpos:	// 337 
@@ -397,7 +396,6 @@ cs=0x1b2;eip=0x00034a; 	R(MOV(al, *(raddr(ds,bx))));	// 690 mov     al, [bx]
 cs=0x1b2;eip=0x00034c; 	R(TEST(al, al));	// 691 test    al, al 
 cs=0x1b2;eip=0x00034e; 		R(JZ(loc_10458));	// 692 jz      short loc_10458 
 cs=0x1b2;eip=0x000350; 	R(MOV(*(raddr(es,di)), al));	// 693 mov     es:[di], al 
-real_writeb(es,di,al);
 
 cs=0x1b2;eip=0x000353; 	R(INC(di));	// 694 inc     di 
 cs=0x1b2;eip=0x000354; 	R(INC(di));	// 695 inc     di 
@@ -453,9 +451,7 @@ cs=0x1b2;eip=0x0002ea; 	R(AND(dx, 0x0FF));	// 624 and     dx, 0FFh
 cs=0x1b2;eip=0x0002ee; 	R(SHL(dx, 1));	// 625 shl     dx, 1 
 cs=0x1b2;eip=0x0002f0; 	R(ADD(ax, dx));	// 626 add     ax, dx 
 cs=0x1b2;eip=0x0002f2; 	R(MOV(di, ax));	// 627 mov     di, ax 
-//cs=0x1b2;eip=0x0002f4; 	R(MOV(*(raddr(es,di)), bl));	// 628 mov     es:[di], bl 
-//mem_writeb(reinterpret_cast<PhysPt>(raddr(es,di)), bl);
-real_writeb(es,di,bl);
+cs=0x1b2;eip=0x0002f4; 	R(MOV(*(raddr(es,di)), bl));	// 628 mov     es:[di], bl 
 cs=0x1b2;eip=0x0002f7; 	R(POP(dx));	// 629 pop     dx 
 
 cs=0x1b2;eip=0x0002f8; 	R(RETN);	// 630 retn 

@@ -93,6 +93,10 @@ typedef long double real10;
 #include "memmgr.h"
 
 namespace m2c {
+
+struct /*__attribute__((__packed__))*/ Memory;
+extern Memory& m;
+
 extern FILE * logDebug;
 
 // Asm functions
@@ -826,9 +830,48 @@ else
 #else
 #define MOV(dest,src) {m2c::MOV_(&dest,src);}
 #endif
+
+template <class S>
+constexpr bool isaddrbelongtom(const S * const a)
+//{ return true; }
+{ return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
+
+template<class S>
+S getthedata(const S& s);
+
+template<>
+inline db getthedata<db>(const db& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+template<>
+inline dw getthedata<dw>(const dw& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+template<>
+inline dd getthedata<dd>(const dd& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+template<>
+inline char getthedata<char>(const char& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+template<>
+inline short int getthedata<short int>(const short int& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+template<>
+inline int getthedata<int>(const int& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+template<>
+inline long getthedata<long>(const long& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+
+static void setthedata(db* d, db s)
+{ if (m2c::isaddrbelongtom(d)) mem_writeb((db*)d-(db*)&m, s); else *d = s; }
+static void setthedata(dw* d, dw s)
+{ if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
+static void setthedata(dd* d, dd s)
+{ if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
+
 template <class D, class S>
 void MOV_(D* dest, const S& src)
-{ *dest = static_cast<D>(src); }
+{ m2c::setthedata(dest, static_cast<D>(m2c::getthedata<S>(src))); }
+//{ *dest = static_cast<D>(src); }
 
 #define LFS(dest,src) {dest = src; fs= *(dw*)((db*)&(src) + sizeof(dest));}
 #define LES(dest,src) {dest = src; es = *(dw*)((db*)&(src) + sizeof(dest));}
@@ -1137,8 +1180,6 @@ extern db vgaPalette[256*3];
 
 // ---------
 
-struct /*__attribute__((__packed__))*/ Memory;
-extern Memory& m;
 extern db(& stack)[STACK_SIZE];
 extern db(& heap)[HEAP_SIZE];
 typedef void m2cf(_offsets, struct _STATE*); // common masm2c function
