@@ -316,7 +316,7 @@ public:
  REGDEF_flags(Z)
  REGDEF_flags(S)
  REGDEF_flags(T)
-// REGDEF_flags(I)
+ REGDEF_flags(I)
  REGDEF_flags(D)
  REGDEF_flags(O)
 };
@@ -428,6 +428,8 @@ dw _source;
 #define AFFECT_SF(f, a) flags.bits.setSF(ISNEGATIVE(f,a))
 #define AFFECT_ZFifz(a) flags.bits.setZF((a)==0)
 #define AFFECT_PF(a) flags.bits.setPF(a)
+#define STI {flags.bits.setIF(1);}
+#define CLI {flags.bits.setIF(0);}
 
 #define CMP(a,b) {dd averytemporary=((a)-(b))& m2c::MASK[sizeof(a)]; \
 		AFFECT_CF((averytemporary)>(a)); \
@@ -831,15 +833,8 @@ else
 #endif
 */
 
-#if DEBUG >= 3
-#define MOV(dest,src) {m2c::log_debug("%x := (%x)\n",&dest, src); m2c::MOV_(&dest,src);}
-#else
-#define MOV(dest,src) {m2c::MOV_(&dest,src);}
-#endif
-
 template <class S>
 constexpr bool isaddrbelongtom(const S * const a)
-//{ return true; }
 { return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
 
 template<class S>
@@ -873,6 +868,12 @@ static void setthedata(dw* d, dw s)
 { if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
 static void setthedata(dd* d, dd s)
 { if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
+
+#if DEBUG >= 3
+#define MOV(dest,src) {m2c::log_debug("%x := (%x)\n",&dest, src); m2c::MOV_(&dest,src);}
+#else
+#define MOV(dest,src) {m2c::MOV_(&dest,src);}
+#endif
 
 template <class D, class S>
 void MOV_(D* dest, const S& src)
@@ -945,8 +946,8 @@ void MOV_(D* dest, const S& src)
 
 //#define LAHF {ah= ((CF?1:0)|2|(PF?4:0)|(AF?0x10:0)|(ZF?0x40:0)|(SF?0x80:0)) ;}
 //#define SAHF {CF=ah&1; PF=ah&4; AF=ah&0x10; ZF=ah&0x40; SF=ah&0x80;}
-#define LAHF {ah= flags ;}
-#define SAHF {*(db*)&flags = ah;}
+#define LAHF {ah= flags.value ;}
+#define SAHF {*(db*)&flags.value = ah;}
 
 /*
 #define CALLF(label) {log_debug("before callf %d\n",stackPointer);PUSH(cs);CALL(label);}
@@ -1117,8 +1118,6 @@ bool is_little_endian();
 #define DAS UNIMPLEMENTED
 #define CDQ UNIMPLEMENTED
 
-#define STI UNIMPLEMENTED
-#define CLI UNIMPLEMENTED
 
 #define ORG(x) 
 #define XLATB XLAT
