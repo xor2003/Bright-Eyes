@@ -505,7 +505,7 @@ bool DOS_Execute(char * name,PhysPt block_pt,Bit8u flags) {
 		pspmcb.SetFileName(stripname);
 		DOS_UpdatePSPName();
 
-	printf("\n~ cs=%x eip=%x\n",RealSeg(csip),RealOff(csip));
+	printf("\n~Binary loaded to entry point cs=%x eip=%x\n",RealSeg(csip),RealOff(csip));
 		custom_init_entrypoint(name,loadseg);
 
 		return true;
