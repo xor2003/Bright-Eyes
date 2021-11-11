@@ -33,6 +33,7 @@
 #include "regs.h"
 #include "cpu.h"
 #include "mem.h"
+#include "inout.h"
 #endif
 
 // Types
@@ -289,7 +290,7 @@ dw _source;
 
 #else
 
-class eflags{
+class Bits{
 unsigned int _CF : 1,
 unused1:1,
 _PF:1,
@@ -319,7 +320,10 @@ public:
  REGDEF_flags(D)
  REGDEF_flags(O)
 };
-
+union eflags{
+Bits bits;
+dd value;
+};
 // #define flags cpu_regs.flags
 
 #define X86_REGREF \
@@ -409,19 +413,21 @@ dw _source;
 
 #endif
 
-#define GET_DF() flags.getDF()
-#define GET_CF() flags.getCF()
-#define GET_AF() flags.getAF()
-#define GET_OF() flags.getOF()
-#define GET_SF() flags.getSF()
-#define GET_ZF() flags.getZF()
-#define GET_PF() flags.getPF()
-#define AFFECT_ZFifz(a) flags.setZF((a)==0)
-#define AFFECT_CF(a) flags.setCF(a)
-#define AFFECT_AF(a) flags.setAF(a)
-#define AFFECT_OF(a) flags.setOF(a)
+#define GET_DF() flags.bits.getDF()
+#define GET_CF() flags.bits.getCF()
+#define GET_AF() flags.bits.getAF()
+#define GET_OF() flags.bits.getOF()
+#define GET_SF() flags.bits.getSF()
+#define GET_ZF() flags.bits.getZF()
+#define GET_PF() flags.bits.getPF()
+#define AFFECT_DF(a) flags.bits.setDF(a)
+#define AFFECT_CF(a) flags.bits.setCF(a)
+#define AFFECT_AF(a) flags.bits.setAF(a)
+#define AFFECT_OF(a) flags.bits.setOF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (bitsizeof(f)-1)) )
-#define AFFECT_SF(f, a) flags.setSF(ISNEGATIVE(f,a))
+#define AFFECT_SF(f, a) flags.bits.setSF(ISNEGATIVE(f,a))
+#define AFFECT_ZFifz(a) flags.bits.setZF((a)==0)
+#define AFFECT_PF(a) flags.bits.setPF(a)
 
 #define CMP(a,b) {dd averytemporary=((a)-(b))& m2c::MASK[sizeof(a)]; \
 		AFFECT_CF((averytemporary)>(a)); \
@@ -468,7 +474,7 @@ dw _source;
 #define ROL(a,b) {if (b) {a=(((a)<<(shiftmodule(a,b))) | (a)>>(bitsizeof(a)-(shiftmodule(a,b))));\
 		AFFECT_CF(LSB(a));}}
 
-class eflags;
+union eflags;
 #define RCL(a, b) m2c::RCL_(a, b, flags)
 template <class D, class C>
 void RCL_(D& Destination, C Count, eflags& flags)
@@ -747,7 +753,7 @@ else
 #define DIV2(a) {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}
 #define DIV4(a) {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}
 
-#define NOT(a) {a= ~(a)};// AFFECT_ZFifz(a) //TODO
+#define NOT(a) {a= ~(a);};// AFFECT_ZFifz(a) //TODO
 
 #define SETA(a) {a=GET_CF()==0 && GET_ZF()==0;}
 #define SETNBE(a) {a=GET_CF()==0 && GET_ZF()==0;}
@@ -930,8 +936,8 @@ void MOV_(D* dest, const S& src)
 #define CLC {AFFECT_CF(0);}
 #define CMC {AFFECT_CF(GET_CF() ^ 1);}
 
-#define PUSHF {PUSH( (dd) (flags) );}
-#define POPF {dd averytemporary; POP(averytemporary); flags=averytemporary;}
+#define PUSHF {PUSH( flags.value );}
+#define POPF {dd averytemporary; POP(averytemporary); flags.value=averytemporary;}
 
 //#define PUSHF {PUSH( (dd) ((GET_CF()?1:0)|(GET_PF()?4:0)|(GET_AF()?0x10:0)|(GET_ZF()?0x40:0)|(GET_SF()?0x80:0)|(GET_DF()?0x400:0)|(GET_OF()?0x800:0)) );}
 //#define POPF {dd averytemporary; POP(averytemporary); CF=averytemporary&1;  PF=(averytemporary&4);AF=(averytemporary&0x10);ZF=(averytemporary&0x40);SF=(averytemporary&0x80);DF=(averytemporary&0x400);OF=(averytemporary&0x800);}
