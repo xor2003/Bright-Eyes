@@ -3,7 +3,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -O0 -mno-ms-bitfields
 SUBDIRS = 
 
 noinst_LIBRARIES = libsrc.a
-libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  int8.cpp  int8.h
+libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  blaster2_.cpp  blaster2_.h
 
 #EXTRA_DIST = schick.h
 

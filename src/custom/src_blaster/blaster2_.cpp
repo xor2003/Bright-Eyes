@@ -65,7 +65,25 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 
  void sub_128b4(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_128b4, _state);}
 
+#include "bios.h"
+#include "callback.h"
 
+static Bitu myINT8_Handler(void) {
+struct m2c::_STATE* _state=0;
+    X86_REGREF
+printf("cool!\n");
+cs=0x192;eip=0x00064e; 	// 4420 
+cs=0x192;eip=0x00064e; 	R(CLI);	// 886 cli
+cs=0x192;eip=0x00064f; 	R(PUSH(ax));	// 887 push    ax
+cs=0x192;eip=0x000650; 	R(MOV(al, 0x20));	// 888 mov     al, 20h ; ' '
+cs=0x192;eip=0x000652; 	R(OUT(0x20, al));	// 889 out     20h, al         ; Interrupt controller, 8259A.
+	cs=seg_offset(_text);
+cs=0x192;eip=0x000654; 	R(INC(*(dw*)(((db*)&word_17bde))));	// 890 inc     cs:word_17BDE
+cs=0x192;eip=0x000659; __disp=m2c::ksub_129a0;
+	R(CALL(_group1));	// 891 call    sub_129A0
+cs=0x192;eip=0x00065c; 	R(POP(ax));	// 892 pop     ax
+return CBRET_NONE;
+}
 
  void _group1(m2c::_offsets _i, struct m2c::_STATE* _state){
     _group1:
@@ -148,8 +166,11 @@ cs=0x192;eip=0x0001cb; 	cx = 0;AFFECT_ZFifz(0); AFFECT_SF(cx,0);	// 85 xor     c
 cs=0x192;eip=0x0001cd; 	R(MOV(cl, *(raddr(ds,si))));	// 86 mov     cl, [si]
 cs=0x192;eip=0x0001cf; 	R(INC(si));	// 87 inc     si
 cs=0x192;eip=0x0001d0; loc_101e0:	// 4375 
-cs=0x192;eip=0x0001d0; 	R(ADD(ax, 0x0C));	// 90 add     ax, 0Ch
-cs=0x192;eip=0x0001d3; 		R(LOOP(loc_101e0));	// 91 loop    loc_101E0
+//cs=0x192;eip=0x0001d0; 	R(ADD(ax, 0x0C));	// 90 add     ax, 0Ch
+//cs=0x192;eip=0x0001d3; 		R(LOOP(loc_101e0));	// 91 loop    loc_101E0
+cs=0x192;eip=0x0001d0; 	ADD(ax, 0x0C);	// 90 add     ax, 0Ch
+cs=0x192;eip=0x0001d3; 		LOOP(loc_101e0);	// 91 loop    loc_101E0
+
 cs=0x192;eip=0x0001d5; 	R(DEC(bl));	// 92 dec     bl
 cs=0x192;eip=0x0001d7; 		R(JNZ(loc_101da));	// 93 jnz     short loc_101DA
 cs=0x192;eip=0x0001d9; 	R(MOV(es, word_150a3));	// 94 mov     es, word_150A3
@@ -210,6 +231,11 @@ cs=0x192;eip=0x000242; 		R(JMP(loc_1019a));	// 143 jmp     loc_1019A
 sub_10255:	// 150 
 cs=0x192;eip=0x000245; 	R(MOV(ax, 0x11));	// 151 mov     ax, 11h
 cs=0x192;eip=0x000248; 	R(_INT(0x10));	// 152 int     10h             ; - VIDEO - SET VIDEO MODE
+
+for(int i=0;i<0xffff;i++) mem_writeb(0xa0000+i,0xA5);
+ah=2;
+R(_INT(0x16));
+
 cs=0x192;eip=0x00024a; 	R(CLI);	// 154 cli
 cs=0x192;eip=0x00024b; 	R(MOV(dx, 0x3DA));	// 155 mov     dx, 3DAh
 cs=0x192;eip=0x00024e; 	R(IN(al, dx));	// 156 in      al, dx          ; Video status bits:
@@ -748,6 +774,14 @@ cs=0x192;eip=0x00066e; 	R(MOV(ax, cs));	// 906 mov     ax, cs
 cs=0x192;eip=0x000670; 	R(MOV(ds, ax));	// 907 mov     ds, ax
 cs=0x192;eip=0x000672; 	R(MOV(ax, 0x2508));	// 909 mov     ax, 2508h
 cs=0x192;eip=0x000675; 	R(_INT(0x21));	// 910 int     21h             ; DOS - SET INTERRUPT VECTOR
+{
+		Bitu call_irq0_=CALLBACK_Allocate();	
+		CALLBACK_Setup(call_irq0_,myINT8_Handler,CB_IRQ0,Real2Phys(RealMake(cs,m2c::kloc_1065e)),"my IRQ 0 Clock");
+//		RealSetVec(0x08,(RealMake(0x0192,0x064e)));
+}
+ah=2;
+R(_INT(0x16));
+
 cs=0x192;eip=0x000677; 	R(MOV(bx, 0x5D37));	// 913 mov     bx, 5D37h
 cs=0x192;eip=0x00067a; 	R(MOV(al, 0x36));	// 914 mov     al, 36h ; '6'
 cs=0x192;eip=0x00067c; 	R(OUT(0x43, al));	// 915 out     43h, al         ; Timer 8253-5 (AT: 8254.2).

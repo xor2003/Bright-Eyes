@@ -6,7 +6,7 @@
 #if defined(_PROTECTED_MODE)
   #define raddr(segment,offset) ((db *)&m2c::m+(db)(offset)+selectors[segment])
 #else
- #define raddr(segment,offset) (((db *)&m2c::m + ((segment)<<4) + (offset) ))
+ #define raddr(segment,offset) (((db *)&m2c::m + ((segment)<<4) + ((offset)&0xffff) ))
 #endif
 
  #define offset(segment,name) ((db*)(&name)-(db*)(&segment))
@@ -55,7 +55,7 @@
   #define STOSB STOS(1,3)
   #define STOSW STOS(2,2)
  #else
-
+/*
  //SDL2 VGA
   #if SDL_MAJOR_VERSION == 2 && !defined(NOSDL)
    #define STOSB { \
@@ -71,17 +71,19 @@
   #else
    #define STOSB STOS(1,0)
   #endif
-
    #ifdef A_NORMAL
     #define STOSW { \
 	if (es==0xB800)  \
-		{dd averytemporary=(di>>1);attrset(COLOR_PAIR(ah)); mvaddch(averytemporary/80, averytemporary%80, al); /*attroff(COLOR_PAIR(ah))*/;di+=(GET_DF()==0)?2:-2;refresh();} \
+		{dd averytemporary=(di>>1);attrset(COLOR_PAIR(ah)); mvaddch(averytemporary/80, averytemporary%80, al); ;di+=(GET_DF()==0)?2:-2;refresh();} \
 	else \
 		{STOS(2,0);} \
 	}
    #else
     #define STOSW STOS(2,0)
    #endif
+*/
+   #define STOSB {mem_writeb((db*)raddr(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;}
+   #define STOSW {mem_writew((db*)raddr(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;}
  #endif
  #define STOSD STOS(4,0)
 

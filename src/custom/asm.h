@@ -98,6 +98,43 @@ namespace m2c {
 struct /*__attribute__((__packed__))*/ Memory;
 extern Memory& m;
 
+template <class S>
+constexpr bool isaddrbelongtom(const S * const a)
+{ return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
+
+template<class S>
+S getdata(const S& s);
+
+template<>
+inline db getdata<db>(const db& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+template<>
+inline dw getdata<dw>(const dw& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+template<>
+inline dd getdata<dd>(const dd& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+template<>
+inline char getdata<char>(const char& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+template<>
+inline short int getdata<short int>(const short int& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+template<>
+inline int getdata<int>(const int& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+template<>
+inline long getdata<long>(const long& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+
+static void setdata(db* d, db s)
+{ if (m2c::isaddrbelongtom(d)) mem_writeb((db*)d-(db*)&m, s); else *d = s; }
+static void setdata(dw* d, dw s)
+{ if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
+static void setdata(dd* d, dd s)
+{ if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
+
+
 extern FILE * logDebug;
 
 // Asm functions
@@ -305,9 +342,9 @@ _DF:1,
 _OF:1;
 public:
 #define REGDEF_flags(Z) \
-    bool set##Z##F(bool i){return (_##Z##F=i);} \
-    bool get##Z##F(){return _##Z##F;}
-    void reset(){_CF=false;_PF=false;_AF=false;_ZF=false;_SF=false;_TF=false;
+    inline bool set##Z##F(bool i){return (_##Z##F=i);} \
+    inline bool get##Z##F(){return _##Z##F;}
+    inline void reset(){_CF=false;_PF=false;_AF=false;_ZF=false;_SF=false;_TF=false;
     _IF=false;_DF=false;_OF=false;}
  
  REGDEF_flags(C)
@@ -320,9 +357,10 @@ public:
  REGDEF_flags(D)
  REGDEF_flags(O)
 };
+
 union eflags{
-Bits bits;
-dd value;
+ Bits bits;
+ dd value;
 };
 // #define flags cpu_regs.flags
 
@@ -420,6 +458,7 @@ dw _source;
 #define GET_SF() flags.bits.getSF()
 #define GET_ZF() flags.bits.getZF()
 #define GET_PF() flags.bits.getPF()
+#define GET_IF() flags.bits.getIF()
 #define AFFECT_DF(a) flags.bits.setDF(a)
 #define AFFECT_CF(a) flags.bits.setCF(a)
 #define AFFECT_AF(a) flags.bits.setAF(a)
@@ -428,28 +467,51 @@ dw _source;
 #define AFFECT_SF(f, a) flags.bits.setSF(ISNEGATIVE(f,a))
 #define AFFECT_ZFifz(a) flags.bits.setZF((a)==0)
 #define AFFECT_PF(a) flags.bits.setPF(a)
-#define STI {flags.bits.setIF(1);}
-#define CLI {flags.bits.setIF(0);}
+#define STI {CPU_STI();}
+#define CLI {CPU_CLI();}
 
 #define CMP(a,b) {dd averytemporary=((a)-(b))& m2c::MASK[sizeof(a)]; \
 		AFFECT_CF((averytemporary)>(a)); \
 		AFFECT_ZFifz(averytemporary); \
 		AFFECT_SF(a,averytemporary);}
-
+/*
 #define OR(a,b) {a=(a)|(b); \
 		AFFECT_ZFifz(a); \
 		AFFECT_SF(a,a); \
 		AFFECT_CF(0);}
+*/
+//union eflags;
+#define OR(a, b) m2c::OR_(a, b, flags)
+template <class D, class S>
+void OR_(D& dest, const S& src, eflags& flags)
+{
+   D d = m2c::getdata<D>(dest);
+   m2c::setdata(&dest, d | static_cast<D>(m2c::getdata<S>(src)));
+		AFFECT_ZFifz(dest); 
+		AFFECT_SF(dest,dest); 
+		AFFECT_CF(0);
+ }
 
 #define XOR(a,b) {a=(a)^(b); \
 		AFFECT_ZFifz(a); \
 		AFFECT_SF(a,a); \
 		AFFECT_CF(0);}
-
+/*
 #define AND(a,b) {a=(a)&(b); \
 		AFFECT_ZFifz(a); \
 		AFFECT_SF(a,a); \
 		AFFECT_CF(0);}
+*/
+#define AND(a, b) m2c::AND_(a, b, flags)
+template <class D, class S>
+void AND_(D& dest, const S& src, eflags& flags)
+{
+   D d = m2c::getdata<D>(dest);
+   m2c::setdata(&dest, d & static_cast<D>(m2c::getdata<S>(src)));
+		AFFECT_ZFifz(dest); 
+		AFFECT_SF(dest,dest); 
+		AFFECT_CF(0);
+ }
 
 #define NEG(a) {AFFECT_CF((a)!=0); \
 		a=-a;\
@@ -476,7 +538,7 @@ dw _source;
 #define ROL(a,b) {if (b) {a=(((a)<<(shiftmodule(a,b))) | (a)>>(bitsizeof(a)-(shiftmodule(a,b))));\
 		AFFECT_CF(LSB(a));}}
 
-union eflags;
+//union eflags;
 #define RCL(a, b) m2c::RCL_(a, b, flags)
 template <class D, class C>
 void RCL_(D& Destination, C Count, eflags& flags)
@@ -833,41 +895,6 @@ else
 #endif
 */
 
-template <class S>
-constexpr bool isaddrbelongtom(const S * const a)
-{ return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
-
-template<class S>
-S getthedata(const S& s);
-
-template<>
-inline db getthedata<db>(const db& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
-template<>
-inline dw getthedata<dw>(const dw& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
-template<>
-inline dd getthedata<dd>(const dd& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
-template<>
-inline char getthedata<char>(const char& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
-template<>
-inline short int getthedata<short int>(const short int& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
-template<>
-inline int getthedata<int>(const int& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
-template<>
-inline long getthedata<long>(const long& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
-
-static void setthedata(db* d, db s)
-{ if (m2c::isaddrbelongtom(d)) mem_writeb((db*)d-(db*)&m, s); else *d = s; }
-static void setthedata(dw* d, dw s)
-{ if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
-static void setthedata(dd* d, dd s)
-{ if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
 
 #if DEBUG >= 3
 #define MOV(dest,src) {m2c::log_debug("%x := (%x)\n",&dest, src); m2c::MOV_(&dest,src);}
@@ -877,7 +904,7 @@ static void setthedata(dd* d, dd s)
 
 template <class D, class S>
 void MOV_(D* dest, const S& src)
-{ m2c::setthedata(dest, static_cast<D>(m2c::getthedata<S>(src))); }
+{ m2c::setdata(dest, static_cast<D>(m2c::getdata<S>(src))); }
 //{ *dest = static_cast<D>(src); }
 
 #define LFS(dest,src) {dest = src; fs= *(dw*)((db*)&(src) + sizeof(dest));}
@@ -1036,7 +1063,7 @@ void MOV_(D* dest, const S& src)
 //#endif // end separate procs
 
 #define RETN RET
-#define IRET RETF
+#define IRET {RETF;POPF}
 //#define RETF {dw averytemporary=0; POP(averytemporary); RET;}
 #define BSWAP(op1)														\
 	op1 = (op1>>24)|((op1>>8)&0xFF00)|((op1<<8)&0xFF0000)|((op1<<24)&0xFF000000);
@@ -1053,7 +1080,7 @@ void MOV_(D* dest, const S& src)
 
 // dosbox logcpu format
     #define R(a) {m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), 0 );} \
+                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF() );} \
 	a 
 
 #else

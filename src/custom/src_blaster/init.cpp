@@ -5,7 +5,7 @@
 
 #include "init.h"
 
-#include "int8.h"
+#include "blaster2_.h"
 
 // Is the game running?
 static int init = 0;
@@ -56,7 +56,7 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 
 	init_get_fname(fname, name);
 
-	if (strcmp(fname, "int8.com")) return false;
+	if (strcmp(fname, "blaster.com")) return false;
 
 	/* Check CS:IP in the EXE-Header are 0:0
 	 * and the first executed instruction is mov dx,i16 */
