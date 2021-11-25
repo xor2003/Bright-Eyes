@@ -22,7 +22,7 @@ namespace m2c{
 static const dd kbegin = 0x1001;
 static const dd kmainproc = 0x1002;
 static const dd k_main = 0x1920100;
-static const dd k_int8 = 0x1920101;
+static const dd k_int8 = 0x192012b;
 static const dd kloc_10154 = 0x1920144;
 static const dd k_group1 = 0x1920100;
 void   Initializer();
