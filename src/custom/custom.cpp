@@ -18,7 +18,9 @@ static Bit8u custom_runs;
 static Bit8u init_runs;
 Bit16u custom_oldCS, custom_oldIP;
 //static class custom_prog running_progs[2];
-
+namespace m2c{
+int idle_counter=0;
+}
 //static class custom_prog *current;
 
 void custom_init_prog(char *name, Bit16u relocate, Bit16u init_cs, Bit16u init_ip)

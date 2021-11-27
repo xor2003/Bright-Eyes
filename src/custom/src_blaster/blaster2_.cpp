@@ -72,7 +72,8 @@ static Bitu myINT8_Handler(void) {
 struct m2c::_STATE* _state=0;
     X86_REGREF
 printf("cool!\n");
-cs=0x192;eip=0x00064e; 	// 4420 
+dw oldcs=cs;
+dd oldeip=eip;
 cs=0x192;eip=0x00064e; 	R(CLI);	// 886 cli
 cs=0x192;eip=0x00064f; 	R(PUSH(ax));	// 887 push    ax
 cs=0x192;eip=0x000650; 	R(MOV(al, 0x20));	// 888 mov     al, 20h ; ' '
@@ -82,6 +83,9 @@ cs=0x192;eip=0x000654; 	R(INC(*(dw*)(((db*)&word_17bde))));	// 890 inc     cs:wo
 cs=0x192;eip=0x000659; __disp=m2c::ksub_129a0;
 	R(CALL(_group1));	// 891 call    sub_129A0
 cs=0x192;eip=0x00065c; 	R(POP(ax));	// 892 pop     ax
+cs=0x192;eip=0x00065d; 	R(IRET);	// 893 iret
+cs=oldcs;
+eip=oldeip;
 return CBRET_NONE;
 }
 
@@ -94,22 +98,9 @@ return CBRET_NONE;
     else goto __dispatch_call;
     _begin:
 mainproc:
-cs=0x192;eip=0x00064e; loc_1065e:	// 4420 
-cs=0x192;eip=0x00064e; 	R(CLI);	// 886 cli
-cs=0x192;eip=0x00064f; 	R(PUSH(ax));	// 887 push    ax
-cs=0x192;eip=0x000650; 	R(MOV(al, 0x20));	// 888 mov     al, 20h ; ' '
-cs=0x192;eip=0x000652; 	R(OUT(0x20, al));	// 889 out     20h, al         ; Interrupt controller, 8259A.
-	cs=seg_offset(_text);
-cs=0x192;eip=0x000654; 	R(INC(*(dw*)(((db*)&word_17bde))));	// 890 inc     cs:word_17BDE
-cs=0x192;eip=0x000659; __disp=m2c::ksub_129a0;
-	R(CALL(_group1));	// 891 call    sub_129A0
-cs=0x192;eip=0x00065c; 	R(POP(ax));	// 892 pop     ax
-cs=0x192;eip=0x00065d; 	R(IRET);	// 893 iret
-cs=0x192;eip=0x002ae6; adlend:	// 4443 
-cs=0x192;eip=0x002ae6; 	R(XOR(*(dw*)(raddr(ss,bp+di)), ax));	// 2250 xor     [bp+di], ax
-cs=0x192;eip=0x002ae8; 	R(ADD(*(dw*)(raddr(ds,bx+si)), ax));	// 2251 add     [bx+si], ax
 __disp=m2c::kstart;
 	R(CALL(_group1));
+return;
 start:	// 14 
 cs=0x192;eip=0x000100; 		R(JMP(loc_10173));	// 15 jmp     short loc_10173
 cs=0x192;eip=0x000163; loc_10173:	// 4369 
@@ -195,12 +186,13 @@ cs=0x192;eip=0x0001f9; __disp=m2c::ksub_12966;
 cs=0x192;eip=0x0001fc; __disp=m2c::ksub_1066e;
 	R(CALL(_group1));	// 111 call    sub_1066E
 cs=0x192;eip=0x0001ff; loc_1020f:	// 4377 
-cs=0x192;eip=0x0001ff; 	R(MOV(ax, 0x1234));	// 115 mov     ax, 1234h
+static dw var_1020f(0x1234);
+cs=0x192;eip=0x0001ff; 	R(MOV(ax, var_1020f));	// 115 mov     ax, 1234h
 cs=0x192;eip=0x000202; loc_10212:	// 4378 
 cs=0x192;eip=0x000202; 	R(CMP(ax, word_17bde));	// 118 cmp     ax, word_17BDE
 cs=0x192;eip=0x000206; 		R(JZ(loc_10212));	// 119 jz      short loc_10212
 cs=0x192;eip=0x000208; 	R(MOV(ax, word_17bde));	// 120 mov     ax, word_17BDE
-cs=0x192;eip=0x00020b; 	R(MOV(*(dw*)(raddr(cs,m2c::kloc_1020f+1)), ax));	// 121 mov     word ptr cs:loc_1020F+1, ax
+cs=0x192;eip=0x00020b; 	R(MOV(var_1020f, ax));	// 121 mov     word ptr cs:loc_1020F+1, ax
 cs=0x192;eip=0x00020f; __disp=m2c::ksub_10309;
 	R(CALL(_group1));	// 122 call    sub_10309
 cs=0x192;eip=0x000212; __disp=m2c::ksub_10424;
@@ -458,7 +450,7 @@ cs=0x192;eip=0x0003f3; loc_10403:	// 4391
 cs=0x192;eip=0x0003f3; 	R(OR(*(raddr(es,di)), ah));	// 486 or      es:[di], ah
 cs=0x192;eip=0x0003f6; 	R(OR(*(raddr(ss,di)), ah));	// 487 or      ss:[di], ah
 cs=0x192;eip=0x0003f9; 	R(MOV(*(dw*)(raddr(ds,si)), di));	// 488 mov     [si], di
-cs=0x192;eip=0x0003fb; 	R(MOV(*(raddr(ds,si+2)), ah));	// 489 mov     [si+2], ah
+cs=0x192;eip=0x0003fb; 	R(MOV(*(raddr(ds,si+2)), ah));	// 489 mov     [si+2], ah // x0r <-------
 cs=0x192;eip=0x0003fe; 	R(MOV(*(raddr(ds,si+4)), ah));	// 490 mov     [si+4], ah
 cs=0x192;eip=0x000401; loc_10411:	// 4392 
 cs=0x192;eip=0x000401; 	R(ADD(si, 5));	// 494 add     si, 5
@@ -764,23 +756,37 @@ cs=0x192;eip=0x000645; 	R(ADD(di, 0x0A0));	// 877 add     di, 0A0h
 cs=0x192;eip=0x000649; 	R(DEC(cl));	// 878 dec     cl
 cs=0x192;eip=0x00064b; 		R(JNZ(loc_105f5));	// 879 jnz     short loc_105F5
 cs=0x192;eip=0x00064d; 	R(RETN);	// 880 retn
+
+cs=0x192;eip=0x00064e; loc_1065e:	// 4420 
+cs=0x192;eip=0x00064e; 	R(CLI);	// 886 cli
+cs=0x192;eip=0x00064f; 	R(PUSH(ax));	// 887 push    ax
+cs=0x192;eip=0x000650; 	R(MOV(al, 0x20));	// 888 mov     al, 20h ; ' '
+cs=0x192;eip=0x000652; 	R(OUT(0x20, al));	// 889 out     20h, al         ; Interrupt controller, 8259A.
+	cs=seg_offset(_text);
+cs=0x192;eip=0x000654; 	R(INC(*(dw*)(((db*)&word_17bde))));	// 890 inc     cs:word_17BDE
+cs=0x192;eip=0x000659; __disp=m2c::ksub_129a0;
+	R(CALL(_group1));	// 891 call    sub_129A0
+cs=0x192;eip=0x00065c; 	R(POP(ax));	// 892 pop     ax
+cs=0x192;eip=0x00065d; 	R(IRET);	// 893 iret
+
+
 sub_1066e:	// 898 
 cs=0x192;eip=0x00065e; 	R(MOV(ax, 0x3508));	// 899 mov     ax, 3508h
 cs=0x192;eip=0x000661; 	R(_INT(0x21));	// 900 int     21h             ; DOS - 2+ - GET INTERRUPT VECTOR
 cs=0x192;eip=0x000663; 	R(MOV(word_17be0, bx));	// 903 mov     word_17BE0, bx
 cs=0x192;eip=0x000667; 	R(MOV(word_17be2, es));	// 904 mov     word_17BE2, es
+
+{
+		Bitu call_irq0_=CALLBACK_Allocate();	
+		CALLBACK_Setup(call_irq0_,myINT8_Handler,CB_IRET,Real2Phys(m2c::kloc_1065e),"my IRQ 0 Clock");
+//		RealSetVec(0x08,(RealMake(0x0192,0x064e)));
+}
+
 cs=0x192;eip=0x00066b; 	R(MOV(dx, m2c::kloc_1065e));	// 905 mov     dx, offset loc_1065E
 cs=0x192;eip=0x00066e; 	R(MOV(ax, cs));	// 906 mov     ax, cs
 cs=0x192;eip=0x000670; 	R(MOV(ds, ax));	// 907 mov     ds, ax
 cs=0x192;eip=0x000672; 	R(MOV(ax, 0x2508));	// 909 mov     ax, 2508h
 cs=0x192;eip=0x000675; 	R(_INT(0x21));	// 910 int     21h             ; DOS - SET INTERRUPT VECTOR
-{
-		Bitu call_irq0_=CALLBACK_Allocate();	
-		CALLBACK_Setup(call_irq0_,myINT8_Handler,CB_IRQ0,Real2Phys(RealMake(cs,m2c::kloc_1065e)),"my IRQ 0 Clock");
-//		RealSetVec(0x08,(RealMake(0x0192,0x064e)));
-}
-ah=2;
-R(_INT(0x16));
 
 cs=0x192;eip=0x000677; 	R(MOV(bx, 0x5D37));	// 913 mov     bx, 5D37h
 cs=0x192;eip=0x00067a; 	R(MOV(al, 0x36));	// 914 mov     al, 36h ; '6'
@@ -1205,6 +1211,10 @@ cs=0x192;eip=0x002ae3; 	R(POP(bx));	// 2240 pop     bx
 cs=0x192;eip=0x002ae4; 	R(POP(ax));	// 2241 pop     ax
 cs=0x192;eip=0x002ae5; 	R(RETN);	// 2242 retn
 sub_12b0c:	// 2258 	// 2260 nop
+R(NOP);
+static bool doret = false;
+cs=0x192;eip=0x002afc;
+if (doret) R(RETN);
 cs=0x192;eip=0x002afd; 	ah = 0;AFFECT_ZFifz(0); AFFECT_SF(ah,0);	// 2261 xor     ah, ah
 cs=0x192;eip=0x002aff; loc_12b0f:	// 4444 
 cs=0x192;eip=0x002aff; 	R(DEC(ah));	// 2264 dec     ah
@@ -1215,11 +1225,12 @@ cs=0x192;eip=0x002b09; 		R(JC(loc_12b0f));	// 2271 jb      short loc_12B0F
 cs=0x192;eip=0x002b0b; locret_12b1b:	// 4445 
 cs=0x192;eip=0x002b0b; 	R(RETN);	// 2274 retn
 cs=0x192;eip=0x002b0c; loc_12b1c:	// 4446 
-cs=0x192;eip=0x002b0c; 	R(MOV(al, *(raddr(cs,m2c::klocret_12b1b))));	// 2278 mov     al, byte ptr cs:locret_12B1B
-cs=0x192;eip=0x002b10; 	R(MOV(*(raddr(cs,m2c::ksub_12b0c)), al));	// 2279 mov     byte ptr cs:sub_12B0C, al
+//cs=0x192;eip=0x002b0c; 	R(MOV(al, *(raddr(cs,m2c::klocret_12b1b))));	// 2278 mov     al, byte ptr cs:locret_12B1B
+//cs=0x192;eip=0x002b10; 	R(MOV(*(raddr(cs,m2c::ksub_12b0c)), al));	// 2279 mov     byte ptr cs:sub_12B0C, al
+doret = true;
 cs=0x192;eip=0x002b14; 	R(RETN);	// 2280 retn
 sub_12b25:	// 2287 
-cs=0x192;eip=0x002b15; 	R(MOV(dx, *(dw*)(raddr(cs,m2c::kadlend))));	// 2289 mov     dx, word ptr cs:AdlEnd
+cs=0x192;eip=0x002b15; 	R(MOV(dx, *(dw*)(raddr(cs,dummy790_))));	// 2289 mov     dx, word ptr cs:AdlEnd
 cs=0x192;eip=0x002b1a; 	R(MOV(al, 0x0FF));	// 2290 mov     al, 0FFh
 cs=0x192;eip=0x002b1c; 	R(OUT(dx, al));	// 2291 out     dx, al
 cs=0x192;eip=0x002b1d; 	R(MOV(cl, 1));	// 2292 mov     cl, 1
@@ -1239,7 +1250,7 @@ cs=0x192;eip=0x002b2f; __disp=m2c::ksub_12b43;
 	R(CALL(_group1));	// 2303 call    sub_12B43
 cs=0x192;eip=0x002b32; 	R(RETN);	// 2304 retn
 sub_12b43:	// 2311 
-cs=0x192;eip=0x002b33; 	R(MOV(dx, *(dw*)(raddr(cs,m2c::kadlend))));	// 2313 mov     dx, word ptr cs:AdlEnd
+cs=0x192;eip=0x002b33; 	R(MOV(dx, *(dw*)(raddr(cs,dummy790_))));	// 2313 mov     dx, word ptr cs:AdlEnd
 cs=0x192;eip=0x002b38; 	R(MOV(cl, 2));	// 2314 mov     cl, 2
 cs=0x192;eip=0x002b3a; 	R(PUSH(ax));	// 2315 push    ax
 cs=0x192;eip=0x002b3b; __disp=m2c::ksub_12b0c;
@@ -1252,7 +1263,7 @@ cs=0x192;eip=0x002b41; 	R(RETN);	// 2320 retn
     return;
     __dispatch_call:
     switch (__disp) {
-        case m2c::kadlend: 	goto adlend;
+//        case m2c::kadlend: 	goto adlend;
         case m2c::kloc_10173: 	goto loc_10173;
         case m2c::kloc_10197: 	goto loc_10197;
         case m2c::kloc_1019a: 	goto loc_1019a;
@@ -1394,7 +1405,7 @@ bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state){
         case m2c::ksub_102ea: 	_group1(__disp, _state); break;
         case m2c::klocret_1299f: 	_group1(__disp, _state); break;
         case m2c::kloc_1047d: 	_group1(__disp, _state); break;
-        case m2c::kadlend: 	_group1(__disp, _state); break;
+//        case m2c::kadlend: 	_group1(__disp, _state); break;
         case m2c::kloc_10197: 	_group1(__disp, _state); break;
         case m2c::ksub_106b3: 	_group1(__disp, _state); break;
         case m2c::kloc_1020f: 	_group1(__disp, _state); break;
@@ -2288,7 +2299,8 @@ void   Initializer()
     {db tmp999[255]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy789)}
     word_1288e=0;
 //    {db tmp999[614]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy790)}
-    {db tmp999[4]={0x31,3,1,0};MYCOPY(dummy790_)}
+    dummy790_=0x331;
+    {db tmp999[2]={1,0};MYCOPY(dummy790__)}
     {db tmp999[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(byte_12afa)}
 //    {db tmp999[70]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy791)}
     {char tmp999[47]={'T','h','i','s',' ','i','n','t','r','o',' ','r','e','q','u','i','r','e','s',' ','1','9','6','K','b',' ','f','r','e','e',' ','a','n','d',' ','a',' ','V','G','A',' ','c','a','r','d','.','\n'};MYCOPY(mpuend)}
