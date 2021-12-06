@@ -483,7 +483,7 @@ dw _source;
 //union eflags;
 #define OR(a, b) m2c::OR_(a, b, flags)
 template <class D, class S>
-void OR_(D& dest, const S& src, eflags& flags)
+inline void OR_(D& dest, const S& src, eflags& flags)
 {
    D d = m2c::getdata<D>(dest);
    m2c::setdata(&dest, d | static_cast<D>(m2c::getdata<S>(src)));
@@ -504,7 +504,7 @@ void OR_(D& dest, const S& src, eflags& flags)
 */
 #define AND(a, b) m2c::AND_(a, b, flags)
 template <class D, class S>
-void AND_(D& dest, const S& src, eflags& flags)
+inline void AND_(D& dest, const S& src, eflags& flags)
 {
    D d = m2c::getdata<D>(dest);
    m2c::setdata(&dest, d & static_cast<D>(m2c::getdata<S>(src)));
@@ -541,7 +541,7 @@ void AND_(D& dest, const S& src, eflags& flags)
 //union eflags;
 #define RCL(a, b) m2c::RCL_(a, b, flags)
 template <class D, class C>
-void RCL_(D& Destination, C Count, eflags& flags)
+inline void RCL_(D& Destination, C Count, eflags& flags)
 { 
 		int TemporaryCount = Count % (bitsizeof(Destination) + 1);
 			while(TemporaryCount) {
@@ -554,7 +554,7 @@ void RCL_(D& Destination, C Count, eflags& flags)
 
 #define RCR(a, b) m2c::RCR_(a, b, flags)
 template <class D, class C>
-void RCR_(D& Destination, C Count, eflags& flags)
+inline void RCR_(D& Destination, C Count, eflags& flags)
 { 
 		int TemporaryCount = Count % (bitsizeof(Destination) + 1);
 			while(TemporaryCount != 0) {
@@ -569,7 +569,7 @@ template <class D>
 void SHLD_(D& Destination, D Source, int Count, eflags& flags);
 
 template <class D>
-void SHRD_(D& Destination, D Source, int Count, eflags& flags)
+inline void SHRD_(D& Destination, D Source, int Count, eflags& flags)
 { 
  if(Count != 0) {
 int TCount = Count&(2*bitsizeof(D)-1);
@@ -586,7 +586,7 @@ else
 }
 
 template <class D>
-void SHLD_(D& Destination, D Source, int Count, eflags& flags)
+inline void SHLD_(D& Destination, D Source, int Count, eflags& flags)
 { 
  if(Count != 0) {
 int TCount = Count&(2*bitsizeof(D)-1);
@@ -752,11 +752,24 @@ else
 
 #define AAD AAD1(10)
 
+/*
 #define ADD(a,b) {dq averytemporary=(dq)a+(dq)b; \
 		AFFECT_CF((averytemporary)>m2c::MASK[sizeof(a)]); \
 		a=averytemporary; \
 		AFFECT_ZFifz(a); \
 		AFFECT_SF(a,a);}
+*/
+#define ADD(a, b) m2c::ADD_(a, b, flags)
+template <class D, class S>
+inline void ADD_(D& dest, const S& src, eflags& flags)
+{
+ dq result=(dq)dest+(dq)src; 
+		AFFECT_CF((result)>m2c::MASK[sizeof(dest)]); 
+   dest = result;
+		AFFECT_ZFifz(dest); 
+		AFFECT_SF(dest,dest); 
+}
+
 
 #define XADD(a,b) {dq averytemporary=(dq)a+(dq)b; \
 		AFFECT_CF((averytemporary)>m2c::MASK[sizeof(a)]); \
@@ -764,12 +777,23 @@ else
 		a=averytemporary; \
 		AFFECT_ZFifz(a); \
 		AFFECT_SF(a,a);}
-
+/*
 #define SUB(a,b) {dd averytemporary=(a-b)& m2c::MASK[sizeof(a)]; \
 		AFFECT_CF((averytemporary)>(a)); \
 		a=averytemporary; \
 		AFFECT_ZFifz(a); \
 		AFFECT_SF(a,a);}
+*/
+#define SUB(a, b) m2c::SUB_(a, b, flags)
+template <class D, class S>
+inline void SUB_(D& dest, const S& src, eflags& flags)
+{
+ dd result=(dest-src) & m2c::MASK[sizeof(dest)]; 
+		AFFECT_CF(result>dest); 
+   dest = result;
+		AFFECT_ZFifz(dest); 
+		AFFECT_SF(dest,dest); 
+}
 
 #define ADC(a,b) {dq averytemporary=(dq)a+(dq)b+(dq)GET_CF(); \
 		AFFECT_CF((averytemporary)>m2c::MASK[sizeof(a)]); \
@@ -903,7 +927,7 @@ else
 #endif
 
 template <class D, class S>
-void MOV_(D* dest, const S& src)
+inline void MOV_(D* dest, const S& src)
 { m2c::setdata(dest, static_cast<D>(m2c::getdata<S>(src))); }
 //{ *dest = static_cast<D>(src); }
 
@@ -1051,11 +1075,13 @@ void MOV_(D* dest, const S& src)
 	{ m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8); \
 	  m2c::log_debug("after call %x\n",stackPointer); \
 	  if (_state){++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}\
+	  if (label != __dispatch_call) __disp=0; \
 	  label(__disp, _state); \
 	}
 #else
  #define CALL(label) \
 	{ m2c::MWORDSIZE averytemporary10='xy'; PUSH(averytemporary10); \
+	  if (label != __dispatch_call) __disp=0; \
 	  label(__disp, _state); \
 	}
 #endif
@@ -1149,6 +1175,7 @@ bool is_little_endian();
 
 #define ORG(x) 
 #define XLATB XLAT
+#define LOCK // TODO check
 
 typedef dd _offsets;
 /*

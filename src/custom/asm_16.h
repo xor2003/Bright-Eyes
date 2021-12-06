@@ -87,8 +87,8 @@
  #endif
  #define STOSD STOS(4,0)
 
- #define INSB {db averytemporary3 = asm2C_IN(dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?1:-1;}
- #define INSW {dw averytemporary3 = asm2C_INW(dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?2:-2;}
+ #define INSB {db averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?1:-1;}
+ #define INSW {dw averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?2:-2;}
 
 #define LOOP(label) DEC(cx); JNZ(label)
 #define LOOPE(label) --cx; if (cx!=0 && GET_ZF()) GOTOLABEL(label) //TODO
