@@ -11,8 +11,8 @@
  #define STOS(a,b) {memcpy (realAddress(edi,es), ((db *)&eax)+b, a); edi+=(GET_DF()==0)?a:-a;}
 
  #define REP ecx++;while (--ecx != 0)
- #define REPE AFFECT_ZFifz()(0);ecx++;while (--ecx != 0 && GET_ZF())
- #define REPNE AFFECT_ZFifz()(1);ecx++;while (--ecx != 0 && !GET_ZF())
+ #define REPE AFFECT_ZFifz(0);ecx++;while (--ecx != 0 && GET_ZF())
+ #define REPNE AFFECT_ZFifz(1);ecx++;while (--ecx != 0 && !GET_ZF())
  #define XLAT {al = *raddr(ds,ebx+al);}
  #define CMPSB \
 	{  \
