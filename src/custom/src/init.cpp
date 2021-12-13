@@ -5,7 +5,7 @@
 
 #include "init.h"
 
-#include "zone.h"
+#include "int8.h"
 
 // Is the game running?
 static int init = 0;
@@ -56,7 +56,7 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 
 	init_get_fname(fname, name);
 
-	if (strcmp(fname, "zone.exe")) return false;
+	if (strcmp(fname, "int8.com")) return false;
 
 	/* Check CS:IP in the EXE-Header are 0:0
 	 * and the first executed instruction is mov dx,i16 */
@@ -125,14 +125,17 @@ void masm2c_exit(unsigned char exit)
 
 int init_callf(unsigned selector, unsigned offs)
 {
-	if (selector == ss)
-		return 0;
+//	if (selector == ss)
+//		return 0;
 	if (selector >= 0xa000)
 		return 0;
 
 	{
-//		return init_farcall_v302de(selector - reloc_game, offs);
-                return __dispatch_call((selector<<16) + offs, 0);
+   m2c::log_debug("Entering init_callf\n");
+
+                int result = __dispatch_call((selector<<16) + offs, 0);
+   m2c::log_debug("Exitting init_callf %d\n", result);
+		return result;
 	}
 
 	return 0;

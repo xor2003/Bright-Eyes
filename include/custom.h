@@ -16,6 +16,7 @@ class custom_prog {
 	private:
 };
 
+extern bool defered_custom_call;
 #if DOSBOX_CUSTOM
 // old values of CS:IP (directly before the call), usable for diagnosis
 extern Bit16u custom_oldCS, custom_oldIP;

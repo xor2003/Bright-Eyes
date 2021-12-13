@@ -14,6 +14,7 @@
 #include <unistd.h>
 
 static Bit8u custom_runs;
+bool defered_custom_call = false;
 
 static Bit8u init_runs;
 Bit16u custom_oldCS, custom_oldIP;

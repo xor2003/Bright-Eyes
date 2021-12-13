@@ -576,6 +576,8 @@ void CPU_Interrupt(Bitu num,Bitu type,Bitu oldeip) {
 		Segs.val[cs]=mem_readw(base+(num << 2)+2);
 		Segs.phys[cs]=Segs.val[cs]<<4;
 		cpu.code.big=false;
+
+		defered_custom_call=true;
 		return;
 	} else {
 		/* Protected Mode Interrupt */

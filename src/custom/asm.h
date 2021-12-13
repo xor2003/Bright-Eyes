@@ -1200,7 +1200,15 @@ inline void MOV_(D* dest, const S& src)
 //#endif // end separate procs
 
 #define RETN RET
-#define IRET //{RETF;POPF}
+
+/*
+#define IRET {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11); eip=averytemporary11;\
+	POP(cs); \
+        POPF; \
+	return;}
+*/
+#define IRET {CPU_IRET(false,0);return;}
+
 //#define RETF {dw averytemporary=0; POP(averytemporary); RET;}
 #define BSWAP(op1)														\
 	op1 = (op1>>24)|((op1>>8)&0xFF00)|((op1<<8)&0xFF0000)|((op1<<24)&0xFF000000);
@@ -1215,10 +1223,9 @@ inline void MOV_(D* dest, const S& src)
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
 //	a 
-
 // dosbox logcpu format
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF() );} \
+    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} \
 	a 
 
 #else

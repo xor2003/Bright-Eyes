@@ -131,6 +131,10 @@ static Bitu Normal_Loop(void) {
 	Bits ret;
 	while (1) {
 		if (PIC_RunQueue()) {
+			if (defered_custom_call) {
+			        custom_callf(Segs.val[cs], reg_eip);
+                                defered_custom_call = false;
+                        } 
 			ret = (*cpudecoder)();
 			if (GCC_UNLIKELY(ret<0)) return 1;
 			if (ret>0) {
