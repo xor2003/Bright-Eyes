@@ -98,165 +98,7 @@ namespace m2c {
 struct /*__attribute__((__packed__))*/ Memory;
 extern Memory& m;
 
-template <class S>
-constexpr bool isaddrbelongtom(const S * const a)
-{ return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
-
-template<class S>
-S getdata(const S& s);
-
-template<>
-inline db getdata<db>(const db& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
-template<>
-inline dw getdata<dw>(const dw& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
-template<>
-inline dd getdata<dd>(const dd& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
-template<>
-inline char getdata<char>(const char& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
-template<>
-inline short int getdata<short int>(const short int& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
-template<>
-inline int getdata<int>(const int& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
-template<>
-inline long getdata<long>(const long& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
-
-static void setdata(db* d, db s)
-{ if (m2c::isaddrbelongtom(d)) mem_writeb((db*)d-(db*)&m, s); else *d = s; }
-static void setdata(dw* d, dw s)
-{ if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
-static void setdata(dd* d, dd s)
-{ if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
-
-
-extern FILE * logDebug;
-
-// Asm functions
-#ifdef DOSBOX
-static int log_debug(const char *format, ...)
-{
-    int result;
-    va_list args;
-
-    va_start(args, format);
-    result = vfprintf(stderr, format, args);
-    //printf("\n");
-    va_end(args);
-
-    return result;
-}
-static int log_error(const char *format, ...)
-{
-    int result;
-    va_list args;
-
-    va_start(args, format);
-    result = vfprintf(stderr, format, args);
-    //printf("\n");
-    va_end(args);
-
-    return result;
-}
-static int log_info(const char *format, ...)
-{
-    int result;
-    va_list args;
-
-    va_start(args, format);
-    result = vfprintf(stderr, format, args);
-    //printf("\n");
-    va_end(args);
-
-    return result;
-}
-static const char* log_spaces(int n){return "";}
-
-#else
-void log_error(const char *fmt, ...);
-void log_debug(const char *fmt, ...);
-void log_info(const char *fmt, ...);
-void log_debug2(const char *fmt, ...);
-
-const char* log_spaces(int n);
-#endif
-
-#define VGARAM_SIZE (320*200)
-
-#ifdef __BORLANDC__
- #define STACK_SIZE 4096
- #define HEAP_SIZE 1024
-#else
- #define STACK_SIZE (1024*64-16)
- #define HEAP_SIZE 1024*1024 - 16 - STACK_SIZE
-#endif
-
-#define NB_SELECTORS 128
-
-#ifdef __cplusplus
-//extern "C" {
-#endif
-
-static const uint32_t MASK[]={0, 0xff, 0xffff, 0xffffff, 0xffffffff};
-
-template <class D>
-constexpr size_t bitsizeof(D)  // size of type in bits
-{ return 8*sizeof(D); }
-
-template <class D>
-inline size_t getbit(D dest,int bit)  // get specific bit
-{ return ((bit>=0)?(( (dest) >> bit)&1):0); }
-
-template <class D>
-inline size_t shiftmodule(D dest,size_t shift)  // get module of shift steps based on destiantion size in bits
-{ return shift&(bitsizeof(dest)-1); }
-
-template <class D>
-inline dd nthbitone(D dest,size_t bit)  // return n-th bit with 1
-{ return ( (dd)1 << shiftmodule(dest,bit)); }
-
-template <class D, class S>
-inline void bitset(D& dest, S src, size_t bit)  // set n-th bit to 1
-{dest=(bit>=0)?(( (dest) & (~nthbitone(dest,bit))) | ((src&1) << bit)):dest;}
-
-inline static db LSB(dd a) {return a&1;}  // get lower bit
-
-template <class D>
-inline db MSB(D a)  // get highest bit
-{return ( (a)>>( m2c::bitsizeof(a)-1) )&1;}
-
-#if defined(_WIN32) || defined(__INTEL_COMPILER)
- #define INLINE __inline
-#elif defined(__STDC_VERSION__) && __STDC_VERSION__>=199901L
- #define INLINE inline
-#elif defined(__GNUC__)
- #define INLINE __inline__
-#else
- #define INLINE
-#endif
-
-#if _BITS == 32
-  #include "asm_32.h"
-#else
-  #include "asm_16.h"
-#endif
-
-#define realAddress(offset, segment) raddr(segment,offset)
-
-
-#define seg_offset(segment) ((offset(m2c::m,(segment)))>>4)
-
-// DJGPP
-#define MASK_LINEAR(addr)     (((size_t)addr) & 0x000FFFFF)
-#define RM_TO_LINEAR(addr)    (((((size_t)addr) & 0xFFFF0000) >> 12) + (((size_t)addr) & 0xFFFF))
-#define RM_OFFSET(addr)       (((size_t)addr) & 0xF)
-#define RM_SEGMENT(addr)      ((((size_t)addr) >> 4) & 0xFFFF)
-
+typedef dd _offsets;
 // Regs
 struct _STATE{
        _STATE()
@@ -430,6 +272,167 @@ dw _source;
  
 #endif
 
+typedef void m2cf(_offsets, struct _STATE*); // common masm2c function
+template <class S>
+constexpr bool isaddrbelongtom(const S * const a)
+{ return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
+
+template<class S>
+S getdata(const S& s);
+
+template<>
+inline db getdata<db>(const db& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+template<>
+inline dw getdata<dw>(const dw& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+template<>
+inline dd getdata<dd>(const dd& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+template<>
+inline char getdata<char>(const char& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+template<>
+inline short int getdata<short int>(const short int& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+template<>
+inline int getdata<int>(const int& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+template<>
+inline long getdata<long>(const long& s)
+{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+
+static void setdata(db* d, db s)
+{ if (m2c::isaddrbelongtom(d)) mem_writeb((db*)d-(db*)&m, s); else *d = s; }
+static void setdata(dw* d, dw s)
+{ if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
+static void setdata(dd* d, dd s)
+{ if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
+
+
+extern FILE * logDebug;
+
+// Asm functions
+#ifdef DOSBOX
+static int log_debug(const char *format, ...)
+{
+    int result;
+    va_list args;
+
+    va_start(args, format);
+    result = vfprintf(stderr, format, args);
+    //printf("\n");
+    va_end(args);
+
+    return result;
+}
+static int log_error(const char *format, ...)
+{
+    int result;
+    va_list args;
+
+    va_start(args, format);
+    result = vfprintf(stderr, format, args);
+    //printf("\n");
+    va_end(args);
+
+    return result;
+}
+static int log_info(const char *format, ...)
+{
+    int result;
+    va_list args;
+
+    va_start(args, format);
+    result = vfprintf(stderr, format, args);
+    //printf("\n");
+    va_end(args);
+
+    return result;
+}
+static const char* log_spaces(int n){return "";}
+
+#else
+void log_error(const char *fmt, ...);
+void log_debug(const char *fmt, ...);
+void log_info(const char *fmt, ...);
+void log_debug2(const char *fmt, ...);
+
+const char* log_spaces(int n);
+#endif
+
+#define VGARAM_SIZE (320*200)
+
+#ifdef __BORLANDC__
+ #define STACK_SIZE 4096
+ #define HEAP_SIZE 1024
+#else
+ #define STACK_SIZE (1024*64-16)
+ #define HEAP_SIZE 1024*1024 - 16 - STACK_SIZE
+#endif
+
+#define NB_SELECTORS 128
+
+#ifdef __cplusplus
+//extern "C" {
+#endif
+
+static const uint32_t MASK[]={0, 0xff, 0xffff, 0xffffff, 0xffffffff};
+
+template <class D>
+constexpr size_t bitsizeof(D)  // size of type in bits
+{ return 8*sizeof(D); }
+
+template <class D>
+inline size_t getbit(D dest,int bit)  // get specific bit
+{ return ((bit>=0)?(( (dest) >> bit)&1):0); }
+
+template <class D>
+inline size_t shiftmodule(D dest,size_t shift)  // get module of shift steps based on destiantion size in bits
+{ return shift&(bitsizeof(dest)-1); }
+
+template <class D>
+inline dd nthbitone(D dest,size_t bit)  // return n-th bit with 1
+{ return ( (dd)1 << shiftmodule(dest,bit)); }
+
+template <class D, class S>
+inline void bitset(D& dest, S src, size_t bit)  // set n-th bit to 1
+{dest=(bit>=0)?(( (dest) & (~nthbitone(dest,bit))) | ((src&1) << bit)):dest;}
+
+inline static db LSB(dd a) {return a&1;}  // get lower bit
+
+template <class D>
+inline db MSB(D a)  // get highest bit
+{return ( (a)>>( m2c::bitsizeof(a)-1) )&1;}
+
+#if defined(_WIN32) || defined(__INTEL_COMPILER)
+ #define INLINE __inline
+#elif defined(__STDC_VERSION__) && __STDC_VERSION__>=199901L
+ #define INLINE inline
+#elif defined(__GNUC__)
+ #define INLINE __inline__
+#else
+ #define INLINE
+#endif
+
+#if _BITS == 32
+  #include "asm_32.h"
+#else
+  #include "asm_16.h"
+#endif
+#define raddr(s, o) m2c::raddr_(s, o)
+
+#define realAddress(offset, segment) m2c::raddr_(segment,offset)
+
+
+#define seg_offset(segment) ((offset(m2c::m,(segment)))>>4)
+
+// DJGPP
+#define MASK_LINEAR(addr)     (((size_t)addr) & 0x000FFFFF)
+#define RM_TO_LINEAR(addr)    (((((size_t)addr) & 0xFFFF0000) >> 12) + (((size_t)addr) & 0xFFFF))
+#define RM_OFFSET(addr)       (((size_t)addr) & 0xF)
+#define RM_SEGMENT(addr)      ((((size_t)addr) >> 4) & 0xFFFF)
+
 
 //pusha AX, CX, DX, BX, SP, BP, SI, DI
 //pushad EAX, ECX, EDX, EBX, ESP, EBP, ESI, EDI
@@ -454,16 +457,16 @@ dw _source;
 
 #ifdef DEBUG
  #define PUSH(a) {dd averytemporary=a;stackPointer-=sizeof(a); \
-		memcpy (raddr(ss,stackPointer), &averytemporary, sizeof (a)); \
+		memcpy (m2c::raddr_(ss,stackPointer), &averytemporary, sizeof (a)); \
 		m2c::log_debug("after push %x\n",stackPointer);}
 //		assert((raddr(ss,stackPointer) - ((db*)&stack))>8);}
 
- #define POP(a) { m2c::log_debug("before pop %x\n",stackPointer);memcpy (&a, raddr(ss,stackPointer), sizeof (a));stackPointer+=sizeof(a);}
+ #define POP(a) { m2c::log_debug("before pop %x\n",stackPointer);memcpy (&a, m2c::raddr_(ss,stackPointer), sizeof (a));stackPointer+=sizeof(a);}
 #else
  #define PUSH(a) {dd averytemporary=a;stackPointer-=sizeof(a); \
-		memcpy (raddr(ss,stackPointer), &averytemporary, sizeof (a));}
+		memcpy (m2c::raddr_(ss,stackPointer), &averytemporary, sizeof (a));}
 
- #define POP(a) {memcpy (&a, raddr(ss,stackPointer), sizeof (a));stackPointer+=sizeof(a);}
+ #define POP(a) {memcpy (&a, m2c::raddr_(ss,stackPointer), sizeof (a));stackPointer+=sizeof(a);}
 #endif
 
 #endif
@@ -479,7 +482,7 @@ dw _source;
 #define AFFECT_DF(a) m2cflags.bits.setDF(a)
 #define AFFECT_CF(a) m2cflags.bits.setCF(a)
 #define AFFECT_AF(a) m2cflags.bits.setAF(a)
-#define AFFECT_OF(a) m2cflags.bits.setOF(a)
+#define AFFECT_OF(a) //x0r m2cflags.bits.setOF(a)
 #define AFFECT_IF(a) m2cflags.bits.setIF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (m2c::bitsizeof(f)-1)) )
 #define AFFECT_SF(a) m2cflags.bits.setSF(a)
@@ -1070,8 +1073,8 @@ inline void MOV_(D* dest, const S& src)
 
 // MOVSx (DF FLAG not implemented)
 
-#define MOVSB MOVSS(1)
-#define MOVSW MOVSS(2)
+//#define MOVSB MOVSS(1)
+//#define MOVSW MOVSS(2)
 #define MOVSD MOVSS(4)
 
 
@@ -1127,7 +1130,7 @@ inline void MOV_(D* dest, const S& src)
 #define RETF {log_debug("before ret %d\n",stackPointer); db averytemporary5=0; POP(averytemporary5); if (averytemporary5!='x') {log_error("Stack corrupted.\n");exit(1);} \
  		POP(jmpbuffer); stackPointer-=2; log_debug("after retf %d\n",stackPointer);longjmp(jmpbuffer, 0);}
 */
-#define CALLF(label) {PUSH(cs);CALL(label);}
+#define CALLF(label, disp) {PUSH(cs);CALL(label, disp);}
 /*
 #define CALL(label) \
 	{ db averytemporary6='x';  \
@@ -1181,7 +1184,17 @@ inline void MOV_(D* dest, const S& src)
 
 #else // SINGLEPROCSTRATEGY end separate procs start
 */
+#define CALL(label, disp) {m2c::CALL_(label, _state, disp);}
+static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
+ X86_REGREF
+	  MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
 #if DEBUG
+	  m2c::log_debug("after call %x\n",stackPointer);
+	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
+#endif
+	  label(_i, _state);
+ }
+/*
  #define CALL(label) \
 	{ m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8); \
 	  m2c::log_debug("after call %x\n",stackPointer); \
@@ -1195,7 +1208,7 @@ inline void MOV_(D* dest, const S& src)
 	  if (label != __dispatch_call) __disp=0; \
 	  label(__disp, _state); \
 	}
-#endif
+*/
 
 //#endif // end separate procs
 
@@ -1293,7 +1306,6 @@ bool is_little_endian();
 #define XLATB XLAT
 #define LOCK // TODO check
 
-typedef dd _offsets;
 /*
 #ifndef __BORLANDC__
 enum  _offsets : int;
@@ -1358,7 +1370,6 @@ extern db vgaPalette[256*3];
 
 extern db(& stack)[STACK_SIZE];
 extern db(& heap)[HEAP_SIZE];
-typedef void m2cf(_offsets, struct _STATE*); // common masm2c function
 extern  m2cf* _ENTRY_POINT_;
 
 

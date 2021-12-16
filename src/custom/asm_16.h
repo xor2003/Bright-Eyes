@@ -4,21 +4,24 @@
  typedef dw MWORDSIZE;
 
 #if defined(_PROTECTED_MODE)
-  #define raddr(segment,offset) ((db *)&m2c::m+(db)(offset)+selectors[segment])
+//  #define raddr(segment,offset) ((db *)&m2c::m+(db)(offset)+selectors[segment])
+static inline db* raddr_(dw segment,dw offset) {return ((db *)&m+(db)(offset)+selectors[segment]);}
 #else
- #define raddr(segment,offset) (((db *)&m2c::m + ((segment)<<4) + ((offset)&0xffff) ))
+ //#define raddr(segment,offset) (((db *)&m2c::m + ((segment)<<4) + (offset) ))
+static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) + offset;}
 #endif
 
  #define offset(segment,name) ((db*)(&name)-(db*)(&segment))
-
+/*
  #define MOVSS(a) {void * dest;void * src;src=realAddress(si,ds); dest=realAddress(di,es); \
 		memmove(dest,src,a); di+=(GET_DF()==0)?a:-a; si+=(GET_DF()==0)?a:-a; }
  #define STOS(a,b) {memcpy (realAddress(di,es), ((db *)&eax)+b, a); di+=(GET_DF()==0)?a:-a;}
+*/
 
  #define REP cx++;while (--cx != 0)
  #define REPE AFFECT_ZFifz(0);cx++;while (--cx != 0 && GET_ZF())
  #define REPNE AFFECT_ZFifz(1);cx++;while (--cx != 0 && !GET_ZF())
- #define XLAT {al = *raddr(ds,bx+al);}
+ #define XLAT {al = *m2c::raddr_(ds,bx+al);}
  #define CMPSB \
 	{  \
 			db* src=realAddress(si,ds); db* dest=realAddress(di,es); \
@@ -82,8 +85,14 @@
     #define STOSW STOS(2,0)
    #endif
 */
-   #define STOSB {mem_writeb((db*)raddr(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;}
-   #define STOSW {mem_writew((db*)raddr(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;}
+ #define MOVSS(a) {void * dest;void * src;src=realAddress(si,ds); dest=realAddress(di,es); \
+		memmove(dest,src,a); di+=(GET_DF()==0)?a:-a; si+=(GET_DF()==0)?a:-a; }
+
+   #define MOVSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, *(db*)realAddress(si,ds));si+=(GET_DF()==0)?1:-1;di+=(GET_DF()==0)?1:-1;}
+   #define MOVSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, *(dw*)realAddress(si,ds));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?2:-2;}
+
+   #define STOSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;}
+   #define STOSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;}
  #endif
  #define STOSD STOS(4,0)
 

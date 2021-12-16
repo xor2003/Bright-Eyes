@@ -1,9 +1,9 @@
-AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -O0 -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable  -Wno-strict-aliasing -Wno-narrowing -fpermissive -DDEBUG=3
+AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -fpermissive -Os -ftime-report #-DDEBUG=3 # -v -Q
 
 SUBDIRS = 
 
 noinst_LIBRARIES = libsrc.a
-libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  int8.cpp  int8.h
+libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  zone.cpp  zone.h
 
 #EXTRA_DIST = schick.h
 
