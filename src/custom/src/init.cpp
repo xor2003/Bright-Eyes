@@ -115,12 +115,6 @@ void masm2c_exit(unsigned char exit)
 //		reloc_gen = 0;
 		m2c::log_info("masm2c_exit Exiting\n");
 
-/*		if (init_get_version((char*)p_datseg) == 302 && !init_is_en()) 
-                {
-			init_status_enable();
-			init_timer_enable();
-		}
-*/
 }
 
 int init_callf(unsigned selector, unsigned offs)

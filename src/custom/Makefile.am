@@ -3,4 +3,4 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -pedantic -DDOSBOX -O0 -mno-ms-bitfi
 SUBDIRS = src # schick schweif
 
 noinst_LIBRARIES = libcustom.a
-libcustom_a_SOURCES = custom.cpp custom_hooks.h asm.h asm_16.h asm_32.h
+libcustom_a_SOURCES = custom.cpp custom_hooks.h asm.h asm_16.h asm_32.h segfault.cpp

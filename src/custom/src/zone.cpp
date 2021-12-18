@@ -314,9 +314,9 @@ cs=0x1c2;eip=0x000291; 	R(RETN);	// 553 retn ;~ 01c2:0291
 cs=0x1c2;eip=0x000292; 	R(PUSH(cx));	// 561 push    cx ;~ 01c2:0292
 cs=0x1c2;eip=0x000293; 	R(MOV(bl, 0x0D));	// 562 mov     bl, 0Dh ;~ 01c2:0293
 cs=0x1c2;eip=0x000295; loc_1f05:	// 4384 
-cs=0x1c2;eip=0x000295; 		R(LOOP(loc_1f05));	// 566 loop    loc_1F05 ;~ 01c2:0295
+//cs=0x1c2;eip=0x000295; 		R(LOOP(loc_1f05));	// 566 loop    loc_1F05 ;~ 01c2:0295
 cs=0x1c2;eip=0x000297; 	R(DEC(bl));	// 567 dec     bl ;~ 01c2:0297
-cs=0x1c2;eip=0x000299; 		R(JNZ(loc_1f05));	// 568 jnz     short loc_1F05 ;~ 01c2:0299
+//cs=0x1c2;eip=0x000299; 		R(JNZ(loc_1f05));	// 568 jnz     short loc_1F05 ;~ 01c2:0299
 cs=0x1c2;eip=0x00029b; 	R(POP(cx));	// 569 pop     cx ;~ 01c2:029B
 cs=0x1c2;eip=0x00029c; 	R(RETN);	// 570 retn ;~ 01c2:029C
 
@@ -5266,7 +5266,7 @@ cs=0x1c2;eip=0x002ebc; 	R(ADD(di, 0x2000));	// 7105 add     di, 2000h ;~ 01c2:2E
 cs=0x1c2;eip=0x002ec0; 	R(INC(si));	// 7106 inc     si ;~ 01c2:2EC0
 cs=0x1c2;eip=0x002ec1; 	R(INC(si));	// 7107 inc     si ;~ 01c2:2EC1
 cs=0x1c2;eip=0x002ec2; loc_4b32:	// 4962 
-cs=0x1c2;eip=0x002ec2; 	R(IMUL1_2(word_6e10));	// 7110 imul    word_6E10 ;~ 01c2:2EC2
+cs=0x1c2;eip=0x002ec2; 	R(IMUL1_2(word_6e10));	// 7110 imul    word_6E10 ;~ 01c2:2EC2  //vertical x0r
 cs=0x1c2;eip=0x002ec6; 	R(ADD(di, ax));	// 7111 add     di, ax ;~ 01c2:2EC6
 cs=0x1c2;eip=0x002ec8; 	R(PUSH(bx));	// 7112 push    bx ;~ 01c2:2EC8
 cs=0x1c2;eip=0x002ec9; 	R(MOV(cx, 3));	// 7113 mov     cx, 3 ;~ 01c2:2EC9
@@ -12159,7 +12159,7 @@ cs=0x1c2;eip=0x00404a; 	R(IRET);	// 10035 iret ;~ 01c2:404A
 #include <algorithm>
 #include <iterator>
 #define MYCOPY(x) {int res = std::inner_product(std::begin(tmp999),std::end(tmp999),std::begin(x), 0, std::plus<int>(), std::not_equal_to<int>());\
-if (res) {printf("not equal "#x);void *p=memmem(((db*)&m2c::m)+0x1920,1024*1024,tmp999,sizeof(tmp999));if (p) {printf(" m=%p addr=%p size=%ld found at %lx ",&m2c::m,(db*)p,sizeof(tmp999),((db*)p)-((db*)&m2c::m));};};}
+if (res) {printf("not equal "#x);void *p=memmem(((db*)&m2c::m)+0x1920,1024*1024,tmp999,sizeof(tmp999));if (p) {printf(" m=%p addr=%p size=%d found at %x ",&m2c::m,(db*)p,sizeof(tmp999),((db*)p)-((db*)&m2c::m));};};}
 
 namespace m2c {
 //struct Initializer {

@@ -186,7 +186,7 @@ dw _source;
 
 #else
 
-class Bits{
+class fBits{
 unsigned int _CF : 1,
 unused1:1,
 _PF:1,
@@ -218,7 +218,7 @@ public:
 };
 
 union eflags{
- Bits bits;
+ fBits bits;
  dd value;
 };
 // #define m2cflags cpu_regs.flags
@@ -279,7 +279,7 @@ constexpr bool isaddrbelongtom(const S * const a)
 
 template<class S>
 S getdata(const S& s);
-
+/*
 template<>
 inline db getdata<db>(const db& s)
 { return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
@@ -308,6 +308,35 @@ static void setdata(dw* d, dw s)
 { if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
 static void setdata(dd* d, dd s)
 { if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
+*/
+template<>
+inline db getdata<db>(const db& s)
+{ return s; }
+template<>
+inline dw getdata<dw>(const dw& s)
+{ return s; }
+template<>
+inline dd getdata<dd>(const dd& s)
+{ return s; }
+template<>
+inline char getdata<char>(const char& s)
+{ return s; }
+template<>
+inline short int getdata<short int>(const short int& s)
+{ return s; }
+template<>
+inline int getdata<int>(const int& s)
+{ return s; }
+template<>
+inline long getdata<long>(const long& s)
+{ return s; }
+
+static void setdata(db* d, db s)
+{ *d = s; }
+static void setdata(dw* d, dw s)
+{ *d = s; }
+static void setdata(dd* d, dd s)
+{ *d = s; }
 
 
 extern FILE * logDebug;
@@ -482,7 +511,7 @@ inline db MSB(D a)  // get highest bit
 #define AFFECT_DF(a) m2cflags.bits.setDF(a)
 #define AFFECT_CF(a) m2cflags.bits.setCF(a)
 #define AFFECT_AF(a) m2cflags.bits.setAF(a)
-#define AFFECT_OF(a) //x0r m2cflags.bits.setOF(a)
+#define AFFECT_OF(a) (a) // for speed m2cflags.bits.setOF(a)
 #define AFFECT_IF(a) m2cflags.bits.setIF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (m2c::bitsizeof(f)-1)) )
 #define AFFECT_SF(a) m2cflags.bits.setSF(a)
@@ -608,30 +637,48 @@ inline void ROL_(D& a, S b, m2c::eflags& m2cflags)
 
 #define RCL(a, b) m2c::RCL_(a, b, m2cflags)
 template <class D, class C>
-inline void RCL_(D& Destination, C Count, m2c::eflags& m2cflags)
+inline void RCL_(D& op1, C op2, m2c::eflags& m2cflags)
 { 
-		int TemporaryCount = Count % (m2c::bitsizeof(Destination) + 1);
-			while(TemporaryCount) {
-				bool TemporaryCF = m2c::MSB(Destination);
-				Destination = (Destination << 1) + GET_CF();
-				AFFECT_CF(TemporaryCF);
-				--TemporaryCount;
-			}
-	AFFECT_OF(GET_CF() ^ m2c::MSB(Destination));
+	db lf_var2b=op2%(m2c::bitsizeof(op1) + 1);
+	if (!lf_var2b) return;
+	D cf=GET_CF()&1;
+	D lf_var1w=op1;									
+        D lf_resw;
+		if (lf_var2b == 1) {
+			lf_resw = (lf_var1w << 1) | cf;
+		} else {
+
+			lf_resw=(lf_var1w << lf_var2b) |					
+			(cf << (lf_var2b-1)) |						
+			(lf_var1w >> ((m2c::bitsizeof(op1) + 1)-lf_var2b));				
+		}
+	op1 = lf_resw;
+	AFFECT_CF((lf_var1w >> (m2c::bitsizeof(op1)-lf_var2b)) & 1);	
+	AFFECT_OF(GET_CF() ^ m2c::MSB(op1));
 }
 
 #define RCR(a, b) m2c::RCR_(a, b, m2cflags)
 template <class D, class C>
-inline void RCR_(D& Destination, C Count, m2c::eflags& m2cflags)
+inline void RCR_(D& op1, C op2, m2c::eflags& m2cflags)
 { 
-	AFFECT_OF(GET_CF() ^ m2c::MSB(Destination));
-		int TemporaryCount = Count % (m2c::bitsizeof(Destination) + 1);
-			while(TemporaryCount != 0) {
-				bool TemporaryCF = m2c::LSB(Destination);
-				Destination = (Destination >> 1) + (GET_CF() << (m2c::bitsizeof(Destination)-1));
-				AFFECT_CF(TemporaryCF);
-				--TemporaryCount;
-			}
+	db lf_var2b=op2%(m2c::bitsizeof(op1) + 1);
+	if (!lf_var2b) return;
+	D cf=GET_CF()&1;
+	D lf_var1w=op1;									
+        D lf_resw;
+	if (lf_var2b==1)
+		{ 
+			lf_resw = (lf_var1w >> 1) | (cf << (m2c::bitsizeof(op1) - 1));
+		}
+		else                
+		{ 
+			lf_resw = (lf_var1w >> lf_var2b) | (cf << (m2c::bitsizeof(op1) - lf_var2b)) |
+			(lf_var1w << ((m2c::bitsizeof(op1) + 1) - lf_var2b));
+		}
+	op1 = lf_resw;
+	AFFECT_CF((lf_var1w >> (lf_var2b-1)) & 1);	
+	D highestbitset = (1<<( m2c::bitsizeof(op1)-1));
+	AFFECT_OF((lf_resw ^ (lf_resw << 1))&highestbitset);
 }
 
 template <class D>
@@ -707,7 +754,7 @@ static void SHLD_(dd& op1, dd op2, size_t op3, m2c::eflags& m2cflags)
 
 #define SHRD(a, b, c) {m2c::SHRD_(a, b, c, m2cflags);if (c) {AFFECT_ZFifz(a);AFFECT_SF_(a,a);}}
 #define SHLD(a, b, c) {m2c::SHLD_(a, b, c, m2cflags);if (c) {AFFECT_ZFifz(a);AFFECT_SF_(a,a);}}
-
+/*
 #define SAR(a,b) {if (b) {bool sign = m2c::MSB(a);\
 	 int shift = (m2c::bitsizeof(a)-b);\
          shift = shift>0?shift:0;\
@@ -717,6 +764,30 @@ static void SHLD_(dd& op1, dd op2, size_t op3, m2c::eflags& m2cflags)
 	 a=sigg | (a >> b);\
 		AFFECT_ZFifz(a);\
 		AFFECT_SF_(a,a);}} // TODO optimize
+*/
+#define SAR(a, b) m2c::SAR_(a, b, m2cflags)
+template <class D, class S>
+inline void SAR_(D& op1, const S& op2, m2c::eflags& m2cflags)
+{
+if (op2){
+	D lf_var1w=op1; db lf_var2b=op2;
+        AFFECT_CF((op1>>(op2-1))&1);
+	if (lf_var2b>m2c::bitsizeof(op1)) lf_var2b=m2c::bitsizeof(op1);
+		D highestbitset = (1<<( m2c::bitsizeof(op1)-1));
+        D lf_resw;
+	if (lf_var1w & highestbitset) {
+		lf_resw=(lf_var1w >> lf_var2b)|
+		(((D)(-1)) << (m2c::bitsizeof(op1) - lf_var2b));
+	} else {
+		lf_resw=lf_var1w >> lf_var2b;
+    }
+	op1 = lf_resw;								
+        AFFECT_ZFifz(lf_resw);
+        AFFECT_SF_(lf_resw,lf_resw);
+	AFFECT_OF(false);
+        }
+}
+
 
 #define SAL(a,b) SHL(a,b)
 
@@ -1228,7 +1299,19 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 
 #define RDTSC {dq averytemporary = realElapsedTime(); eax=averytemporary&0xffffffff; edx=(averytemporary>32)&0xffffffff;}
 
-#define FREQ_INT 15
+static void single_step()
+{
+				Bitu old_cycles=CPU_Cycles;
+				CPU_Cycles=1;
+				Bits nc_retcode=CPU_Core_Normal_Run();
+				if (!nc_retcode) {
+					CPU_Cycles=old_cycles-1;
+//					continue;
+				}
+				CPU_CycleLeft+=old_cycles;
+//				return nc_retcode; 
+}
+#define FREQ_INT 127
 #if DEBUG==2
     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
 #elif DEBUG>=3
@@ -1242,7 +1325,25 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 	a 
 
 #else
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} a
+
+    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} {a;}
+
+/*
+Segments oldSegs(Segs);
+CPU_Regs oldcpu_regs(cpu_regs);
+single_step();
+
+m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+                __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,    ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
+*/
+
+//     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} a
+/*
+    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {\
+ Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
+CALLBACK_Idle();cpu_regs=oldcpu_regs;Segs=oldSegs;}} a
+*/
+//    #define R(a) a
 #endif
 extern int idle_counter;
 bool is_little_endian();

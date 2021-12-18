@@ -48,6 +48,8 @@ void custom_exit_prog(Bit8u exitcode)
 	custom_runs--;
 	if (init_runs) {
 		masm2c_exit(exitcode);
+           	exit(0);
+
 		init_runs--;
 	}
 }
