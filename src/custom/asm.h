@@ -922,8 +922,8 @@ if (op2){
 template <class D, class S>
 inline void ADD_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
- dq result=(dq)dest+(dq)src; 
-		AFFECT_CF((result)>m2c::MASK[sizeof(dest)]); 
+ D result=dest+(D)src; 
+		AFFECT_CF(result<dest); 
             D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src ^ highestbitset ) & (result ^ src)) & highestbitset);
    dest = result;
@@ -1010,13 +1010,13 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define IMUL3_2(a,b,c) {int32_t averytemporary = ((int16_t)(b)) * ((int16_t)(c)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>= -32768)  && (averytemporary<=32767)?false:true));}
 #define IMUL3_4(a,b,c) {int64_t averytemporary = ((int64_t)(b)) * ((int32_t)(c)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>=-((int64_t)(2147483647)+1)) && (averytemporary<=(int64_t)2147483647)?false:true));}
 
-#define MUL1_1(a) {ax=(dw)al*(a); AFFECT_OF(AFFECT_CF(ah));}
-#define MUL1_2(a) {dd averytemporary=(dd)ax*(a);ax=averytemporary;dx=averytemporary>>16; AFFECT_OF(AFFECT_CF(dx));}
-#define MUL1_4(a) {dq averytemporary=(dq)eax*(a);eax=averytemporary;edx=averytemporary>>32; AFFECT_OF(AFFECT_CF(edx));}
-#define MUL2_2(a,b) {dd averytemporary=(dd)(a)*(b);a=averytemporary; AFFECT_OF(AFFECT_CF(averytemporary>>16));}
-#define MUL2_4(a,b) {dq averytemporary=(dq)(a)*(b);a=averytemporary; AFFECT_OF(AFFECT_CF(averytemporary>>32));}
-#define MUL3_2(a,b,c) {dd averytemporary=(dd)(b)*(c);a=averytemporary; AFFECT_OF(AFFECT_CF(averytemporary>>16));}
-#define MUL3_4(a,b,c) {dq averytemporary=(dq)(b)*(c);a=averytemporary; AFFECT_OF(AFFECT_CF(averytemporary>>32));}
+#define MUL1_1(a) {ax=(dw)al*(a); AFFECT_OF(AFFECT_CF(ah));AFFECT_ZFifz(ax);}
+#define MUL1_2(a) {dd averytemporary=(dd)ax*(a);ax=averytemporary;dx=averytemporary>>16; AFFECT_ZFifz(averytemporary);AFFECT_OF(AFFECT_CF(dx));}
+#define MUL1_4(a) {dq averytemporary=(dq)eax*(a);eax=averytemporary;edx=averytemporary>>32; AFFECT_ZFifz(averytemporary); AFFECT_OF(AFFECT_CF(edx));}
+#define MUL2_2(a,b) {dd averytemporary=(dd)(a)*(b);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>16));}
+#define MUL2_4(a,b) {dq averytemporary=(dq)(a)*(b);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>32));}
+#define MUL3_2(a,b,c) {dd averytemporary=(dd)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>16));}
+#define MUL3_4(a,b,c) {dq averytemporary=(dq)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>32));}
 
 #define IDIV1(a) {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}
 #define IDIV2(a) {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}
@@ -1311,6 +1311,56 @@ static void single_step()
 				CPU_CycleLeft+=old_cycles;
 //				return nc_retcode; 
 }
+static void hexDump (void *addr, int len) {
+	int i;
+	unsigned char buff[17];
+	unsigned char *pc = (unsigned char*)addr;
+	(void) buff;
+	log_debug ("hexDump %p:\n", addr);
+
+	if (len == 0) {
+		log_debug("  ZERO LENGTH\n");
+		return;
+	}
+	if (len < 0) {
+		log_debug("  NEGATIVE LENGTH: %i\n",len);
+		return;
+	}
+
+	// Process every byte in the data.
+	for (i = 0; i < len; i++) {
+		// Multiple of 16 means new line (with line offset).
+
+		if ((i % 16) == 0) {
+			// Just don't print ASCII for the zeroth line.
+			if (i != 0)
+				log_debug ("  %s\n", buff);
+
+			// Output the offset.
+			log_debug ("  %04x ", i);
+		}
+
+		// Now the hex code for the specific character.
+		log_debug (" %02x", pc[i]);
+
+		// And store a printable ASCII character for later.
+		if ((pc[i] < 0x20) || (pc[i] > 0x7e))
+			buff[i % 16] = '.';
+		else
+			buff[i % 16] = pc[i];
+		buff[(i % 16) + 1] = '\0';
+	}
+
+	// Pad out last line if not exactly 16 characters.
+	while ((i % 16) != 0) {
+		log_debug ("   ");
+		i++;
+	}
+
+	// And print the final ASCII bit.
+	log_debug ("  %s\n", buff);
+}
+
 #define FREQ_INT 127
 #if DEBUG==2
     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
@@ -1320,22 +1370,41 @@ static void single_step()
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
 //	a 
 // dosbox logcpu format
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+    #define R(a) {for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};{if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
                          __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} \
-	a 
+	{a;}}
 
+    #define T(a) {for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};\
+       {m2c::log_debug("b %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
+                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
+	Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
+	m2c::single_step(); Bitu realflags= cpu_regs.flags;\
+        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
+	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); \
+        Segs=oldSegs; cpu_regs=oldcpu_regs; \
+	{a;} \
+        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
+        cpu_regs.ip=realcpu_regs.ip; \
+        if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) { \
+       {m2c::log_debug("e %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
+                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
+        m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+        Segs=realSegs; cpu_regs=realcpu_regs; \
+       {m2c::log_debug("r %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
+                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
+        m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+        } cpu_regs.flags = realflags;}
+
+/*
+
+Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs);
+single_step();
+
+*/
 #else
 
     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} {a;}
 
-/*
-Segments oldSegs(Segs);
-CPU_Regs oldcpu_regs(cpu_regs);
-single_step();
-
-m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
-                __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,    ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
-*/
 
 //     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} a
 /*
