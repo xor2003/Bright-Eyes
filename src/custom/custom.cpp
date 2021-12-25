@@ -71,12 +71,11 @@ static void custom_exit(Section *sec)
 
 void custom_init(Section *sec)
 {
-//	custom_prog *p_current = new custom_prog;
 	sec->AddDestroyFunction(&custom_exit);
 	fprintf(stderr, "Masm2c/DOSBOX lib, build date %s\n", __DATE__);
 
-//struct _STATE* _state;
 X86_REGREF
+m2c::_STATE* _state=0;
 
         R(MOV(ax,0x3000));
         R(_INT(0x21));

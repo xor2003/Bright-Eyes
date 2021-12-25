@@ -1407,58 +1407,67 @@ static void fix_segs()
   for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};
 }
 
-#define FREQ_INT 127
+#define FREQ_INT 63
+static void run_hw_interrupts()
+{
+X86_REGREF
+static int idle_counter=0;
+ if (GET_IF() && ((idle_counter++)&FREQ_INT)==0) {
+  fix_segs();
+  Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); // save regs probably esp corruption by interrupts FIXME
+  CALLBACK_Idle();
+  Segs=oldSegs; cpu_regs=oldcpu_regs; 
+ }
+}
+
+static void log_regs(int line, const char * instr, struct _STATE* _state)
+{
+X86_REGREF
+  log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
+                         line,cs,eip,instr,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
+}
+
 #if DEBUG==2
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {m2c::fix_segs();CALLBACK_Idle();}m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
+    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
 #elif DEBUG>=3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
 //	a 
 // dosbox logcpu format
-    #define R(a) {{if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {m2c::fix_segs();CALLBACK_Idle();};m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} \
-	{a;}}
+//    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+//                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define T(a) {m2c::fix_segs();};if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};\
-       {m2c::log_debug("b %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
+    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
+
+// Run emulated instruction and compare with m2c instruction results
+
+    #define T(a) {m2c::fix_segs();m2c::run_hw_interrupts(); \
+           {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
 	Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
-	m2c::single_step(); Bitu realflags= cpu_regs.flags;\
+	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
         cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
 	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); \
         Segs=oldSegs; cpu_regs=oldcpu_regs; \
 	{a;} \
         cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
         cpu_regs.ip=realcpu_regs.ip; \
-        if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) { \
-       {m2c::log_debug("e %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
-        m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+        if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) \
+        { \
+           {m2c::log_debug("e ");m2c::log_regs(__LINE__,#a,_state);} \
+           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
         Segs=realSegs; cpu_regs=realcpu_regs; \
-       {m2c::log_debug("r %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
-                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
-        m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
-        } cpu_regs.flags = realflags;}
+           {m2c::log_debug("r ");m2c::log_regs(__LINE__,#a,_state);} \
+           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+          } \
+	cpu_regs.flags = realflags; \
+        }
 
-/*
-
-Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs);
-single_step();
-
-*/
 #else
 
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {m2c::fix_segs();CALLBACK_Idle();}} {a;}
+    #define R(a) {m2c::run_hw_interrupts();} {a;}
     #define T(a) R(a)
 
-//     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} a
-/*
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {\
- Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
-CALLBACK_Idle();cpu_regs=oldcpu_regs;Segs=oldSegs;}} a
-*/
-//    #define R(a) a
 #endif
 extern int idle_counter;
 bool is_little_endian();
