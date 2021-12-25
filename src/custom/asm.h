@@ -279,7 +279,7 @@ constexpr bool isaddrbelongtom(const S * const a)
 
 template<class S>
 S getdata(const S& s);
-/*
+
 template<>
 inline db getdata<db>(const db& s)
 { return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
@@ -308,7 +308,7 @@ static void setdata(dw* d, dw s)
 { if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
 static void setdata(dd* d, dd s)
 { if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
-*/
+/*
 template<>
 inline db getdata<db>(const db& s)
 { return s; }
@@ -337,7 +337,7 @@ static void setdata(dw* d, dw s)
 { *d = s; }
 static void setdata(dd* d, dd s)
 { *d = s; }
-
+*/
 
 extern FILE * logDebug;
 
@@ -526,7 +526,7 @@ inline db MSB(D a)  // get highest bit
 template <class D, class S>
 inline void CMP_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
- dd result=(dest-src) & m2c::MASK[sizeof(dest)]; 
+ D result=dest-src; 
 		AFFECT_CF(result>dest); 
             D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src) & (dest ^ result)) & highestbitset);
@@ -1146,7 +1146,7 @@ inline void MOV_(D* dest, const S& src)
 
 //#define MOVSB MOVSS(1)
 //#define MOVSW MOVSS(2)
-#define MOVSD MOVSS(4)
+//#define MOVSD MOVSS(4)
 
 
 
@@ -1311,6 +1311,8 @@ static void single_step()
 				CPU_CycleLeft+=old_cycles;
 //				return nc_retcode; 
 }
+
+// thanks to paxdiablo http://stackoverflow.com/users/14860/paxdiablo for the hexDump function
 static void hexDump (void *addr, int len) {
 	int i;
 	unsigned char buff[17];
@@ -1361,20 +1363,64 @@ static void hexDump (void *addr, int len) {
 	log_debug ("  %s\n", buff);
 }
 
+static void stackDump(struct _STATE* _state) {
+X86_REGREF
+
+	log_debug("is_little_endian()=%d\n",__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__);
+	log_debug("sizeof(dd)=%zu\n",sizeof(dd));
+	log_debug("sizeof(dd *)=%zu\n",sizeof(dd *));
+	log_debug("sizeof(dw)=%zu\n",sizeof(dw));
+	log_debug("sizeof(db)=%zu\n",sizeof(db));
+//	log_debug("sizeof(jmp_buf)=%zu\n",sizeof(jmp_buf));
+//	log_debug("sizeof(mem)=%zu\n",sizeof(m));
+	log_debug("eax: %x\n",eax);
+//	hexDump(&eax,sizeof(dd));
+	log_debug("ebx: %x\n",ebx);
+	log_debug("ecx: %x\n",ecx);
+	log_debug("edx: %x\n",edx);
+	log_debug("ebp: %x\n",ebp);
+	log_debug("cs: %d -> %p\n",cs,(void *) realAddress(0,cs));
+	log_debug("ds: %d -> %p\n",ds,(void *) realAddress(0,ds));
+	log_debug("esi: %x\n",esi);
+	log_debug("ds:esi %p\n",(void *) realAddress(esi,ds));
+	log_debug("es: %d -> %p\n",es,(void *) realAddress(0,es));
+	hexDump(&es,sizeof(dd));
+	log_debug("edi: %x\n",edi);
+	log_debug("es:edi %p\n",(void *) realAddress(edi,es));
+	hexDump((void *) realAddress(edi,es),50);
+	log_debug("fs: %d -> %p\n",fs,(void *) realAddress(0,fs));
+	log_debug("gs: %d -> %p\n",gs,(void *) realAddress(0,gs));
+//	log_debug("adress heap: %p\n",(void *) &m.heap);
+#ifndef NOSDL
+ #if SDL_MAJOR_VERSION == 2
+	log_debug("adress vgaRam: %p\n",(void *) &vgaRam);
+	log_debug("first pixels vgaRam: %x\n",*vgaRam);
+ #endif
+#endif
+	log_debug("flags: ZF = %d\n",GET_ZF());
+	log_debug("top stack=%d\n",stackPointer);
+//	checkIfVgaRamEmpty();
+}
+
+static void fix_segs()
+{
+  for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};
+}
+
 #define FREQ_INT 127
 #if DEBUG==2
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
+    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {m2c::fix_segs();CALLBACK_Idle();}m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
 #elif DEBUG>=3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
 //	a 
 // dosbox logcpu format
-    #define R(a) {for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};{if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+    #define R(a) {{if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {m2c::fix_segs();CALLBACK_Idle();};m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
                          __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} \
 	{a;}}
 
-    #define T(a) {for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};\
+    #define T(a) {m2c::fix_segs();};if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {CALLBACK_Idle();};\
        {m2c::log_debug("b %05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d %x\n", \
                          __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF(),cpu_regs.flags);} \
 	Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
@@ -1403,8 +1449,8 @@ single_step();
 */
 #else
 
-    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} {a;}
-
+    #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) {m2c::fix_segs();CALLBACK_Idle();}} {a;}
+    #define T(a) R(a)
 
 //     #define R(a) {if (GET_IF() && ((m2c::idle_counter++)&FREQ_INT)==0) CALLBACK_Idle();} a
 /*
@@ -1488,7 +1534,7 @@ enum  _offsets;
 
 #ifdef DOSBOX
 //#define GETIP		(core.cseip-SegBase(cs)-MemBase)
-#define _INT(num) {CALLBACK_RunRealInt(num);}
+#define _INT(num) {m2c::fix_segs();CALLBACK_RunRealInt(num);}
 
 #define TESTJUMPTOBACKGROUND  //if (jumpToBackGround) CALL(moveToBackGround);
 

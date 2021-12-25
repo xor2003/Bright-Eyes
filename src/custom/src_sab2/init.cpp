@@ -5,7 +5,7 @@
 
 #include "init.h"
 
-#include "iplay.h"
+#include "sab2.h"
 
 // Is the game running?
 static int init = 0;
@@ -56,7 +56,7 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 
 	init_get_fname(fname, name);
 
-	if (strcmp(fname, "iplay.exe")) return false;
+	if (strcmp(fname, "sab2.com")) return false;
 
 	/* Check CS:IP in the EXE-Header are 0:0
 	 * and the first executed instruction is mov dx,i16 */
@@ -72,6 +72,34 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 	p_datseg_bak = p_datseg;
 	p_datseg = MemBase + PhysMake(datseg, 0);
 	m2c::log_debug("Dseg: 0x%X\n", datseg);
+
+	/* Check if the start of the Datasegment is Borland C++ */
+/*	if (host_readd(p_datseg) != 0 ||
+		strcmp((char*)MemBase+PhysMake(datseg, 4), borsig)) {
+
+		m2c::log_error("Kein Borland C++ Kompilat!\n");
+		return false;
+	}
+*/
+	/* check for the game program */
+	if (!strcmp(fname, "initm.exe") || !strcmp(fname, "bladem.exe")) {
+
+		reloc_game = reloc;
+
+
+		/* enable profiler only on this version */
+		{
+/*			m2c::log_info("Starte Profiler\n");
+
+			// enable status comperator
+			init_status_init();
+
+			init_timer_enable();
+*/
+			init++;
+		}
+	}
+
 
 	return true;
 }

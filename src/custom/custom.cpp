@@ -26,13 +26,6 @@ int idle_counter=0;
 
 void custom_init_prog(char *name, Bit16u relocate, Bit16u init_cs, Bit16u init_ip)
 {
-/*
-	int check;
-
-	if (custom_runs)
-		current->suspend();
-*/
-
 	/* run all detectors */
 	if (masm2c_init(name, relocate, init_cs, init_ip)) {
 		custom_runs++;
@@ -48,6 +41,7 @@ void custom_exit_prog(Bit8u exitcode)
 	custom_runs--;
 	if (init_runs) {
 		masm2c_exit(exitcode);
+                sleep(30);
            	exit(0);
 
 		init_runs--;
@@ -57,23 +51,10 @@ void custom_exit_prog(Bit8u exitcode)
 int custom_calln(Bit16u IP)
 {
 	return 0;
-/*
-        custom_oldCS = SegValue(cs);
-	custom_oldIP = reg_ip;
-	if (!custom_runs)
-		return 0;
-
-	if (init_runs)
-		return init_calln16(IP);
-
-	return 0;
-*/
 }
 
 int custom_callf(Bitu CS, Bitu IP)
 {
-        custom_oldCS = cs; //SegValue(cs);
-	custom_oldIP = reg_ip;
 	if (!custom_runs)
 		return 0;
 
@@ -96,21 +77,14 @@ void custom_init(Section *sec)
 
 //struct _STATE* _state;
 X86_REGREF
-/*
-	fprintf(stderr, "CF=%d\n", GET_CF());
-        R(MOV(eax,3));
-        R(SUB(eax,4));
-	fprintf(stderr, "CF=%d\n", GET_CF());
-*/
-        R(MOV(ah,0x2c));
-        R(_INT(0x21));
-	fprintf(stderr, "%d:%d:%d\n", ch,cl,dh);
+
         R(MOV(ax,0x3000));
         R(_INT(0x21));
 	fprintf(stderr, "DOS ver:%d\n", al);
-        R(MOV(ah,2));
-        R(MOV(dl,'R'));
+
+        R(MOV(ah,0x2c));
         R(_INT(0x21));
+	fprintf(stderr, "%d:%d:%d\n", ch,cl,dh);
 }
 
 void custom_init_entrypoint(char *name, Bit16u relocate)
@@ -120,9 +94,6 @@ void custom_init_entrypoint(char *name, Bit16u relocate)
 
 	if (init_runs) {
                 init_entrypoint(relocate);
-		printf("Succesful exit\n");
-                sleep(120);
-                exit(0);
 	}
 
 }

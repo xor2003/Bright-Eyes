@@ -23,12 +23,12 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
  #define REPNE AFFECT_ZFifz(1);cx++;while (--cx != 0 && !GET_ZF())
  #define XLAT {al = *m2c::raddr_(ds,bx+al);}
  #define CMPSB \
-	{  \
+	{ \
 			db* src=realAddress(si,ds); db* dest=realAddress(di,es); \
 			CMP(*src, *dest); di+=(GET_DF()==0)?1:-1; si+=(GET_DF()==0)?1:-1; \
 	}
  #define CMPSW \
-	{  \
+	{ \
 			dw* src=(dw*)realAddress(si,ds); dw* dest=(dw*)realAddress(di,es); \
 			CMP(*src, *dest); di+=(GET_DF()==0)?2:-2; si+=(GET_DF()==0)?2:-2; \
 	}
@@ -39,7 +39,7 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
 	}
 
  #define SCASB \
-	{  \
+	{ \
 			CMP(al, *realAddress(di,es)); di+=(GET_DF()==0)?1:-1; \
 	}
  #define SCASW \
@@ -88,13 +88,15 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
  #define MOVSS(a) {void * dest;void * src;src=realAddress(si,ds); dest=realAddress(di,es); \
 		memmove(dest,src,a); di+=(GET_DF()==0)?a:-a; si+=(GET_DF()==0)?a:-a; }
 
-   #define MOVSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, *(db*)realAddress(si,ds));si+=(GET_DF()==0)?1:-1;di+=(GET_DF()==0)?1:-1;}
-   #define MOVSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, *(dw*)realAddress(si,ds));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?2:-2;}
+   #define MOVSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readb(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?1:-1;di+=(GET_DF()==0)?1:-1;}
+   #define MOVSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readw(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?2:-2;}
+   #define MOVSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readd(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?4:-4;}
 
    #define STOSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;}
    #define STOSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;}
+   #define STOSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, eax);di+=(GET_DF()==0)?4:-4;}
  #endif
- #define STOSD STOS(4,0)
+// #define STOSD STOS(4,0)
 
  #define INSB {db averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?1:-1;}
  #define INSW {dw averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?2:-2;}
