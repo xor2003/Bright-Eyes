@@ -90,7 +90,7 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
 
    #define MOVSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readb(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?1:-1;di+=(GET_DF()==0)?1:-1;}
    #define MOVSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readw(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?2:-2;}
-   #define MOVSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readd(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?4:-4;}
+   #define MOVSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readd(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?4:-4;di+=(GET_DF()==0)?4:-4;}
 
    #define STOSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;}
    #define STOSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;}
