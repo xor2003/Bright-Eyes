@@ -511,7 +511,7 @@ inline db MSB(D a)  // get highest bit
 #define AFFECT_DF(a) m2cflags.bits.setDF(a)
 #define AFFECT_CF(a) m2cflags.bits.setCF(a)
 #define AFFECT_AF(a) m2cflags.bits.setAF(a)
-#define AFFECT_OF(a) (a) // for speed m2cflags.bits.setOF(a)
+#define AFFECT_OF(a) m2cflags.bits.setOF(a)
 #define AFFECT_IF(a) m2cflags.bits.setIF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (m2c::bitsizeof(f)-1)) )
 #define AFFECT_SF(a) m2cflags.bits.setSF(a)
@@ -524,14 +524,14 @@ inline db MSB(D a)  // get highest bit
 
 #define CMP(a, b) m2c::CMP_(a, b, m2cflags)
 template <class D, class S>
-inline void CMP_(D& dest, const S& src, m2c::eflags& m2cflags)
+inline void CMP_(const D& dest, const S& src, m2c::eflags& m2cflags)
 {
  D result=dest-src; 
 		AFFECT_CF(result>dest); 
             D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src) & (dest ^ result)) & highestbitset);
 		AFFECT_ZFifz(result); 
-		AFFECT_SF_(dest,result); 
+		AFFECT_SF_(result,result); 
 }
 
 
@@ -1096,6 +1096,11 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define JS(label) if (GET_SF()) GOTOLABEL(label)
 #define JNS(label) if (!GET_SF()) GOTOLABEL(label)
 
+#define JO(label) if (GET_OF()) GOTOLABEL(label)
+#define JNO(label) if (!GET_OF()) GOTOLABEL(label)
+
+//#define JP(label) if (GET_PF()) GOTOLABEL(label)
+//#define JNP(label) if (!GET_PF()) GOTOLABEL(label)
 /*
 #if DEBUG >= 3
  #define MOV(dest,src) {log_debug("%s := %x\n",#dest, src); dest = src;}
@@ -1404,7 +1409,7 @@ X86_REGREF
 
 static void fix_segs()
 {
-  for(size_t i=0;i<4;i++){Segs.phys[i]=Segs.val[i] << 4;};
+  for(size_t i=0;i<7;i++){Segs.phys[i]=Segs.val[i] << 4;};
 }
 
 #define FREQ_INT 63
@@ -1442,15 +1447,15 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {m2c::fix_segs();m2c::run_hw_interrupts(); \
+    #define T(a) {m2c::fix_segs();Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs);m2c::run_hw_interrupts(); \
+        Segs=oldSegs; cpu_regs=oldcpu_regs; \
            {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
-	Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
 	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
         cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
 	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); \
         Segs=oldSegs; cpu_regs=oldcpu_regs; \
 	{a;} \
-        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
+        m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
         cpu_regs.ip=realcpu_regs.ip; \
         if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) \
         { \
@@ -1459,7 +1464,7 @@ X86_REGREF
         Segs=realSegs; cpu_regs=realcpu_regs; \
            {m2c::log_debug("r ");m2c::log_regs(__LINE__,#a,_state);} \
            m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
-          } \
+         exit(1);} \
 	cpu_regs.flags = realflags; \
         }
 

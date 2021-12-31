@@ -55,14 +55,17 @@ static inline db* raddr_(dw segment,dd offset) {return reinterpret_cast<db *>(of
   #define STOSB STOS(1,3)
   #define STOSW STOS(2,2)
  #else
-  #define STOSB STOS(1,0)
-   #ifdef A_NORMAL
-    #define STOSW {if (es>=0xB800) {STOS(2,0);} else {attron(COLOR_PAIR(ah)); mvaddch(edi/160, (edi/2)%80, al); /*attroff(COLOR_PAIR(ah))*/;edi+=(GET_DF()==0)?2:-2;refresh();}}
-   #else
-    #define STOSW STOS(2,0)
-   #endif
+
+   #define MOVSB {mem_writeb((db*)m2c::raddr_(es,edi)-(db*)&m2c::m, mem_readb(realAddress(esi,ds)-(db*)&m2c::m));esi+=(GET_DF()==0)?1:-1;edi+=(GET_DF()==0)?1:-1;}
+   #define MOVSW {mem_writew((db*)m2c::raddr_(es,edi)-(db*)&m2c::m, mem_readw(realAddress(esi,ds)-(db*)&m2c::m));esi+=(GET_DF()==0)?2:-2;edi+=(GET_DF()==0)?2:-2;}
+   #define MOVSD {mem_writed((db*)m2c::raddr_(es,edi)-(db*)&m2c::m, mem_readd(realAddress(esi,ds)-(db*)&m2c::m));esi+=(GET_DF()==0)?4:-4;edi+=(GET_DF()==0)?4:-4;}
+
+   #define STOSB {mem_writeb((db*)m2c::raddr_(es,edi)-(db*)&m2c::m, al);edi+=(GET_DF()==0)?1:-1;}
+   #define STOSW {mem_writew((db*)m2c::raddr_(es,edi)-(db*)&m2c::m, ax);edi+=(GET_DF()==0)?2:-2;}
+   #define STOSD {mem_writed((db*)m2c::raddr_(es,edi)-(db*)&m2c::m, eax);edi+=(GET_DF()==0)?4:-4;}
+
+
  #endif
- #define STOSD STOS(4,0)
 
  #define INSB {db averytemporary3 = asm2C_IN(dx);*realAddress(edi,es)=averytemporary3;edi+=(GET_DF()==0)?1:-1;}
  #define INSW {dw averytemporary3 = asm2C_INW(dx);*realAddress(edi,es)=averytemporary3;edi+=(GET_DF()==0)?2:-2;}
