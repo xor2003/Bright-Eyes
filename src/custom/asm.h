@@ -1416,12 +1416,15 @@ static void fix_segs()
 static void run_hw_interrupts()
 {
 X86_REGREF
+static volatile bool already=false;
 static int idle_counter=0;
- if (GET_IF() && ((idle_counter++)&FREQ_INT)==0) {
+ if (!already && GET_IF() && ((idle_counter++)&FREQ_INT)==0) {
+  already = true;
   fix_segs();
   Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); // save regs probably esp corruption by interrupts FIXME
   CALLBACK_Idle();
   Segs=oldSegs; cpu_regs=oldcpu_regs; 
+  already = false;
  }
 }
 
@@ -1434,7 +1437,7 @@ X86_REGREF
 
 #if DEBUG==2
     #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
-#elif DEBUG>=3
+#elif DEBUG==3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
@@ -1447,8 +1450,23 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {m2c::fix_segs();Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs);m2c::run_hw_interrupts(); \
-        Segs=oldSegs; cpu_regs=oldcpu_regs; \
+    #define T(a) R(a)
+
+#elif DEBUG>=4
+// clean format
+//    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
+//eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
+//	a 
+// dosbox logcpu format
+//    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+//                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
+
+    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
+
+// Run emulated instruction and compare with m2c instruction results
+
+    #define T(a) {m2c::fix_segs();m2c::run_hw_interrupts(); \
+        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
            {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
 	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
         cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
