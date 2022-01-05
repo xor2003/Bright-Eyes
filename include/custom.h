@@ -31,7 +31,6 @@ void custom_init_entrypoint(char *, Bit16u);
 
 /* prototypes for CPU operations */
 int custom_callf(Bitu, Bitu);
-int custom_calln(Bit16u);
 
 #else /* DOSBOX_CUSTOM */
 
@@ -46,7 +45,6 @@ static inline void custom_exit_prog(Bit8u exitcode) { }
 
 /* prototypes for CPU operations */
 static inline int custom_callf(Bitu seg, Bitu off) { return 0; }
-static inline int custom_calln(Bit16u off) { return 0; }
 
 #endif /* DOSBOX_CUSTOM */
 

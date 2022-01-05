@@ -900,11 +900,6 @@
 		{ 
 			Bit16u addip=Fetchws();
 			SAVEIP;
-
-			if (custom_calln((Bit16u)(reg_eip+addip))) {
-				continue;
-			}
-
 			Push_16(reg_eip);
 			reg_eip=(Bit16u)(reg_eip+addip);
 			continue;
