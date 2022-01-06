@@ -1570,9 +1570,17 @@ enum  _offsets;
 
 #define TESTJUMPTOBACKGROUND  //if (jumpToBackGround) CALL(moveToBackGround);
 
-#define OUT(port,value) IO_WriteB(port,value);
+#define OUT(port,value) m2c::OUT_(port,value)
+static inline void OUT_(dw port, db value)
+{IO_WriteB(port,value);}
+static inline void OUT_(dw port, dw value)
+{IO_WriteW(port,value);}
 			
-#define IN(a,port) a = IO_ReadB(port);
+#define IN(res,port) m2c::IN_(res, port)
+static inline void IN_(db& res, dw port)
+{res = IO_ReadB(port);}
+static inline void IN_(dw& res, dw port)
+{res = IO_ReadW(port);}
 
 #else
 
