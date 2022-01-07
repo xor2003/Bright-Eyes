@@ -34,6 +34,12 @@
 #include "cpu.h"
 #include "mem.h"
 #include "inout.h"
+
+#include <pic.h>
+#include <video.h>
+#include <timer.h>
+extern Bit32u ticksRemain;
+void increaseticks();
 #endif
 
 // Types
@@ -1407,26 +1413,9 @@ X86_REGREF
 //	checkIfVgaRamEmpty();
 }
 
-static void fix_segs()
-{
-  for(size_t i=0;i<7;i++){Segs.phys[i]=Segs.val[i] << 4;};
-}
+void fix_segs();
 
-#define FREQ_INT 63
-static void run_hw_interrupts()
-{
-X86_REGREF
-static volatile bool already=false;
-static int idle_counter=0;
- if (!already && GET_IF() && ((idle_counter++)&FREQ_INT)==0) {
-  already = true;
-  fix_segs();
-  Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); // save regs probably esp corruption by interrupts FIXME
-  CALLBACK_Idle();
-  Segs=oldSegs; cpu_regs=oldcpu_regs; 
-  already = false;
- }
-}
+void run_hw_interrupts();
 
 static void log_regs(int line, const char * instr, struct _STATE* _state)
 {
@@ -1450,7 +1439,7 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) R(a)
+    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
 
 #elif DEBUG>=4
 // clean format
@@ -1492,7 +1481,6 @@ X86_REGREF
     #define T(a) R(a)
 
 #endif
-extern int idle_counter;
 bool is_little_endian();
 
 #if defined(_MSC_VER)

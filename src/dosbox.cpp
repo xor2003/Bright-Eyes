@@ -119,7 +119,7 @@ static LoopHandler * loop;
 
 bool SDLNetInited;
 
-static Bit32u ticksRemain;
+Bit32u ticksRemain;
 static Bit32u ticksLast;
 static Bit32u ticksAdded;
 Bit32s ticksDone;
