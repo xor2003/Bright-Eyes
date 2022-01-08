@@ -464,7 +464,7 @@ inline db MSB(D a)  // get highest bit
 #define realAddress(offset, segment) m2c::raddr_(segment,offset)
 
 
-#define seg_offset(segment) ((offset(m2c::m,(segment)))>>4)
+#define seg_offset(segment) ((dw)((offset(m2c::m,(segment)))>>4))
 
 // DJGPP
 #define MASK_LINEAR(addr)     (((size_t)addr) & 0x000FFFFF)
@@ -490,8 +490,40 @@ inline db MSB(D a)  // get highest bit
 #define PUSH(a) {stackPointer-=sizeof(a); memcpy (&m.stack[stackPointer], &a, sizeof (a));  assert(stackPointer>8);}
 */
 #ifdef DOSBOX
- #define PUSH(a) {CPU_Push16(a);}
- #define POP(a) {a = CPU_Pop16();}
+ #define PUSH(a) m2c::PUSH_(a)
+/*
+inline void PUSH_(const dw& a)
+{CPU_Push16(a);}
+
+inline void PUSH_(const dd& a)
+{CPU_Push32(a);}
+*/
+
+template<typename S>
+void PUSH_(S a);
+
+template<>
+inline void PUSH_<dw>(dw a)
+{CPU_Push16(a);}
+
+template<>
+inline void PUSH_<dd>(dd a)
+{CPU_Push32(a);}
+
+template<>
+inline void PUSH_<short int>(short int a)
+{CPU_Push16(a);}
+
+template<>
+inline void PUSH_<int>(int a)
+{CPU_Push32(a);}
+
+ #define POP(a) m2c::POP_(a)
+inline void POP_(dw& a)
+{a = CPU_Pop16();}
+
+inline void POP_(dd& a)
+{a = CPU_Pop32();}
 #else
 
 #ifdef DEBUG
