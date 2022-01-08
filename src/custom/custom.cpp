@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 static Bit8u custom_runs;
-bool defered_custom_call = false;
+volatile bool defered_custom_call = false;
 
 static Bit8u init_runs;
 Bit16u custom_oldCS, custom_oldIP;
@@ -97,29 +97,20 @@ custom_init_entrypoint (char *name, Bit16u relocate)
 
 namespace m2c
 {
-  void fix_segs ()
+  bool fix_segs()
   {
     for (size_t i = 0; i < 7; i++)
       {
         Segs.phys[i] = Segs.val[i] << 4;
-      };
+      }
+    return true;
   }
 
-#define FREQ_INT 63
-//Bit32s CPU_Cycles
-  void run_hw_interrupts ()
+  void execute_irqs()
   {
-    X86_REGREF static volatile bool already_in_hw_int = false;
-//static int idle_counter=0;
-//    log_debug ("CPU_Cycles %d\n", CPU_Cycles);
-    if (CPU_Cycles > 0)
-      {
-        CPU_Cycles--;
-      }
-
-    if (CPU_Cycles == 0)
-      {
-    log_debug ("CPU_CycleLeft %d\n", CPU_CycleLeft);
+    X86_REGREF
+//    log_debug ("CPU_CycleLeft %d\n", CPU_CycleLeft);
+ static volatile bool already_in_hw_int = false;
         if (!already_in_hw_int && GET_IF())  // Do not call from IRQs
           {
             already_in_hw_int = true;
@@ -138,6 +129,7 @@ namespace m2c
 #endif
 // PIC_IRQCheck && ((idle_counter++) & FREQ_INT) == 0
 //                Segments oldSegs (Segs); CPU_Regs oldcpu_regs (cpu_regs);        // save regs probably esp corruption by interrupts FIXME
+              fix_segs();
               bool oldCPU_CycleAutoAdjust = CPU_CycleAutoAdjust;
               CPU_CycleAutoAdjust = true; // So the CPU_Cycles won't be set to 0
               CALLBACK_Idle();
@@ -150,7 +142,7 @@ namespace m2c
             already_in_hw_int = false;
 
           }
-        else if (!GET_IF() && !PIC_RunQueue())  // Can only call PIC_RunQueue() separatelly if IF=0
+        else if (!GET_IF() && fix_segs() && !PIC_RunQueue())  // Can only call PIC_RunQueue() separatelly if IF=0
           {                                     // So no IRQ interrupts will be started
                 GFX_Events ();
                 if (ticksRemain > 0)
@@ -164,10 +156,36 @@ namespace m2c
                   }
           }
 
+}
+
+  void run_hw_interrupts()
+  {
+    X86_REGREF
+//    log_debug ("CPU_Cycles %d\n", CPU_Cycles);
+    if (CPU_Cycles > 0)
+      {
+        CPU_Cycles--;
       }
 
+    if (CPU_Cycles == 0)
+      {
+//    log_debug ("CPU_CycleLeft %d\n", CPU_CycleLeft);
+        execute_irqs();
+      }
 
   }
+
+void single_step()
+{
+				m2c::fix_segs();
+				Bitu old_cycles=CPU_Cycles;
+				CPU_Cycles=1;
+				Bits nc_retcode=CPU_Core_Normal_Run();
+				if (!nc_retcode) {
+					CPU_Cycles=old_cycles-1;
+				}
+				CPU_CycleLeft+=old_cycles;
+}
 
 }
 #endif /* DOSBOX_CUSTOM */

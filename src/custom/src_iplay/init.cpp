@@ -84,42 +84,24 @@ void masm2c_exit(unsigned char exit)
 		datseg_bak = 0;
 		p_datseg = p_datseg_bak;
 		p_datseg_bak = NULL;
-//		reloc_gen = 0;
 		m2c::log_info("masm2c_exit Exiting\n");
 
 }
 
 int init_callf(unsigned selector, unsigned offs)
 {
-	if (selector == ss)
-		return 0;
+//	if (selector == ss)
+//		return 0;
 	if (selector >= 0xa000)
 		return 0;
 
 	{
-//		return init_farcall_v302de(selector - reloc_game, offs);
                 return __dispatch_call((selector<<16) + offs, 0);
 	}
 
 	return 0;
 }
 
-// Intercept near CALLs, 16-Bit
-int init_calln16(unsigned offs) {
-
-	if (SegValue(cs) == SegValue(ss))
-		return 0;
-	if (SegValue(cs) >= 0xa000)
-		return 0;
-
-	int ret = 0;
-
-	if (init) {
-		//return init_nearcall_v302de(offs);
-	}
-
-	return ret;
-}
 
 //namespace m2c{ m2cf* _ENTRY_POINT_; }
 void init_entrypoint(Bit16u relocate)

@@ -1,3 +1,4 @@
+
 #ifndef __asm_h__
 #define __asm_h__
 
@@ -100,6 +101,9 @@ typedef long double real10;
 #include "memmgr.h"
 
 namespace m2c {
+
+extern void execute_irqs();
+extern void single_step();
 
 struct /*__attribute__((__packed__))*/ Memory;
 extern Memory& m;
@@ -517,7 +521,7 @@ inline db MSB(D a)  // get highest bit
 #define AFFECT_DF(a) m2cflags.bits.setDF(a)
 #define AFFECT_CF(a) m2cflags.bits.setCF(a)
 #define AFFECT_AF(a) m2cflags.bits.setAF(a)
-#define AFFECT_OF(a) m2cflags.bits.setOF(a)
+#define AFFECT_OF(a) (a) // m2cflags.bits.setOF(a)
 #define AFFECT_IF(a) m2cflags.bits.setIF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (m2c::bitsizeof(f)-1)) )
 #define AFFECT_SF(a) m2cflags.bits.setSF(a)
@@ -1146,7 +1150,7 @@ inline void MOV_(D* dest, const S& src)
 #define XCHG(dest,src) {dd averytemporary = (dd) dest; dest = src; src = averytemporary;}//std::swap(dest,src); TODO
 
 
-#define MOVS(dest,src,s)  {dest=src; dest+=(GET_DF()==0)?s:-s; src+=(GET_DF()==0)?s:-s; }
+#define MOVS(dest,src,destreg,srcreg,s)  {dest=src; destreg+=(GET_DF()==0)?s:-s; srcreg+=(GET_DF()==0)?s:-s; }
 
 
 #define CBW {ah = ((int8_t)al) < 0?-1:0;} // TODO
@@ -1302,26 +1306,13 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
         POPF; \
 	return;}
 */
-#define IRET {CPU_IRET(false,0);return;}
+#define IRET {CPU_IRET(false,0);m2c::execute_irqs();return;}
 
 //#define RETF {dw averytemporary=0; POP(averytemporary); RET;}
 #define BSWAP(op1)														\
 	op1 = (op1>>24)|((op1>>8)&0xFF00)|((op1<<8)&0xFF0000)|((op1<<24)&0xFF000000);
 
 #define RDTSC {dq averytemporary = realElapsedTime(); eax=averytemporary&0xffffffff; edx=(averytemporary>32)&0xffffffff;}
-
-static void single_step()
-{
-				Bitu old_cycles=CPU_Cycles;
-				CPU_Cycles=1;
-				Bits nc_retcode=CPU_Core_Normal_Run();
-				if (!nc_retcode) {
-					CPU_Cycles=old_cycles-1;
-//					continue;
-				}
-				CPU_CycleLeft+=old_cycles;
-//				return nc_retcode; 
-}
 
 // thanks to paxdiablo http://stackoverflow.com/users/14860/paxdiablo for the hexDump function
 static void hexDump (void *addr, int len) {
@@ -1413,7 +1404,7 @@ X86_REGREF
 //	checkIfVgaRamEmpty();
 }
 
-void fix_segs();
+bool fix_segs();
 
 void run_hw_interrupts();
 
@@ -1454,9 +1445,9 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {m2c::fix_segs();m2c::run_hw_interrupts(); \
-        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
+    #define T(a) {m2c::run_hw_interrupts(); \
            {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
+        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
 	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
         cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
 	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); \
@@ -1466,10 +1457,10 @@ X86_REGREF
         cpu_regs.ip=realcpu_regs.ip; \
         if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) \
         { \
-           {m2c::log_debug("e ");m2c::log_regs(__LINE__,#a,_state);} \
+           {m2c::log_debug("m ");m2c::log_regs(__LINE__,#a,_state);} \
            m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
         Segs=realSegs; cpu_regs=realcpu_regs; \
-           {m2c::log_debug("r ");m2c::log_regs(__LINE__,#a,_state);} \
+           {m2c::log_debug("d ");m2c::log_regs(__LINE__,#a,_state);} \
            m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
          exit(1);} \
 	cpu_regs.flags = realflags; \
