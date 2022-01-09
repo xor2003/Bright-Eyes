@@ -6944,7 +6944,7 @@ cs=0x1a2;eip=0x003b09; 	R(MOV(word_245f0, ax));	// 7721 mov     word_245F0, ax ;
 cs=0x1a2;eip=0x003b0c; 	T(INC(ax));	// 7722 inc     ax ;~ 01A2:3B0C
 cs=0x1a2;eip=0x003b0d; 	T(TEST(flag_playsetttings, 4));	// 7723 test    flag_playsetttings, 4 ;~ 01A2:3B0D
 cs=0x1a2;eip=0x003b12; 		R(JNZ(loc_13b5b));	// 7724 jnz     short loc_13B5B ;~ 01A2:3B12
-cs=0x1a2;eip=0x003b14; 	R(BT(*(dw*)((byte_282e8)), ax));	// 7725 bt      word ptr byte_282E8, ax ;~ 01A2:3B14
+cs=0x1a2;eip=0x003b14; 	T(BT(*(dw*)((byte_282e8)), ax));	// 7725 bt      word ptr byte_282E8, ax ;~ 01A2:3B14
 cs=0x1a2;eip=0x003b19; 		R(JNC(loc_13b5b));	// 7726 jnb     short loc_13B5B ;~ 01A2:3B19
 cs=0x1a2;eip=0x003b1b; 	T(MOV(cx, word_245fa));	// 7727 mov     cx, word_245FA ;~ 01A2:3B1B
 cs=0x1a2;eip=0x003b1f; 	T(ADD(cx, 7));	// 7728 add     cx, 7 ;~ 01A2:3B1F
@@ -8840,7 +8840,8 @@ cs=0x1a2;eip=0x004bb5; 	R(XCHG(bx, bx));	// 10419 xchg    bx, bx ;~ 01A2:4BB5	//
 cs=0x1a2;eip=0x004bb8; sb_callback:	// 5015 
 cs=0x1a2;eip=0x004bb8; 	T(PUSH(ax));	// 10424 push    ax ;~ 01A2:4BB8
 cs=0x1a2;eip=0x004bb9; 	T(PUSH(dx));	// 10425 push    dx ;~ 01A2:4BB9
-cs=0x1a2;eip=0x004bbd; 	R(IN(al, dx));	// 10431 in      al, dx ;~ 01A2:4BBD
+
+cs=0x1a2;eip=0x004bbd; 	R(IN(al, word_14bbb));	// 10431 in      al, dx ;~ 01A2:4BBD
 cs=0x1a2;eip=0x004bbe; 	T(PUSH(ds));	// 10432 push    ds ;~ 01A2:4BBE
 cs=0x1a2;eip=0x004bbf; 	T(MOV(ax, seg_offset(seg003)));	// 10433 mov     ax, seg seg003 ;~ 01A2:4BBF
 cs=0x1a2;eip=0x004bc2; 	T(MOV(ds, ax));	// 10434 mov     ds, ax ;~ 01A2:4BC2
@@ -8979,6 +8980,7 @@ cs=0x1a2;eip=0x004ce6; 	R(XCHG(bx, bx));	// 10625 xchg    bx, bx ;~ 01A2:4CE6
 cs=0x1a2;eip=0x004ce8; myfunc:	// 5028 
 cs=0x1a2;eip=0x004ce8; 	T(PUSH(ax));	// 10629 push    ax ;~ 01A2:4CE8
 cs=0x1a2;eip=0x004ce9; 	T(PUSH(dx));	// 10630 push    dx ;~ 01A2:4CE9
+dx=word_14ceb;
 cs=0x1a2;eip=0x004ced; 	R(IN(al, dx));	// 10635 in      al, dx ;~ 01A2:4CED
 cs=0x1a2;eip=0x004cee; 	T(PUSH(ds));	// 10636 push    ds ;~ 01A2:4CEE
 cs=0x1a2;eip=0x004cef; 	T(MOV(ax, seg_offset(seg003)));	// 10637 mov     ax, seg seg003 ;~ 01A2:4CEF
@@ -9084,6 +9086,7 @@ cs=0x1a2;eip=0x004de5; 	T(PUSH(dx));	// 10786 push    dx ;~ 01A2:4DE5
 cs=0x1a2;eip=0x004de6; 	T(PUSH(ds));	// 10787 push    ds ;~ 01A2:4DE6
 cs=0x1a2;eip=0x004de7; 	T(MOV(ax, seg_offset(seg003)));	// 10788 mov     ax, seg seg003 ;~ 01A2:4DE7
 cs=0x1a2;eip=0x004dea; 	T(MOV(ds, ax));	// 10789 mov     ds, ax ;~ 01A2:4DEA
+dx=word_14ded;
 cs=0x1a2;eip=0x004def; 	R(IN(al, dx));	// 10794 in      al, dx ;~ 01A2:4DEF
 cs=0x1a2;eip=0x004df0; 	T(SUB(dl, 2));	// 10795 sub     dl, 2 ;~ 01A2:4DF0
 cs=0x1a2;eip=0x004df3; loc_14df3:	// 5034 
@@ -9442,10 +9445,14 @@ cs=0x1a2;eip=0x0050fe; 	R(CLI);	// 11309 cli ;~ 01A2:50FE
 cs=0x1a2;eip=0x0050ff; 	T(MOV(dx, (dw)m2c::kadlib_timer_int));	// 11310 mov     dx, offset adlib_timer_int ;~ 01A2:50FF
 cs=0x1a2;eip=0x005102; 	R(CALL(set_timer_int,0));	// 11311 call    set_timer_int ;~ 01A2:5102
 cs=0x1a2;eip=0x005105; 	T(SUB(ax, 0x0F00));	// 11312 sub     ax, 0F00h ;~ 01A2:5105
+
+static dw word_15121_ = 0x1234;
+static dw word_15126_ = 0x1234;
+
 	cs=seg_offset(seg000);
-cs=0x1a2;eip=0x005108; 	R(MOV(*(dw*)(((db*)&word_15121)), ax));	// 11313 mov     cs:word_15121, ax ;~ 01A2:5108
+cs=0x1a2;eip=0x005108; 	R(MOV(word_15121_, ax));	// 11313 mov     cs:word_15121, ax ;~ 01A2:5108
 	cs=seg_offset(seg000);
-cs=0x1a2;eip=0x00510c; 	R(MOV(*(dw*)(((db*)&word_15126)), 0x0F000));	// 11314 mov     cs:word_15126, 0F000h ;~ 01A2:510C
+cs=0x1a2;eip=0x00510c; 	R(MOV(word_15126_, 0x0F000));	// 11314 mov     cs:word_15126, 0F000h ;~ 01A2:510C
 cs=0x1a2;eip=0x005113; 	R(POPF);	// 11315 popf ;~ 01A2:5113
 cs=0x1a2;eip=0x005114; 	T(CLC);	// 11316 clc ;~ 01A2:5114
 cs=0x1a2;eip=0x005115; 	R(RETN);	// 11317 retn ;~ 01A2:5115
@@ -9458,11 +9465,13 @@ cs=0x1a2;eip=0x00511c; 	T(PUSH(ax));	// 11335 push    ax ;~ 01A2:511C
 cs=0x1a2;eip=0x00511d; 	T(PUSH(bx));	// 11336 push    bx ;~ 01A2:511D
 cs=0x1a2;eip=0x00511e; 	T(PUSH(dx));	// 11337 push    dx ;~ 01A2:511E
 cs=0x1a2;eip=0x00511f; 	T(PUSH(ds));	// 11338 push    ds ;~ 01A2:511F
+ax = word_15121_;
 cs=0x1a2;eip=0x005123; 	T(MOV(ds, ax));	// 11343 mov     ds, ax ;~ 01A2:5123
+al = *raddr(ds,word_15126_);
 cs=0x1a2;eip=0x005128; 	T(MOV(bx, seg_offset(seg003)));	// 11349 mov     bx, seg seg003 ;~ 01A2:5128
 cs=0x1a2;eip=0x00512b; 	T(MOV(ds, bx));	// 11350 mov     ds, bx ;~ 01A2:512B
 cs=0x1a2;eip=0x00512d; 	T(MOV(bx, offset(seg003,table_24898)));	// 11351 mov     bx, offset table_24898 ;~ 01A2:512D
-cs=0x1a2;eip=0x005130; 	R(XLAT);	// 11352 xlat ;~ 01A2:5130
+cs=0x1a2;eip=0x005130; 	T(XLAT);	// 11352 xlat ;~ 01A2:5130
 cs=0x1a2;eip=0x005131; 	T(MOV(dx, 0x389));	// 11353 mov     dx, 389h ;~ 01A2:5131
 cs=0x1a2;eip=0x005134; 	R(OUT(dx, al));	// 11354 out     dx, al ;~ 01A2:5134
 	cs=seg_offset(seg000);
@@ -9517,8 +9526,10 @@ cs=0x1a2;eip=0x005197; 	R(RETN);	// 11442 retn ;~ 01A2:5197
 cs=0x1a2;eip=0x005198; pcspeaker_interrupt:	// 5061 
 cs=0x1a2;eip=0x005198; 	T(PUSH(bx));	// 11448 push    bx ;~ 01A2:5198
 cs=0x1a2;eip=0x005199; 	T(PUSH(ds));	// 11449 push    ds ;~ 01A2:5199
+bx=word_1519b;
 cs=0x1a2;eip=0x00519d; 	T(MOV(ds, bx));	// 11454 mov     ds, bx ;~ 01A2:519D
 cs=0x1a2;eip=0x00519f; 	bh = 0;AFFECT_ZF(1); AFFECT_SF(0);	// 11455 xor     bh, bh ;~ 01A2:519F
+bl = *raddr(ds,word_151a3);
 	cs=seg_offset(seg000);
 cs=0x1a2;eip=0x0051a5; 	T(MOV(bl, *((pc_timer_tbl)+bx)));	// 11461 mov     bl, cs:pc_timer_tbl[bx] ;~ 01A2:51A5
 cs=0x1a2;eip=0x0051aa; 	T(MOV(bh, al));	// 11462 mov     bh, al ;~ 01A2:51AA
