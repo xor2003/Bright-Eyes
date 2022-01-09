@@ -132,10 +132,9 @@ static Bitu Normal_Loop(void) {
 	while (1) {
 		if (PIC_RunQueue()) {
 			if (defered_custom_call) {
-				printf("Executing interrupt %x:%x\n",Segs.val[cs], reg_eip);
-			   //if (Segs.val[cs]!=0)
+//				printf("Executing interrupt %x:%x\n",Segs.val[cs], reg_eip);
 			        custom_callf(Segs.val[cs], reg_eip);
-				printf("Exited interrupt. new CS:IP %x:%x\n",Segs.val[cs], reg_eip);
+//				printf("Exited interrupt. new CS:IP %x:%x\n",Segs.val[cs], reg_eip);
                                 defered_custom_call = false;
                         } 
 			ret = (*cpudecoder)();

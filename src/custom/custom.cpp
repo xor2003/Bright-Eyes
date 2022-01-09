@@ -115,28 +115,17 @@ namespace m2c
           {
             already_in_hw_int = true;
 
-//            bool needExecuteIRQs = false;
-//        if (PIC_CheckQueue ())          {
-/*
-            needExecuteIRQs = PIC_checkIRQs ();
-
-            log_debug ("needExecuteIRQs %d\n", needExecuteIRQs);
-            if (needExecuteIRQs)
-*/
             {
 #if DEBUG
-              log_debug ("Start hw int\n");
+//              log_debug ("Start hw int\n");
 #endif
-// PIC_IRQCheck && ((idle_counter++) & FREQ_INT) == 0
-//                Segments oldSegs (Segs); CPU_Regs oldcpu_regs (cpu_regs);        // save regs probably esp corruption by interrupts FIXME
               fix_segs();
               bool oldCPU_CycleAutoAdjust = CPU_CycleAutoAdjust;
               CPU_CycleAutoAdjust = true; // So the CPU_Cycles won't be set to 0
               CALLBACK_Idle();
               CPU_CycleAutoAdjust = oldCPU_CycleAutoAdjust;
-//                Segs = oldSegs;cpu_regs = oldcpu_regs;
 #if DEBUG
-              log_debug ("Stop hw int\n");
+//              log_debug ("Stop hw int\n");
 #endif
             }
             already_in_hw_int = false;

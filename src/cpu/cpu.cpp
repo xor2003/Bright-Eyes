@@ -576,7 +576,7 @@ void CPU_Interrupt(Bitu num,Bitu type,Bitu oldeip) {
 		Segs.val[cs]=mem_readw(base+(num << 2)+2);
 		Segs.phys[cs]=Segs.val[cs]<<4;
 		cpu.code.big=false;
-		printf("Want to execute interrupt %x\n",num);
+//		printf("Want to execute interrupt %x\n",num);
 		defered_custom_call=true;
 		return;
 	} else {
