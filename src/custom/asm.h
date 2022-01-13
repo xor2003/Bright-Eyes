@@ -1263,24 +1263,25 @@ inline void MOV_(D* dest, const S& src)
  		POP(jmpbuffer); stackPointer-=2; longjmp(jmpbuffer, 0);}
 */
 
+#define RETF RETFN(0)
 #if DEBUG
 
- #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected %x.\n",averytemporary9);exit(1);} \
+ #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
 	m2c::log_debug("after ret %x\n",stackPointer); \
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}return;}
 
- #define RETF {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected %x.\n",averytemporary9);exit(1);} \
+ #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
 	dw averytemporary11;POP(averytemporary11); \
 	m2c::log_debug("after retf %x\n",stackPointer); \
-	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}return;}
+	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; return;}
 #else
 
  #define RET {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11);  \
 	return;}
 
- #define RETF {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11); \
+ #define RETFN(i) {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11); \
 	dw averytemporary2;POP(averytemporary2); \
-	return;}
+	esp += i; return;}
 #endif
 
 /*
