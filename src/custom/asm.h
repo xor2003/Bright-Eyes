@@ -1264,72 +1264,37 @@ inline void MOV_(D* dest, const S& src)
 */
 
 #define RETF RETFN(0)
-#if DEBUG
+#if DEBUG>=2
 
- #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+ #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+   eip=averytemporary9; \
 	m2c::log_debug("after ret %x\n",stackPointer); \
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}return;}
 
- #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
-	dw averytemporary11;POP(averytemporary11); \
+ #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+   eip=averytemporary9; \
+	dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
 	m2c::log_debug("after retf %x\n",stackPointer); \
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; return;}
 #else
 
- #define RET {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11);  \
-	return;}
+ #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; return;}
 
- #define RETFN(i) {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11); \
-	dw averytemporary2;POP(averytemporary2); \
-	esp += i; return;}
+ #define RETFN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
+        dw averytemporary11;POP(averytemporary11); cs=averytemporary11; esp+=i; return;}
 #endif
 
-/*
-#ifdef SINGLEPROCSTRATEGY
 
-#if DEBUG
- #define CALL(label) \
-	{ MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8); \
-	  log_debug("after call %x\n",stackPointer); \
-	  ++_state->_indent;_state->_str=log_spaces(_state->_indent);\
-	  mainproc(label, _state); \
-	}
-#else
- #define CALL(label) \
-	{ MWORDSIZE averytemporary10='xy'; PUSH(averytemporary10); \
-	  mainproc(label, _state); \
-	}
-#endif
-
-#else // SINGLEPROCSTRATEGY end separate procs start
-*/
-#define CALL(label, disp) {m2c::CALL_(label, _state, disp);}
+#define CALL(label, disp) {m2c::MWORDSIZE oldeip=eip;m2c::CALL_(label, _state, disp);if (oldeip!=eip) {__disp=eip;goto __dispatch_call;}}
 static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  X86_REGREF
-	  MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
+	  MWORDSIZE averytemporary8=eip; PUSH(averytemporary8);
 #if DEBUG
 	  m2c::log_debug("after call %x\n",stackPointer);
 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
 #endif
 	  label(_i, _state);
  }
-/*
- #define CALL(label) \
-	{ m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8); \
-	  m2c::log_debug("after call %x\n",stackPointer); \
-	  if (_state){++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}\
-	  if (label != __dispatch_call) __disp=0; \
-	  label(__disp, _state); \
-	}
-#else
- #define CALL(label) \
-	{ m2c::MWORDSIZE averytemporary10='xy'; PUSH(averytemporary10); \
-	  if (label != __dispatch_call) __disp=0; \
-	  label(__disp, _state); \
-	}
-*/
-
-//#endif // end separate procs
 
 #define RETN RET
 
@@ -1341,7 +1306,6 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 */
 #define IRET {CPU_IRET(false,0);m2c::execute_irqs();return;}
 
-//#define RETF {dw averytemporary=0; POP(averytemporary); RET;}
 #define BSWAP(op1)														\
 	op1 = (op1>>24)|((op1>>8)&0xFF00)|((op1<<8)&0xFF0000)|((op1<<24)&0xFF000000);
 
@@ -1444,7 +1408,7 @@ void run_hw_interrupts();
 static void log_regs(int line, const char * instr, struct _STATE* _state)
 {
 X86_REGREF
-  log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
+  log_debug("%06d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
                          line,cs,eip,instr,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
 }
 
