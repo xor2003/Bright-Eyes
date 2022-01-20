@@ -934,7 +934,6 @@ cs=0x192;eip=0x0004a1; 	R(CALL(sub_10a19,0));	// 578 call    sub_10A19 ;~ 0192:0
 ret_192_4a4:	// 4449 
 	R(MOV(ah, byte_1f3cc));	// 579 mov     ah, byte_1F3CC ;~ 0192:04A4
 	R(MOV(byte_1f133, ah));	// 580 mov     byte_1F133, ah ;~ 0192:04A8
-loc_104ac:
 cs=0x192;eip=0x0004ac; 	R(CALL(sub_1215f,0));	// 581 call    sub_1215F ;~ 0192:04AC
 ret_192_4af:	// 4450 
 	R(TEST(*(raddr(ds,si+0x24)), 2));	// 582 test    byte ptr [si+24h], 2 ;~ 0192:04AF
@@ -1620,6 +1619,7 @@ ret_192_a23:	// 4587
 cs=0x192;eip=0x000a23; 	R(CALL(sub_12c79,0));	// 1467 call    sub_12C79 ;~ 0192:0A23
 ret_192_a26:	// 4588 
 cs=0x192;eip=0x000a26; 	// 1468 jmp     short $+2 ;~ 0192:0A26
+ret_192_a28:	// 4589 
 	R(MOV(cx, 0x20));	// 1469 mov     cx, 20h ; ' ' ;~ 0192:0A28
 	R(ADD(bx, cx));	// 1470 add     bx, cx ;~ 0192:0A2B
 	R(MOV(cx, word_1f1c5));	// 1471 mov     cx, word_1F1C5 ;~ 0192:0A2D
@@ -1636,28 +1636,28 @@ cs=0x192;eip=0x000a38; 		R(JZ(loc_10a5a));	// 1475 jz      short loc_10A5A ;~ 01
 	R(MOV(ch, bh));	// 1482 mov     ch, bh ;~ 0192:0A48
 	R(MOV(cl, dh));	// 1483 mov     cl, dh ;~ 0192:0A4A
 cs=0x192;eip=0x000a4c; 	R(CALL(sub_10a79,0));	// 1484 call    sub_10A79 ;~ 0192:0A4C
-ret_192_a4f:	// 4589 
+ret_192_a4f:	// 4590 
 	R(CMP(ah, 0x32));	// 1485 cmp     ah, 32h ; '2' ;~ 0192:0A4F
 cs=0x192;eip=0x000a52; 		R(JZ(loc_10a55));	// 1486 jz      short loc_10A55 ;~ 0192:0A52
 cs=0x192;eip=0x000a54; 	R(RETN);	// 1487 retn ;~ 0192:0A54
-loc_10a55:	// 4590 
+loc_10a55:	// 4591 
 	R(AND(*(raddr(ds,si+0x11)), 0x0BF));	// 1491 and     byte ptr [si+11h], 0BFh ;~ 0192:0A55
 cs=0x192;eip=0x000a59; 	R(RETN);	// 1492 retn ;~ 0192:0A59
-loc_10a5a:	// 4591 
+loc_10a5a:	// 4592 
 	R(MOV(ah, 0x13));	// 1496 mov     ah, 13h ;~ 0192:0A5A
 	R(CMP(ah, bh));	// 1497 cmp     ah, bh ;~ 0192:0A5C
 cs=0x192;eip=0x000a5e; 		R(JNC(loc_10a67));	// 1498 jnb     short loc_10A67 ;~ 0192:0A5E
 	R(XOR(ah, ah));	// 1499 xor     ah, ah ;~ 0192:0A60
 	R(MOV(byte_1f3cc, ah));	// 1500 mov     byte_1F3CC, ah ;~ 0192:0A62
 cs=0x192;eip=0x000a66; 	R(RETN);	// 1501 retn ;~ 0192:0A66
-loc_10a67:	// 4592 
+loc_10a67:	// 4593 
 	R(MOV(ch, bh));	// 1505 mov     ch, bh ;~ 0192:0A67
 	R(MOV(cl, dh));	// 1506 mov     cl, dh ;~ 0192:0A69
 cs=0x192;eip=0x000a6b; 	R(CALL(sub_10a79,0));	// 1507 call    sub_10A79 ;~ 0192:0A6B
-ret_192_a6e:	// 4593 
+ret_192_a6e:	// 4594 
 	R(INC(bx));	// 1508 inc     bx ;~ 0192:0A6E
 cs=0x192;eip=0x000a6f; 	R(CALL(sub_10a7c,0));	// 1509 call    sub_10A7C ;~ 0192:0A6F
-ret_192_a72:	// 4594 
+ret_192_a72:	// 4595 
 	R(MOV(byte_1f3cc, ah));	// 1510 mov     byte_1F3CC, ah ;~ 0192:0A72
 	R(INC(bx));	// 1511 inc     bx ;~ 0192:0A76
 cs=0x192;eip=0x000a77; 		R(JMP(sub_10a7c));	// 1512 jmp     short sub_10A7C ;~ 0192:0A77
@@ -1668,11 +1668,11 @@ sub_10a7c:	// 1528
 	R(OR(ah, ah));	// 1531 or      ah, ah ;~ 0192:0A7E
 cs=0x192;eip=0x000a80; 		R(JNZ(loc_10a83));	// 1532 jnz     short loc_10A83 ;~ 0192:0A80
 cs=0x192;eip=0x000a82; 	R(RETN);	// 1533 retn ;~ 0192:0A82
-loc_10a83:	// 4595 
+loc_10a83:	// 4596 
 	R(CMP(ah, 0x4E));	// 1537 cmp     ah, 4Eh ; 'N' ;~ 0192:0A83
 cs=0x192;eip=0x000a86; 		R(JC(loc_10a89));	// 1538 jb      short loc_10A89 ;~ 0192:0A86
 cs=0x192;eip=0x000a88; 	R(RETN);	// 1539 retn ;~ 0192:0A88
-loc_10a89:	// 4596 
+loc_10a89:	// 4597 
 	R(OR(*(raddr(ds,si+0x11)), 0x40));	// 1543 or      byte ptr [si+11h], 40h ;~ 0192:0A89
 cs=0x192;eip=0x000a8d; 	R(RETN);	// 1544 retn ;~ 0192:0A8D
 sub_10a8e:	// 1551 
@@ -1704,11 +1704,11 @@ sub_10aba:	// 1578
 	R(OR(ah, ah));	// 1583 or      ah, ah ;~ 0192:0AC6
 cs=0x192;eip=0x000ac8; 		R(JNZ(loc_10acd));	// 1584 jnz     short loc_10ACD ;~ 0192:0AC8
 cs=0x192;eip=0x000aca; 	R(CALL(sub_10b0d,0));	// 1585 call    sub_10B0D ;~ 0192:0ACA
-loc_10acd:	// 4597 
+loc_10acd:	// 4598 
 	R(TEST(ah, 0x80));	// 1588 test    ah, 80h ;~ 0192:0ACD
 cs=0x192;eip=0x000ad0; 		R(JZ(loc_10ad5));	// 1589 jz      short loc_10AD5 ;~ 0192:0AD0
 cs=0x192;eip=0x000ad2; 	R(CALL(sub_10b0d,0));	// 1590 call    sub_10B0D ;~ 0192:0AD2
-loc_10ad5:	// 4598 
+loc_10ad5:	// 4599 
 	R(MOV(dx, word_1f1c5));	// 1593 mov     dx, word_1F1C5 ;~ 0192:0AD5
 	R(MOV(bh, *(raddr(ds,si+0x0E))));	// 1594 mov     bh, [si+0Eh] ;~ 0192:0AD9
 	R(MOV(bl, *(raddr(ds,si+0x0D))));	// 1595 mov     bl, [si+0Dh] ;~ 0192:0ADC
@@ -1717,22 +1717,22 @@ loc_10ad5:	// 4598
 	R(SBB(bx, dx));	// 1598 sbb     bx, dx ;~ 0192:0AE4
 cs=0x192;eip=0x000ae6; 		R(JC(loc_10aeb));	// 1599 jb      short loc_10AEB ;~ 0192:0AE6
 cs=0x192;eip=0x000ae8; 	R(CALL(sub_10b26,0));	// 1600 call    sub_10B26 ;~ 0192:0AE8
-loc_10aeb:	// 4599 
+loc_10aeb:	// 4600 
 	R(MOV(ah, *(raddr(ds,si+0x0C))));	// 1603 mov     ah, [si+0Ch] ;~ 0192:0AEB
 	R(OR(ah, ah));	// 1604 or      ah, ah ;~ 0192:0AEE
 cs=0x192;eip=0x000af0; 		R(JNZ(loc_10af5));	// 1605 jnz     short loc_10AF5 ;~ 0192:0AF0
 cs=0x192;eip=0x000af2; 	R(CALL(sub_10b21,0));	// 1606 call    sub_10B21 ;~ 0192:0AF2
-loc_10af5:	// 4600 
+loc_10af5:	// 4601 
 	R(MOV(dx, word_1f1c3));	// 1609 mov     dx, word_1F1C3 ;~ 0192:0AF5
 	R(MOV(bl, *(raddr(ds,si+0x0B))));	// 1610 mov     bl, [si+0Bh] ;~ 0192:0AF9
 	R(MOV(bh, *(raddr(ds,si+0x0C))));	// 1611 mov     bh, [si+0Ch] ;~ 0192:0AFC
-loc_10aff:	// 4601 
+loc_10aff:	// 4602 
 	R(ADD(bx, dx));	// 1614 add     bx, dx ;~ 0192:0AFF
 	R(MOV(ah, 0x27));	// 1615 mov     ah, 27h ; ''' ;~ 0192:0B01
 	R(SUB(ah, bh));	// 1616 sub     ah, bh ;~ 0192:0B03
 cs=0x192;eip=0x000b05; 		R(JC(loc_10b08));	// 1617 jb      short loc_10B08 ;~ 0192:0B05
 cs=0x192;eip=0x000b07; 	R(RETN);	// 1618 retn ;~ 0192:0B07
-loc_10b08:	// 4602 
+loc_10b08:	// 4603 
 	R(OR(*(raddr(ds,si+0x24)), 0x20));	// 1622 or      byte ptr [si+24h], 20h ;~ 0192:0B08
 cs=0x192;eip=0x000b0c; 	R(RETN);	// 1623 retn ;~ 0192:0B0C
 sub_10b0d:	// 1630 
@@ -1742,7 +1742,7 @@ cs=0x192;eip=0x000b10; 		R(JNZ(loc_10b1c));	// 1633 jnz     short loc_10B1C ;~ 0
 	R(TEST(ah, 0x40));	// 1635 test    ah, 40h ;~ 0192:0B16
 cs=0x192;eip=0x000b19; 		R(JNZ(loc_10b1c));	// 1636 jnz     short loc_10B1C ;~ 0192:0B19
 cs=0x192;eip=0x000b1b; 	R(RETN);	// 1637 retn ;~ 0192:0B1B
-loc_10b1c:	// 4603 
+loc_10b1c:	// 4604 
 	R(OR(*(raddr(ds,si+0x24)), 0x80));	// 1642 or      byte ptr [si+24h], 80h ;~ 0192:0B1C
 cs=0x192;eip=0x000b20; 	R(RETN);	// 1643 retn ;~ 0192:0B20
 sub_10b21:	// 1650 
@@ -1756,24 +1756,24 @@ sub_10b2c:	// 1670
 	R(TEST(ah, 8));	// 1673 test    ah, 8 ;~ 0192:0B30
 cs=0x192;eip=0x000b33; 		R(JZ(loc_10b36));	// 1674 jz      short loc_10B36 ;~ 0192:0B33
 cs=0x192;eip=0x000b35; 	R(RETN);	// 1675 retn ;~ 0192:0B35
-loc_10b36:	// 4604 
+loc_10b36:	// 4605 
 	R(MOV(ah, byte_1f107));	// 1679 mov     ah, byte_1F107 ;~ 0192:0B36
 	R(TEST(ah, 0x20));	// 1680 test    ah, 20h ;~ 0192:0B3A
 cs=0x192;eip=0x000b3d; 		R(JZ(loc_10b40));	// 1681 jz      short loc_10B40 ;~ 0192:0B3D
 cs=0x192;eip=0x000b3f; 	R(RETN);	// 1682 retn ;~ 0192:0B3F
-loc_10b40:	// 4605 
+loc_10b40:	// 4606 
 	R(AND(*(raddr(ds,si+0x11)), 0x7F));	// 1686 and     byte ptr [si+11h], 7Fh ;~ 0192:0B40
 	R(AND(*(raddr(ds,si+0x11)), 0x0DF));	// 1687 and     byte ptr [si+11h], 0DFh ;~ 0192:0B44
 	R(AND(*(raddr(ds,si+0x11)), 0x0EF));	// 1688 and     byte ptr [si+11h], 0EFh ;~ 0192:0B48
 	R(MOV(cl, *(raddr(ds,si+0x0C))));	// 1689 mov     cl, [si+0Ch] ;~ 0192:0B4C
 	R(MOV(ch, *(raddr(ds,si+0x0E))));	// 1690 mov     ch, [si+0Eh] ;~ 0192:0B4F
 cs=0x192;eip=0x000b52; 	R(CALL(sub_110d5,0));	// 1691 call    sub_110D5 ;~ 0192:0B52
-ret_192_b55:	// 4606 
+ret_192_b55:	// 4607 
 	R(MOV(ah, 0x10));	// 1692 mov     ah, 10h ;~ 0192:0B55
 	R(MOV(*(db*)(((db*)&word_1f1b5)), ah));	// 1693 mov     byte ptr word_1F1B5, ah ;~ 0192:0B57
 	R(MOV(di, offset(seg000,byte_1d3d1)));	// 1694 mov     di, offset byte_1D3D1 ;~ 0192:0B5B
 	R(MOV(dh, 0));	// 1695 mov     dh, 0 ;~ 0192:0B5E
-loc_10b60:	// 4607 
+loc_10b60:	// 4608 
 	R(PUSH(bx));	// 1699 push    bx ;~ 0192:0B60
 	R(INC(di));	// 1700 inc     di ;~ 0192:0B61
 	R(MOV(ah, 0x0FF));	// 1701 mov     ah, 0FFh ;~ 0192:0B62
@@ -1791,7 +1791,7 @@ cs=0x192;eip=0x000b76; 		R(JZ(loc_10b60));	// 1711 jz      short loc_10B60 ;~ 01
 	R(OR(ah, *(raddr(ds,si+0x11))));	// 1713 or      ah, [si+11h] ;~ 0192:0B7C
 	R(MOV(*(raddr(ds,si+0x11)), ah));	// 1714 mov     [si+11h], ah ;~ 0192:0B7F
 cs=0x192;eip=0x000b82; 		R(JMP(loc_10b60));	// 1715 jmp     short loc_10B60 ;~ 0192:0B82
-loc_10b84:	// 4608 
+loc_10b84:	// 4609 
 	R(POP(bx));	// 1719 pop     bx ;~ 0192:0B84
 	R(MOV(ah, *(db*)(((db*)&word_1f1b5))));	// 1720 mov     ah, byte ptr word_1F1B5 ;~ 0192:0B85
 	R(SHL(ah, 1));	// 1721 shl     ah, 1 ;~ 0192:0B89
@@ -1803,70 +1803,71 @@ cs=0x192;eip=0x000b96; 		R(JZ(loc_10b9e));	// 1726 jz      short loc_10B9E ;~ 01
 	R(CMP(ah, 0x24));	// 1727 cmp     ah, 24h ; '$' ;~ 0192:0B98
 cs=0x192;eip=0x000b9b; 		R(JNC(loc_10ba3));	// 1728 jnb     short loc_10BA3 ;~ 0192:0B9B
 cs=0x192;eip=0x000b9d; 	R(RETN);	// 1729 retn ;~ 0192:0B9D
-loc_10b9e:	// 4609 
+loc_10b9e:	// 4610 
 	R(AND(*(raddr(ds,si+0x11)), 0x0EF));	// 1733 and     byte ptr [si+11h], 0EFh ;~ 0192:0B9E
 cs=0x192;eip=0x000ba2; 	R(RETN);	// 1734 retn ;~ 0192:0BA2
-loc_10ba3:	// 4610 
+loc_10ba3:	// 4611 
 	R(AND(*(raddr(ds,si+0x11)), 0x0DF));	// 1738 and     byte ptr [si+11h], 0DFh ;~ 0192:0BA3
 cs=0x192;eip=0x000ba7; 	R(RETN);	// 1739 retn ;~ 0192:0BA7
+ret_192_ba8:	// 4612 
 	R(MOV(ah, 0x0D));	// 1743 mov     ah, 0Dh ;~ 0192:0BA8
 	R(MOV(bx, offset(seg000,byte_1f17b)));	// 1744 mov     bx, offset byte_1F17B ;~ 0192:0BAA
 	R(SUB(ah, *(raddr(ds,bx))));	// 1745 sub     ah, [bx] ;~ 0192:0BAD
 	R(MOV(dx, 0x12C));	// 1746 mov     dx, 12Ch ;~ 0192:0BAF
 cs=0x192;eip=0x000bb2; 	R(CALL(sub_11139,0));	// 1747 call    sub_11139 ;~ 0192:0BB2
-ret_192_bb5:	// 4611 
+ret_192_bb5:	// 4613 
 	R(PUSH(bx));	// 1748 push    bx ;~ 0192:0BB5
 	R(POP(cx));	// 1749 pop     cx ;~ 0192:0BB6
 cs=0x192;eip=0x000bb7; 		R(JMP(sub_1114f));	// 1750 jmp     sub_1114F ;~ 0192:0BB7
 sub_10bba:	// 1755 
 cs=0x192;eip=0x000bba; 	R(CALL(sub_13944,0));	// 1760 call    sub_13944 ;~ 0192:0BBA
-ret_192_bbd:	// 4612 
+ret_192_bbd:	// 4614 
 cs=0x192;eip=0x000bbd; 	R(CALL(sub_10224,0));	// 1761 call    sub_10224 ;~ 0192:0BBD
-ret_192_bc0:	// 4613 
+ret_192_bc0:	// 4615 
 cs=0x192;eip=0x000bc0; 	R(CALL(sub_102de,0));	// 1762 call    sub_102DE ;~ 0192:0BC0
-ret_192_bc3:	// 4614 
+ret_192_bc3:	// 4616 
 cs=0x192;eip=0x000bc3; 	R(CALL(sub_12373,0));	// 1763 call    sub_12373 ;~ 0192:0BC3
-ret_192_bc6:	// 4615 
+ret_192_bc6:	// 4617 
 cs=0x192;eip=0x000bc6; 	R(CALL(sub_10ffc,0));	// 1764 call    sub_10FFC ;~ 0192:0BC6
-ret_192_bc9:	// 4616 
+ret_192_bc9:	// 4618 
 	R(XOR(ah, ah));	// 1765 xor     ah, ah ;~ 0192:0BC9
 	R(MOV(byte_1df4d, ah));	// 1766 mov     byte_1DF4D, ah ;~ 0192:0BCB
-loc_10bcf:	// 4617 
+loc_10bcf:	// 4619 
 	R(XOR(ah, ah));	// 1769 xor     ah, ah ;~ 0192:0BCF
 	R(MOV(*(db*)(((db*)&word_1f12a)+1), ah));	// 1770 mov     byte ptr word_1F12A+1, ah ;~ 0192:0BD1
 cs=0x192;eip=0x000bd5; 	R(CALL(sub_102f7,0));	// 1771 call    sub_102F7 ;~ 0192:0BD5
-ret_192_bd8:	// 4618 
+ret_192_bd8:	// 4620 
 cs=0x192;eip=0x000bd8; 	R(CALL(sub_1022e,0));	// 1772 call    sub_1022E ;~ 0192:0BD8
-ret_192_bdb:	// 4619 
+ret_192_bdb:	// 4621 
 cs=0x192;eip=0x000bdb; 	R(CALL(sub_10e0c,0));	// 1773 call    sub_10E0C ;~ 0192:0BDB
-ret_192_bde:	// 4620 
+ret_192_bde:	// 4622 
 cs=0x192;eip=0x000bde; 	R(CALL(sub_12bd2,0));	// 1774 call    sub_12BD2 ;~ 0192:0BDE
-ret_192_be1:	// 4621 
+ret_192_be1:	// 4623 
 cs=0x192;eip=0x000be1; 	R(CALL(sub_12b25,0));	// 1775 call    sub_12B25 ;~ 0192:0BE1
-ret_192_be4:	// 4622 
+ret_192_be4:	// 4624 
 cs=0x192;eip=0x000be4; 	R(CALL(sub_10dec,0));	// 1776 call    sub_10DEC ;~ 0192:0BE4
-ret_192_be7:	// 4623 
+ret_192_be7:	// 4625 
 cs=0x192;eip=0x000be7; 	R(CALL(sub_138b9,0));	// 1777 call    sub_138B9 ;~ 0192:0BE7
-ret_192_bea:	// 4624 
+ret_192_bea:	// 4626 
 cs=0x192;eip=0x000bea; 		R(JMP(loc_13180));	// 1778 jmp     loc_13180 ;~ 0192:0BEA
 sub_10bed:	// 1785 
 	R(MOV(si, offset(seg000,byte_1f1f8)));	// 1786 mov     si, offset byte_1F1F8 ;~ 0192:0BED
 	R(TEST(*(raddr(ds,si)), 0x80));	// 1787 test    byte ptr [si], 80h ;~ 0192:0BF0
 cs=0x192;eip=0x000bf3; 		R(JZ(loc_10bf6));	// 1788 jz      short loc_10BF6 ;~ 0192:0BF3
 cs=0x192;eip=0x000bf5; 	R(RETN);	// 1789 retn ;~ 0192:0BF5
-loc_10bf6:	// 4625 
+loc_10bf6:	// 4627 
 	R(MOV(ah, 0x0A0));	// 1793 mov     ah, 0A0h ; ' ' ;~ 0192:0BF6
 cs=0x192;eip=0x000bf8; 	R(CALL(sub_12c70,0));	// 1794 call    sub_12C70 ;~ 0192:0BF8
-ret_192_bfb:	// 4626 
+ret_192_bfb:	// 4628 
 cs=0x192;eip=0x000bfb; 		R(JNZ(loc_10c03));	// 1795 jnz     short loc_10C03 ;~ 0192:0BFB
 	R(INC(dh));	// 1796 inc     dh ;~ 0192:0BFD
 	R(INC(dh));	// 1797 inc     dh ;~ 0192:0BFF
 	R(NEG(ah));	// 1798 neg     ah ;~ 0192:0C01
-loc_10c03:	// 4627 
+loc_10c03:	// 4629 
 	R(MOV(cl, 0));	// 1801 mov     cl, 0 ;~ 0192:0C03
 	R(MOV(ch, 1));	// 1802 mov     ch, 1 ;~ 0192:0C05
 cs=0x192;eip=0x000c07; 	R(CALL(sub_11274,0));	// 1803 call    sub_11274 ;~ 0192:0C07
-ret_192_c0a:	// 4628 
+ret_192_c0a:	// 4630 
 	R(MOV(ah, byte_1f127));	// 1804 mov     ah, byte_1F127 ;~ 0192:0C0A
 	R(SHL(ah, 1));	// 1805 shl     ah, 1 ;~ 0192:0C0E
 	R(NEG(ah));	// 1806 neg     ah ;~ 0192:0C10
@@ -1879,36 +1880,36 @@ sub_10c1a:	// 1816
 	R(AND(ah, 0x0F0));	// 1819 and     ah, 0F0h ;~ 0192:0C20
 cs=0x192;eip=0x000c23; 		R(JNZ(loc_10c26));	// 1820 jnz     short loc_10C26 ;~ 0192:0C23
 cs=0x192;eip=0x000c25; 	R(RETN);	// 1821 retn ;~ 0192:0C25
-loc_10c26:	// 4629 
+loc_10c26:	// 4631 
 	R(MOV(di, word_1f1cd));	// 1825 mov     di, word_1F1CD ;~ 0192:0C26
 	R(TEST(ah, 0x80));	// 1826 test    ah, 80h ;~ 0192:0C2A
 cs=0x192;eip=0x000c2d; 		R(JNZ(loc_10c73));	// 1827 jnz     short loc_10C73 ;~ 0192:0C2D
 	R(TEST(ah, 0x40));	// 1828 test    ah, 40h ;~ 0192:0C2F
 cs=0x192;eip=0x000c32; 		R(JZ(loc_10c37));	// 1829 jz      short loc_10C37 ;~ 0192:0C32
 cs=0x192;eip=0x000c34; 		R(JMP(loc_10cab));	// 1830 jmp     loc_10CAB ;~ 0192:0C34
-loc_10c37:	// 4630 
+loc_10c37:	// 4632 
 	R(TEST(ah, 0x20));	// 1834 test    ah, 20h ;~ 0192:0C37
 cs=0x192;eip=0x000c3a; 		R(JNZ(loc_10c57));	// 1835 jnz     short loc_10C57 ;~ 0192:0C3A
 cs=0x192;eip=0x000c3c; 	R(CALL(sub_10d1d,0));	// 1836 call    sub_10D1D ;~ 0192:0C3C
-ret_192_c3f:	// 4631 
+ret_192_c3f:	// 4633 
 cs=0x192;eip=0x000c3f; 		R(JNZ(loc_10c42));	// 1837 jnz     short loc_10C42 ;~ 0192:0C3F
 cs=0x192;eip=0x000c41; 	R(RETN);	// 1838 retn ;~ 0192:0C41
-loc_10c42:	// 4632 
+loc_10c42:	// 4634 
 	R(MOV(ah, *(raddr(ds,di))));	// 1842 mov     ah, [di] ;~ 0192:0C42
 	R(CMP(ah, 0x0FF));	// 1843 cmp     ah, 0FFh ;~ 0192:0C44
 cs=0x192;eip=0x000c47; 		R(JNZ(loc_10c52));	// 1844 jnz     short loc_10C52 ;~ 0192:0C47
 	R(AND(*(raddr(ds,si+0x11)), 0x0FE));	// 1845 and     byte ptr [si+11h], 0FEh ;~ 0192:0C49
 	R(MOV(*(raddr(ds,si+0x0C)), 0));	// 1846 mov     byte ptr [si+0Ch], 0 ;~ 0192:0C4D
 cs=0x192;eip=0x000c51; 	R(RETN);	// 1847 retn ;~ 0192:0C51
-loc_10c52:	// 4633 
+loc_10c52:	// 4635 
 	R(MOV(dl, 0x25));	// 1851 mov     dl, 25h ; '%' ;~ 0192:0C52
 cs=0x192;eip=0x000c54; 		R(JMP(loc_10cdb));	// 1852 jmp     loc_10CDB ;~ 0192:0C54
-loc_10c57:	// 4634 
+loc_10c57:	// 4636 
 cs=0x192;eip=0x000c57; 	R(CALL(sub_10d18,0));	// 1856 call    sub_10D18 ;~ 0192:0C57
-ret_192_c5a:	// 4635 
+ret_192_c5a:	// 4637 
 cs=0x192;eip=0x000c5a; 		R(JZ(loc_10c5d));	// 1857 jz      short loc_10C5D ;~ 0192:0C5A
 cs=0x192;eip=0x000c5c; 	R(RETN);	// 1858 retn ;~ 0192:0C5C
-loc_10c5d:	// 4636 
+loc_10c5d:	// 4638 
 	R(MOV(dx, 2));	// 1862 mov     dx, 2 ;~ 0192:0C5D
 	R(ADD(di, dx));	// 1863 add     di, dx ;~ 0192:0C60
 	R(MOV(ah, *(raddr(ds,di))));	// 1864 mov     ah, [di] ;~ 0192:0C62
@@ -1916,10 +1917,10 @@ loc_10c5d:	// 4636
 cs=0x192;eip=0x000c67; 		R(JNZ(loc_10c6e));	// 1866 jnz     short loc_10C6E ;~ 0192:0C67
 	R(AND(*(raddr(ds,si+0x11)), 0x0FE));	// 1867 and     byte ptr [si+11h], 0FEh ;~ 0192:0C69
 cs=0x192;eip=0x000c6d; 	R(RETN);	// 1868 retn ;~ 0192:0C6D
-loc_10c6e:	// 4637 
+loc_10c6e:	// 4639 
 	R(MOV(dl, 0));	// 1872 mov     dl, 0 ;~ 0192:0C6E
 cs=0x192;eip=0x000c70; 		R(JMP(loc_10cdb));	// 1873 jmp     loc_10CDB ;~ 0192:0C70
-loc_10c73:	// 4638 
+loc_10c73:	// 4640 
 	R(MOV(ah, *(raddr(ds,si+0x0E))));	// 1877 mov     ah, [si+0Eh] ;~ 0192:0C73
 	R(TEST(ah, 0x80));	// 1878 test    ah, 80h ;~ 0192:0C76
 cs=0x192;eip=0x000c79; 		R(JNZ(loc_10c94));	// 1879 jnz     short loc_10C94 ;~ 0192:0C79
@@ -1929,57 +1930,57 @@ cs=0x192;eip=0x000c82; 		R(JZ(loc_10c8d));	// 1882 jz      short loc_10C8D ;~ 01
 	R(MOV(ah, byte_1f47e));	// 1883 mov     ah, byte_1F47E ;~ 0192:0C84
 	R(TEST(ah, 0x80));	// 1884 test    ah, 80h ;~ 0192:0C88
 cs=0x192;eip=0x000c8b; 		R(JNZ(loc_10c94));	// 1885 jnz     short loc_10C94 ;~ 0192:0C8B
-loc_10c8d:	// 4639 
+loc_10c8d:	// 4641 
 	R(TEST(*(raddr(ds,si+0x14)), 0x80));	// 1888 test    byte ptr [si+14h], 80h ;~ 0192:0C8D
 cs=0x192;eip=0x000c91; 		R(JNZ(loc_10c94));	// 1889 jnz     short loc_10C94 ;~ 0192:0C91
 cs=0x192;eip=0x000c93; 	R(RETN);	// 1890 retn ;~ 0192:0C93
-loc_10c94:	// 4640 
+loc_10c94:	// 4642 
 	R(MOV(ah, *(raddr(ds,di+3))));	// 1895 mov     ah, [di+3] ;~ 0192:0C94
 	R(CMP(ah, 0x0FF));	// 1896 cmp     ah, 0FFh ;~ 0192:0C97
 cs=0x192;eip=0x000c9a; 		R(JNZ(loc_10c9d));	// 1897 jnz     short loc_10C9D ;~ 0192:0C9A
 cs=0x192;eip=0x000c9c; 	R(RETN);	// 1898 retn ;~ 0192:0C9C
-loc_10c9d:	// 4641 
+loc_10c9d:	// 4643 
 	R(MOV(byte_1f11d, ah));	// 1902 mov     byte_1F11D, ah ;~ 0192:0C9D
 	R(MOV(*(raddr(ds,si+0x0E)), 0x10));	// 1903 mov     byte ptr [si+0Eh], 10h ;~ 0192:0CA1
 	R(MOV(*(raddr(ds,si+0x0D)), 0x80));	// 1904 mov     byte ptr [si+0Dh], 80h ; '€' ;~ 0192:0CA5
 cs=0x192;eip=0x000ca9; 		R(JMP(loc_10ce6));	// 1905 jmp     short loc_10CE6 ;~ 0192:0CA9
-loc_10cab:	// 4642 
+loc_10cab:	// 4644 
 	R(MOV(ah, byte_1f126));	// 1909 mov     ah, byte_1F126 ;~ 0192:0CAB
 	R(TEST(ah, 0x40));	// 1910 test    ah, 40h ;~ 0192:0CAF
 cs=0x192;eip=0x000cb2; 		R(JZ(loc_10cbd));	// 1911 jz      short loc_10CBD ;~ 0192:0CB2
 	R(MOV(ah, byte_1f47e));	// 1912 mov     ah, byte_1F47E ;~ 0192:0CB4
 	R(TEST(ah, 0x80));	// 1913 test    ah, 80h ;~ 0192:0CB8
 cs=0x192;eip=0x000cbb; 		R(JZ(loc_10cc4));	// 1914 jz      short loc_10CC4 ;~ 0192:0CBB
-loc_10cbd:	// 4643 
+loc_10cbd:	// 4645 
 	R(TEST(*(raddr(ds,si+0x14)), 0x80));	// 1917 test    byte ptr [si+14h], 80h ;~ 0192:0CBD
 cs=0x192;eip=0x000cc1; 		R(JZ(loc_10cc4));	// 1918 jz      short loc_10CC4 ;~ 0192:0CC1
 cs=0x192;eip=0x000cc3; 	R(RETN);	// 1919 retn ;~ 0192:0CC3
-loc_10cc4:	// 4644 
+loc_10cc4:	// 4646 
 	R(INC(di));	// 1924 inc     di ;~ 0192:0CC4
 	R(MOV(ah, *(raddr(ds,di))));	// 1925 mov     ah, [di] ;~ 0192:0CC5
 	R(CMP(ah, 0x0FF));	// 1926 cmp     ah, 0FFh ;~ 0192:0CC7
 cs=0x192;eip=0x000cca; 		R(JNZ(loc_10ccd));	// 1927 jnz     short loc_10CCD ;~ 0192:0CCA
 cs=0x192;eip=0x000ccc; 	R(RETN);	// 1928 retn ;~ 0192:0CCC
-loc_10ccd:	// 4645 
+loc_10ccd:	// 4647 
 	R(MOV(byte_1f11d, ah));	// 1932 mov     byte_1F11D, ah ;~ 0192:0CCD
 	R(MOV(*(raddr(ds,si+0x0E)), 0));	// 1933 mov     byte ptr [si+0Eh], 0 ;~ 0192:0CD1
 	R(MOV(*(raddr(ds,si+0x0D)), 0x80));	// 1934 mov     byte ptr [si+0Dh], 80h ; '€' ;~ 0192:0CD5
 cs=0x192;eip=0x000cd9; 		R(JMP(loc_10ce6));	// 1935 jmp     short loc_10CE6 ;~ 0192:0CD9
-loc_10cdb:	// 4646 
+loc_10cdb:	// 4648 
 	R(MOV(byte_1f11d, ah));	// 1940 mov     byte_1F11D, ah ;~ 0192:0CDB
 	R(MOV(*(raddr(ds,si+0x0B)), 0));	// 1941 mov     byte ptr [si+0Bh], 0 ;~ 0192:0CDF
 	R(MOV(*(raddr(ds,si+0x0C)), dl));	// 1942 mov     [si+0Ch], dl ;~ 0192:0CE3
-loc_10ce6:	// 4647 
+loc_10ce6:	// 4649 
 cs=0x192;eip=0x000ce6; 	R(CALL(sub_13944,0));	// 1946 call    sub_13944 ;~ 0192:0CE6
-ret_192_ce9:	// 4648 
+ret_192_ce9:	// 4650 
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 1947 mov     si, offset byte_1F1CF ;~ 0192:0CE9
 	R(OR(*(raddr(ds,si)), 0x40));	// 1948 or      byte ptr [si], 40h ;~ 0192:0CEC
 cs=0x192;eip=0x000cef; 	R(CALL(sub_111f3,0));	// 1949 call    sub_111F3 ;~ 0192:0CEF
-ret_192_cf2:	// 4649 
+ret_192_cf2:	// 4651 
 cs=0x192;eip=0x000cf2; 	R(CALL(sub_12240,0));	// 1950 call    sub_12240 ;~ 0192:0CF2
-ret_192_cf5:	// 4650 
+ret_192_cf5:	// 4652 
 cs=0x192;eip=0x000cf5; 	R(CALL(sub_112d3,0));	// 1951 call    sub_112D3 ;~ 0192:0CF5
-ret_192_cf8:	// 4651 
+ret_192_cf8:	// 4653 
 	R(XOR(ah, ah));	// 1952 xor     ah, ah ;~ 0192:0CF8
 	R(MOV(byte_1f126, ah));	// 1953 mov     byte_1F126, ah ;~ 0192:0CFA
 	R(MOV(bx, offset(seg000,byte_1f1f8)));	// 1954 mov     bx, offset byte_1F1F8 ;~ 0192:0CFE
@@ -2002,7 +2003,7 @@ sub_10d1d:	// 1980
 cs=0x192;eip=0x000d24; 		R(JZ(loc_10d2b));	// 1983 jz      short loc_10D2B ;~ 0192:0D24
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 1984 test    byte ptr [si+13h], 80h ;~ 0192:0D26
 cs=0x192;eip=0x000d2a; 	R(RETN);	// 1985 retn ;~ 0192:0D2A
-loc_10d2b:	// 4652 
+loc_10d2b:	// 4654 
 	R(MOV(ah, byte_1f115));	// 1989 mov     ah, byte_1F115 ;~ 0192:0D2B
 	R(TEST(ah, 8));	// 1990 test    ah, 8 ;~ 0192:0D2F
 cs=0x192;eip=0x000d32; 		R(JNZ(loc_10d3e));	// 1991 jnz     short loc_10D3E ;~ 0192:0D32
@@ -2010,7 +2011,7 @@ cs=0x192;eip=0x000d32; 		R(JNZ(loc_10d3e));	// 1991 jnz     short loc_10D3E ;~ 0
 	R(MOV(byte_1f1e2, ah));	// 1993 mov     byte_1F1E2, ah ;~ 0192:0D37
 	R(OR(ah, ah));	// 1994 or      ah, ah ;~ 0192:0D3B
 cs=0x192;eip=0x000d3d; 	R(RETN);	// 1995 retn ;~ 0192:0D3D
-loc_10d3e:	// 4653 
+loc_10d3e:	// 4655 
 	R(XOR(ah, ah));	// 1999 xor     ah, ah ;~ 0192:0D3E
 cs=0x192;eip=0x000d40; 	R(RETN);	// 2000 retn ;~ 0192:0D40
 sub_10d41:	// 2007 
@@ -2019,26 +2020,26 @@ sub_10d41:	// 2007
 	R(TEST(*(raddr(ds,bx)), 2));	// 2010 test    byte ptr [bx], 2 ;~ 0192:0D47
 cs=0x192;eip=0x000d4a; 		R(JZ(loc_10d4f));	// 2011 jz      short loc_10D4F ;~ 0192:0D4A
 cs=0x192;eip=0x000d4c; 		R(JMP(loc_10dc0));	// 2012 jmp     loc_10DC0 ;~ 0192:0D4C
-loc_10d4f:	// 4654 
+loc_10d4f:	// 4656 
 	R(MOV(bx, offset(seg000,byte_1f126)));	// 2016 mov     bx, offset byte_1F126 ;~ 0192:0D4F
 	R(TEST(*(raddr(ds,bx)), 0x40));	// 2017 test    byte ptr [bx], 40h ;~ 0192:0D52
 cs=0x192;eip=0x000d55; 		R(JZ(loc_10d58));	// 2018 jz      short loc_10D58 ;~ 0192:0D55
 cs=0x192;eip=0x000d57; 	R(RETN);	// 2019 retn ;~ 0192:0D57
-loc_10d58:	// 4655 
+loc_10d58:	// 4657 
 	R(MOV(ah, byte_1f11d));	// 2023 mov     ah, byte_1F11D ;~ 0192:0D58
 	R(CMP(ah, 0x42));	// 2024 cmp     ah, 42h ; 'B' ;~ 0192:0D5C
 cs=0x192;eip=0x000d5f; 		R(JNZ(loc_10d62));	// 2025 jnz     short loc_10D62 ;~ 0192:0D5F
 cs=0x192;eip=0x000d61; 	R(RETN);	// 2026 retn ;~ 0192:0D61
-loc_10d62:	// 4656 
+loc_10d62:	// 4658 
 	R(MOV(ah, byte_1f133));	// 2030 mov     ah, byte_1F133 ;~ 0192:0D62
 	R(CMP(ah, 0x2C));	// 2031 cmp     ah, 2Ch ; ',' ;~ 0192:0D66
 cs=0x192;eip=0x000d69; 		R(JNZ(loc_10d6c));	// 2032 jnz     short loc_10D6C ;~ 0192:0D69
 cs=0x192;eip=0x000d6b; 	R(RETN);	// 2033 retn ;~ 0192:0D6B
-loc_10d6c:	// 4657 
+loc_10d6c:	// 4659 
 	R(CMP(ah, 0x3C));	// 2037 cmp     ah, 3Ch ; '<' ;~ 0192:0D6C
 cs=0x192;eip=0x000d6f; 		R(JNZ(loc_10d72));	// 2038 jnz     short loc_10D72 ;~ 0192:0D6F
 cs=0x192;eip=0x000d71; 	R(RETN);	// 2039 retn ;~ 0192:0D71
-loc_10d72:	// 4658 
+loc_10d72:	// 4660 
 	R(MOV(bx, word_1f1dc));	// 2043 mov     bx, word_1F1DC ;~ 0192:0D72
 	R(MOV(ah, bh));	// 2044 mov     ah, bh ;~ 0192:0D76
 	R(CMP(ah, 0x0A));	// 2045 cmp     ah, 0Ah ;~ 0192:0D78
@@ -2054,28 +2055,28 @@ cs=0x192;eip=0x000d93; 		R(JNZ(loc_10d9d));	// 2054 jnz     short loc_10D9D ;~ 0
 	R(INC(bh));	// 2055 inc     bh ;~ 0192:0D95
 	R(INC(bh));	// 2056 inc     bh ;~ 0192:0D97
 	R(MOV(*(dw*)((&byte_1df50)), bx));	// 2057 mov     word ptr byte_1DF50, bx ;~ 0192:0D99
-loc_10d9d:	// 4659 
+loc_10d9d:	// 4661 
 	R(POP(bx));	// 2060 pop     bx ;~ 0192:0D9D
 	R(POP(cx));	// 2061 pop     cx ;~ 0192:0D9E
 	R(MOV(dx, 0x200));	// 2062 mov     dx, 200h ;~ 0192:0D9F
 	R(ADD(bx, dx));	// 2063 add     bx, dx ;~ 0192:0DA2
 	R(MOV(*(dw*)((&byte_1df52)), bx));	// 2064 mov     word ptr byte_1DF52, bx ;~ 0192:0DA4
 cs=0x192;eip=0x000da8; 	R(CALL(sub_10ed2,0));	// 2065 call    sub_10ED2 ;~ 0192:0DA8
-ret_192_dab:	// 4660 
+ret_192_dab:	// 4662 
 cs=0x192;eip=0x000dab; 		R(JNC(loc_10dae));	// 2066 jnb     short loc_10DAE ;~ 0192:0DAB
 cs=0x192;eip=0x000dad; 	R(RETN);	// 2067 retn ;~ 0192:0DAD
-loc_10dae:	// 4661 
+loc_10dae:	// 4663 
 cs=0x192;eip=0x000dae; 	R(CALL(nullsub_1,0));	// 2071 call    nullsub_1 ;~ 0192:0DAE
-ret_192_db1:	// 4662 
+ret_192_db1:	// 4664 
 	R(MOV(bx, offset(seg000,byte_1df4d)));	// 2072 mov     bx, offset byte_1DF4D ;~ 0192:0DB1
 	R(OR(*(raddr(ds,bx)), 1));	// 2073 or      byte ptr [bx], 1 ;~ 0192:0DB4
 	R(MOV(ah, byte_1f11d));	// 2074 mov     ah, byte_1F11D ;~ 0192:0DB7
 	R(MOV(byte_1f122, ah));	// 2075 mov     byte_1F122, ah ;~ 0192:0DBB
 cs=0x192;eip=0x000dbf; 	R(RETN);	// 2076 retn ;~ 0192:0DBF
-loc_10dc0:	// 4663 
+loc_10dc0:	// 4665 
 	R(POP(cx));	// 2081 pop     cx ;~ 0192:0DC0
 cs=0x192;eip=0x000dc1; 	R(RETN);	// 2082 retn ;~ 0192:0DC1
-loc_10dc2:	// 4664 
+loc_10dc2:	// 4666 
 	R(POP(bx));	// 2087 pop     bx ;~ 0192:0DC2
 	R(MOV(ah, byte_1f115));	// 2088 mov     ah, byte_1F115 ;~ 0192:0DC3
 cs=0x192;eip=0x000dc7; 	R(RETN);	// 2089 retn ;~ 0192:0DC7
@@ -2088,13 +2089,13 @@ cs=0x192;eip=0x000dd1; 		R(JNZ(loc_10dc0));	// 2100 jnz     short loc_10DC0 ;~ 0
 	R(TEST(ah, 2));	// 2102 test    ah, 2 ;~ 0192:0DD7
 cs=0x192;eip=0x000dda; 		R(JNZ(loc_10ddd));	// 2103 jnz     short loc_10DDD ;~ 0192:0DDA
 cs=0x192;eip=0x000ddc; 	R(RETN);	// 2104 retn ;~ 0192:0DDC
-loc_10ddd:	// 4665 
+loc_10ddd:	// 4667 
 	R(AND(ah, 0x0F8));	// 2108 and     ah, 0F8h ;~ 0192:0DDD
 	R(MOV(byte_1df4d, ah));	// 2109 mov     byte_1DF4D, ah ;~ 0192:0DE0
 cs=0x192;eip=0x000de4; 	R(CALL(sub_10f82,0));	// 2110 call    sub_10F82 ;~ 0192:0DE4
-ret_192_de7:	// 4666 
+ret_192_de7:	// 4668 
 cs=0x192;eip=0x000de7; 	R(CALL(nullsub_1,0));	// 2111 call    nullsub_1 ;~ 0192:0DE7
-ret_192_dea:	// 4667 
+ret_192_dea:	// 4669 
 	R(POP(cx));	// 2112 pop     cx ;~ 0192:0DEA
 cs=0x192;eip=0x000deb; 	R(RETN);	// 2113 retn ;~ 0192:0DEB
 sub_10dec:	// 2120 
@@ -2102,24 +2103,24 @@ sub_10dec:	// 2120
 	R(TEST(ah, 1));	// 2122 test    ah, 1 ;~ 0192:0DF0
 cs=0x192;eip=0x000df3; 		R(JNZ(loc_10df6));	// 2123 jnz     short loc_10DF6 ;~ 0192:0DF3
 cs=0x192;eip=0x000df5; 	R(RETN);	// 2124 retn ;~ 0192:0DF5
-loc_10df6:	// 4668 
+loc_10df6:	// 4670 
 	R(MOV(ah, byte_1f122));	// 2128 mov     ah, byte_1F122 ;~ 0192:0DF6
 	R(MOV(ch, ah));	// 2129 mov     ch, ah ;~ 0192:0DFA
 	R(MOV(ah, byte_1f11d));	// 2130 mov     ah, byte_1F11D ;~ 0192:0DFC
 	R(CMP(ah, ch));	// 2131 cmp     ah, ch ;~ 0192:0E00
 cs=0x192;eip=0x000e02; 		R(JZ(loc_10e05));	// 2132 jz      short loc_10E05 ;~ 0192:0E02
 cs=0x192;eip=0x000e04; 	R(RETN);	// 2133 retn ;~ 0192:0E04
-loc_10e05:	// 4669 
+loc_10e05:	// 4671 
 cs=0x192;eip=0x000e05; 	R(CALL(sub_10ed2,0));	// 2137 call    sub_10ED2 ;~ 0192:0E05
-ret_192_e08:	// 4670 
+ret_192_e08:	// 4672 
 cs=0x192;eip=0x000e08; 		R(JNC(locret_10e0b));	// 2138 jnb     short locret_10E0B ;~ 0192:0E08
 cs=0x192;eip=0x000e0a; 	R(RETN);	// 2139 retn ;~ 0192:0E0A
-locret_10e0b:	// 4671 
+locret_10e0b:	// 4673 
 cs=0x192;eip=0x000e0b; 	R(RETN);	// 2143 retn ;~ 0192:0E0B
 sub_10e0c:	// 2150 
 	R(MOV(ch, 8));	// 2151 mov     ch, 8 ;~ 0192:0E0C
 	R(MOV(bx, offset(seg000,byte_1f480)));	// 2152 mov     bx, offset byte_1F480 ;~ 0192:0E0E
-loc_10e11:	// 4672 
+loc_10e11:	// 4674 
 	R(PUSH(cx));	// 2155 push    cx ;~ 0192:0E11
 	R(PUSH(bx));	// 2156 push    bx ;~ 0192:0E12
 	R(MOV(ah, byte_1f11d));	// 2157 mov     ah, byte_1F11D ;~ 0192:0E13
@@ -2129,11 +2130,11 @@ cs=0x192;eip=0x000e19; 		R(JNZ(loc_10e27));	// 2159 jnz     short loc_10E27 ;~ 0
 	R(INC(bx));	// 2161 inc     bx ;~ 0192:0E1C
 	R(PUSH(bx));	// 2162 push    bx ;~ 0192:0E1D
 cs=0x192;eip=0x000e1e; 	R(CALL(sub_112a7,0));	// 2163 call    sub_112A7 ;~ 0192:0E1E
-ret_192_e21:	// 4673 
+ret_192_e21:	// 4675 
 	R(POP(di));	// 2164 pop     di ;~ 0192:0E21
 cs=0x192;eip=0x000e22; 		R(JC(loc_10e27));	// 2165 jb      short loc_10E27 ;~ 0192:0E22
 cs=0x192;eip=0x000e24; 	R(CALL(sub_11229,0));	// 2166 call    sub_11229 ;~ 0192:0E24
-loc_10e27:	// 4674 
+loc_10e27:	// 4676 
 	R(MOV(dx, 8));	// 2170 mov     dx, 8 ;~ 0192:0E27
 	R(POP(bx));	// 2171 pop     bx ;~ 0192:0E2A
 	R(POP(cx));	// 2172 pop     cx ;~ 0192:0E2B
@@ -2150,12 +2151,12 @@ cs=0x192;eip=0x000e40; 		R(JNZ(loc_10e7c));	// 2188 jnz     short loc_10E7C ;~ 0
 	R(TEST(ah, 1));	// 2189 test    ah, 1 ;~ 0192:0E42
 cs=0x192;eip=0x000e45; 		R(JNZ(loc_10e48));	// 2190 jnz     short loc_10E48 ;~ 0192:0E45
 cs=0x192;eip=0x000e47; 	R(RETN);	// 2191 retn ;~ 0192:0E47
-loc_10e48:	// 4675 
+loc_10e48:	// 4677 
 	R(MOV(ch, *(raddr(ds,si+0x0E))));	// 2195 mov     ch, [si+0Eh] ;~ 0192:0E48
 	R(DEC(ch));	// 2196 dec     ch ;~ 0192:0E4B
 	R(MOV(cl, *(raddr(ds,si+0x0C))));	// 2197 mov     cl, [si+0Ch] ;~ 0192:0E4D
 cs=0x192;eip=0x000e50; 	R(CALL(sub_110d5,0));	// 2198 call    sub_110D5 ;~ 0192:0E50
-ret_192_e53:	// 4676 
+ret_192_e53:	// 4678 
 	R(MOV(ah, 0x66));	// 2199 mov     ah, 66h ; 'f' ;~ 0192:0E53
 	R(CMP(ah, *(raddr(ds,bx))));	// 2200 cmp     ah, [bx] ;~ 0192:0E55
 cs=0x192;eip=0x000e57; 		R(JZ(loc_10e6c));	// 2201 jz      short loc_10E6C ;~ 0192:0E57
@@ -2169,26 +2170,26 @@ cs=0x192;eip=0x000e63; 		R(JZ(loc_10e6c));	// 2207 jz      short loc_10E6C ;~ 01
 	R(CMP(ah, *(raddr(ds,bx))));	// 2209 cmp     ah, [bx] ;~ 0192:0E67
 cs=0x192;eip=0x000e69; 		R(JC(loc_10e6c));	// 2210 jb      short loc_10E6C ;~ 0192:0E69
 cs=0x192;eip=0x000e6b; 	R(RETN);	// 2211 retn ;~ 0192:0E6B
-loc_10e6c:	// 4677 
+loc_10e6c:	// 4679 
 	R(MOV(bx, offset(seg000,byte_1d391)));	// 2216 mov     bx, offset byte_1D391 ;~ 0192:0E6C
 cs=0x192;eip=0x000e6f; 	R(CALL(sub_10907,0));	// 2217 call    sub_10907 ;~ 0192:0E6F
-ret_192_e72:	// 4678 
+ret_192_e72:	// 4680 
 cs=0x192;eip=0x000e72; 	R(CALL(sub_11065,0));	// 2218 call    sub_11065 ;~ 0192:0E72
-ret_192_e75:	// 4679 
+ret_192_e75:	// 4681 
 cs=0x192;eip=0x000e75; 		R(JNC(loc_10ec0));	// 2219 jnb     short loc_10EC0 ;~ 0192:0E75
 	R(DEC(*(raddr(ds,si+0x0E))));	// 2220 dec     byte ptr [si+0Eh] ;~ 0192:0E77
 cs=0x192;eip=0x000e7a; 		R(JMP(loc_10eba));	// 2221 jmp     short loc_10EBA ;~ 0192:0E7A
-loc_10e7c:	// 4680 
+loc_10e7c:	// 4682 
 	R(MOV(ah, byte_1f133));	// 2225 mov     ah, byte_1F133 ;~ 0192:0E7C
 	R(CMP(ah, 0x66));	// 2226 cmp     ah, 66h ; 'f' ;~ 0192:0E80
 cs=0x192;eip=0x000e83; 		R(JZ(loc_10e90));	// 2227 jz      short loc_10E90 ;~ 0192:0E83
-loc_10e85:	// 4681 
+loc_10e85:	// 4683 
 	R(CMP(ah, 0x69));	// 2230 cmp     ah, 69h ; 'i' ;~ 0192:0E85
 cs=0x192;eip=0x000e88; 		R(JZ(loc_10e90));	// 2231 jz      short loc_10E90 ;~ 0192:0E88
 	R(CMP(ah, 0x4E));	// 2232 cmp     ah, 4Eh ; 'N' ;~ 0192:0E8A
 cs=0x192;eip=0x000e8d; 		R(JNC(loc_10e90));	// 2233 jnb     short loc_10E90 ;~ 0192:0E8D
 cs=0x192;eip=0x000e8f; 	R(RETN);	// 2234 retn ;~ 0192:0E8F
-loc_10e90:	// 4682 
+loc_10e90:	// 4684 
 	R(MOV(ah, byte_1df53));	// 2239 mov     ah, byte_1DF53 ;~ 0192:0E90
 	R(MOV(ch, ah));	// 2240 mov     ch, ah ;~ 0192:0E94
 	R(MOV(ah, *(db*)(((db*)&word_1f1dc)+1)));	// 2241 mov     ah, byte ptr word_1F1DC+1 ;~ 0192:0E96
@@ -2196,26 +2197,26 @@ loc_10e90:	// 4682
 	R(CMP(ah, ch));	// 2243 cmp     ah, ch ;~ 0192:0E9C
 cs=0x192;eip=0x000e9e; 		R(JNZ(loc_10ea1));	// 2244 jnz     short loc_10EA1 ;~ 0192:0E9E
 cs=0x192;eip=0x000ea0; 	R(RETN);	// 2245 retn ;~ 0192:0EA0
-loc_10ea1:	// 4683 
+loc_10ea1:	// 4685 
 cs=0x192;eip=0x000ea1; 		R(JC(loc_10ea4));	// 2249 jb      short loc_10EA4 ;~ 0192:0EA1
 cs=0x192;eip=0x000ea3; 	R(RETN);	// 2250 retn ;~ 0192:0EA3
-loc_10ea4:	// 4684 
+loc_10ea4:	// 4686 
 	R(MOV(ah, 0x0F));	// 2254 mov     ah, 0Fh ;~ 0192:0EA4
 	R(CMP(ah, *(raddr(ds,si+0x0E))));	// 2255 cmp     ah, [si+0Eh] ;~ 0192:0EA6
 cs=0x192;eip=0x000ea9; 		R(JNC(loc_10eac));	// 2256 jnb     short loc_10EAC ;~ 0192:0EA9
 cs=0x192;eip=0x000eab; 	R(RETN);	// 2257 retn ;~ 0192:0EAB
-loc_10eac:	// 4685 
+loc_10eac:	// 4687 
 	R(MOV(bx, offset(seg000,byte_1d3c3)));	// 2261 mov     bx, offset byte_1D3C3 ;~ 0192:0EAC
 cs=0x192;eip=0x000eaf; 	R(CALL(sub_10907,0));	// 2262 call    sub_10907 ;~ 0192:0EAF
-ret_192_eb2:	// 4686 
+ret_192_eb2:	// 4688 
 cs=0x192;eip=0x000eb2; 	R(CALL(sub_11065,0));	// 2263 call    sub_11065 ;~ 0192:0EB2
-ret_192_eb5:	// 4687 
+ret_192_eb5:	// 4689 
 cs=0x192;eip=0x000eb5; 		R(JNC(loc_10ec0));	// 2264 jnb     short loc_10EC0 ;~ 0192:0EB5
 	R(INC(*(raddr(ds,si+0x0E))));	// 2265 inc     byte ptr [si+0Eh] ;~ 0192:0EB7
-loc_10eba:	// 4688 
+loc_10eba:	// 4690 
 	R(MOV(bx, offset(seg000,table1_4)));	// 2268 mov     bx, offset table1_4 ;~ 0192:0EBA
 cs=0x192;eip=0x000ebd; 	R(CALL(settable1,0));	// 2269 call    settable1 ;~ 0192:0EBD
-loc_10ec0:	// 4689 
+loc_10ec0:	// 4691 
 	R(MOV(bx, *(dw*)((&byte_1df50))));	// 2273 mov     bx, word ptr byte_1DF50 ;~ 0192:0EC0
 	R(MOV(bl, 0));	// 2274 mov     bl, 0 ;~ 0192:0EC4
 	R(MOV(word_1f1da, bx));	// 2275 mov     word_1F1DA, bx ;~ 0192:0EC6
@@ -2228,7 +2229,7 @@ sub_10ed2:	// 2286
 	R(CMP(ah, 0x42));	// 2289 cmp     ah, 42h ; 'B' ;~ 0192:0ED6
 cs=0x192;eip=0x000ed9; 		R(JNZ(loc_10edc));	// 2290 jnz     short loc_10EDC ;~ 0192:0ED9
 cs=0x192;eip=0x000edb; 	R(RETN);	// 2291 retn ;~ 0192:0EDB
-loc_10edc:	// 4690 
+loc_10edc:	// 4692 
 	R(MOV(ah, byte_1df51));	// 2295 mov     ah, byte_1DF51 ;~ 0192:0EDC
 	R(MOV(cl, ah));	// 2296 mov     cl, ah ;~ 0192:0EE0
 	R(MOV(ah, byte_1df53));	// 2297 mov     ah, byte_1DF53 ;~ 0192:0EE2
@@ -2236,7 +2237,7 @@ loc_10edc:	// 4690
 	R(PUSH(cx));	// 2299 push    cx ;~ 0192:0EE8
 	R(INC(ch));	// 2300 inc     ch ;~ 0192:0EE9
 cs=0x192;eip=0x000eeb; 	R(CALL(sub_110d5,0));	// 2301 call    sub_110D5 ;~ 0192:0EEB
-ret_192_eee:	// 4691 
+ret_192_eee:	// 4693 
 	R(MOV(ah, *(raddr(ds,bx))));	// 2302 mov     ah, [bx] ;~ 0192:0EEE
 	R(OR(ah, ah));	// 2303 or      ah, ah ;~ 0192:0EF0
 cs=0x192;eip=0x000ef2; 		R(JNZ(loc_10efb));	// 2304 jnz     short loc_10EFB ;~ 0192:0EF2
@@ -2244,15 +2245,15 @@ cs=0x192;eip=0x000ef2; 		R(JNZ(loc_10efb));	// 2304 jnz     short loc_10EFB ;~ 0
 	R(CMP(ah, *(raddr(ds,bx))));	// 2306 cmp     ah, [bx] ;~ 0192:0EF5
 cs=0x192;eip=0x000ef7; 		R(JNZ(loc_10efb));	// 2307 jnz     short loc_10EFB ;~ 0192:0EF7
 cs=0x192;eip=0x000ef9; 		R(JMP(loc_10f2d));	// 2308 jmp     short loc_10F2D ;~ 0192:0EF9
-loc_10efb:	// 4692 
+loc_10efb:	// 4694 
 	R(POP(cx));	// 2313 pop     cx ;~ 0192:0EFB
 	R(PUSH(cx));	// 2314 push    cx ;~ 0192:0EFC
 cs=0x192;eip=0x000efd; 	R(CALL(sub_110d5,0));	// 2315 call    sub_110D5 ;~ 0192:0EFD
-ret_192_f00:	// 4693 
+ret_192_f00:	// 4695 
 	R(MOV(dx, offset(seg000,byte_1f465)));	// 2316 mov     dx, offset byte_1F465 ;~ 0192:0F00
 	R(MOV(ch, 0x0A));	// 2317 mov     ch, 0Ah ;~ 0192:0F03
 	R(PUSH(bx));	// 2318 push    bx ;~ 0192:0F05
-loc_10f06:	// 4694 
+loc_10f06:	// 4696 
 	R(PUSH(cx));	// 2321 push    cx ;~ 0192:0F06
 	R(MOV(al, *(raddr(ds,bx))));	// 2322 mov     al, [bx] ;~ 0192:0F07
 	R(XCHG(dx, bx));	// 2323 xchg    dx, bx ;~ 0192:0F09
@@ -2273,17 +2274,17 @@ loc_10f06:	// 4694
 	R(DEC(ch));	// 2338 dec     ch ;~ 0192:0F23
 cs=0x192;eip=0x000f25; 		R(JNZ(loc_10f06));	// 2339 jnz     short loc_10F06 ;~ 0192:0F25
 cs=0x192;eip=0x000f27; 	R(CALL(sub_10f67,0));	// 2340 call    sub_10F67 ;~ 0192:0F27
-ret_192_f2a:	// 4695 
+ret_192_f2a:	// 4697 
 cs=0x192;eip=0x000f2a; 		R(JC(loc_10f30));	// 2341 jb      short loc_10F30 ;~ 0192:0F2A
 	R(POP(bx));	// 2342 pop     bx ;~ 0192:0F2C
-loc_10f2d:	// 4696 
+loc_10f2d:	// 4698 
 	R(POP(cx));	// 2345 pop     cx ;~ 0192:0F2D
 	R(STC);	// 2346 stc ;~ 0192:0F2E
 cs=0x192;eip=0x000f2f; 	R(RETN);	// 2347 retn ;~ 0192:0F2F
-loc_10f30:	// 4697 
+loc_10f30:	// 4699 
 	R(POP(bx));	// 2351 pop     bx ;~ 0192:0F30
 	R(MOV(ch, 0x0A));	// 2352 mov     ch, 0Ah ;~ 0192:0F31
-loc_10f33:	// 4698 
+loc_10f33:	// 4700 
 	R(PUSH(cx));	// 2355 push    cx ;~ 0192:0F33
 	R(MOV(ah, 0x66));	// 2356 mov     ah, 66h ; 'f' ;~ 0192:0F34
 	R(MOV(*(raddr(ds,bx)), ah));	// 2357 mov     [bx], ah ;~ 0192:0F36
@@ -2298,18 +2299,18 @@ loc_10f33:	// 4698
 cs=0x192;eip=0x000f47; 		R(JNZ(loc_10f33));	// 2366 jnz     short loc_10F33 ;~ 0192:0F47
 	R(POP(cx));	// 2367 pop     cx ;~ 0192:0F49
 	R(MOV(ah, 0x0A));	// 2368 mov     ah, 0Ah ;~ 0192:0F4A
-loc_10f4c:	// 4699 
+loc_10f4c:	// 4701 
 	R(PUSH(ax));	// 2371 push    ax ;~ 0192:0F4C
 	R(PUSH(cx));	// 2372 push    cx ;~ 0192:0F4D
 	R(MOV(ah, 0x66));	// 2373 mov     ah, 66h ; 'f' ;~ 0192:0F4E
 cs=0x192;eip=0x000f50; 	R(CALL(sub_13895,0));	// 2374 call    sub_13895 ;~ 0192:0F50
-ret_192_f53:	// 4700 
+ret_192_f53:	// 4702 
 	R(POP(cx));	// 2375 pop     cx ;~ 0192:0F53
 	R(PUSH(cx));	// 2376 push    cx ;~ 0192:0F54
 	R(INC(cl));	// 2377 inc     cl ;~ 0192:0F55
 	R(MOV(ah, 0x69));	// 2378 mov     ah, 69h ; 'i' ;~ 0192:0F57
 cs=0x192;eip=0x000f59; 	R(CALL(sub_13895,0));	// 2379 call    sub_13895 ;~ 0192:0F59
-ret_192_f5c:	// 4701 
+ret_192_f5c:	// 4703 
 	R(POP(cx));	// 2380 pop     cx ;~ 0192:0F5C
 	R(DEC(ch));	// 2381 dec     ch ;~ 0192:0F5D
 	R(POP(ax));	// 2382 pop     ax ;~ 0192:0F5F
@@ -2320,7 +2321,7 @@ cs=0x192;eip=0x000f66; 	R(RETN);	// 2386 retn ;~ 0192:0F66
 sub_10f67:	// 2393 
 	R(MOV(bx, offset(seg000,byte_1f465)));	// 2394 mov     bx, offset byte_1F465 ;~ 0192:0F67
 	R(MOV(ch, 0x14));	// 2395 mov     ch, 14h ;~ 0192:0F6A
-loc_10f6c:	// 4702 
+loc_10f6c:	// 4704 
 	R(XOR(ah, ah));	// 2398 xor     ah, ah ;~ 0192:0F6C
 	R(OR(ah, *(raddr(ds,bx))));	// 2399 or      ah, [bx] ;~ 0192:0F6E
 cs=0x192;eip=0x000f70; 		R(JZ(loc_10f7b));	// 2400 jz      short loc_10F7B ;~ 0192:0F70
@@ -2329,7 +2330,7 @@ cs=0x192;eip=0x000f70; 		R(JZ(loc_10f7b));	// 2400 jz      short loc_10F7B ;~ 01
 cs=0x192;eip=0x000f76; 		R(JC(loc_10f7b));	// 2403 jb      short loc_10F7B ;~ 0192:0F76
 	R(OR(ah, ah));	// 2404 or      ah, ah ;~ 0192:0F78
 cs=0x192;eip=0x000f7a; 	R(RETN);	// 2405 retn ;~ 0192:0F7A
-loc_10f7b:	// 4703 
+loc_10f7b:	// 4705 
 	R(INC(bx));	// 2410 inc     bx ;~ 0192:0F7B
 	R(DEC(ch));	// 2411 dec     ch ;~ 0192:0F7C
 cs=0x192;eip=0x000f7e; 		R(JNZ(loc_10f6c));	// 2412 jnz     short loc_10F6C ;~ 0192:0F7E
@@ -2340,14 +2341,14 @@ sub_10f82:	// 2421
 	R(MOV(cl, ah));	// 2423 mov     cl, ah ;~ 0192:0F86
 	R(MOV(ah, byte_1df53));	// 2424 mov     ah, byte_1DF53 ;~ 0192:0F88
 	R(MOV(ch, ah));	// 2425 mov     ch, ah ;~ 0192:0F8C
-loc_10f8e:	// 4704 
+loc_10f8e:	// 4706 
 	R(PUSH(cx));	// 2428 push    cx ;~ 0192:0F8E
 cs=0x192;eip=0x000f8f; 	R(CALL(sub_110d5,0));	// 2429 call    sub_110D5 ;~ 0192:0F8F
-ret_192_f92:	// 4705 
+ret_192_f92:	// 4707 
 	R(MOV(dx, offset(seg000,byte_1f465)));	// 2430 mov     dx, offset byte_1F465 ;~ 0192:0F92
 	R(MOV(ch, 0x0A));	// 2431 mov     ch, 0Ah ;~ 0192:0F95
 	R(XCHG(dx, bx));	// 2432 xchg    dx, bx ;~ 0192:0F97
-loc_10f99:	// 4706 
+loc_10f99:	// 4708 
 	R(PUSH(cx));	// 2435 push    cx ;~ 0192:0F99
 	R(MOV(al, *(raddr(ds,bx))));	// 2436 mov     al, [bx] ;~ 0192:0F9A
 	R(XCHG(dx, bx));	// 2437 xchg    dx, bx ;~ 0192:0F9C
@@ -2372,13 +2373,13 @@ cs=0x192;eip=0x000fbc; 		R(JNZ(loc_10f99));	// 2455 jnz     short loc_10F99 ;~ 0
 	R(POP(cx));	// 2456 pop     cx ;~ 0192:0FBE
 	R(MOV(ah, 0x0A));	// 2457 mov     ah, 0Ah ;~ 0192:0FBF
 	R(MOV(bx, offset(seg000,byte_1f465)));	// 2458 mov     bx, offset byte_1F465 ;~ 0192:0FC1
-loc_10fc4:	// 4707 
+loc_10fc4:	// 4709 
 	R(PUSH(ax));	// 2461 push    ax ;~ 0192:0FC4
 	R(PUSH(cx));	// 2462 push    cx ;~ 0192:0FC5
 	R(MOV(ah, *(raddr(ds,bx))));	// 2463 mov     ah, [bx] ;~ 0192:0FC6
 	R(PUSH(bx));	// 2464 push    bx ;~ 0192:0FC8
 cs=0x192;eip=0x000fc9; 	R(CALL(sub_13895,0));	// 2465 call    sub_13895 ;~ 0192:0FC9
-ret_192_fcc:	// 4708 
+ret_192_fcc:	// 4710 
 	R(POP(bx));	// 2466 pop     bx ;~ 0192:0FCC
 	R(POP(cx));	// 2467 pop     cx ;~ 0192:0FCD
 	R(PUSH(cx));	// 2468 push    cx ;~ 0192:0FCE
@@ -2387,7 +2388,7 @@ ret_192_fcc:	// 4708
 	R(MOV(ah, *(raddr(ds,bx))));	// 2471 mov     ah, [bx] ;~ 0192:0FD2
 	R(PUSH(bx));	// 2472 push    bx ;~ 0192:0FD4
 cs=0x192;eip=0x000fd5; 	R(CALL(sub_13895,0));	// 2473 call    sub_13895 ;~ 0192:0FD5
-ret_192_fd8:	// 4709 
+ret_192_fd8:	// 4711 
 	R(POP(bx));	// 2474 pop     bx ;~ 0192:0FD8
 	R(INC(bx));	// 2475 inc     bx ;~ 0192:0FD9
 	R(POP(cx));	// 2476 pop     cx ;~ 0192:0FDA
@@ -2398,61 +2399,63 @@ cs=0x192;eip=0x000fe0; 		R(JNZ(loc_10fc4));	// 2480 jnz     short loc_10FC4 ;~ 0
 cs=0x192;eip=0x000fe2; 	R(RETN);	// 2481 retn ;~ 0192:0FE2
 nullsub_1:	// 2488 
 cs=0x192;eip=0x000fe3; 	R(RETN);	// 2490 retn ;~ 0192:0FE3
+ret_192_fe4:	// 4712 
 	R(MOV(cx, *(dw*)((&byte_1f17b))));	// 2494 mov     cx, word ptr byte_1F17B ;~ 0192:0FE4
 	R(MOV(si, offset(seg000,off_1f17c)+1));	// 2495 mov     si, (offset off_1F17C+1) ;~ 0192:0FE8
-loc_10feb:	// 4710 
+loc_10feb:	// 4713 
 	R(MOV(bl, *(raddr(ds,si))));	// 2498 mov     bl, [si] ;~ 0192:0FEB
 	R(MOV(bh, *(raddr(ds,si+1))));	// 2499 mov     bh, [si+1] ;~ 0192:0FED
 	R(OR(*(raddr(ds,bx)), 0x40));	// 2500 or      byte ptr [bx], 40h ;~ 0192:0FF0
 cs=0x192;eip=0x000ff3; 	R(RETN);	// 2501 retn ;~ 0192:0FF3
+ret_192_ff4:	// 4714 
 cs=0x192;eip=0x000ff4; 		R(JNZ(loc_10feb));	// 2503 jnz     short loc_10FEB ;~ 0192:0FF4
 sub_10ff6:	// 2508 
 	R(MOV(ah, 8));	// 2509 mov     ah, 8 ;~ 0192:0FF6
 	R(MOV(*(db*)(((db*)&word_1f1af)), ah));	// 2510 mov     byte ptr word_1F1AF, ah ;~ 0192:0FF8
 sub_10ffc:	// 2517 
 cs=0x192;eip=0x000ffc; 	R(CALL(sub_11058,0));	// 2519 call    sub_11058 ;~ 0192:0FFC
-ret_192_fff:	// 4711 
+ret_192_fff:	// 4715 
 	R(MOV(byte_1f108, ah));	// 2520 mov     byte_1F108, ah ;~ 0192:0FFF
 cs=0x192;eip=0x001003; 	R(CALL(sub_11058,0));	// 2521 call    sub_11058 ;~ 0192:1003
-ret_192_1006:	// 4712 
+ret_192_1006:	// 4716 
 	R(MOV(byte_1f109, ah));	// 2522 mov     byte_1F109, ah ;~ 0192:1006
 cs=0x192;eip=0x00100a; 	R(CALL(sub_11058,0));	// 2523 call    sub_11058 ;~ 0192:100A
-ret_192_100d:	// 4713 
+ret_192_100d:	// 4717 
 	R(MOV(byte_1f10a, ah));	// 2524 mov     byte_1F10A, ah ;~ 0192:100D
 cs=0x192;eip=0x001011; 	R(CALL(sub_11058,0));	// 2525 call    sub_11058 ;~ 0192:1011
-ret_192_1014:	// 4714 
+ret_192_1014:	// 4718 
 	R(MOV(byte_1f10b, ah));	// 2526 mov     byte_1F10B, ah ;~ 0192:1014
 cs=0x192;eip=0x001018; 	R(CALL(sub_11058,0));	// 2527 call    sub_11058 ;~ 0192:1018
-ret_192_101b:	// 4715 
+ret_192_101b:	// 4719 
 	R(MOV(byte_1f10c, ah));	// 2528 mov     byte_1F10C, ah ;~ 0192:101B
 cs=0x192;eip=0x00101f; 	R(CALL(sub_11058,0));	// 2529 call    sub_11058 ;~ 0192:101F
-ret_192_1022:	// 4716 
+ret_192_1022:	// 4720 
 	R(MOV(byte_1f10d, ah));	// 2530 mov     byte_1F10D, ah ;~ 0192:1022
 cs=0x192;eip=0x001026; 	R(CALL(sub_11058,0));	// 2531 call    sub_11058 ;~ 0192:1026
-ret_192_1029:	// 4717 
+ret_192_1029:	// 4721 
 	R(MOV(byte_1f10e, ah));	// 2532 mov     byte_1F10E, ah ;~ 0192:1029
 cs=0x192;eip=0x00102d; 	R(CALL(sub_11058,0));	// 2533 call    sub_11058 ;~ 0192:102D
-ret_192_1030:	// 4718 
+ret_192_1030:	// 4722 
 	R(MOV(byte_1f10f, ah));	// 2534 mov     byte_1F10F, ah ;~ 0192:1030
 cs=0x192;eip=0x001034; 	R(CALL(sub_11058,0));	// 2535 call    sub_11058 ;~ 0192:1034
-ret_192_1037:	// 4719 
+ret_192_1037:	// 4723 
 	R(MOV(byte_1f110, ah));	// 2536 mov     byte_1F110, ah ;~ 0192:1037
 cs=0x192;eip=0x00103b; 	R(CALL(sub_11058,0));	// 2537 call    sub_11058 ;~ 0192:103B
-loc_1103e:	// 4720 
+loc_1103e:	// 4724 
 	R(MOV(byte_1f111, ah));	// 2540 mov     byte_1F111, ah ;~ 0192:103E
 cs=0x192;eip=0x001042; 	R(CALL(sub_11058,0));	// 2541 call    sub_11058 ;~ 0192:1042
-ret_192_1045:	// 4721 
+ret_192_1045:	// 4725 
 	R(MOV(byte_1f112, ah));	// 2542 mov     byte_1F112, ah ;~ 0192:1045
 cs=0x192;eip=0x001049; 	R(CALL(sub_11058,0));	// 2543 call    sub_11058 ;~ 0192:1049
-ret_192_104c:	// 4722 
+ret_192_104c:	// 4726 
 	R(MOV(byte_1f113, ah));	// 2544 mov     byte_1F113, ah ;~ 0192:104C
 cs=0x192;eip=0x001050; 	R(CALL(sub_11058,0));	// 2545 call    sub_11058 ;~ 0192:1050
-ret_192_1053:	// 4723 
+ret_192_1053:	// 4727 
 	R(MOV(byte_1f114, ah));	// 2546 mov     byte_1F114, ah ;~ 0192:1053
 cs=0x192;eip=0x001057; 	R(RETN);	// 2547 retn ;~ 0192:1057
 sub_11058:	// 2554 
 cs=0x192;eip=0x001058; 	R(CALL(sub_11111,0));	// 2556 call    sub_11111 ;~ 0192:1058
-ret_192_105b:	// 4724 
+ret_192_105b:	// 4728 
 	R(AND(ah, 0x0F));	// 2557 and     ah, 0Fh ;~ 0192:105B
 	R(CMP(ah, 0x0A));	// 2558 cmp     ah, 0Ah ;~ 0192:105E
 cs=0x192;eip=0x001061; 		R(JNC(sub_11058));	// 2559 jnb     short sub_11058 ;~ 0192:1061
@@ -2466,41 +2469,42 @@ sub_11065:	// 2575
 cs=0x192;eip=0x00106c; 		R(JC(loc_11072));	// 2580 jb      short loc_11072 ;~ 0192:106C
 	R(CMP(ah, ch));	// 2581 cmp     ah, ch ;~ 0192:106E
 cs=0x192;eip=0x001070; 		R(JC(loc_110a4));	// 2582 jb      short loc_110A4 ;~ 0192:1070
-loc_11072:	// 4725 
+loc_11072:	// 4729 
 	R(MOV(*(raddr(ds,si+0x10)), cl));	// 2585 mov     [si+10h], cl ;~ 0192:1072
 	R(XOR(ah, ah));	// 2586 xor     ah, ah ;~ 0192:1075
 	R(MOV(*(raddr(ds,si+0x15)), ah));	// 2587 mov     [si+15h], ah ;~ 0192:1077
 cs=0x192;eip=0x00107a; 	R(RETN);	// 2588 retn ;~ 0192:107A
+ret_192_107b:	// 4730 
 	R(INC(ch));	// 2590 inc     ch ;~ 0192:107B
 	R(MOV(ah, *(raddr(ds,si+0x10))));	// 2591 mov     ah, [si+10h] ;~ 0192:107D
-loc_11080:	// 4726 
+loc_11080:	// 4731 
 	R(CMP(ah, cl));	// 2594 cmp     ah, cl ;~ 0192:1080
 cs=0x192;eip=0x001082; 		R(JC(loc_11088));	// 2595 jb      short loc_11088 ;~ 0192:1082
 	R(CMP(ah, ch));	// 2596 cmp     ah, ch ;~ 0192:1084
 cs=0x192;eip=0x001086; 		R(JC(loc_110a4));	// 2597 jb      short loc_110A4 ;~ 0192:1086
-loc_11088:	// 4727 
+loc_11088:	// 4732 
 	R(MOV(ah, cl));	// 2600 mov     ah, cl ;~ 0192:1088
 	R(OR(ah, ah));	// 2601 or      ah, ah ;~ 0192:108A
 cs=0x192;eip=0x00108c; 		R(JZ(loc_11095));	// 2602 jz      short loc_11095 ;~ 0192:108C
 	R(MOV(ah, *(raddr(ds,si+0x10))));	// 2603 mov     ah, [si+10h] ;~ 0192:108E
 	R(ADD(ah, cl));	// 2604 add     ah, cl ;~ 0192:1091
 cs=0x192;eip=0x001093; 		R(JMP(loc_1109a));	// 2605 jmp     short loc_1109A ;~ 0192:1093
-loc_11095:	// 4728 
+loc_11095:	// 4733 
 	R(MOV(ah, *(raddr(ds,si+0x10))));	// 2609 mov     ah, [si+10h] ;~ 0192:1095
 	R(SUB(ah, ch));	// 2610 sub     ah, ch ;~ 0192:1098
-loc_1109a:	// 4729 
+loc_1109a:	// 4734 
 	R(MOV(*(raddr(ds,si+0x10)), ah));	// 2613 mov     [si+10h], ah ;~ 0192:109A
 	R(MOV(*(raddr(ds,si+0x15)), 0));	// 2614 mov     byte ptr [si+15h], 0 ;~ 0192:109D
 	R(XOR(ah, ah));	// 2615 xor     ah, ah ;~ 0192:10A1
 cs=0x192;eip=0x0010a3; 	R(RETN);	// 2616 retn ;~ 0192:10A3
-loc_110a4:	// 4730 
+loc_110a4:	// 4735 
 	R(MOV(ah, *(raddr(ds,si+0x15))));	// 2621 mov     ah, [si+15h] ;~ 0192:10A4
 	R(CMP(ah, dl));	// 2622 cmp     ah, dl ;~ 0192:10A7
 cs=0x192;eip=0x0010a9; 		R(JNC(loc_110b1));	// 2623 jnb     short loc_110B1 ;~ 0192:10A9
 	R(INC(*(raddr(ds,si+0x15))));	// 2624 inc     byte ptr [si+15h] ;~ 0192:10AB
 	R(XOR(ah, ah));	// 2625 xor     ah, ah ;~ 0192:10AE
 cs=0x192;eip=0x0010b0; 	R(RETN);	// 2626 retn ;~ 0192:10B0
-loc_110b1:	// 4731 
+loc_110b1:	// 4736 
 	R(MOV(ah, *(raddr(ds,si+0x10))));	// 2630 mov     ah, [si+10h] ;~ 0192:10B1
 	R(INC(ah));	// 2631 inc     ah ;~ 0192:10B4
 	R(CMP(ah, ch));	// 2632 cmp     ah, ch ;~ 0192:10B6
@@ -2510,7 +2514,7 @@ cs=0x192;eip=0x0010b8; 		R(JNC(loc_110c4));	// 2633 jnb     short loc_110C4 ;~ 0
 	R(MOV(*(raddr(ds,si+0x15)), ah));	// 2636 mov     [si+15h], ah ;~ 0192:10BF
 	R(STC);	// 2637 stc ;~ 0192:10C2
 cs=0x192;eip=0x0010c3; 	R(RETN);	// 2638 retn ;~ 0192:10C3
-loc_110c4:	// 4732 
+loc_110c4:	// 4737 
 	R(DEC(ch));	// 2642 dec     ch ;~ 0192:10C4
 	R(MOV(ah, 1));	// 2643 mov     ah, 1 ;~ 0192:10C6
 	R(OR(ah, ah));	// 2644 or      ah, ah ;~ 0192:10C8
@@ -2537,25 +2541,25 @@ sub_110d5:	// 2656
 cs=0x192;eip=0x0010f2; 	R(RETN);	// 2672 retn ;~ 0192:10F2
 sub_110f3:	// 2679 
 cs=0x192;eip=0x0010f3; 	R(CALL(sub_1381e,0));	// 2680 call    sub_1381E ;~ 0192:10F3
-ret_192_10f6:	// 4733 
+ret_192_10f6:	// 4738 
 cs=0x192;eip=0x0010f6; 		R(JZ(loc_110fb));	// 2681 jz      short loc_110FB ;~ 0192:10F6
 cs=0x192;eip=0x0010f8; 		R(JMP(loc_1016f));	// 2682 jmp     loc_1016F ;~ 0192:10F8
-loc_110fb:	// 4734 
+loc_110fb:	// 4739 
 cs=0x192;eip=0x0010fb; 	R(CALL(sub_13833,0));	// 2686 call    sub_13833 ;~ 0192:10FB
-ret_192_10fe:	// 4735 
+ret_192_10fe:	// 4740 
 cs=0x192;eip=0x0010fe; 		R(JNZ(loc_11101));	// 2687 jnz     short loc_11101 ;~ 0192:10FE
 cs=0x192;eip=0x001100; 	R(RETN);	// 2688 retn ;~ 0192:1100
-loc_11101:	// 4736 
+loc_11101:	// 4741 
 cs=0x192;eip=0x001101; 	R(CALL(sub_13833,0));	// 2693 call    sub_13833 ;~ 0192:1101
-ret_192_1104:	// 4737 
+ret_192_1104:	// 4742 
 cs=0x192;eip=0x001104; 		R(JNZ(loc_11101));	// 2694 jnz     short loc_11101 ;~ 0192:1104
-loc_11106:	// 4738 
+loc_11106:	// 4743 
 cs=0x192;eip=0x001106; 	R(CALL(sub_13833,0));	// 2697 call    sub_13833 ;~ 0192:1106
-ret_192_1109:	// 4739 
+ret_192_1109:	// 4744 
 cs=0x192;eip=0x001109; 		R(JZ(loc_11106));	// 2698 jz      short loc_11106 ;~ 0192:1109
-loc_1110b:	// 4740 
+loc_1110b:	// 4745 
 cs=0x192;eip=0x00110b; 	R(CALL(sub_13833,0));	// 2701 call    sub_13833 ;~ 0192:110B
-ret_192_110e:	// 4741 
+ret_192_110e:	// 4746 
 cs=0x192;eip=0x00110e; 		R(JNZ(loc_1110b));	// 2702 jnz     short loc_1110B ;~ 0192:110E
 cs=0x192;eip=0x001110; 	R(RETN);	// 2703 retn ;~ 0192:1110
 sub_11111:	// 2710 
@@ -2574,7 +2578,7 @@ sub_11111:	// 2710
 	R(SBB(bx, dx));	// 2724 sbb     bx, dx ;~ 0192:112B
 cs=0x192;eip=0x00112d; 		R(JNC(loc_11130));	// 2725 jnb     short loc_11130 ;~ 0192:112D
 	R(INC(bx));	// 2726 inc     bx ;~ 0192:112F
-loc_11130:	// 4742 
+loc_11130:	// 4747 
 	R(MOV(word_1f1af, bx));	// 2729 mov     word_1F1AF, bx ;~ 0192:1130
 	R(MOV(ah, bl));	// 2730 mov     ah, bl ;~ 0192:1134
 	R(POP(dx));	// 2731 pop     dx ;~ 0192:1136
@@ -2584,11 +2588,11 @@ sub_11139:	// 2740
 	R(PUSH(cx));	// 2742 push    cx ;~ 0192:1139
 	R(MOV(bx, 0));	// 2743 mov     bx, 0 ;~ 0192:113A
 	R(MOV(ch, 8));	// 2744 mov     ch, 8 ;~ 0192:113D
-loc_1113f:	// 4743 
+loc_1113f:	// 4748 
 	R(RCR(ah, 1));	// 2747 rcr     ah, 1 ;~ 0192:113F
 cs=0x192;eip=0x001141; 		R(JNC(loc_11145));	// 2748 jnb     short loc_11145 ;~ 0192:1141
 	R(ADD(bx, dx));	// 2749 add     bx, dx ;~ 0192:1143
-loc_11145:	// 4744 
+loc_11145:	// 4749 
 	R(RCL(dl, 1));	// 2752 rcl     dl, 1 ;~ 0192:1145
 	R(RCL(dh, 1));	// 2753 rcl     dh, 1 ;~ 0192:1147
 	R(DEC(ch));	// 2754 dec     ch ;~ 0192:1149
@@ -2611,15 +2615,15 @@ cs=0x192;eip=0x001161; 	R(RETN);	// 2783 retn ;~ 0192:1161
 sub_11162:	// 2790 
 	R(PUSH(dx));	// 2792 push    dx ;~ 0192:1162
 	R(PUSH(cx));	// 2793 push    cx ;~ 0192:1163
-loc_11164:	// 4745 
+loc_11164:	// 4750 
 	R(MOV(ah, 0x0FF));	// 2796 mov     ah, 0FFh ;~ 0192:1164
 cs=0x192;eip=0x001166; 	R(CALL(sub_12c57,0));	// 2797 call    sub_12C57 ;~ 0192:1166
-ret_192_1169:	// 4746 
+ret_192_1169:	// 4751 
 	R(XOR(ah, ah));	// 2798 xor     ah, ah ;~ 0192:1169
 	R(MOV(dh, 1));	// 2799 mov     dh, 1 ;~ 0192:116B
 	R(PUSH(dx));	// 2800 push    dx ;~ 0192:116D
 cs=0x192;eip=0x00116e; 	R(CALL(sub_13851,0));	// 2801 call    sub_13851 ;~ 0192:116E
-ret_192_1171:	// 4747 
+ret_192_1171:	// 4752 
 	R(POP(dx));	// 2802 pop     dx ;~ 0192:1171
 	R(INC(cl));	// 2803 inc     cl ;~ 0192:1172
 	R(DEC(dl));	// 2804 dec     dl ;~ 0192:1174
@@ -2635,21 +2639,21 @@ sub_11181:	// 2818
 	R(CMP(ah, 0x0FF));	// 2821 cmp     ah, 0FFh ;~ 0192:1183
 cs=0x192;eip=0x001186; 		R(JNZ(loc_11189));	// 2822 jnz     short loc_11189 ;~ 0192:1186
 cs=0x192;eip=0x001188; 	R(RETN);	// 2823 retn ;~ 0192:1188
-loc_11189:	// 4748 
+loc_11189:	// 4753 
 	R(OR(ah, ah));	// 2827 or      ah, ah ;~ 0192:1189
 cs=0x192;eip=0x00118b; 		R(JZ(loc_111a0));	// 2828 jz      short loc_111A0 ;~ 0192:118B
 	R(CMP(ah, 0x20));	// 2829 cmp     ah, 20h ; ' ' ;~ 0192:118D
 cs=0x192;eip=0x001190; 		R(JZ(loc_11195));	// 2830 jz      short loc_11195 ;~ 0192:1190
 	R(SUB(ah, 0x20));	// 2831 sub     ah, 20h ; ' ' ;~ 0192:1192
-loc_11195:	// 4749 
+loc_11195:	// 4754 
 	R(SUB(ah, 0x20));	// 2834 sub     ah, 20h ; ' ' ;~ 0192:1195
 	R(PUSH(bx));	// 2835 push    bx ;~ 0192:1198
 cs=0x192;eip=0x001199; 	R(CALL(sub_111b1,0));	// 2836 call    sub_111B1 ;~ 0192:1199
-ret_192_119c:	// 4750 
+ret_192_119c:	// 4755 
 	R(POP(bx));	// 2837 pop     bx ;~ 0192:119C
 	R(INC(bx));	// 2838 inc     bx ;~ 0192:119D
 cs=0x192;eip=0x00119e; 		R(JMP(sub_11181));	// 2839 jmp     short sub_11181 ;~ 0192:119E
-loc_111a0:	// 4751 
+loc_111a0:	// 4756 
 	R(INC(bx));	// 2843 inc     bx ;~ 0192:11A0
 	R(MOV(ah, *(raddr(ds,bx))));	// 2844 mov     ah, [bx] ;~ 0192:11A1
 	R(INC(bx));	// 2845 inc     bx ;~ 0192:11A3
@@ -2664,7 +2668,7 @@ sub_111b1:	// 2857
 	R(MOV(cx, word_1f1b9));	// 2860 mov     cx, word_1F1B9 ;~ 0192:11B5
 	R(MOV(dx, 0x0FFFF));	// 2861 mov     dx, 0FFFFh ;~ 0192:11B9
 cs=0x192;eip=0x0011bc; 	R(CALL(sub_13851,0));	// 2862 call    sub_13851 ;~ 0192:11BC
-ret_192_11bf:	// 4752 
+ret_192_11bf:	// 4757 
 	R(POP(dx));	// 2863 pop     dx ;~ 0192:11BF
 	R(MOV(cx, word_1f1b9));	// 2864 mov     cx, word_1F1B9 ;~ 0192:11C0
 	R(INC(cl));	// 2865 inc     cl ;~ 0192:11C4
@@ -2677,17 +2681,17 @@ cs=0x192;eip=0x0011ca; 		R(JNC(loc_111d9));	// 2868 jnb     short loc_111D9 ;~ 0
 	R(CMP(ah, ch));	// 2872 cmp     ah, ch ;~ 0192:11D2
 cs=0x192;eip=0x0011d4; 		R(JNC(loc_111d9));	// 2873 jnb     short loc_111D9 ;~ 0192:11D4
 	R(MOV(cx, 0));	// 2874 mov     cx, 0 ;~ 0192:11D6
-loc_111d9:	// 4753 
+loc_111d9:	// 4758 
 	R(MOV(word_1f1b9, cx));	// 2878 mov     word_1F1B9, cx ;~ 0192:11D9
 cs=0x192;eip=0x0011dd; 	R(RETN);	// 2879 retn ;~ 0192:11DD
-loc_111de:	// 4754 
+loc_111de:	// 4759 
 	R(PUSH(cx));	// 2886 push    cx ;~ 0192:11DE
 	R(MOV(ah, *(raddr(ds,bx))));	// 2887 mov     ah, [bx] ;~ 0192:11DF
 	R(MOV(cl, dl));	// 2888 mov     cl, dl ;~ 0192:11E1
 	R(MOV(ch, dh));	// 2889 mov     ch, dh ;~ 0192:11E3
 	R(PUSH(dx));	// 2890 push    dx ;~ 0192:11E5
 cs=0x192;eip=0x0011e6; 	R(CALL(sub_13895,0));	// 2891 call    sub_13895 ;~ 0192:11E6
-ret_192_11e9:	// 4755 
+ret_192_11e9:	// 4760 
 	R(POP(dx));	// 2892 pop     dx ;~ 0192:11E9
 	R(INC(dl));	// 2893 inc     dl ;~ 0192:11EA
 	R(INC(bx));	// 2894 inc     bx ;~ 0192:11EC
@@ -2730,7 +2734,7 @@ sub_1120d:	// 2926
 cs=0x192;eip=0x001228; 	R(RETN);	// 2943 retn ;~ 0192:1228
 sub_11229:	// 2950 
 cs=0x192;eip=0x001229; 	R(CALL(sub_11292,0));	// 2952 call    sub_11292 ;~ 0192:1229
-ret_192_122c:	// 4756 
+ret_192_122c:	// 4761 
 	R(MOV(ah, *(raddr(ds,di-1))));	// 2953 mov     ah, [di-1] ;~ 0192:122C
 	R(MOV(*(raddr(ds,si+0x0A)), ah));	// 2954 mov     [si+0Ah], ah ;~ 0192:122F
 	R(MOV(ah, *(raddr(ds,di))));	// 2955 mov     ah, [di] ;~ 0192:1232
@@ -2758,7 +2762,7 @@ ret_192_122c:	// 4756
 cs=0x192;eip=0x001272; 		R(JMP(loc_1128c));	// 2977 jmp     short loc_1128C ;~ 0192:1272
 sub_11274:	// 2984 
 cs=0x192;eip=0x001274; 	R(CALL(sub_11292,0));	// 2986 call    sub_11292 ;~ 0192:1274
-ret_192_1277:	// 4757 
+ret_192_1277:	// 4762 
 	R(MOV(*(raddr(ds,si+7)), ch));	// 2987 mov     [si+7], ch ;~ 0192:1277
 	R(MOV(*(raddr(ds,si+8)), cl));	// 2988 mov     [si+8], cl ;~ 0192:127A
 	R(MOV(*(raddr(ds,si+3)), dl));	// 2989 mov     [si+3], dl ;~ 0192:127D
@@ -2766,9 +2770,9 @@ ret_192_1277:	// 4757
 	R(MOV(*(raddr(ds,si+5)), bl));	// 2991 mov     [si+5], bl ;~ 0192:1283
 	R(MOV(*(raddr(ds,si+6)), bh));	// 2992 mov     [si+6], bh ;~ 0192:1286
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 2993 mov     [si+13h], ah ;~ 0192:1289
-loc_1128c:	// 4758 
+loc_1128c:	// 4763 
 cs=0x192;eip=0x00128c; 	R(CALL(sub_13b61,0));	// 2996 call    sub_13B61 ;~ 0192:128C
-ret_192_128f:	// 4759 
+ret_192_128f:	// 4764 
 cs=0x192;eip=0x00128f; 		R(JMP(sub_1120d));	// 2997 jmp     sub_1120D ;~ 0192:128F
 sub_11292:	// 3004 
 	R(PUSH(di));	// 3006 push    di ;~ 0192:1292
@@ -2789,11 +2793,11 @@ sub_112a7:	// 3024
 cs=0x192;eip=0x0012ae; 		R(JNZ(loc_112b2));	// 3028 jnz     short loc_112B2 ;~ 0192:12AE
 	R(STC);	// 3029 stc ;~ 0192:12B0
 cs=0x192;eip=0x0012b1; 	R(RETN);	// 3030 retn ;~ 0192:12B1
-loc_112b2:	// 4760 
+loc_112b2:	// 4765 
 	R(MOV(si, offset(seg000,byte_1f221)));	// 3035 mov     si, offset byte_1F221 ;~ 0192:12B2
 	R(MOV(dx, 0x29));	// 3036 mov     dx, 29h ; ')' ;~ 0192:12B5
 	R(MOV(ch, 0x0A));	// 3037 mov     ch, 0Ah ;~ 0192:12B8
-loc_112ba:	// 4761 
+loc_112ba:	// 4766 
 	R(TEST(*(raddr(ds,si)), 0x80));	// 3040 test    byte ptr [si], 80h ;~ 0192:12BA
 cs=0x192;eip=0x0012bd; 		R(JZ(loc_112c7));	// 3041 jz      short loc_112C7 ;~ 0192:12BD
 	R(ADD(si, dx));	// 3042 add     si, dx ;~ 0192:12BF
@@ -2801,12 +2805,12 @@ cs=0x192;eip=0x0012bd; 		R(JZ(loc_112c7));	// 3041 jz      short loc_112C7 ;~ 01
 cs=0x192;eip=0x0012c3; 		R(JNZ(loc_112ba));	// 3044 jnz     short loc_112BA ;~ 0192:12C3
 	R(STC);	// 3045 stc ;~ 0192:12C5
 cs=0x192;eip=0x0012c6; 	R(RETN);	// 3046 retn ;~ 0192:12C6
-loc_112c7:	// 4762 
+loc_112c7:	// 4767 
 	R(PUSH(di));	// 3050 push    di ;~ 0192:12C7
 	R(PUSH(bx));	// 3051 push    bx ;~ 0192:12C8
 	R(MOV(ah, 0x64));	// 3052 mov     ah, 64h ; 'd' ;~ 0192:12C9
 cs=0x192;eip=0x0012cb; 	R(CALL(sub_13f5b,0));	// 3053 call    sub_13F5B ;~ 0192:12CB
-ret_192_12ce:	// 4763 
+ret_192_12ce:	// 4768 
 	R(POP(bx));	// 3054 pop     bx ;~ 0192:12CE
 	R(POP(di));	// 3055 pop     di ;~ 0192:12CF
 	R(OR(ah, ah));	// 3056 or      ah, ah ;~ 0192:12D0
@@ -2818,7 +2822,7 @@ sub_112d3:	// 3064
 	R(MOV(ch, 4));	// 3069 mov     ch, 4 ;~ 0192:12D8
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 3070 mov     si, offset byte_1F1CF ;~ 0192:12DA
 	R(PUSH(si));	// 3071 push    si ;~ 0192:12DD
-loc_112de:	// 4764 
+loc_112de:	// 4769 
 	R(MOV(ah, *(raddr(ds,si+0x0B))));	// 3074 mov     ah, [si+0Bh] ;~ 0192:12DE
 	R(MOV(*(raddr(ds,di)), ah));	// 3075 mov     [di], ah ;~ 0192:12E1
 	R(INC(di));	// 3076 inc     di ;~ 0192:12E3
@@ -2831,6 +2835,7 @@ cs=0x192;eip=0x0012e7; 		R(JNZ(loc_112de));	// 3079 jnz     short loc_112DE ;~ 0
 	R(POP(cx));	// 3083 pop     cx ;~ 0192:12EF
 	R(POP(di));	// 3084 pop     di ;~ 0192:12F0
 cs=0x192;eip=0x0012f1; 	R(RETN);	// 3085 retn ;~ 0192:12F1
+ret_192_12f2:	// 4770 
 	R(MOV(bx, offset(seg000,byte_1f3df)));	// 3089 mov     bx, offset byte_1F3DF ;~ 0192:12F2
 	R(MOV(dx, offset(seg000,byte_1f3da)));	// 3090 mov     dx, offset byte_1F3DA ;~ 0192:12F5
 	R(MOV(cx, 5));	// 3091 mov     cx, 5 ;~ 0192:12F8
@@ -2841,6 +2846,7 @@ cs=0x192;eip=0x0012f1; 	R(RETN);	// 3085 retn ;~ 0192:12F1
 	R(XCHG(si, bx));	// 3096 xchg    si, bx ;~ 0192:1302
 	R(XCHG(di, dx));	// 3097 xchg    di, dx ;~ 0192:1304
 cs=0x192;eip=0x001306; 		R(JMP(sub_11327));	// 3098 jmp     short sub_11327 ;~ 0192:1306
+ret_192_1308:	// 4771 
 	R(MOV(bx, offset(seg000,byte_1f3da)));	// 3100 mov     bx, offset byte_1F3DA ;~ 0192:1308
 	R(MOV(dx, offset(seg000,byte_1f3df)));	// 3101 mov     dx, offset byte_1F3DF ;~ 0192:130B
 	R(MOV(cx, 5));	// 3102 mov     cx, 5 ;~ 0192:130E
@@ -2859,7 +2865,7 @@ sub_11327:	// 3118
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 3120 mov     si, offset byte_1F1CF ;~ 0192:1327
 	R(MOV(bx, offset(seg000,byte_1f3da)));	// 3121 mov     bx, offset byte_1F3DA ;~ 0192:132A
 	R(MOV(ch, 4));	// 3122 mov     ch, 4 ;~ 0192:132D
-loc_1132f:	// 4765 
+loc_1132f:	// 4772 
 	R(MOV(ah, *(raddr(ds,bx))));	// 3125 mov     ah, [bx] ;~ 0192:132F
 	R(MOV(*(raddr(ds,si+0x0B)), ah));	// 3126 mov     [si+0Bh], ah ;~ 0192:1331
 	R(INC(bx));	// 3127 inc     bx ;~ 0192:1334
@@ -2876,7 +2882,7 @@ sub_11348:	// 3142
 	R(SUB(ah, *(raddr(ds,si+0x0E))));	// 3144 sub     ah, [si+0Eh] ;~ 0192:134C
 cs=0x192;eip=0x00134f; 		R(JC(loc_11352));	// 3145 jb      short loc_11352 ;~ 0192:134F
 cs=0x192;eip=0x001351; 	R(RETN);	// 3146 retn ;~ 0192:1351
-loc_11352:	// 4766 
+loc_11352:	// 4773 
 	R(NEG(ah));	// 3150 neg     ah ;~ 0192:1352
 cs=0x192;eip=0x001354; 	R(RETN);	// 3151 retn ;~ 0192:1354
 sub_11355:	// 3158 
@@ -2884,9 +2890,10 @@ sub_11355:	// 3158
 	R(SUB(ah, *(raddr(ds,si+0x0C))));	// 3161 sub     ah, [si+0Ch] ;~ 0192:1359
 cs=0x192;eip=0x00135c; 		R(JC(loc_1135f));	// 3162 jb      short loc_1135F ;~ 0192:135C
 cs=0x192;eip=0x00135e; 	R(RETN);	// 3163 retn ;~ 0192:135E
-loc_1135f:	// 4767 
+loc_1135f:	// 4774 
 	R(NEG(ah));	// 3167 neg     ah ;~ 0192:135F
 cs=0x192;eip=0x001361; 	R(RETN);	// 3168 retn ;~ 0192:1361
+ret_192_1362:	// 4775 
 	R(PUSH(bx));	// 3172 push    bx ;~ 0192:1362
 	R(MOV(bx, (dw)m2c::klocret_102c0));	// 3173 mov     bx, offset locret_102C0 ;~ 0192:1363
 	R(MOV(cx, word_1f1dc));	// 3174 mov     cx, word_1F1DC ;~ 0192:1366
@@ -2897,7 +2904,7 @@ cs=0x192;eip=0x001361; 	R(RETN);	// 3168 retn ;~ 0192:1361
 	R(MOV(ch, 1));	// 3179 mov     ch, 1 ;~ 0192:1375
 	R(MOV(cl, 0x11));	// 3180 mov     cl, 11h ;~ 0192:1377
 cs=0x192;eip=0x001379; 	R(CALL(sub_11385,0));	// 3181 call    sub_11385 ;~ 0192:1379
-ret_192_137c:	// 4768 
+ret_192_137c:	// 4776 
 	R(MOV(cx, word_1f1b5));	// 3182 mov     cx, word_1F1B5 ;~ 0192:137C
 	R(MOV(word_1f1dc, cx));	// 3183 mov     word_1F1DC, cx ;~ 0192:1380
 cs=0x192;eip=0x001384; 	R(RETN);	// 3184 retn ;~ 0192:1384
@@ -2907,27 +2914,27 @@ sub_11385:	// 3189
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3193 test    byte ptr [di], 80h ;~ 0192:138A
 cs=0x192;eip=0x00138d; 		R(JNZ(loc_11390));	// 3194 jnz     short loc_11390 ;~ 0192:138D
 cs=0x192;eip=0x00138f; 	R(RETN);	// 3195 retn ;~ 0192:138F
-loc_11390:	// 4769 
+loc_11390:	// 4777 
 	R(MOV(ah, *(raddr(ds,di+0x24))));	// 3199 mov     ah, [di+24h] ;~ 0192:1390
 	R(AND(ah, 3));	// 3200 and     ah, 3 ;~ 0192:1393
 cs=0x192;eip=0x001396; 		R(JZ(loc_11399));	// 3201 jz      short loc_11399 ;~ 0192:1396
 cs=0x192;eip=0x001398; 	R(RETN);	// 3202 retn ;~ 0192:1398
-loc_11399:	// 4770 
+loc_11399:	// 4778 
 	R(MOV(ah, *(db*)(((db*)&word_1f12a)+1)));	// 3206 mov     ah, byte ptr word_1F12A+1 ;~ 0192:1399
 	R(TEST(ah, 8));	// 3207 test    ah, 8 ;~ 0192:139D
 cs=0x192;eip=0x0013a0; 		R(JZ(loc_113a3));	// 3208 jz      short loc_113A3 ;~ 0192:13A0
 cs=0x192;eip=0x0013a2; 	R(RETN);	// 3209 retn ;~ 0192:13A2
-loc_113a3:	// 4771 
+loc_113a3:	// 4779 
 	R(MOV(ah, *(raddr(ds,di+0x10))));	// 3213 mov     ah, [di+10h] ;~ 0192:13A3
 	R(CMP(ah, 8));	// 3214 cmp     ah, 8 ;~ 0192:13A6
 cs=0x192;eip=0x0013a9; 		R(JZ(loc_113b0));	// 3215 jz      short loc_113B0 ;~ 0192:13A9
 	R(CMP(ah, 0x1F));	// 3216 cmp     ah, 1Fh ;~ 0192:13AB
 cs=0x192;eip=0x0013ae; 		R(JNZ(sub_113c0));	// 3217 jnz     short sub_113C0 ;~ 0192:13AE
-loc_113b0:	// 4772 
+loc_113b0:	// 4780 
 	R(INC(*(raddr(ds,di+0x0E))));	// 3220 inc     byte ptr [di+0Eh] ;~ 0192:13B0
 	R(INC(*(raddr(ds,di+0x0E))));	// 3221 inc     byte ptr [di+0Eh] ;~ 0192:13B3
 cs=0x192;eip=0x0013b6; 	R(CALL(sub_113c0,0));	// 3222 call    sub_113C0 ;~ 0192:13B6
-ret_192_13b9:	// 4773 
+ret_192_13b9:	// 4781 
 	R(DEC(*(raddr(ds,di+0x0E))));	// 3223 dec     byte ptr [di+0Eh] ;~ 0192:13B9
 	R(DEC(*(raddr(ds,di+0x0E))));	// 3224 dec     byte ptr [di+0Eh] ;~ 0192:13BC
 cs=0x192;eip=0x0013bf; 	R(RETN);	// 3225 retn ;~ 0192:13BF
@@ -2935,34 +2942,34 @@ sub_113c0:	// 3232
 	R(MOV(ch, 0x16));	// 3234 mov     ch, 16h ;~ 0192:13C0
 	R(MOV(cl, 0x11));	// 3235 mov     cl, 11h ;~ 0192:13C2
 cs=0x192;eip=0x0013c4; 		R(JMP(loc_113f4));	// 3236 jmp     short loc_113F4 ;~ 0192:13C4
-loc_113c6:	// 4774 
+loc_113c6:	// 4782 
 	R(MOV(di, offset(seg000,byte_1f1f8)));	// 3241 mov     di, offset byte_1F1F8 ;~ 0192:13C6
 	R(OR(ah, ah));	// 3242 or      ah, ah ;~ 0192:13C9
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3243 test    byte ptr [di], 80h ;~ 0192:13CB
 cs=0x192;eip=0x0013ce; 		R(JNZ(loc_113d1));	// 3244 jnz     short loc_113D1 ;~ 0192:13CE
 cs=0x192;eip=0x0013d0; 	R(RETN);	// 3245 retn ;~ 0192:13D0
-loc_113d1:	// 4775 
+loc_113d1:	// 4783 
 	R(MOV(ah, *(raddr(ds,di+0x0F))));	// 3249 mov     ah, [di+0Fh] ;~ 0192:13D1
 	R(CMP(ah, 2));	// 3250 cmp     ah, 2 ;~ 0192:13D4
 cs=0x192;eip=0x0013d7; 		R(JZ(loc_113ee));	// 3251 jz      short loc_113EE ;~ 0192:13D7
 	R(MOV(ch, 0x0A));	// 3252 mov     ch, 0Ah ;~ 0192:13D9
 	R(MOV(cl, 7));	// 3253 mov     cl, 7 ;~ 0192:13DB
 cs=0x192;eip=0x0013dd; 	R(CALL(sub_113c0,m2c::kloc_113f4));	// 3254 call    loc_113F4 ;~ 0192:13DD
-ret_192_13e0:	// 4776 
+ret_192_13e0:	// 4784 
 cs=0x192;eip=0x0013e0; 		R(JC(loc_113e3));	// 3255 jb      short loc_113E3 ;~ 0192:13E0
 cs=0x192;eip=0x0013e2; 	R(RETN);	// 3256 retn ;~ 0192:13E2
-loc_113e3:	// 4777 
+loc_113e3:	// 4785 
 	R(MOV(ah, 1));	// 3260 mov     ah, 1 ;~ 0192:13E3
 cs=0x192;eip=0x0013e5; 	R(CALL(sub_11459,0));	// 3261 call    sub_11459 ;~ 0192:13E5
-ret_192_13e8:	// 4778 
+ret_192_13e8:	// 4786 
 	R(OR(*(raddr(ds,di+0x11)), 0x40));	// 3262 or      byte ptr [di+11h], 40h ;~ 0192:13E8
 	R(STC);	// 3263 stc ;~ 0192:13EC
 cs=0x192;eip=0x0013ed; 	R(RETN);	// 3264 retn ;~ 0192:13ED
-loc_113ee:	// 4779 
+loc_113ee:	// 4787 
 	R(MOV(ch, 0x0A));	// 3268 mov     ch, 0Ah ;~ 0192:13EE
 	R(MOV(cl, 7));	// 3269 mov     cl, 7 ;~ 0192:13F0
 cs=0x192;eip=0x0013f2; 	// 3270 jmp     short $+2 ;~ 0192:13F2
-loc_113f4:	// 4780 
+loc_113f4:	// 4788 
 	R(PUSH(dx));	// 3274 push    dx ;~ 0192:13F4
 	R(PUSH(bx));	// 3275 push    bx ;~ 0192:13F5
 	R(MOV(bh, *(raddr(ds,si+0x0C))));	// 3276 mov     bh, [si+0Ch] ;~ 0192:13F6
@@ -2989,11 +2996,11 @@ loc_113f4:	// 4780
 	R(ADD(ah, cl));	// 3297 add     ah, cl ;~ 0192:1423
 	R(MOV(dl, ah));	// 3298 mov     dl, ah ;~ 0192:1425
 cs=0x192;eip=0x001427; 	R(CALL(sub_13caa,0));	// 3299 call    sub_13CAA ;~ 0192:1427
-ret_192_142a:	// 4781 
+ret_192_142a:	// 4789 
 	R(POP(dx));	// 3300 pop     dx ;~ 0192:142A
 cs=0x192;eip=0x00142b; 		R(JC(loc_1142e));	// 3301 jb      short loc_1142E ;~ 0192:142B
 cs=0x192;eip=0x00142d; 	R(RETN);	// 3302 retn ;~ 0192:142D
-loc_1142e:	// 4782 
+loc_1142e:	// 4790 
 	R(MOV(bh, *(raddr(ds,si+0x0E))));	// 3306 mov     bh, [si+0Eh] ;~ 0192:142E
 	R(MOV(bl, *(raddr(ds,si+0x0D))));	// 3307 mov     bl, [si+0Dh] ;~ 0192:1431
 	R(ADD(bx, bx));	// 3308 add     bx, bx ;~ 0192:1434
@@ -3020,12 +3027,12 @@ sub_11459:	// 3332
 	R(MOV(ch, 0x0C));	// 3336 mov     ch, 0Ch ;~ 0192:145B
 	R(MOV(dx, 0x29));	// 3337 mov     dx, 29h ; ')' ;~ 0192:145D
 	R(MOV(di, offset(seg000,byte_1f1cf)));	// 3338 mov     di, offset byte_1F1CF ;~ 0192:1460
-loc_11463:	// 4783 
+loc_11463:	// 4791 
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3341 test    byte ptr [di], 80h ;~ 0192:1463
 cs=0x192;eip=0x001466; 		R(JZ(loc_1146d));	// 3342 jz      short loc_1146D ;~ 0192:1466
 	R(CMP(ah, *(raddr(ds,di+0x0F))));	// 3343 cmp     ah, [di+0Fh] ;~ 0192:1468
 cs=0x192;eip=0x00146b; 		R(JZ(loc_11477));	// 3344 jz      short loc_11477 ;~ 0192:146B
-loc_1146d:	// 4784 
+loc_1146d:	// 4792 
 	R(ADD(di, dx));	// 3347 add     di, dx ;~ 0192:146D
 	R(DEC(ch));	// 3348 dec     ch ;~ 0192:146F
 cs=0x192;eip=0x001471; 		R(JNZ(loc_11463));	// 3349 jnz     short loc_11463 ;~ 0192:1471
@@ -3033,7 +3040,7 @@ cs=0x192;eip=0x001471; 		R(JNZ(loc_11463));	// 3349 jnz     short loc_11463 ;~ 0
 	R(POP(dx));	// 3351 pop     dx ;~ 0192:1474
 	R(POP(cx));	// 3352 pop     cx ;~ 0192:1475
 cs=0x192;eip=0x001476; 	R(RETN);	// 3353 retn ;~ 0192:1476
-loc_11477:	// 4785 
+loc_11477:	// 4793 
 	R(POP(dx));	// 3357 pop     dx ;~ 0192:1477
 	R(POP(cx));	// 3358 pop     cx ;~ 0192:1478
 	R(OR(ah, ah));	// 3359 or      ah, ah ;~ 0192:1479
@@ -3044,12 +3051,12 @@ sub_1147c:	// 3367
 	R(MOV(ch, 0x0C));	// 3371 mov     ch, 0Ch ;~ 0192:147E
 	R(MOV(dx, 0x29));	// 3372 mov     dx, 29h ; ')' ;~ 0192:1480
 	R(MOV(di, offset(seg000,byte_1f1cf)));	// 3373 mov     di, offset byte_1F1CF ;~ 0192:1483
-loc_11486:	// 4786 
+loc_11486:	// 4794 
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3376 test    byte ptr [di], 80h ;~ 0192:1486
 cs=0x192;eip=0x001489; 		R(JZ(loc_11490));	// 3377 jz      short loc_11490 ;~ 0192:1489
 	R(CMP(ah, *(raddr(ds,di+0x0F))));	// 3378 cmp     ah, [di+0Fh] ;~ 0192:148B
 cs=0x192;eip=0x00148e; 		R(JZ(loc_1149a));	// 3379 jz      short loc_1149A ;~ 0192:148E
-loc_11490:	// 4787 
+loc_11490:	// 4795 
 	R(ADD(di, dx));	// 3383 add     di, dx ;~ 0192:1490
 	R(DEC(ch));	// 3384 dec     ch ;~ 0192:1492
 cs=0x192;eip=0x001494; 		R(JNZ(loc_11486));	// 3385 jnz     short loc_11486 ;~ 0192:1494
@@ -3057,7 +3064,7 @@ cs=0x192;eip=0x001494; 		R(JNZ(loc_11486));	// 3385 jnz     short loc_11486 ;~ 0
 	R(POP(dx));	// 3387 pop     dx ;~ 0192:1497
 	R(POP(cx));	// 3388 pop     cx ;~ 0192:1498
 cs=0x192;eip=0x001499; 	R(RETN);	// 3389 retn ;~ 0192:1499
-loc_1149a:	// 4788 
+loc_1149a:	// 4796 
 	R(MOV(*(db*)(((db*)&word_1f1b5)), ah));	// 3393 mov     byte ptr word_1F1B5, ah ;~ 0192:149A
 	R(MOV(ah, cl));	// 3394 mov     ah, cl ;~ 0192:149E
 	R(CMP(ah, *(raddr(ds,di+0x10))));	// 3395 cmp     ah, [di+10h] ;~ 0192:14A0
@@ -3073,7 +3080,7 @@ sub_114ae:	// 3408
 	R(MOV(ch, 0x0C));	// 3412 mov     ch, 0Ch ;~ 0192:14B0
 	R(MOV(dx, 0x29));	// 3413 mov     dx, 29h ; ')' ;~ 0192:14B2
 	R(MOV(di, offset(seg000,byte_1f1cf)));	// 3414 mov     di, offset byte_1F1CF ;~ 0192:14B5
-loc_114b8:	// 4789 
+loc_114b8:	// 4797 
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3417 test    byte ptr [di], 80h ;~ 0192:14B8
 cs=0x192;eip=0x0014bb; 		R(JZ(loc_114d4));	// 3418 jz      short loc_114D4 ;~ 0192:14BB
 	R(CMP(ah, *(raddr(ds,di+0x0F))));	// 3419 cmp     ah, [di+0Fh] ;~ 0192:14BD
@@ -3084,7 +3091,7 @@ cs=0x192;eip=0x0014c0; 		R(JNZ(loc_114d4));	// 3420 jnz     short loc_114D4 ;~ 0
 	R(CMP(ah, cl));	// 3424 cmp     ah, cl ;~ 0192:14CC
 	R(MOV(ah, *(db*)(((db*)&word_1f1b5))));	// 3425 mov     ah, byte ptr word_1F1B5 ;~ 0192:14CE
 cs=0x192;eip=0x0014d2; 		R(JZ(loc_114de));	// 3426 jz      short loc_114DE ;~ 0192:14D2
-loc_114d4:	// 4790 
+loc_114d4:	// 4798 
 	R(ADD(di, dx));	// 3430 add     di, dx ;~ 0192:14D4
 	R(DEC(ch));	// 3431 dec     ch ;~ 0192:14D6
 cs=0x192;eip=0x0014d8; 		R(JNZ(loc_114b8));	// 3432 jnz     short loc_114B8 ;~ 0192:14D8
@@ -3092,7 +3099,7 @@ cs=0x192;eip=0x0014d8; 		R(JNZ(loc_114b8));	// 3432 jnz     short loc_114B8 ;~ 0
 	R(POP(dx));	// 3434 pop     dx ;~ 0192:14DB
 	R(POP(cx));	// 3435 pop     cx ;~ 0192:14DC
 cs=0x192;eip=0x0014dd; 	R(RETN);	// 3436 retn ;~ 0192:14DD
-loc_114de:	// 4791 
+loc_114de:	// 4799 
 	R(POP(dx));	// 3440 pop     dx ;~ 0192:14DE
 	R(POP(cx));	// 3441 pop     cx ;~ 0192:14DF
 	R(OR(ah, ah));	// 3442 or      ah, ah ;~ 0192:14E0
@@ -3103,12 +3110,12 @@ sub_114e3:	// 3450
 	R(MOV(ch, 0x0C));	// 3453 mov     ch, 0Ch ;~ 0192:14E5
 	R(MOV(dx, 0x29));	// 3454 mov     dx, 29h ; ')' ;~ 0192:14E7
 	R(MOV(di, offset(seg000,byte_1f1cf)));	// 3455 mov     di, offset byte_1F1CF ;~ 0192:14EA
-loc_114ed:	// 4792 
+loc_114ed:	// 4800 
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3458 test    byte ptr [di], 80h ;~ 0192:14ED
 cs=0x192;eip=0x0014f0; 		R(JZ(loc_114f7));	// 3459 jz      short loc_114F7 ;~ 0192:14F0
 	R(CMP(ah, *(raddr(ds,di+0x12))));	// 3460 cmp     ah, [di+12h] ;~ 0192:14F2
 cs=0x192;eip=0x0014f5; 		R(JZ(loc_11501));	// 3461 jz      short loc_11501 ;~ 0192:14F5
-loc_114f7:	// 4793 
+loc_114f7:	// 4801 
 	R(ADD(di, dx));	// 3464 add     di, dx ;~ 0192:14F7
 	R(DEC(ch));	// 3465 dec     ch ;~ 0192:14F9
 cs=0x192;eip=0x0014fb; 		R(JNZ(loc_114ed));	// 3466 jnz     short loc_114ED ;~ 0192:14FB
@@ -3116,7 +3123,7 @@ cs=0x192;eip=0x0014fb; 		R(JNZ(loc_114ed));	// 3466 jnz     short loc_114ED ;~ 0
 	R(POP(dx));	// 3468 pop     dx ;~ 0192:14FE
 	R(POP(cx));	// 3469 pop     cx ;~ 0192:14FF
 cs=0x192;eip=0x001500; 	R(RETN);	// 3470 retn ;~ 0192:1500
-loc_11501:	// 4794 
+loc_11501:	// 4802 
 	R(POP(dx));	// 3474 pop     dx ;~ 0192:1501
 	R(POP(cx));	// 3475 pop     cx ;~ 0192:1502
 	R(OR(ah, ah));	// 3476 or      ah, ah ;~ 0192:1503
@@ -3126,17 +3133,17 @@ sub_11506:	// 3484
 	R(TEST(ah, 8));	// 3487 test    ah, 8 ;~ 0192:150A
 cs=0x192;eip=0x00150d; 		R(JZ(loc_11510));	// 3488 jz      short loc_11510 ;~ 0192:150D
 cs=0x192;eip=0x00150f; 	R(RETN);	// 3489 retn ;~ 0192:150F
-loc_11510:	// 4795 
+loc_11510:	// 4803 
 	R(MOV(ah, byte_1f11d));	// 3493 mov     ah, byte_1F11D ;~ 0192:1510
 	R(CMP(ah, 0x3F));	// 3494 cmp     ah, 3Fh ; '?' ;~ 0192:1514
 cs=0x192;eip=0x001517; 		R(JNZ(loc_1151a));	// 3495 jnz     short loc_1151A ;~ 0192:1517
 cs=0x192;eip=0x001519; 	R(RETN);	// 3496 retn ;~ 0192:1519
-loc_1151a:	// 4796 
+loc_1151a:	// 4804 
 	R(MOV(ah, byte_1f133));	// 3500 mov     ah, byte_1F133 ;~ 0192:151A
 	R(CMP(ah, 0x3C));	// 3501 cmp     ah, 3Ch ; '<' ;~ 0192:151E
 cs=0x192;eip=0x001521; 		R(JNZ(loc_11524));	// 3502 jnz     short loc_11524 ;~ 0192:1521
 cs=0x192;eip=0x001523; 	R(RETN);	// 3503 retn ;~ 0192:1523
-loc_11524:	// 4797 
+loc_11524:	// 4805 
 	R(PUSH(si));	// 3507 push    si ;~ 0192:1524
 	R(MOV(byte_1f125, 0x16));	// 3508 mov     byte_1F125, 16h ;~ 0192:1525
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 3509 mov     si, offset byte_1F1CF ;~ 0192:152A
@@ -3149,43 +3156,43 @@ cs=0x192;eip=0x00153c; 	R(RETN);	// 3515 retn ;~ 0192:153C
 sub_1153d:	// 3522 
 	R(MOV(ah, 0x25));	// 3524 mov     ah, 25h ; '%' ;~ 0192:153D
 cs=0x192;eip=0x00153f; 	R(CALL(sub_11459,0));	// 3525 call    sub_11459 ;~ 0192:153F
-ret_192_1542:	// 4798 
+ret_192_1542:	// 4806 
 cs=0x192;eip=0x001542; 		R(JC(loc_11545));	// 3526 jb      short loc_11545 ;~ 0192:1542
 cs=0x192;eip=0x001544; 	R(RETN);	// 3527 retn ;~ 0192:1544
-loc_11545:	// 4799 
+loc_11545:	// 4807 
 	R(MOV(bx, offset(seg000,byte_1e0a2)));	// 3531 mov     bx, offset byte_1E0A2 ;~ 0192:1545
 	R(MOV(dx, 3));	// 3532 mov     dx, 3 ;~ 0192:1548
 	R(MOV(ah, byte_1f11d));	// 3533 mov     ah, byte_1F11D ;~ 0192:154B
-loc_1154f:	// 4800 
+loc_1154f:	// 4808 
 	R(TEST(*(raddr(ds,bx)), 0x80));	// 3536 test    byte ptr [bx], 80h ;~ 0192:154F
 cs=0x192;eip=0x001552; 		R(JZ(loc_11555));	// 3537 jz      short loc_11555 ;~ 0192:1552
 cs=0x192;eip=0x001554; 	R(RETN);	// 3538 retn ;~ 0192:1554
-loc_11555:	// 4801 
+loc_11555:	// 4809 
 	R(CMP(ah, *(raddr(ds,bx))));	// 3542 cmp     ah, [bx] ;~ 0192:1555
 cs=0x192;eip=0x001557; 		R(JZ(loc_1155d));	// 3543 jz      short loc_1155D ;~ 0192:1557
 	R(ADD(bx, dx));	// 3544 add     bx, dx ;~ 0192:1559
 cs=0x192;eip=0x00155b; 		R(JMP(loc_1154f));	// 3545 jmp     short loc_1154F ;~ 0192:155B
-loc_1155d:	// 4802 
+loc_1155d:	// 4810 
 	R(INC(bx));	// 3549 inc     bx ;~ 0192:155D
 	R(MOV(ch, *(raddr(ds,bx))));	// 3550 mov     ch, [bx] ;~ 0192:155E
 	R(INC(bx));	// 3551 inc     bx ;~ 0192:1560
 	R(MOV(cl, *(raddr(ds,bx))));	// 3552 mov     cl, [bx] ;~ 0192:1561
 	R(MOV(word_1f3d0, cx));	// 3553 mov     word_1F3D0, cx ;~ 0192:1563
 cs=0x192;eip=0x001567; 	R(CALL(sub_11111,0));	// 3554 call    sub_11111 ;~ 0192:1567
-ret_192_156a:	// 4803 
+ret_192_156a:	// 4811 
 	R(AND(ah, 0x7F));	// 3555 and     ah, 7Fh ;~ 0192:156A
 	R(CMP(ah, 8));	// 3556 cmp     ah, 8 ;~ 0192:156D
 cs=0x192;eip=0x001570; 		R(JZ(loc_11573));	// 3557 jz      short loc_11573 ;~ 0192:1570
 cs=0x192;eip=0x001572; 	R(RETN);	// 3558 retn ;~ 0192:1572
-loc_11573:	// 4804 
+loc_11573:	// 4812 
 	R(MOV(dx, offset(seg000,byte_1658d)));	// 3562 mov     dx, offset byte_1658D ;~ 0192:1573
 cs=0x192;eip=0x001576; 	R(CALL(sub_115a7,0));	// 3563 call    sub_115A7 ;~ 0192:1576
-ret_192_1579:	// 4805 
+ret_192_1579:	// 4813 
 cs=0x192;eip=0x001579; 	R(CALL(sub_112a7,0));	// 3564 call    sub_112A7 ;~ 0192:1579
-ret_192_157c:	// 4806 
+ret_192_157c:	// 4814 
 cs=0x192;eip=0x00157c; 		R(JNC(loc_1157f));	// 3565 jnb     short loc_1157F ;~ 0192:157C
 cs=0x192;eip=0x00157e; 	R(RETN);	// 3566 retn ;~ 0192:157E
-loc_1157f:	// 4807 
+loc_1157f:	// 4815 
 	R(MOV(bx, word_1f3d0));	// 3570 mov     bx, word_1F3D0 ;~ 0192:157F
 	R(INC(bh));	// 3571 inc     bh ;~ 0192:1583
 	R(XOR(ah, ah));	// 3572 xor     ah, ah ;~ 0192:1585
@@ -3196,69 +3203,69 @@ loc_1157f:	// 4807
 	R(MOV(ch, 0x25));	// 3577 mov     ch, 25h ; '%' ;~ 0192:158F
 	R(MOV(ah, 0x0A0));	// 3578 mov     ah, 0A0h ; ' ' ;~ 0192:1591
 cs=0x192;eip=0x001593; 	R(CALL(sub_11274,0));	// 3579 call    sub_11274 ;~ 0192:1593
-ret_192_1596:	// 4808 
+ret_192_1596:	// 4816 
 	R(MOV(*(raddr(ds,si+2)), 8));	// 3580 mov     byte ptr [si+2], 8 ;~ 0192:1596
 cs=0x192;eip=0x00159a; 	R(CALL(sub_11355,0));	// 3581 call    sub_11355 ;~ 0192:159A
-ret_192_159d:	// 4809 
+ret_192_159d:	// 4817 
 	R(CMP(ah, 7));	// 3582 cmp     ah, 7 ;~ 0192:159D
 cs=0x192;eip=0x0015a0; 		R(JC(loc_115a3));	// 3583 jb      short loc_115A3 ;~ 0192:15A0
 cs=0x192;eip=0x0015a2; 	R(RETN);	// 3584 retn ;~ 0192:15A2
-loc_115a3:	// 4810 
+loc_115a3:	// 4818 
 	R(OR(*(raddr(ds,si)), 0x10));	// 3588 or      byte ptr [si], 10h ;~ 0192:15A3
 cs=0x192;eip=0x0015a6; 	R(RETN);	// 3589 retn ;~ 0192:15A6
 sub_115a7:	// 3596 
 	R(MOV(word_1f19e, dx));	// 3598 mov     word_1F19E, dx ;~ 0192:15A7
 	R(MOV(bx, offset(seg000,table1_5)));	// 3599 mov     bx, offset table1_5 ;~ 0192:15AB
 cs=0x192;eip=0x0015ae; 	R(CALL(settable1,0));	// 3600 call    settable1 ;~ 0192:15AE
-ret_192_15b1:	// 4811 
+ret_192_15b1:	// 4819 
 	R(MOV(dx, word_1f19e));	// 3601 mov     dx, word_1F19E ;~ 0192:15B1
 	R(MOV(cx, word_1f3d0));	// 3602 mov     cx, word_1F3D0 ;~ 0192:15B5
 	R(MOV(ah, dh));	// 3603 mov     ah, dh ;~ 0192:15B9
 cs=0x192;eip=0x0015bb; 	R(CALL(sub_12c57,0));	// 3604 call    sub_12C57 ;~ 0192:15BB
-ret_192_15be:	// 4812 
+ret_192_15be:	// 4820 
 cs=0x192;eip=0x0015be; 	R(CALL(sub_13895,0));	// 3605 call    sub_13895 ;~ 0192:15BE
-ret_192_15c1:	// 4813 
+ret_192_15c1:	// 4821 
 	R(MOV(dx, word_1f19e));	// 3606 mov     dx, word_1F19E ;~ 0192:15C1
 	R(MOV(ah, dl));	// 3607 mov     ah, dl ;~ 0192:15C5
 	R(INC(cl));	// 3608 inc     cl ;~ 0192:15C7
 cs=0x192;eip=0x0015c9; 	R(CALL(sub_12c57,0));	// 3609 call    sub_12C57 ;~ 0192:15C9
-ret_192_15cc:	// 4814 
+ret_192_15cc:	// 4822 
 cs=0x192;eip=0x0015cc; 		R(JMP(sub_13895));	// 3610 jmp     sub_13895 ;~ 0192:15CC
-loc_115cf:	// 4815 
+loc_115cf:	// 4823 
 cs=0x192;eip=0x0015cf; 	R(CALL(sub_10a19,0));	// 3616 call    sub_10A19 ;~ 0192:15CF
-ret_192_15d2:	// 4816 
+ret_192_15d2:	// 4824 
 	R(MOV(bl, 0x0C));	// 3617 mov     bl, 0Ch ;~ 0192:15D2
 	R(MOV(dl, 0x0C));	// 3618 mov     dl, 0Ch ;~ 0192:15D4
 cs=0x192;eip=0x0015d6; 	R(CALL(sub_11385,0));	// 3619 call    sub_11385 ;~ 0192:15D6
-ret_192_15d9:	// 4817 
+ret_192_15d9:	// 4825 
 cs=0x192;eip=0x0015d9; 		R(JNC(loc_115df));	// 3620 jnb     short loc_115DF ;~ 0192:15D9
 	R(POP(bx));	// 3621 pop     bx ;~ 0192:15DB
 cs=0x192;eip=0x0015dc; 		R(JMP(sub_11506));	// 3622 jmp     sub_11506 ;~ 0192:15DC
-loc_115df:	// 4818 
+loc_115df:	// 4826 
 	R(MOV(bl, 0x0C));	// 3626 mov     bl, 0Ch ;~ 0192:15DF
 	R(MOV(dl, 0x0C));	// 3627 mov     dl, 0Ch ;~ 0192:15E1
 cs=0x192;eip=0x0015e3; 	R(CALL(sub_113c0,m2c::kloc_113c6));	// 3628 call    loc_113C6 ;~ 0192:15E3
-ret_192_15e6:	// 4819 
+ret_192_15e6:	// 4827 
 cs=0x192;eip=0x0015e6; 		R(JNC(loc_115f0));	// 3629 jnb     short loc_115F0 ;~ 0192:15E6
 	R(OR(*(raddr(ds,si)), 0x10));	// 3630 or      byte ptr [si], 10h ;~ 0192:15E8
 	R(MOV(dx, offset(seg000,byte_16467)));	// 3631 mov     dx, offset byte_16467 ;~ 0192:15EB
 cs=0x192;eip=0x0015ee; 		R(JMP(sub_115a7));	// 3632 jmp     short sub_115A7 ;~ 0192:15EE
-loc_115f0:	// 4820 
+loc_115f0:	// 4828 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 3636 mov     ah, [si+2] ;~ 0192:15F0
 	R(OR(ah, ah));	// 3637 or      ah, ah ;~ 0192:15F3
 cs=0x192;eip=0x0015f5; 		R(JZ(loc_11609));	// 3638 jz      short loc_11609 ;~ 0192:15F5
 	R(MOV(cx, 0x302));	// 3639 mov     cx, 302h ;~ 0192:15F7
 	R(MOV(dl, 2));	// 3640 mov     dl, 2 ;~ 0192:15FA
 cs=0x192;eip=0x0015fc; 	R(CALL(sub_11065,0));	// 3641 call    sub_11065 ;~ 0192:15FC
-ret_192_15ff:	// 4821 
+ret_192_15ff:	// 4829 
 cs=0x192;eip=0x0015ff; 		R(JC(loc_11602));	// 3642 jb      short loc_11602 ;~ 0192:15FF
 cs=0x192;eip=0x001601; 	R(RETN);	// 3643 retn ;~ 0192:1601
-loc_11602:	// 4822 
+loc_11602:	// 4830 
 cs=0x192;eip=0x001602; 	R(CALL(sub_12ce2,0));	// 3647 call    sub_12CE2 ;~ 0192:1602
-ret_192_1605:	// 4823 
+ret_192_1605:	// 4831 
 	R(DEC(*(raddr(ds,si+2))));	// 3648 dec     byte ptr [si+2] ;~ 0192:1605
 cs=0x192;eip=0x001608; 	R(RETN);	// 3649 retn ;~ 0192:1608
-loc_11609:	// 4824 
+loc_11609:	// 4832 
 	R(TEST(*(raddr(ds,si+0x24)), 4));	// 3653 test    byte ptr [si+24h], 4 ;~ 0192:1609
 cs=0x192;eip=0x00160d; 		R(JNZ(loc_11645));	// 3654 jnz     short loc_11645 ;~ 0192:160D
 	R(TEST(*(raddr(ds,si+0x24)), 8));	// 3655 test    byte ptr [si+24h], 8 ;~ 0192:160F
@@ -3268,80 +3275,80 @@ cs=0x192;eip=0x001613; 		R(JNZ(loc_11627));	// 3656 jnz     short loc_11627 ;~ 0
 	R(MOV(*(raddr(ds,si+0x14)), 0x40));	// 3659 mov     byte ptr [si+14h], 40h ; '@' ;~ 0192:161D
 	R(MOV(dx, offset(seg000,byte_16467)));	// 3660 mov     dx, offset byte_16467 ;~ 0192:1621
 cs=0x192;eip=0x001624; 	R(CALL(sub_115a7,0));	// 3661 call    sub_115A7 ;~ 0192:1624
-loc_11627:	// 4825 
+loc_11627:	// 4833 
 	R(TEST(*(raddr(ds,si+0x11)), 0x40));	// 3664 test    byte ptr [si+11h], 40h ;~ 0192:1627
 cs=0x192;eip=0x00162b; 		R(JNZ(loc_11630));	// 3665 jnz     short loc_11630 ;~ 0192:162B
 cs=0x192;eip=0x00162d; 		R(JMP(sub_12ce2));	// 3666 jmp     sub_12CE2 ;~ 0192:162D
-loc_11630:	// 4826 
+loc_11630:	// 4834 
 	R(OR(*(raddr(ds,si+0x24)), 4));	// 3670 or      byte ptr [si+24h], 4 ;~ 0192:1630
 	R(MOV(*(raddr(ds,si+0x14)), 0));	// 3671 mov     byte ptr [si+14h], 0 ;~ 0192:1634
 cs=0x192;eip=0x001638; 	R(CALL(sub_11355,0));	// 3672 call    sub_11355 ;~ 0192:1638
-ret_192_163b:	// 4827 
+ret_192_163b:	// 4835 
 	R(MOV(ah, 0x40));	// 3673 mov     ah, 40h ; '@' ;~ 0192:163B
 cs=0x192;eip=0x00163d; 		R(JNC(loc_11641));	// 3674 jnb     short loc_11641 ;~ 0192:163D
 	R(NEG(ah));	// 3675 neg     ah ;~ 0192:163F
-loc_11641:	// 4828 
+loc_11641:	// 4836 
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 3678 mov     [si+13h], ah ;~ 0192:1641
 cs=0x192;eip=0x001644; 	R(RETN);	// 3679 retn ;~ 0192:1644
-loc_11645:	// 4829 
+loc_11645:	// 4837 
 	R(MOV(ah, *(raddr(ds,si+0x11))));	// 3683 mov     ah, [si+11h] ;~ 0192:1645
 	R(OR(ah, *(raddr(ds,si+0x24))));	// 3684 or      ah, [si+24h] ;~ 0192:1648
 	R(AND(ah, 0x30));	// 3685 and     ah, 30h ;~ 0192:164B
 cs=0x192;eip=0x00164e; 		R(JZ(loc_11654));	// 3686 jz      short loc_11654 ;~ 0192:164E
 	R(OR(*(raddr(ds,si)), 0x10));	// 3687 or      byte ptr [si], 10h ;~ 0192:1650
 cs=0x192;eip=0x001653; 	R(RETN);	// 3688 retn ;~ 0192:1653
-loc_11654:	// 4830 
+loc_11654:	// 4838 
 	R(MOV(cx, 0x302));	// 3692 mov     cx, 302h ;~ 0192:1654
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 3693 test    byte ptr [si+13h], 80h ;~ 0192:1657
 cs=0x192;eip=0x00165b; 		R(JNZ(loc_11660));	// 3694 jnz     short loc_11660 ;~ 0192:165B
 	R(MOV(cx, 0x100));	// 3695 mov     cx, 100h ;~ 0192:165D
-loc_11660:	// 4831 
+loc_11660:	// 4839 
 	R(MOV(dl, 2));	// 3698 mov     dl, 2 ;~ 0192:1660
 cs=0x192;eip=0x001662; 	R(CALL(sub_11065,0));	// 3699 call    sub_11065 ;~ 0192:1662
-ret_192_1665:	// 4832 
+ret_192_1665:	// 4840 
 cs=0x192;eip=0x001665; 		R(JC(loc_11668));	// 3700 jb      short loc_11668 ;~ 0192:1665
 cs=0x192;eip=0x001667; 	R(RETN);	// 3701 retn ;~ 0192:1667
-loc_11668:	// 4833 
+loc_11668:	// 4841 
 cs=0x192;eip=0x001668; 		R(JMP(sub_12cbe));	// 3705 jmp     sub_12CBE ;~ 0192:1668
-loc_1166b:	// 4834 
+loc_1166b:	// 4842 
 	R(MOV(di, offset(seg000,byte_1e136)));	// 3709 mov     di, offset byte_1E136 ;~ 0192:166B
 	R(MOV(ah, 0x26));	// 3710 mov     ah, 26h ; '&' ;~ 0192:166E
 	R(MOV(bx, offset(seg000,byte_1e14b)));	// 3711 mov     bx, offset byte_1E14B ;~ 0192:1670
 cs=0x192;eip=0x001673; 		R(JMP(sub_116b7));	// 3712 jmp     short sub_116B7 ;~ 0192:1673
-loc_11675:	// 4835 
+loc_11675:	// 4843 
 	R(MOV(di, offset(seg000,byte_1e108)));	// 3717 mov     di, offset byte_1E108 ;~ 0192:1675
 	R(MOV(ah, 0x1E));	// 3718 mov     ah, 1Eh ;~ 0192:1678
 	R(MOV(bx, offset(seg000,byte_1e14b)));	// 3719 mov     bx, offset byte_1E14B ;~ 0192:167A
 cs=0x192;eip=0x00167d; 		R(JMP(sub_116b7));	// 3720 jmp     short sub_116B7 ;~ 0192:167D
-loc_1167f:	// 4836 
+loc_1167f:	// 4844 
 	R(MOV(di, offset(seg000,byte_1e125)));	// 3725 mov     di, offset byte_1E125 ;~ 0192:167F
 	R(MOV(ah, 0x1F));	// 3726 mov     ah, 1Fh ;~ 0192:1682
 	R(MOV(bx, offset(seg000,byte_1e14b)));	// 3727 mov     bx, offset byte_1E14B ;~ 0192:1684
 cs=0x192;eip=0x001687; 		R(JMP(sub_116b7));	// 3728 jmp     short sub_116B7 ;~ 0192:1687
-loc_11689:	// 4837 
+loc_11689:	// 4845 
 	R(MOV(di, offset(seg000,byte_1e0ef)));	// 3732 mov     di, offset byte_1E0EF ;~ 0192:1689
 	R(MOV(ah, 7));	// 3733 mov     ah, 7 ;~ 0192:168C
 	R(MOV(bx, offset(seg000,byte_1e14f)));	// 3734 mov     bx, offset byte_1E14F ;~ 0192:168E
 cs=0x192;eip=0x001691; 		R(JMP(sub_116b7));	// 3735 jmp     short sub_116B7 ;~ 0192:1691
-loc_11693:	// 4838 
+loc_11693:	// 4846 
 	R(MOV(di, offset(seg000,byte_1e0be)));	// 3740 mov     di, offset byte_1E0BE ;~ 0192:1693
 	R(MOV(ah, 0x17));	// 3741 mov     ah, 17h ;~ 0192:1696
 cs=0x192;eip=0x001698; 	R(CALL(sub_116b7,0));	// 3742 call    sub_116B7 ;~ 0192:1698
-ret_192_169b:	// 4839 
+ret_192_169b:	// 4847 
 	R(MOV(ah, 0x17));	// 3743 mov     ah, 17h ;~ 0192:169B
 cs=0x192;eip=0x00169d; 	R(CALL(sub_11459,0));	// 3744 call    sub_11459 ;~ 0192:169D
-ret_192_16a0:	// 4840 
+ret_192_16a0:	// 4848 
 cs=0x192;eip=0x0016a0; 		R(JNC(loc_116a3));	// 3745 jnb     short loc_116A3 ;~ 0192:16A0
 cs=0x192;eip=0x0016a2; 	R(RETN);	// 3746 retn ;~ 0192:16A2
-loc_116a3:	// 4841 
+loc_116a3:	// 4849 
 	R(TEST(*(raddr(ds,si)), 0x40));	// 3750 test    byte ptr [si], 40h ;~ 0192:16A3
 cs=0x192;eip=0x0016a6; 		R(JNZ(loc_116a9));	// 3751 jnz     short loc_116A9 ;~ 0192:16A6
 cs=0x192;eip=0x0016a8; 	R(RETN);	// 3752 retn ;~ 0192:16A8
-loc_116a9:	// 4842 
+loc_116a9:	// 4850 
 	R(TEST(*(raddr(ds,si)), 0x10));	// 3756 test    byte ptr [si], 10h ;~ 0192:16A9
 cs=0x192;eip=0x0016ac; 		R(JZ(loc_116af));	// 3757 jz      short loc_116AF ;~ 0192:16AC
 cs=0x192;eip=0x0016ae; 	R(RETN);	// 3758 retn ;~ 0192:16AE
-loc_116af:	// 4843 
+loc_116af:	// 4851 
 	R(MOV(bx, offset(seg000,table1_6)));	// 3762 mov     bx, offset table1_6 ;~ 0192:16AF
 	R(MOV(ah, 2));	// 3763 mov     ah, 2 ;~ 0192:16B2
 cs=0x192;eip=0x0016b4; 		R(JMP(settable1));	// 3764 jmp     settable1 ;~ 0192:16B4
@@ -3350,34 +3357,34 @@ sub_116b7:	// 3769
 	R(MOV(*(db*)(((db*)&word_1f1a2)), ah));	// 3772 mov     byte ptr word_1F1A2, ah ;~ 0192:16BB
 	R(PUSH(di));	// 3773 push    di ;~ 0192:16BF
 cs=0x192;eip=0x0016c0; 	R(CALL(sub_11459,0));	// 3774 call    sub_11459 ;~ 0192:16C0
-ret_192_16c3:	// 4844 
+ret_192_16c3:	// 4852 
 	R(POP(di));	// 3775 pop     di ;~ 0192:16C3
 cs=0x192;eip=0x0016c4; 		R(JC(loc_116c7));	// 3776 jb      short loc_116C7 ;~ 0192:16C4
 cs=0x192;eip=0x0016c6; 	R(RETN);	// 3777 retn ;~ 0192:16C6
-loc_116c7:	// 4845 
+loc_116c7:	// 4853 
 	R(MOV(dx, 4));	// 3781 mov     dx, 4 ;~ 0192:16C7
 	R(MOV(ah, byte_1f11d));	// 3782 mov     ah, byte_1F11D ;~ 0192:16CA
-loc_116ce:	// 4846 
+loc_116ce:	// 4854 
 	R(TEST(*(raddr(ds,di)), 0x80));	// 3785 test    byte ptr [di], 80h ;~ 0192:16CE
 cs=0x192;eip=0x0016d1; 		R(JZ(loc_116d4));	// 3786 jz      short loc_116D4 ;~ 0192:16D1
 cs=0x192;eip=0x0016d3; 	R(RETN);	// 3787 retn ;~ 0192:16D3
-loc_116d4:	// 4847 
+loc_116d4:	// 4855 
 	R(CMP(ah, *(raddr(ds,di))));	// 3791 cmp     ah, [di] ;~ 0192:16D4
 cs=0x192;eip=0x0016d6; 		R(JZ(loc_116dc));	// 3792 jz      short loc_116DC ;~ 0192:16D6
 	R(ADD(di, dx));	// 3793 add     di, dx ;~ 0192:16D8
 cs=0x192;eip=0x0016da; 		R(JMP(loc_116ce));	// 3794 jmp     short loc_116CE ;~ 0192:16DA
-loc_116dc:	// 4848 
+loc_116dc:	// 4856 
 cs=0x192;eip=0x0016dc; 	R(CALL(sub_11111,0));	// 3798 call    sub_11111 ;~ 0192:16DC
-ret_192_16df:	// 4849 
+ret_192_16df:	// 4857 
 	R(CMP(ah, 2));	// 3799 cmp     ah, 2 ;~ 0192:16DF
 cs=0x192;eip=0x0016e2; 		R(JC(loc_116e5));	// 3800 jb      short loc_116E5 ;~ 0192:16E2
 cs=0x192;eip=0x0016e4; 	R(RETN);	// 3801 retn ;~ 0192:16E4
-loc_116e5:	// 4850 
+loc_116e5:	// 4858 
 cs=0x192;eip=0x0016e5; 	R(CALL(sub_112a7,0));	// 3805 call    sub_112A7 ;~ 0192:16E5
-ret_192_16e8:	// 4851 
+ret_192_16e8:	// 4859 
 cs=0x192;eip=0x0016e8; 		R(JNC(loc_116eb));	// 3806 jnb     short loc_116EB ;~ 0192:16E8
 cs=0x192;eip=0x0016ea; 	R(RETN);	// 3807 retn ;~ 0192:16EA
-loc_116eb:	// 4852 
+loc_116eb:	// 4860 
 	R(MOV(bl, *(raddr(ds,di+1))));	// 3811 mov     bl, [di+1] ;~ 0192:16EB
 	R(MOV(bh, *(raddr(ds,di+2))));	// 3812 mov     bh, [di+2] ;~ 0192:16EE
 	R(MOV(cl, 0));	// 3813 mov     cl, 0 ;~ 0192:16F1
@@ -3386,55 +3393,55 @@ loc_116eb:	// 4852
 	R(MOV(ah, *(db*)(((db*)&word_1f1a2))));	// 3816 mov     ah, byte ptr word_1F1A2 ;~ 0192:16F8
 	R(MOV(ch, ah));	// 3817 mov     ch, ah ;~ 0192:16FC
 cs=0x192;eip=0x0016fe; 	R(CALL(sub_11274,0));	// 3818 call    sub_11274 ;~ 0192:16FE
-ret_192_1701:	// 4853 
+ret_192_1701:	// 4861 
 	R(MOV(bx, word_1f1a0));	// 3819 mov     bx, word_1F1A0 ;~ 0192:1701
 	R(MOV(*(raddr(ds,si+0x22)), bl));	// 3820 mov     [si+22h], bl ;~ 0192:1705
 	R(MOV(*(raddr(ds,si+0x23)), bh));	// 3821 mov     [si+23h], bh ;~ 0192:1708
 cs=0x192;eip=0x00170b; 	R(CALL(sub_11355,0));	// 3822 call    sub_11355 ;~ 0192:170B
-ret_192_170e:	// 4854 
+ret_192_170e:	// 4862 
 	R(CMP(ah, 5));	// 3823 cmp     ah, 5 ;~ 0192:170E
 cs=0x192;eip=0x001711; 		R(JC(loc_11714));	// 3824 jb      short loc_11714 ;~ 0192:1711
 cs=0x192;eip=0x001713; 	R(RETN);	// 3825 retn ;~ 0192:1713
-loc_11714:	// 4855 
+loc_11714:	// 4863 
 	R(OR(*(raddr(ds,si)), 0x10));	// 3829 or      byte ptr [si], 10h ;~ 0192:1714
 cs=0x192;eip=0x001717; 	R(RETN);	// 3830 retn ;~ 0192:1717
-loc_11718:	// 4856 
+loc_11718:	// 4864 
 	R(TEST(*(raddr(ds,si+0x11)), 1));	// 3836 test    byte ptr [si+11h], 1 ;~ 0192:1718
 cs=0x192;eip=0x00171c; 		R(JNZ(loc_11721));	// 3837 jnz     short loc_11721 ;~ 0192:171C
 cs=0x192;eip=0x00171e; 		R(JMP(loc_118c0));	// 3838 jmp     loc_118C0 ;~ 0192:171E
-loc_11721:	// 4857 
+loc_11721:	// 4865 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 3842 mov     ah, [si+2] ;~ 0192:1721
 	R(CMP(ah, 0x19));	// 3843 cmp     ah, 19h ;~ 0192:1724
 cs=0x192;eip=0x001727; 		R(JNZ(loc_11730));	// 3844 jnz     short loc_11730 ;~ 0192:1727
 	R(MOV(*(raddr(ds,si+2)), 0x0A));	// 3845 mov     byte ptr [si+2], 0Ah ;~ 0192:1729
 cs=0x192;eip=0x00172d; 	R(CALL(sub_11506,0));	// 3846 call    sub_11506 ;~ 0192:172D
-loc_11730:	// 4858 
+loc_11730:	// 4866 
 	R(OR(ah, ah));	// 3849 or      ah, ah ;~ 0192:1730
 cs=0x192;eip=0x001732; 		R(JNZ(loc_1173d));	// 3850 jnz     short loc_1173D ;~ 0192:1732
-loc_11734:	// 4859 
+loc_11734:	// 4867 
 	R(AND(*(raddr(ds,si+0x11)), 0x0FE));	// 3854 and     byte ptr [si+11h], 0FEh ;~ 0192:1734
 	R(MOV(*(raddr(ds,si+2)), 0));	// 3855 mov     byte ptr [si+2], 0 ;~ 0192:1738
 cs=0x192;eip=0x00173c; 	R(RETN);	// 3856 retn ;~ 0192:173C
-loc_1173d:	// 4860 
+loc_1173d:	// 4868 
 	R(MOV(cx, 0x201));	// 3860 mov     cx, 201h ;~ 0192:173D
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 3861 test    byte ptr [si+13h], 80h ;~ 0192:1740
 cs=0x192;eip=0x001744; 		R(JZ(loc_11749));	// 3862 jz      short loc_11749 ;~ 0192:1744
 	R(MOV(cx, 0x504));	// 3863 mov     cx, 504h ;~ 0192:1746
-loc_11749:	// 4861 
+loc_11749:	// 4869 
 	R(MOV(dl, 4));	// 3866 mov     dl, 4 ;~ 0192:1749
 cs=0x192;eip=0x00174b; 	R(CALL(sub_11065,0));	// 3867 call    sub_11065 ;~ 0192:174B
-ret_192_174e:	// 4862 
+ret_192_174e:	// 4870 
 cs=0x192;eip=0x00174e; 		R(JC(loc_11751));	// 3868 jb      short loc_11751 ;~ 0192:174E
 cs=0x192;eip=0x001750; 	R(RETN);	// 3869 retn ;~ 0192:1750
-loc_11751:	// 4863 
+loc_11751:	// 4871 
 	R(DEC(*(raddr(ds,si+2))));	// 3873 dec     byte ptr [si+2] ;~ 0192:1751
 	R(MOV(bx, offset(seg000,table1_4)));	// 3874 mov     bx, offset table1_4 ;~ 0192:1754
 cs=0x192;eip=0x001757; 		R(JMP(settable1));	// 3875 jmp     settable1 ;~ 0192:1757
-loc_1175a:	// 4864 
+loc_1175a:	// 4872 
 	R(TEST(*(raddr(ds,si+0x11)), 1));	// 3879 test    byte ptr [si+11h], 1 ;~ 0192:175A
 cs=0x192;eip=0x00175e; 		R(JNZ(loc_11763));	// 3880 jnz     short loc_11763 ;~ 0192:175E
 cs=0x192;eip=0x001760; 		R(JMP(loc_118c0));	// 3881 jmp     loc_118C0 ;~ 0192:1760
-loc_11763:	// 4865 
+loc_11763:	// 4873 
 	R(TEST(*(raddr(ds,si+0x11)), 2));	// 3885 test    byte ptr [si+11h], 2 ;~ 0192:1763
 cs=0x192;eip=0x001767; 		R(JNZ(loc_117a3));	// 3886 jnz     short loc_117A3 ;~ 0192:1767
 	R(MOV(ah, *(db*)(((db*)&word_1f12a))));	// 3887 mov     ah, byte ptr word_1F12A ;~ 0192:1769
@@ -3444,7 +3451,7 @@ cs=0x192;eip=0x00176f; 		R(JZ(loc_11734));	// 3889 jz      short loc_11734 ;~ 01
 	R(MOV(cl, ah));	// 3891 mov     cl, ah ;~ 0192:1773
 	R(MOV(dx, 4));	// 3892 mov     dx, 4 ;~ 0192:1775
 	R(MOV(di, offset(seg000,byte_1e028)));	// 3893 mov     di, offset byte_1E028 ;~ 0192:1778
-loc_1177b:	// 4866 
+loc_1177b:	// 4874 
 	R(ADD(di, dx));	// 3897 add     di, dx ;~ 0192:177B
 	R(MOV(ah, *(raddr(ds,di))));	// 3898 mov     ah, [di] ;~ 0192:177D
 	R(OR(ah, ah));	// 3899 or      ah, ah ;~ 0192:177F
@@ -3461,7 +3468,7 @@ cs=0x192;eip=0x001788; 		R(JNZ(loc_1177b));	// 3903 jnz     short loc_1177B ;~ 0
 	R(OR(*(raddr(ds,bx)), 1));	// 3910 or      byte ptr [bx], 1 ;~ 0192:179A
 	R(XOR(ah, ah));	// 3911 xor     ah, ah ;~ 0192:179D
 	R(MOV(*(db*)(((db*)&word_1f12a)), ah));	// 3912 mov     byte ptr word_1F12A, ah ;~ 0192:179F
-loc_117a3:	// 4867 
+loc_117a3:	// 4875 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 3915 mov     ah, [si+2] ;~ 0192:17A3
 	R(OR(ah, ah));	// 3916 or      ah, ah ;~ 0192:17A6
 cs=0x192;eip=0x0017a8; 		R(JNZ(loc_117b7));	// 3917 jnz     short loc_117B7 ;~ 0192:17A8
@@ -3469,36 +3476,36 @@ cs=0x192;eip=0x0017a8; 		R(JNZ(loc_117b7));	// 3917 jnz     short loc_117B7 ;~ 0
 	R(AND(*(raddr(ds,bx)), 0x0FE));	// 3919 and     byte ptr [bx], 0FEh ;~ 0192:17AD
 	R(AND(*(raddr(ds,si+0x11)), 0x0FD));	// 3920 and     byte ptr [si+11h], 0FDh ;~ 0192:17B0
 cs=0x192;eip=0x0017b4; 		R(JMP(loc_11734));	// 3921 jmp     loc_11734 ;~ 0192:17B4
-loc_117b7:	// 4868 
+loc_117b7:	// 4876 
 	R(MOV(cx, 0x201));	// 3925 mov     cx, 201h ;~ 0192:17B7
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 3926 test    byte ptr [si+13h], 80h ;~ 0192:17BA
 cs=0x192;eip=0x0017be; 		R(JZ(loc_117c3));	// 3927 jz      short loc_117C3 ;~ 0192:17BE
 	R(MOV(cx, 0x504));	// 3928 mov     cx, 504h ;~ 0192:17C0
-loc_117c3:	// 4869 
+loc_117c3:	// 4877 
 	R(MOV(dl, 4));	// 3931 mov     dl, 4 ;~ 0192:17C3
 cs=0x192;eip=0x0017c5; 	R(CALL(sub_11065,0));	// 3932 call    sub_11065 ;~ 0192:17C5
-ret_192_17c8:	// 4870 
+ret_192_17c8:	// 4878 
 cs=0x192;eip=0x0017c8; 		R(JC(loc_117cb));	// 3933 jb      short loc_117CB ;~ 0192:17C8
 cs=0x192;eip=0x0017ca; 	R(RETN);	// 3934 retn ;~ 0192:17CA
-loc_117cb:	// 4871 
+loc_117cb:	// 4879 
 	R(MOV(bx, offset(seg000,table1_7)));	// 3938 mov     bx, offset table1_7 ;~ 0192:17CB
 cs=0x192;eip=0x0017ce; 	R(CALL(settable1,0));	// 3939 call    settable1 ;~ 0192:17CE
-ret_192_17d1:	// 4872 
+ret_192_17d1:	// 4880 
 	R(DEC(*(raddr(ds,si+2))));	// 3940 dec     byte ptr [si+2] ;~ 0192:17D1
 	R(MOV(ah, *(raddr(ds,si+2))));	// 3941 mov     ah, [si+2] ;~ 0192:17D4
 	R(MOV(dx, 0x19));	// 3942 mov     dx, 19h ;~ 0192:17D7
 cs=0x192;eip=0x0017da; 	R(CALL(sub_11139,0));	// 3943 call    sub_11139 ;~ 0192:17DA
-ret_192_17dd:	// 4873 
+ret_192_17dd:	// 4881 
 	R(MOV(cx, 0x1505));	// 3944 mov     cx, 1505h ;~ 0192:17DD
 	R(MOV(ah, 5));	// 3945 mov     ah, 5 ;~ 0192:17E0
 cs=0x192;eip=0x0017e2; 	R(CALL(sub_13388,0));	// 3946 call    sub_13388 ;~ 0192:17E2
-ret_192_17e5:	// 4874 
+ret_192_17e5:	// 4882 
 cs=0x192;eip=0x0017e5; 	R(RETN);	// 3947 retn ;~ 0192:17E5
-loc_117e6:	// 4875 
+loc_117e6:	// 4883 
 	R(TEST(*(raddr(ds,si+0x11)), 1));	// 3951 test    byte ptr [si+11h], 1 ;~ 0192:17E6
 cs=0x192;eip=0x0017ea; 		R(JNZ(loc_117ef));	// 3952 jnz     short loc_117EF ;~ 0192:17EA
 cs=0x192;eip=0x0017ec; 		R(JMP(loc_118c0));	// 3953 jmp     loc_118C0 ;~ 0192:17EC
-loc_117ef:	// 4876 
+loc_117ef:	// 4884 
 	R(TEST(*(raddr(ds,si+0x11)), 2));	// 3957 test    byte ptr [si+11h], 2 ;~ 0192:17EF
 cs=0x192;eip=0x0017f3; 		R(JNZ(loc_11815));	// 3958 jnz     short loc_11815 ;~ 0192:17F3
 	R(MOV(*(raddr(ds,si+2)), 0x0A));	// 3959 mov     byte ptr [si+2], 0Ah ;~ 0192:17F5
@@ -3508,13 +3515,13 @@ cs=0x192;eip=0x0017f3; 		R(JNZ(loc_11815));	// 3958 jnz     short loc_11815 ;~ 0
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 3963 test    byte ptr [si+13h], 80h ;~ 0192:1802
 cs=0x192;eip=0x001806; 		R(JZ(loc_1180b));	// 3964 jz      short loc_1180B ;~ 0192:1806
 	R(MOV(cx, 0x505));	// 3965 mov     cx, 505h ;~ 0192:1808
-loc_1180b:	// 4877 
+loc_1180b:	// 4885 
 	R(MOV(dl, 1));	// 3968 mov     dl, 1 ;~ 0192:180B
 cs=0x192;eip=0x00180d; 	R(CALL(sub_11065,0));	// 3969 call    sub_11065 ;~ 0192:180D
-ret_192_1810:	// 4878 
+ret_192_1810:	// 4886 
 	R(OR(*(raddr(ds,si+0x11)), 2));	// 3970 or      byte ptr [si+11h], 2 ;~ 0192:1810
 cs=0x192;eip=0x001814; 	R(RETN);	// 3971 retn ;~ 0192:1814
-loc_11815:	// 4879 
+loc_11815:	// 4887 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 3975 mov     ah, [si+2] ;~ 0192:1815
 	R(OR(ah, ah));	// 3976 or      ah, ah ;~ 0192:1818
 cs=0x192;eip=0x00181a; 		R(JNZ(loc_1183e));	// 3977 jnz     short loc_1183E ;~ 0192:181A
@@ -3524,15 +3531,15 @@ cs=0x192;eip=0x00181a; 		R(JNZ(loc_1183e));	// 3977 jnz     short loc_1183E ;~ 0
 	R(SUB(ah, 5));	// 3981 sub     ah, 5 ;~ 0192:1826
 cs=0x192;eip=0x001829; 		R(JNC(loc_11830));	// 3982 jnb     short loc_11830 ;~ 0192:1829
 cs=0x192;eip=0x00182b; 	R(CALL(sub_11506,0));	// 3983 call    sub_11506 ;~ 0192:182B
-ret_192_182e:	// 4880 
+ret_192_182e:	// 4888 
 	R(XOR(ah, ah));	// 3984 xor     ah, ah ;~ 0192:182E
-loc_11830:	// 4881 
+loc_11830:	// 4889 
 	R(MOV(byte_1f125, ah));	// 3987 mov     byte_1F125, ah ;~ 0192:1830
 cs=0x192;eip=0x001834; 	R(CALL(sub_1361d,0));	// 3988 call    sub_1361D ;~ 0192:1834
-ret_192_1837:	// 4882 
+ret_192_1837:	// 4890 
 	R(AND(*(raddr(ds,si+0x11)), 0x0FD));	// 3989 and     byte ptr [si+11h], 0FDh ;~ 0192:1837
 cs=0x192;eip=0x00183b; 		R(JMP(loc_11734));	// 3990 jmp     loc_11734 ;~ 0192:183B
-loc_1183e:	// 4883 
+loc_1183e:	// 4891 
 	R(DEC(*(raddr(ds,si+2))));	// 3994 dec     byte ptr [si+2] ;~ 0192:183E
 	R(MOV(bx, offset(seg000,byte_1d3a7)));	// 3995 mov     bx, offset byte_1D3A7 ;~ 0192:1841
 	R(MOV(cl, 0x40));	// 3996 mov     cl, 40h ; '@' ;~ 0192:1844
@@ -3540,28 +3547,28 @@ loc_1183e:	// 4883
 cs=0x192;eip=0x00184a; 		R(JZ(loc_11851));	// 3998 jz      short loc_11851 ;~ 0192:184A
 	R(MOV(bx, offset(seg000,byte_1d375)));	// 3999 mov     bx, offset byte_1D375 ;~ 0192:184C
 	R(MOV(cl, 0x0C0));	// 4000 mov     cl, 0C0h ; 'À' ;~ 0192:184F
-loc_11851:	// 4884 
+loc_11851:	// 4892 
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 4003 mov     si, offset byte_1F1CF ;~ 0192:1851
 	R(MOV(*(raddr(ds,si+0x13)), cl));	// 4004 mov     [si+13h], cl ;~ 0192:1854
 	R(MOV(*(raddr(ds,si+0x14)), 0));	// 4005 mov     byte ptr [si+14h], 0 ;~ 0192:1857
 	R(MOV(ah, *(raddr(ds,bx))));	// 4006 mov     ah, [bx] ;~ 0192:185B
 	R(MOV(*(raddr(ds,si+0x10)), ah));	// 4007 mov     [si+10h], ah ;~ 0192:185D
 cs=0x192;eip=0x001860; 	R(CALL(sub_12cbe,0));	// 4008 call    sub_12CBE ;~ 0192:1860
-ret_192_1863:	// 4885 
+ret_192_1863:	// 4893 
 cs=0x192;eip=0x001863; 	R(CALL(sub_10b2c,0));	// 4009 call    sub_10B2C ;~ 0192:1863
-ret_192_1866:	// 4886 
+ret_192_1866:	// 4894 
 	R(MOV(ah, *(raddr(ds,si+0x11))));	// 4010 mov     ah, [si+11h] ;~ 0192:1866
 	R(AND(ah, 0x30));	// 4011 and     ah, 30h ;~ 0192:1869
 cs=0x192;eip=0x00186c; 		R(JNZ(loc_1186f));	// 4012 jnz     short loc_1186F ;~ 0192:186C
 cs=0x192;eip=0x00186e; 	R(RETN);	// 4013 retn ;~ 0192:186E
-loc_1186f:	// 4887 
+loc_1186f:	// 4895 
 	R(MOV(ah, *(raddr(ds,si+3))));	// 4017 mov     ah, [si+3] ;~ 0192:186F
 	R(MOV(*(raddr(ds,si+0x0B)), ah));	// 4018 mov     [si+0Bh], ah ;~ 0192:1872
 	R(MOV(ah, *(raddr(ds,si+4))));	// 4019 mov     ah, [si+4] ;~ 0192:1875
 	R(MOV(*(raddr(ds,si+0x0C)), ah));	// 4020 mov     [si+0Ch], ah ;~ 0192:1878
 	R(MOV(*(raddr(ds,si+2)), 0));	// 4021 mov     byte ptr [si+2], 0 ;~ 0192:187B
 cs=0x192;eip=0x00187f; 	R(RETN);	// 4022 retn ;~ 0192:187F
-loc_11880:	// 4888 
+loc_11880:	// 4896 
 	R(TEST(*(raddr(ds,si+0x11)), 1));	// 4026 test    byte ptr [si+11h], 1 ;~ 0192:1880
 cs=0x192;eip=0x001884; 		R(JZ(loc_118c0));	// 4027 jz      short loc_118C0 ;~ 0192:1884
 	R(MOV(ah, *(raddr(ds,si+2))));	// 4028 mov     ah, [si+2] ;~ 0192:1886
@@ -3571,44 +3578,44 @@ cs=0x192;eip=0x00188c; 		R(JNZ(loc_1189a));	// 4030 jnz     short loc_1189A ;~ 0
 	R(MOV(byte_1f1df, ah));	// 4032 mov     byte_1F1DF, ah ;~ 0192:1890
 	R(MOV(bx, offset(seg000,word_1f12a)+1));	// 4033 mov     bx, (offset word_1F12A+1) ;~ 0192:1894
 	R(OR(*(raddr(ds,bx)), 1));	// 4034 or      byte ptr [bx], 1 ;~ 0192:1897
-loc_1189a:	// 4889 
+loc_1189a:	// 4897 
 	R(MOV(cx, 0x504));	// 4037 mov     cx, 504h ;~ 0192:189A
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 4038 test    byte ptr [si+13h], 80h ;~ 0192:189D
 cs=0x192;eip=0x0018a1; 		R(JZ(loc_118a6));	// 4039 jz      short loc_118A6 ;~ 0192:18A1
 	R(MOV(cx, 0x0B0A));	// 4040 mov     cx, 0B0Ah ;~ 0192:18A3
-loc_118a6:	// 4890 
+loc_118a6:	// 4898 
 	R(MOV(dl, 4));	// 4043 mov     dl, 4 ;~ 0192:18A6
 cs=0x192;eip=0x0018a8; 	R(CALL(sub_11065,0));	// 4044 call    sub_11065 ;~ 0192:18A8
-ret_192_18ab:	// 4891 
+ret_192_18ab:	// 4899 
 cs=0x192;eip=0x0018ab; 		R(JC(loc_118ae));	// 4045 jb      short loc_118AE ;~ 0192:18AB
 cs=0x192;eip=0x0018ad; 	R(RETN);	// 4046 retn ;~ 0192:18AD
-loc_118ae:	// 4892 
+loc_118ae:	// 4900 
 	R(DEC(*(raddr(ds,si+2))));	// 4050 dec     byte ptr [si+2] ;~ 0192:18AE
 cs=0x192;eip=0x0018b1; 		R(JZ(loc_118b4));	// 4051 jz      short loc_118B4 ;~ 0192:18B1
 cs=0x192;eip=0x0018b3; 	R(RETN);	// 4052 retn ;~ 0192:18B3
-loc_118b4:	// 4893 
+loc_118b4:	// 4901 
 cs=0x192;eip=0x0018b4; 	R(CALL(sub_11506,0));	// 4056 call    sub_11506 ;~ 0192:18B4
-ret_192_18b7:	// 4894 
+ret_192_18b7:	// 4902 
 	R(MOV(bx, offset(seg000,word_1f12a)+1));	// 4057 mov     bx, (offset word_1F12A+1) ;~ 0192:18B7
 	R(AND(*(raddr(ds,bx)), 0x0FE));	// 4058 and     byte ptr [bx], 0FEh ;~ 0192:18BA
 cs=0x192;eip=0x0018bd; 		R(JMP(loc_11734));	// 4059 jmp     loc_11734 ;~ 0192:18BD
-loc_118c0:	// 4895 
+loc_118c0:	// 4903 
 	R(MOV(bl, 0x12));	// 4064 mov     bl, 12h ;~ 0192:18C0
 	R(MOV(dl, 0x17));	// 4065 mov     dl, 17h ;~ 0192:18C2
 cs=0x192;eip=0x0018c4; 	R(CALL(sub_113c0,m2c::kloc_113c6));	// 4066 call    loc_113C6 ;~ 0192:18C4
-ret_192_18c7:	// 4896 
+ret_192_18c7:	// 4904 
 cs=0x192;eip=0x0018c7; 		R(JNC(loc_118d2));	// 4067 jnb     short loc_118D2 ;~ 0192:18C7
 	R(OR(*(raddr(ds,si)), 0x10));	// 4068 or      byte ptr [si], 10h ;~ 0192:18C9
 	R(MOV(bx, offset(seg000,table1_8)));	// 4069 mov     bx, offset table1_8 ;~ 0192:18CC
 cs=0x192;eip=0x0018cf; 		R(JMP(settable1));	// 4070 jmp     settable1 ;~ 0192:18CF
-loc_118d2:	// 4897 
+loc_118d2:	// 4905 
 	R(MOV(ah, byte_1f1e0));	// 4074 mov     ah, byte_1F1E0 ;~ 0192:18D2
 	R(TEST(ah, 0x40));	// 4075 test    ah, 40h ;~ 0192:18D6
 cs=0x192;eip=0x0018d9; 		R(JZ(loc_11906));	// 4076 jz      short loc_11906 ;~ 0192:18D9
 	R(MOV(bl, 0x12));	// 4077 mov     bl, 12h ;~ 0192:18DB
 	R(MOV(dl, 0x17));	// 4078 mov     dl, 17h ;~ 0192:18DD
 cs=0x192;eip=0x0018df; 	R(CALL(sub_11385,0));	// 4079 call    sub_11385 ;~ 0192:18DF
-ret_192_18e2:	// 4898 
+ret_192_18e2:	// 4906 
 cs=0x192;eip=0x0018e2; 		R(JNC(loc_11906));	// 4080 jnb     short loc_11906 ;~ 0192:18E2
 	R(TEST(byte_1f107, 8));	// 4081 test    byte_1F107, 8 ;~ 0192:18E4
 cs=0x192;eip=0x0018e9; 		R(JNZ(loc_118fd));	// 4082 jnz     short loc_118FD ;~ 0192:18E9
@@ -3618,64 +3625,64 @@ cs=0x192;eip=0x0018e9; 		R(JNZ(loc_118fd));	// 4082 jnz     short loc_118FD ;~ 0
 	R(XOR(ah, *(raddr(ds,si+0x13))));	// 4086 xor     ah, [si+13h] ;~ 0192:18F7
 cs=0x192;eip=0x0018fa; 		R(JGE(loc_118fd));	// 4087 jge     short loc_118FD ;~ 0192:18FA
 cs=0x192;eip=0x0018fc; 	R(RETN);	// 4088 retn ;~ 0192:18FC
-loc_118fd:	// 4899 
+loc_118fd:	// 4907 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 4093 mov     ah, [si+13h] ;~ 0192:18FD
 	R(NEG(ah));	// 4094 neg     ah ;~ 0192:1900
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 4095 mov     [si+13h], ah ;~ 0192:1902
 cs=0x192;eip=0x001905; 	R(RETN);	// 4096 retn ;~ 0192:1905
-loc_11906:	// 4900 
+loc_11906:	// 4908 
 	R(TEST(*(raddr(ds,si)), 0x40));	// 4101 test    byte ptr [si], 40h ;~ 0192:1906
 cs=0x192;eip=0x001909; 		R(JNZ(loc_1192d));	// 4102 jnz     short loc_1192D ;~ 0192:1909
 	R(MOV(ah, *(raddr(ds,si+2))));	// 4103 mov     ah, [si+2] ;~ 0192:190B
 	R(OR(ah, ah));	// 4104 or      ah, ah ;~ 0192:190E
 cs=0x192;eip=0x001910; 		R(JNZ(loc_11941));	// 4105 jnz     short loc_11941 ;~ 0192:1910
 cs=0x192;eip=0x001912; 	R(CALL(sub_11111,0));	// 4106 call    sub_11111 ;~ 0192:1912
-ret_192_1915:	// 4901 
+ret_192_1915:	// 4909 
 	R(CMP(ah, 0x1E));	// 4107 cmp     ah, 1Eh ;~ 0192:1915
 cs=0x192;eip=0x001918; 		R(JC(loc_1192d));	// 4108 jb      short loc_1192D ;~ 0192:1918
 	R(MOV(*(raddr(ds,si+0x13)), 0x40));	// 4109 mov     byte ptr [si+13h], 40h ; '@' ;~ 0192:191A
 	R(TEST(ah, 1));	// 4110 test    ah, 1 ;~ 0192:191E
 cs=0x192;eip=0x001921; 		R(JZ(loc_11927));	// 4111 jz      short loc_11927 ;~ 0192:1921
 	R(MOV(*(raddr(ds,si+0x13)), 0x0C0));	// 4112 mov     byte ptr [si+13h], 0C0h ; 'À' ;~ 0192:1923
-loc_11927:	// 4902 
+loc_11927:	// 4910 
 	R(MOV(*(raddr(ds,si+2)), 0x19));	// 4115 mov     byte ptr [si+2], 19h ;~ 0192:1927
 cs=0x192;eip=0x00192b; 		R(JMP(loc_11941));	// 4116 jmp     short loc_11941 ;~ 0192:192B
-loc_1192d:	// 4903 
+loc_1192d:	// 4911 
 	R(MOV(*(raddr(ds,si+0x13)), 0x40));	// 4121 mov     byte ptr [si+13h], 40h ; '@' ;~ 0192:192D
 cs=0x192;eip=0x001931; 	R(CALL(sub_11355,0));	// 4122 call    sub_11355 ;~ 0192:1931
-ret_192_1934:	// 4904 
+ret_192_1934:	// 4912 
 cs=0x192;eip=0x001934; 		R(JNC(loc_1193a));	// 4123 jnb     short loc_1193A ;~ 0192:1934
 	R(MOV(*(raddr(ds,si+0x13)), 0x0C0));	// 4124 mov     byte ptr [si+13h], 0C0h ; 'À' ;~ 0192:1936
-loc_1193a:	// 4905 
+loc_1193a:	// 4913 
 	R(ADD(ah, ah));	// 4127 add     ah, ah ;~ 0192:193A
 	R(ADD(ah, ah));	// 4128 add     ah, ah ;~ 0192:193C
 	R(MOV(*(raddr(ds,si+2)), ah));	// 4129 mov     [si+2], ah ;~ 0192:193E
-loc_11941:	// 4906 
+loc_11941:	// 4914 
 	R(MOV(bl, *(raddr(ds,si+0x22))));	// 4133 mov     bl, [si+22h] ;~ 0192:1941
 	R(MOV(bh, *(raddr(ds,si+0x23))));	// 4134 mov     bh, [si+23h] ;~ 0192:1944
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 4135 test    byte ptr [si+13h], 80h ;~ 0192:1947
 cs=0x192;eip=0x00194b; 		R(JZ(loc_1194f));	// 4136 jz      short loc_1194F ;~ 0192:194B
 	R(INC(bx));	// 4137 inc     bx ;~ 0192:194D
 	R(INC(bx));	// 4138 inc     bx ;~ 0192:194E
-loc_1194f:	// 4907 
+loc_1194f:	// 4915 
 	R(MOV(cl, *(raddr(ds,bx))));	// 4141 mov     cl, [bx] ;~ 0192:194F
 	R(INC(bx));	// 4142 inc     bx ;~ 0192:1951
 	R(MOV(ch, *(raddr(ds,bx))));	// 4143 mov     ch, [bx] ;~ 0192:1952
 	R(MOV(dl, 2));	// 4144 mov     dl, 2 ;~ 0192:1954
 cs=0x192;eip=0x001956; 	R(CALL(sub_11065,0));	// 4145 call    sub_11065 ;~ 0192:1956
-ret_192_1959:	// 4908 
+ret_192_1959:	// 4916 
 cs=0x192;eip=0x001959; 		R(JC(loc_1195c));	// 4146 jb      short loc_1195C ;~ 0192:1959
 cs=0x192;eip=0x00195b; 	R(RETN);	// 4147 retn ;~ 0192:195B
-loc_1195c:	// 4909 
+loc_1195c:	// 4917 
 	R(DEC(*(raddr(ds,si+2))));	// 4151 dec     byte ptr [si+2] ;~ 0192:195C
 cs=0x192;eip=0x00195f; 	R(CALL(sub_12cbe,0));	// 4152 call    sub_12CBE ;~ 0192:195F
-ret_192_1962:	// 4910 
+ret_192_1962:	// 4918 
 cs=0x192;eip=0x001962; 	R(CALL(sub_10a19,0));	// 4153 call    sub_10A19 ;~ 0192:1962
-ret_192_1965:	// 4911 
+ret_192_1965:	// 4919 
 cs=0x192;eip=0x001965; 	R(CALL(sub_13001,0));	// 4154 call    sub_13001 ;~ 0192:1965
-ret_192_1968:	// 4912 
+ret_192_1968:	// 4920 
 	R(TEST(*(raddr(ds,si+0x11)), 0x40));	// 4155 test    byte ptr [si+11h], 40h ;~ 0192:1968
-loc_1196c:	// 4913 
+loc_1196c:	// 4921 
 cs=0x192;eip=0x00196c; 		R(JZ(loc_11988));	// 4158 jz      short loc_11988 ;~ 0192:196C
 	R(MOV(ah, *(raddr(ds,si+0x11))));	// 4159 mov     ah, [si+11h] ;~ 0192:196E
 	R(OR(ah, *(raddr(ds,si+0x24))));	// 4160 or      ah, [si+24h] ;~ 0192:1971
@@ -3684,17 +3691,17 @@ cs=0x192;eip=0x001978; 		R(JZ(loc_11982));	// 4162 jz      short loc_11982 ;~ 01
 	R(TEST(ah, 0x10));	// 4163 test    ah, 10h ;~ 0192:197A
 cs=0x192;eip=0x00197d; 		R(JNZ(loc_11980));	// 4164 jnz     short loc_11980 ;~ 0192:197D
 cs=0x192;eip=0x00197f; 	R(RETN);	// 4165 retn ;~ 0192:197F
-loc_11980:	// 4914 
+loc_11980:	// 4922 
 cs=0x192;eip=0x001980; 		R(JMP(loc_11988));	// 4169 jmp     short loc_11988 ;~ 0192:1980
-loc_11982:	// 4915 
+loc_11982:	// 4923 
 	R(TEST(ah, 0x20));	// 4173 test    ah, 20h ;~ 0192:1982
 cs=0x192;eip=0x001985; 		R(JNZ(loc_11988));	// 4174 jnz     short loc_11988 ;~ 0192:1985
 cs=0x192;eip=0x001987; 	R(RETN);	// 4175 retn ;~ 0192:1987
-loc_11988:	// 4916 
+loc_11988:	// 4924 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 4180 mov     ah, [si+13h] ;~ 0192:1988
 	R(NEG(ah));	// 4181 neg     ah ;~ 0192:198B
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 4182 mov     [si+13h], ah ;~ 0192:198D
-loc_11990:	// 4917 
+loc_11990:	// 4925 
 cs=0x192;eip=0x001990; 		R(JMP(sub_1120d));	// 4185 jmp     sub_1120D ;~ 0192:1990
 sub_1199f:	// 4197 
 	R(MOV(bl, 1));	// 4198 mov     bl, 1 ;~ 0192:199F
@@ -3704,49 +3711,49 @@ sub_1199f:	// 4197
 cs=0x192;eip=0x0019aa; 		R(JC(loc_119b1));	// 4202 jb      short loc_119B1 ;~ 0192:19AA
 	R(MOV(bl, 0x0FF));	// 4203 mov     bl, 0FFh ;~ 0192:19AC
 	R(MOV(cx, 0x503));	// 4204 mov     cx, 503h ;~ 0192:19AE
-loc_119b1:	// 4918 
+loc_119b1:	// 4926 
 	R(MOV(*(raddr(ds,si+0x13)), bl));	// 4207 mov     [si+13h], bl ;~ 0192:19B1
 	R(MOV(dl, 0x0A));	// 4208 mov     dl, 0Ah ;~ 0192:19B4
 cs=0x192;eip=0x0019b6; 	R(CALL(sub_11065,0));	// 4209 call    sub_11065 ;~ 0192:19B6
-ret_192_19b9:	// 4919 
+ret_192_19b9:	// 4927 
 cs=0x192;eip=0x0019b9; 		R(JC(loc_119bc));	// 4210 jb      short loc_119BC ;~ 0192:19B9
 cs=0x192;eip=0x0019bb; 	R(RETN);	// 4211 retn ;~ 0192:19BB
-loc_119bc:	// 4920 
+loc_119bc:	// 4928 
 cs=0x192;eip=0x0019bc; 	R(CALL(sub_11111,0));	// 4215 call    sub_11111 ;~ 0192:19BC
-ret_192_19bf:	// 4921 
+ret_192_19bf:	// 4929 
 	R(CMP(ah, 0x96));	// 4216 cmp     ah, 96h ; '–' ;~ 0192:19BF
 cs=0x192;eip=0x0019c2; 		R(JNC(loc_119c5));	// 4217 jnb     short loc_119C5 ;~ 0192:19C2
 cs=0x192;eip=0x0019c4; 	R(RETN);	// 4218 retn ;~ 0192:19C4
-loc_119c5:	// 4922 
+loc_119c5:	// 4930 
 	R(MOV(bl, *(raddr(ds,si+0x10))));	// 4222 mov     bl, [si+10h] ;~ 0192:19C5
 	R(MOV(bh, 0));	// 4223 mov     bh, 0 ;~ 0192:19C8
 	R(ADD(bx, bx));	// 4224 add     bx, bx ;~ 0192:19CA
 	R(MOV(dx, offset(seg000,word_11993)));	// 4225 mov     dx, offset word_11993 ;~ 0192:19CC
 	R(ADD(bx, dx));	// 4226 add     bx, dx ;~ 0192:19CF
 	R(MOV(ch, *(raddr(ds,bx))));	// 4227 mov     ch, [bx] ;~ 0192:19D1
-loc_119d3:	// 4923 
+loc_119d3:	// 4931 
 	R(INC(bx));	// 4230 inc     bx ;~ 0192:19D3
 	R(MOV(cl, *(raddr(ds,bx))));	// 4231 mov     cl, [bx] ;~ 0192:19D4
 	R(MOV(word_1f1a0, cx));	// 4232 mov     word_1F1A0, cx ;~ 0192:19D6
-loc_119da:	// 4924 
+loc_119da:	// 4932 
 	R(MOV(ah, byte_1f139));	// 4235 mov     ah, byte_1F139 ;~ 0192:19DA
 	R(CMP(ah, 3));	// 4236 cmp     ah, 3 ;~ 0192:19DE
-loc_119e1:	// 4925 
+loc_119e1:	// 4933 
 cs=0x192;eip=0x0019e1; 		R(JC(loc_119e4));	// 4239 jb      short loc_119E4 ;~ 0192:19E1
 cs=0x192;eip=0x0019e3; 	R(RETN);	// 4240 retn ;~ 0192:19E3
-loc_119e4:	// 4926 
+loc_119e4:	// 4934 
 cs=0x192;eip=0x0019e4; 	R(CALL(sub_12c79,0));	// 4244 call    sub_12C79 ;~ 0192:19E4
-ret_192_19e7:	// 4927 
+ret_192_19e7:	// 4935 
 	R(PUSH(bx));	// 4245 push    bx ;~ 0192:19E7
-loc_119e8:	// 4928 
+loc_119e8:	// 4936 
 	R(PUSH(dx));	// 4248 push    dx ;~ 0192:19E8
 cs=0x192;eip=0x0019e9; 	R(CALL(sub_112a7,0));	// 4249 call    sub_112A7 ;~ 0192:19E9
-ret_192_19ec:	// 4929 
+ret_192_19ec:	// 4937 
 	R(POP(dx));	// 4250 pop     dx ;~ 0192:19EC
 	R(POP(bx));	// 4251 pop     bx ;~ 0192:19ED
 cs=0x192;eip=0x0019ee; 		R(JNC(loc_119f1));	// 4252 jnb     short loc_119F1 ;~ 0192:19EE
 cs=0x192;eip=0x0019f0; 	R(RETN);	// 4253 retn ;~ 0192:19F0
-loc_119f1:	// 4930 
+loc_119f1:	// 4938 
 	R(MOV(ah, byte_1f139));	// 4257 mov     ah, byte_1F139 ;~ 0192:19F1
 	R(INC(ah));	// 4258 inc     ah ;~ 0192:19F5
 	R(MOV(byte_1f139, ah));	// 4259 mov     byte_1F139, ah ;~ 0192:19F7
@@ -3756,20 +3763,20 @@ loc_119f1:	// 4930
 	R(MOV(ch, 0x24));	// 4263 mov     ch, 24h ; '$' ;~ 0192:1A01
 	R(MOV(ah, *(db*)(((db*)&word_1f1a0))));	// 4264 mov     ah, byte ptr word_1F1A0 ;~ 0192:1A03
 cs=0x192;eip=0x001a07; 	R(CALL(sub_11274,0));	// 4265 call    sub_11274 ;~ 0192:1A07
-ret_192_1a0a:	// 4931 
+ret_192_1a0a:	// 4939 
 	R(MOV(ah, *(db*)(((db*)&word_1f1a0)+1)));	// 4266 mov     ah, byte ptr word_1F1A0+1 ;~ 0192:1A0A
 	R(MOV(*(raddr(ds,si+0x14)), ah));	// 4267 mov     [si+14h], ah ;~ 0192:1A0E
 cs=0x192;eip=0x001a11; 	R(RETN);	// 4268 retn ;~ 0192:1A11
-loc_11a12:	// 4932 
+loc_11a12:	// 4940 
 	R(MOV(bl, 4));	// 4274 mov     bl, 4 ;~ 0192:1A12
 	R(MOV(dl, 4));	// 4275 mov     dl, 4 ;~ 0192:1A14
 cs=0x192;eip=0x001a16; 	R(CALL(sub_11385,0));	// 4276 call    sub_11385 ;~ 0192:1A16
-ret_192_1a19:	// 4933 
+ret_192_1a19:	// 4941 
 cs=0x192;eip=0x001a19; 		R(JNC(loc_11a1e));	// 4277 jnb     short loc_11A1E ;~ 0192:1A19
 cs=0x192;eip=0x001a1b; 		R(JMP(sub_11506));	// 4278 jmp     sub_11506 ;~ 0192:1A1B
-loc_11a1e:	// 4934 
+loc_11a1e:	// 4942 
 cs=0x192;eip=0x001a1e; 	R(CALL(sub_10a19,0));	// 4282 call    sub_10A19 ;~ 0192:1A1E
-ret_192_1a21:	// 4935 
+ret_192_1a21:	// 4943 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 4283 mov     ah, [si+24h] ;~ 0192:1A21
 	R(AND(ah, 0x70));	// 4284 and     ah, 70h ;~ 0192:1A24
 cs=0x192;eip=0x001a27; 		R(JZ(loc_11a37));	// 4285 jz      short loc_11A37 ;~ 0192:1A27
@@ -3778,100 +3785,100 @@ cs=0x192;eip=0x001a27; 		R(JZ(loc_11a37));	// 4285 jz      short loc_11A37 ;~ 01
 	R(DEC(ah));	// 4288 dec     ah ;~ 0192:1A30
 	R(MOV(byte_1f139, ah));	// 4289 mov     byte_1F139, ah ;~ 0192:1A32
 cs=0x192;eip=0x001a36; 	R(RETN);	// 4290 retn ;~ 0192:1A36
-loc_11a37:	// 4936 
+loc_11a37:	// 4944 
 	R(MOV(cx, 0x100));	// 4294 mov     cx, 100h ;~ 0192:1A37
 	R(MOV(dl, 0));	// 4295 mov     dl, 0 ;~ 0192:1A3A
 cs=0x192;eip=0x001a3c; 	R(CALL(sub_11065,0));	// 4296 call    sub_11065 ;~ 0192:1A3C
-ret_192_1a3f:	// 4937 
+ret_192_1a3f:	// 4945 
 cs=0x192;eip=0x001a3f; 		R(JC(loc_11a42));	// 4297 jb      short loc_11A42 ;~ 0192:1A3F
 cs=0x192;eip=0x001a41; 	R(RETN);	// 4298 retn ;~ 0192:1A41
-loc_11a42:	// 4938 
+loc_11a42:	// 4946 
 cs=0x192;eip=0x001a42; 		R(JMP(sub_12cbe));	// 4302 jmp     sub_12CBE ;~ 0192:1A42
-loc_11a45:	// 4939 
+loc_11a45:	// 4947 
 	R(TEST(*(raddr(ds,si+0x11)), 1));	// 4306 test    byte ptr [si+11h], 1 ;~ 0192:1A45
 cs=0x192;eip=0x001a49; 		R(JZ(loc_11a4e));	// 4307 jz      short loc_11A4E ;~ 0192:1A49
 cs=0x192;eip=0x001a4b; 		R(JMP(loc_11ac6));	// 4308 jmp     loc_11AC6 ;~ 0192:1A4B
-loc_11a4e:	// 4940 
+loc_11a4e:	// 4948 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 4312 mov     ah, [si+2] ;~ 0192:1A4E
 	R(OR(ah, ah));	// 4313 or      ah, ah ;~ 0192:1A51
 cs=0x192;eip=0x001a53; 		R(JNZ(loc_11a73));	// 4314 jnz     short loc_11A73 ;~ 0192:1A53
 cs=0x192;eip=0x001a55; 	R(CALL(sub_11355,0));	// 4315 call    sub_11355 ;~ 0192:1A55
-ret_192_1a58:	// 4941 
+ret_192_1a58:	// 4949 
 cs=0x192;eip=0x001a58; 	R(CALL(sub_12dbf,0));	// 4316 call    sub_12DBF ;~ 0192:1A58
-ret_192_1a5b:	// 4942 
+ret_192_1a5b:	// 4950 
 	R(MOV(*(raddr(ds,si+2)), ah));	// 4317 mov     [si+2], ah ;~ 0192:1A5B
 	R(MOV(ah, 0x40));	// 4318 mov     ah, 40h ; '@' ;~ 0192:1A5E
 cs=0x192;eip=0x001a60; 		R(JNC(loc_11a64));	// 4319 jnb     short loc_11A64 ;~ 0192:1A60
 	R(NEG(ah));	// 4320 neg     ah ;~ 0192:1A62
-loc_11a64:	// 4943 
+loc_11a64:	// 4951 
 	R(MOV(dl, ah));	// 4323 mov     dl, ah ;~ 0192:1A64
 	R(XOR(ah, *(raddr(ds,si+0x13))));	// 4324 xor     ah, [si+13h] ;~ 0192:1A66
 	R(MOV(*(raddr(ds,si+0x13)), dl));	// 4325 mov     [si+13h], dl ;~ 0192:1A69
 cs=0x192;eip=0x001a6c; 		R(JNS(loc_11a73));	// 4326 jns     short loc_11A73 ;~ 0192:1A6C
 	R(OR(*(raddr(ds,si+0x11)), 1));	// 4327 or      byte ptr [si+11h], 1 ;~ 0192:1A6E
 cs=0x192;eip=0x001a72; 	R(RETN);	// 4328 retn ;~ 0192:1A72
-loc_11a73:	// 4944 
+loc_11a73:	// 4952 
 	R(MOV(ah, 0x21));	// 4333 mov     ah, 21h ; '!' ;~ 0192:1A73
 cs=0x192;eip=0x001a75; 	R(CALL(sub_11459,0));	// 4334 call    sub_11459 ;~ 0192:1A75
-ret_192_1a78:	// 4945 
+ret_192_1a78:	// 4953 
 cs=0x192;eip=0x001a78; 		R(JNC(loc_11a8e));	// 4335 jnb     short loc_11A8E ;~ 0192:1A78
 	R(MOV(ah, 0x22));	// 4336 mov     ah, 22h ; '"' ;~ 0192:1A7A
 cs=0x192;eip=0x001a7c; 	R(CALL(sub_11459,0));	// 4337 call    sub_11459 ;~ 0192:1A7C
-ret_192_1a7f:	// 4946 
+ret_192_1a7f:	// 4954 
 cs=0x192;eip=0x001a7f; 		R(JNC(loc_11a8e));	// 4338 jnb     short loc_11A8E ;~ 0192:1A7F
 cs=0x192;eip=0x001a81; 	R(CALL(sub_11111,0));	// 4339 call    sub_11111 ;~ 0192:1A81
-ret_192_1a84:	// 4947 
+ret_192_1a84:	// 4955 
 	R(CMP(ah, 0x0F5));	// 4340 cmp     ah, 0F5h ; 'õ' ;~ 0192:1A84
 	R(PUSH(si));	// 4341 push    si ;~ 0192:1A87
 cs=0x192;eip=0x001a88; 		R(JC(loc_11a8d));	// 4342 jb      short loc_11A8D ;~ 0192:1A88
 cs=0x192;eip=0x001a8a; 	R(CALL(sub_11b15,0));	// 4343 call    sub_11B15 ;~ 0192:1A8A
-loc_11a8d:	// 4948 
+loc_11a8d:	// 4956 
 	R(POP(si));	// 4346 pop     si ;~ 0192:1A8D
-loc_11a8e:	// 4949 
+loc_11a8e:	// 4957 
 	R(MOV(cx, 0x100));	// 4350 mov     cx, 100h ;~ 0192:1A8E
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 4351 test    byte ptr [si+13h], 80h ;~ 0192:1A91
 cs=0x192;eip=0x001a95; 		R(JZ(loc_11a9a));	// 4352 jz      short loc_11A9A ;~ 0192:1A95
 	R(MOV(cx, 0x403));	// 4353 mov     cx, 403h ;~ 0192:1A97
-loc_11a9a:	// 4950 
+loc_11a9a:	// 4958 
 	R(MOV(dl, 0));	// 4356 mov     dl, 0 ;~ 0192:1A9A
 cs=0x192;eip=0x001a9c; 	R(CALL(sub_11065,0));	// 4357 call    sub_11065 ;~ 0192:1A9C
-ret_192_1a9f:	// 4951 
+ret_192_1a9f:	// 4959 
 cs=0x192;eip=0x001a9f; 		R(JC(loc_11aa2));	// 4358 jb      short loc_11AA2 ;~ 0192:1A9F
 cs=0x192;eip=0x001aa1; 	R(RETN);	// 4359 retn ;~ 0192:1AA1
-loc_11aa2:	// 4952 
+loc_11aa2:	// 4960 
 	R(DEC(*(raddr(ds,si+2))));	// 4363 dec     byte ptr [si+2] ;~ 0192:1AA2
 cs=0x192;eip=0x001aa5; 	R(CALL(sub_11ae7,0));	// 4364 call    sub_11AE7 ;~ 0192:1AA5
-ret_192_1aa8:	// 4953 
+ret_192_1aa8:	// 4961 
 cs=0x192;eip=0x001aa8; 	R(CALL(sub_10a19,0));	// 4365 call    sub_10A19 ;~ 0192:1AA8
-ret_192_1aab:	// 4954 
+ret_192_1aab:	// 4962 
 	R(MOV(ah, 0x20));	// 4366 mov     ah, 20h ; ' ' ;~ 0192:1AAB
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 4367 test    byte ptr [si+13h], 80h ;~ 0192:1AAD
 cs=0x192;eip=0x001ab1; 		R(JZ(loc_11ab5));	// 4368 jz      short loc_11AB5 ;~ 0192:1AB1
 	R(MOV(ah, 0x10));	// 4369 mov     ah, 10h ;~ 0192:1AB3
-loc_11ab5:	// 4955 
+loc_11ab5:	// 4963 
 	R(AND(ah, *(raddr(ds,si+0x24))));	// 4372 and     ah, [si+24h] ;~ 0192:1AB5
 cs=0x192;eip=0x001ab8; 		R(JNZ(loc_11abb));	// 4373 jnz     short loc_11ABB ;~ 0192:1AB8
 cs=0x192;eip=0x001aba; 	R(RETN);	// 4374 retn ;~ 0192:1ABA
-loc_11abb:	// 4956 
+loc_11abb:	// 4964 
 	R(OR(*(raddr(ds,si)), 0x10));	// 4378 or      byte ptr [si], 10h ;~ 0192:1ABB
 	R(MOV(bx, offset(seg000,table1_9)));	// 4379 mov     bx, offset table1_9 ;~ 0192:1ABE
 	R(MOV(ah, 2));	// 4380 mov     ah, 2 ;~ 0192:1AC1
 cs=0x192;eip=0x001ac3; 		R(JMP(settable1));	// 4381 jmp     settable1 ;~ 0192:1AC3
-loc_11ac6:	// 4957 
+loc_11ac6:	// 4965 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 4385 mov     ah, [si+13h] ;~ 0192:1AC6
 	R(MOV(*(raddr(ds,si+0x13)), 0));	// 4386 mov     byte ptr [si+13h], 0 ;~ 0192:1AC9
 	R(MOV(al, ah));	// 4387 mov     al, ah ;~ 0192:1ACD
 cs=0x192;eip=0x001acf; 	R(CALL(sub_11ae7,0));	// 4388 call    sub_11AE7 ;~ 0192:1ACF
-ret_192_1ad2:	// 4958 
+ret_192_1ad2:	// 4966 
 	R(MOV(ah, al));	// 4389 mov     ah, al ;~ 0192:1AD2
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 4390 mov     [si+13h], ah ;~ 0192:1AD4
 	R(MOV(cx, 0x202));	// 4391 mov     cx, 202h ;~ 0192:1AD7
 	R(MOV(dl, 0x0A));	// 4392 mov     dl, 0Ah ;~ 0192:1ADA
 cs=0x192;eip=0x001adc; 	R(CALL(sub_11065,0));	// 4393 call    sub_11065 ;~ 0192:1ADC
-ret_192_1adf:	// 4959 
+ret_192_1adf:	// 4967 
 cs=0x192;eip=0x001adf; 		R(JC(loc_11ae2));	// 4394 jb      short loc_11AE2 ;~ 0192:1ADF
 cs=0x192;eip=0x001ae1; 	R(RETN);	// 4395 retn ;~ 0192:1AE1
-loc_11ae2:	// 4960 
+loc_11ae2:	// 4968 
 	R(AND(*(raddr(ds,si+0x11)), 0x0FE));	// 4399 and     byte ptr [si+11h], 0FEh ;~ 0192:1AE2
 cs=0x192;eip=0x001ae6; 	R(RETN);	// 4400 retn ;~ 0192:1AE6
 sub_11ae7:	// 4405 
@@ -3879,36 +3886,36 @@ sub_11ae7:	// 4405
 	R(ADD(ah, 8));	// 4408 add     ah, 8 ;~ 0192:1AEA
 	R(MOV(*(raddr(ds,si+0x14)), ah));	// 4409 mov     [si+14h], ah ;~ 0192:1AED
 cs=0x192;eip=0x001af0; 	R(CALL(sub_12cbe,0));	// 4410 call    sub_12CBE ;~ 0192:1AF0
-ret_192_1af3:	// 4961 
+ret_192_1af3:	// 4969 
 	R(TEST(*(raddr(ds,si+0x14)), 0x80));	// 4411 test    byte ptr [si+14h], 80h ;~ 0192:1AF3
 cs=0x192;eip=0x001af7; 		R(JNZ(loc_11b07));	// 4412 jnz     short loc_11B07 ;~ 0192:1AF7
 	R(MOV(ah, *(raddr(ds,si+0x0E))));	// 4413 mov     ah, [si+0Eh] ;~ 0192:1AF9
 	R(CMP(ah, 8));	// 4414 cmp     ah, 8 ;~ 0192:1AFC
 cs=0x192;eip=0x001aff; 		R(JNC(loc_11b02));	// 4415 jnb     short loc_11B02 ;~ 0192:1AFF
 cs=0x192;eip=0x001b01; 	R(RETN);	// 4416 retn ;~ 0192:1B01
-loc_11b02:	// 4962 
+loc_11b02:	// 4970 
 	R(MOV(*(raddr(ds,si+0x14)), 0x80));	// 4420 mov     byte ptr [si+14h], 80h ; '€' ;~ 0192:1B02
 cs=0x192;eip=0x001b06; 	R(RETN);	// 4421 retn ;~ 0192:1B06
-loc_11b07:	// 4963 
+loc_11b07:	// 4971 
 	R(MOV(ah, *(raddr(ds,si+0x0E))));	// 4425 mov     ah, [si+0Eh] ;~ 0192:1B07
 	R(CMP(ah, 0));	// 4426 cmp     ah, 0 ;~ 0192:1B0A
 cs=0x192;eip=0x001b0d; 		R(JZ(loc_11b10));	// 4427 jz      short loc_11B10 ;~ 0192:1B0D
 cs=0x192;eip=0x001b0f; 	R(RETN);	// 4428 retn ;~ 0192:1B0F
-loc_11b10:	// 4964 
+loc_11b10:	// 4972 
 	R(MOV(*(raddr(ds,si+0x14)), 0));	// 4432 mov     byte ptr [si+14h], 0 ;~ 0192:1B10
 cs=0x192;eip=0x001b14; 	R(RETN);	// 4433 retn ;~ 0192:1B14
 sub_11b15:	// 4440 
 cs=0x192;eip=0x001b15; 	R(CALL(sub_12c79,0));	// 4441 call    sub_12C79 ;~ 0192:1B15
-ret_192_1b18:	// 4965 
+ret_192_1b18:	// 4973 
 	R(PUSH(dx));	// 4442 push    dx ;~ 0192:1B18
 	R(PUSH(bx));	// 4443 push    bx ;~ 0192:1B19
 cs=0x192;eip=0x001b1a; 	R(CALL(sub_112a7,0));	// 4444 call    sub_112A7 ;~ 0192:1B1A
-ret_192_1b1d:	// 4966 
+ret_192_1b1d:	// 4974 
 	R(POP(bx));	// 4445 pop     bx ;~ 0192:1B1D
 	R(POP(dx));	// 4446 pop     dx ;~ 0192:1B1E
 cs=0x192;eip=0x001b1f; 		R(JNC(loc_11b22));	// 4447 jnb     short loc_11B22 ;~ 0192:1B1F
 cs=0x192;eip=0x001b21; 	R(RETN);	// 4448 retn ;~ 0192:1B21
-loc_11b22:	// 4967 
+loc_11b22:	// 4975 
 	R(INC(bh));	// 4452 inc     bh ;~ 0192:1B22
 	R(INC(bh));	// 4453 inc     bh ;~ 0192:1B24
 	R(INC(dh));	// 4454 inc     dh ;~ 0192:1B26
@@ -3917,73 +3924,73 @@ loc_11b22:	// 4967
 	R(MOV(cl, ah));	// 4457 mov     cl, ah ;~ 0192:1B2C
 	R(MOV(ch, 0x22));	// 4458 mov     ch, 22h ; '"' ;~ 0192:1B2E
 cs=0x192;eip=0x001b30; 	R(CALL(sub_11274,0));	// 4459 call    sub_11274 ;~ 0192:1B30
-ret_192_1b33:	// 4968 
+ret_192_1b33:	// 4976 
 	R(MOV(*(raddr(ds,si+0x14)), 0x40));	// 4460 mov     byte ptr [si+14h], 40h ; '@' ;~ 0192:1B33
 	R(MOV(bx, offset(seg000,table1_10)));	// 4461 mov     bx, offset table1_10 ;~ 0192:1B37
 	R(MOV(ah, 1));	// 4462 mov     ah, 1 ;~ 0192:1B3A
 cs=0x192;eip=0x001b3c; 		R(JMP(settable1));	// 4463 jmp     settable1 ;~ 0192:1B3C
-loc_11b3f:	// 4969 
+loc_11b3f:	// 4977 
 cs=0x192;eip=0x001b3f; 	R(CALL(sub_10a19,0));	// 4469 call    sub_10A19 ;~ 0192:1B3F
-ret_192_1b42:	// 4970 
+ret_192_1b42:	// 4978 
 cs=0x192;eip=0x001b42; 	R(CALL(sub_13001,0));	// 4470 call    sub_13001 ;~ 0192:1B42
-ret_192_1b45:	// 4971 
+ret_192_1b45:	// 4979 
 	R(MOV(bl, 6));	// 4471 mov     bl, 6 ;~ 0192:1B45
 	R(MOV(dl, 6));	// 4472 mov     dl, 6 ;~ 0192:1B47
 cs=0x192;eip=0x001b49; 	R(CALL(sub_11385,0));	// 4473 call    sub_11385 ;~ 0192:1B49
-ret_192_1b4c:	// 4972 
+ret_192_1b4c:	// 4980 
 cs=0x192;eip=0x001b4c; 		R(JNC(loc_11b53));	// 4474 jnb     short loc_11B53 ;~ 0192:1B4C
 cs=0x192;eip=0x001b4e; 	R(CALL(sub_11506,0));	// 4475 call    sub_11506 ;~ 0192:1B4E
-ret_192_1b51:	// 4973 
+ret_192_1b51:	// 4981 
 cs=0x192;eip=0x001b51; 		R(JMP(loc_11b5f));	// 4476 jmp     short loc_11B5F ;~ 0192:1B51
-loc_11b53:	// 4974 
+loc_11b53:	// 4982 
 	R(TEST(*(raddr(ds,si+0x11)), 1));	// 4480 test    byte ptr [si+11h], 1 ;~ 0192:1B53
 cs=0x192;eip=0x001b57; 		R(JNZ(loc_11b98));	// 4481 jnz     short loc_11B98 ;~ 0192:1B57
 	R(TEST(*(raddr(ds,si+0x11)), 0x40));	// 4482 test    byte ptr [si+11h], 40h ;~ 0192:1B59
 cs=0x192;eip=0x001b5d; 		R(JZ(loc_11b6c));	// 4483 jz      short loc_11B6C ;~ 0192:1B5D
-loc_11b5f:	// 4975 
+loc_11b5f:	// 4983 
 	R(MOV(*(dw*)(raddr(ds,si+0x0F)), 0x21));	// 4487 mov     word ptr [si+0Fh], 21h ; '!' ;~ 0192:1B5F
 	R(MOV(ah, 1));	// 4488 mov     ah, 1 ;~ 0192:1B64
 	R(MOV(bx, offset(seg000,table1_11)));	// 4489 mov     bx, offset table1_11 ;~ 0192:1B66
 cs=0x192;eip=0x001b69; 		R(JMP(settable1));	// 4490 jmp     settable1 ;~ 0192:1B69
-loc_11b6c:	// 4976 
+loc_11b6c:	// 4984 
 cs=0x192;eip=0x001b6c; 	R(CALL(sub_12ce2,0));	// 4494 call    sub_12CE2 ;~ 0192:1B6C
-ret_192_1b6f:	// 4977 
+ret_192_1b6f:	// 4985 
 	R(MOV(ah, *(db*)(((db*)&word_1f1dc)+1)));	// 4495 mov     ah, byte ptr word_1F1DC+1 ;~ 0192:1B6F
 	R(INC(ah));	// 4496 inc     ah ;~ 0192:1B73
 	R(CMP(ah, *(raddr(ds,si+0x0E))));	// 4497 cmp     ah, [si+0Eh] ;~ 0192:1B75
 cs=0x192;eip=0x001b78; 		R(JC(loc_11b7b));	// 4498 jb      short loc_11B7B ;~ 0192:1B78
 cs=0x192;eip=0x001b7a; 	R(RETN);	// 4499 retn ;~ 0192:1B7A
-loc_11b7b:	// 4978 
+loc_11b7b:	// 4986 
 	R(OR(*(raddr(ds,si+0x11)), 1));	// 4503 or      byte ptr [si+11h], 1 ;~ 0192:1B7B
 	R(MOV(*(raddr(ds,si+0x13)), 0x20));	// 4504 mov     byte ptr [si+13h], 20h ; ' ' ;~ 0192:1B7F
 cs=0x192;eip=0x001b83; 	R(CALL(sub_11355,0));	// 4505 call    sub_11355 ;~ 0192:1B83
-ret_192_1b86:	// 4979 
+ret_192_1b86:	// 4987 
 cs=0x192;eip=0x001b86; 		R(JNC(loc_11b8c));	// 4506 jnb     short loc_11B8C ;~ 0192:1B86
 	R(MOV(*(raddr(ds,si+0x13)), 0x0E0));	// 4507 mov     byte ptr [si+13h], 0E0h ; 'à' ;~ 0192:1B88
-loc_11b8c:	// 4980 
+loc_11b8c:	// 4988 
 	R(MOV(*(raddr(ds,si+0x14)), 0));	// 4510 mov     byte ptr [si+14h], 0 ;~ 0192:1B8C
 	R(MOV(ah, 1));	// 4511 mov     ah, 1 ;~ 0192:1B90
 	R(MOV(bx, offset(seg000,table1_12)));	// 4512 mov     bx, offset table1_12 ;~ 0192:1B92
 cs=0x192;eip=0x001b95; 		R(JMP(settable1));	// 4513 jmp     settable1 ;~ 0192:1B95
-loc_11b98:	// 4981 
+loc_11b98:	// 4989 
 	R(MOV(cx, 0x201));	// 4517 mov     cx, 201h ;~ 0192:1B98
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 4518 test    byte ptr [si+13h], 80h ;~ 0192:1B9B
 cs=0x192;eip=0x001b9f; 		R(JZ(loc_11ba4));	// 4519 jz      short loc_11BA4 ;~ 0192:1B9F
 	R(MOV(cx, 0x403));	// 4520 mov     cx, 403h ;~ 0192:1BA1
-loc_11ba4:	// 4982 
+loc_11ba4:	// 4990 
 	R(MOV(dl, 0));	// 4523 mov     dl, 0 ;~ 0192:1BA4
 cs=0x192;eip=0x001ba6; 	R(CALL(sub_11065,0));	// 4524 call    sub_11065 ;~ 0192:1BA6
-ret_192_1ba9:	// 4983 
+ret_192_1ba9:	// 4991 
 cs=0x192;eip=0x001ba9; 		R(JC(loc_11bac));	// 4525 jb      short loc_11BAC ;~ 0192:1BA9
 cs=0x192;eip=0x001bab; 	R(RETN);	// 4526 retn ;~ 0192:1BAB
-loc_11bac:	// 4984 
+loc_11bac:	// 4992 
 cs=0x192;eip=0x001bac; 	R(CALL(sub_12cd6,0));	// 4530 call    sub_12CD6 ;~ 0192:1BAC
-ret_192_1baf:	// 4985 
+ret_192_1baf:	// 4993 
 	R(MOV(ah, 1));	// 4531 mov     ah, 1 ;~ 0192:1BAF
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 4532 test    byte ptr [si+13h], 80h ;~ 0192:1BB1
 cs=0x192;eip=0x001bb5; 		R(JZ(loc_11bb9));	// 4533 jz      short loc_11BB9 ;~ 0192:1BB5
 	R(MOV(ah, 0x0FF));	// 4534 mov     ah, 0FFh ;~ 0192:1BB7
-loc_11bb9:	// 4986 
+loc_11bb9:	// 4994 
 	R(ADD(ah, *(raddr(ds,si+0x13))));	// 4537 add     ah, [si+13h] ;~ 0192:1BB9
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 4538 mov     [si+13h], ah ;~ 0192:1BBC
 	R(MOV(ah, *(raddr(ds,si+0x11))));	// 4539 mov     ah, [si+11h] ;~ 0192:1BBF
@@ -3993,33 +4000,33 @@ cs=0x192;eip=0x001bc5; 		R(JNZ(loc_11b5f));	// 4541 jnz     short loc_11B5F ;~ 0
 	R(AND(ah, 0x30));	// 4543 and     ah, 30h ;~ 0192:1BCA
 cs=0x192;eip=0x001bcd; 		R(JNZ(loc_11bd0));	// 4544 jnz     short loc_11BD0 ;~ 0192:1BCD
 cs=0x192;eip=0x001bcf; 	R(RETN);	// 4545 retn ;~ 0192:1BCF
-loc_11bd0:	// 4987 
+loc_11bd0:	// 4995 
 	R(OR(*(raddr(ds,si)), 0x10));	// 4549 or      byte ptr [si], 10h ;~ 0192:1BD0
 	R(MOV(bx, offset(seg000,table1_9)));	// 4550 mov     bx, offset table1_9 ;~ 0192:1BD3
 	R(MOV(ah, 1));	// 4551 mov     ah, 1 ;~ 0192:1BD6
 cs=0x192;eip=0x001bd8; 		R(JMP(settable1));	// 4552 jmp     settable1 ;~ 0192:1BD8
-loc_11bdb:	// 4988 
+loc_11bdb:	// 4996 
 	R(MOV(bl, 0x0C));	// 4556 mov     bl, 0Ch ;~ 0192:1BDB
 	R(MOV(dl, 8));	// 4557 mov     dl, 8 ;~ 0192:1BDD
 cs=0x192;eip=0x001bdf; 	R(CALL(sub_11385,0));	// 4558 call    sub_11385 ;~ 0192:1BDF
-ret_192_1be2:	// 4989 
+ret_192_1be2:	// 4997 
 cs=0x192;eip=0x001be2; 		R(JNC(loc_11be7));	// 4559 jnb     short loc_11BE7 ;~ 0192:1BE2
 cs=0x192;eip=0x001be4; 		R(JMP(sub_11506));	// 4560 jmp     sub_11506 ;~ 0192:1BE4
-loc_11be7:	// 4990 
+loc_11be7:	// 4998 
 	R(MOV(cx, 0x400));	// 4564 mov     cx, 400h ;~ 0192:1BE7
 	R(MOV(dl, 5));	// 4565 mov     dl, 5 ;~ 0192:1BEA
 cs=0x192;eip=0x001bec; 	R(CALL(sub_11065,0));	// 4566 call    sub_11065 ;~ 0192:1BEC
-ret_192_1bef:	// 4991 
+ret_192_1bef:	// 4999 
 cs=0x192;eip=0x001bef; 		R(JC(loc_11bf2));	// 4567 jb      short loc_11BF2 ;~ 0192:1BEF
 cs=0x192;eip=0x001bf1; 	R(RETN);	// 4568 retn ;~ 0192:1BF1
-loc_11bf2:	// 4992 
+loc_11bf2:	// 5000 
 	R(OR(ah, ah));	// 4572 or      ah, ah ;~ 0192:1BF2
 cs=0x192;eip=0x001bf4; 		R(JNZ(loc_11bf7));	// 4573 jnz     short loc_11BF7 ;~ 0192:1BF4
 cs=0x192;eip=0x001bf6; 	R(RETN);	// 4574 retn ;~ 0192:1BF6
-loc_11bf7:	// 4993 
+loc_11bf7:	// 5001 
 	R(OR(*(raddr(ds,si)), 0x10));	// 4578 or      byte ptr [si], 10h ;~ 0192:1BF7
 cs=0x192;eip=0x001bfa; 	R(RETN);	// 4579 retn ;~ 0192:1BFA
-loc_11bfb:	// 4994 
+loc_11bfb:	// 5002 
 	R(MOV(ah, byte_1f115));	// 4584 mov     ah, byte_1F115 ;~ 0192:1BFB
 	R(TEST(ah, 2));	// 4585 test    ah, 2 ;~ 0192:1BFF
 cs=0x192;eip=0x001c02; 		R(JZ(loc_11c18));	// 4586 jz      short loc_11C18 ;~ 0192:1C02
@@ -4029,7 +4036,7 @@ cs=0x192;eip=0x001c0b; 		R(JNZ(loc_11c18));	// 4589 jnz     short loc_11C18 ;~ 0
 	R(MOV(ah, byte_1f47e));	// 4590 mov     ah, byte_1F47E ;~ 0192:1C0D
 	R(XOR(ah, 0x40));	// 4591 xor     ah, 40h ;~ 0192:1C11
 	R(MOV(byte_1f47e, ah));	// 4592 mov     byte_1F47E, ah ;~ 0192:1C14
-loc_11c18:	// 4995 
+loc_11c18:	// 5003 
 	R(MOV(ah, *(db*)(((db*)&word_1f131))));	// 4596 mov     ah, byte ptr word_1F131 ;~ 0192:1C18
 	R(OR(ah, ah));	// 4597 or      ah, ah ;~ 0192:1C1C
 cs=0x192;eip=0x001c1e; 		R(JNZ(loc_11c6d));	// 4598 jnz     short loc_11C6D ;~ 0192:1C1E
@@ -4037,7 +4044,7 @@ cs=0x192;eip=0x001c1e; 		R(JNZ(loc_11c6d));	// 4598 jnz     short loc_11C6D ;~ 0
 	R(MOV(dx, 4));	// 4600 mov     dx, 4 ;~ 0192:1C23
 	R(MOV(di, word_1f1cd));	// 4601 mov     di, word_1F1CD ;~ 0192:1C26
 	R(MOV(ah, *(raddr(ds,di+4))));	// 4602 mov     ah, [di+4] ;~ 0192:1C2A
-loc_11c2d:	// 4996 
+loc_11c2d:	// 5004 
 	R(ADD(si, dx));	// 4605 add     si, dx ;~ 0192:1C2D
 	R(CMP(ah, *(raddr(ds,si))));	// 4606 cmp     ah, [si] ;~ 0192:1C2F
 cs=0x192;eip=0x001c31; 		R(JNZ(loc_11c2d));	// 4607 jnz     short loc_11C2D ;~ 0192:1C31
@@ -4052,36 +4059,36 @@ cs=0x192;eip=0x001c31; 		R(JNZ(loc_11c2d));	// 4607 jnz     short loc_11C2D ;~ 0
 cs=0x192;eip=0x001c4a; 		R(JC(loc_11c52));	// 4616 jb      short loc_11C52 ;~ 0192:1C4A
 	R(OR(*(raddr(ds,bx)), 0x80));	// 4617 or      byte ptr [bx], 80h ;~ 0192:1C4C
 	R(MOV(dh, *(raddr(ds,si+1))));	// 4618 mov     dh, [si+1] ;~ 0192:1C4F
-loc_11c52:	// 4997 
+loc_11c52:	// 5005 
 	R(MOV(ah, 0x14));	// 4621 mov     ah, 14h ;~ 0192:1C52
 	R(CMP(ah, dh));	// 4622 cmp     ah, dh ;~ 0192:1C54
 cs=0x192;eip=0x001c56; 		R(JNZ(loc_11c5c));	// 4623 jnz     short loc_11C5C ;~ 0192:1C56
 	R(DEC(dh));	// 4624 dec     dh ;~ 0192:1C58
 cs=0x192;eip=0x001c5a; 		R(JMP(loc_11c66));	// 4625 jmp     short loc_11C66 ;~ 0192:1C5A
-loc_11c5c:	// 4998 
+loc_11c5c:	// 5006 
 	R(MOV(ah, 1));	// 4629 mov     ah, 1 ;~ 0192:1C5C
 	R(CMP(ah, dh));	// 4630 cmp     ah, dh ;~ 0192:1C5E
 cs=0x192;eip=0x001c60; 		R(JNZ(loc_11c66));	// 4631 jnz     short loc_11C66 ;~ 0192:1C60
 	R(INC(dh));	// 4632 inc     dh ;~ 0192:1C62
 	R(INC(dh));	// 4633 inc     dh ;~ 0192:1C64
-loc_11c66:	// 4999 
+loc_11c66:	// 5007 
 	R(MOV(word_1f131, dx));	// 4637 mov     word_1F131, dx ;~ 0192:1C66
 cs=0x192;eip=0x001c6a; 		R(JMP(loc_11d23));	// 4638 jmp     loc_11D23 ;~ 0192:1C6A
-loc_11c6d:	// 5000 
+loc_11c6d:	// 5008 
 	R(MOV(bx, offset(seg000,byte_1f126)));	// 4642 mov     bx, offset byte_1F126 ;~ 0192:1C6D
 	R(OR(*(raddr(ds,bx)), 0x40));	// 4643 or      byte ptr [bx], 40h ;~ 0192:1C70
 	R(MOV(ah, byte_1f133));	// 4644 mov     ah, byte_1F133 ;~ 0192:1C73
 	R(CMP(ah, 0x32));	// 4645 cmp     ah, 32h ; '2' ;~ 0192:1C77
 cs=0x192;eip=0x001c7a; 		R(JZ(loc_11c7f));	// 4646 jz      short loc_11C7F ;~ 0192:1C7A
 	R(AND(*(raddr(ds,bx)), 0x0BF));	// 4647 and     byte ptr [bx], 0BFh ;~ 0192:1C7C
-loc_11c7f:	// 5001 
+loc_11c7f:	// 5009 
 	R(MOV(ah, byte_1f138));	// 4650 mov     ah, byte_1F138 ;~ 0192:1C7F
 	R(INC(ah));	// 4651 inc     ah ;~ 0192:1C83
 	R(MOV(byte_1f138, ah));	// 4652 mov     byte_1F138, ah ;~ 0192:1C85
 	R(CMP(ah, 5));	// 4653 cmp     ah, 5 ;~ 0192:1C89
 cs=0x192;eip=0x001c8c; 		R(JZ(loc_11c8f));	// 4654 jz      short loc_11C8F ;~ 0192:1C8C
 cs=0x192;eip=0x001c8e; 	R(RETN);	// 4655 retn ;~ 0192:1C8E
-loc_11c8f:	// 5002 
+loc_11c8f:	// 5010 
 	R(XOR(ah, ah));	// 4659 xor     ah, ah ;~ 0192:1C8F
 	R(MOV(byte_1f138, ah));	// 4660 mov     byte_1F138, ah ;~ 0192:1C91
 	R(MOV(si, word_1f3d2));	// 4661 mov     si, word_1F3D2 ;~ 0192:1C95
@@ -4089,7 +4096,7 @@ loc_11c8f:	// 5002
 	R(TEST(*(raddr(ds,bx)), 0x40));	// 4663 test    byte ptr [bx], 40h ;~ 0192:1C9C
 cs=0x192;eip=0x001c9f; 		R(JNZ(loc_11ca2));	// 4664 jnz     short loc_11CA2 ;~ 0192:1C9F
 cs=0x192;eip=0x001ca1; 	R(RETN);	// 4665 retn ;~ 0192:1CA1
-loc_11ca2:	// 5003 
+loc_11ca2:	// 5011 
 	R(MOV(ah, *(db*)(((db*)&word_1f131)+1)));	// 4669 mov     ah, byte ptr word_1F131+1 ;~ 0192:1CA2
 	R(TEST(*(raddr(ds,bx)), 0x80));	// 4670 test    byte ptr [bx], 80h ;~ 0192:1CA6
 cs=0x192;eip=0x001ca9; 		R(JZ(loc_11cb4));	// 4671 jz      short loc_11CB4 ;~ 0192:1CA9
@@ -4097,28 +4104,28 @@ cs=0x192;eip=0x001ca9; 		R(JZ(loc_11cb4));	// 4671 jz      short loc_11CB4 ;~ 01
 cs=0x192;eip=0x001cad; 		R(JNZ(loc_11cbc));	// 4673 jnz     short loc_11CBC ;~ 0192:1CAD
 	R(AND(*(raddr(ds,bx)), 0x7F));	// 4674 and     byte ptr [bx], 7Fh ;~ 0192:1CAF
 cs=0x192;eip=0x001cb2; 		R(JMP(loc_11ceb));	// 4675 jmp     short loc_11CEB ;~ 0192:1CB2
-loc_11cb4:	// 5004 
+loc_11cb4:	// 5012 
 	R(CMP(ah, *(raddr(ds,si+1))));	// 4679 cmp     ah, [si+1] ;~ 0192:1CB4
 cs=0x192;eip=0x001cb7; 		R(JNZ(loc_11ceb));	// 4680 jnz     short loc_11CEB ;~ 0192:1CB7
 	R(OR(*(raddr(ds,bx)), 0x80));	// 4681 or      byte ptr [bx], 80h ;~ 0192:1CB9
-loc_11cbc:	// 5005 
+loc_11cbc:	// 5013 
 	R(MOV(ah, byte_1f126));	// 4684 mov     ah, byte_1F126 ;~ 0192:1CBC
 	R(TEST(ah, 0x40));	// 4685 test    ah, 40h ;~ 0192:1CC0
 cs=0x192;eip=0x001cc3; 		R(JZ(loc_11ccd));	// 4686 jz      short loc_11CCD ;~ 0192:1CC3
 cs=0x192;eip=0x001cc5; 	R(CALL(sub_11d44,0));	// 4687 call    sub_11D44 ;~ 0192:1CC5
-ret_192_1cc8:	// 5006 
+ret_192_1cc8:	// 5014 
 cs=0x192;eip=0x001cc8; 		R(JNC(loc_11ccb));	// 4688 jnb     short loc_11CCB ;~ 0192:1CC8
 cs=0x192;eip=0x001cca; 	R(RETN);	// 4689 retn ;~ 0192:1CCA
-loc_11ccb:	// 5007 
+loc_11ccb:	// 5015 
 cs=0x192;eip=0x001ccb; 		R(JMP(loc_11cd3));	// 4693 jmp     short loc_11CD3 ;~ 0192:1CCB
-loc_11ccd:	// 5008 
+loc_11ccd:	// 5016 
 cs=0x192;eip=0x001ccd; 	R(CALL(sub_11d7b,0));	// 4697 call    sub_11D7B ;~ 0192:1CCD
-ret_192_1cd0:	// 5009 
+ret_192_1cd0:	// 5017 
 cs=0x192;eip=0x001cd0; 		R(JNC(loc_11cd3));	// 4698 jnb     short loc_11CD3 ;~ 0192:1CD0
 cs=0x192;eip=0x001cd2; 	R(RETN);	// 4699 retn ;~ 0192:1CD2
-loc_11cd3:	// 5010 
+loc_11cd3:	// 5018 
 cs=0x192;eip=0x001cd3; 	R(CALL(sub_11d1a,0));	// 4704 call    sub_11D1A ;~ 0192:1CD3
-ret_192_1cd6:	// 5011 
+ret_192_1cd6:	// 5019 
 	R(MOV(bx, offset(seg000,word_1f131)+1));	// 4705 mov     bx, (offset word_1F131+1) ;~ 0192:1CD6
 	R(DEC(*(raddr(ds,bx))));	// 4706 dec     byte ptr [bx] ;~ 0192:1CD9
 	R(MOV(ah, byte_1f126));	// 4707 mov     ah, byte_1F126 ;~ 0192:1CDB
@@ -4127,25 +4134,25 @@ cs=0x192;eip=0x001ce2; 		R(JZ(loc_11d23));	// 4709 jz      short loc_11D23 ;~ 01
 	R(MOV(bx, offset(seg000,word_1f1dc)+1));	// 4710 mov     bx, (offset word_1F1DC+1) ;~ 0192:1CE4
 	R(DEC(*(raddr(ds,bx))));	// 4711 dec     byte ptr [bx] ;~ 0192:1CE7
 cs=0x192;eip=0x001ce9; 		R(JMP(loc_11d23));	// 4712 jmp     short loc_11D23 ;~ 0192:1CE9
-loc_11ceb:	// 5012 
+loc_11ceb:	// 5020 
 cs=0x192;eip=0x001ceb; 	R(CALL(sub_11dc3,0));	// 4717 call    sub_11DC3 ;~ 0192:1CEB
-ret_192_1cee:	// 5013 
+ret_192_1cee:	// 5021 
 cs=0x192;eip=0x001cee; 		R(JNZ(loc_11cf1));	// 4718 jnz     short loc_11CF1 ;~ 0192:1CEE
 cs=0x192;eip=0x001cf0; 	R(RETN);	// 4719 retn ;~ 0192:1CF0
-loc_11cf1:	// 5014 
+loc_11cf1:	// 5022 
 cs=0x192;eip=0x001cf1; 	R(CALL(sub_11d85,0));	// 4723 call    sub_11D85 ;~ 0192:1CF1
-ret_192_1cf4:	// 5015 
+ret_192_1cf4:	// 5023 
 cs=0x192;eip=0x001cf4; 		R(JNC(loc_11cfd));	// 4724 jnb     short loc_11CFD ;~ 0192:1CF4
 	R(MOV(bx, offset(seg000,byte_1f47e)));	// 4725 mov     bx, offset byte_1F47E ;~ 0192:1CF6
 	R(OR(*(raddr(ds,bx)), 0x80));	// 4726 or      byte ptr [bx], 80h ;~ 0192:1CF9
 cs=0x192;eip=0x001cfc; 	R(RETN);	// 4727 retn ;~ 0192:1CFC
-loc_11cfd:	// 5016 
+loc_11cfd:	// 5024 
 cs=0x192;eip=0x001cfd; 	R(CALL(sub_11d1a,0));	// 4731 call    sub_11D1A ;~ 0192:1CFD
-ret_192_1d00:	// 5017 
+ret_192_1d00:	// 5025 
 	R(MOV(bx, offset(seg000,word_1f131)+1));	// 4732 mov     bx, (offset word_1F131+1) ;~ 0192:1D00
 	R(INC(*(raddr(ds,bx))));	// 4733 inc     byte ptr [bx] ;~ 0192:1D03
 cs=0x192;eip=0x001d05; 	R(CALL(sub_11d4a,0));	// 4734 call    sub_11D4A ;~ 0192:1D05
-ret_192_1d08:	// 5018 
+ret_192_1d08:	// 5026 
 cs=0x192;eip=0x001d08; 		R(JC(loc_11d23));	// 4735 jb      short loc_11D23 ;~ 0192:1D08
 	R(MOV(ah, byte_1f126));	// 4736 mov     ah, byte_1F126 ;~ 0192:1D0A
 	R(TEST(ah, 0x40));	// 4737 test    ah, 40h ;~ 0192:1D0E
@@ -4157,24 +4164,24 @@ sub_11d1a:	// 4746
 	R(MOV(cx, word_1f131));	// 4748 mov     cx, word_1F131 ;~ 0192:1D1A
 	R(MOV(di, offset(seg000,byte_1d355)));	// 4749 mov     di, offset byte_1D355 ;~ 0192:1D1E
 cs=0x192;eip=0x001d21; 		R(JMP(loc_11d2a));	// 4750 jmp     short loc_11D2A ;~ 0192:1D21
-loc_11d23:	// 5019 
+loc_11d23:	// 5027 
 	R(MOV(cx, word_1f131));	// 4755 mov     cx, word_1F131 ;~ 0192:1D23
 	R(MOV(di, offset(seg000,byte_1d35b)));	// 4756 mov     di, offset byte_1D35B ;~ 0192:1D27
-loc_11d2a:	// 5020 
+loc_11d2a:	// 5028 
 	R(MOV(ah, 0x14));	// 4759 mov     ah, 14h ;~ 0192:1D2A
 	R(CMP(ah, ch));	// 4760 cmp     ah, ch ;~ 0192:1D2C
 cs=0x192;eip=0x001d2e; 		R(JNZ(loc_11d31));	// 4761 jnz     short loc_11D31 ;~ 0192:1D2E
 cs=0x192;eip=0x001d30; 	R(RETN);	// 4762 retn ;~ 0192:1D30
-loc_11d31:	// 5021 
+loc_11d31:	// 5029 
 	R(MOV(ah, *(raddr(ds,di))));	// 4767 mov     ah, [di] ;~ 0192:1D31
 	R(CMP(ah, 0x0FF));	// 4768 cmp     ah, 0FFh ;~ 0192:1D33
 cs=0x192;eip=0x001d36; 		R(JNZ(loc_11d39));	// 4769 jnz     short loc_11D39 ;~ 0192:1D36
 cs=0x192;eip=0x001d38; 	R(RETN);	// 4770 retn ;~ 0192:1D38
-loc_11d39:	// 5022 
+loc_11d39:	// 5030 
 cs=0x192;eip=0x001d39; 	R(CALL(sub_12c57,0));	// 4774 call    sub_12C57 ;~ 0192:1D39
-ret_192_1d3c:	// 5023 
+ret_192_1d3c:	// 5031 
 cs=0x192;eip=0x001d3c; 	R(CALL(sub_13895,0));	// 4775 call    sub_13895 ;~ 0192:1D3C
-ret_192_1d3f:	// 5024 
+ret_192_1d3f:	// 5032 
 	R(INC(di));	// 4776 inc     di ;~ 0192:1D3F
 	R(INC(cl));	// 4777 inc     cl ;~ 0192:1D40
 cs=0x192;eip=0x001d42; 		R(JMP(loc_11d31));	// 4778 jmp     short loc_11D31 ;~ 0192:1D42
@@ -4184,16 +4191,16 @@ sub_11d44:	// 4785
 cs=0x192;eip=0x001d48; 		R(JMP(loc_11d4d));	// 4788 jmp     short loc_11D4D ;~ 0192:1D48
 sub_11d4a:	// 4795 
 	R(MOV(bx, (dw)m2c::kloc_102a0));	// 4796 mov     bx, offset loc_102A0 ;~ 0192:1D4A
-loc_11d4d:	// 5025 
+loc_11d4d:	// 5033 
 	R(MOV(cx, word_1f1dc));	// 4799 mov     cx, word_1F1DC ;~ 0192:1D4D
 	R(ADD(bx, cx));	// 4800 add     bx, cx ;~ 0192:1D51
 	R(MOV(ch, bh));	// 4801 mov     ch, bh ;~ 0192:1D53
 	R(MOV(ah, *(db*)(((db*)&word_1f1da)+1)));	// 4802 mov     ah, byte ptr word_1F1DA+1 ;~ 0192:1D55
 	R(MOV(cl, ah));	// 4803 mov     cl, ah ;~ 0192:1D59
 cs=0x192;eip=0x001d5b; 	R(CALL(sub_110d5,0));	// 4804 call    sub_110D5 ;~ 0192:1D5B
-ret_192_1d5e:	// 5026 
+ret_192_1d5e:	// 5034 
 	R(MOV(cx, word_1d465));	// 4805 mov     cx, word_1D465 ;~ 0192:1D5E
-loc_11d62:	// 5027 
+loc_11d62:	// 5035 
 	R(MOV(ah, *(raddr(ds,bx))));	// 4808 mov     ah, [bx] ;~ 0192:1D62
 	R(OR(ah, ah));	// 4809 or      ah, ah ;~ 0192:1D64
 cs=0x192;eip=0x001d66; 		R(JZ(loc_11d73));	// 4810 jz      short loc_11D73 ;~ 0192:1D66
@@ -4202,7 +4209,7 @@ cs=0x192;eip=0x001d6b; 		R(JZ(loc_11d73));	// 4812 jz      short loc_11D73 ;~ 01
 	R(CMP(ah, 0x4E));	// 4813 cmp     ah, 4Eh ; 'N' ;~ 0192:1D6D
 cs=0x192;eip=0x001d70; 		R(JNC(loc_11d73));	// 4814 jnb     short loc_11D73 ;~ 0192:1D70
 cs=0x192;eip=0x001d72; 	R(RETN);	// 4815 retn ;~ 0192:1D72
-loc_11d73:	// 5028 
+loc_11d73:	// 5036 
 	R(INC(bx));	// 4820 inc     bx ;~ 0192:1D73
 	R(DEC(ch));	// 4821 dec     ch ;~ 0192:1D74
 cs=0x192;eip=0x001d76; 		R(JNZ(loc_11d62));	// 4822 jnz     short loc_11D62 ;~ 0192:1D76
@@ -4210,20 +4217,20 @@ cs=0x192;eip=0x001d76; 		R(JNZ(loc_11d62));	// 4822 jnz     short loc_11D62 ;~ 0
 cs=0x192;eip=0x001d7a; 	R(RETN);	// 4824 retn ;~ 0192:1D7A
 sub_11d7b:	// 4831 
 cs=0x192;eip=0x001d7b; 	R(CALL(sub_11da7,0));	// 4832 call    sub_11DA7 ;~ 0192:1D7B
-ret_192_1d7e:	// 5029 
+ret_192_1d7e:	// 5037 
 cs=0x192;eip=0x001d7e; 		R(JC(loc_11d81));	// 4833 jb      short loc_11D81 ;~ 0192:1D7E
 cs=0x192;eip=0x001d80; 	R(RETN);	// 4834 retn ;~ 0192:1D80
-loc_11d81:	// 5030 
+loc_11d81:	// 5038 
 	R(MOV(cl, 0x0FF));	// 4838 mov     cl, 0FFh ;~ 0192:1D81
 cs=0x192;eip=0x001d83; 		R(JMP(loc_11d8d));	// 4839 jmp     short loc_11D8D ;~ 0192:1D83
 sub_11d85:	// 4846 
 cs=0x192;eip=0x001d85; 	R(CALL(sub_11da7,0));	// 4847 call    sub_11DA7 ;~ 0192:1D85
-ret_192_1d88:	// 5031 
+ret_192_1d88:	// 5039 
 cs=0x192;eip=0x001d88; 		R(JC(loc_11d8b));	// 4848 jb      short loc_11D8B ;~ 0192:1D88
 cs=0x192;eip=0x001d8a; 	R(RETN);	// 4849 retn ;~ 0192:1D8A
-loc_11d8b:	// 5032 
+loc_11d8b:	// 5040 
 	R(MOV(cl, 1));	// 4853 mov     cl, 1 ;~ 0192:1D8B
-loc_11d8d:	// 5033 
+loc_11d8d:	// 5041 
 	R(MOV(ah, *(db*)(((db*)&word_1f131)+1)));	// 4856 mov     ah, byte ptr word_1F131+1 ;~ 0192:1D8D
 	R(ADD(ah, cl));	// 4857 add     ah, cl ;~ 0192:1D91
 	R(MOV(bh, ah));	// 4858 mov     bh, ah ;~ 0192:1D93
@@ -4240,7 +4247,7 @@ sub_11da7:	// 4879
 	R(MOV(bh, ah));	// 4882 mov     bh, ah ;~ 0192:1DAB
 	R(ADD(ah, 5));	// 4883 add     ah, 5 ;~ 0192:1DAD
 	R(MOV(bl, ah));	// 4884 mov     bl, ah ;~ 0192:1DB0
-loc_11db2:	// 5034 
+loc_11db2:	// 5042 
 	R(MOV(ah, *(db*)(((db*)&word_1f1da)+1)));	// 4887 mov     ah, byte ptr word_1F1DA+1 ;~ 0192:1DB2
 	R(MOV(dh, ah));	// 4888 mov     dh, ah ;~ 0192:1DB6
 	R(MOV(cx, word_1d465));	// 4889 mov     cx, word_1D465 ;~ 0192:1DB8
@@ -4251,53 +4258,53 @@ sub_11dc3:	// 4899
 	R(MOV(cx, word_1f131));	// 4900 mov     cx, word_1F131 ;~ 0192:1DC3
 	R(INC(ch));	// 4901 inc     ch ;~ 0192:1DC7
 cs=0x192;eip=0x001dc9; 	R(CALL(sub_110d5,0));	// 4902 call    sub_110D5 ;~ 0192:1DC9
-ret_192_1dcc:	// 5035 
+ret_192_1dcc:	// 5043 
 	R(MOV(ch, 5));	// 4903 mov     ch, 5 ;~ 0192:1DCC
-loc_11dce:	// 5036 
+loc_11dce:	// 5044 
 	R(MOV(ah, *(raddr(ds,bx))));	// 4906 mov     ah, [bx] ;~ 0192:1DCE
 	R(CMP(ah, 0x66));	// 4907 cmp     ah, 66h ; 'f' ;~ 0192:1DD0
 cs=0x192;eip=0x001dd3; 		R(JNZ(loc_11dd6));	// 4908 jnz     short loc_11DD6 ;~ 0192:1DD3
 cs=0x192;eip=0x001dd5; 	R(RETN);	// 4909 retn ;~ 0192:1DD5
-loc_11dd6:	// 5037 
+loc_11dd6:	// 5045 
 	R(INC(bx));	// 4913 inc     bx ;~ 0192:1DD6
 	R(DEC(ch));	// 4914 dec     ch ;~ 0192:1DD7
 cs=0x192;eip=0x001dd9; 		R(JNZ(loc_11dce));	// 4915 jnz     short loc_11DCE ;~ 0192:1DD9
 	R(MOV(ah, 1));	// 4916 mov     ah, 1 ;~ 0192:1DDB
 	R(OR(ah, ah));	// 4917 or      ah, ah ;~ 0192:1DDD
 cs=0x192;eip=0x001ddf; 	R(RETN);	// 4918 retn ;~ 0192:1DDF
-loc_11de0:	// 5038 
+loc_11de0:	// 5046 
 	R(TEST(*(raddr(ds,si+0x24)), 1));	// 4924 test    byte ptr [si+24h], 1 ;~ 0192:1DE0
 cs=0x192;eip=0x001de4; 		R(JZ(loc_11de9));	// 4925 jz      short loc_11DE9 ;~ 0192:1DE4
 cs=0x192;eip=0x001de6; 		R(JMP(loc_11e5e));	// 4926 jmp     loc_11E5E ;~ 0192:1DE6
-loc_11de9:	// 5039 
+loc_11de9:	// 5047 
 	R(TEST(*(raddr(ds,si+0x24)), 4));	// 4930 test    byte ptr [si+24h], 4 ;~ 0192:1DE9
 cs=0x192;eip=0x001ded; 		R(JNZ(loc_11df9));	// 4931 jnz     short loc_11DF9 ;~ 0192:1DED
 	R(OR(*(raddr(ds,si+0x24)), 4));	// 4932 or      byte ptr [si+24h], 4 ;~ 0192:1DEF
 	R(MOV(ah, *(raddr(ds,si+0x0E))));	// 4933 mov     ah, [si+0Eh] ;~ 0192:1DF3
 	R(MOV(*(raddr(ds,si+0x23)), ah));	// 4934 mov     [si+23h], ah ;~ 0192:1DF6
-loc_11df9:	// 5040 
+loc_11df9:	// 5048 
 	R(TEST(*(raddr(ds,si+0x24)), 2));	// 4937 test    byte ptr [si+24h], 2 ;~ 0192:1DF9
 cs=0x192;eip=0x001dfd; 		R(JNZ(loc_11e13));	// 4938 jnz     short loc_11E13 ;~ 0192:1DFD
 cs=0x192;eip=0x001dff; 	R(CALL(sub_11111,0));	// 4939 call    sub_11111 ;~ 0192:1DFF
-ret_192_1e02:	// 5041 
+ret_192_1e02:	// 5049 
 	R(AND(ah, 0x1F));	// 4940 and     ah, 1Fh ;~ 0192:1E02
 	R(OR(ah, 8));	// 4941 or      ah, 8 ;~ 0192:1E05
 	R(MOV(*(raddr(ds,si+2)), ah));	// 4942 mov     [si+2], ah ;~ 0192:1E08
 	R(MOV(*(raddr(ds,si+0x14)), 0x0A0));	// 4943 mov     byte ptr [si+14h], 0A0h ; ' ' ;~ 0192:1E0B
 	R(OR(*(raddr(ds,si+0x24)), 2));	// 4944 or      byte ptr [si+24h], 2 ;~ 0192:1E0F
-loc_11e13:	// 5042 
+loc_11e13:	// 5050 
 	R(MOV(bl, 5));	// 4947 mov     bl, 5 ;~ 0192:1E13
 	R(MOV(dl, 0x0A));	// 4948 mov     dl, 0Ah ;~ 0192:1E15
 cs=0x192;eip=0x001e17; 	R(CALL(sub_11385,0));	// 4949 call    sub_11385 ;~ 0192:1E17
-ret_192_1e1a:	// 5043 
+ret_192_1e1a:	// 5051 
 cs=0x192;eip=0x001e1a; 		R(JNC(loc_11e20));	// 4950 jnb     short loc_11E20 ;~ 0192:1E1A
 	R(POP(bx));	// 4951 pop     bx ;~ 0192:1E1C
 cs=0x192;eip=0x001e1d; 		R(JMP(sub_11506));	// 4952 jmp     sub_11506 ;~ 0192:1E1D
-loc_11e20:	// 5044 
+loc_11e20:	// 5052 
 cs=0x192;eip=0x001e20; 	R(CALL(sub_10a19,0));	// 4956 call    sub_10A19 ;~ 0192:1E20
-ret_192_1e23:	// 5045 
+ret_192_1e23:	// 5053 
 cs=0x192;eip=0x001e23; 	R(CALL(sub_13001,0));	// 4957 call    sub_13001 ;~ 0192:1E23
-ret_192_1e26:	// 5046 
+ret_192_1e26:	// 5054 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 4958 mov     ah, [si+24h] ;~ 0192:1E26
 	R(OR(ah, *(raddr(ds,si+0x11))));	// 4959 or      ah, [si+11h] ;~ 0192:1E29
 	R(TEST(ah, 0x80));	// 4960 test    ah, 80h ;~ 0192:1E2C
@@ -4305,7 +4312,7 @@ cs=0x192;eip=0x001e2f; 		R(JNZ(loc_11e38));	// 4961 jnz     short loc_11E38 ;~ 0
 	R(MOV(ah, *(raddr(ds,si+2))));	// 4962 mov     ah, [si+2] ;~ 0192:1E31
 	R(OR(ah, ah));	// 4963 or      ah, ah ;~ 0192:1E34
 cs=0x192;eip=0x001e36; 		R(JNZ(loc_11e4d));	// 4964 jnz     short loc_11E4D ;~ 0192:1E36
-loc_11e38:	// 5047 
+loc_11e38:	// 5055 
 	R(MOV(*(raddr(ds,si+0x14)), 0x60));	// 4967 mov     byte ptr [si+14h], 60h ; '`' ;~ 0192:1E38
 	R(MOV(ah, *(raddr(ds,si+0x0E))));	// 4968 mov     ah, [si+0Eh] ;~ 0192:1E3C
 	R(MOV(dl, *(raddr(ds,si+0x23))));	// 4969 mov     dl, [si+23h] ;~ 0192:1E3F
@@ -4314,29 +4321,29 @@ loc_11e38:	// 5047
 cs=0x192;eip=0x001e46; 		R(JNZ(loc_11e50));	// 4972 jnz     short loc_11E50 ;~ 0192:1E46
 	R(OR(*(raddr(ds,si+0x24)), 1));	// 4973 or      byte ptr [si+24h], 1 ;~ 0192:1E48
 cs=0x192;eip=0x001e4c; 	R(RETN);	// 4974 retn ;~ 0192:1E4C
-loc_11e4d:	// 5048 
+loc_11e4d:	// 5056 
 	R(DEC(*(raddr(ds,si+2))));	// 4978 dec     byte ptr [si+2] ;~ 0192:1E4D
-loc_11e50:	// 5049 
+loc_11e50:	// 5057 
 	R(MOV(cx, 0x100));	// 4981 mov     cx, 100h ;~ 0192:1E50
 	R(MOV(dl, 3));	// 4982 mov     dl, 3 ;~ 0192:1E53
 cs=0x192;eip=0x001e55; 	R(CALL(sub_11065,0));	// 4983 call    sub_11065 ;~ 0192:1E55
-ret_192_1e58:	// 5050 
+ret_192_1e58:	// 5058 
 cs=0x192;eip=0x001e58; 		R(JC(locret_11e5d));	// 4984 jb      short locret_11E5D ;~ 0192:1E58
 cs=0x192;eip=0x001e5a; 		R(JMP(sub_12ce2));	// 4985 jmp     sub_12CE2 ;~ 0192:1E5A
-locret_11e5d:	// 5051 
+locret_11e5d:	// 5059 
 cs=0x192;eip=0x001e5d; 	R(RETN);	// 4989 retn ;~ 0192:1E5D
-loc_11e5e:	// 5052 
+loc_11e5e:	// 5060 
 	R(MOV(cx, 0x702));	// 4993 mov     cx, 702h ;~ 0192:1E5E
 	R(MOV(dl, 5));	// 4994 mov     dl, 5 ;~ 0192:1E61
 cs=0x192;eip=0x001e63; 	R(CALL(sub_11065,0));	// 4995 call    sub_11065 ;~ 0192:1E63
-ret_192_1e66:	// 5053 
+ret_192_1e66:	// 5061 
 cs=0x192;eip=0x001e66; 		R(JC(loc_11e69));	// 4996 jb      short loc_11E69 ;~ 0192:1E66
 cs=0x192;eip=0x001e68; 	R(RETN);	// 4997 retn ;~ 0192:1E68
-loc_11e69:	// 5054 
+loc_11e69:	// 5062 
 	R(OR(ah, ah));	// 5001 or      ah, ah ;~ 0192:1E69
 cs=0x192;eip=0x001e6b; 		R(JNZ(loc_11e6e));	// 5002 jnz     short loc_11E6E ;~ 0192:1E6B
 cs=0x192;eip=0x001e6d; 	R(RETN);	// 5003 retn ;~ 0192:1E6D
-loc_11e6e:	// 5055 
+loc_11e6e:	// 5063 
 	R(MOV(*(raddr(ds,si+0x10)), 0));	// 5007 mov     byte ptr [si+10h], 0 ;~ 0192:1E6E
 	R(AND(*(raddr(ds,si+0x24)), 0x0FE));	// 5008 and     byte ptr [si+24h], 0FEh ;~ 0192:1E72
 	R(AND(*(raddr(ds,si+0x24)), 0x0FD));	// 5009 and     byte ptr [si+24h], 0FDh ;~ 0192:1E76
@@ -4346,21 +4353,21 @@ loc_11e6e:	// 5055
 cs=0x192;eip=0x001e84; 	R(RETN);	// 5013 retn ;~ 0192:1E84
 sub_11e85:	// 5018 
 cs=0x192;eip=0x001e85; 	R(CALL(sub_11f5e,0));	// 5019 call    sub_11F5E ;~ 0192:1E85
-ret_192_1e88:	// 5056 
+ret_192_1e88:	// 5064 
 	R(MOV(cx, 0));	// 5020 mov     cx, 0 ;~ 0192:1E88
 cs=0x192;eip=0x001e8b; 	R(CALL(sub_1114f,0));	// 5021 call    sub_1114F ;~ 0192:1E8B
-ret_192_1e8e:	// 5057 
+ret_192_1e8e:	// 5065 
 cs=0x192;eip=0x001e8e; 	R(CALL(sub_11f49,0));	// 5022 call    sub_11F49 ;~ 0192:1E8E
-ret_192_1e91:	// 5058 
+ret_192_1e91:	// 5066 
 	R(MOV(ch, 0x28));	// 5023 mov     ch, 28h ; '(' ;~ 0192:1E91
-loc_11e93:	// 5059 
+loc_11e93:	// 5067 
 	R(PUSH(cx));	// 5026 push    cx ;~ 0192:1E93
 cs=0x192;eip=0x001e94; 	R(CALL(sub_11f34,0));	// 5027 call    sub_11F34 ;~ 0192:1E94
-ret_192_1e97:	// 5060 
+ret_192_1e97:	// 5068 
 cs=0x192;eip=0x001e97; 	R(CALL(sub_11ee1,0));	// 5028 call    sub_11EE1 ;~ 0192:1E97
-ret_192_1e9a:	// 5061 
+ret_192_1e9a:	// 5069 
 cs=0x192;eip=0x001e9a; 	R(CALL(sub_138ad,0));	// 5029 call    sub_138AD ;~ 0192:1E9A
-ret_192_1e9d:	// 5062 
+ret_192_1e9d:	// 5070 
 	R(POP(cx));	// 5030 pop     cx ;~ 0192:1E9D
 	R(DEC(ch));	// 5031 dec     ch ;~ 0192:1E9E
 cs=0x192;eip=0x001ea0; 		R(JNZ(loc_11e93));	// 5032 jnz     short loc_11E93 ;~ 0192:1EA0
@@ -4378,29 +4385,29 @@ sub_11ea3:	// 5040
 	R(MOV(bx, 0));	// 5053 mov     bx, 0 ;~ 0192:1EB7
 	R(MOV(word_1f1a0, bx));	// 5054 mov     word_1F1A0, bx ;~ 0192:1EBA
 	R(MOV(ch, 0x28));	// 5055 mov     ch, 28h ; '(' ;~ 0192:1EBE
-loc_11ec0:	// 5063 
+loc_11ec0:	// 5071 
 	R(PUSH(cx));	// 5058 push    cx ;~ 0192:1EC0
 cs=0x192;eip=0x001ec1; 	R(CALL(sub_11f34,0));	// 5059 call    sub_11F34 ;~ 0192:1EC1
-ret_192_1ec4:	// 5064 
+ret_192_1ec4:	// 5072 
 	R(MOV(cx, word_1f1a0));	// 5060 mov     cx, word_1F1A0 ;~ 0192:1EC4
 	R(INC(cx));	// 5061 inc     cx ;~ 0192:1EC8
 	R(MOV(word_1f1a0, cx));	// 5062 mov     word_1F1A0, cx ;~ 0192:1EC9
 cs=0x192;eip=0x001ecd; 	R(CALL(sub_11f08,0));	// 5063 call    sub_11F08 ;~ 0192:1ECD
-ret_192_1ed0:	// 5065 
+ret_192_1ed0:	// 5073 
 cs=0x192;eip=0x001ed0; 	R(CALL(sub_138ad,0));	// 5064 call    sub_138AD ;~ 0192:1ED0
-ret_192_1ed3:	// 5066 
+ret_192_1ed3:	// 5074 
 	R(POP(cx));	// 5065 pop     cx ;~ 0192:1ED3
 	R(DEC(ch));	// 5066 dec     ch ;~ 0192:1ED4
 cs=0x192;eip=0x001ed6; 		R(JNZ(loc_11ec0));	// 5067 jnz     short loc_11EC0 ;~ 0192:1ED6
 	R(MOV(cx, 0));	// 5068 mov     cx, 0 ;~ 0192:1ED8
 cs=0x192;eip=0x001edb; 	R(CALL(sub_1114f,0));	// 5069 call    sub_1114F ;~ 0192:1EDB
-ret_192_1ede:	// 5067 
+ret_192_1ede:	// 5075 
 cs=0x192;eip=0x001ede; 		R(JMP(loc_11f8f));	// 5070 jmp     loc_11F8F ;~ 0192:1EDE
 sub_11ee1:	// 5077 
 	R(MOV(ah, 9));	// 5078 mov     ah, 9 ;~ 0192:1EE1
 	R(MOV(bx, offset(seg000,byte_1ef99)));	// 5079 mov     bx, offset byte_1EF99 ;~ 0192:1EE3
 	R(MOV(dx, offset(seg000,byte_1ef9a)));	// 5080 mov     dx, offset byte_1EF9A ;~ 0192:1EE6
-loc_11ee9:	// 5068 
+loc_11ee9:	// 5076 
 	R(MOV(cx, 0x27));	// 5083 mov     cx, 27h ; ''' ;~ 0192:1EE9
 	R(XCHG(si, bx));	// 5084 xchg    si, bx ;~ 0192:1EEC
 	R(XCHG(di, dx));	// 5085 xchg    di, dx ;~ 0192:1EEE
@@ -4424,7 +4431,7 @@ sub_11f08:	// 5106
 	R(MOV(bx, offset(seg000,byte_1f83b)));	// 5109 mov     bx, offset byte_1F83B ;~ 0192:1F0C
 	R(SBB(bx, cx));	// 5110 sbb     bx, cx ;~ 0192:1F0F
 	R(MOV(dx, offset(seg000,byte_1ef73)));	// 5111 mov     dx, offset byte_1EF73 ;~ 0192:1F11
-loc_11f14:	// 5069 
+loc_11f14:	// 5077 
 	R(PUSH(cx));	// 5114 push    cx ;~ 0192:1F14
 	R(PUSH(bx));	// 5115 push    bx ;~ 0192:1F15
 	R(PUSH(dx));	// 5116 push    dx ;~ 0192:1F16
@@ -4470,21 +4477,21 @@ cs=0x192;eip=0x001f5d; 	R(RETN);	// 5168 retn ;~ 0192:1F5D
 sub_11f5e:	// 5175 
 	R(MOV(cx, 0x0E07));	// 5176 mov     cx, 0E07h ;~ 0192:1F5E
 cs=0x192;eip=0x001f61; 	R(CALL(sub_11f67,0));	// 5177 call    sub_11F67 ;~ 0192:1F61
-ret_192_1f64:	// 5070 
+ret_192_1f64:	// 5078 
 	R(MOV(cx, 0x0E1C));	// 5178 mov     cx, 0E1Ch ;~ 0192:1F64
 sub_11f67:	// 5185 
 	R(MOV(di, offset(seg000,byte_1e153)));	// 5186 mov     di, offset byte_1E153 ;~ 0192:1F67
 	R(MOV(ah, 4));	// 5187 mov     ah, 4 ;~ 0192:1F6A
-loc_11f6c:	// 5071 
+loc_11f6c:	// 5079 
 	R(PUSH(ax));	// 5190 push    ax ;~ 0192:1F6C
 	R(MOV(ah, 4));	// 5191 mov     ah, 4 ;~ 0192:1F6D
-loc_11f6f:	// 5072 
+loc_11f6f:	// 5080 
 	R(PUSH(ax));	// 5194 push    ax ;~ 0192:1F6F
 	R(MOV(ah, *(raddr(ds,di))));	// 5195 mov     ah, [di] ;~ 0192:1F70
 cs=0x192;eip=0x001f72; 	R(CALL(sub_12c57,0));	// 5196 call    sub_12C57 ;~ 0192:1F72
-ret_192_1f75:	// 5073 
+ret_192_1f75:	// 5081 
 cs=0x192;eip=0x001f75; 	R(CALL(sub_13895,0));	// 5197 call    sub_13895 ;~ 0192:1F75
-ret_192_1f78:	// 5074 
+ret_192_1f78:	// 5082 
 	R(INC(di));	// 5198 inc     di ;~ 0192:1F78
 	R(INC(cl));	// 5199 inc     cl ;~ 0192:1F79
 	R(POP(ax));	// 5200 pop     ax ;~ 0192:1F7B
@@ -4498,23 +4505,23 @@ cs=0x192;eip=0x001f7e; 		R(JNZ(loc_11f6f));	// 5202 jnz     short loc_11F6F ;~ 0
 	R(DEC(ah));	// 5208 dec     ah ;~ 0192:1F8A
 cs=0x192;eip=0x001f8c; 		R(JNZ(loc_11f6c));	// 5209 jnz     short loc_11F6C ;~ 0192:1F8C
 cs=0x192;eip=0x001f8e; 	R(RETN);	// 5210 retn ;~ 0192:1F8E
-loc_11f8f:	// 5075 
+loc_11f8f:	// 5083 
 	R(MOV(cx, 0x0E07));	// 5217 mov     cx, 0E07h ;~ 0192:1F8F
 cs=0x192;eip=0x001f92; 	R(CALL(sub_11f98,0));	// 5218 call    sub_11F98 ;~ 0192:1F92
-ret_192_1f95:	// 5076 
+ret_192_1f95:	// 5084 
 	R(MOV(cx, 0x0E1C));	// 5219 mov     cx, 0E1Ch ;~ 0192:1F95
 sub_11f98:	// 5225 
 	R(MOV(ah, 4));	// 5226 mov     ah, 4 ;~ 0192:1F98
-loc_11f9a:	// 5077 
+loc_11f9a:	// 5085 
 	R(PUSH(ax));	// 5229 push    ax ;~ 0192:1F9A
 	R(MOV(ah, 4));	// 5230 mov     ah, 4 ;~ 0192:1F9B
-loc_11f9d:	// 5078 
+loc_11f9d:	// 5086 
 	R(PUSH(ax));	// 5233 push    ax ;~ 0192:1F9D
 	R(XOR(ah, ah));	// 5234 xor     ah, ah ;~ 0192:1F9E
 cs=0x192;eip=0x001fa0; 	R(CALL(sub_12c57,0));	// 5235 call    sub_12C57 ;~ 0192:1FA0
-ret_192_1fa3:	// 5079 
+ret_192_1fa3:	// 5087 
 cs=0x192;eip=0x001fa3; 	R(CALL(sub_13895,0));	// 5236 call    sub_13895 ;~ 0192:1FA3
-ret_192_1fa6:	// 5080 
+ret_192_1fa6:	// 5088 
 	R(INC(cl));	// 5237 inc     cl ;~ 0192:1FA6
 	R(POP(ax));	// 5238 pop     ax ;~ 0192:1FA8
 	R(DEC(ah));	// 5239 dec     ah ;~ 0192:1FA9
@@ -4533,7 +4540,7 @@ sub_11fbc:	// 5255
 	R(MOV(byte_1f120, ah));	// 5258 mov     byte_1F120, ah ;~ 0192:1FC1
 	R(INC(bx));	// 5259 inc     bx ;~ 0192:1FC5
 	R(MOV(off_1f1c1, bx));	// 5260 mov     off_1F1C1, bx ;~ 0192:1FC6
-loc_11fca:	// 5081 
+loc_11fca:	// 5089 
 	R(MOV(si, off_1f1c1));	// 5263 mov     si, off_1F1C1 ;~ 0192:1FCA
 	R(MOV(dl, *(raddr(ds,si))));	// 5264 mov     dl, [si] ;~ 0192:1FCE
 	R(MOV(dh, *(raddr(ds,si+1))));	// 5265 mov     dh, [si+1] ;~ 0192:1FD0
@@ -4554,7 +4561,7 @@ cs=0x192;eip=0x001fe0; 		R(JNZ(loc_11ffa));	// 5271 jnz     short loc_11FFA ;~ 0
 	R(MOV(bh, *(raddr(ds,di+1))));	// 5280 mov     bh, [di+1] ;~ 0192:1FF3
 	R(POP(di));	// 5281 pop     di ;~ 0192:1FF6
 cs=0x192;eip=0x001ff7; 	R(CALL(sub_12011,0));	// 5282 call    sub_12011 ;~ 0192:1FF7
-loc_11ffa:	// 5082 
+loc_11ffa:	// 5090 
 	R(MOV(bx, off_1f1c1));	// 5286 mov     bx, off_1F1C1 ;~ 0192:1FFA
 	R(INC(bx));	// 5287 inc     bx ;~ 0192:1FFE
 	R(INC(bx));	// 5288 inc     bx ;~ 0192:1FFF
@@ -4567,7 +4574,7 @@ cs=0x192;eip=0x002010; 	R(RETN);	// 5294 retn ;~ 0192:2010
 sub_12011:	// 5301 
 __disp=bx;
 cs=0x192;eip=0x002011; 		R(JMP(__dispatch_call));	// 5302 jmp     bx ;~ 0192:2011
-loc_12013:	// 5083 
+loc_12013:	// 5091 
 	R(TEST(*(raddr(ds,si+2)), 0x80));	// 5308 test    byte ptr [si+2], 80h ;~ 0192:2013
 cs=0x192;eip=0x002017; 		R(JNZ(loc_12069));	// 5309 jnz     short loc_12069 ;~ 0192:2017
 	R(MOV(ah, *(raddr(ds,si+0x12))));	// 5310 mov     ah, [si+12h] ;~ 0192:2019
@@ -4579,44 +4586,44 @@ cs=0x192;eip=0x00201e; 		R(JZ(loc_12034));	// 5312 jz      short loc_12034 ;~ 01
 	R(MOV(*(raddr(ds,si+0x23)), bh));	// 5316 mov     [si+23h], bh ;~ 0192:2029
 	R(MOV(*(raddr(ds,si+0x12)), 0));	// 5317 mov     byte ptr [si+12h], 0 ;~ 0192:202C
 	R(MOV(*(raddr(ds,si+0x14)), 4));	// 5318 mov     byte ptr [si+14h], 4 ;~ 0192:2030
-loc_12034:	// 5084 
+loc_12034:	// 5092 
 	R(MOV(bl, 3));	// 5321 mov     bl, 3 ;~ 0192:2034
 	R(MOV(dl, 0x0C));	// 5322 mov     dl, 0Ch ;~ 0192:2036
 cs=0x192;eip=0x002038; 	R(CALL(sub_11385,0));	// 5323 call    sub_11385 ;~ 0192:2038
-ret_192_203b:	// 5085 
+ret_192_203b:	// 5093 
 cs=0x192;eip=0x00203b; 		R(JNC(loc_12041));	// 5324 jnb     short loc_12041 ;~ 0192:203B
 	R(POP(bx));	// 5325 pop     bx ;~ 0192:203D
 cs=0x192;eip=0x00203e; 		R(JMP(sub_11506));	// 5326 jmp     sub_11506 ;~ 0192:203E
-loc_12041:	// 5086 
+loc_12041:	// 5094 
 cs=0x192;eip=0x002041; 	R(CALL(sub_10a19,0));	// 5330 call    sub_10A19 ;~ 0192:2041
-ret_192_2044:	// 5087 
+ret_192_2044:	// 5095 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 5331 mov     ah, [si+24h] ;~ 0192:2044
 	R(OR(ah, *(raddr(ds,si+0x11))));	// 5332 or      ah, [si+11h] ;~ 0192:2047
 	R(TEST(ah, 0x40));	// 5333 test    ah, 40h ;~ 0192:204A
 cs=0x192;eip=0x00204d; 		R(JZ(loc_12054));	// 5334 jz      short loc_12054 ;~ 0192:204D
 	R(OR(*(raddr(ds,si+2)), 0x80));	// 5335 or      byte ptr [si+2], 80h ;~ 0192:204F
 cs=0x192;eip=0x002053; 	R(RETN);	// 5336 retn ;~ 0192:2053
-loc_12054:	// 5088 
+loc_12054:	// 5096 
 	R(MOV(ah, *(raddr(ds,si+0x14))));	// 5340 mov     ah, [si+14h] ;~ 0192:2054
 	R(ADD(ah, 3));	// 5341 add     ah, 3 ;~ 0192:2057
 	R(CMP(ah, 0x7C));	// 5342 cmp     ah, 7Ch ; '|' ;~ 0192:205A
 cs=0x192;eip=0x00205d; 		R(JNC(loc_12062));	// 5343 jnb     short loc_12062 ;~ 0192:205D
 	R(MOV(*(raddr(ds,si+0x14)), ah));	// 5344 mov     [si+14h], ah ;~ 0192:205F
-loc_12062:	// 5089 
+loc_12062:	// 5097 
 	R(MOV(*(raddr(ds,si+0x13)), 0));	// 5347 mov     byte ptr [si+13h], 0 ;~ 0192:2062
 cs=0x192;eip=0x002066; 		R(JMP(sub_12ce2));	// 5348 jmp     sub_12CE2 ;~ 0192:2066
-loc_12069:	// 5090 
+loc_12069:	// 5098 
 	R(MOV(cx, 0x801));	// 5352 mov     cx, 801h ;~ 0192:2069
 	R(MOV(dl, 3));	// 5353 mov     dl, 3 ;~ 0192:206C
 cs=0x192;eip=0x00206e; 	R(CALL(sub_11065,0));	// 5354 call    sub_11065 ;~ 0192:206E
-ret_192_2071:	// 5091 
+ret_192_2071:	// 5099 
 cs=0x192;eip=0x002071; 		R(JC(loc_12074));	// 5355 jb      short loc_12074 ;~ 0192:2071
 cs=0x192;eip=0x002073; 	R(RETN);	// 5356 retn ;~ 0192:2073
-loc_12074:	// 5092 
+loc_12074:	// 5100 
 	R(OR(ah, ah));	// 5360 or      ah, ah ;~ 0192:2074
 cs=0x192;eip=0x002076; 		R(JNZ(loc_12079));	// 5361 jnz     short loc_12079 ;~ 0192:2076
 cs=0x192;eip=0x002078; 	R(RETN);	// 5362 retn ;~ 0192:2078
-loc_12079:	// 5093 
+loc_12079:	// 5101 
 	R(MOV(*(raddr(ds,si+0x10)), 0));	// 5366 mov     byte ptr [si+10h], 0 ;~ 0192:2079
 	R(MOV(*(raddr(ds,si+2)), 0));	// 5367 mov     byte ptr [si+2], 0 ;~ 0192:207D
 	R(MOV(bl, *(raddr(ds,si+0x22))));	// 5368 mov     bl, [si+22h] ;~ 0192:2081
@@ -4626,63 +4633,63 @@ loc_12079:	// 5093
 	R(MOV(*(raddr(ds,si+0x14)), 4));	// 5372 mov     byte ptr [si+14h], 4 ;~ 0192:208D
 	R(OR(*(raddr(ds,si)), 0x40));	// 5373 or      byte ptr [si], 40h ;~ 0192:2091
 cs=0x192;eip=0x002094; 		R(JMP(sub_111f3));	// 5374 jmp     sub_111F3 ;~ 0192:2094
-loc_12097:	// 5094 
+loc_12097:	// 5102 
 	R(TEST(*(raddr(ds,si+0x14)), 0x80));	// 5378 test    byte ptr [si+14h], 80h ;~ 0192:2097
 cs=0x192;eip=0x00209b; 		R(JNZ(loc_120a1));	// 5379 jnz     short loc_120A1 ;~ 0192:209B
 	R(MOV(ah, 0x7F));	// 5380 mov     ah, 7Fh ;~ 0192:209D
 cs=0x192;eip=0x00209f; 		R(JMP(loc_120a7));	// 5381 jmp     short loc_120A7 ;~ 0192:209F
-loc_120a1:	// 5095 
+loc_120a1:	// 5103 
 	R(MOV(ah, *(raddr(ds,si+0x14))));	// 5385 mov     ah, [si+14h] ;~ 0192:20A1
 	R(ADD(ah, 1));	// 5386 add     ah, 1 ;~ 0192:20A4
-loc_120a7:	// 5096 
+loc_120a7:	// 5104 
 	R(MOV(*(raddr(ds,si+0x14)), ah));	// 5389 mov     [si+14h], ah ;~ 0192:20A7
 cs=0x192;eip=0x0020aa; 	R(CALL(sub_12cd6,0));	// 5390 call    sub_12CD6 ;~ 0192:20AA
-ret_192_20ad:	// 5097 
+ret_192_20ad:	// 5105 
 cs=0x192;eip=0x0020ad; 	R(CALL(sub_10a19,0));	// 5391 call    sub_10A19 ;~ 0192:20AD
-ret_192_20b0:	// 5098 
+ret_192_20b0:	// 5106 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 5392 mov     ah, [si+24h] ;~ 0192:20B0
 	R(AND(ah, 0x0F0));	// 5393 and     ah, 0F0h ;~ 0192:20B3
 cs=0x192;eip=0x0020b6; 		R(JNZ(loc_120b9));	// 5394 jnz     short loc_120B9 ;~ 0192:20B6
 cs=0x192;eip=0x0020b8; 	R(RETN);	// 5395 retn ;~ 0192:20B8
-loc_120b9:	// 5099 
+loc_120b9:	// 5107 
 	R(OR(*(raddr(ds,si)), 0x10));	// 5399 or      byte ptr [si], 10h ;~ 0192:20B9
 cs=0x192;eip=0x0020bc; 		R(JMP(sub_1120d));	// 5400 jmp     sub_1120D ;~ 0192:20BC
-loc_120bf:	// 5100 
+loc_120bf:	// 5108 
 	R(MOV(cx, 0x200));	// 5404 mov     cx, 200h ;~ 0192:20BF
 	R(MOV(dl, 4));	// 5405 mov     dl, 4 ;~ 0192:20C2
 cs=0x192;eip=0x0020c4; 	R(CALL(sub_11065,0));	// 5406 call    sub_11065 ;~ 0192:20C4
-ret_192_20c7:	// 5101 
+ret_192_20c7:	// 5109 
 cs=0x192;eip=0x0020c7; 		R(JC(loc_120ca));	// 5407 jb      short loc_120CA ;~ 0192:20C7
 cs=0x192;eip=0x0020c9; 	R(RETN);	// 5408 retn ;~ 0192:20C9
-loc_120ca:	// 5102 
+loc_120ca:	// 5110 
 	R(OR(ah, ah));	// 5412 or      ah, ah ;~ 0192:20CA
 cs=0x192;eip=0x0020cc; 		R(JNZ(loc_120cf));	// 5413 jnz     short loc_120CF ;~ 0192:20CC
 cs=0x192;eip=0x0020ce; 	R(RETN);	// 5414 retn ;~ 0192:20CE
-loc_120cf:	// 5103 
+loc_120cf:	// 5111 
 	R(OR(*(raddr(ds,si)), 0x10));	// 5418 or      byte ptr [si], 10h ;~ 0192:20CF
-nullsub_3:	// 5104 
+nullsub_3:	// 5112 
 cs=0x192;eip=0x0020d2; 	R(RETN);	// 5422 retn ;~ 0192:20D2
-loc_120d3:	// 5105 
+loc_120d3:	// 5113 
 	R(MOV(bl, 3));	// 5426 mov     bl, 3 ;~ 0192:20D3
 	R(MOV(dl, 0x0C));	// 5427 mov     dl, 0Ch ;~ 0192:20D5
 cs=0x192;eip=0x0020d7; 	R(CALL(sub_11385,0));	// 5428 call    sub_11385 ;~ 0192:20D7
-ret_192_20da:	// 5106 
+ret_192_20da:	// 5114 
 cs=0x192;eip=0x0020da; 		R(JNC(loc_120e0));	// 5429 jnb     short loc_120E0 ;~ 0192:20DA
 	R(POP(bx));	// 5430 pop     bx ;~ 0192:20DC
 cs=0x192;eip=0x0020dd; 		R(JMP(sub_11506));	// 5431 jmp     sub_11506 ;~ 0192:20DD
-loc_120e0:	// 5107 
+loc_120e0:	// 5115 
 	R(MOV(ch, 2));	// 5435 mov     ch, 2 ;~ 0192:20E0
 	R(MOV(cl, 0));	// 5436 mov     cl, 0 ;~ 0192:20E2
 	R(MOV(dl, 1));	// 5437 mov     dl, 1 ;~ 0192:20E4
 cs=0x192;eip=0x0020e6; 	R(CALL(sub_11065,0));	// 5438 call    sub_11065 ;~ 0192:20E6
-ret_192_20e9:	// 5108 
+ret_192_20e9:	// 5116 
 cs=0x192;eip=0x0020e9; 		R(JC(loc_120ec));	// 5439 jb      short loc_120EC ;~ 0192:20E9
 cs=0x192;eip=0x0020eb; 	R(RETN);	// 5440 retn ;~ 0192:20EB
-loc_120ec:	// 5109 
+loc_120ec:	// 5117 
 	R(OR(ah, ah));	// 5444 or      ah, ah ;~ 0192:20EC
 cs=0x192;eip=0x0020ee; 		R(JNZ(loc_120f1));	// 5445 jnz     short loc_120F1 ;~ 0192:20EE
 cs=0x192;eip=0x0020f0; 	R(RETN);	// 5446 retn ;~ 0192:20F0
-loc_120f1:	// 5110 
+loc_120f1:	// 5118 
 	R(OR(*(raddr(ds,si)), 0x10));	// 5450 or      byte ptr [si], 10h ;~ 0192:20F1
 cs=0x192;eip=0x0020f4; 	R(RETN);	// 5451 retn ;~ 0192:20F4
 sub_120f5:	// 5456 
@@ -4695,7 +4702,7 @@ sub_120f5:	// 5456
 	R(CMP(ah, ch));	// 5464 cmp     ah, ch ;~ 0192:2108
 cs=0x192;eip=0x00210a; 		R(JZ(loc_1210d));	// 5465 jz      short loc_1210D ;~ 0192:210A
 cs=0x192;eip=0x00210c; 	R(RETN);	// 5466 retn ;~ 0192:210C
-loc_1210d:	// 5111 
+loc_1210d:	// 5119 
 	R(MOV(ch, 0x69));	// 5470 mov     ch, 69h ; 'i' ;~ 0192:210D
 	R(MOV(ah, byte_1f133));	// 5471 mov     ah, byte_1F133 ;~ 0192:210F
 	R(CMP(ah, ch));	// 5472 cmp     ah, ch ;~ 0192:2113
@@ -4704,10 +4711,10 @@ cs=0x192;eip=0x002115; 		R(JZ(loc_12123));	// 5473 jz      short loc_12123 ;~ 01
 	R(CMP(ah, ch));	// 5475 cmp     ah, ch ;~ 0192:2119
 cs=0x192;eip=0x00211b; 		R(JZ(loc_12123));	// 5476 jz      short loc_12123 ;~ 0192:211B
 cs=0x192;eip=0x00211d; 	R(CALL(sub_1212a,0));	// 5477 call    sub_1212A ;~ 0192:211D
-ret_192_2120:	// 5112 
+ret_192_2120:	// 5120 
 cs=0x192;eip=0x002120; 		R(JC(loc_12123));	// 5478 jb      short loc_12123 ;~ 0192:2120
 cs=0x192;eip=0x002122; 	R(RETN);	// 5479 retn ;~ 0192:2122
-loc_12123:	// 5113 
+loc_12123:	// 5121 
 	R(MOV(bx, offset(seg000,byte_1df4d)));	// 5484 mov     bx, offset byte_1DF4D ;~ 0192:2123
 	R(OR(*(raddr(ds,bx)), 2));	// 5485 or      byte ptr [bx], 2 ;~ 0192:2126
 cs=0x192;eip=0x002129; 	R(RETN);	// 5486 retn ;~ 0192:2129
@@ -4720,7 +4727,7 @@ sub_1212a:	// 5493
 	R(CMC);	// 5499 cmc ;~ 0192:2139
 cs=0x192;eip=0x00213a; 		R(JC(loc_1213d));	// 5500 jb      short loc_1213D ;~ 0192:213A
 cs=0x192;eip=0x00213c; 	R(RETN);	// 5501 retn ;~ 0192:213C
-loc_1213d:	// 5114 
+loc_1213d:	// 5122 
 	R(MOV(ah, byte_1df51));	// 5505 mov     ah, byte_1DF51 ;~ 0192:213D
 	R(DEC(ah));	// 5506 dec     ah ;~ 0192:2141
 	R(MOV(ch, ah));	// 5507 mov     ch, ah ;~ 0192:2143
@@ -4731,9 +4738,9 @@ cs=0x192;eip=0x00214b; 		R(JNC(loc_12156));	// 5510 jnb     short loc_12156 ;~ 0
 	R(CMP(ah, ch));	// 5512 cmp     ah, ch ;~ 0192:2150
 cs=0x192;eip=0x002152; 		R(JZ(locret_12155));	// 5513 jz      short locret_12155 ;~ 0192:2152
 	R(CMC);	// 5514 cmc ;~ 0192:2154
-locret_12155:	// 5115 
+locret_12155:	// 5123 
 cs=0x192;eip=0x002155; 	R(RETN);	// 5517 retn ;~ 0192:2155
-loc_12156:	// 5116 
+loc_12156:	// 5124 
 	R(INC(ch));	// 5521 inc     ch ;~ 0192:2156
 	R(INC(ch));	// 5522 inc     ch ;~ 0192:2158
 	R(INC(ch));	// 5523 inc     ch ;~ 0192:215A
@@ -4750,61 +4757,62 @@ cs=0x192;eip=0x00216a; 		R(JNZ(loc_12190));	// 5538 jnz     short loc_12190 ;~ 0
 	R(CMP(ah, 0x3A));	// 5541 cmp     ah, 3Ah ; ':' ;~ 0192:2172
 cs=0x192;eip=0x002175; 		R(JNZ(loc_12178));	// 5542 jnz     short loc_12178 ;~ 0192:2175
 cs=0x192;eip=0x002177; 	R(RETN);	// 5543 retn ;~ 0192:2177
-loc_12178:	// 5117 
+loc_12178:	// 5125 
 	R(INC(ch));	// 5547 inc     ch ;~ 0192:2178
 	R(CMP(ah, 0x0B));	// 5548 cmp     ah, 0Bh ;~ 0192:217A
 cs=0x192;eip=0x00217d; 		R(JNZ(loc_12180));	// 5549 jnz     short loc_12180 ;~ 0192:217D
 cs=0x192;eip=0x00217f; 	R(RETN);	// 5550 retn ;~ 0192:217F
-loc_12180:	// 5118 
+loc_12180:	// 5126 
 	R(INC(ch));	// 5554 inc     ch ;~ 0192:2180
 	R(CMP(ah, 0x0C));	// 5555 cmp     ah, 0Ch ;~ 0192:2182
 cs=0x192;eip=0x002185; 		R(JNZ(loc_12188));	// 5556 jnz     short loc_12188 ;~ 0192:2185
 cs=0x192;eip=0x002187; 	R(RETN);	// 5557 retn ;~ 0192:2187
-loc_12188:	// 5119 
+loc_12188:	// 5127 
 	R(INC(ch));	// 5561 inc     ch ;~ 0192:2188
 	R(CMP(ah, 0x14));	// 5562 cmp     ah, 14h ;~ 0192:218A
 cs=0x192;eip=0x00218d; 		R(JNZ(loc_12190));	// 5563 jnz     short loc_12190 ;~ 0192:218D
 cs=0x192;eip=0x00218f; 	R(RETN);	// 5564 retn ;~ 0192:218F
-loc_12190:	// 5120 
+loc_12190:	// 5128 
 	R(STC);	// 5569 stc ;~ 0192:2190
 cs=0x192;eip=0x002191; 	R(RETN);	// 5570 retn ;~ 0192:2191
-loc_12192:	// 5121 
+loc_12192:	// 5129 
 cs=0x192;eip=0x002192; 		R(JNC(loc_12195));	// 5576 jnb     short loc_12195 ;~ 0192:2192
 cs=0x192;eip=0x002194; 	R(RETN);	// 5577 retn ;~ 0192:2194
-loc_12195:	// 5122 
+loc_12195:	// 5130 
 	R(PUSH(bx));	// 5581 push    bx ;~ 0192:2195
 	R(MOV(bx, offset(seg000,byte_1f1e0)));	// 5582 mov     bx, offset byte_1F1E0 ;~ 0192:2196
 	R(OR(*(raddr(ds,bx)), 1));	// 5583 or      byte ptr [bx], 1 ;~ 0192:2199
 	R(POP(bx));	// 5584 pop     bx ;~ 0192:219C
 cs=0x192;eip=0x00219d; 	R(RETN);	// 5585 retn ;~ 0192:219D
+ret_192_219e:	// 5131 
 	R(MOV(ah, byte_1f137));	// 5587 mov     ah, byte_1F137 ;~ 0192:219E
 	R(OR(ah, ah));	// 5588 or      ah, ah ;~ 0192:21A2
 cs=0x192;eip=0x0021a4; 		R(JNZ(loc_121a9));	// 5589 jnz     short loc_121A9 ;~ 0192:21A4
 cs=0x192;eip=0x0021a6; 	R(CALL(sub_12221,0));	// 5590 call    sub_12221 ;~ 0192:21A6
-loc_121a9:	// 5123 
+loc_121a9:	// 5132 
 	R(MOV(ah, byte_1f138));	// 5593 mov     ah, byte_1F138 ;~ 0192:21A9
 	R(INC(ah));	// 5594 inc     ah ;~ 0192:21AD
 	R(MOV(byte_1f138, ah));	// 5595 mov     byte_1F138, ah ;~ 0192:21AF
 	R(CMP(ah, 3));	// 5596 cmp     ah, 3 ;~ 0192:21B3
 cs=0x192;eip=0x0021b6; 		R(JZ(loc_121b9));	// 5597 jz      short loc_121B9 ;~ 0192:21B6
 cs=0x192;eip=0x0021b8; 	R(RETN);	// 5598 retn ;~ 0192:21B8
-loc_121b9:	// 5124 
+loc_121b9:	// 5133 
 	R(XOR(ah, ah));	// 5602 xor     ah, ah ;~ 0192:21B9
 	R(MOV(byte_1f138, ah));	// 5603 mov     byte_1F138, ah ;~ 0192:21BB
-loc_121bf:	// 5125 
+loc_121bf:	// 5134 
 	R(MOV(cl, 0x12));	// 5606 mov     cl, 12h ;~ 0192:21BF
 	R(MOV(ah, byte_1f137));	// 5607 mov     ah, byte_1F137 ;~ 0192:21C1
 	R(TEST(ah, 0x80));	// 5608 test    ah, 80h ;~ 0192:21C5
 cs=0x192;eip=0x0021c8; 		R(JZ(loc_121cc));	// 5609 jz      short loc_121CC ;~ 0192:21C8
 	R(MOV(cl, 0x0FF));	// 5610 mov     cl, 0FFh ;~ 0192:21CA
-loc_121cc:	// 5126 
+loc_121cc:	// 5135 
 	R(AND(ah, 0x7F));	// 5613 and     ah, 7Fh ;~ 0192:21CC
 	R(ADD(ah, cl));	// 5614 add     ah, cl ;~ 0192:21CF
 	R(MOV(cl, ah));	// 5615 mov     cl, ah ;~ 0192:21D1
 	R(MOV(ch, 0x0C));	// 5616 mov     ch, 0Ch ;~ 0192:21D3
 	R(MOV(word_1f1a0, cx));	// 5617 mov     word_1F1A0, cx ;~ 0192:21D5
 cs=0x192;eip=0x0021d9; 	R(CALL(sub_110d5,0));	// 5618 call    sub_110D5 ;~ 0192:21D9
-ret_192_21dc:	// 5127 
+ret_192_21dc:	// 5136 
 	R(MOV(ah, *(raddr(ds,bx))));	// 5619 mov     ah, [bx] ;~ 0192:21DC
 	R(OR(ah, ah));	// 5620 or      ah, ah ;~ 0192:21DE
 cs=0x192;eip=0x0021e0; 		R(JZ(loc_121ef));	// 5621 jz      short loc_121EF ;~ 0192:21E0
@@ -4812,13 +4820,13 @@ cs=0x192;eip=0x0021e0; 		R(JZ(loc_121ef));	// 5621 jz      short loc_121EF ;~ 01
 	R(XOR(ah, 0x80));	// 5623 xor     ah, 80h ;~ 0192:21E6
 	R(MOV(byte_1f137, ah));	// 5624 mov     byte_1F137, ah ;~ 0192:21E9
 cs=0x192;eip=0x0021ed; 		R(JMP(loc_121bf));	// 5625 jmp     short loc_121BF ;~ 0192:21ED
-loc_121ef:	// 5128 
+loc_121ef:	// 5137 
 	R(MOV(ah, 0x32));	// 5629 mov     ah, 32h ; '2' ;~ 0192:21EF
 	R(MOV(cx, word_1f1a0));	// 5630 mov     cx, word_1F1A0 ;~ 0192:21F1
 cs=0x192;eip=0x0021f5; 	R(CALL(sub_12c57,0));	// 5631 call    sub_12C57 ;~ 0192:21F5
-ret_192_21f8:	// 5129 
+ret_192_21f8:	// 5138 
 cs=0x192;eip=0x0021f8; 	R(CALL(sub_13895,0));	// 5632 call    sub_13895 ;~ 0192:21F8
-ret_192_21fb:	// 5130 
+ret_192_21fb:	// 5139 
 	R(MOV(ah, 1));	// 5633 mov     ah, 1 ;~ 0192:21FB
 	R(MOV(bx, offset(seg000,byte_1f137)));	// 5634 mov     bx, offset byte_1F137 ;~ 0192:21FD
 	R(MOV(cl, *(raddr(ds,bx))));	// 5635 mov     cl, [bx] ;~ 0192:2200
@@ -4830,12 +4838,12 @@ cs=0x192;eip=0x002205; 		R(JZ(loc_12215));	// 5637 jz      short loc_12215 ;~ 01
 	R(MOV(cl, ah));	// 5641 mov     cl, ah ;~ 0192:220F
 	R(DEC(*(raddr(ds,bx))));	// 5642 dec     byte ptr [bx] ;~ 0192:2211
 	R(XOR(ah, ah));	// 5643 xor     ah, ah ;~ 0192:2213
-loc_12215:	// 5131 
+loc_12215:	// 5140 
 	R(ADD(ah, *(raddr(ds,bx))));	// 5646 add     ah, [bx] ;~ 0192:2215
 	R(MOV(*(raddr(ds,bx)), ah));	// 5647 mov     [bx], ah ;~ 0192:2217
 	R(XOR(ah, ah));	// 5648 xor     ah, ah ;~ 0192:2219
 cs=0x192;eip=0x00221b; 	R(CALL(sub_12c57,0));	// 5649 call    sub_12C57 ;~ 0192:221B
-ret_192_221e:	// 5132 
+ret_192_221e:	// 5141 
 cs=0x192;eip=0x00221e; 		R(JMP(sub_13895));	// 5650 jmp     sub_13895 ;~ 0192:221E
 sub_12221:	// 5655 
 	R(MOV(ah, 0x0B));	// 5656 mov     ah, 0Bh ;~ 0192:2221
@@ -4843,13 +4851,13 @@ sub_12221:	// 5655
 	R(MOV(cl, ah));	// 5658 mov     cl, ah ;~ 0192:2227
 	R(MOV(ch, 0x0C));	// 5659 mov     ch, 0Ch ;~ 0192:2229
 	R(MOV(ah, 0x12));	// 5660 mov     ah, 12h ;~ 0192:222B
-loc_1222d:	// 5133 
+loc_1222d:	// 5142 
 	R(MOV(al, ah));	// 5663 mov     al, ah ;~ 0192:222D
 	R(MOV(ah, 0x32));	// 5664 mov     ah, 32h ; '2' ;~ 0192:222F
 cs=0x192;eip=0x002231; 	R(CALL(sub_12c57,0));	// 5665 call    sub_12C57 ;~ 0192:2231
-ret_192_2234:	// 5134 
+ret_192_2234:	// 5143 
 cs=0x192;eip=0x002234; 	R(CALL(sub_13895,0));	// 5666 call    sub_13895 ;~ 0192:2234
-ret_192_2237:	// 5135 
+ret_192_2237:	// 5144 
 	R(INC(cl));	// 5667 inc     cl ;~ 0192:2237
 	R(MOV(ah, al));	// 5668 mov     ah, al ;~ 0192:2239
 	R(DEC(ah));	// 5669 dec     ah ;~ 0192:223B
@@ -4858,7 +4866,7 @@ cs=0x192;eip=0x00223f; 	R(RETN);	// 5671 retn ;~ 0192:223F
 sub_12240:	// 5678 
 	R(MOV(ah, byte_1f11d));	// 5679 mov     ah, byte_1F11D ;~ 0192:2240
 	R(MOV(bx, offset(seg000,byte_1e057)));	// 5680 mov     bx, offset byte_1E057 ;~ 0192:2244
-loc_12247:	// 5136 
+loc_12247:	// 5145 
 	R(CMP(ah, *(raddr(ds,bx))));	// 5683 cmp     ah, [bx] ;~ 0192:2247
 cs=0x192;eip=0x002249; 		R(JZ(loc_12273));	// 5684 jz      short loc_12273 ;~ 0192:2249
 	R(MOV(al, ah));	// 5685 mov     al, ah ;~ 0192:224B
@@ -4868,10 +4876,10 @@ cs=0x192;eip=0x002252; 		R(JZ(loc_12259));	// 5688 jz      short loc_12259 ;~ 01
 	R(MOV(ah, al));	// 5689 mov     ah, al ;~ 0192:2254
 	R(INC(bx));	// 5690 inc     bx ;~ 0192:2256
 cs=0x192;eip=0x002257; 		R(JMP(loc_12247));	// 5691 jmp     short loc_12247 ;~ 0192:2257
-loc_12259:	// 5137 
+loc_12259:	// 5146 
 	R(MOV(ah, byte_1f11d));	// 5695 mov     ah, byte_1F11D ;~ 0192:2259
 	R(MOV(bx, offset(seg000,unk_1e050)));	// 5696 mov     bx, offset unk_1E050 ;~ 0192:225D
-loc_12260:	// 5138 
+loc_12260:	// 5147 
 	R(CMP(ah, *(raddr(ds,bx))));	// 5699 cmp     ah, [bx] ;~ 0192:2260
 cs=0x192;eip=0x002262; 		R(JZ(loc_1229b));	// 5700 jz      short loc_1229B ;~ 0192:2262
 	R(MOV(al, ah));	// 5701 mov     al, ah ;~ 0192:2264
@@ -4879,71 +4887,71 @@ cs=0x192;eip=0x002262; 		R(JZ(loc_1229b));	// 5700 jz      short loc_1229B ;~ 01
 	R(CMP(ah, 0x0FF));	// 5703 cmp     ah, 0FFh ;~ 0192:2268
 cs=0x192;eip=0x00226b; 		R(JNZ(loc_1226e));	// 5704 jnz     short loc_1226E ;~ 0192:226B
 cs=0x192;eip=0x00226d; 	R(RETN);	// 5705 retn ;~ 0192:226D
-loc_1226e:	// 5139 
+loc_1226e:	// 5148 
 	R(MOV(ah, al));	// 5709 mov     ah, al ;~ 0192:226E
 	R(INC(bx));	// 5710 inc     bx ;~ 0192:2270
 cs=0x192;eip=0x002271; 		R(JMP(loc_12260));	// 5711 jmp     short loc_12260 ;~ 0192:2271
-loc_12273:	// 5140 
+loc_12273:	// 5149 
 	R(MOV(bx, word_1f1da));	// 5715 mov     bx, word_1F1DA ;~ 0192:2273
 	R(MOV(ah, bh));	// 5716 mov     ah, bh ;~ 0192:2277
 	R(CMP(ah, 0x14));	// 5717 cmp     ah, 14h ;~ 0192:2279
 cs=0x192;eip=0x00227c; 		R(JC(loc_1227f));	// 5718 jb      short loc_1227F ;~ 0192:227C
 cs=0x192;eip=0x00227e; 	R(RETN);	// 5719 retn ;~ 0192:227E
-loc_1227f:	// 5141 
+loc_1227f:	// 5150 
 	R(MOV(bx, word_1f1dc));	// 5723 mov     bx, word_1F1DC ;~ 0192:227F
 	R(MOV(ah, bh));	// 5724 mov     ah, bh ;~ 0192:2283
 	R(CMP(ah, 2));	// 5725 cmp     ah, 2 ;~ 0192:2285
 cs=0x192;eip=0x002288; 		R(JNC(loc_1228b));	// 5726 jnb     short loc_1228B ;~ 0192:2288
 cs=0x192;eip=0x00228a; 	R(RETN);	// 5727 retn ;~ 0192:228A
-loc_1228b:	// 5142 
+loc_1228b:	// 5151 
 	R(CMP(ah, 0x0A));	// 5731 cmp     ah, 0Ah ;~ 0192:228B
 cs=0x192;eip=0x00228e; 		R(JC(loc_12294));	// 5732 jb      short loc_12294 ;~ 0192:228E
 	R(MOV(bh, 4));	// 5733 mov     bh, 4 ;~ 0192:2290
 cs=0x192;eip=0x002292; 		R(JMP(loc_12296));	// 5734 jmp     short loc_12296 ;~ 0192:2292
-loc_12294:	// 5143 
+loc_12294:	// 5152 
 	R(MOV(bh, 0x10));	// 5738 mov     bh, 10h ;~ 0192:2294
-loc_12296:	// 5144 
+loc_12296:	// 5153 
 	R(MOV(word_1f1dc, bx));	// 5741 mov     word_1F1DC, bx ;~ 0192:2296
 cs=0x192;eip=0x00229a; 	R(RETN);	// 5742 retn ;~ 0192:229A
-loc_1229b:	// 5145 
+loc_1229b:	// 5154 
 	R(MOV(bx, word_1f1da));	// 5746 mov     bx, word_1F1DA ;~ 0192:229B
 	R(MOV(ah, bh));	// 5747 mov     ah, bh ;~ 0192:229F
 	R(CMP(ah, 0x14));	// 5748 cmp     ah, 14h ;~ 0192:22A1
 cs=0x192;eip=0x0022a4; 		R(JNC(loc_122a7));	// 5749 jnb     short loc_122A7 ;~ 0192:22A4
 cs=0x192;eip=0x0022a6; 	R(RETN);	// 5750 retn ;~ 0192:22A6
-loc_122a7:	// 5146 
+loc_122a7:	// 5155 
 	R(MOV(bx, word_1f1dc));	// 5754 mov     bx, word_1F1DC ;~ 0192:22A7
 	R(MOV(ah, bh));	// 5755 mov     ah, bh ;~ 0192:22AB
 	R(CMP(ah, 2));	// 5756 cmp     ah, 2 ;~ 0192:22AD
 cs=0x192;eip=0x0022b0; 		R(JNC(loc_122b3));	// 5757 jnb     short loc_122B3 ;~ 0192:22B0
 cs=0x192;eip=0x0022b2; 	R(RETN);	// 5758 retn ;~ 0192:22B2
-loc_122b3:	// 5147 
+loc_122b3:	// 5156 
 	R(CMP(ah, 0x0A));	// 5762 cmp     ah, 0Ah ;~ 0192:22B3
 cs=0x192;eip=0x0022b6; 		R(JC(loc_122be));	// 5763 jb      short loc_122BE ;~ 0192:22B6
 	R(MOV(ah, 4));	// 5764 mov     ah, 4 ;~ 0192:22B8
 	R(MOV(bh, ah));	// 5765 mov     bh, ah ;~ 0192:22BA
 cs=0x192;eip=0x0022bc; 		R(JMP(loc_122c2));	// 5766 jmp     short loc_122C2 ;~ 0192:22BC
-loc_122be:	// 5148 
+loc_122be:	// 5157 
 	R(MOV(ah, 0x10));	// 5770 mov     ah, 10h ;~ 0192:22BE
 	R(MOV(bh, ah));	// 5771 mov     bh, ah ;~ 0192:22C0
-loc_122c2:	// 5149 
+loc_122c2:	// 5158 
 	R(MOV(word_1f1dc, bx));	// 5774 mov     word_1F1DC, bx ;~ 0192:22C2
 cs=0x192;eip=0x0022c6; 	R(RETN);	// 5775 retn ;~ 0192:22C6
 sub_122c7:	// 5782 
 	R(MOV(bl, 7));	// 5783 mov     bl, 7 ;~ 0192:22C7
 	R(MOV(dl, 8));	// 5784 mov     dl, 8 ;~ 0192:22C9
 cs=0x192;eip=0x0022cb; 	R(CALL(sub_11385,0));	// 5785 call    sub_11385 ;~ 0192:22CB
-ret_192_22ce:	// 5150 
+ret_192_22ce:	// 5159 
 cs=0x192;eip=0x0022ce; 		R(JC(loc_122d1));	// 5786 jb      short loc_122D1 ;~ 0192:22CE
 cs=0x192;eip=0x0022d0; 	R(RETN);	// 5787 retn ;~ 0192:22D0
-loc_122d1:	// 5151 
+loc_122d1:	// 5160 
 	R(OR(*(raddr(ds,si)), 0x10));	// 5791 or      byte ptr [si], 10h ;~ 0192:22D1
 	R(MOV(bx, offset(seg000,table1_13)));	// 5792 mov     bx, offset table1_13 ;~ 0192:22D4
 cs=0x192;eip=0x0022d7; 	R(CALL(settable1,0));	// 5793 call    settable1 ;~ 0192:22D7
-ret_192_22da:	// 5152 
+ret_192_22da:	// 5161 
 	R(MOV(bx, offset(seg000,byte_1e02a)));	// 5794 mov     bx, offset byte_1E02A ;~ 0192:22DA
 cs=0x192;eip=0x0022dd; 	R(CALL(sub_122fd,0));	// 5795 call    sub_122FD ;~ 0192:22DD
-ret_192_22e0:	// 5153 
+ret_192_22e0:	// 5162 
 	R(MOV(ah, *(db*)(((db*)&word_1f12a))));	// 5796 mov     ah, byte ptr word_1F12A ;~ 0192:22E0
 	R(INC(ah));	// 5797 inc     ah ;~ 0192:22E4
 	R(MOV(*(db*)(((db*)&word_1f12a)), ah));	// 5798 mov     byte ptr word_1F12A, ah ;~ 0192:22E6
@@ -4951,11 +4959,11 @@ sub_122ea:	// 5805
 	R(MOV(ah, *(db*)(((db*)&word_1f12a))));	// 5807 mov     ah, byte ptr word_1F12A ;~ 0192:22EA
 	R(MOV(dx, 0x64));	// 5808 mov     dx, 64h ; 'd' ;~ 0192:22EE
 cs=0x192;eip=0x0022f1; 	R(CALL(sub_11139,0));	// 5809 call    sub_11139 ;~ 0192:22F1
-ret_192_22f4:	// 5154 
+ret_192_22f4:	// 5163 
 	R(MOV(cx, 0x1505));	// 5810 mov     cx, 1505h ;~ 0192:22F4
 	R(MOV(ah, 5));	// 5811 mov     ah, 5 ;~ 0192:22F7
 cs=0x192;eip=0x0022f9; 	R(CALL(sub_13388,0));	// 5812 call    sub_13388 ;~ 0192:22F9
-ret_192_22fc:	// 5155 
+ret_192_22fc:	// 5164 
 cs=0x192;eip=0x0022fc; 	R(RETN);	// 5813 retn ;~ 0192:22FC
 sub_122fd:	// 5820 
 	R(MOV(dx, 4));	// 5822 mov     dx, 4 ;~ 0192:22FD
@@ -4963,14 +4971,14 @@ sub_122fd:	// 5820
 	R(MOV(ch, ah));	// 5824 mov     ch, ah ;~ 0192:2302
 	R(INC(bx));	// 5825 inc     bx ;~ 0192:2304
 	R(MOV(ah, byte_1f11d));	// 5826 mov     ah, byte_1F11D ;~ 0192:2305
-loc_12309:	// 5156 
+loc_12309:	// 5165 
 	R(CMP(ah, *(raddr(ds,bx))));	// 5829 cmp     ah, [bx] ;~ 0192:2309
 cs=0x192;eip=0x00230b; 		R(JZ(loc_12314));	// 5830 jz      short loc_12314 ;~ 0192:230B
 	R(ADD(bx, dx));	// 5831 add     bx, dx ;~ 0192:230D
 	R(DEC(ch));	// 5832 dec     ch ;~ 0192:230F
 cs=0x192;eip=0x002311; 		R(JNZ(loc_12309));	// 5833 jnz     short loc_12309 ;~ 0192:2311
 cs=0x192;eip=0x002313; 	R(RETN);	// 5834 retn ;~ 0192:2313
-loc_12314:	// 5157 
+loc_12314:	// 5166 
 	R(INC(bx));	// 5838 inc     bx ;~ 0192:2314
 	R(XOR(ah, ah));	// 5839 xor     ah, ah ;~ 0192:2315
 	R(MOV(*(raddr(ds,bx)), ah));	// 5840 mov     [bx], ah ;~ 0192:2317
@@ -4982,39 +4990,39 @@ cs=0x192;eip=0x00231f; 		R(JMP(loc_12326));	// 5851 jmp     short loc_12326 ;~ 0
 sub_12321:	// 5858 
 	R(MOV(ah, 0x15));	// 5859 mov     ah, 15h ;~ 0192:2321
 	R(MOV(bx, offset(seg000,byte_1dff9)));	// 5860 mov     bx, offset byte_1DFF9 ;~ 0192:2323
-loc_12326:	// 5158 
+loc_12326:	// 5167 
 	R(MOV(byte_1f3cd, ah));	// 5863 mov     byte_1F3CD, ah ;~ 0192:2326
 	R(PUSH(bx));	// 5864 push    bx ;~ 0192:232A
 cs=0x192;eip=0x00232b; 	R(CALL(sub_11459,0));	// 5865 call    sub_11459 ;~ 0192:232B
-ret_192_232e:	// 5159 
+ret_192_232e:	// 5168 
 	R(POP(bx));	// 5866 pop     bx ;~ 0192:232E
 cs=0x192;eip=0x00232f; 		R(JC(loc_12332));	// 5867 jb      short loc_12332 ;~ 0192:232F
 cs=0x192;eip=0x002331; 	R(RETN);	// 5868 retn ;~ 0192:2331
-loc_12332:	// 5160 
+loc_12332:	// 5169 
 	R(MOV(ah, *(raddr(ds,bx))));	// 5872 mov     ah, [bx] ;~ 0192:2332
 	R(MOV(ch, ah));	// 5873 mov     ch, ah ;~ 0192:2334
 	R(INC(bx));	// 5874 inc     bx ;~ 0192:2336
 	R(MOV(ah, byte_1f11d));	// 5875 mov     ah, byte_1F11D ;~ 0192:2337
 	R(MOV(dx, 4));	// 5876 mov     dx, 4 ;~ 0192:233B
-loc_1233e:	// 5161 
+loc_1233e:	// 5170 
 	R(CMP(ah, *(raddr(ds,bx))));	// 5879 cmp     ah, [bx] ;~ 0192:233E
 cs=0x192;eip=0x002340; 		R(JZ(loc_12349));	// 5880 jz      short loc_12349 ;~ 0192:2340
 	R(ADD(bx, dx));	// 5881 add     bx, dx ;~ 0192:2342
 	R(DEC(ch));	// 5882 dec     ch ;~ 0192:2344
 cs=0x192;eip=0x002346; 		R(JNZ(loc_1233e));	// 5883 jnz     short loc_1233E ;~ 0192:2346
 cs=0x192;eip=0x002348; 	R(RETN);	// 5884 retn ;~ 0192:2348
-loc_12349:	// 5162 
+loc_12349:	// 5171 
 	R(INC(bx));	// 5888 inc     bx ;~ 0192:2349
 	R(MOV(ah, *(raddr(ds,bx))));	// 5889 mov     ah, [bx] ;~ 0192:234A
 	R(OR(ah, ah));	// 5890 or      ah, ah ;~ 0192:234C
 cs=0x192;eip=0x00234e; 		R(JNZ(loc_12351));	// 5891 jnz     short loc_12351 ;~ 0192:234E
 cs=0x192;eip=0x002350; 	R(RETN);	// 5892 retn ;~ 0192:2350
-loc_12351:	// 5163 
+loc_12351:	// 5172 
 cs=0x192;eip=0x002351; 	R(CALL(sub_112a7,0));	// 5896 call    sub_112A7 ;~ 0192:2351
-ret_192_2354:	// 5164 
+ret_192_2354:	// 5173 
 cs=0x192;eip=0x002354; 		R(JNC(loc_12357));	// 5897 jnb     short loc_12357 ;~ 0192:2354
 cs=0x192;eip=0x002356; 	R(RETN);	// 5898 retn ;~ 0192:2356
-loc_12357:	// 5165 
+loc_12357:	// 5174 
 	R(MOV(ah, byte_1f3cd));	// 5902 mov     ah, byte_1F3CD ;~ 0192:2357
 	R(MOV(ch, ah));	// 5903 mov     ch, ah ;~ 0192:235B
 	R(MOV(cl, 0));	// 5904 mov     cl, 0 ;~ 0192:235D
@@ -5027,7 +5035,7 @@ loc_12357:	// 5165
 	R(MOV(bl, 0x20));	// 5911 mov     bl, 20h ; ' ' ;~ 0192:236A
 cs=0x192;eip=0x00236c; 		R(JNZ(loc_12370));	// 5912 jnz     short loc_12370 ;~ 0192:236C
 	R(MOV(bl, 0x80));	// 5913 mov     bl, 80h ; '€' ;~ 0192:236E
-loc_12370:	// 5166 
+loc_12370:	// 5175 
 cs=0x192;eip=0x002370; 		R(JMP(sub_11274));	// 5916 jmp     sub_11274 ;~ 0192:2370
 sub_12373:	// 5923 
 	R(XOR(ah, ah));	// 5925 xor     ah, ah ;~ 0192:2373
@@ -5038,21 +5046,21 @@ sub_12373:	// 5923
 	R(MOV(ch, 0x17));	// 5930 mov     ch, 17h ;~ 0192:237F
 	R(MOV(cl, 0x13));	// 5931 mov     cl, 13h ;~ 0192:2381
 cs=0x192;eip=0x002383; 		R(JMP(sub_13388));	// 5932 jmp     sub_13388 ;~ 0192:2383
-loc_12386:	// 5167 
+loc_12386:	// 5176 
 	R(MOV(bl, 4));	// 5938 mov     bl, 4 ;~ 0192:2386
 	R(MOV(dl, 4));	// 5939 mov     dl, 4 ;~ 0192:2388
 cs=0x192;eip=0x00238a; 	R(CALL(sub_11385,0));	// 5940 call    sub_11385 ;~ 0192:238A
-ret_192_238d:	// 5168 
+ret_192_238d:	// 5177 
 cs=0x192;eip=0x00238d; 		R(JC(loc_12390));	// 5941 jb      short loc_12390 ;~ 0192:238D
 cs=0x192;eip=0x00238f; 	R(RETN);	// 5942 retn ;~ 0192:238F
-loc_12390:	// 5169 
+loc_12390:	// 5178 
 	R(OR(*(raddr(ds,si)), 0x10));	// 5946 or      byte ptr [si], 10h ;~ 0192:2390
 	R(MOV(bx, offset(seg000,table1_13)));	// 5947 mov     bx, offset table1_13 ;~ 0192:2393
 cs=0x192;eip=0x002396; 	R(CALL(settable1,0));	// 5948 call    settable1 ;~ 0192:2396
-ret_192_2399:	// 5170 
+ret_192_2399:	// 5179 
 	R(MOV(bx, offset(seg000,byte_1dff9)));	// 5949 mov     bx, offset byte_1DFF9 ;~ 0192:2399
 cs=0x192;eip=0x00239c; 	R(CALL(sub_122fd,0));	// 5950 call    sub_122FD ;~ 0192:239C
-ret_192_239f:	// 5171 
+ret_192_239f:	// 5180 
 	R(MOV(ah, 0x16));	// 5951 mov     ah, 16h ;~ 0192:239F
 	R(MOV(byte_1f125, ah));	// 5952 mov     byte_1F125, ah ;~ 0192:23A1
 cs=0x192;eip=0x0023a5; 		R(JMP(sub_1361d));	// 5953 jmp     sub_1361D ;~ 0192:23A5
@@ -5061,12 +5069,12 @@ sub_123a8:	// 5958
 	R(TEST(*(raddr(ds,bx)), 0x40));	// 5960 test    byte ptr [bx], 40h ;~ 0192:23AB
 cs=0x192;eip=0x0023ae; 		R(JNZ(loc_123b1));	// 5961 jnz     short loc_123B1 ;~ 0192:23AE
 cs=0x192;eip=0x0023b0; 	R(RETN);	// 5962 retn ;~ 0192:23B0
-loc_123b1:	// 5172 
+loc_123b1:	// 5181 
 	R(AND(*(raddr(ds,bx)), 0x0BF));	// 5966 and     byte ptr [bx], 0BFh ;~ 0192:23B1
 	R(DEC(byte_1f124));	// 5967 dec     byte_1F124 ;~ 0192:23B4
 cs=0x192;eip=0x0023b8; 		R(JZ(loc_123bb));	// 5968 jz      short loc_123BB ;~ 0192:23B8
 cs=0x192;eip=0x0023ba; 	R(RETN);	// 5969 retn ;~ 0192:23BA
-loc_123bb:	// 5173 
+loc_123bb:	// 5182 
 	R(MOV(ah, 8));	// 5973 mov     ah, 8 ;~ 0192:23BB
 	R(MOV(byte_1f124, ah));	// 5974 mov     byte_1F124, ah ;~ 0192:23BD
 	R(MOV(bx, offset(seg000,byte_1f125)));	// 5975 mov     bx, offset byte_1F125 ;~ 0192:23C1
@@ -5075,69 +5083,69 @@ cs=0x192;eip=0x0023c7; 		R(JZ(loc_123d0));	// 5977 jz      short loc_123D0 ;~ 01
 	R(DEC(*(raddr(ds,bx))));	// 5978 dec     byte ptr [bx] ;~ 0192:23C9
 cs=0x192;eip=0x0023cb; 		R(JZ(loc_123d0));	// 5979 jz      short loc_123D0 ;~ 0192:23CB
 cs=0x192;eip=0x0023cd; 		R(JMP(sub_1361d));	// 5980 jmp     sub_1361D ;~ 0192:23CD
-loc_123d0:	// 5174 
+loc_123d0:	// 5183 
 	R(MOV(ah, 0x16));	// 5985 mov     ah, 16h ;~ 0192:23D0
 	R(MOV(*(raddr(ds,bx)), ah));	// 5986 mov     [bx], ah ;~ 0192:23D2
 cs=0x192;eip=0x0023d4; 	R(CALL(sub_1361d,0));	// 5987 call    sub_1361D ;~ 0192:23D4
-ret_192_23d7:	// 5175 
+ret_192_23d7:	// 5184 
 cs=0x192;eip=0x0023d7; 		R(JMP(sub_11506));	// 5988 jmp     sub_11506 ;~ 0192:23D7
 sub_123da:	// 5995 
 	R(MOV(di, offset(seg000,byte_1d3dc)));	// 5996 mov     di, offset byte_1D3DC ;~ 0192:23DA
 	R(MOV(dx, 3));	// 5997 mov     dx, 3 ;~ 0192:23DD
-loc_123e0:	// 5176 
+loc_123e0:	// 5185 
 	R(ADD(di, dx));	// 6000 add     di, dx ;~ 0192:23E0
 	R(TEST(*(raddr(ds,di)), 0x80));	// 6001 test    byte ptr [di], 80h ;~ 0192:23E2
 cs=0x192;eip=0x0023e5; 		R(JZ(loc_123e8));	// 6002 jz      short loc_123E8 ;~ 0192:23E5
 cs=0x192;eip=0x0023e7; 	R(RETN);	// 6003 retn ;~ 0192:23E7
-loc_123e8:	// 5177 
+loc_123e8:	// 5186 
 	R(AND(*(raddr(ds,di+1)), 0x7F));	// 6007 and     byte ptr [di+1], 7Fh ;~ 0192:23E8
 	R(AND(*(raddr(ds,di+1)), 0x0BF));	// 6008 and     byte ptr [di+1], 0BFh ;~ 0192:23EC
 cs=0x192;eip=0x0023f0; 		R(JMP(loc_123e0));	// 6009 jmp     short loc_123E0 ;~ 0192:23F0
-loc_123f2:	// 5178 
+loc_123f2:	// 5187 
 cs=0x192;eip=0x0023f2; 	R(CALL(sub_1244e,0));	// 6015 call    sub_1244E ;~ 0192:23F2
-ret_192_23f5:	// 5179 
+ret_192_23f5:	// 5188 
 	R(TEST(*(raddr(ds,di+1)), 0x80));	// 6016 test    byte ptr [di+1], 80h ;~ 0192:23F5
 cs=0x192;eip=0x0023f9; 		R(JZ(loc_123fc));	// 6017 jz      short loc_123FC ;~ 0192:23F9
 cs=0x192;eip=0x0023fb; 	R(RETN);	// 6018 retn ;~ 0192:23FB
-loc_123fc:	// 5180 
+loc_123fc:	// 5189 
 	R(MOV(ah, cl));	// 6022 mov     ah, cl ;~ 0192:23FC
 	R(MOV(*(db*)(((db*)&word_1f12f)), ah));	// 6023 mov     byte ptr word_1F12F, ah ;~ 0192:23FE
 	R(MOV(ah, *(db*)(((db*)&word_1f12f)+1)));	// 6024 mov     ah, byte ptr word_1F12F+1 ;~ 0192:2402
 	R(OR(ah, ah));	// 6025 or      ah, ah ;~ 0192:2406
 cs=0x192;eip=0x002408; 		R(JNZ(loc_1240d));	// 6026 jnz     short loc_1240D ;~ 0192:2408
 cs=0x192;eip=0x00240a; 	R(CALL(sub_12469,0));	// 6027 call    sub_12469 ;~ 0192:240A
-loc_1240d:	// 5181 
+loc_1240d:	// 5190 
 	R(MOV(bh, *(raddr(ds,di+2))));	// 6030 mov     bh, [di+2] ;~ 0192:240D
 	R(MOV(bl, bh));	// 6031 mov     bl, bh ;~ 0192:2410
 cs=0x192;eip=0x002412; 	R(CALL(sub_11d99,0));	// 6032 call    sub_11D99 ;~ 0192:2412
-ret_192_2415:	// 5182 
+ret_192_2415:	// 5191 
 cs=0x192;eip=0x002415; 		R(JC(loc_12418));	// 6033 jb      short loc_12418 ;~ 0192:2415
 cs=0x192;eip=0x002417; 	R(RETN);	// 6034 retn ;~ 0192:2417
-loc_12418:	// 5183 
+loc_12418:	// 5192 
 	R(MOV(bh, *(raddr(ds,di+1))));	// 6038 mov     bh, [di+1] ;~ 0192:2418
 	R(MOV(bl, bh));	// 6039 mov     bl, bh ;~ 0192:241B
 	R(INC(bl));	// 6040 inc     bl ;~ 0192:241D
 cs=0x192;eip=0x00241f; 	R(CALL(sub_11da7,m2c::kloc_11db2));	// 6041 call    loc_11DB2 ;~ 0192:241F
-ret_192_2422:	// 5184 
+ret_192_2422:	// 5193 
 cs=0x192;eip=0x002422; 		R(JC(loc_12425));	// 6042 jb      short loc_12425 ;~ 0192:2422
 cs=0x192;eip=0x002424; 	R(RETN);	// 6043 retn ;~ 0192:2424
-loc_12425:	// 5185 
+loc_12425:	// 5194 
 	R(MOV(cl, *(raddr(ds,di+1))));	// 6047 mov     cl, [di+1] ;~ 0192:2425
 	R(OR(*(raddr(ds,di+1)), 0x80));	// 6048 or      byte ptr [di+1], 80h ;~ 0192:2428
 	R(MOV(ch, *(raddr(ds,di+2))));	// 6049 mov     ch, [di+2] ;~ 0192:242C
 	R(XOR(ah, ah));	// 6050 xor     ah, ah ;~ 0192:242F
 cs=0x192;eip=0x002431; 	R(CALL(sub_12c57,0));	// 6051 call    sub_12C57 ;~ 0192:2431
-ret_192_2434:	// 5186 
+ret_192_2434:	// 5195 
 cs=0x192;eip=0x002434; 	R(CALL(sub_13895,0));	// 6052 call    sub_13895 ;~ 0192:2434
-ret_192_2437:	// 5187 
+ret_192_2437:	// 5196 
 	R(MOV(cx, word_1f12f));	// 6053 mov     cx, word_1F12F ;~ 0192:2437
 	R(MOV(ch, 0));	// 6054 mov     ch, 0 ;~ 0192:243B
 cs=0x192;eip=0x00243d; 	R(CALL(sub_133c3,0));	// 6055 call    sub_133C3 ;~ 0192:243D
-ret_192_2440:	// 5188 
+ret_192_2440:	// 5197 
 	R(MOV(bx, offset(seg000,byte_1f11b)));	// 6056 mov     bx, offset byte_1F11B ;~ 0192:2440
 	R(INC(*(raddr(ds,bx))));	// 6057 inc     byte ptr [bx] ;~ 0192:2443
 cs=0x192;eip=0x002445; 	R(CALL(sub_12373,0));	// 6058 call    sub_12373 ;~ 0192:2445
-ret_192_2448:	// 5189 
+ret_192_2448:	// 5198 
 	R(MOV(bx, offset(seg000,table1_13)));	// 6059 mov     bx, offset table1_13 ;~ 0192:2448
 cs=0x192;eip=0x00244b; 		R(JMP(settable1));	// 6060 jmp     settable1 ;~ 0192:244B
 sub_1244e:	// 6065 
@@ -5145,12 +5153,12 @@ sub_1244e:	// 6065
 	R(MOV(cl, 0x0FF));	// 6067 mov     cl, 0FFh ;~ 0192:2452
 	R(MOV(di, offset(seg000,byte_1d3dc)));	// 6068 mov     di, offset byte_1D3DC ;~ 0192:2454
 	R(MOV(dx, 3));	// 6069 mov     dx, 3 ;~ 0192:2457
-loc_1245a:	// 5190 
+loc_1245a:	// 5199 
 	R(ADD(di, dx));	// 6072 add     di, dx ;~ 0192:245A
 	R(TEST(*(raddr(ds,di)), 0x80));	// 6073 test    byte ptr [di], 80h ;~ 0192:245C
 cs=0x192;eip=0x00245f; 		R(JZ(loc_12462));	// 6074 jz      short loc_12462 ;~ 0192:245F
 cs=0x192;eip=0x002461; 	R(RETN);	// 6075 retn ;~ 0192:2461
-loc_12462:	// 5191 
+loc_12462:	// 5200 
 	R(INC(cl));	// 6079 inc     cl ;~ 0192:2462
 	R(CMP(ah, *(raddr(ds,di))));	// 6080 cmp     ah, [di] ;~ 0192:2464
 cs=0x192;eip=0x002466; 		R(JNZ(loc_1245a));	// 6081 jnz     short loc_1245A ;~ 0192:2466
@@ -5161,19 +5169,19 @@ sub_12469:	// 6089
 	R(MOV(ah, 0x5A));	// 6092 mov     ah, 5Ah ; 'Z' ;~ 0192:246F
 	R(MOV(*(db*)(((db*)&word_1f12f)+1), ah));	// 6093 mov     byte ptr word_1F12F+1, ah ;~ 0192:2471
 cs=0x192;eip=0x002475; 	R(CALL(sub_12c57,0));	// 6094 call    sub_12C57 ;~ 0192:2475
-ret_192_2478:	// 5192 
+ret_192_2478:	// 5201 
 cs=0x192;eip=0x002478; 		R(JMP(sub_13895));	// 6095 jmp     sub_13895 ;~ 0192:2478
-loc_1247b:	// 5193 
+loc_1247b:	// 5202 
 	R(MOV(ah, byte_1f3cf));	// 6101 mov     ah, byte_1F3CF ;~ 0192:247B
 	R(CMP(ah, 0x0FF));	// 6102 cmp     ah, 0FFh ;~ 0192:247F
 cs=0x192;eip=0x002482; 		R(JNZ(loc_12485));	// 6103 jnz     short loc_12485 ;~ 0192:2482
 cs=0x192;eip=0x002484; 	R(RETN);	// 6104 retn ;~ 0192:2484
-loc_12485:	// 5194 
+loc_12485:	// 5203 
 cs=0x192;eip=0x002485; 	R(CALL(sub_124b9,0));	// 6108 call    sub_124B9 ;~ 0192:2485
-ret_192_2488:	// 5195 
+ret_192_2488:	// 5204 
 cs=0x192;eip=0x002488; 		R(JNZ(loc_1248b));	// 6109 jnz     short loc_1248B ;~ 0192:2488
 cs=0x192;eip=0x00248a; 	R(RETN);	// 6110 retn ;~ 0192:248A
-loc_1248b:	// 5196 
+loc_1248b:	// 5205 
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 6114 mov     ah, byte ptr word_1F105+1 ;~ 0192:248B
 	R(CMP(ah, 0x0FF));	// 6115 cmp     ah, 0FFh ;~ 0192:248F
 cs=0x192;eip=0x002492; 		R(JNZ(loc_124a3));	// 6116 jnz     short loc_124A3 ;~ 0192:2492
@@ -5181,25 +5189,25 @@ cs=0x192;eip=0x002492; 		R(JNZ(loc_124a3));	// 6116 jnz     short loc_124A3 ;~ 0
 	R(OR(ah, ah));	// 6118 or      ah, ah ;~ 0192:2498
 cs=0x192;eip=0x00249a; 		R(JNZ(loc_1249d));	// 6119 jnz     short loc_1249D ;~ 0192:249A
 cs=0x192;eip=0x00249c; 	R(RETN);	// 6120 retn ;~ 0192:249C
-loc_1249d:	// 5197 
+loc_1249d:	// 5206 
 	R(DEC(ah));	// 6124 dec     ah ;~ 0192:249D
 	R(MOV(*(db*)(((db*)&word_1f12a)), ah));	// 6125 mov     byte ptr word_1F12A, ah ;~ 0192:249F
-loc_124a3:	// 5198 
+loc_124a3:	// 5207 
 cs=0x192;eip=0x0024a3; 	R(CALL(sub_122ea,0));	// 6128 call    sub_122EA ;~ 0192:24A3
-ret_192_24a6:	// 5199 
+ret_192_24a6:	// 5208 
 	R(MOV(ah, byte_1f3cf));	// 6129 mov     ah, byte_1F3CF ;~ 0192:24A6
 cs=0x192;eip=0x0024aa; 	R(CALL(sub_1268b,0));	// 6130 call    sub_1268B ;~ 0192:24AA
-ret_192_24ad:	// 5200 
+ret_192_24ad:	// 5209 
 cs=0x192;eip=0x0024ad; 	R(CALL(sub_1368e,0));	// 6131 call    sub_1368E ;~ 0192:24AD
-ret_192_24b0:	// 5201 
+ret_192_24b0:	// 5210 
 cs=0x192;eip=0x0024b0; 	R(CALL(sub_124c9,0));	// 6132 call    sub_124C9 ;~ 0192:24B0
-ret_192_24b3:	// 5202 
+ret_192_24b3:	// 5211 
 	R(MOV(bx, offset(seg000,table1_13)));	// 6133 mov     bx, offset table1_13 ;~ 0192:24B3
 cs=0x192;eip=0x0024b6; 		R(JMP(settable1));	// 6134 jmp     settable1 ;~ 0192:24B6
 sub_124b9:	// 6139 
 	R(MOV(dx, 8));	// 6140 mov     dx, 8 ;~ 0192:24B9
 cs=0x192;eip=0x0024bc; 	R(CALL(sub_11139,0));	// 6141 call    sub_11139 ;~ 0192:24BC
-ret_192_24bf:	// 5203 
+ret_192_24bf:	// 5212 
 	R(MOV(dx, offset(seg000,byte_1f480)));	// 6142 mov     dx, offset byte_1F480 ;~ 0192:24BF
 	R(ADD(bx, dx));	// 6143 add     bx, dx ;~ 0192:24C2
 	R(MOV(ah, 0x0FF));	// 6144 mov     ah, 0FFh ;~ 0192:24C4
@@ -5208,20 +5216,20 @@ cs=0x192;eip=0x0024c8; 	R(RETN);	// 6146 retn ;~ 0192:24C8
 sub_124c9:	// 6153 
 	R(MOV(bx, word_1f103));	// 6154 mov     bx, word_1F103 ;~ 0192:24C9
 cs=0x192;eip=0x0024cd; 	R(CALL(sub_124e2,0));	// 6155 call    sub_124E2 ;~ 0192:24CD
-ret_192_24d0:	// 5204 
+ret_192_24d0:	// 5213 
 	R(MOV(bx, *(dw*)(((db*)&word_1f103)+1)));	// 6156 mov     bx, word_1F103+1 ;~ 0192:24D0
 cs=0x192;eip=0x0024d4; 	R(CALL(sub_124e2,0));	// 6157 call    sub_124E2 ;~ 0192:24D4
-ret_192_24d7:	// 5205 
+ret_192_24d7:	// 5214 
 	R(MOV(bx, word_1f105));	// 6158 mov     bx, word_1F105 ;~ 0192:24D7
 cs=0x192;eip=0x0024db; 	R(CALL(sub_124e2,0));	// 6159 call    sub_124E2 ;~ 0192:24DB
-ret_192_24de:	// 5206 
+ret_192_24de:	// 5215 
 	R(MOV(bx, *(dw*)(((db*)&word_1f105)+1)));	// 6160 mov     bx, word_1F105+1 ;~ 0192:24DE
 sub_124e2:	// 6167 
 	R(MOV(ah, bl));	// 6169 mov     ah, bl ;~ 0192:24E2
 	R(TEST(ah, 0x80));	// 6170 test    ah, 80h ;~ 0192:24E4
 cs=0x192;eip=0x0024e7; 		R(JZ(loc_124ea));	// 6171 jz      short loc_124EA ;~ 0192:24E7
 cs=0x192;eip=0x0024e9; 	R(RETN);	// 6172 retn ;~ 0192:24E9
-loc_124ea:	// 5207 
+loc_124ea:	// 5216 
 	R(MOV(bh, 0));	// 6176 mov     bh, 0 ;~ 0192:24EA
 	R(ADD(bx, bx));	// 6177 add     bx, bx ;~ 0192:24EC
 	R(ADD(bx, bx));	// 6178 add     bx, bx ;~ 0192:24EE
@@ -5233,19 +5241,19 @@ loc_124ea:	// 5207
 	R(MOV(cl, *(raddr(ds,di+3))));	// 6184 mov     cl, [di+3] ;~ 0192:24FD
 	R(MOV(ah, 4));	// 6185 mov     ah, 4 ;~ 0192:2500
 cs=0x192;eip=0x002502; 	R(CALL(sub_1147c,0));	// 6186 call    sub_1147C ;~ 0192:2502
-ret_192_2505:	// 5208 
+ret_192_2505:	// 5217 
 cs=0x192;eip=0x002505; 		R(JNC(loc_12508));	// 6187 jnb     short loc_12508 ;~ 0192:2505
 cs=0x192;eip=0x002507; 	R(RETN);	// 6188 retn ;~ 0192:2507
-loc_12508:	// 5209 
+loc_12508:	// 5218 
 	R(OR(*(raddr(ds,di)), 0x10));	// 6192 or      byte ptr [di], 10h ;~ 0192:2508
 	R(OR(ah, ah));	// 6193 or      ah, ah ;~ 0192:250B
 cs=0x192;eip=0x00250d; 	R(RETN);	// 6194 retn ;~ 0192:250D
-loc_1250e:	// 5210 
+loc_1250e:	// 5219 
 	R(MOV(ah, *(db*)(((db*)&word_1f1dc)+1)));	// 6200 mov     ah, byte ptr word_1F1DC+1 ;~ 0192:250E
 	R(CMP(ah, 8));	// 6201 cmp     ah, 8 ;~ 0192:2512
 cs=0x192;eip=0x002515; 		R(JNC(loc_12518));	// 6202 jnb     short loc_12518 ;~ 0192:2515
 cs=0x192;eip=0x002517; 	R(RETN);	// 6203 retn ;~ 0192:2517
-loc_12518:	// 5211 
+loc_12518:	// 5220 
 	R(MOV(ah, byte_1f115));	// 6207 mov     ah, byte_1F115 ;~ 0192:2518
 	R(TEST(ah, 0x10));	// 6208 test    ah, 10h ;~ 0192:251C
 	R(MOV(bx, offset(seg000,word_1f12a)+1));	// 6209 mov     bx, (offset word_1F12A+1) ;~ 0192:251F
@@ -5253,15 +5261,15 @@ cs=0x192;eip=0x002522; 		R(JNZ(loc_1253a));	// 6210 jnz     short loc_1253A ;~ 0
 	R(TEST(*(raddr(ds,bx)), 1));	// 6211 test    byte ptr [bx], 1 ;~ 0192:2524
 cs=0x192;eip=0x002527; 		R(JNZ(loc_1252a));	// 6212 jnz     short loc_1252A ;~ 0192:2527
 cs=0x192;eip=0x002529; 	R(RETN);	// 6213 retn ;~ 0192:2529
-loc_1252a:	// 5212 
+loc_1252a:	// 5221 
 	R(AND(*(raddr(ds,bx)), 0x0FE));	// 6217 and     byte ptr [bx], 0FEh ;~ 0192:252A
 	R(MOV(ah, byte_1f11d));	// 6218 mov     ah, byte_1F11D ;~ 0192:252D
 	R(CMP(ah, 0x42));	// 6219 cmp     ah, 42h ; 'B' ;~ 0192:2531
 cs=0x192;eip=0x002534; 		R(JNZ(locret_12539));	// 6220 jnz     short locret_12539 ;~ 0192:2534
 cs=0x192;eip=0x002536; 		R(JMP(loc_1247b));	// 6221 jmp     loc_1247B ;~ 0192:2536
-locret_12539:	// 5213 
+locret_12539:	// 5222 
 cs=0x192;eip=0x002539; 	R(RETN);	// 6225 retn ;~ 0192:2539
-loc_1253a:	// 5214 
+loc_1253a:	// 5223 
 	R(OR(*(raddr(ds,bx)), 1));	// 6229 or      byte ptr [bx], 1 ;~ 0192:253A
 	R(MOV(bl, *(raddr(ds,si+0x0B))));	// 6230 mov     bl, [si+0Bh] ;~ 0192:253D
 	R(MOV(bh, *(raddr(ds,si+0x0C))));	// 6231 mov     bh, [si+0Ch] ;~ 0192:2540
@@ -5274,7 +5282,7 @@ cs=0x192;eip=0x00254e; 		R(JNZ(loc_125a4));	// 6236 jnz     short loc_125A4 ;~ 0
 	R(CMP(ah, 0x3B));	// 6238 cmp     ah, 3Bh ; ';' ;~ 0192:2554
 cs=0x192;eip=0x002557; 		R(JNZ(loc_1255c));	// 6239 jnz     short loc_1255C ;~ 0192:2557
 cs=0x192;eip=0x002559; 		R(JMP(loc_12606));	// 6240 jmp     loc_12606 ;~ 0192:2559
-loc_1255c:	// 5215 
+loc_1255c:	// 5224 
 	R(MOV(bl, *(raddr(ds,si+0x0D))));	// 6244 mov     bl, [si+0Dh] ;~ 0192:255C
 	R(MOV(bh, *(raddr(ds,si+0x0E))));	// 6245 mov     bh, [si+0Eh] ;~ 0192:255F
 	R(MOV(ah, byte_1f115));	// 6246 mov     ah, byte_1F115 ;~ 0192:2562
@@ -5284,73 +5292,73 @@ cs=0x192;eip=0x00256c; 		R(JNZ(loc_12574));	// 6249 jnz     short loc_12574 ;~ 0
 	R(TEST(ah, 2));	// 6250 test    ah, 2 ;~ 0192:256E
 cs=0x192;eip=0x002571; 		R(JNZ(loc_1257f));	// 6251 jnz     short loc_1257F ;~ 0192:2571
 cs=0x192;eip=0x002573; 	R(RETN);	// 6252 retn ;~ 0192:2573
-loc_12574:	// 5216 
+loc_12574:	// 5225 
 	R(MOV(ah, 4));	// 6256 mov     ah, 4 ;~ 0192:2574
 	R(OR(ah, ah));	// 6257 or      ah, ah ;~ 0192:2576
 	R(SBB(bx, dx));	// 6258 sbb     bx, dx ;~ 0192:2578
 	R(CMP(ah, bh));	// 6259 cmp     ah, bh ;~ 0192:257A
 cs=0x192;eip=0x00257c; 		R(JNZ(loc_12588));	// 6260 jnz     short loc_12588 ;~ 0192:257C
 cs=0x192;eip=0x00257e; 	R(RETN);	// 6261 retn ;~ 0192:257E
-loc_1257f:	// 5217 
+loc_1257f:	// 5226 
 	R(MOV(ah, 0x10));	// 6265 mov     ah, 10h ;~ 0192:257F
 	R(ADD(bx, dx));	// 6266 add     bx, dx ;~ 0192:2581
 	R(CMP(ah, bh));	// 6267 cmp     ah, bh ;~ 0192:2583
 cs=0x192;eip=0x002585; 		R(JNZ(loc_12588));	// 6268 jnz     short loc_12588 ;~ 0192:2585
 cs=0x192;eip=0x002587; 	R(RETN);	// 6269 retn ;~ 0192:2587
-loc_12588:	// 5218 
+loc_12588:	// 5227 
 	R(MOV(*(raddr(ds,si+0x0D)), bl));	// 6274 mov     [si+0Dh], bl ;~ 0192:2588
 	R(MOV(*(raddr(ds,si+0x0E)), bh));	// 6275 mov     [si+0Eh], bh ;~ 0192:258B
-loc_1258e:	// 5219 
+loc_1258e:	// 5228 
 	R(MOV(ah, byte_1f11d));	// 6278 mov     ah, byte_1F11D ;~ 0192:258E
 	R(CMP(ah, 0x42));	// 6279 cmp     ah, 42h ; 'B' ;~ 0192:2592
 cs=0x192;eip=0x002595; 		R(JZ(loc_125b5));	// 6280 jz      short loc_125B5 ;~ 0192:2595
 cs=0x192;eip=0x002597; 		R(JMP(loc_125eb));	// 6281 jmp     short loc_125EB ;~ 0192:2597
-loc_12599:	// 5220 
+loc_12599:	// 5229 
 	R(MOV(ah, 4));	// 6285 mov     ah, 4 ;~ 0192:2599
 	R(OR(ah, ah));	// 6286 or      ah, ah ;~ 0192:259B
 	R(SBB(bx, dx));	// 6287 sbb     bx, dx ;~ 0192:259D
 	R(CMP(ah, bh));	// 6288 cmp     ah, bh ;~ 0192:259F
 cs=0x192;eip=0x0025a1; 		R(JNZ(loc_125ad));	// 6289 jnz     short loc_125AD ;~ 0192:25A1
 cs=0x192;eip=0x0025a3; 	R(RETN);	// 6290 retn ;~ 0192:25A3
-loc_125a4:	// 5221 
+loc_125a4:	// 5230 
 	R(MOV(ah, 0x24));	// 6294 mov     ah, 24h ; '$' ;~ 0192:25A4
 	R(ADD(bx, dx));	// 6295 add     bx, dx ;~ 0192:25A6
 	R(CMP(ah, bh));	// 6296 cmp     ah, bh ;~ 0192:25A8
 cs=0x192;eip=0x0025aa; 		R(JNZ(loc_125ad));	// 6297 jnz     short loc_125AD ;~ 0192:25AA
 cs=0x192;eip=0x0025ac; 	R(RETN);	// 6298 retn ;~ 0192:25AC
-loc_125ad:	// 5222 
+loc_125ad:	// 5231 
 	R(MOV(*(raddr(ds,si+0x0B)), bl));	// 6303 mov     [si+0Bh], bl ;~ 0192:25AD
 	R(MOV(*(raddr(ds,si+0x0C)), bh));	// 6304 mov     [si+0Ch], bh ;~ 0192:25B0
 cs=0x192;eip=0x0025b3; 		R(JMP(loc_1258e));	// 6305 jmp     short loc_1258E ;~ 0192:25B3
-loc_125b5:	// 5223 
+loc_125b5:	// 5232 
 	R(MOV(ah, 7));	// 6309 mov     ah, 7 ;~ 0192:25B5
-loc_125b7:	// 5224 
+loc_125b7:	// 5233 
 	R(MOV(byte_1f3cd, ah));	// 6312 mov     byte_1F3CD, ah ;~ 0192:25B7
 	R(MOV(cl, ah));	// 6313 mov     cl, ah ;~ 0192:25BB
 	R(MOV(ah, 4));	// 6314 mov     ah, 4 ;~ 0192:25BD
 cs=0x192;eip=0x0025bf; 	R(CALL(sub_1147c,0));	// 6315 call    sub_1147C ;~ 0192:25BF
-ret_192_25c2:	// 5225 
+ret_192_25c2:	// 5234 
 cs=0x192;eip=0x0025c2; 		R(JC(loc_125d0));	// 6316 jb      short loc_125D0 ;~ 0192:25C2
 	R(MOV(bl, 0x0E));	// 6317 mov     bl, 0Eh ;~ 0192:25C4
 	R(MOV(dl, 8));	// 6318 mov     dl, 8 ;~ 0192:25C6
 	R(MOV(cx, 0x1010));	// 6319 mov     cx, 1010h ;~ 0192:25C8
 cs=0x192;eip=0x0025cb; 	R(CALL(sub_113c0,m2c::kloc_113f4));	// 6320 call    loc_113F4 ;~ 0192:25CB
-ret_192_25ce:	// 5226 
+ret_192_25ce:	// 5235 
 cs=0x192;eip=0x0025ce; 		R(JC(loc_125dd));	// 6321 jb      short loc_125DD ;~ 0192:25CE
-loc_125d0:	// 5227 
+loc_125d0:	// 5236 
 	R(MOV(ah, byte_1f3cd));	// 6324 mov     ah, byte_1F3CD ;~ 0192:25D0
 	R(DEC(ah));	// 6325 dec     ah ;~ 0192:25D4
 	R(CMP(ah, 0x0FF));	// 6326 cmp     ah, 0FFh ;~ 0192:25D6
 cs=0x192;eip=0x0025d9; 		R(JZ(loc_125e6));	// 6327 jz      short loc_125E6 ;~ 0192:25D9
 cs=0x192;eip=0x0025db; 		R(JMP(loc_125b7));	// 6328 jmp     short loc_125B7 ;~ 0192:25DB
-loc_125dd:	// 5228 
+loc_125dd:	// 5237 
 	R(MOV(ah, byte_1f3cd));	// 6332 mov     ah, byte_1F3CD ;~ 0192:25DD
 	R(MOV(byte_1f3cf, ah));	// 6333 mov     byte_1F3CF, ah ;~ 0192:25E1
 cs=0x192;eip=0x0025e5; 	R(RETN);	// 6334 retn ;~ 0192:25E5
-loc_125e6:	// 5229 
+loc_125e6:	// 5238 
 	R(MOV(byte_1f3cf, ah));	// 6338 mov     byte_1F3CF, ah ;~ 0192:25E6
 cs=0x192;eip=0x0025ea; 	R(RETN);	// 6339 retn ;~ 0192:25EA
-loc_125eb:	// 5230 
+loc_125eb:	// 5239 
 	R(MOV(bx, offset(seg000,byte_1f3cb)));	// 6343 mov     bx, offset byte_1F3CB ;~ 0192:25EB
 	R(MOV(ah, 0x0FF));	// 6344 mov     ah, 0FFh ;~ 0192:25EE
 	R(MOV(*(raddr(ds,bx)), ah));	// 6345 mov     [bx], ah ;~ 0192:25F0
@@ -5358,21 +5366,21 @@ loc_125eb:	// 5230
 	R(CMP(ah, 0x1F));	// 6347 cmp     ah, 1Fh ;~ 0192:25F5
 cs=0x192;eip=0x0025f8; 		R(JC(loc_125fb));	// 6348 jb      short loc_125FB ;~ 0192:25F8
 cs=0x192;eip=0x0025fa; 	R(RETN);	// 6349 retn ;~ 0192:25FA
-loc_125fb:	// 5231 
+loc_125fb:	// 5240 
 	R(SUB(ah, 5));	// 6353 sub     ah, 5 ;~ 0192:25FB
 cs=0x192;eip=0x0025fe; 		R(JNC(loc_12601));	// 6354 jnb     short loc_12601 ;~ 0192:25FE
 cs=0x192;eip=0x002600; 	R(RETN);	// 6355 retn ;~ 0192:2600
-loc_12601:	// 5232 
+loc_12601:	// 5241 
 	R(SHR(ah, 1));	// 6360 shr     ah, 1 ;~ 0192:2601
 	R(MOV(*(raddr(ds,bx)), ah));	// 6361 mov     [bx], ah ;~ 0192:2603
 cs=0x192;eip=0x002605; 	R(RETN);	// 6362 retn ;~ 0192:2605
-loc_12606:	// 5233 
+loc_12606:	// 5242 
 	R(MOV(bx, offset(seg000,byte_1f3bd)));	// 6366 mov     bx, offset byte_1F3BD ;~ 0192:2606
 	R(MOV(ah, byte_1f3cb));	// 6367 mov     ah, byte_1F3CB ;~ 0192:2609
 	R(CMP(ah, 0x0FF));	// 6368 cmp     ah, 0FFh ;~ 0192:260D
 cs=0x192;eip=0x002610; 		R(JNZ(loc_12613));	// 6369 jnz     short loc_12613 ;~ 0192:2610
 cs=0x192;eip=0x002612; 	R(RETN);	// 6370 retn ;~ 0192:2612
-loc_12613:	// 5234 
+loc_12613:	// 5243 
 	R(MOV(dl, ah));	// 6374 mov     dl, ah ;~ 0192:2613
 	R(MOV(dh, 0));	// 6375 mov     dh, 0 ;~ 0192:2615
 	R(ADD(bx, dx));	// 6376 add     bx, dx ;~ 0192:2617
@@ -5384,20 +5392,20 @@ cs=0x192;eip=0x002625; 		R(JNZ(loc_1263a));	// 6381 jnz     short loc_1263A ;~ 0
 	R(TEST(ah, 0x20));	// 6382 test    ah, 20h ;~ 0192:2627
 cs=0x192;eip=0x00262a; 		R(JNZ(loc_12664));	// 6383 jnz     short loc_12664 ;~ 0192:262A
 cs=0x192;eip=0x00262c; 	R(RETN);	// 6384 retn ;~ 0192:262C
-loc_1262d:	// 5235 
+loc_1262d:	// 5244 
 	R(MOV(ah, *(raddr(ds,bx))));	// 6388 mov     ah, [bx] ;~ 0192:262D
 	R(DEC(ah));	// 6389 dec     ah ;~ 0192:262F
 	R(CMP(ah, 0x0FF));	// 6390 cmp     ah, 0FFh ;~ 0192:2631
 cs=0x192;eip=0x002634; 		R(JNZ(loc_12645));	// 6391 jnz     short loc_12645 ;~ 0192:2634
 	R(MOV(ah, 9));	// 6392 mov     ah, 9 ;~ 0192:2636
 cs=0x192;eip=0x002638; 		R(JMP(loc_12645));	// 6393 jmp     short loc_12645 ;~ 0192:2638
-loc_1263a:	// 5236 
+loc_1263a:	// 5245 
 	R(MOV(ah, *(raddr(ds,bx))));	// 6397 mov     ah, [bx] ;~ 0192:263A
 	R(INC(ah));	// 6398 inc     ah ;~ 0192:263C
 	R(CMP(ah, 0x0A));	// 6399 cmp     ah, 0Ah ;~ 0192:263E
 cs=0x192;eip=0x002641; 		R(JNZ(loc_12645));	// 6400 jnz     short loc_12645 ;~ 0192:2641
 	R(XOR(ah, ah));	// 6401 xor     ah, ah ;~ 0192:2643
-loc_12645:	// 5237 
+loc_12645:	// 5246 
 	R(MOV(*(raddr(ds,bx)), ah));	// 6405 mov     [bx], ah ;~ 0192:2645
 	R(MOV(bl, ah));	// 6406 mov     bl, ah ;~ 0192:2647
 	R(MOV(bh, 0));	// 6407 mov     bh, 0 ;~ 0192:2649
@@ -5408,17 +5416,17 @@ loc_12645:	// 5237
 	R(MOV(cl, ah));	// 6412 mov     cl, ah ;~ 0192:2656
 	R(MOV(ah, 1));	// 6413 mov     ah, 1 ;~ 0192:2658
 cs=0x192;eip=0x00265a; 	R(CALL(sub_13388,0));	// 6414 call    sub_13388 ;~ 0192:265A
-ret_192_265d:	// 5238 
+ret_192_265d:	// 5247 
 	R(MOV(cx, 0x0FFFF));	// 6415 mov     cx, 0FFFFh ;~ 0192:265D
 cs=0x192;eip=0x002660; 	R(CALL(sub_1114f,0));	// 6416 call    sub_1114F ;~ 0192:2660
-ret_192_2663:	// 5239 
+ret_192_2663:	// 5248 
 cs=0x192;eip=0x002663; 	R(RETN);	// 6417 retn ;~ 0192:2663
-loc_12664:	// 5240 
+loc_12664:	// 5249 
 cs=0x192;eip=0x002664; 	R(CALL(sub_1266f,0));	// 6421 call    sub_1266F ;~ 0192:2664
-ret_192_2667:	// 5241 
+ret_192_2667:	// 5250 
 cs=0x192;eip=0x002667; 		R(JC(loc_1266c));	// 6422 jb      short loc_1266C ;~ 0192:2667
 cs=0x192;eip=0x002669; 		R(JMP(loc_133fd));	// 6423 jmp     loc_133FD ;~ 0192:2669
-loc_1266c:	// 5242 
+loc_1266c:	// 5251 
 cs=0x192;eip=0x00266c; 		R(JMP(table1_14));	// 6427 jmp     table1_14 ;~ 0192:266C
 sub_1266f:	// 6432 
 	R(MOV(bx, offset(seg000,byte_1f3bd)));	// 6433 mov     bx, offset byte_1F3BD ;~ 0192:266F
@@ -5430,7 +5438,7 @@ sub_1266f:	// 6432
 	R(STC);	// 6439 stc ;~ 0192:267E
 cs=0x192;eip=0x00267f; 		R(JZ(loc_12682));	// 6440 jz      short loc_12682 ;~ 0192:267F
 cs=0x192;eip=0x002681; 	R(RETN);	// 6441 retn ;~ 0192:2681
-loc_12682:	// 5243 
+loc_12682:	// 5252 
 	R(INC(bx));	// 6446 inc     bx ;~ 0192:2682
 	R(INC(si));	// 6447 inc     si ;~ 0192:2683
 	R(DEC(ch));	// 6448 dec     ch ;~ 0192:2684
@@ -5444,14 +5452,14 @@ cs=0x192;eip=0x00268e; 		R(JZ(loc_12697));	// 6460 jz      short loc_12697 ;~ 01
 	R(CMC);	// 6462 cmc ;~ 0192:2693
 cs=0x192;eip=0x002694; 		R(JNC(loc_12697));	// 6463 jnb     short loc_12697 ;~ 0192:2694
 cs=0x192;eip=0x002696; 	R(RETN);	// 6464 retn ;~ 0192:2696
-loc_12697:	// 5244 
+loc_12697:	// 5253 
 	R(PUSH(ax));	// 6469 push    ax ;~ 0192:2697
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 6470 mov     ah, byte ptr word_1F105+1 ;~ 0192:2698
 	R(PUSH(ax));	// 6471 push    ax ;~ 0192:269C
 	R(CMP(ah, 0x0FF));	// 6472 cmp     ah, 0FFh ;~ 0192:269D
 cs=0x192;eip=0x0026a0; 		R(JZ(loc_126a5));	// 6473 jz      short loc_126A5 ;~ 0192:26A0
 cs=0x192;eip=0x0026a2; 	R(CALL(sub_126c6,0));	// 6474 call    sub_126C6 ;~ 0192:26A2
-loc_126a5:	// 5245 
+loc_126a5:	// 5254 
 	R(MOV(ah, *(db*)(((db*)&word_1f105))));	// 6477 mov     ah, byte ptr word_1F105 ;~ 0192:26A5
 	R(MOV(*(db*)(((db*)&word_1f105)+1), ah));	// 6478 mov     byte ptr word_1F105+1, ah ;~ 0192:26A9
 	R(MOV(ah, *(db*)(((db*)&word_1f103)+1)));	// 6479 mov     ah, byte ptr word_1F103+1 ;~ 0192:26AD
@@ -5466,7 +5474,7 @@ cs=0x192;eip=0x0026c5; 	R(RETN);	// 6487 retn ;~ 0192:26C5
 sub_126c6:	// 6494 
 	R(MOV(dx, 8));	// 6495 mov     dx, 8 ;~ 0192:26C6
 cs=0x192;eip=0x0026c9; 	R(CALL(sub_11139,0));	// 6496 call    sub_11139 ;~ 0192:26C9
-ret_192_26cc:	// 5246 
+ret_192_26cc:	// 5255 
 	R(MOV(dx, offset(seg000,byte_1f480)));	// 6497 mov     dx, offset byte_1F480 ;~ 0192:26CC
 	R(ADD(bx, dx));	// 6498 add     bx, dx ;~ 0192:26CF
 	R(MOV(ah, 0x42));	// 6499 mov     ah, 42h ; 'B' ;~ 0192:26D1
@@ -5475,10 +5483,10 @@ ret_192_26cc:	// 5246
 	R(INC(bx));	// 6502 inc     bx ;~ 0192:26D6
 	R(PUSH(bx));	// 6503 push    bx ;~ 0192:26D7
 cs=0x192;eip=0x0026d8; 	R(CALL(sub_112a7,m2c::kloc_112b2));	// 6504 call    loc_112B2 ;~ 0192:26D8
-ret_192_26db:	// 5247 
+ret_192_26db:	// 5256 
 cs=0x192;eip=0x0026db; 		R(JNC(loc_126de));	// 6505 jnb     short loc_126DE ;~ 0192:26DB
 cs=0x192;eip=0x0026dd; 	R(RETN);	// 6506 retn ;~ 0192:26DD
-loc_126de:	// 5248 
+loc_126de:	// 5257 
 	R(POP(di));	// 6510 pop     di ;~ 0192:26DE
 cs=0x192;eip=0x0026df; 		R(JMP(sub_11229));	// 6511 jmp     sub_11229 ;~ 0192:26DF
 sub_126e2:	// 6518 
@@ -5486,13 +5494,13 @@ sub_126e2:	// 6518
 	R(TEST(ah, 0x20));	// 6520 test    ah, 20h ;~ 0192:26E6
 cs=0x192;eip=0x0026e9; 		R(JNZ(loc_126ec));	// 6521 jnz     short loc_126EC ;~ 0192:26E9
 cs=0x192;eip=0x0026eb; 	R(RETN);	// 6522 retn ;~ 0192:26EB
-loc_126ec:	// 5249 
+loc_126ec:	// 5258 
 	R(TEST(ah, 4));	// 6526 test    ah, 4 ;~ 0192:26EC
 cs=0x192;eip=0x0026ef; 		R(JNZ(loc_12725));	// 6527 jnz     short loc_12725 ;~ 0192:26EF
 	R(TEST(ah, 8));	// 6528 test    ah, 8 ;~ 0192:26F1
 cs=0x192;eip=0x0026f4; 		R(JNZ(loc_126f7));	// 6529 jnz     short loc_126F7 ;~ 0192:26F4
 cs=0x192;eip=0x0026f6; 	R(RETN);	// 6530 retn ;~ 0192:26F6
-loc_126f7:	// 5250 
+loc_126f7:	// 5259 
 	R(AND(ah, 0x0DF));	// 6534 and     ah, 0DFh ;~ 0192:26F7
 	R(AND(ah, 0x0F7));	// 6535 and     ah, 0F7h ;~ 0192:26FA
 	R(MOV(byte_1f115, ah));	// 6536 mov     byte_1F115, ah ;~ 0192:26FD
@@ -5507,7 +5515,7 @@ loc_126f7:	// 5250
 	R(POP(ax));	// 6545 pop     ax ;~ 0192:271E
 	R(MOV(*(db*)(((db*)&word_1f103)), ah));	// 6546 mov     byte ptr word_1F103, ah ;~ 0192:271F
 cs=0x192;eip=0x002723; 		R(JMP(loc_12751));	// 6547 jmp     short loc_12751 ;~ 0192:2723
-loc_12725:	// 5251 
+loc_12725:	// 5260 
 	R(AND(ah, 0x0DF));	// 6551 and     ah, 0DFh ;~ 0192:2725
 	R(AND(ah, 0x0FB));	// 6552 and     ah, 0FBh ;~ 0192:2728
 	R(MOV(byte_1f115, ah));	// 6553 mov     byte_1F115, ah ;~ 0192:272B
@@ -5521,16 +5529,17 @@ loc_12725:	// 5251
 	R(MOV(*(db*)(((db*)&word_1f105)), ah));	// 6561 mov     byte ptr word_1F105, ah ;~ 0192:2748
 	R(POP(ax));	// 6562 pop     ax ;~ 0192:274C
 	R(MOV(*(db*)(((db*)&word_1f105)+1), ah));	// 6563 mov     byte ptr word_1F105+1, ah ;~ 0192:274D
-loc_12751:	// 5252 
+loc_12751:	// 5261 
 cs=0x192;eip=0x002751; 	R(CALL(sub_1368e,0));	// 6566 call    sub_1368E ;~ 0192:2751
-ret_192_2754:	// 5253 
+ret_192_2754:	// 5262 
 	R(MOV(cx, 0x0FFFF));	// 6567 mov     cx, 0FFFFh ;~ 0192:2754
 cs=0x192;eip=0x002757; 		R(JMP(sub_1114f));	// 6568 jmp     sub_1114F ;~ 0192:2757
+ret_192_275a:	// 5263 
 	R(MOV(ah, *(db*)(((db*)&word_1f12f))));	// 6572 mov     ah, byte ptr word_1F12F ;~ 0192:275A
 	R(TEST(ah, 0x10));	// 6573 test    ah, 10h ;~ 0192:275E
 cs=0x192;eip=0x002761; 		R(JNZ(loc_12766));	// 6574 jnz     short loc_12766 ;~ 0192:2761
 cs=0x192;eip=0x002763; 	R(CALL(sub_12849,0));	// 6575 call    sub_12849 ;~ 0192:2763
-loc_12766:	// 5254 
+loc_12766:	// 5264 
 	R(MOV(ah, byte_1f133));	// 6578 mov     ah, byte_1F133 ;~ 0192:2766
 	R(CMP(ah, 0x3C));	// 6579 cmp     ah, 3Ch ; '<' ;~ 0192:276A
 	R(MOV(ah, *(db*)(((db*)&word_1f12a)+1)));	// 6580 mov     ah, byte ptr word_1F12A+1 ;~ 0192:276D
@@ -5539,29 +5548,29 @@ loc_12766:	// 5254
 	R(POPF);	// 6583 popf ;~ 0192:2775
 cs=0x192;eip=0x002776; 		R(JZ(loc_12779));	// 6584 jz      short loc_12779 ;~ 0192:2776
 cs=0x192;eip=0x002778; 	R(RETN);	// 6585 retn ;~ 0192:2778
-loc_12779:	// 5255 
+loc_12779:	// 5265 
 	R(OR(ah, 8));	// 6589 or      ah, 8 ;~ 0192:2779
 cs=0x192;eip=0x00277c; 	R(CALL(sub_126e2,0));	// 6590 call    sub_126E2 ;~ 0192:277C
-ret_192_277f:	// 5256 
+ret_192_277f:	// 5266 
 	R(MOV(ah, byte_1f115));	// 6591 mov     ah, byte_1F115 ;~ 0192:277F
 	R(TEST(ah, 0x10));	// 6592 test    ah, 10h ;~ 0192:2783
 cs=0x192;eip=0x002786; 		R(JNZ(loc_12789));	// 6593 jnz     short loc_12789 ;~ 0192:2786
 cs=0x192;eip=0x002788; 	R(RETN);	// 6594 retn ;~ 0192:2788
-loc_12789:	// 5257 
+loc_12789:	// 5267 
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 6598 mov     ah, byte ptr word_1F105+1 ;~ 0192:2789
 	R(CMP(ah, 0x0FF));	// 6599 cmp     ah, 0FFh ;~ 0192:278D
 cs=0x192;eip=0x002790; 		R(JNZ(loc_12793));	// 6600 jnz     short loc_12793 ;~ 0192:2790
 cs=0x192;eip=0x002792; 	R(RETN);	// 6601 retn ;~ 0192:2792
-loc_12793:	// 5258 
+loc_12793:	// 5268 
 cs=0x192;eip=0x002793; 	R(CALL(sub_128e6,0));	// 6605 call    sub_128E6 ;~ 0192:2793
-ret_192_2796:	// 5259 
+ret_192_2796:	// 5269 
 cs=0x192;eip=0x002796; 		R(JC(loc_127e3));	// 6606 jb      short loc_127E3 ;~ 0192:2796
 cs=0x192;eip=0x002798; 	R(CALL(sub_12879,0));	// 6607 call    sub_12879 ;~ 0192:2798
-ret_192_279b:	// 5260 
+ret_192_279b:	// 5270 
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 6608 mov     ah, byte ptr word_1F105+1 ;~ 0192:279B
 	R(MOV(dx, 8));	// 6609 mov     dx, 8 ;~ 0192:279F
 cs=0x192;eip=0x0027a2; 	R(CALL(sub_11139,0));	// 6610 call    sub_11139 ;~ 0192:27A2
-ret_192_27a5:	// 5261 
+ret_192_27a5:	// 5271 
 	R(MOV(dx, offset(seg000,byte_1f480)));	// 6611 mov     dx, offset byte_1F480 ;~ 0192:27A5
 	R(ADD(bx, dx));	// 6612 add     bx, dx ;~ 0192:27A8
 	R(MOV(ah, byte_1f11d));	// 6613 mov     ah, byte_1F11D ;~ 0192:27AA
@@ -5576,25 +5585,25 @@ ret_192_27a5:	// 5261
 	R(MOV(*(raddr(ds,si+6)), bh));	// 6622 mov     [si+6], bh ;~ 0192:27C0
 	R(PUSH(si));	// 6623 push    si ;~ 0192:27C3
 cs=0x192;eip=0x0027c4; 	R(CALL(sub_112a7,m2c::kloc_112b2));	// 6624 call    loc_112B2 ;~ 0192:27C4
-ret_192_27c7:	// 5262 
+ret_192_27c7:	// 5272 
 	R(POP(di));	// 6625 pop     di ;~ 0192:27C7
 	R(INC(di));	// 6626 inc     di ;~ 0192:27C8
 cs=0x192;eip=0x0027c9; 		R(JC(loc_127ce));	// 6627 jb      short loc_127CE ;~ 0192:27C9
 cs=0x192;eip=0x0027cb; 	R(CALL(sub_11229,0));	// 6628 call    sub_11229 ;~ 0192:27CB
-loc_127ce:	// 5263 
+loc_127ce:	// 5273 
 	R(MOV(ah, 0x0FF));	// 6631 mov     ah, 0FFh ;~ 0192:27CE
 	R(MOV(*(db*)(((db*)&word_1f105)+1), ah));	// 6632 mov     byte ptr word_1F105+1, ah ;~ 0192:27D0
 	R(MOV(bx, offset(seg000,byte_1f115)));	// 6633 mov     bx, offset byte_1F115 ;~ 0192:27D4
 	R(AND(*(raddr(ds,bx)), 0x0EF));	// 6634 and     byte ptr [bx], 0EFh ;~ 0192:27D7
 cs=0x192;eip=0x0027da; 	R(CALL(sub_1368e,0));	// 6635 call    sub_1368E ;~ 0192:27DA
-ret_192_27dd:	// 5264 
+ret_192_27dd:	// 5274 
 	R(MOV(bx, offset(seg000,table1_13)));	// 6636 mov     bx, offset table1_13 ;~ 0192:27DD
 cs=0x192;eip=0x0027e0; 		R(JMP(settable1));	// 6637 jmp     settable1 ;~ 0192:27E0
-loc_127e3:	// 5265 
+loc_127e3:	// 5275 
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 6641 mov     ah, byte ptr word_1F105+1 ;~ 0192:27E3
 	R(MOV(dx, 8));	// 6642 mov     dx, 8 ;~ 0192:27E7
 cs=0x192;eip=0x0027ea; 	R(CALL(sub_11139,0));	// 6643 call    sub_11139 ;~ 0192:27EA
-ret_192_27ed:	// 5266 
+ret_192_27ed:	// 5276 
 	R(PUSH(bx));	// 6644 push    bx ;~ 0192:27ED
 	R(MOV(dx, offset(seg000,unk_1df68)));	// 6645 mov     dx, offset unk_1DF68 ;~ 0192:27EE
 	R(ADD(bx, dx));	// 6646 add     bx, dx ;~ 0192:27F1
@@ -5613,20 +5622,20 @@ ret_192_27ed:	// 5266
 	R(MOV(ah, 0x0FF));	// 6659 mov     ah, 0FFh ;~ 0192:2809
 	R(MOV(*(db*)(((db*)&word_1f105)+1), ah));	// 6660 mov     byte ptr word_1F105+1, ah ;~ 0192:280B
 cs=0x192;eip=0x00280f; 	R(CALL(sub_1368e,0));	// 6661 call    sub_1368E ;~ 0192:280F
-table1_14:	// 5267 
+table1_14:	// 5277 
 	R(MOV(bx, offset(seg000,table1_15)));	// 6664 mov     bx, offset table1_15 ;~ 0192:2812
 cs=0x192;eip=0x002815; 	R(CALL(settable1,0));	// 6665 call    settable1 ;~ 0192:2815
-ret_192_2818:	// 5268 
+ret_192_2818:	// 5278 
 	R(MOV(cx, 0));	// 6666 mov     cx, 0 ;~ 0192:2818
 cs=0x192;eip=0x00281b; 	R(CALL(sub_1114f,0));	// 6667 call    sub_1114F ;~ 0192:281B
-ret_192_281e:	// 5269 
+ret_192_281e:	// 5279 
 cs=0x192;eip=0x00281e; 	R(CALL(sub_1114f,0));	// 6668 call    sub_1114F ;~ 0192:281E
-ret_192_2821:	// 5270 
+ret_192_2821:	// 5280 
 	R(MOV(ah, byte_1f11d));	// 6669 mov     ah, byte_1F11D ;~ 0192:2821
 	R(CMP(ah, 0x41));	// 6670 cmp     ah, 41h ; 'A' ;~ 0192:2825
 cs=0x192;eip=0x002828; 		R(JNZ(loc_1282d));	// 6671 jnz     short loc_1282D ;~ 0192:2828
 cs=0x192;eip=0x00282a; 		R(JMP(loc_133ec));	// 6672 jmp     loc_133EC ;~ 0192:282A
-loc_1282d:	// 5271 
+loc_1282d:	// 5281 
 	R(XOR(ah, ah));	// 6676 xor     ah, ah ;~ 0192:282D
 	R(MOV(byte_1f133, ah));	// 6677 mov     byte_1F133, ah ;~ 0192:282F
 	R(MOV(byte_1f127, ah));	// 6678 mov     byte_1F127, ah ;~ 0192:2833
@@ -5641,14 +5650,14 @@ sub_12849:	// 6689
 	R(MOV(bx, offset(seg000,byte_1f4c1)));	// 6692 mov     bx, offset byte_1F4C1 ;~ 0192:284D
 	R(MOV(dx, 6));	// 6693 mov     dx, 6 ;~ 0192:2850
 	R(MOV(ch, 8));	// 6694 mov     ch, 8 ;~ 0192:2853
-loc_12855:	// 5272 
+loc_12855:	// 5282 
 	R(CMP(ah, *(raddr(ds,bx))));	// 6697 cmp     ah, [bx] ;~ 0192:2855
 cs=0x192;eip=0x002857; 		R(JZ(loc_12860));	// 6698 jz      short loc_12860 ;~ 0192:2857
 	R(ADD(bx, dx));	// 6699 add     bx, dx ;~ 0192:2859
 	R(DEC(ch));	// 6700 dec     ch ;~ 0192:285B
 cs=0x192;eip=0x00285d; 		R(JNZ(loc_12855));	// 6701 jnz     short loc_12855 ;~ 0192:285D
 cs=0x192;eip=0x00285f; 	R(RETN);	// 6702 retn ;~ 0192:285F
-loc_12860:	// 5273 
+loc_12860:	// 5283 
 	R(INC(bx));	// 6706 inc     bx ;~ 0192:2860
 	R(MOV(ah, 1));	// 6707 mov     ah, 1 ;~ 0192:2861
 	R(CMP(ah, *(raddr(ds,bx))));	// 6708 cmp     ah, [bx] ;~ 0192:2863
@@ -5658,18 +5667,18 @@ sub_12868:	// 6717
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 6718 mov     ah, byte ptr word_1F105+1 ;~ 0192:2868
 	R(MOV(dx, 6));	// 6719 mov     dx, 6 ;~ 0192:286C
 cs=0x192;eip=0x00286f; 	R(CALL(sub_11139,0));	// 6720 call    sub_11139 ;~ 0192:286F
-ret_192_2872:	// 5274 
+ret_192_2872:	// 5284 
 	R(MOV(dx, offset(seg000,byte_1f4c1)));	// 6721 mov     dx, offset byte_1F4C1 ;~ 0192:2872
 	R(ADD(bx, dx));	// 6722 add     bx, dx ;~ 0192:2875
 	R(INC(bx));	// 6723 inc     bx ;~ 0192:2877
 cs=0x192;eip=0x002878; 	R(RETN);	// 6724 retn ;~ 0192:2878
 sub_12879:	// 6731 
 cs=0x192;eip=0x002879; 	R(CALL(sub_12868,0));	// 6732 call    sub_12868 ;~ 0192:2879
-ret_192_287c:	// 5275 
+ret_192_287c:	// 5285 
 	R(XOR(ah, ah));	// 6733 xor     ah, ah ;~ 0192:287C
 	R(MOV(*(raddr(ds,bx)), ah));	// 6734 mov     [bx], ah ;~ 0192:287E
 cs=0x192;eip=0x002880; 	// 6735 jmp     short $+2 ;~ 0192:2880
-loc_12882:	// 5276 
+loc_12882:	// 5286 
 	R(PUSH(bx));	// 6738 push    bx ;~ 0192:2882
 	R(POP(si));	// 6739 pop     si ;~ 0192:2883
 	R(MOV(cl, *(raddr(ds,si+1))));	// 6740 mov     cl, [si+1] ;~ 0192:2884
@@ -5677,15 +5686,15 @@ loc_12882:	// 5276
 	R(PUSH(ax));	// 6742 push    ax ;~ 0192:288A
 	R(PUSH(si));	// 6743 push    si ;~ 0192:288B
 cs=0x192;eip=0x00288c; 	R(CALL(sub_110d5,0));	// 6744 call    sub_110D5 ;~ 0192:288C
-ret_192_288f:	// 5277 
+ret_192_288f:	// 5287 
 	R(POP(si));	// 6745 pop     si ;~ 0192:288F
 	R(POP(ax));	// 6746 pop     ax ;~ 0192:2890
 	R(MOV(ch, *(raddr(ds,si+4))));	// 6747 mov     ch, [si+4] ;~ 0192:2891
-loc_12894:	// 5278 
+loc_12894:	// 5288 
 	R(PUSH(bx));	// 6750 push    bx ;~ 0192:2894
 	R(PUSH(cx));	// 6751 push    cx ;~ 0192:2895
 	R(MOV(ch, *(raddr(ds,si+3))));	// 6752 mov     ch, [si+3] ;~ 0192:2896
-loc_12899:	// 5279 
+loc_12899:	// 5289 
 	R(MOV(*(raddr(ds,bx)), ah));	// 6755 mov     [bx], ah ;~ 0192:2899
 	R(INC(bx));	// 6756 inc     bx ;~ 0192:289B
 	R(DEC(ch));	// 6757 dec     ch ;~ 0192:289C
@@ -5701,7 +5710,7 @@ cs=0x192;eip=0x0028a9; 		R(JNZ(loc_12894));	// 6764 jnz     short loc_12894 ;~ 0
 	R(MOV(ch, *(raddr(ds,si+4))));	// 6767 mov     ch, [si+4] ;~ 0192:28B1
 	R(MOV(cl, *(raddr(ds,si+3))));	// 6768 mov     cl, [si+3] ;~ 0192:28B4
 cs=0x192;eip=0x0028b7; 	R(CALL(sub_128c6,0));	// 6769 call    sub_128C6 ;~ 0192:28B7
-ret_192_28ba:	// 5280 
+ret_192_28ba:	// 5290 
 	R(MOV(ah, *(db*)(((db*)&word_1f12f))));	// 6770 mov     ah, byte ptr word_1F12F ;~ 0192:28BA
 	R(OR(ah, 0x10));	// 6771 or      ah, 10h ;~ 0192:28BE
 	R(MOV(*(db*)(((db*)&word_1f12f)), ah));	// 6772 mov     byte ptr word_1F12F, ah ;~ 0192:28C1
@@ -5710,14 +5719,14 @@ sub_128c6:	// 6780
 	R(PUSH(cx));	// 6782 push    cx ;~ 0192:28C6
 	R(PUSH(dx));	// 6783 push    dx ;~ 0192:28C7
 	R(MOV(ch, cl));	// 6784 mov     ch, cl ;~ 0192:28C8
-loc_128ca:	// 5281 
+loc_128ca:	// 5291 
 	R(PUSH(cx));	// 6787 push    cx ;~ 0192:28CA
 	R(MOV(ch, dh));	// 6788 mov     ch, dh ;~ 0192:28CB
 	R(MOV(cl, dl));	// 6789 mov     cl, dl ;~ 0192:28CD
 	R(PUSH(dx));	// 6790 push    dx ;~ 0192:28CF
 	R(PUSH(ax));	// 6791 push    ax ;~ 0192:28D0
 cs=0x192;eip=0x0028d1; 	R(CALL(sub_13895,0));	// 6792 call    sub_13895 ;~ 0192:28D1
-ret_192_28d4:	// 5282 
+ret_192_28d4:	// 5292 
 	R(POP(ax));	// 6793 pop     ax ;~ 0192:28D4
 	R(POP(dx));	// 6794 pop     dx ;~ 0192:28D5
 	R(INC(dl));	// 6795 inc     dl ;~ 0192:28D6
@@ -5733,31 +5742,32 @@ cs=0x192;eip=0x0028e5; 	R(RETN);	// 6804 retn ;~ 0192:28E5
 sub_128e6:	// 6811 
 	R(MOV(dx, 2));	// 6812 mov     dx, 2 ;~ 0192:28E6
 cs=0x192;eip=0x0028e9; 	R(CALL(sub_11139,0));	// 6813 call    sub_11139 ;~ 0192:28E9
-ret_192_28ec:	// 5283 
+ret_192_28ec:	// 5293 
 	R(MOV(dx, offset(seg000,byte_1dfa8)));	// 6814 mov     dx, offset byte_1DFA8 ;~ 0192:28EC
 	R(ADD(bx, dx));	// 6815 add     bx, dx ;~ 0192:28EF
 	R(MOV(ah, byte_1f11d));	// 6816 mov     ah, byte_1F11D ;~ 0192:28F1
 	R(CMP(ah, *(raddr(ds,bx))));	// 6817 cmp     ah, [bx] ;~ 0192:28F5
 cs=0x192;eip=0x0028f7; 		R(JNZ(loc_128fa));	// 6818 jnz     short loc_128FA ;~ 0192:28F7
 cs=0x192;eip=0x0028f9; 	R(RETN);	// 6819 retn ;~ 0192:28F9
-loc_128fa:	// 5284 
+loc_128fa:	// 5294 
 	R(STC);	// 6823 stc ;~ 0192:28FA
 cs=0x192;eip=0x0028fb; 	R(RETN);	// 6824 retn ;~ 0192:28FB
+ret_192_28fc:	// 5295 
 	R(MOV(ah, *(db*)(((db*)&word_1f12f))));	// 6828 mov     ah, byte ptr word_1F12F ;~ 0192:28FC
 	R(TEST(ah, 0x40));	// 6829 test    ah, 40h ;~ 0192:2900
 cs=0x192;eip=0x002903; 		R(JZ(loc_12906));	// 6830 jz      short loc_12906 ;~ 0192:2903
 cs=0x192;eip=0x002905; 	R(RETN);	// 6831 retn ;~ 0192:2905
-loc_12906:	// 5285 
+loc_12906:	// 5296 
 	R(OR(ah, 0x40));	// 6835 or      ah, 40h ;~ 0192:2906
 	R(MOV(*(db*)(((db*)&word_1f12f)), ah));	// 6836 mov     byte ptr word_1F12F, ah ;~ 0192:2909
 	R(MOV(si, word_1f1cd));	// 6837 mov     si, word_1F1CD ;~ 0192:290D
 	R(MOV(ah, *(raddr(ds,si+8))));	// 6838 mov     ah, [si+8] ;~ 0192:2911
 	R(MOV(si, offset(seg000,byte_1dc6c)));	// 6839 mov     si, offset byte_1DC6C ;~ 0192:2914
 cs=0x192;eip=0x002917; 	R(CALL(sub_12923,0));	// 6840 call    sub_12923 ;~ 0192:2917
-ret_192_291a:	// 5286 
+ret_192_291a:	// 5297 
 	R(MOV(si, offset(seg000,byte_1dcf5)));	// 6841 mov     si, offset byte_1DCF5 ;~ 0192:291A
 cs=0x192;eip=0x00291d; 	R(CALL(sub_12923,0));	// 6842 call    sub_12923 ;~ 0192:291D
-ret_192_2920:	// 5287 
+ret_192_2920:	// 5298 
 	R(MOV(si, offset(seg000,byte_1dd46)));	// 6843 mov     si, offset byte_1DD46 ;~ 0192:2920
 sub_12923:	// 6848 
 	R(MOV(*(raddr(ds,si+8)), ah));	// 6850 mov     [si+8], ah ;~ 0192:2923
@@ -5767,21 +5777,21 @@ sub_1292a:	// 6859
 	R(MOV(ah, 0x14));	// 6863 mov     ah, 14h ;~ 0192:292A
 	R(MOV(cl, 1));	// 6864 mov     cl, 1 ;~ 0192:292C
 cs=0x192;eip=0x00292e; 	R(CALL(sub_114ae,0));	// 6865 call    sub_114AE ;~ 0192:292E
-ret_192_2931:	// 5288 
+ret_192_2931:	// 5299 
 cs=0x192;eip=0x002931; 		R(JNC(loc_12936));	// 6866 jnb     short loc_12936 ;~ 0192:2931
 cs=0x192;eip=0x002933; 		R(JMP(loc_13426));	// 6867 jmp     loc_13426 ;~ 0192:2933
-loc_12936:	// 5289 
+loc_12936:	// 5300 
 cs=0x192;eip=0x002936; 	R(CALL(sub_12965,0));	// 6871 call    sub_12965 ;~ 0192:2936
-ret_192_2939:	// 5290 
+ret_192_2939:	// 5301 
 	R(MOV(ah, 0x14));	// 6872 mov     ah, 14h ;~ 0192:2939
 	R(MOV(cl, 2));	// 6873 mov     cl, 2 ;~ 0192:293B
 cs=0x192;eip=0x00293d; 	R(CALL(sub_114ae,0));	// 6874 call    sub_114AE ;~ 0192:293D
-ret_192_2940:	// 5291 
+ret_192_2940:	// 5302 
 cs=0x192;eip=0x002940; 		R(JNC(loc_12945));	// 6875 jnb     short loc_12945 ;~ 0192:2940
 cs=0x192;eip=0x002942; 		R(JMP(loc_13426));	// 6876 jmp     loc_13426 ;~ 0192:2942
-loc_12945:	// 5292 
+loc_12945:	// 5303 
 cs=0x192;eip=0x002945; 	R(CALL(sub_12965,0));	// 6880 call    sub_12965 ;~ 0192:2945
-ret_192_2948:	// 5293 
+ret_192_2948:	// 5304 
 	R(MOV(bx, offset(seg000,word_1f4f3)));	// 6881 mov     bx, offset word_1F4F3 ;~ 0192:2948
 	R(MOV(dx, offset(seg000,word_1f4f3)+1));	// 6882 mov     dx, (offset word_1F4F3+1) ;~ 0192:294B
 	R(MOV(*(raddr(ds,bx)), 0));	// 6883 mov     byte ptr [bx], 0 ;~ 0192:294E
@@ -5793,7 +5803,7 @@ ret_192_2948:	// 5293
 	R(XCHG(si, bx));	// 6889 xchg    si, bx ;~ 0192:295B
 	R(XCHG(di, dx));	// 6890 xchg    di, dx ;~ 0192:295D
 cs=0x192;eip=0x00295f; 	R(CALL(sub_138b9,0));	// 6891 call    sub_138B9 ;~ 0192:295F
-ret_192_2962:	// 5294 
+ret_192_2962:	// 5305 
 cs=0x192;eip=0x002962; 		R(JMP(sub_139a9));	// 6892 jmp     sub_139A9 ;~ 0192:2962
 sub_12965:	// 6899 
 	R(MOV(ah, byte_1f1e2));	// 6901 mov     ah, byte_1F1E2 ;~ 0192:2965
@@ -5801,51 +5811,53 @@ sub_12965:	// 6899
 cs=0x192;eip=0x00296c; 		R(JNZ(loc_12972));	// 6903 jnz     short loc_12972 ;~ 0192:296C
 	R(INC(*(raddr(ds,di+0x10))));	// 6904 inc     byte ptr [di+10h] ;~ 0192:296E
 cs=0x192;eip=0x002971; 	R(RETN);	// 6905 retn ;~ 0192:2971
-loc_12972:	// 5295 
+loc_12972:	// 5306 
 	R(DEC(*(raddr(ds,di+0x10))));	// 6909 dec     byte ptr [di+10h] ;~ 0192:2972
 cs=0x192;eip=0x002975; 	R(RETN);	// 6910 retn ;~ 0192:2975
+ret_192_2976:	// 5307 
 	R(MOV(ah, *(db*)(((db*)&word_1f1dc)+1)));	// 6914 mov     ah, byte ptr word_1F1DC+1 ;~ 0192:2976
 	R(CMP(ah, 0x0E));	// 6915 cmp     ah, 0Eh ;~ 0192:297A
 cs=0x192;eip=0x00297d; 		R(JNC(loc_12985));	// 6916 jnb     short loc_12985 ;~ 0192:297D
 	R(MOV(ah, 0x0F));	// 6917 mov     ah, 0Fh ;~ 0192:297F
 	R(MOV(*(db*)(((db*)&word_1f1dc)+1), ah));	// 6918 mov     byte ptr word_1F1DC+1, ah ;~ 0192:2981
-loc_12985:	// 5296 
+loc_12985:	// 5308 
 	R(MOV(ah, *(db*)(((db*)&word_1f1da)+1)));	// 6921 mov     ah, byte ptr word_1F1DA+1 ;~ 0192:2985
 	R(CMP(ah, 8));	// 6922 cmp     ah, 8 ;~ 0192:2989
 cs=0x192;eip=0x00298c; 		R(JZ(loc_12994));	// 6923 jz      short loc_12994 ;~ 0192:298C
 	R(CMP(ah, 0x1D));	// 6924 cmp     ah, 1Dh ;~ 0192:298E
 cs=0x192;eip=0x002991; 		R(JZ(loc_12994));	// 6925 jz      short loc_12994 ;~ 0192:2991
 cs=0x192;eip=0x002993; 	R(RETN);	// 6926 retn ;~ 0192:2993
-loc_12994:	// 5297 
+loc_12994:	// 5309 
 	R(MOV(bx, offset(seg000,byte_1f1cf)));	// 6931 mov     bx, offset byte_1F1CF ;~ 0192:2994
 	R(OR(*(raddr(ds,bx)), 0x20));	// 6932 or      byte ptr [bx], 20h ;~ 0192:2997
 cs=0x192;eip=0x00299a; 	R(CALL(sub_139a9,0));	// 6933 call    sub_139A9 ;~ 0192:299A
-ret_192_299d:	// 5298 
+ret_192_299d:	// 5310 
 cs=0x192;eip=0x00299d; 	R(CALL(sub_11e85,0));	// 6934 call    sub_11E85 ;~ 0192:299D
-ret_192_29a0:	// 5299 
+ret_192_29a0:	// 5311 
 cs=0x192;eip=0x0029a0; 	R(CALL(sub_13608,0));	// 6935 call    sub_13608 ;~ 0192:29A0
-ret_192_29a3:	// 5300 
+ret_192_29a3:	// 5312 
 cs=0x192;eip=0x0029a3; 	R(CALL(sub_1292a,0));	// 6936 call    sub_1292A ;~ 0192:29A3
-ret_192_29a6:	// 5301 
+ret_192_29a6:	// 5313 
 cs=0x192;eip=0x0029a6; 	R(CALL(sub_11ea3,0));	// 6937 call    sub_11EA3 ;~ 0192:29A6
-ret_192_29a9:	// 5302 
+ret_192_29a9:	// 5314 
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 6938 mov     si, offset byte_1F1CF ;~ 0192:29A9
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 6939 test    byte ptr [si+13h], 80h ;~ 0192:29AC
 	R(MOV(ah, 7));	// 6940 mov     ah, 7 ;~ 0192:29B0
 cs=0x192;eip=0x0029b2; 		R(JNZ(loc_129b6));	// 6941 jnz     short loc_129B6 ;~ 0192:29B2
 	R(MOV(ah, 0x1F));	// 6942 mov     ah, 1Fh ;~ 0192:29B4
-loc_129b6:	// 5303 
+loc_129b6:	// 5315 
 	R(MOV(*(raddr(ds,si+0x0C)), ah));	// 6945 mov     [si+0Ch], ah ;~ 0192:29B6
 	R(OR(*(raddr(ds,si)), 0x40));	// 6946 or      byte ptr [si], 40h ;~ 0192:29B9
 	R(AND(*(raddr(ds,si)), 0x0DF));	// 6947 and     byte ptr [si], 0DFh ;~ 0192:29BC
 cs=0x192;eip=0x0029bf; 		R(JMP(sub_111f3));	// 6948 jmp     sub_111F3 ;~ 0192:29BF
+ret_192_29c2:	// 5316 
 	R(MOV(ah, byte_1f3ce));	// 6950 mov     ah, byte_1F3CE ;~ 0192:29C2
 	R(INC(ah));	// 6951 inc     ah ;~ 0192:29C6
 	R(CMP(ah, 6));	// 6952 cmp     ah, 6 ;~ 0192:29C8
 	R(MOV(byte_1f3ce, ah));	// 6953 mov     byte_1F3CE, ah ;~ 0192:29CB
 cs=0x192;eip=0x0029cf; 		R(JZ(loc_129d2));	// 6954 jz      short loc_129D2 ;~ 0192:29CF
 cs=0x192;eip=0x0029d1; 	R(RETN);	// 6955 retn ;~ 0192:29D1
-loc_129d2:	// 5304 
+loc_129d2:	// 5317 
 	R(XOR(ah, ah));	// 6959 xor     ah, ah ;~ 0192:29D2
 	R(MOV(byte_1f3ce, ah));	// 6960 mov     byte_1F3CE, ah ;~ 0192:29D4
 	R(MOV(ah, byte_1f133));	// 6961 mov     ah, byte_1F133 ;~ 0192:29D8
@@ -5856,14 +5868,14 @@ cs=0x192;eip=0x0029df; 		R(JNZ(loc_12a04));	// 6963 jnz     short loc_12A04 ;~ 0
 	R(MOV(*(db*)(((db*)&word_1f1da)+1), ah));	// 6966 mov     byte ptr word_1F1DA+1, ah ;~ 0192:29E7
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 6967 mov     si, offset byte_1F1CF ;~ 0192:29EB
 cs=0x192;eip=0x0029ee; 	R(CALL(sub_10b2c,0));	// 6968 call    sub_10B2C ;~ 0192:29EE
-ret_192_29f1:	// 5305 
+ret_192_29f1:	// 5318 
 	R(MOV(ah, byte_1f1e0));	// 6969 mov     ah, byte_1F1E0 ;~ 0192:29F1
 	R(TEST(ah, 0x20));	// 6970 test    ah, 20h ;~ 0192:29F5
 cs=0x192;eip=0x0029f8; 		R(JZ(loc_12a04));	// 6971 jz      short loc_12A04 ;~ 0192:29F8
 	R(MOV(ah, *(db*)(((db*)&word_1f1da)+1)));	// 6972 mov     ah, byte ptr word_1F1DA+1 ;~ 0192:29FA
 	R(INC(ah));	// 6973 inc     ah ;~ 0192:29FE
 	R(MOV(*(db*)(((db*)&word_1f1da)+1), ah));	// 6974 mov     byte ptr word_1F1DA+1, ah ;~ 0192:2A00
-loc_12a04:	// 5306 
+loc_12a04:	// 5319 
 	R(MOV(ah, byte_1f11d));	// 6978 mov     ah, byte_1F11D ;~ 0192:2A04
 	R(CMP(ah, 0x28));	// 6979 cmp     ah, 28h ; '(' ;~ 0192:2A08
 cs=0x192;eip=0x002a0b; 		R(JZ(loc_12a18));	// 6980 jz      short loc_12A18 ;~ 0192:2A0B
@@ -5872,7 +5884,7 @@ cs=0x192;eip=0x002a10; 		R(JZ(loc_12a39));	// 6982 jz      short loc_12A39 ;~ 01
 	R(CMP(ah, 0x29));	// 6983 cmp     ah, 29h ; ')' ;~ 0192:2A12
 cs=0x192;eip=0x002a15; 		R(JZ(loc_12a5a));	// 6984 jz      short loc_12A5A ;~ 0192:2A15
 cs=0x192;eip=0x002a17; 	R(RETN);	// 6985 retn ;~ 0192:2A17
-loc_12a18:	// 5307 
+loc_12a18:	// 5320 
 	R(MOV(ah, byte_1f0b3));	// 6989 mov     ah, byte_1F0B3 ;~ 0192:2A18
 	R(MOV(bx, offset(seg000,byte_1f0b4)));	// 6990 mov     bx, offset byte_1F0B4 ;~ 0192:2A1C
 	R(MOV(dx, offset(seg000,byte_1f0b3)));	// 6991 mov     dx, offset byte_1F0B3 ;~ 0192:2A1F
@@ -5886,7 +5898,7 @@ loc_12a18:	// 5307
 	R(MOV(byte_1f0da, ah));	// 6999 mov     byte_1F0DA, ah ;~ 0192:2A30
 	R(MOV(bx, offset(seg000,byte_1f0b3)));	// 7000 mov     bx, offset byte_1F0B3 ;~ 0192:2A34
 cs=0x192;eip=0x002a37; 		R(JMP(loc_12a7b));	// 7001 jmp     short loc_12A7B ;~ 0192:2A37
-loc_12a39:	// 5308 
+loc_12a39:	// 5321 
 	R(MOV(ah, byte_1f0ba));	// 7005 mov     ah, byte_1F0BA ;~ 0192:2A39
 	R(MOV(bx, offset(seg000,byte_1f0bb)));	// 7006 mov     bx, offset byte_1F0BB ;~ 0192:2A3D
 	R(MOV(dx, offset(seg000,byte_1f0ba)));	// 7007 mov     dx, offset byte_1F0BA ;~ 0192:2A40
@@ -5900,7 +5912,7 @@ loc_12a39:	// 5308
 	R(MOV(byte_1f0da, ah));	// 7015 mov     byte_1F0DA, ah ;~ 0192:2A51
 	R(MOV(bx, offset(seg000,byte_1f0b3)));	// 7016 mov     bx, offset byte_1F0B3 ;~ 0192:2A55
 cs=0x192;eip=0x002a58; 		R(JMP(loc_12a7b));	// 7017 jmp     short loc_12A7B ;~ 0192:2A58
-loc_12a5a:	// 5309 
+loc_12a5a:	// 5322 
 	R(MOV(ah, byte_1f0b3));	// 7021 mov     ah, byte_1F0B3 ;~ 0192:2A5A
 	R(MOV(bx, offset(seg000,byte_1f0b4)));	// 7022 mov     bx, offset byte_1F0B4 ;~ 0192:2A5E
 	R(MOV(dx, offset(seg000,byte_1f0b3)));	// 7023 mov     dx, offset byte_1F0B3 ;~ 0192:2A61
@@ -5914,16 +5926,17 @@ loc_12a5a:	// 5309
 	R(MOV(byte_1f0d3, ah));	// 7031 mov     byte_1F0D3, ah ;~ 0192:2A72
 	R(MOV(bx, offset(seg000,byte_1f0b3)));	// 7032 mov     bx, offset byte_1F0B3 ;~ 0192:2A76
 cs=0x192;eip=0x002a79; 	// 7033 jmp     short $+2 ;~ 0192:2A79
-loc_12a7b:	// 5310 
+loc_12a7b:	// 5323 
 	R(MOV(ch, 0x28));	// 7037 mov     ch, 28h ; '(' ;~ 0192:2A7B
 	R(MOV(dh, 0x12));	// 7038 mov     dh, 12h ;~ 0192:2A7D
 	R(MOV(dl, 0));	// 7039 mov     dl, 0 ;~ 0192:2A7F
 cs=0x192;eip=0x002a81; 		R(JMP(loc_111de));	// 7040 jmp     loc_111DE ;~ 0192:2A81
+ret_192_2a84:	// 5324 
 	R(XOR(ah, ah));	// 7042 xor     ah, ah ;~ 0192:2A84
 	R(OR(ah, 4));	// 7043 or      ah, 4 ;~ 0192:2A86
 	R(MOV(byte_1f115, ah));	// 7044 mov     byte_1F115, ah ;~ 0192:2A89
 cs=0x192;eip=0x002a8d; 	R(RETN);	// 7045 retn ;~ 0192:2A8D
-loc_12a8e:	// 5311 
+loc_12a8e:	// 5325 
 	R(MOV(bx, offset(seg000,byte_1f107)));	// 7050 mov     bx, offset byte_1F107 ;~ 0192:2A8E
 	R(MOV(ah, *(db*)(((db*)&word_1f1dc)+1)));	// 7051 mov     ah, byte ptr word_1F1DC+1 ;~ 0192:2A91
 	R(CMP(ah, 0x0E));	// 7052 cmp     ah, 0Eh ;~ 0192:2A95
@@ -5937,57 +5950,58 @@ cs=0x192;eip=0x002aa6; 		R(JNZ(loc_12abc));	// 7058 jnz     short loc_12ABC ;~ 0
 	R(CMP(ah, 0x10));	// 7060 cmp     ah, 10h ;~ 0192:2AAC
 cs=0x192;eip=0x002aaf; 		R(JC(loc_12ace));	// 7061 jb      short loc_12ACE ;~ 0192:2AAF
 cs=0x192;eip=0x002ab1; 		R(JMP(loc_12abc));	// 7062 jmp     short loc_12ABC ;~ 0192:2AB1
-loc_12ab3:	// 5312 
+loc_12ab3:	// 5326 
 	R(MOV(ah, *(db*)(((db*)&word_1f1da)+1)));	// 7066 mov     ah, byte ptr word_1F1DA+1 ;~ 0192:2AB3
 	R(CMP(ah, 0x0A));	// 7067 cmp     ah, 0Ah ;~ 0192:2AB7
 cs=0x192;eip=0x002aba; 		R(JNC(loc_12ace));	// 7068 jnb     short loc_12ACE ;~ 0192:2ABA
-loc_12abc:	// 5313 
+loc_12abc:	// 5327 
 	R(OR(*(raddr(ds,bx)), 0x20));	// 7072 or      byte ptr [bx], 20h ;~ 0192:2ABC
 	R(MOV(ah, byte_1f1e0));	// 7073 mov     ah, byte_1F1E0 ;~ 0192:2ABF
 	R(AND(ah, 0x0EF));	// 7074 and     ah, 0EFh ;~ 0192:2AC3
 	R(AND(ah, 0x0DF));	// 7075 and     ah, 0DFh ;~ 0192:2AC6
 	R(MOV(byte_1f1e0, ah));	// 7076 mov     byte_1F1E0, ah ;~ 0192:2AC9
 cs=0x192;eip=0x002acd; 	R(RETN);	// 7077 retn ;~ 0192:2ACD
-loc_12ace:	// 5314 
+loc_12ace:	// 5328 
 	R(AND(*(raddr(ds,bx)), 0x0DF));	// 7082 and     byte ptr [bx], 0DFh ;~ 0192:2ACE
 cs=0x192;eip=0x002ad1; 	R(RETN);	// 7083 retn ;~ 0192:2AD1
+ret_192_2ad2:	// 5329 
 	R(MOV(bx, offset(seg000,word_1f12f)));	// 7085 mov     bx, offset word_1F12F ;~ 0192:2AD2
 	R(TEST(*(raddr(ds,bx)), 0x20));	// 7086 test    byte ptr [bx], 20h ;~ 0192:2AD5
 cs=0x192;eip=0x002ad8; 		R(JNZ(loc_12b12));	// 7087 jnz     short loc_12B12 ;~ 0192:2AD8
 	R(OR(*(raddr(ds,bx)), 0x20));	// 7088 or      byte ptr [bx], 20h ;~ 0192:2ADA
 cs=0x192;eip=0x002add; 	R(CALL(sub_12849,0));	// 7089 call    sub_12849 ;~ 0192:2ADD
-ret_192_2ae0:	// 5315 
+ret_192_2ae0:	// 5330 
 	R(MOV(bx, offset(seg000,word_1f1dc)+1));	// 7090 mov     bx, (offset word_1F1DC+1) ;~ 0192:2AE0
 	R(INC(*(raddr(ds,bx))));	// 7091 inc     byte ptr [bx] ;~ 0192:2AE3
 	R(MOV(bx, offset(seg000,word_1f1da)+1));	// 7092 mov     bx, (offset word_1F1DA+1) ;~ 0192:2AE5
 	R(MOV(*(raddr(ds,bx)), 0x23));	// 7093 mov     byte ptr [bx], 23h ; '#' ;~ 0192:2AE8
 cs=0x192;eip=0x002aeb; 	R(CALL(sub_139a9,0));	// 7094 call    sub_139A9 ;~ 0192:2AEB
-ret_192_2aee:	// 5316 
+ret_192_2aee:	// 5331 
 	R(XOR(ah, ah));	// 7095 xor     ah, ah ;~ 0192:2AEE
 	R(MOV(*(db*)(((db*)&word_1f12a)), ah));	// 7096 mov     byte ptr word_1F12A, ah ;~ 0192:2AF0
 cs=0x192;eip=0x002af4; 	R(CALL(sub_122ea,0));	// 7097 call    sub_122EA ;~ 0192:2AF4
-ret_192_2af7:	// 5317 
+ret_192_2af7:	// 5332 
 	R(MOV(bx, offset(seg000,byte_1f4da)));	// 7098 mov     bx, offset byte_1F4DA ;~ 0192:2AF7
 	R(MOV(ah, 1));	// 7099 mov     ah, 1 ;~ 0192:2AFA
 	R(CMP(ah, *(raddr(ds,bx))));	// 7100 cmp     ah, [bx] ;~ 0192:2AFC
 cs=0x192;eip=0x002afe; 		R(JNZ(loc_12b12));	// 7101 jnz     short loc_12B12 ;~ 0192:2AFE
 	R(MOV(bx, offset(seg000,word_1f103)));	// 7102 mov     bx, offset word_1F103 ;~ 0192:2B00
 	R(MOV(ch, 4));	// 7103 mov     ch, 4 ;~ 0192:2B03
-loc_12b05:	// 5318 
+loc_12b05:	// 5333 
 	R(TEST(*(raddr(ds,bx)), 0x80));	// 7106 test    byte ptr [bx], 80h ;~ 0192:2B05
 cs=0x192;eip=0x002b08; 		R(JZ(loc_12b12));	// 7107 jz      short loc_12B12 ;~ 0192:2B08
 	R(INC(bx));	// 7108 inc     bx ;~ 0192:2B0A
 	R(DEC(ch));	// 7109 dec     ch ;~ 0192:2B0B
 cs=0x192;eip=0x002b0d; 		R(JNZ(loc_12b05));	// 7110 jnz     short loc_12B05 ;~ 0192:2B0D
 cs=0x192;eip=0x002b0f; 		R(JMP(loc_133ec));	// 7111 jmp     loc_133EC ;~ 0192:2B0F
-loc_12b12:	// 5319 
+loc_12b12:	// 5334 
 	R(MOV(bx, offset(seg000,byte_1f107)));	// 7116 mov     bx, offset byte_1F107 ;~ 0192:2B12
 	R(AND(*(raddr(ds,bx)), 0x0DF));	// 7117 and     byte ptr [bx], 0DFh ;~ 0192:2B15
 	R(MOV(ah, *(db*)(((db*)&word_1f1da)+1)));	// 7118 mov     ah, byte ptr word_1F1DA+1 ;~ 0192:2B18
 	R(CMP(ah, 0x1C));	// 7119 cmp     ah, 1Ch ;~ 0192:2B1C
 cs=0x192;eip=0x002b1f; 		R(JC(locret_12b24));	// 7120 jb      short locret_12B24 ;~ 0192:2B1F
 	R(OR(*(raddr(ds,bx)), 0x20));	// 7121 or      byte ptr [bx], 20h ;~ 0192:2B21
-locret_12b24:	// 5320 
+locret_12b24:	// 5335 
 cs=0x192;eip=0x002b24; 	R(RETN);	// 7124 retn ;~ 0192:2B24
 sub_12b25:	// 7129 
 	R(MOV(bx, offset(seg000,byte_1ede3)));	// 7131 mov     bx, offset byte_1EDE3 ;~ 0192:2B25
@@ -6000,7 +6014,7 @@ sub_12b25:	// 7129
 	R(XCHG(si, bx));	// 7138 xchg    si, bx ;~ 0192:2B35
 	R(XCHG(di, dx));	// 7139 xchg    di, dx ;~ 0192:2B37
 cs=0x192;eip=0x002b39; 	R(CALL(sub_12bb9,0));	// 7140 call    sub_12BB9 ;~ 0192:2B39
-ret_192_2b3c:	// 5321 
+ret_192_2b3c:	// 5336 
 	R(MOV(ah, byte_1f11c));	// 7141 mov     ah, byte_1F11C ;~ 0192:2B3C
 	R(SHL(ah, 1));	// 7142 shl     ah, 1 ;~ 0192:2B40
 	R(MOV(dl, ah));	// 7143 mov     dl, ah ;~ 0192:2B42
@@ -6014,7 +6028,7 @@ ret_192_2b3c:	// 5321
 	R(ADD(di, dx));	// 7151 add     di, dx ;~ 0192:2B53
 	R(MOV(ch, *(raddr(ds,di))));	// 7152 mov     ch, [di] ;~ 0192:2B55
 	R(INC(di));	// 7153 inc     di ;~ 0192:2B57
-loc_12b58:	// 5322 
+loc_12b58:	// 5337 
 	R(PUSH(cx));	// 7156 push    cx ;~ 0192:2B58
 	R(MOV(bh, 0));	// 7157 mov     bh, 0 ;~ 0192:2B59
 	R(MOV(bl, *(raddr(ds,di+1))));	// 7158 mov     bl, [di+1] ;~ 0192:2B5B
@@ -6040,17 +6054,17 @@ loc_12b58:	// 5322
 	R(INC(bx));	// 7178 inc     bx ;~ 0192:2B86
 	R(MOV(cl, *(raddr(ds,bx))));	// 7179 mov     cl, [bx] ;~ 0192:2B87
 	R(INC(bx));	// 7180 inc     bx ;~ 0192:2B89
-loc_12b8a:	// 5323 
+loc_12b8a:	// 5338 
 	R(PUSH(cx));	// 7183 push    cx ;~ 0192:2B8A
 	R(PUSH(dx));	// 7184 push    dx ;~ 0192:2B8B
-loc_12b8c:	// 5324 
+loc_12b8c:	// 5339 
 	R(MOV(ah, *(raddr(ds,bx))));	// 7187 mov     ah, [bx] ;~ 0192:2B8C
 	R(OR(ah, ah));	// 7188 or      ah, ah ;~ 0192:2B8E
 cs=0x192;eip=0x002b90; 		R(JZ(loc_12b98));	// 7189 jz      short loc_12B98 ;~ 0192:2B90
 	R(XCHG(dx, bx));	// 7190 xchg    dx, bx ;~ 0192:2B92
 	R(MOV(*(raddr(ds,bx)), ah));	// 7191 mov     [bx], ah ;~ 0192:2B94
 	R(XCHG(dx, bx));	// 7192 xchg    dx, bx ;~ 0192:2B96
-loc_12b98:	// 5325 
+loc_12b98:	// 5340 
 	R(INC(bx));	// 7195 inc     bx ;~ 0192:2B98
 	R(INC(dx));	// 7196 inc     dx ;~ 0192:2B99
 	R(DEC(ch));	// 7197 dec     ch ;~ 0192:2B9A
@@ -6061,7 +6075,7 @@ cs=0x192;eip=0x002b9c; 		R(JNZ(loc_12b8c));	// 7198 jnz     short loc_12B8C ;~ 0
 	R(MOV(dl, ah));	// 7202 mov     dl, ah ;~ 0192:2BA3
 cs=0x192;eip=0x002ba5; 		R(JNC(loc_12ba9));	// 7203 jnb     short loc_12BA9 ;~ 0192:2BA5
 	R(INC(dh));	// 7204 inc     dh ;~ 0192:2BA7
-loc_12ba9:	// 5326 
+loc_12ba9:	// 5341 
 	R(POP(cx));	// 7207 pop     cx ;~ 0192:2BA9
 	R(DEC(cl));	// 7208 dec     cl ;~ 0192:2BAA
 cs=0x192;eip=0x002bac; 		R(JNZ(loc_12b8a));	// 7209 jnz     short loc_12B8A ;~ 0192:2BAC
@@ -6102,7 +6116,7 @@ sub_12bd2:	// 7240
 	R(INC(di));	// 7257 inc     di ;~ 0192:2BFA
 	R(OR(ah, ah));	// 7258 or      ah, ah ;~ 0192:2BFB
 cs=0x192;eip=0x002bfd; 		R(JZ(loc_12c2f));	// 7259 jz      short loc_12C2F ;~ 0192:2BFD
-loc_12bff:	// 5327 
+loc_12bff:	// 5342 
 	R(PUSH(cx));	// 7262 push    cx ;~ 0192:2BFF
 	R(INC(di));	// 7263 inc     di ;~ 0192:2C00
 	R(TEST(*(raddr(ds,di-1)), 0x80));	// 7264 test    byte ptr [di-1], 80h ;~ 0192:2C01
@@ -6114,22 +6128,22 @@ cs=0x192;eip=0x002c0b; 		R(JNZ(loc_12c1d));	// 7268 jnz     short loc_12C1D ;~ 0
 	R(TEST(*(raddr(ds,si)), 0x80));	// 7270 test    byte ptr [si], 80h ;~ 0192:2C10
 cs=0x192;eip=0x002c13; 		R(JNZ(loc_12c25));	// 7271 jnz     short loc_12C25 ;~ 0192:2C13
 cs=0x192;eip=0x002c15; 	R(CALL(sub_11229,0));	// 7272 call    sub_11229 ;~ 0192:2C15
-ret_192_2c18:	// 5328 
+ret_192_2c18:	// 5343 
 cs=0x192;eip=0x002c18; 	R(CALL(sub_112d3,0));	// 7273 call    sub_112D3 ;~ 0192:2C18
-ret_192_2c1b:	// 5329 
+ret_192_2c1b:	// 5344 
 cs=0x192;eip=0x002c1b; 		R(JMP(loc_12c25));	// 7274 jmp     short loc_12C25 ;~ 0192:2C1B
-loc_12c1d:	// 5330 
+loc_12c1d:	// 5345 
 cs=0x192;eip=0x002c1d; 	R(CALL(sub_112a7,0));	// 7278 call    sub_112A7 ;~ 0192:2C1D
-ret_192_2c20:	// 5331 
+ret_192_2c20:	// 5346 
 cs=0x192;eip=0x002c20; 		R(JC(loc_12c25));	// 7279 jb      short loc_12C25 ;~ 0192:2C20
 cs=0x192;eip=0x002c22; 	R(CALL(sub_11229,0));	// 7280 call    sub_11229 ;~ 0192:2C22
-loc_12c25:	// 5332 
+loc_12c25:	// 5347 
 	R(MOV(dx, 8));	// 7284 mov     dx, 8 ;~ 0192:2C25
 	R(ADD(di, dx));	// 7285 add     di, dx ;~ 0192:2C28
 	R(POP(cx));	// 7286 pop     cx ;~ 0192:2C2A
 	R(DEC(ch));	// 7287 dec     ch ;~ 0192:2C2B
 cs=0x192;eip=0x002c2d; 		R(JNZ(loc_12bff));	// 7288 jnz     short loc_12BFF ;~ 0192:2C2D
-loc_12c2f:	// 5333 
+loc_12c2f:	// 5348 
 	R(MOV(off_1f1c7, di));	// 7291 mov     off_1F1C7, di ;~ 0192:2C2F
 cs=0x192;eip=0x002c33; 	R(RETN);	// 7292 retn ;~ 0192:2C33
 sub_12c34:	// 7299 
@@ -6138,14 +6152,14 @@ sub_12c34:	// 7299
 	R(OR(ah, ah));	// 7302 or      ah, ah ;~ 0192:2C3A
 cs=0x192;eip=0x002c3c; 		R(JNZ(loc_12c3f));	// 7303 jnz     short loc_12C3F ;~ 0192:2C3C
 cs=0x192;eip=0x002c3e; 	R(RETN);	// 7304 retn ;~ 0192:2C3E
-loc_12c3f:	// 5334 
+loc_12c3f:	// 5349 
 	R(MOV(ch, ah));	// 7308 mov     ch, ah ;~ 0192:2C3F
 	R(INC(di));	// 7309 inc     di ;~ 0192:2C41
-loc_12c42:	// 5335 
+loc_12c42:	// 5350 
 	R(PUSH(cx));	// 7312 push    cx ;~ 0192:2C42
 	R(PUSH(di));	// 7313 push    di ;~ 0192:2C43
 cs=0x192;eip=0x002c44; 	R(CALL(sub_12c50,0));	// 7314 call    sub_12C50 ;~ 0192:2C44
-ret_192_2c47:	// 5336 
+ret_192_2c47:	// 5351 
 	R(POP(di));	// 7315 pop     di ;~ 0192:2C47
 	R(INC(di));	// 7316 inc     di ;~ 0192:2C48
 	R(INC(di));	// 7317 inc     di ;~ 0192:2C49
@@ -6163,12 +6177,13 @@ sub_12c57:	// 7338
 	R(PUSH(cx));	// 7341 push    cx ;~ 0192:2C58
 	R(PUSH(dx));	// 7342 push    dx ;~ 0192:2C59
 cs=0x192;eip=0x002c5a; 	R(CALL(sub_110d5,0));	// 7343 call    sub_110D5 ;~ 0192:2C5A
-ret_192_2c5d:	// 5337 
+ret_192_2c5d:	// 5352 
 	R(MOV(*(raddr(ds,bx)), ah));	// 7344 mov     [bx], ah ;~ 0192:2C5D
 	R(POP(dx));	// 7345 pop     dx ;~ 0192:2C5F
 	R(POP(cx));	// 7346 pop     cx ;~ 0192:2C60
 	R(POP(bx));	// 7347 pop     bx ;~ 0192:2C61
 cs=0x192;eip=0x002c62; 	R(RETN);	// 7348 retn ;~ 0192:2C62
+ret_192_2c63:	// 5353 
 	R(MOV(*(raddr(ds,si+0x0B)), dl));	// 7352 mov     [si+0Bh], dl ;~ 0192:2C63
 	R(MOV(*(raddr(ds,si+0x0C)), dh));	// 7353 mov     [si+0Ch], dh ;~ 0192:2C66
 	R(MOV(*(raddr(ds,si+0x0D)), bl));	// 7354 mov     [si+0Dh], bl ;~ 0192:2C69
@@ -6178,7 +6193,7 @@ sub_12c70:	// 7361
 	R(PUSH(si));	// 7362 push    si ;~ 0192:2C70
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 7363 mov     si, offset byte_1F1CF ;~ 0192:2C71
 cs=0x192;eip=0x002c74; 	R(CALL(sub_12c79,0));	// 7364 call    sub_12C79 ;~ 0192:2C74
-ret_192_2c77:	// 5338 
+ret_192_2c77:	// 5354 
 	R(POP(si));	// 7365 pop     si ;~ 0192:2C77
 cs=0x192;eip=0x002c78; 	R(RETN);	// 7366 retn ;~ 0192:2C78
 sub_12c79:	// 7373 
@@ -6188,18 +6203,20 @@ sub_12c79:	// 7373
 	R(MOV(bh, *(raddr(ds,si+0x0E))));	// 7378 mov     bh, [si+0Eh] ;~ 0192:2C82
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 7379 test    byte ptr [si+13h], 80h ;~ 0192:2C85
 cs=0x192;eip=0x002c89; 	R(RETN);	// 7380 retn ;~ 0192:2C89
+ret_192_2c8a:	// 5355 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 7384 mov     ah, [si+13h] ;~ 0192:2C8A
 	R(CMP(ah, 0x7F));	// 7385 cmp     ah, 7Fh ;~ 0192:2C8D
 cs=0x192;eip=0x002c90; 		R(JNZ(loc_12c93));	// 7386 jnz     short loc_12C93 ;~ 0192:2C90
 cs=0x192;eip=0x002c92; 	R(RETN);	// 7387 retn ;~ 0192:2C92
-loc_12c93:	// 5339 
+loc_12c93:	// 5356 
 	R(INC(*(raddr(ds,si+0x13))));	// 7391 inc     byte ptr [si+13h] ;~ 0192:2C93
 cs=0x192;eip=0x002c96; 	R(RETN);	// 7392 retn ;~ 0192:2C96
+ret_192_2c97:	// 5357 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 7394 mov     ah, [si+13h] ;~ 0192:2C97
 	R(CMP(ah, 0x81));	// 7395 cmp     ah, 81h ; '' ;~ 0192:2C9A
 cs=0x192;eip=0x002c9d; 		R(JNZ(loc_12ca0));	// 7396 jnz     short loc_12CA0 ;~ 0192:2C9D
 cs=0x192;eip=0x002c9f; 	R(RETN);	// 7397 retn ;~ 0192:2C9F
-loc_12ca0:	// 5340 
+loc_12ca0:	// 5358 
 	R(DEC(*(raddr(ds,si+0x13))));	// 7401 dec     byte ptr [si+13h] ;~ 0192:2CA0
 cs=0x192;eip=0x002ca3; 	R(RETN);	// 7402 retn ;~ 0192:2CA3
 sub_12ca4:	// 7407 
@@ -6207,7 +6224,7 @@ sub_12ca4:	// 7407
 	R(CMP(ah, 0x7F));	// 7410 cmp     ah, 7Fh ;~ 0192:2CA7
 cs=0x192;eip=0x002caa; 		R(JNZ(loc_12cad));	// 7411 jnz     short loc_12CAD ;~ 0192:2CAA
 cs=0x192;eip=0x002cac; 	R(RETN);	// 7412 retn ;~ 0192:2CAC
-loc_12cad:	// 5341 
+loc_12cad:	// 5359 
 	R(INC(*(raddr(ds,si+0x14))));	// 7416 inc     byte ptr [si+14h] ;~ 0192:2CAD
 cs=0x192;eip=0x002cb0; 	R(RETN);	// 7417 retn ;~ 0192:2CB0
 sub_12cb1:	// 7424 
@@ -6215,24 +6232,24 @@ sub_12cb1:	// 7424
 	R(CMP(ah, 0x81));	// 7426 cmp     ah, 81h ; '' ;~ 0192:2CB4
 cs=0x192;eip=0x002cb7; 		R(JNZ(loc_12cba));	// 7427 jnz     short loc_12CBA ;~ 0192:2CB7
 cs=0x192;eip=0x002cb9; 	R(RETN);	// 7428 retn ;~ 0192:2CB9
-loc_12cba:	// 5342 
+loc_12cba:	// 5360 
 	R(DEC(*(raddr(ds,si+0x14))));	// 7432 dec     byte ptr [si+14h] ;~ 0192:2CBA
 cs=0x192;eip=0x002cbd; 	R(RETN);	// 7433 retn ;~ 0192:2CBD
 sub_12cbe:	// 7440 
 cs=0x192;eip=0x002cbe; 	R(CALL(sub_12ce2,0));	// 7442 call    sub_12CE2 ;~ 0192:2CBE
-ret_192_2cc1:	// 5343 
+ret_192_2cc1:	// 5361 
 	R(MOV(cl, *(raddr(ds,si+0x13))));	// 7443 mov     cl, [si+13h] ;~ 0192:2CC1
 	R(MOV(bl, *(raddr(ds,si+0x0B))));	// 7444 mov     bl, [si+0Bh] ;~ 0192:2CC4
 	R(MOV(bh, *(raddr(ds,si+0x0C))));	// 7445 mov     bh, [si+0Ch] ;~ 0192:2CC7
 cs=0x192;eip=0x002cca; 	R(CALL(sub_12d0b,0));	// 7446 call    sub_12D0B ;~ 0192:2CCA
-ret_192_2ccd:	// 5344 
+ret_192_2ccd:	// 5362 
 	R(ADD(bx, cx));	// 7447 add     bx, cx ;~ 0192:2CCD
 	R(MOV(*(raddr(ds,si+0x0B)), bl));	// 7448 mov     [si+0Bh], bl ;~ 0192:2CCF
 	R(MOV(*(raddr(ds,si+0x0C)), bh));	// 7449 mov     [si+0Ch], bh ;~ 0192:2CD2
 cs=0x192;eip=0x002cd5; 	R(RETN);	// 7450 retn ;~ 0192:2CD5
 sub_12cd6:	// 7457 
 cs=0x192;eip=0x002cd6; 	R(CALL(sub_12cbe,0));	// 7459 call    sub_12CBE ;~ 0192:2CD6
-ret_192_2cd9:	// 5345 
+ret_192_2cd9:	// 5363 
 	R(ADD(bx, cx));	// 7460 add     bx, cx ;~ 0192:2CD9
 	R(MOV(*(raddr(ds,si+0x0B)), bl));	// 7461 mov     [si+0Bh], bl ;~ 0192:2CDB
 	R(MOV(*(raddr(ds,si+0x0C)), bh));	// 7462 mov     [si+0Ch], bh ;~ 0192:2CDE
@@ -6242,13 +6259,13 @@ sub_12ce2:	// 7470
 	R(MOV(bl, *(raddr(ds,si+3))));	// 7473 mov     bl, [si+3] ;~ 0192:2CE5
 	R(MOV(bh, *(raddr(ds,si+4))));	// 7474 mov     bh, [si+4] ;~ 0192:2CE8
 cs=0x192;eip=0x002ceb; 	R(CALL(sub_12d0b,0));	// 7475 call    sub_12D0B ;~ 0192:2CEB
-ret_192_2cee:	// 5346 
+ret_192_2cee:	// 5364 
 	R(ADD(bx, cx));	// 7476 add     bx, cx ;~ 0192:2CEE
 	R(MOV(*(raddr(ds,si+0x0B)), bl));	// 7477 mov     [si+0Bh], bl ;~ 0192:2CF0
 	R(MOV(*(raddr(ds,si+0x0C)), bh));	// 7478 mov     [si+0Ch], bh ;~ 0192:2CF3
 	R(MOV(cl, *(raddr(ds,si+0x14))));	// 7479 mov     cl, [si+14h] ;~ 0192:2CF6
 cs=0x192;eip=0x002cf9; 	R(CALL(sub_12d0b,0));	// 7480 call    sub_12D0B ;~ 0192:2CF9
-ret_192_2cfc:	// 5347 
+ret_192_2cfc:	// 5365 
 	R(MOV(bl, *(raddr(ds,si+5))));	// 7481 mov     bl, [si+5] ;~ 0192:2CFC
 	R(MOV(bh, *(raddr(ds,si+6))));	// 7482 mov     bh, [si+6] ;~ 0192:2CFF
 	R(ADD(bx, cx));	// 7483 add     bx, cx ;~ 0192:2D02
@@ -6260,10 +6277,10 @@ sub_12d0b:	// 7493
 	R(TEST(cl, 0x80));	// 7496 test    cl, 80h ;~ 0192:2D0D
 cs=0x192;eip=0x002d10; 		R(JNZ(loc_12d13));	// 7497 jnz     short loc_12D13 ;~ 0192:2D10
 cs=0x192;eip=0x002d12; 	R(RETN);	// 7498 retn ;~ 0192:2D12
-loc_12d13:	// 5348 
+loc_12d13:	// 5366 
 	R(MOV(ch, 0x0FF));	// 7502 mov     ch, 0FFh ;~ 0192:2D13
 cs=0x192;eip=0x002d15; 	R(RETN);	// 7503 retn ;~ 0192:2D15
-loc_12d16:	// 5349 
+loc_12d16:	// 5367 
 	R(MOV(bl, *(raddr(ds,si+0x22))));	// 7510 mov     bl, [si+22h] ;~ 0192:2D16
 	R(MOV(bh, *(raddr(ds,si+0x23))));	// 7511 mov     bh, [si+23h] ;~ 0192:2D19
 	R(MOV(dx, 5));	// 7512 mov     dx, 5 ;~ 0192:2D1C
@@ -6278,12 +6295,12 @@ sub_12d2a:	// 7523
 	R(MOV(bl, *(raddr(ds,si+0x22))));	// 7525 mov     bl, [si+22h] ;~ 0192:2D2A
 	R(MOV(bh, *(raddr(ds,si+0x23))));	// 7526 mov     bh, [si+23h] ;~ 0192:2D2D
 	R(MOV(dl, *(raddr(ds,bx))));	// 7527 mov     dl, [bx] ;~ 0192:2D30
-loc_12d32:	// 5350 
+loc_12d32:	// 5368 
 	R(TEST(*(raddr(ds,si+0x13)), 0x80));	// 7530 test    byte ptr [si+13h], 80h ;~ 0192:2D32
 cs=0x192;eip=0x002d36; 		R(JZ(loc_12d3a));	// 7531 jz      short loc_12D3A ;~ 0192:2D36
 	R(INC(bx));	// 7532 inc     bx ;~ 0192:2D38
 	R(INC(bx));	// 7533 inc     bx ;~ 0192:2D39
-loc_12d3a:	// 5351 
+loc_12d3a:	// 5369 
 	R(INC(bx));	// 7536 inc     bx ;~ 0192:2D3A
 	R(MOV(cl, *(raddr(ds,bx))));	// 7537 mov     cl, [bx] ;~ 0192:2D3B
 	R(INC(bx));	// 7538 inc     bx ;~ 0192:2D3D
@@ -6298,7 +6315,7 @@ sub_12d43:	// 7547
 cs=0x192;eip=0x002d50; 		R(JMP(loc_12d32));	// 7553 jmp     short loc_12D32 ;~ 0192:2D50
 sub_12d52:	// 7560 
 cs=0x192;eip=0x002d52; 	R(CALL(sub_12d58,0));	// 7562 call    sub_12D58 ;~ 0192:2D52
-ret_192_2d55:	// 5352 
+ret_192_2d55:	// 5370 
 cs=0x192;eip=0x002d55; 		R(JMP(sub_11385));	// 7563 jmp     sub_11385 ;~ 0192:2D55
 sub_12d58:	// 7570 
 	R(MOV(dl, *(raddr(ds,si+0x20))));	// 7572 mov     dl, [si+20h] ;~ 0192:2D58
@@ -6308,6 +6325,7 @@ sub_12d58:	// 7570
 	R(MOV(bl, *(raddr(ds,di))));	// 7576 mov     bl, [di] ;~ 0192:2D63
 	R(MOV(dl, *(raddr(ds,di+1))));	// 7577 mov     dl, [di+1] ;~ 0192:2D65
 cs=0x192;eip=0x002d68; 	R(RETN);	// 7578 retn ;~ 0192:2D68
+ret_192_2d69:	// 5371 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 7582 mov     ah, [si+24h] ;~ 0192:2D69
 	R(ADD(ah, 2));	// 7583 add     ah, 2 ;~ 0192:2D6C
 	R(MOV(bh, 0));	// 7584 mov     bh, 0 ;~ 0192:2D6F
@@ -6321,40 +6339,40 @@ cs=0x192;eip=0x002d68; 	R(RETN);	// 7578 retn ;~ 0192:2D68
 cs=0x192;eip=0x002d82; 	R(RETN);	// 7592 retn ;~ 0192:2D82
 sub_12d83:	// 7597 
 cs=0x192;eip=0x002d83; 	R(CALL(sub_12d58,0));	// 7599 call    sub_12D58 ;~ 0192:2D83
-ret_192_2d86:	// 5353 
+ret_192_2d86:	// 5372 
 cs=0x192;eip=0x002d86; 		R(JMP(loc_113c6));	// 7600 jmp     loc_113C6 ;~ 0192:2D86
 sub_12d89:	// 7607 
 cs=0x192;eip=0x002d89; 	R(CALL(sub_12d83,0));	// 7608 call    sub_12D83 ;~ 0192:2D89
-ret_192_2d8c:	// 5354 
+ret_192_2d8c:	// 5373 
 cs=0x192;eip=0x002d8c; 		R(JC(loc_12d8f));	// 7609 jb      short loc_12D8F ;~ 0192:2D8C
 cs=0x192;eip=0x002d8e; 	R(RETN);	// 7610 retn ;~ 0192:2D8E
-loc_12d8f:	// 5355 
+loc_12d8f:	// 5374 
 	R(OR(*(raddr(ds,si)), 0x10));	// 7614 or      byte ptr [si], 10h ;~ 0192:2D8F
 	R(POP(bx));	// 7615 pop     bx ;~ 0192:2D92
 	R(MOV(bx, offset(seg000,table1_8)));	// 7616 mov     bx, offset table1_8 ;~ 0192:2D93
 cs=0x192;eip=0x002d96; 		R(JMP(settable1));	// 7617 jmp     settable1 ;~ 0192:2D96
 sub_12d99:	// 7624 
 cs=0x192;eip=0x002d99; 	R(CALL(sub_11355,0));	// 7626 call    sub_11355 ;~ 0192:2D99
-ret_192_2d9c:	// 5356 
+ret_192_2d9c:	// 5375 
 cs=0x192;eip=0x002d9c; 	R(CALL(sub_12dbf,0));	// 7627 call    sub_12DBF ;~ 0192:2D9C
-ret_192_2d9f:	// 5357 
+ret_192_2d9f:	// 5376 
 cs=0x192;eip=0x002d9f; 		R(JC(loc_12da5));	// 7628 jb      short loc_12DA5 ;~ 0192:2D9F
 	R(MOV(*(raddr(ds,si+0x13)), dl));	// 7629 mov     [si+13h], dl ;~ 0192:2DA1
 cs=0x192;eip=0x002da4; 	R(RETN);	// 7630 retn ;~ 0192:2DA4
-loc_12da5:	// 5358 
+loc_12da5:	// 5377 
 	R(MOV(ah, dl));	// 7634 mov     ah, dl ;~ 0192:2DA5
 	R(NEG(ah));	// 7635 neg     ah ;~ 0192:2DA7
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 7636 mov     [si+13h], ah ;~ 0192:2DA9
 cs=0x192;eip=0x002dac; 	R(RETN);	// 7637 retn ;~ 0192:2DAC
 sub_12dad:	// 7644 
 cs=0x192;eip=0x002dad; 	R(CALL(sub_11348,0));	// 7646 call    sub_11348 ;~ 0192:2DAD
-ret_192_2db0:	// 5359 
+ret_192_2db0:	// 5378 
 cs=0x192;eip=0x002db0; 	R(CALL(sub_12dbf,0));	// 7647 call    sub_12DBF ;~ 0192:2DB0
-ret_192_2db3:	// 5360 
+ret_192_2db3:	// 5379 
 cs=0x192;eip=0x002db3; 		R(JC(loc_12db9));	// 7648 jb      short loc_12DB9 ;~ 0192:2DB3
 	R(MOV(*(raddr(ds,si+0x14)), dl));	// 7649 mov     [si+14h], dl ;~ 0192:2DB5
 cs=0x192;eip=0x002db8; 	R(RETN);	// 7650 retn ;~ 0192:2DB8
-loc_12db9:	// 5361 
+loc_12db9:	// 5380 
 	R(NEG(ah));	// 7654 neg     ah ;~ 0192:2DB9
 	R(MOV(*(raddr(ds,si+0x14)), ah));	// 7655 mov     [si+14h], ah ;~ 0192:2DBB
 cs=0x192;eip=0x002dbe; 	R(RETN);	// 7656 retn ;~ 0192:2DBE
@@ -6368,49 +6386,50 @@ sub_12dbf:	// 7663
 	R(POPF);	// 7671 popf ;~ 0192:2DC9
 	R(POP(ax));	// 7672 pop     ax ;~ 0192:2DCA
 cs=0x192;eip=0x002dcb; 	R(RETN);	// 7673 retn ;~ 0192:2DCB
+ret_192_2dcc:	// 5381 
 cs=0x192;eip=0x002dcc; 	R(CALL(sub_12d89,0));	// 7677 call    sub_12D89 ;~ 0192:2DCC
-ret_192_2dcf:	// 5362 
+ret_192_2dcf:	// 5382 
 cs=0x192;eip=0x002dcf; 	R(CALL(sub_12d99,0));	// 7678 call    sub_12D99 ;~ 0192:2DCF
-ret_192_2dd2:	// 5363 
+ret_192_2dd2:	// 5383 
 cs=0x192;eip=0x002dd2; 	R(CALL(sub_12dad,0));	// 7679 call    sub_12DAD ;~ 0192:2DD2
-ret_192_2dd5:	// 5364 
+ret_192_2dd5:	// 5384 
 	R(TEST(*(raddr(ds,si+0x24)), 1));	// 7680 test    byte ptr [si+24h], 1 ;~ 0192:2DD5
 cs=0x192;eip=0x002dd9; 		R(JNZ(loc_12dfa));	// 7681 jnz     short loc_12DFA ;~ 0192:2DD9
 cs=0x192;eip=0x002ddb; 	R(CALL(sub_12d2a,0));	// 7682 call    sub_12D2A ;~ 0192:2DDB
-ret_192_2dde:	// 5365 
+ret_192_2dde:	// 5385 
 cs=0x192;eip=0x002dde; 		R(JC(loc_12de1));	// 7683 jb      short loc_12DE1 ;~ 0192:2DDE
 cs=0x192;eip=0x002de0; 	R(RETN);	// 7684 retn ;~ 0192:2DE0
-loc_12de1:	// 5366 
+loc_12de1:	// 5386 
 cs=0x192;eip=0x002de1; 		R(JNZ(loc_12de4));	// 7688 jnz     short loc_12DE4 ;~ 0192:2DE1
 cs=0x192;eip=0x002de3; 	R(RETN);	// 7689 retn ;~ 0192:2DE3
-loc_12de4:	// 5367 
+loc_12de4:	// 5387 
 cs=0x192;eip=0x002de4; 	R(CALL(sub_11111,0));	// 7693 call    sub_11111 ;~ 0192:2DE4
-ret_192_2de7:	// 5368 
+ret_192_2de7:	// 5388 
 	R(CMP(ah, 0x0C8));	// 7694 cmp     ah, 0C8h ; 'È' ;~ 0192:2DE7
 cs=0x192;eip=0x002dea; 		R(JNC(loc_12ded));	// 7695 jnb     short loc_12DED ;~ 0192:2DEA
 cs=0x192;eip=0x002dec; 	R(RETN);	// 7696 retn ;~ 0192:2DEC
-loc_12ded:	// 5369 
+loc_12ded:	// 5389 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 7700 mov     ah, [si+2] ;~ 0192:2DED
 	R(CMP(ah, 1));	// 7701 cmp     ah, 1 ;~ 0192:2DF0
 cs=0x192;eip=0x002df3; 		R(JC(loc_12df6));	// 7702 jb      short loc_12DF6 ;~ 0192:2DF3
 cs=0x192;eip=0x002df5; 	R(RETN);	// 7703 retn ;~ 0192:2DF5
-loc_12df6:	// 5370 
+loc_12df6:	// 5390 
 	R(OR(*(raddr(ds,si+0x24)), 1));	// 7707 or      byte ptr [si+24h], 1 ;~ 0192:2DF6
-loc_12dfa:	// 5371 
+loc_12dfa:	// 5391 
 cs=0x192;eip=0x002dfa; 	R(CALL(sub_12d43,0));	// 7710 call    sub_12D43 ;~ 0192:2DFA
-ret_192_2dfd:	// 5372 
+ret_192_2dfd:	// 5392 
 cs=0x192;eip=0x002dfd; 		R(JC(loc_12e00));	// 7711 jb      short loc_12E00 ;~ 0192:2DFD
 cs=0x192;eip=0x002dff; 	R(RETN);	// 7712 retn ;~ 0192:2DFF
-loc_12e00:	// 5373 
+loc_12e00:	// 5393 
 cs=0x192;eip=0x002e00; 		R(JNZ(loc_12e03));	// 7716 jnz     short loc_12E03 ;~ 0192:2E00
 cs=0x192;eip=0x002e02; 	R(RETN);	// 7717 retn ;~ 0192:2E02
-loc_12e03:	// 5374 
+loc_12e03:	// 5394 
 	R(AND(*(raddr(ds,si+0x24)), 0x0FE));	// 7721 and     byte ptr [si+24h], 0FEh ;~ 0192:2E03
 cs=0x192;eip=0x002e07; 	R(CALL(sub_12d58,0));	// 7722 call    sub_12D58 ;~ 0192:2E07
-ret_192_2e0a:	// 5375 
+ret_192_2e0a:	// 5395 
 	R(MOV(word_1f1a2, di));	// 7723 mov     word_1F1A2, di ;~ 0192:2E0A
 cs=0x192;eip=0x002e0e; 	R(CALL(sub_12c79,0));	// 7724 call    sub_12C79 ;~ 0192:2E0E
-ret_192_2e11:	// 5376 
+ret_192_2e11:	// 5396 
 	R(MOV(cx, 0x140));	// 7725 mov     cx, 140h ;~ 0192:2E11
 	R(ADD(bx, cx));	// 7726 add     bx, cx ;~ 0192:2E14
 	R(INC(dh));	// 7727 inc     dh ;~ 0192:2E16
@@ -6418,20 +6437,20 @@ ret_192_2e11:	// 5376
 	R(MOV(word_1f1a0, dx));	// 7729 mov     word_1F1A0, dx ;~ 0192:2E1C
 	R(MOV(word_1f1b5, si));	// 7730 mov     word_1F1B5, si ;~ 0192:2E20
 cs=0x192;eip=0x002e24; 	R(CALL(sub_112a7,0));	// 7731 call    sub_112A7 ;~ 0192:2E24
-ret_192_2e27:	// 5377 
+ret_192_2e27:	// 5397 
 cs=0x192;eip=0x002e27; 		R(JNC(loc_12e2a));	// 7732 jnb     short loc_12E2A ;~ 0192:2E27
 cs=0x192;eip=0x002e29; 	R(RETN);	// 7733 retn ;~ 0192:2E29
-loc_12e2a:	// 5378 
+loc_12e2a:	// 5398 
 	R(MOV(bx, offset(seg000,table1_4)));	// 7737 mov     bx, offset table1_4 ;~ 0192:2E2A
 cs=0x192;eip=0x002e2d; 	R(CALL(settable1,0));	// 7738 call    settable1 ;~ 0192:2E2D
-ret_192_2e30:	// 5379 
+ret_192_2e30:	// 5399 
 	R(MOV(cl, 0));	// 7739 mov     cl, 0 ;~ 0192:2E30
 	R(MOV(di, word_1f1a2));	// 7740 mov     di, word_1F1A2 ;~ 0192:2E32
 	R(MOV(ch, *(raddr(ds,di+4))));	// 7741 mov     ch, [di+4] ;~ 0192:2E36
 	R(MOV(dx, word_1f1a0));	// 7742 mov     dx, word_1F1A0 ;~ 0192:2E39
 	R(MOV(bx, word_1f19e));	// 7743 mov     bx, word_1F19E ;~ 0192:2E3D
 cs=0x192;eip=0x002e41; 	R(CALL(sub_11274,0));	// 7744 call    sub_11274 ;~ 0192:2E41
-ret_192_2e44:	// 5380 
+ret_192_2e44:	// 5400 
 	R(MOV(di, word_1f1b5));	// 7745 mov     di, word_1F1B5 ;~ 0192:2E44
 	R(MOV(ah, *(raddr(ds,di+0x12))));	// 7746 mov     ah, [di+12h] ;~ 0192:2E48
 	R(MOV(*(raddr(ds,si+2)), ah));	// 7747 mov     [si+2], ah ;~ 0192:2E4B
@@ -6452,137 +6471,140 @@ ret_192_2e44:	// 5380
 cs=0x192;eip=0x002e79; 	R(RETN);	// 7762 retn ;~ 0192:2E79
 sub_12e7a:	// 7767 
 cs=0x192;eip=0x002e7a; 	R(CALL(sub_12d52,0));	// 7768 call    sub_12D52 ;~ 0192:2E7A
-ret_192_2e7d:	// 5381 
+ret_192_2e7d:	// 5401 
 cs=0x192;eip=0x002e7d; 		R(JNC(loc_12e85));	// 7769 jnb     short loc_12E85 ;~ 0192:2E7D
 	R(POP(bx));	// 7770 pop     bx ;~ 0192:2E7F
 cs=0x192;eip=0x002e80; 	R(CALL(sub_11506,0));	// 7771 call    sub_11506 ;~ 0192:2E80
-ret_192_2e83:	// 5382 
+ret_192_2e83:	// 5402 
 cs=0x192;eip=0x002e83; 		R(JMP(loc_12ea3));	// 7772 jmp     short loc_12EA3 ;~ 0192:2E83
-loc_12e85:	// 5383 
+loc_12e85:	// 5403 
 cs=0x192;eip=0x002e85; 	R(CALL(sub_12d2a,0));	// 7776 call    sub_12D2A ;~ 0192:2E85
-ret_192_2e88:	// 5384 
+ret_192_2e88:	// 5404 
 cs=0x192;eip=0x002e88; 		R(JC(loc_12e8b));	// 7777 jb      short loc_12E8B ;~ 0192:2E88
 cs=0x192;eip=0x002e8a; 	R(RETN);	// 7778 retn ;~ 0192:2E8A
-loc_12e8b:	// 5385 
+loc_12e8b:	// 5405 
 cs=0x192;eip=0x002e8b; 	R(CALL(sub_12ca4,0));	// 7782 call    sub_12CA4 ;~ 0192:2E8B
-ret_192_2e8e:	// 5386 
+ret_192_2e8e:	// 5406 
 cs=0x192;eip=0x002e8e; 	R(CALL(sub_12cbe,0));	// 7783 call    sub_12CBE ;~ 0192:2E8E
-ret_192_2e91:	// 5387 
+ret_192_2e91:	// 5407 
 cs=0x192;eip=0x002e91; 	R(CALL(sub_10a19,0));	// 7784 call    sub_10A19 ;~ 0192:2E91
-ret_192_2e94:	// 5388 
+ret_192_2e94:	// 5408 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 7785 mov     ah, [si+24h] ;~ 0192:2E94
 	R(AND(ah, 0x0B0));	// 7786 and     ah, 0B0h ;~ 0192:2E97
 cs=0x192;eip=0x002e9a; 		R(JNZ(loc_12ea3));	// 7787 jnz     short loc_12EA3 ;~ 0192:2E9A
 	R(TEST(*(raddr(ds,si+0x11)), 0x40));	// 7788 test    byte ptr [si+11h], 40h ;~ 0192:2E9C
 cs=0x192;eip=0x002ea0; 		R(JNZ(loc_12ea3));	// 7789 jnz     short loc_12EA3 ;~ 0192:2EA0
 cs=0x192;eip=0x002ea2; 	R(RETN);	// 7790 retn ;~ 0192:2EA2
-loc_12ea3:	// 5389 
+loc_12ea3:	// 5409 
 cs=0x192;eip=0x002ea3; 	R(CALL(sub_1120d,0));	// 7795 call    sub_1120D ;~ 0192:2EA3
-ret_192_2ea6:	// 5390 
+ret_192_2ea6:	// 5410 
 	R(OR(*(raddr(ds,si)), 0x10));	// 7796 or      byte ptr [si], 10h ;~ 0192:2EA6
 	R(MOV(ah, *(raddr(ds,si+2))));	// 7797 mov     ah, [si+2] ;~ 0192:2EA9
 cs=0x192;eip=0x002eac; 	R(CALL(sub_114e3,0));	// 7798 call    sub_114E3 ;~ 0192:2EAC
-ret_192_2eaf:	// 5391 
+ret_192_2eaf:	// 5411 
 cs=0x192;eip=0x002eaf; 		R(JNC(loc_12eb2));	// 7799 jnb     short loc_12EB2 ;~ 0192:2EAF
 cs=0x192;eip=0x002eb1; 	R(RETN);	// 7800 retn ;~ 0192:2EB1
-loc_12eb2:	// 5392 
+loc_12eb2:	// 5412 
 	R(MOV(ah, *(raddr(ds,di+2))));	// 7804 mov     ah, [di+2] ;~ 0192:2EB2
 	R(OR(ah, ah));	// 7805 or      ah, ah ;~ 0192:2EB5
 cs=0x192;eip=0x002eb7; 		R(JNZ(loc_12eba));	// 7806 jnz     short loc_12EBA ;~ 0192:2EB7
 cs=0x192;eip=0x002eb9; 	R(RETN);	// 7807 retn ;~ 0192:2EB9
-loc_12eba:	// 5393 
+loc_12eba:	// 5413 
 	R(DEC(*(raddr(ds,di+2))));	// 7811 dec     byte ptr [di+2] ;~ 0192:2EBA
 cs=0x192;eip=0x002ebd; 	R(RETN);	// 7812 retn ;~ 0192:2EBD
+ret_192_2ebe:	// 5414 
 cs=0x192;eip=0x002ebe; 	R(CALL(sub_12f8e,0));	// 7816 call    sub_12F8E ;~ 0192:2EBE
-ret_192_2ec1:	// 5394 
+ret_192_2ec1:	// 5415 
 cs=0x192;eip=0x002ec1; 		R(JNZ(loc_12ea3));	// 7817 jnz     short loc_12EA3 ;~ 0192:2EC1
 cs=0x192;eip=0x002ec3; 	R(RETN);	// 7818 retn ;~ 0192:2EC3
+ret_192_2ec4:	// 5416 
 cs=0x192;eip=0x002ec4; 	R(CALL(sub_12e7a,0));	// 7820 call    sub_12E7A ;~ 0192:2EC4
-ret_192_2ec7:	// 5395 
+ret_192_2ec7:	// 5417 
 	R(TEST(*(raddr(ds,si)), 0x10));	// 7821 test    byte ptr [si], 10h ;~ 0192:2EC7
 cs=0x192;eip=0x002eca; 		R(JNZ(loc_12ecd));	// 7822 jnz     short loc_12ECD ;~ 0192:2ECA
 cs=0x192;eip=0x002ecc; 	R(RETN);	// 7823 retn ;~ 0192:2ECC
-loc_12ecd:	// 5396 
+loc_12ecd:	// 5418 
 	R(AND(*(raddr(ds,si)), 0x0EF));	// 7827 and     byte ptr [si], 0EFh ;~ 0192:2ECD
 	R(MOV(ah, 0x1B));	// 7828 mov     ah, 1Bh ;~ 0192:2ED0
 	R(MOV(*(raddr(ds,si+0x0F)), ah));	// 7829 mov     [si+0Fh], ah ;~ 0192:2ED2
 cs=0x192;eip=0x002ed5; 	R(RETN);	// 7830 retn ;~ 0192:2ED5
+ret_192_2ed6:	// 5419 
 	R(TEST(*(raddr(ds,si+0x24)), 1));	// 7832 test    byte ptr [si+24h], 1 ;~ 0192:2ED6
 cs=0x192;eip=0x002eda; 		R(JZ(loc_12ee2));	// 7833 jz      short loc_12EE2 ;~ 0192:2EDA
 cs=0x192;eip=0x002edc; 	R(CALL(sub_12f8e,0));	// 7834 call    sub_12F8E ;~ 0192:2EDC
-ret_192_2edf:	// 5397 
+ret_192_2edf:	// 5420 
 cs=0x192;eip=0x002edf; 		R(JNZ(loc_12ea3));	// 7835 jnz     short loc_12EA3 ;~ 0192:2EDF
 cs=0x192;eip=0x002ee1; 	R(RETN);	// 7836 retn ;~ 0192:2EE1
-loc_12ee2:	// 5398 
+loc_12ee2:	// 5421 
 cs=0x192;eip=0x002ee2; 	R(CALL(sub_12d2a,0));	// 7840 call    sub_12D2A ;~ 0192:2EE2
-ret_192_2ee5:	// 5399 
+ret_192_2ee5:	// 5422 
 cs=0x192;eip=0x002ee5; 		R(JC(loc_12ee8));	// 7841 jb      short loc_12EE8 ;~ 0192:2EE5
 cs=0x192;eip=0x002ee7; 	R(RETN);	// 7842 retn ;~ 0192:2EE7
-loc_12ee8:	// 5400 
+loc_12ee8:	// 5423 
 cs=0x192;eip=0x002ee8; 	R(CALL(sub_11111,0));	// 7846 call    sub_11111 ;~ 0192:2EE8
-ret_192_2eeb:	// 5401 
+ret_192_2eeb:	// 5424 
 	R(CMP(ah, 3));	// 7847 cmp     ah, 3 ;~ 0192:2EEB
 cs=0x192;eip=0x002eee; 		R(JC(loc_12ef1));	// 7848 jb      short loc_12EF1 ;~ 0192:2EEE
 cs=0x192;eip=0x002ef0; 	R(RETN);	// 7849 retn ;~ 0192:2EF0
-loc_12ef1:	// 5402 
+loc_12ef1:	// 5425 
 	R(OR(*(raddr(ds,si+0x24)), 1));	// 7853 or      byte ptr [si+24h], 1 ;~ 0192:2EF1
 cs=0x192;eip=0x002ef5; 	R(RETN);	// 7854 retn ;~ 0192:2EF5
 sub_12ef6:	// 7859 
 cs=0x192;eip=0x002ef6; 	R(CALL(sub_12d83,0));	// 7860 call    sub_12D83 ;~ 0192:2EF6
-ret_192_2ef9:	// 5403 
+ret_192_2ef9:	// 5426 
 cs=0x192;eip=0x002ef9; 		R(JNC(loc_12eff));	// 7861 jnb     short loc_12EFF ;~ 0192:2EF9
 	R(OR(*(raddr(ds,si)), 0x10));	// 7862 or      byte ptr [si], 10h ;~ 0192:2EFB
 cs=0x192;eip=0x002efe; 	R(RETN);	// 7863 retn ;~ 0192:2EFE
-loc_12eff:	// 5404 
+loc_12eff:	// 5427 
 cs=0x192;eip=0x002eff; 	R(CALL(sub_12d52,0));	// 7867 call    sub_12D52 ;~ 0192:2EFF
-ret_192_2f02:	// 5405 
+ret_192_2f02:	// 5428 
 cs=0x192;eip=0x002f02; 		R(JNC(loc_12f08));	// 7868 jnb     short loc_12F08 ;~ 0192:2F02
 	R(POP(bx));	// 7869 pop     bx ;~ 0192:2F04
 cs=0x192;eip=0x002f05; 		R(JMP(sub_11506));	// 7870 jmp     sub_11506 ;~ 0192:2F05
-loc_12f08:	// 5406 
+loc_12f08:	// 5429 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 7874 mov     ah, [si+13h] ;~ 0192:2F08
 	R(OR(ah, ah));	// 7875 or      ah, ah ;~ 0192:2F0B
 cs=0x192;eip=0x002f0d; 		R(JNZ(loc_12f17));	// 7876 jnz     short loc_12F17 ;~ 0192:2F0D
 	R(MOV(dl, 9));	// 7877 mov     dl, 9 ;~ 0192:2F0F
 cs=0x192;eip=0x002f11; 	R(CALL(sub_12f7c,0));	// 7878 call    sub_12F7C ;~ 0192:2F11
-ret_192_2f14:	// 5407 
+ret_192_2f14:	// 5430 
 	R(MOV(*(raddr(ds,si+0x13)), bl));	// 7879 mov     [si+13h], bl ;~ 0192:2F14
-loc_12f17:	// 5408 
+loc_12f17:	// 5431 
 cs=0x192;eip=0x002f17; 	R(CALL(sub_11111,0));	// 7882 call    sub_11111 ;~ 0192:2F17
-ret_192_2f1a:	// 5409 
+ret_192_2f1a:	// 5432 
 	R(MOV(cl, ah));	// 7883 mov     cl, ah ;~ 0192:2F1A
 	R(MOV(dl, 0x0A));	// 7884 mov     dl, 0Ah ;~ 0192:2F1C
 cs=0x192;eip=0x002f1e; 	R(CALL(sub_12f7c,0));	// 7885 call    sub_12F7C ;~ 0192:2F1E
-ret_192_2f21:	// 5410 
+ret_192_2f21:	// 5433 
 	R(MOV(ah, cl));	// 7886 mov     ah, cl ;~ 0192:2F21
 	R(CMP(ah, bl));	// 7887 cmp     ah, bl ;~ 0192:2F23
 cs=0x192;eip=0x002f25; 		R(JZ(loc_12f41));	// 7888 jz      short loc_12F41 ;~ 0192:2F25
 cs=0x192;eip=0x002f27; 		R(JC(loc_12f41));	// 7889 jb      short loc_12F41 ;~ 0192:2F27
 cs=0x192;eip=0x002f29; 	R(CALL(sub_11355,0));	// 7890 call    sub_11355 ;~ 0192:2F29
-ret_192_2f2c:	// 5411 
+ret_192_2f2c:	// 5434 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 7891 mov     ah, [si+13h] ;~ 0192:2F2C
 	R(TEST(ah, 0x80));	// 7892 test    ah, 80h ;~ 0192:2F2F
 cs=0x192;eip=0x002f32; 		R(JNZ(loc_12f3a));	// 7893 jnz     short loc_12F3A ;~ 0192:2F32
 cs=0x192;eip=0x002f34; 		R(JNC(loc_12f3e));	// 7894 jnb     short loc_12F3E ;~ 0192:2F34
 	R(NEG(ah));	// 7895 neg     ah ;~ 0192:2F36
 cs=0x192;eip=0x002f38; 		R(JMP(loc_12f3e));	// 7896 jmp     short loc_12F3E ;~ 0192:2F38
-loc_12f3a:	// 5412 
+loc_12f3a:	// 5435 
 cs=0x192;eip=0x002f3a; 		R(JC(loc_12f3e));	// 7900 jb      short loc_12F3E ;~ 0192:2F3A
 	R(NEG(ah));	// 7901 neg     ah ;~ 0192:2F3C
-loc_12f3e:	// 5413 
+loc_12f3e:	// 5436 
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 7905 mov     [si+13h], ah ;~ 0192:2F3E
-loc_12f41:	// 5414 
+loc_12f41:	// 5437 
 cs=0x192;eip=0x002f41; 	R(CALL(sub_12d2a,0));	// 7909 call    sub_12D2A ;~ 0192:2F41
-ret_192_2f44:	// 5415 
+ret_192_2f44:	// 5438 
 cs=0x192;eip=0x002f44; 		R(JC(loc_12f47));	// 7910 jb      short loc_12F47 ;~ 0192:2F44
 cs=0x192;eip=0x002f46; 	R(RETN);	// 7911 retn ;~ 0192:2F46
-loc_12f47:	// 5416 
+loc_12f47:	// 5439 
 cs=0x192;eip=0x002f47; 	R(CALL(sub_12ce2,0));	// 7915 call    sub_12CE2 ;~ 0192:2F47
-ret_192_2f4a:	// 5417 
+ret_192_2f4a:	// 5440 
 cs=0x192;eip=0x002f4a; 	R(CALL(sub_10a19,0));	// 7916 call    sub_10A19 ;~ 0192:2F4A
-ret_192_2f4d:	// 5418 
+ret_192_2f4d:	// 5441 
 cs=0x192;eip=0x002f4d; 	R(CALL(sub_13001,0));	// 7917 call    sub_13001 ;~ 0192:2F4D
-ret_192_2f50:	// 5419 
+ret_192_2f50:	// 5442 
 	R(MOV(ah, *(raddr(ds,si+0x11))));	// 7918 mov     ah, [si+11h] ;~ 0192:2F50
 	R(TEST(ah, 0x40));	// 7919 test    ah, 40h ;~ 0192:2F53
 cs=0x192;eip=0x002f56; 		R(JZ(loc_12f6d));	// 7920 jz      short loc_12F6D ;~ 0192:2F56
@@ -6592,11 +6614,11 @@ cs=0x192;eip=0x002f5f; 		R(JNZ(loc_12f67));	// 7923 jnz     short loc_12F67 ;~ 0
 	R(TEST(ah, 0x20));	// 7924 test    ah, 20h ;~ 0192:2F61
 cs=0x192;eip=0x002f64; 		R(JNZ(loc_12f6d));	// 7925 jnz     short loc_12F6D ;~ 0192:2F64
 cs=0x192;eip=0x002f66; 	R(RETN);	// 7926 retn ;~ 0192:2F66
-loc_12f67:	// 5420 
+loc_12f67:	// 5443 
 	R(TEST(ah, 0x10));	// 7930 test    ah, 10h ;~ 0192:2F67
 cs=0x192;eip=0x002f6a; 		R(JNZ(loc_12f6d));	// 7931 jnz     short loc_12F6D ;~ 0192:2F6A
 cs=0x192;eip=0x002f6c; 	R(RETN);	// 7932 retn ;~ 0192:2F6C
-loc_12f6d:	// 5421 
+loc_12f6d:	// 5444 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 7937 mov     ah, [si+13h] ;~ 0192:2F6D
 	R(NEG(ah));	// 7938 neg     ah ;~ 0192:2F70
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 7939 mov     [si+13h], ah ;~ 0192:2F72
@@ -6614,62 +6636,63 @@ sub_12f7c:	// 7948
 cs=0x192;eip=0x002f8d; 	R(RETN);	// 7958 retn ;~ 0192:2F8D
 sub_12f8e:	// 7965 
 cs=0x192;eip=0x002f8e; 	R(CALL(sub_12d52,0));	// 7967 call    sub_12D52 ;~ 0192:2F8E
-ret_192_2f91:	// 5422 
+ret_192_2f91:	// 5445 
 cs=0x192;eip=0x002f91; 		R(JNC(loc_12f98));	// 7968 jnb     short loc_12F98 ;~ 0192:2F91
 	R(POP(bx));	// 7969 pop     bx ;~ 0192:2F93
 	R(POP(bx));	// 7970 pop     bx ;~ 0192:2F94
 cs=0x192;eip=0x002f95; 		R(JMP(sub_11506));	// 7971 jmp     sub_11506 ;~ 0192:2F95
-loc_12f98:	// 5423 
+loc_12f98:	// 5446 
 cs=0x192;eip=0x002f98; 	R(CALL(sub_12d2a,0));	// 7976 call    sub_12D2A ;~ 0192:2F98
-ret_192_2f9b:	// 5424 
+ret_192_2f9b:	// 5447 
 cs=0x192;eip=0x002f9b; 		R(JNC(loc_12fae));	// 7977 jnb     short loc_12FAE ;~ 0192:2F9B
 cs=0x192;eip=0x002f9d; 	R(CALL(sub_12cd6,0));	// 7978 call    sub_12CD6 ;~ 0192:2F9D
-ret_192_2fa0:	// 5425 
+ret_192_2fa0:	// 5448 
 	R(TEST(*(raddr(ds,si+0x14)), 0x80));	// 7979 test    byte ptr [si+14h], 80h ;~ 0192:2FA0
 cs=0x192;eip=0x002fa4; 		R(JNZ(loc_12fab));	// 7980 jnz     short loc_12FAB ;~ 0192:2FA4
 cs=0x192;eip=0x002fa6; 	R(CALL(sub_12ca4,0));	// 7981 call    sub_12CA4 ;~ 0192:2FA6
-ret_192_2fa9:	// 5426 
+ret_192_2fa9:	// 5449 
 cs=0x192;eip=0x002fa9; 		R(JMP(loc_12fae));	// 7982 jmp     short loc_12FAE ;~ 0192:2FA9
-loc_12fab:	// 5427 
+loc_12fab:	// 5450 
 cs=0x192;eip=0x002fab; 	R(CALL(sub_12cb1,0));	// 7986 call    sub_12CB1 ;~ 0192:2FAB
-loc_12fae:	// 5428 
+loc_12fae:	// 5451 
 cs=0x192;eip=0x002fae; 	R(CALL(sub_10a19,0));	// 7990 call    sub_10A19 ;~ 0192:2FAE
-ret_192_2fb1:	// 5429 
+ret_192_2fb1:	// 5452 
 	R(MOV(ah, *(raddr(ds,si+0x24))));	// 7991 mov     ah, [si+24h] ;~ 0192:2FB1
 	R(AND(ah, 0x0F0));	// 7992 and     ah, 0F0h ;~ 0192:2FB4
 cs=0x192;eip=0x002fb7; 	R(RETN);	// 7993 retn ;~ 0192:2FB7
+ret_192_2fb8:	// 5453 
 cs=0x192;eip=0x002fb8; 	R(CALL(sub_12d52,0));	// 7997 call    sub_12D52 ;~ 0192:2FB8
-ret_192_2fbb:	// 5430 
+ret_192_2fbb:	// 5454 
 cs=0x192;eip=0x002fbb; 		R(JNC(loc_12fc7));	// 7998 jnb     short loc_12FC7 ;~ 0192:2FBB
 	R(POP(bx));	// 7999 pop     bx ;~ 0192:2FBD
 	R(MOV(*(raddr(ds,si+2)), 0x32));	// 8000 mov     byte ptr [si+2], 32h ; '2' ;~ 0192:2FBE
 cs=0x192;eip=0x002fc2; 	R(CALL(sub_11506,0));	// 8001 call    sub_11506 ;~ 0192:2FC2
-ret_192_2fc5:	// 5431 
+ret_192_2fc5:	// 5455 
 cs=0x192;eip=0x002fc5; 		R(JMP(loc_12fee));	// 8002 jmp     short loc_12FEE ;~ 0192:2FC5
-loc_12fc7:	// 5432 
+loc_12fc7:	// 5456 
 cs=0x192;eip=0x002fc7; 	R(CALL(sub_12d83,0));	// 8006 call    sub_12D83 ;~ 0192:2FC7
-ret_192_2fca:	// 5433 
+ret_192_2fca:	// 5457 
 cs=0x192;eip=0x002fca; 		R(JNC(loc_12fd0));	// 8007 jnb     short loc_12FD0 ;~ 0192:2FCA
 	R(OR(*(raddr(ds,si)), 0x10));	// 8008 or      byte ptr [si], 10h ;~ 0192:2FCC
 cs=0x192;eip=0x002fcf; 	R(RETN);	// 8009 retn ;~ 0192:2FCF
-loc_12fd0:	// 5434 
+loc_12fd0:	// 5458 
 	R(MOV(ah, *(raddr(ds,si+2))));	// 8013 mov     ah, [si+2] ;~ 0192:2FD0
 	R(OR(ah, ah));	// 8014 or      ah, ah ;~ 0192:2FD3
 cs=0x192;eip=0x002fd5; 		R(JNZ(loc_12fe1));	// 8015 jnz     short loc_12FE1 ;~ 0192:2FD5
 cs=0x192;eip=0x002fd7; 	R(CALL(sub_12d99,0));	// 8016 call    sub_12D99 ;~ 0192:2FD7
-ret_192_2fda:	// 5435 
+ret_192_2fda:	// 5459 
 cs=0x192;eip=0x002fda; 	R(CALL(sub_12dad,0));	// 8017 call    sub_12DAD ;~ 0192:2FDA
-ret_192_2fdd:	// 5436 
+ret_192_2fdd:	// 5460 
 	R(MOV(*(raddr(ds,si+2)), 0x32));	// 8018 mov     byte ptr [si+2], 32h ; '2' ;~ 0192:2FDD
-loc_12fe1:	// 5437 
+loc_12fe1:	// 5461 
 cs=0x192;eip=0x002fe1; 	R(CALL(sub_12f8e,m2c::kloc_12f98));	// 8021 call    loc_12F98 ;~ 0192:2FE1
-ret_192_2fe4:	// 5438 
+ret_192_2fe4:	// 5462 
 cs=0x192;eip=0x002fe4; 		R(JNZ(loc_12fea));	// 8022 jnz     short loc_12FEA ;~ 0192:2FE4
 	R(DEC(*(raddr(ds,si+2))));	// 8023 dec     byte ptr [si+2] ;~ 0192:2FE6
 cs=0x192;eip=0x002fe9; 	R(RETN);	// 8024 retn ;~ 0192:2FE9
-loc_12fea:	// 5439 
+loc_12fea:	// 5463 
 	R(MOV(*(raddr(ds,si+2)), 0x0A));	// 8028 mov     byte ptr [si+2], 0Ah ;~ 0192:2FEA
-loc_12fee:	// 5440 
+loc_12fee:	// 5464 
 	R(MOV(ah, *(raddr(ds,si+0x13))));	// 8031 mov     ah, [si+13h] ;~ 0192:2FEE
 	R(NEG(ah));	// 8032 neg     ah ;~ 0192:2FF1
 	R(MOV(*(raddr(ds,si+0x13)), ah));	// 8033 mov     [si+13h], ah ;~ 0192:2FF3
@@ -6684,19 +6707,19 @@ sub_13001:	// 8042
 	R(MOV(cl, *(raddr(ds,si+0x0C))));	// 8047 mov     cl, [si+0Ch] ;~ 0192:300A
 	R(MOV(ch, *(raddr(ds,si+0x0E))));	// 8048 mov     ch, [si+0Eh] ;~ 0192:300D
 cs=0x192;eip=0x003010; 	R(CALL(sub_110d5,0));	// 8049 call    sub_110D5 ;~ 0192:3010
-ret_192_3013:	// 5441 
+ret_192_3013:	// 5465 
 	R(MOV(ah, *(db*)(((db*)&word_1f1c5)+1)));	// 8050 mov     ah, byte ptr word_1F1C5+1 ;~ 0192:3013
 	R(OR(ah, ah));	// 8051 or      ah, ah ;~ 0192:3017
 cs=0x192;eip=0x003019; 		R(JNZ(loc_1301d));	// 8052 jnz     short loc_1301D ;~ 0192:3019
 	R(INC(ah));	// 8053 inc     ah ;~ 0192:301B
-loc_1301d:	// 5442 
+loc_1301d:	// 5466 
 	R(PUSH(ax));	// 8056 push    ax ;~ 0192:301D
 	R(PUSH(bx));	// 8057 push    bx ;~ 0192:301E
 cs=0x192;eip=0x00301f; 	R(CALL(sub_1303f,0));	// 8058 call    sub_1303F ;~ 0192:301F
-ret_192_3022:	// 5443 
+ret_192_3022:	// 5467 
 cs=0x192;eip=0x003022; 		R(JNC(loc_13028));	// 8059 jnb     short loc_13028 ;~ 0192:3022
 	R(OR(*(raddr(ds,si+0x11)), 0x10));	// 8060 or      byte ptr [si+11h], 10h ;~ 0192:3024
-loc_13028:	// 5444 
+loc_13028:	// 5468 
 	R(POP(bx));	// 8063 pop     bx ;~ 0192:3028
 	R(POP(ax));	// 8064 pop     ax ;~ 0192:3029
 	R(MOV(dx, word_1f1c3));	// 8065 mov     dx, word_1F1C3 ;~ 0192:302A
@@ -6704,23 +6727,23 @@ loc_13028:	// 5444
 	R(MOV(dh, 0));	// 8067 mov     dh, 0 ;~ 0192:3030
 	R(ADD(bx, dx));	// 8068 add     bx, dx ;~ 0192:3032
 cs=0x192;eip=0x003034; 	R(CALL(sub_1303f,0));	// 8069 call    sub_1303F ;~ 0192:3034
-ret_192_3037:	// 5445 
+ret_192_3037:	// 5469 
 cs=0x192;eip=0x003037; 		R(JC(loc_1303a));	// 8070 jb      short loc_1303A ;~ 0192:3037
 cs=0x192;eip=0x003039; 	R(RETN);	// 8071 retn ;~ 0192:3039
-loc_1303a:	// 5446 
+loc_1303a:	// 5470 
 	R(OR(*(raddr(ds,si+0x11)), 0x20));	// 8075 or      byte ptr [si+11h], 20h ;~ 0192:303A
 cs=0x192;eip=0x00303e; 	R(RETN);	// 8076 retn ;~ 0192:303E
 sub_1303f:	// 8083 
 	R(MOV(ch, ah));	// 8085 mov     ch, ah ;~ 0192:303F
 	R(MOV(dx, 0x28));	// 8086 mov     dx, 28h ; '(' ;~ 0192:3041
-loc_13044:	// 5447 
+loc_13044:	// 5471 
 	R(MOV(ah, *(raddr(ds,bx))));	// 8089 mov     ah, [bx] ;~ 0192:3044
 	R(OR(ah, ah));	// 8090 or      ah, ah ;~ 0192:3046
 cs=0x192;eip=0x003048; 		R(JZ(loc_13050));	// 8091 jz      short loc_13050 ;~ 0192:3048
 	R(CMP(ah, 0x4E));	// 8092 cmp     ah, 4Eh ; 'N' ;~ 0192:304A
 cs=0x192;eip=0x00304d; 		R(JNC(loc_13050));	// 8093 jnb     short loc_13050 ;~ 0192:304D
 cs=0x192;eip=0x00304f; 	R(RETN);	// 8094 retn ;~ 0192:304F
-loc_13050:	// 5448 
+loc_13050:	// 5472 
 	R(ADD(bx, dx));	// 8099 add     bx, dx ;~ 0192:3050
 	R(DEC(ch));	// 8100 dec     ch ;~ 0192:3052
 cs=0x192;eip=0x003054; 		R(JNZ(loc_13044));	// 8101 jnz     short loc_13044 ;~ 0192:3054
@@ -6781,13 +6804,13 @@ sub_130a8:	// 8156
 cs=0x192;eip=0x0030c1; 		R(JNZ(loc_130cd));	// 8171 jnz     short loc_130CD ;~ 0192:30C1
 	R(MOV(byte_1f117, 0));	// 8172 mov     byte_1F117, 0 ;~ 0192:30C3
 	R(OR(byte_1f11a, 0x40));	// 8173 or      byte_1F11A, 40h ;~ 0192:30C8
-loc_130cd:	// 5449 
+loc_130cd:	// 5473 
 	R(INC(byte_14877));	// 8176 inc     byte_14877 ;~ 0192:30CD
 	R(INC(word_14878));	// 8177 inc     word_14878 ;~ 0192:30D1
 	R(TEST(word_14878, 1));	// 8178 test    word_14878, 1 ;~ 0192:30D5
 cs=0x192;eip=0x0030db; 		R(JNZ(loc_130e0));	// 8179 jnz     short loc_130E0 ;~ 0192:30DB
 cs=0x192;eip=0x0030dd; 	R(CALL(callsubbx,0));	// 8180 call    callsubbx ;~ 0192:30DD
-loc_130e0:	// 5450 
+loc_130e0:	// 5474 
 	R(POP(di));	// 8183 pop     di ;~ 0192:30E0
 	R(POP(si));	// 8184 pop     si ;~ 0192:30E1
 	R(POP(dx));	// 8185 pop     dx ;~ 0192:30E2
@@ -6817,16 +6840,16 @@ sub_130ea:	// 8201
 	R(OUT(0x61, al));	// 8231 out     61h, al         ; PC/XT PPI port B bits: ;~ 0192:3103
 	R(XCHG(ax, bx));	// 8239 xchg    ax, bx ;~ 0192:3105
 	R(MOV(bx, offset(seg000,word_1ce48)));	// 8240 mov     bx, offset word_1CE48 ;~ 0192:3106
-loc_13109:	// 5451 
+loc_13109:	// 5475 
 	R(CMP(*(raddr(ds,bx)), 0));	// 8243 cmp     byte ptr [bx], 0 ;~ 0192:3109
 cs=0x192;eip=0x00310c; 		R(JZ(loc_13118));	// 8244 jz      short loc_13118 ;~ 0192:310C
 	R(CMP(al, *(raddr(ds,bx))));	// 8245 cmp     al, [bx] ;~ 0192:310E
 cs=0x192;eip=0x003110; 		R(JZ(loc_13115));	// 8246 jz      short loc_13115 ;~ 0192:3110
 	R(INC(bx));	// 8247 inc     bx ;~ 0192:3112
 cs=0x192;eip=0x003113; 		R(JMP(loc_13109));	// 8248 jmp     short loc_13109 ;~ 0192:3113
-loc_13115:	// 5452 
+loc_13115:	// 5476 
 	R(XOR(*(raddr(ds,bx)), 0x80));	// 8252 xor     byte ptr [bx], 80h ;~ 0192:3115
-loc_13118:	// 5453 
+loc_13118:	// 5477 
 	R(IN(al, 0x20));	// 8255 in      al, 20h         ; Interrupt controller, 8259A. ;~ 0192:3118
 	R(OR(al, 0x20));	// 8256 or      al, 20h ;~ 0192:311A
 	R(OUT(0x20, al));	// 8257 out     20h, al         ; Interrupt controller, 8259A. ;~ 0192:311C
@@ -6836,7 +6859,7 @@ cs=0x192;eip=0x003123; 		R(JZ(loc_13138));	// 8259 jz      short loc_13138 ;~ 01
 cs=0x192;eip=0x00312a; 		R(JZ(loc_13138));	// 8261 jz      short loc_13138 ;~ 0192:312A
 	R(TEST(byte_1ce58, 0x80));	// 8262 test    byte_1CE58, 80h ;~ 0192:312C
 cs=0x192;eip=0x003131; 		R(JZ(loc_13138));	// 8263 jz      short loc_13138 ;~ 0192:3131
-loc_13138:	// 5454 
+loc_13138:	// 5478 
 	R(TEST(*(db*)(((db*)&word_1ce4a)+1), 0x80));	// 8272 test    byte ptr word_1CE4A+1, 80h ;~ 0192:3138
 cs=0x192;eip=0x00313d; 		R(JZ(loc_13167));	// 8273 jz      short loc_13167 ;~ 0192:313D
 	R(TEST(byte_1ce4c, 0x80));	// 8274 test    byte_1CE4C, 80h ;~ 0192:313F
@@ -6851,21 +6874,21 @@ cs=0x192;eip=0x003159; 		R(JZ(loc_13167));	// 8281 jz      short loc_13167 ;~ 01
 	R(MOV(*(&byte_10929), 0x90));	// 8282 mov     cs:byte_10929, 90h ; '' ;~ 0192:315B
 	cs=seg_offset(seg000);
 	R(MOV(*(&byte_1092a), 0x90));	// 8283 mov     cs:byte_1092A, 90h ; '' ;~ 0192:3161
-loc_13167:	// 5455 
+loc_13167:	// 5479 
 	R(TEST(byte_1ce54, 0x80));	// 8287 test    byte_1CE54, 80h ;~ 0192:3167
 cs=0x192;eip=0x00316c; 		R(JZ(loc_1317a));	// 8288 jz      short loc_1317A ;~ 0192:316C
 	cs=seg_offset(seg000);
 	R(MOV(*(&byte_10929), 0x0FE));	// 8289 mov     cs:byte_10929, 0FEh ; 'þ' ;~ 0192:316E
 	cs=seg_offset(seg000);
 	R(MOV(*(&byte_1092a), 0x0CC));	// 8290 mov     cs:byte_1092A, 0CCh ; 'Ì' ;~ 0192:3174
-loc_1317a:	// 5456 
+loc_1317a:	// 5480 
 	R(POP(cx));	// 8293 pop     cx ;~ 0192:317A
 	R(POP(bx));	// 8294 pop     bx ;~ 0192:317B
 	R(POP(ax));	// 8295 pop     ax ;~ 0192:317C
 	R(POP(ds));	// 8296 pop     ds ;~ 0192:317D
 	R(STI);	// 8297 sti ;~ 0192:317E
 cs=0x192;eip=0x00317f; 	R(IRET);	// 8298 iret ;~ 0192:317F
-loc_13180:	// 5457 
+loc_13180:	// 5481 
 	R(MOV(flag_1487a, 0));	// 8305 mov     flag_1487A, 0 ;~ 0192:3180
 cs=0x192;eip=0x003185; 		R(JMP(loc_1324d));	// 8306 jmp     loc_1324D ;~ 0192:3185
 resettable1:	// 8312 
@@ -6876,7 +6899,7 @@ settable1:	// 8322
 	R(TEST(flag_1487a, 0x0FF));	// 8324 test    flag_1487A, 0FFh ;~ 0192:3192
 cs=0x192;eip=0x003197; 		R(JZ(loc_1319a));	// 8325 jz      short loc_1319A ;~ 0192:3197
 cs=0x192;eip=0x003199; 	R(RETN);	// 8326 retn ;~ 0192:3199
-loc_1319a:	// 5458 
+loc_1319a:	// 5482 
 	R(CLI);	// 8331 cli ;~ 0192:319A
 	R(MOV(off_14855, offset(seg000,off_1485f)));	// 8332 mov     off_14855, offset off_1485F ;~ 0192:319B
 	R(MOV(off_14857, offset(seg000,byte_131b7)));	// 8333 mov     off_14857, offset byte_131B7 ;~ 0192:31A1
@@ -6890,10 +6913,10 @@ callsubbx:	// 8348
 	R(TEST(al, 1));	// 8353 test    al, 1 ;~ 0192:31BB
 cs=0x192;eip=0x0031bd; 		R(JNZ(loc_131c0));	// 8354 jnz     short loc_131C0 ;~ 0192:31BD
 cs=0x192;eip=0x0031bf; 	R(RETN);	// 8355 retn ;~ 0192:31BF
-loc_131c0:	// 5459 
+loc_131c0:	// 5483 
 	R(TEST(al, 2));	// 8359 test    al, 2 ;~ 0192:31C0
 cs=0x192;eip=0x0031c2; 		R(JNZ(loc_131e0));	// 8360 jnz     short loc_131E0 ;~ 0192:31C2
-loc_131c4:	// 5460 
+loc_131c4:	// 5484 
 	R(MOV(bx, table1_off));	// 8364 mov     bx, table1_off ;~ 0192:31C4
 	R(MOV(al, *(raddr(ds,bx))));	// 8365 mov     al, [bx] ;~ 0192:31C8
 	R(INC(bx));	// 8366 inc     bx ;~ 0192:31CA
@@ -6902,12 +6925,12 @@ loc_131c4:	// 5460
 	R(MOV(bx, offset(seg000,off_1323f)));	// 8369 mov     bx, offset off_1323F ;~ 0192:31D1
 	R(ADD(bx, ax));	// 8370 add     bx, ax ;~ 0192:31D4
 cs=0x192;eip=0x0031d6; 	R(CALL(__dispatch_call,*(dw*)(raddr(ds,bx))));	// 8371 call    word ptr [bx] ;~ 0192:31D6
-ret_192_31d8:	// 5461 
+ret_192_31d8:	// 5485 
 	R(MOV(al, flag_14850));	// 8372 mov     al, flag_14850 ;~ 0192:31D8
 	R(TEST(al, 0x80));	// 8373 test    al, 80h ;~ 0192:31DB
 cs=0x192;eip=0x0031dd; 		R(JNZ(loc_131c4));	// 8374 jnz     short loc_131C4 ;~ 0192:31DD
 cs=0x192;eip=0x0031df; 	R(RETN);	// 8375 retn ;~ 0192:31DF
-loc_131e0:	// 5462 
+loc_131e0:	// 5486 
 	R(MOV(cx, word_14853));	// 8379 mov     cx, word_14853 ;~ 0192:31E0
 	R(DEC(cx));	// 8380 dec     cx ;~ 0192:31E4
 	R(MOV(word_14853, cx));	// 8381 mov     word_14853, cx ;~ 0192:31E5
@@ -6916,16 +6939,16 @@ cs=0x192;eip=0x0031e9; 		R(JNZ(loc_131f5));	// 8382 jnz     short loc_131F5 ;~ 0
 	R(AND(al, 0x7D));	// 8384 and     al, 7Dh ;~ 0192:31EE
 	R(MOV(flag_14850, al));	// 8385 mov     flag_14850, al ;~ 0192:31F0
 cs=0x192;eip=0x0031f3; 		R(JMP(loc_131c4));	// 8386 jmp     short loc_131C4 ;~ 0192:31F3
-loc_131f5:	// 5463 
+loc_131f5:	// 5487 
 	R(TEST(*(dw*)((&flag_14850)), 0x40));	// 8390 test    word ptr flag_14850, 40h ;~ 0192:31F5
 cs=0x192;eip=0x0031fb; 		R(JNZ(locret_13209));	// 8391 jnz     short locret_13209 ;~ 0192:31FB
 	R(MOV(ah, byte_1485c));	// 8392 mov     ah, byte_1485C ;~ 0192:31FD
 	R(DEC(ah));	// 8393 dec     ah ;~ 0192:3201
 cs=0x192;eip=0x003203; 		R(JZ(loc_1320a));	// 8394 jz      short loc_1320A ;~ 0192:3203
 	R(MOV(byte_1485c, ah));	// 8395 mov     byte_1485C, ah ;~ 0192:3205
-locret_13209:	// 5464 
+locret_13209:	// 5488 
 cs=0x192;eip=0x003209; 	R(RETN);	// 8398 retn ;~ 0192:3209
-loc_1320a:	// 5465 
+loc_1320a:	// 5489 
 	R(MOV(ah, byte_14859));	// 8402 mov     ah, byte_14859 ;~ 0192:320A
 	R(MOV(byte_1485c, ah));	// 8403 mov     byte_1485C, ah ;~ 0192:320E
 	R(MOV(bx, off_1485a));	// 8404 mov     bx, off_1485A ;~ 0192:3212
@@ -6933,7 +6956,7 @@ loc_1320a:	// 5465
 	R(CMP(al, 0x81));	// 8406 cmp     al, 81h ; '' ;~ 0192:3218
 cs=0x192;eip=0x00321a; 		R(JNZ(loc_1321d));	// 8407 jnz     short loc_1321D ;~ 0192:321A
 cs=0x192;eip=0x00321c; 	R(RETN);	// 8408 retn ;~ 0192:321C
-loc_1321d:	// 5466 
+loc_1321d:	// 5490 
 	R(CMP(al, 0x80));	// 8412 cmp     al, 80h ; '€' ;~ 0192:321D
 cs=0x192;eip=0x00321f; 		R(JNZ(loc_13231));	// 8413 jnz     short loc_13231 ;~ 0192:321F
 	R(MOV(bx, off_14857));	// 8414 mov     bx, off_14857 ;~ 0192:3221
@@ -6941,13 +6964,13 @@ cs=0x192;eip=0x00321f; 		R(JNZ(loc_13231));	// 8413 jnz     short loc_13231 ;~ 0
 	R(MOV(al, byte_14859));	// 8416 mov     al, byte_14859 ;~ 0192:3229
 	R(MOV(byte_1485c, al));	// 8417 mov     byte_1485C, al ;~ 0192:322C
 	R(MOV(al, *(raddr(ds,bx))));	// 8418 mov     al, [bx] ;~ 0192:322F
-loc_13231:	// 5467 
+loc_13231:	// 5491 
 	R(CBW);	// 8421 cbw ;~ 0192:3231
 	R(MOV(cx, word_1485d));	// 8422 mov     cx, word_1485D ;~ 0192:3232
 	R(ADD(cx, ax));	// 8423 add     cx, ax ;~ 0192:3236
 	R(MOV(word_1485d, cx));	// 8424 mov     word_1485D, cx ;~ 0192:3238
 cs=0x192;eip=0x00323c; 		R(JMP(loc_132ff));	// 8425 jmp     loc_132FF ;~ 0192:323C
-loc_1324d:	// 5468 
+loc_1324d:	// 5492 
 	R(IN(al, 0x61));	// 8442 in      al, 61h         ; PC/XT PPI port B bits: ;~ 0192:324D
 	R(AND(al, 0x0FC));	// 8450 and     al, 0FCh ;~ 0192:324F
 	R(OUT(0x61, al));	// 8451 out     61h, al         ; PC/XT PPI port B bits: ;~ 0192:3251
@@ -7019,7 +7042,7 @@ sub_132d0:	// 8537
 	R(MOV(word_14853, ax));	// 8553 mov     word_14853, ax ;~ 0192:32F4
 	R(MOV(table1_off, bx));	// 8554 mov     table1_off, bx ;~ 0192:32F7
 	R(MOV(word_1485d, cx));	// 8555 mov     word_1485D, cx ;~ 0192:32FB
-loc_132ff:	// 5469 
+loc_132ff:	// 5493 
 	R(IN(al, 0x61));	// 8561 in      al, 61h         ; PC/XT PPI port B bits: ;~ 0192:32FF
 	R(PUSH(ax));	// 8569 push    ax ;~ 0192:3301
 	R(MOV(al, 0x0B6));	// 8570 mov     al, 0B6h ; '¶' ;~ 0192:3302
@@ -7051,7 +7074,7 @@ conv_13334:	// 8627
 	R(OR(ah, ah));	// 8628 or      ah, ah ;~ 0192:3334
 	R(MOV(dh, 0x0FF));	// 8629 mov     dh, 0FFh ;~ 0192:3336
 	R(MOV(cx, 10000));	// 8630 mov     cx, 10000 ;~ 0192:3338
-loc_1333b:	// 5470 
+loc_1333b:	// 5494 
 	R(INC(dh));	// 8633 inc     dh ;~ 0192:333B
 	R(SBB(bx, cx));	// 8634 sbb     bx, cx ;~ 0192:333D
 cs=0x192;eip=0x00333f; 		R(JNC(loc_1333b));	// 8635 jnb     short loc_1333B ;~ 0192:333F
@@ -7059,7 +7082,7 @@ cs=0x192;eip=0x00333f; 		R(JNC(loc_1333b));	// 8635 jnb     short loc_1333B ;~ 0
 	R(OR(ah, ah));	// 8637 or      ah, ah ;~ 0192:3343
 	R(MOV(cx, 1000));	// 8638 mov     cx, 1000 ;~ 0192:3345
 	R(MOV(dl, 0x0FF));	// 8639 mov     dl, 0FFh ;~ 0192:3348
-loc_1334a:	// 5471 
+loc_1334a:	// 5495 
 	R(INC(dl));	// 8642 inc     dl ;~ 0192:334A
 	R(SBB(bx, cx));	// 8643 sbb     bx, cx ;~ 0192:334C
 cs=0x192;eip=0x00334e; 		R(JNC(loc_1334a));	// 8644 jnb     short loc_1334A ;~ 0192:334E
@@ -7068,7 +7091,7 @@ cs=0x192;eip=0x00334e; 		R(JNC(loc_1334a));	// 8644 jnb     short loc_1334A ;~ 0
 	R(OR(ah, ah));	// 8647 or      ah, ah ;~ 0192:3353
 	R(MOV(dx, 100));	// 8648 mov     dx, 100 ;~ 0192:3355
 	R(MOV(ch, 0x0FF));	// 8649 mov     ch, 0FFh ;~ 0192:3358
-loc_1335a:	// 5472 
+loc_1335a:	// 5496 
 	R(INC(ch));	// 8652 inc     ch ;~ 0192:335A
 	R(SBB(bx, dx));	// 8653 sbb     bx, dx ;~ 0192:335C
 cs=0x192;eip=0x00335e; 		R(JNC(loc_1335a));	// 8654 jnb     short loc_1335A ;~ 0192:335E
@@ -7076,7 +7099,7 @@ cs=0x192;eip=0x00335e; 		R(JNC(loc_1335a));	// 8654 jnb     short loc_1335A ;~ 0
 	R(OR(ah, ah));	// 8656 or      ah, ah ;~ 0192:3362
 	R(MOV(dx, 10));	// 8657 mov     dx, 10 ;~ 0192:3364
 	R(MOV(cl, 0x0FF));	// 8658 mov     cl, 0FFh ;~ 0192:3367
-loc_13369:	// 5473 
+loc_13369:	// 5497 
 	R(INC(cl));	// 8661 inc     cl ;~ 0192:3369
 	R(SBB(bx, dx));	// 8662 sbb     bx, dx ;~ 0192:336B
 cs=0x192;eip=0x00336d; 		R(JNC(loc_13369));	// 8663 jnb     short loc_13369 ;~ 0192:336D
@@ -7096,7 +7119,7 @@ sub_13388:	// 8680
 	R(PUSH(cx));	// 8684 push    cx ;~ 0192:338A
 	R(PUSH(ax));	// 8685 push    ax ;~ 0192:338B
 cs=0x192;eip=0x00338c; 	R(CALL(conv_13334,0));	// 8686 call    conv_13334 ;~ 0192:338C
-ret_192_338f:	// 5474 
+ret_192_338f:	// 5498 
 	R(POP(ax));	// 8687 pop     ax ;~ 0192:338F
 	R(MOV(dl, ah));	// 8688 mov     dl, ah ;~ 0192:3390
 	R(MOV(ah, 5));	// 8689 mov     ah, 5 ;~ 0192:3392
@@ -7105,30 +7128,31 @@ ret_192_338f:	// 5474
 	R(MOV(dh, 0));	// 8692 mov     dh, 0 ;~ 0192:3398
 	R(ADD(si, dx));	// 8693 add     si, dx ;~ 0192:339A
 	R(POP(cx));	// 8694 pop     cx ;~ 0192:339C
-loc_1339d:	// 5475 
+loc_1339d:	// 5499 
 	R(MOV(ah, *(raddr(ds,si))));	// 8697 mov     ah, [si] ;~ 0192:339D
 	R(TEST(ah, 0x80));	// 8698 test    ah, 80h ;~ 0192:339F
 cs=0x192;eip=0x0033a2; 		R(JNZ(loc_133b2));	// 8699 jnz     short loc_133B2 ;~ 0192:33A2
 	R(ADD(ah, 0x1E));	// 8700 add     ah, 1Eh ;~ 0192:33A4
 	R(MOV(dx, 0x0FFFF));	// 8701 mov     dx, 0FFFFh ;~ 0192:33A7
 cs=0x192;eip=0x0033aa; 	R(CALL(sub_13851,0));	// 8702 call    sub_13851 ;~ 0192:33AA
-ret_192_33ad:	// 5476 
+ret_192_33ad:	// 5500 
 	R(INC(cl));	// 8703 inc     cl ;~ 0192:33AD
 	R(INC(si));	// 8704 inc     si ;~ 0192:33AF
 cs=0x192;eip=0x0033b0; 		R(JMP(loc_1339d));	// 8705 jmp     short loc_1339D ;~ 0192:33B0
-loc_133b2:	// 5477 
+loc_133b2:	// 5501 
 	R(POP(dx));	// 8709 pop     dx ;~ 0192:33B2
 	R(POP(si));	// 8710 pop     si ;~ 0192:33B3
 cs=0x192;eip=0x0033b4; 	R(RETN);	// 8711 retn ;~ 0192:33B4
+ret_192_33b5:	// 5502 
 cs=0x192;eip=0x0033b5; 	R(RETN);	// 8715 retn ;~ 0192:33B5
 sub_133b6:	// 8720 
 cs=0x192;eip=0x0033b6; 	R(CALL(sub_1368e,0));	// 8721 call    sub_1368E ;~ 0192:33B6
-ret_192_33b9:	// 5478 
+ret_192_33b9:	// 5503 
 cs=0x192;eip=0x0033b9; 	R(CALL(sub_1361d,0));	// 8722 call    sub_1361D ;~ 0192:33B9
-ret_192_33bc:	// 5479 
+ret_192_33bc:	// 5504 
 	R(MOV(dx, 0));	// 8723 mov     dx, 0 ;~ 0192:33BC
 cs=0x192;eip=0x0033bf; 	R(CALL(sub_122ea,0));	// 8724 call    sub_122EA ;~ 0192:33BF
-ret_192_33c2:	// 5480 
+ret_192_33c2:	// 5505 
 cs=0x192;eip=0x0033c2; 	R(RETN);	// 8725 retn ;~ 0192:33C2
 sub_133c3:	// 8732 
 	R(MOV(bx, offset(seg000,byte_1f108)));	// 8733 mov     bx, offset byte_1F108 ;~ 0192:33C3
@@ -7143,53 +7167,54 @@ cs=0x192;eip=0x0033d5; 		R(JMP(sub_13851));	// 8741 jmp     sub_13851 ;~ 0192:33
 sub_133d8:	// 8748 
 	R(MOV(ch, 0x0D));	// 8749 mov     ch, 0Dh ;~ 0192:33D8
 	R(MOV(cl, 0x1A));	// 8750 mov     cl, 1Ah ;~ 0192:33DA
-loc_133dc:	// 5481 
+loc_133dc:	// 5506 
 	R(PUSH(cx));	// 8753 push    cx ;~ 0192:33DC
 	R(MOV(ch, 0x17));	// 8754 mov     ch, 17h ;~ 0192:33DD
 	R(XOR(ah, ah));	// 8755 xor     ah, ah ;~ 0192:33DF
 cs=0x192;eip=0x0033e1; 	R(CALL(sub_13851,0));	// 8756 call    sub_13851 ;~ 0192:33E1
-ret_192_33e4:	// 5482 
+ret_192_33e4:	// 5507 
 	R(POP(cx));	// 8757 pop     cx ;~ 0192:33E4
 	R(INC(cl));	// 8758 inc     cl ;~ 0192:33E5
 	R(DEC(ch));	// 8759 dec     ch ;~ 0192:33E7
 cs=0x192;eip=0x0033e9; 		R(JNZ(loc_133dc));	// 8760 jnz     short loc_133DC ;~ 0192:33E9
 cs=0x192;eip=0x0033eb; 	R(RETN);	// 8761 retn ;~ 0192:33EB
-loc_133ec:	// 5483 
+loc_133ec:	// 5508 
 	R(MOV(cx, 0x404));	// 8768 mov     cx, 404h ;~ 0192:33EC
 	R(MOV(dx, 0x522));	// 8769 mov     dx, 522h ;~ 0192:33EF
 cs=0x192;eip=0x0033f2; 	R(CALL(sub_11162,0));	// 8770 call    sub_11162 ;~ 0192:33F2
-ret_192_33f5:	// 5484 
+ret_192_33f5:	// 5509 
 	R(MOV(bx, offset(seg000,byte_13585)));	// 8771 mov     bx, offset byte_13585 ;~ 0192:33F5
 cs=0x192;eip=0x0033f8; 	R(CALL(sub_11181,0));	// 8772 call    sub_11181 ;~ 0192:33F8
-ret_192_33fb:	// 5485 
+ret_192_33fb:	// 5510 
 cs=0x192;eip=0x0033fb; 		R(JMP(loc_1340c));	// 8773 jmp     short loc_1340C ;~ 0192:33FB
-loc_133fd:	// 5486 
+loc_133fd:	// 5511 
 	R(MOV(cx, 0x404));	// 8777 mov     cx, 404h ;~ 0192:33FD
 	R(MOV(dx, 0x723));	// 8778 mov     dx, 723h ;~ 0192:3400
 cs=0x192;eip=0x003403; 	R(CALL(sub_11162,0));	// 8779 call    sub_11162 ;~ 0192:3403
-ret_192_3406:	// 5487 
+ret_192_3406:	// 5512 
 	R(MOV(bx, offset(seg000,byte_134c6)));	// 8780 mov     bx, offset byte_134C6 ;~ 0192:3406
 cs=0x192;eip=0x003409; 	R(CALL(sub_11181,0));	// 8781 call    sub_11181 ;~ 0192:3409
-loc_1340c:	// 5488 
+loc_1340c:	// 5513 
 	R(MOV(cx, 0x0FFFF));	// 8784 mov     cx, 0FFFFh ;~ 0192:340C
 cs=0x192;eip=0x00340f; 	R(CALL(sub_1114f,0));	// 8785 call    sub_1114F ;~ 0192:340F
-ret_192_3412:	// 5489 
+ret_192_3412:	// 5514 
 	R(MOV(cx, 0));	// 8786 mov     cx, 0 ;~ 0192:3412
 cs=0x192;eip=0x003415; 	R(CALL(sub_1114f,0));	// 8787 call    sub_1114F ;~ 0192:3415
-ret_192_3418:	// 5490 
+ret_192_3418:	// 5515 
 	R(MOV(cx, 0x0FFFF));	// 8788 mov     cx, 0FFFFh ;~ 0192:3418
 cs=0x192;eip=0x00341b; 	R(CALL(sub_1114f,0));	// 8789 call    sub_1114F ;~ 0192:341B
-loc_1341e:	// 5491 
+loc_1341e:	// 5516 
 cs=0x192;eip=0x00341e; 	R(CALL(sub_13839,0));	// 8792 call    sub_13839 ;~ 0192:341E
-ret_192_3421:	// 5492 
+ret_192_3421:	// 5517 
 cs=0x192;eip=0x003421; 		R(JZ(loc_1341e));	// 8793 jz      short loc_1341E ;~ 0192:3421
 cs=0x192;eip=0x003423; 		R(JMP(loc_1016f));	// 8794 jmp     loc_1016F ;~ 0192:3423
-loc_13426:	// 5493 
+loc_13426:	// 5518 
 	R(MOV(bx, offset(seg000,byte_1356e)));	// 8800 mov     bx, offset byte_1356E ;~ 0192:3426
 cs=0x192;eip=0x003429; 		R(JMP(sub_11181));	// 8801 jmp     sub_11181 ;~ 0192:3429
 sub_1342c:	// 8807 
 	R(MOV(bx, offset(seg000,byte_13432)));	// 8808 mov     bx, offset byte_13432 ;~ 0192:342C
 cs=0x192;eip=0x00342f; 		R(JMP(sub_11181));	// 8809 jmp     sub_11181 ;~ 0192:342F
+ret_192_3606:	// 5519 
 	R(INC(bx));	// 8865 inc     bx ;~ 0192:3606
 sub_13608:	// 8870 
 	R(MOV(ch, 0x0A0));	// 8871 mov     ch, 0A0h ; ' ' ;~ 0192:3608
@@ -7197,10 +7222,10 @@ sub_13608:	// 8870
 	R(MOV(dx, 0));	// 8873 mov     dx, 0 ;~ 0192:360C
 	R(MOV(ah, 0));	// 8874 mov     ah, 0 ;~ 0192:360F
 cs=0x192;eip=0x003611; 	R(CALL(sub_13748,0));	// 8875 call    sub_13748 ;~ 0192:3611
-ret_192_3614:	// 5494 
+ret_192_3614:	// 5520 
 	R(MOV(cx, 0));	// 8876 mov     cx, 0 ;~ 0192:3614
 cs=0x192;eip=0x003617; 	R(CALL(sub_1114f,0));	// 8877 call    sub_1114F ;~ 0192:3617
-ret_192_361a:	// 5495 
+ret_192_361a:	// 5521 
 cs=0x192;eip=0x00361a; 		R(JMP(sub_1114f));	// 8878 jmp     sub_1114F ;~ 0192:361A
 sub_1361d:	// 8885 
 	R(MOV(ah, byte_1f125));	// 8887 mov     ah, byte_1F125 ;~ 0192:361D
@@ -7211,12 +7236,12 @@ cs=0x192;eip=0x003623; 		R(JZ(loc_13631));	// 8889 jz      short loc_13631 ;~ 01
 	R(MOV(ah, 0x0FF));	// 8892 mov     ah, 0FFh ;~ 0192:3629
 	R(MOV(dx, 0));	// 8893 mov     dx, 0 ;~ 0192:362B
 cs=0x192;eip=0x00362e; 	R(CALL(sub_13646,0));	// 8894 call    sub_13646 ;~ 0192:362E
-loc_13631:	// 5496 
+loc_13631:	// 5522 
 	R(MOV(ah, 0x16));	// 8897 mov     ah, 16h ;~ 0192:3631
 	R(SUB(ah, byte_1f125));	// 8898 sub     ah, byte_1F125 ;~ 0192:3633
 cs=0x192;eip=0x003637; 		R(JNZ(loc_1363a));	// 8899 jnz     short loc_1363A ;~ 0192:3637
 cs=0x192;eip=0x003639; 	R(RETN);	// 8900 retn ;~ 0192:3639
-loc_1363a:	// 5497 
+loc_1363a:	// 5523 
 	R(MOV(cl, ah));	// 8904 mov     cl, ah ;~ 0192:363A
 	R(MOV(dl, byte_1f125));	// 8905 mov     dl, byte_1F125 ;~ 0192:363C
 	R(MOV(dh, 0));	// 8906 mov     dh, 0 ;~ 0192:3640
@@ -7225,16 +7250,16 @@ loc_1363a:	// 5497
 sub_13646:	// 8915 
 	R(ADD(dx, 0x1CC8));	// 8916 add     dx, 1CC8h ;~ 0192:3646
 cs=0x192;eip=0x00364a; 	R(CALL(sub_13748,0));	// 8917 call    sub_13748 ;~ 0192:364A
-ret_192_364d:	// 5498 
+ret_192_364d:	// 5524 
 cs=0x192;eip=0x00364d; 	R(RETN);	// 8918 retn ;~ 0192:364D
-loc_1364e:	// 5499 
+loc_1364e:	// 5525 
 	R(MOV(ah, 0x3C));	// 8926 mov     ah, 3Ch ; '<' ;~ 0192:364E
 	R(MOV(di, (dw)m2c::kloc_1196c));	// 8927 mov     di, offset loc_1196C ;~ 0192:3650
 	R(SUB(ah, byte_1f127));	// 8928 sub     ah, byte_1F127 ;~ 0192:3653
 cs=0x192;eip=0x003657; 		R(JZ(loc_1365e));	// 8929 jz      short loc_1365E ;~ 0192:3657
 	R(MOV(bh, 0));	// 8930 mov     bh, 0 ;~ 0192:3659
 cs=0x192;eip=0x00365b; 	R(CALL(sub_13669,0));	// 8931 call    sub_13669 ;~ 0192:365B
-loc_1365e:	// 5500 
+loc_1365e:	// 5526 
 	R(MOV(bh, 0x0AA));	// 8934 mov     bh, 0AAh ; 'ª' ;~ 0192:365E
 	R(MOV(ah, byte_1f127));	// 8935 mov     ah, byte_1F127 ;~ 0192:3660
 	R(OR(ah, ah));	// 8936 or      ah, ah ;~ 0192:3664
@@ -7245,14 +7270,14 @@ sub_13669:	// 8944
 	R(SHR(ah, cl));	// 8947 shr     ah, cl ;~ 0192:366B
 cs=0x192;eip=0x00366d; 		R(JNZ(loc_13670));	// 8948 jnz     short loc_13670 ;~ 0192:366D
 cs=0x192;eip=0x00366f; 	R(RETN);	// 8949 retn ;~ 0192:366F
-loc_13670:	// 5501 
+loc_13670:	// 5527 
 	R(INC(ah));	// 8953 inc     ah ;~ 0192:3670
 	R(MOV(cl, ah));	// 8954 mov     cl, ah ;~ 0192:3672
 	R(MOV(ch, 0));	// 8955 mov     ch, 0 ;~ 0192:3674
 	R(PUSH(es));	// 8956 push    es ;~ 0192:3676
 	R(MOV(ax, 0x0B800));	// 8957 mov     ax, 0B800h ;~ 0192:3677
 	R(MOV(es, ax));	// 8958 mov     es, ax ;~ 0192:367A
-loc_1367c:	// 5502 
+loc_1367c:	// 5528 
 	R(MOV(*(raddr(es,di)), bh));	// 8962 mov     es:[di], bh ;~ 0192:367C
 	R(MOV(*(raddr(es,di+1)), bh));	// 8963 mov     es:[di+1], bh ;~ 0192:367F
 	R(MOV(*(raddr(es,di+2)), bh));	// 8964 mov     es:[di+2], bh ;~ 0192:3683
@@ -7265,39 +7290,39 @@ sub_1368e:	// 8976
 	R(PUSH(si));	// 8979 push    si ;~ 0192:3691
 	R(MOV(ah, *(db*)(((db*)&word_1f103))));	// 8980 mov     ah, byte ptr word_1F103 ;~ 0192:3692
 cs=0x192;eip=0x003696; 	R(CALL(sub_136cc,0));	// 8981 call    sub_136CC ;~ 0192:3696
-ret_192_3699:	// 5503 
+ret_192_3699:	// 5529 
 	R(MOV(dx, (dw)m2c::kloc_119d3));	// 8982 mov     dx, offset loc_119D3 ;~ 0192:3699
 cs=0x192;eip=0x00369c; 	R(CALL(sub_136e3,0));	// 8983 call    sub_136E3 ;~ 0192:369C
-ret_192_369f:	// 5504 
+ret_192_369f:	// 5530 
 	R(POP(si));	// 8984 pop     si ;~ 0192:369F
 	R(PUSH(si));	// 8985 push    si ;~ 0192:36A0
 	R(MOV(ah, *(db*)(((db*)&word_1f103)+1)));	// 8986 mov     ah, byte ptr word_1F103+1 ;~ 0192:36A1
 cs=0x192;eip=0x0036a5; 	R(CALL(sub_136cc,0));	// 8987 call    sub_136CC ;~ 0192:36A5
-ret_192_36a8:	// 5505 
+ret_192_36a8:	// 5531 
 	R(MOV(dx, (dw)m2c::kloc_119da));	// 8988 mov     dx, offset loc_119DA ;~ 0192:36A8
 cs=0x192;eip=0x0036ab; 	R(CALL(sub_136e3,0));	// 8989 call    sub_136E3 ;~ 0192:36AB
-ret_192_36ae:	// 5506 
+ret_192_36ae:	// 5532 
 	R(POP(si));	// 8990 pop     si ;~ 0192:36AE
 	R(PUSH(si));	// 8991 push    si ;~ 0192:36AF
 	R(MOV(ah, *(db*)(((db*)&word_1f105))));	// 8992 mov     ah, byte ptr word_1F105 ;~ 0192:36B0
 cs=0x192;eip=0x0036b4; 	R(CALL(sub_136cc,0));	// 8993 call    sub_136CC ;~ 0192:36B4
-ret_192_36b7:	// 5507 
+ret_192_36b7:	// 5533 
 	R(MOV(dx, (dw)m2c::kloc_119e1));	// 8994 mov     dx, offset loc_119E1 ;~ 0192:36B7
 cs=0x192;eip=0x0036ba; 	R(CALL(sub_136e3,0));	// 8995 call    sub_136E3 ;~ 0192:36BA
-ret_192_36bd:	// 5508 
+ret_192_36bd:	// 5534 
 	R(POP(si));	// 8996 pop     si ;~ 0192:36BD
 	R(MOV(ah, *(db*)(((db*)&word_1f105)+1)));	// 8997 mov     ah, byte ptr word_1F105+1 ;~ 0192:36BE
 cs=0x192;eip=0x0036c2; 	R(CALL(sub_136cc,0));	// 8998 call    sub_136CC ;~ 0192:36C2
-ret_192_36c5:	// 5509 
+ret_192_36c5:	// 5535 
 	R(MOV(dx, (dw)m2c::kloc_119e8));	// 8999 mov     dx, offset loc_119E8 ;~ 0192:36C5
 cs=0x192;eip=0x0036c8; 	R(CALL(sub_136e3,0));	// 9000 call    sub_136E3 ;~ 0192:36C8
-ret_192_36cb:	// 5510 
+ret_192_36cb:	// 5536 
 cs=0x192;eip=0x0036cb; 	R(RETN);	// 9001 retn ;~ 0192:36CB
 sub_136cc:	// 9008 
 	R(CMP(ah, 0x0FF));	// 9010 cmp     ah, 0FFh ;~ 0192:36CC
 cs=0x192;eip=0x0036cf; 		R(JNZ(loc_136d2));	// 9011 jnz     short loc_136D2 ;~ 0192:36CF
 cs=0x192;eip=0x0036d1; 	R(RETN);	// 9012 retn ;~ 0192:36D1
-loc_136d2:	// 5511 
+loc_136d2:	// 5537 
 	R(ADD(ah, ah));	// 9016 add     ah, ah ;~ 0192:36D2
 	R(MOV(dl, ah));	// 9017 mov     dl, ah ;~ 0192:36D4
 	R(MOV(dh, 0));	// 9018 mov     dh, 0 ;~ 0192:36D6
@@ -7312,11 +7337,12 @@ sub_136e3:	// 9032
 	R(CMP(ah, 0x0FF));	// 9037 cmp     ah, 0FFh ;~ 0192:36E3
 cs=0x192;eip=0x0036e6; 		R(JZ(loc_136ea));	// 9038 jz      short loc_136EA ;~ 0192:36E6
 cs=0x192;eip=0x0036e8; 		R(JMP(loc_13736));	// 9039 jmp     short loc_13736 ;~ 0192:36E8
-loc_136ea:	// 5512 
+loc_136ea:	// 5538 
 	R(MOV(cl, 6));	// 9043 mov     cl, 6 ;~ 0192:36EA
 	R(MOV(ch, 0x10));	// 9044 mov     ch, 10h ;~ 0192:36EC
 	R(MOV(ah, 0));	// 9045 mov     ah, 0 ;~ 0192:36EE
 cs=0x192;eip=0x0036f0; 		R(JMP(loc_1373e));	// 9046 jmp     short loc_1373E ;~ 0192:36F0
+ret_192_36f2:	// 5539 
 cs=0x192;eip=0x0036f2; 	R(RETN);	// 9050 retn ;~ 0192:36F2
 sub_136f3:	// 9055 
 	R(MOV(bx, offset(seg000,byte_1e163)));	// 9056 mov     bx, offset byte_1E163 ;~ 0192:36F3
@@ -7324,13 +7350,14 @@ sub_136f3:	// 9055
 	R(MOV(cl, 0x50));	// 9058 mov     cl, 50h ; 'P' ;~ 0192:36F9
 	R(MOV(ch, 0x28));	// 9059 mov     ch, 28h ; '(' ;~ 0192:36FB
 cs=0x192;eip=0x0036fd; 	// 9060 jmp     short $+2 ;~ 0192:36FD
+ret_192_36ff:	// 5540 
 	R(PUSH(es));	// 9061 push    es ;~ 0192:36FF
 	R(MOV(ax, 0x0B800));	// 9062 mov     ax, 0B800h ;~ 0192:3700
 	R(MOV(es, ax));	// 9063 mov     es, ax ;~ 0192:3703
-loc_13705:	// 5513 
+loc_13705:	// 5541 
 	R(PUSH(cx));	// 9067 push    cx ;~ 0192:3705
 	R(MOV(di, dx));	// 9068 mov     di, dx ;~ 0192:3706
-loc_13708:	// 5514 
+loc_13708:	// 5542 
 	R(MOV(al, *(raddr(ds,bx))));	// 9071 mov     al, [bx] ;~ 0192:3708
 	R(MOV(*(raddr(es,di)), al));	// 9072 mov     es:[di], al ;~ 0192:370A
 	R(INC(bx));	// 9073 inc     bx ;~ 0192:370D
@@ -7342,11 +7369,11 @@ cs=0x192;eip=0x003711; 		R(JNZ(loc_13708));	// 9076 jnz     short loc_13708 ;~ 0
 cs=0x192;eip=0x003716; 		R(JNZ(loc_1371a));	// 9079 jnz     short loc_1371A ;~ 0192:3716
 	R(POP(es));	// 9080 pop     es ;~ 0192:3718
 cs=0x192;eip=0x003719; 	R(RETN);	// 9082 retn ;~ 0192:3719
-loc_1371a:	// 5515 
+loc_1371a:	// 5543 
 	R(PUSH(cx));	// 9087 push    cx ;~ 0192:371A
 	R(MOV(di, dx));	// 9088 mov     di, dx ;~ 0192:371B
 	R(ADD(di, 0x2000));	// 9089 add     di, 2000h ;~ 0192:371D
-loc_13721:	// 5516 
+loc_13721:	// 5544 
 	R(MOV(al, *(raddr(ds,bx))));	// 9092 mov     al, [bx] ;~ 0192:3721
 	R(MOV(*(raddr(es,di)), al));	// 9093 mov     es:[di], al ;~ 0192:3723
 	R(INC(bx));	// 9094 inc     bx ;~ 0192:3726
@@ -7359,12 +7386,12 @@ cs=0x192;eip=0x00372a; 		R(JNZ(loc_13721));	// 9097 jnz     short loc_13721 ;~ 0
 cs=0x192;eip=0x003732; 		R(JNZ(loc_13705));	// 9101 jnz     short loc_13705 ;~ 0192:3732
 	R(POP(es));	// 9102 pop     es ;~ 0192:3734
 cs=0x192;eip=0x003735; 	R(RETN);	// 9103 retn ;~ 0192:3735
-loc_13736:	// 5517 
+loc_13736:	// 5545 
 	R(PUSH(es));	// 9110 push    es ;~ 0192:3736
 	R(MOV(ax, 0x0B800));	// 9111 mov     ax, 0B800h ;~ 0192:3737
 	R(MOV(es, ax));	// 9112 mov     es, ax ;~ 0192:373A
 cs=0x192;eip=0x00373c; 		R(JMP(loc_1371a));	// 9114 jmp     short loc_1371A ;~ 0192:373C
-loc_1373e:	// 5518 
+loc_1373e:	// 5546 
 	R(PUSH(ds));	// 9118 push    ds ;~ 0192:373E
 	R(PUSH(ax));	// 9119 push    ax ;~ 0192:373F
 	R(MOV(ax, 0x0B800));	// 9120 mov     ax, 0B800h ;~ 0192:3740
@@ -7377,10 +7404,10 @@ sub_13748:	// 9130
 	R(MOV(ax, 0x0B800));	// 9134 mov     ax, 0B800h ;~ 0192:374A
 	R(MOV(ds, ax));	// 9135 mov     ds, ax ;~ 0192:374D
 	R(POP(ax));	// 9136 pop     ax ;~ 0192:374F
-loc_13750:	// 5519 
+loc_13750:	// 5547 
 	R(PUSH(cx));	// 9139 push    cx ;~ 0192:3750
 	R(MOV(bx, dx));	// 9140 mov     bx, dx ;~ 0192:3751
-loc_13753:	// 5520 
+loc_13753:	// 5548 
 	R(MOV(*(raddr(ds,bx)), ah));	// 9143 mov     [bx], ah ;~ 0192:3753
 	R(INC(bx));	// 9144 inc     bx ;~ 0192:3755
 	R(DEC(cl));	// 9145 dec     cl ;~ 0192:3756
@@ -7390,11 +7417,11 @@ cs=0x192;eip=0x003758; 		R(JNZ(loc_13753));	// 9146 jnz     short loc_13753 ;~ 0
 cs=0x192;eip=0x00375d; 		R(JNZ(loc_13761));	// 9149 jnz     short loc_13761 ;~ 0192:375D
 	R(POP(ds));	// 9150 pop     ds ;~ 0192:375F
 cs=0x192;eip=0x003760; 	R(RETN);	// 9152 retn ;~ 0192:3760
-loc_13761:	// 5521 
+loc_13761:	// 5549 
 	R(PUSH(cx));	// 9157 push    cx ;~ 0192:3761
 	R(MOV(bx, dx));	// 9158 mov     bx, dx ;~ 0192:3762
 	R(ADD(bx, 0x2000));	// 9159 add     bx, 2000h ;~ 0192:3764
-loc_13768:	// 5522 
+loc_13768:	// 5550 
 	R(MOV(*(raddr(ds,bx)), ah));	// 9162 mov     [bx], ah ;~ 0192:3768
 	R(INC(bx));	// 9163 inc     bx ;~ 0192:376A
 	R(DEC(cl));	// 9164 dec     cl ;~ 0192:376B
@@ -7409,7 +7436,7 @@ sub_13779:	// 9178
 	R(MOV(ax, 4));	// 9179 mov     ax, 4 ;~ 0192:3779
 cs=0x192;eip=0x00377c; 	R(_INT(0x10));	// 9180 int     10h             ; - VIDEO - SET VIDEO MODE ;~ 0192:377C
 cs=0x192;eip=0x00377e; 	R(CALL(sub_13782,0));	// 9182 call    sub_13782 ;~ 0192:377E
-ret_192_3781:	// 5523 
+ret_192_3781:	// 5551 
 cs=0x192;eip=0x003781; 	R(RETN);	// 9183 retn ;~ 0192:3781
 sub_13782:	// 9190 
 	R(MOV(bx, 0x100));	// 9192 mov     bx, 100h ;~ 0192:3782
@@ -7418,7 +7445,7 @@ sub_13782:	// 9190
 	R(MOV(ax, 0x0B00));	// 9194 mov     ax, 0B00h ;~ 0192:378A
 cs=0x192;eip=0x00378d; 	R(_INT(0x10));	// 9195 int     10h             ; - VIDEO - SET COLOR PALETTE ;~ 0192:378D
 cs=0x192;eip=0x00378f; 	R(RETN);	// 9198 retn ;~ 0192:378F
-loc_13790:	// 5524 
+loc_13790:	// 5552 
 	R(MOV(bx, 0x101));	// 9205 mov     bx, 101h ;~ 0192:3790
 	cs=seg_offset(seg000);
 	R(MOV(*(&byte_13943), bl));	// 9206 mov     cs:byte_13943, bl ;~ 0192:3793
@@ -7432,54 +7459,56 @@ sub_1379e:	// 9217
 	R(TEST(al, 0x80));	// 9221 test    al, 80h ;~ 0192:37AA
 cs=0x192;eip=0x0037ac; 		R(JZ(loc_137b3));	// 9222 jz      short loc_137B3 ;~ 0192:37AC
 	R(OR(byte_1f115, 1));	// 9223 or      byte_1F115, 1 ;~ 0192:37AE
-loc_137b3:	// 5525 
+loc_137b3:	// 5553 
 	R(MOV(al, byte_1ce4e));	// 9226 mov     al, byte_1CE4E ;~ 0192:37B3
 	R(OR(al, byte_1ce5d));	// 9227 or      al, byte_1CE5D ;~ 0192:37B6
 	R(TEST(al, 0x80));	// 9228 test    al, 80h ;~ 0192:37BA
 cs=0x192;eip=0x0037bc; 		R(JZ(loc_137c3));	// 9229 jz      short loc_137C3 ;~ 0192:37BC
 	R(OR(byte_1f115, 2));	// 9230 or      byte_1F115, 2 ;~ 0192:37BE
-loc_137c3:	// 5526 
+loc_137c3:	// 5554 
 	R(MOV(al, *(db*)(((db*)&word_1ce4a)+1)));	// 9233 mov     al, byte ptr word_1CE4A+1 ;~ 0192:37C3
 	R(OR(al, byte_1ce5a));	// 9234 or      al, byte_1CE5A ;~ 0192:37C6
 	R(TEST(al, 0x80));	// 9235 test    al, 80h ;~ 0192:37CA
 cs=0x192;eip=0x0037cc; 		R(JZ(loc_137d3));	// 9236 jz      short loc_137D3 ;~ 0192:37CC
 	R(OR(byte_1f115, 4));	// 9237 or      byte_1F115, 4 ;~ 0192:37CE
-loc_137d3:	// 5527 
+loc_137d3:	// 5555 
 	R(MOV(al, byte_1ce4c));	// 9240 mov     al, byte_1CE4C ;~ 0192:37D3
 	R(OR(al, byte_1ce5b));	// 9241 or      al, byte_1CE5B ;~ 0192:37D6
 	R(TEST(al, 0x80));	// 9242 test    al, 80h ;~ 0192:37DA
 cs=0x192;eip=0x0037dc; 		R(JZ(loc_137e3));	// 9243 jz      short loc_137E3 ;~ 0192:37DC
 	R(OR(byte_1f115, 8));	// 9244 or      byte_1F115, 8 ;~ 0192:37DE
-loc_137e3:	// 5528 
+loc_137e3:	// 5556 
 	R(MOV(al, byte_1ce4f));	// 9247 mov     al, byte_1CE4F ;~ 0192:37E3
 	R(OR(al, byte_1ce5e));	// 9248 or      al, byte_1CE5E ;~ 0192:37E6
 	R(TEST(al, 0x80));	// 9249 test    al, 80h ;~ 0192:37EA
 cs=0x192;eip=0x0037ec; 		R(JZ(loc_137f3));	// 9250 jz      short loc_137F3 ;~ 0192:37EC
 	R(OR(byte_1f115, 0x10));	// 9251 or      byte_1F115, 10h ;~ 0192:37EE
-loc_137f3:	// 5529 
+loc_137f3:	// 5557 
 	R(MOV(al, byte_1ce51));	// 9254 mov     al, byte_1CE51 ;~ 0192:37F3
 	R(OR(al, byte_1ce5f));	// 9255 or      al, byte_1CE5F ;~ 0192:37F6
 	R(TEST(al, 0x80));	// 9256 test    al, 80h ;~ 0192:37FA
 cs=0x192;eip=0x0037fc; 		R(JZ(loc_13803));	// 9257 jz      short loc_13803 ;~ 0192:37FC
 	R(OR(byte_1f115, 0x20));	// 9258 or      byte_1F115, 20h ;~ 0192:37FE
-loc_13803:	// 5530 
+loc_13803:	// 5558 
 	R(MOV(al, byte_1ce50));	// 9261 mov     al, byte_1CE50 ;~ 0192:3803
 	R(TEST(al, 0x80));	// 9262 test    al, 80h ;~ 0192:3806
 cs=0x192;eip=0x003808; 		R(JZ(loc_1380f));	// 9263 jz      short loc_1380F ;~ 0192:3808
 	R(OR(byte_1f115, 0x40));	// 9264 or      byte_1F115, 40h ;~ 0192:380A
-loc_1380f:	// 5531 
+loc_1380f:	// 5559 
 	R(TEST(byte_1ce59, 0x80));	// 9267 test    byte_1CE59, 80h ;~ 0192:380F
 cs=0x192;eip=0x003814; 		R(JZ(locret_1381b));	// 9268 jz      short locret_1381B ;~ 0192:3814
 	R(OR(byte_1f115, 0x80));	// 9269 or      byte_1F115, 80h ;~ 0192:3816
-locret_1381b:	// 5532 
+locret_1381b:	// 5560 
 cs=0x192;eip=0x00381b; 	R(RETN);	// 9272 retn ;~ 0192:381B
+ret_192_381c:	// 5561 
 cs=0x192;eip=0x00381c; 	R(RETN);	// 9276 retn ;~ 0192:381C
+ret_192_381d:	// 5562 
 cs=0x192;eip=0x00381d; 	R(RETN);	// 9278 retn ;~ 0192:381D
 sub_1381e:	// 9283 
 	R(TEST(byte_1f115, 0x40));	// 9284 test    byte_1F115, 40h ;~ 0192:381E
 cs=0x192;eip=0x003823; 		R(JNZ(loc_13826));	// 9285 jnz     short loc_13826 ;~ 0192:3823
 cs=0x192;eip=0x003825; 	R(RETN);	// 9286 retn ;~ 0192:3825
-loc_13826:	// 5533 
+loc_13826:	// 5563 
 	R(TEST(byte_1ce50, 0x80));	// 9291 test    byte_1CE50, 80h ;~ 0192:3826
 cs=0x192;eip=0x00382b; 		R(JNZ(loc_13826));	// 9292 jnz     short loc_13826 ;~ 0192:382B
 	R(MOV(al, 1));	// 9293 mov     al, 1 ;~ 0192:382D
@@ -7519,7 +7548,7 @@ sub_13851:	// 9343
 	R(SHL(ax, cl));	// 9356 shl     ax, cl ;~ 0192:3860
 	R(ADD(ax, offset(seg000,byte_173c2)));	// 9357 add     ax, offset byte_173C2 ;~ 0192:3862
 	R(MOV(si, ax));	// 9358 mov     si, ax ;~ 0192:3865
-loc_13867:	// 5534 
+loc_13867:	// 5564 
 	R(MOV(dx, 0x0B800));	// 9362 mov     dx, 0B800h ;~ 0192:3867
 	R(MOV(es, dx));	// 9363 mov     es, dx ;~ 0192:386A
 	R(MOV(dl, bh));	// 9364 mov     dl, bh ;~ 0192:386C
@@ -7532,7 +7561,7 @@ loc_13867:	// 5534
 	R(MOV(di, ax));	// 9371 mov     di, ax ;~ 0192:387B
 	R(CLD);	// 9372 cld ;~ 0192:387D
 	R(MOV(cx, 4));	// 9373 mov     cx, 4 ;~ 0192:387E
-loc_13881:	// 5535 
+loc_13881:	// 5565 
 MOVSW;	// 9376 movsw ;~ 0192:3881
 	R(ADD(di, 0x1FFE));	// 9377 add     di, 1FFEh ;~ 0192:3882
 MOVSW;	// 9378 movsw ;~ 0192:3886
@@ -7572,7 +7601,7 @@ sub_138b9:	// 9432
 	R(MOV(di, offset(seg000,byte_1ede3)));	// 9434 mov     di, offset byte_1EDE3 ;~ 0192:38B9
 	R(MOV(si, offset(seg000,word_1f4f3)));	// 9435 mov     si, offset word_1F4F3 ;~ 0192:38BC
 	R(MOV(bx, 0));	// 9436 mov     bx, 0 ;~ 0192:38BF
-loc_138c2:	// 5536 
+loc_138c2:	// 5566 
 	R(MOV(al, *(raddr(ds,di))));	// 9440 mov     al, [di] ;~ 0192:38C2
 	R(CLD);	// 9441 cld ;~ 0192:38C4
 CMPSB;	// 9442 cmpsb ;~ 0192:38C5
@@ -7581,10 +7610,10 @@ cs=0x192;eip=0x0038c6; 		R(JZ(loc_138d1));	// 9443 jz      short loc_138D1 ;~ 01
 	R(PUSH(si));	// 9445 push    si ;~ 0192:38CA
 	R(PUSH(di));	// 9446 push    di ;~ 0192:38CB
 cs=0x192;eip=0x0038cc; 	R(CALL(sub_1383f,0));	// 9447 call    sub_1383F ;~ 0192:38CC
-ret_192_38cf:	// 5537 
+ret_192_38cf:	// 5567 
 	R(POP(di));	// 9448 pop     di ;~ 0192:38CF
 	R(POP(si));	// 9449 pop     si ;~ 0192:38D0
-loc_138d1:	// 5538 
+loc_138d1:	// 5568 
 	R(INC(bl));	// 9452 inc     bl ;~ 0192:38D1
 	R(CMP(bl, 0x28));	// 9453 cmp     bl, 28h ; '(' ;~ 0192:38D3
 cs=0x192;eip=0x0038d6; 		R(JNZ(loc_138c2));	// 9454 jnz     short loc_138C2 ;~ 0192:38D6
@@ -7594,7 +7623,7 @@ cs=0x192;eip=0x0038d6; 		R(JNZ(loc_138c2));	// 9454 jnz     short loc_138C2 ;~ 0
 cs=0x192;eip=0x0038df; 		R(JNZ(loc_138c2));	// 9458 jnz     short loc_138C2 ;~ 0192:38DF
 	R(MOV(byte_1f47f, 1));	// 9459 mov     byte_1F47F, 1 ;~ 0192:38E1
 cs=0x192;eip=0x0038e6; 	R(CALL(sub_138ea,0));	// 9460 call    sub_138EA ;~ 0192:38E6
-ret_192_38e9:	// 5539 
+ret_192_38e9:	// 5569 
 cs=0x192;eip=0x0038e9; 	R(RETN);	// 9461 retn ;~ 0192:38E9
 sub_138ea:	// 9468 
 	R(CMP(byte_1f11c, 6));	// 9472 cmp     byte_1F11C, 6 ;~ 0192:38EA
@@ -7616,27 +7645,27 @@ cs=0x192;eip=0x003920; 		R(JZ(loc_13937));	// 9487 jz      short loc_13937 ;~ 01
 	R(CMP(byte_1f11c, 0x44));	// 9488 cmp     byte_1F11C, 44h ; 'D' ;~ 0192:3922
 cs=0x192;eip=0x003927; 		R(JC(loc_1392b));	// 9489 jb      short loc_1392B ;~ 0192:3927
 cs=0x192;eip=0x003929; 		R(JMP(loc_13937));	// 9490 jmp     short loc_13937 ;~ 0192:3929
-loc_1392b:	// 5540 
+loc_1392b:	// 5570 
 	cs=seg_offset(seg000);
 	R(CMP(*(&byte_13943), 0));	// 9495 cmp     cs:byte_13943, 0 ;~ 0192:392B
 cs=0x192;eip=0x003931; 		R(JNZ(locret_13936));	// 9496 jnz     short locret_13936 ;~ 0192:3931
 cs=0x192;eip=0x003933; 		R(JMP(loc_13790));	// 9497 jmp     loc_13790 ;~ 0192:3933
-locret_13936:	// 5541 
+locret_13936:	// 5571 
 cs=0x192;eip=0x003936; 	R(RETN);	// 9501 retn ;~ 0192:3936
-loc_13937:	// 5542 
+loc_13937:	// 5572 
 	cs=seg_offset(seg000);
 	R(CMP(*(&byte_13943), 1));	// 9506 cmp     cs:byte_13943, 1 ;~ 0192:3937
 cs=0x192;eip=0x00393d; 		R(JNZ(locret_13942));	// 9507 jnz     short locret_13942 ;~ 0192:393D
 cs=0x192;eip=0x00393f; 		R(JMP(sub_13782));	// 9508 jmp     sub_13782 ;~ 0192:393F
-locret_13942:	// 5543 
+locret_13942:	// 5573 
 cs=0x192;eip=0x003942; 	R(RETN);	// 9512 retn ;~ 0192:3942
 sub_13944:	// 9522 
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 9524 mov     si, offset byte_1F1CF ;~ 0192:3944
-loc_13947:	// 5544 
+loc_13947:	// 5574 
 	R(TEST(*(raddr(ds,si)), 0x80));	// 9527 test    byte ptr [si], 80h ;~ 0192:3947
 cs=0x192;eip=0x00394a; 		R(JZ(loc_1394f));	// 9528 jz      short loc_1394F ;~ 0192:394A
 cs=0x192;eip=0x00394c; 	R(CALL(sub_13969,0));	// 9529 call    sub_13969 ;~ 0192:394C
-loc_1394f:	// 5545 
+loc_1394f:	// 5575 
 	R(MOV(dx, 0x29));	// 9532 mov     dx, 29h ; ')' ;~ 0192:394F
 	R(ADD(si, dx));	// 9533 add     si, dx ;~ 0192:3952
 	R(CMP(*(raddr(ds,si)), 0x0FF));	// 9534 cmp     byte ptr [si], 0FFh ;~ 0192:3954
@@ -7656,7 +7685,7 @@ sub_13969:	// 9557
 	R(SHR(ch, 1));	// 9560 shr     ch, 1 ;~ 0192:396E
 	R(SHR(ch, 1));	// 9561 shr     ch, 1 ;~ 0192:3970
 cs=0x192;eip=0x003972; 	R(CALL(sub_1395a,0));	// 9562 call    sub_1395A ;~ 0192:3972
-ret_192_3975:	// 5546 
+ret_192_3975:	// 5576 
 	R(MOV(cx, *(dw*)(raddr(ds,si+0x1E))));	// 9563 mov     cx, [si+1Eh] ;~ 0192:3975
 	R(SHR(cl, 1));	// 9564 shr     cl, 1 ;~ 0192:3978
 	R(SHR(ch, 1));	// 9565 shr     ch, 1 ;~ 0192:397A
@@ -7668,10 +7697,10 @@ ret_192_3975:	// 5546
 	R(INC(cl));	// 9571 inc     cl ;~ 0192:3986
 	R(MOV(dx, 0x28));	// 9572 mov     dx, 28h ; '(' ;~ 0192:3988
 	R(MOV(ah, 0x0FF));	// 9573 mov     ah, 0FFh ;~ 0192:398B
-loc_1398d:	// 5547 
+loc_1398d:	// 5577 
 	R(PUSH(cx));	// 9576 push    cx ;~ 0192:398D
 	R(PUSH(bx));	// 9577 push    bx ;~ 0192:398E
-loc_1398f:	// 5548 
+loc_1398f:	// 5578 
 	R(MOV(*(raddr(ds,bx)), ah));	// 9580 mov     [bx], ah ;~ 0192:398F
 	R(INC(bx));	// 9581 inc     bx ;~ 0192:3991
 	R(DEC(cl));	// 9582 dec     cl ;~ 0192:3992
@@ -7685,45 +7714,45 @@ cs=0x192;eip=0x00399b; 		R(JNC(loc_139a6));	// 9586 jnb     short loc_139A6 ;~ 0
 	R(DEC(ch));	// 9590 dec     ch ;~ 0192:39A1
 cs=0x192;eip=0x0039a3; 		R(JNZ(loc_1398d));	// 9591 jnz     short loc_1398D ;~ 0192:39A3
 cs=0x192;eip=0x0039a5; 	R(RETN);	// 9592 retn ;~ 0192:39A5
-loc_139a6:	// 5549 
+loc_139a6:	// 5579 
 	R(POP(bx));	// 9596 pop     bx ;~ 0192:39A6
 	R(POP(cx));	// 9597 pop     cx ;~ 0192:39A7
 cs=0x192;eip=0x0039a8; 	R(RETN);	// 9598 retn ;~ 0192:39A8
 sub_139a9:	// 9605 
 	R(PUSH(si));	// 9607 push    si ;~ 0192:39A9
 	R(MOV(di, offset(seg000,off_1f17c)));	// 9608 mov     di, offset off_1F17C ;~ 0192:39AA
-loc_139ad:	// 5550 
+loc_139ad:	// 5580 
 cs=0x192;eip=0x0039ad; 	R(CALL(sub_139ee,0));	// 9612 call    sub_139EE ;~ 0192:39AD
-ret_192_39b0:	// 5551 
+ret_192_39b0:	// 5581 
 cs=0x192;eip=0x0039b0; 		R(JZ(loc_139cb));	// 9613 jz      short loc_139CB ;~ 0192:39B0
 	R(TEST(*(raddr(ds,si)), 4));	// 9614 test    byte ptr [si], 4 ;~ 0192:39B2
 cs=0x192;eip=0x0039b5; 		R(JZ(loc_139c6));	// 9615 jz      short loc_139C6 ;~ 0192:39B5
 	R(TEST(*(raddr(ds,si)), 0x10));	// 9616 test    byte ptr [si], 10h ;~ 0192:39B7
 cs=0x192;eip=0x0039ba; 		R(JZ(loc_139ad));	// 9617 jz      short loc_139AD ;~ 0192:39BA
 cs=0x192;eip=0x0039bc; 	R(CALL(sub_13f1d,0));	// 9618 call    sub_13F1D ;~ 0192:39BC
-ret_192_39bf:	// 5552 
+ret_192_39bf:	// 5582 
 	R(DEC(di));	// 9619 dec     di ;~ 0192:39BF
 	R(DEC(di));	// 9620 dec     di ;~ 0192:39C0
 	R(MOV(*(raddr(ds,si)), 0));	// 9621 mov     byte ptr [si], 0 ;~ 0192:39C1
 cs=0x192;eip=0x0039c4; 		R(JMP(loc_139ad));	// 9622 jmp     short loc_139AD ;~ 0192:39C4
-loc_139c6:	// 5553 
+loc_139c6:	// 5583 
 cs=0x192;eip=0x0039c6; 	R(CALL(sub_139fe,0));	// 9626 call    sub_139FE ;~ 0192:39C6
-ret_192_39c9:	// 5554 
+ret_192_39c9:	// 5584 
 cs=0x192;eip=0x0039c9; 		R(JMP(loc_139ad));	// 9627 jmp     short loc_139AD ;~ 0192:39C9
-loc_139cb:	// 5555 
+loc_139cb:	// 5585 
 cs=0x192;eip=0x0039cb; 	R(CALL(sub_139ee,0));	// 9632 call    sub_139EE ;~ 0192:39CB
-ret_192_39ce:	// 5556 
+ret_192_39ce:	// 5586 
 cs=0x192;eip=0x0039ce; 		R(JZ(loc_139e7));	// 9633 jz      short loc_139E7 ;~ 0192:39CE
 	R(TEST(*(raddr(ds,si)), 4));	// 9634 test    byte ptr [si], 4 ;~ 0192:39D0
 cs=0x192;eip=0x0039d3; 		R(JNZ(loc_139cb));	// 9635 jnz     short loc_139CB ;~ 0192:39D3
 	R(TEST(*(raddr(ds,si+1)), 1));	// 9636 test    byte ptr [si+1], 1 ;~ 0192:39D5
 cs=0x192;eip=0x0039d9; 		R(JNZ(loc_139de));	// 9637 jnz     short loc_139DE ;~ 0192:39D9
 cs=0x192;eip=0x0039db; 	R(CALL(sub_13ba2,0));	// 9638 call    sub_13BA2 ;~ 0192:39DB
-loc_139de:	// 5557 
+loc_139de:	// 5587 
 	R(AND(*(raddr(ds,si+1)), 0x0FE));	// 9641 and     byte ptr [si+1], 0FEh ;~ 0192:39DE
 	R(AND(*(raddr(ds,si)), 0x0BF));	// 9642 and     byte ptr [si], 0BFh ;~ 0192:39E2
 cs=0x192;eip=0x0039e5; 		R(JMP(loc_139cb));	// 9643 jmp     short loc_139CB ;~ 0192:39E5
-loc_139e7:	// 5558 
+loc_139e7:	// 5588 
 	R(POP(si));	// 9647 pop     si ;~ 0192:39E7
 	R(MOV(byte_1f47f, 1));	// 9648 mov     byte_1F47F, 1 ;~ 0192:39E8
 cs=0x192;eip=0x0039ed; 	R(RETN);	// 9649 retn ;~ 0192:39ED
@@ -7733,7 +7762,7 @@ sub_139ee:	// 9656
 cs=0x192;eip=0x0039f3; 		R(JNZ(loc_139f9));	// 9660 jnz     short loc_139F9 ;~ 0192:39F3
 	R(MOV(di, offset(seg000,off_1f17c)));	// 9661 mov     di, offset off_1F17C ;~ 0192:39F5
 cs=0x192;eip=0x0039f8; 	R(RETN);	// 9662 retn ;~ 0192:39F8
-loc_139f9:	// 5559 
+loc_139f9:	// 5589 
 	R(MOV(si, *(dw*)(raddr(ds,di))));	// 9666 mov     si, [di] ;~ 0192:39F9
 	R(INC(di));	// 9667 inc     di ;~ 0192:39FB
 	R(INC(di));	// 9668 inc     di ;~ 0192:39FC
@@ -7742,9 +7771,9 @@ sub_139fe:	// 9676
 	R(TEST(*(raddr(ds,si)), 0x40));	// 9677 test    byte ptr [si], 40h ;~ 0192:39FE
 cs=0x192;eip=0x003a01; 		R(JZ(loc_13a08));	// 9678 jz      short loc_13A08 ;~ 0192:3A01
 cs=0x192;eip=0x003a03; 	R(CALL(sub_13ef4,0));	// 9679 call    sub_13EF4 ;~ 0192:3A03
-ret_192_3a06:	// 5560 
+ret_192_3a06:	// 5590 
 cs=0x192;eip=0x003a06; 		R(JMP(loc_13a2a));	// 9680 jmp     short loc_13A2A ;~ 0192:3A06
-loc_13a08:	// 5561 
+loc_13a08:	// 5591 
 	R(MOV(cx, *(dw*)(raddr(ds,si+0x1E))));	// 9684 mov     cx, [si+1Eh] ;~ 0192:3A08
 	R(MOV(word_1f166, cx));	// 9685 mov     word_1F166, cx ;~ 0192:3A0B
 	R(MOV(cx, *(dw*)(raddr(ds,si+0x1A))));	// 9686 mov     cx, [si+1Ah] ;~ 0192:3A0F
@@ -7755,9 +7784,9 @@ loc_13a08:	// 5561
 	R(AND(*(raddr(ds,si+1)), 0x0FB));	// 9691 and     byte ptr [si+1], 0FBh ;~ 0192:3A21
 	R(TEST(*(raddr(ds,si)), 0x20));	// 9692 test    byte ptr [si], 20h ;~ 0192:3A25
 cs=0x192;eip=0x003a28; 		R(JNZ(loc_13a7b));	// 9693 jnz     short loc_13A7B ;~ 0192:3A28
-loc_13a2a:	// 5562 
+loc_13a2a:	// 5592 
 cs=0x192;eip=0x003a2a; 	R(CALL(sub_13b61,0));	// 9696 call    sub_13B61 ;~ 0192:3A2A
-ret_192_3a2d:	// 5563 
+ret_192_3a2d:	// 5593 
 	R(MOV(dx, *(dw*)(raddr(ds,si+0x0B))));	// 9697 mov     dx, [si+0Bh] ;~ 0192:3A2D
 	R(TEST(dh, 0x80));	// 9698 test    dh, 80h ;~ 0192:3A30
 cs=0x192;eip=0x003a33; 		R(JZ(loc_13a62));	// 9699 jz      short loc_13A62 ;~ 0192:3A33
@@ -7765,37 +7794,37 @@ cs=0x192;eip=0x003a33; 		R(JZ(loc_13a62));	// 9699 jz      short loc_13A62 ;~ 01
 	R(MOV(bx, 0));	// 9701 mov     bx, 0 ;~ 0192:3A39
 	R(SUB(bx, dx));	// 9702 sub     bx, dx ;~ 0192:3A3C
 cs=0x192;eip=0x003a3e; 	R(CALL(sub_13b8a,0));	// 9703 call    sub_13B8A ;~ 0192:3A3E
-ret_192_3a41:	// 5564 
+ret_192_3a41:	// 5594 
 cs=0x192;eip=0x003a41; 		R(JNC(loc_13a46));	// 9704 jnb     short loc_13A46 ;~ 0192:3A41
 cs=0x192;eip=0x003a43; 		R(JMP(loc_13b58));	// 9705 jmp     loc_13B58 ;~ 0192:3A43
-loc_13a46:	// 5565 
+loc_13a46:	// 5595 
 	R(MOV(ah, *(raddr(ds,si+0x1E))));	// 9709 mov     ah, [si+1Eh] ;~ 0192:3A46
 	R(SUB(ah, cl));	// 9710 sub     ah, cl ;~ 0192:3A49
 cs=0x192;eip=0x003a4b; 		R(JNC(loc_13a50));	// 9711 jnb     short loc_13A50 ;~ 0192:3A4B
 cs=0x192;eip=0x003a4d; 		R(JMP(loc_13b58));	// 9712 jmp     loc_13B58 ;~ 0192:3A4D
-loc_13a50:	// 5566 
+loc_13a50:	// 5596 
 cs=0x192;eip=0x003a50; 		R(JNZ(loc_13a55));	// 9716 jnz     short loc_13A55 ;~ 0192:3A50
 cs=0x192;eip=0x003a52; 		R(JMP(loc_13b58));	// 9717 jmp     loc_13B58 ;~ 0192:3A52
-loc_13a55:	// 5567 
+loc_13a55:	// 5597 
 	R(MOV(*(raddr(ds,si+0x1E)), ah));	// 9721 mov     [si+1Eh], ah ;~ 0192:3A55
 	R(MOV(ah, *(raddr(ds,si+0x1C))));	// 9722 mov     ah, [si+1Ch] ;~ 0192:3A58
 	R(ADD(ah, cl));	// 9723 add     ah, cl ;~ 0192:3A5B
 	R(MOV(*(raddr(ds,si+0x1C)), ah));	// 9724 mov     [si+1Ch], ah ;~ 0192:3A5D
 cs=0x192;eip=0x003a60; 		R(JMP(loc_13a7b));	// 9725 jmp     short loc_13A7B ;~ 0192:3A60
-loc_13a62:	// 5568 
+loc_13a62:	// 5598 
 	R(XCHG(dx, bx));	// 9729 xchg    dx, bx ;~ 0192:3A62
 cs=0x192;eip=0x003a64; 	R(CALL(sub_13b8a,0));	// 9730 call    sub_13B8A ;~ 0192:3A64
-ret_192_3a67:	// 5569 
+ret_192_3a67:	// 5599 
 cs=0x192;eip=0x003a67; 		R(JNC(loc_13a6c));	// 9731 jnb     short loc_13A6C ;~ 0192:3A67
 cs=0x192;eip=0x003a69; 		R(JMP(loc_13b58));	// 9732 jmp     loc_13B58 ;~ 0192:3A69
-loc_13a6c:	// 5570 
+loc_13a6c:	// 5600 
 	R(MOV(*(raddr(ds,si+0x1A)), cl));	// 9736 mov     [si+1Ah], cl ;~ 0192:3A6C
 	R(MOV(ah, 0x50));	// 9737 mov     ah, 50h ; 'P' ;~ 0192:3A6F
 	R(SUB(ah, cl));	// 9738 sub     ah, cl ;~ 0192:3A71
 	R(CMP(ah, *(raddr(ds,si+0x1E))));	// 9739 cmp     ah, [si+1Eh] ;~ 0192:3A73
 cs=0x192;eip=0x003a76; 		R(JNC(loc_13a7b));	// 9740 jnb     short loc_13A7B ;~ 0192:3A76
 	R(MOV(*(raddr(ds,si+0x1E)), ah));	// 9741 mov     [si+1Eh], ah ;~ 0192:3A78
-loc_13a7b:	// 5571 
+loc_13a7b:	// 5601 
 	R(MOV(dx, *(dw*)(raddr(ds,si+0x0D))));	// 9745 mov     dx, [si+0Dh] ;~ 0192:3A7B
 	R(TEST(dh, 0x80));	// 9746 test    dh, 80h ;~ 0192:3A7E
 cs=0x192;eip=0x003a81; 		R(JZ(loc_13ab0));	// 9747 jz      short loc_13AB0 ;~ 0192:3A81
@@ -7803,37 +7832,37 @@ cs=0x192;eip=0x003a81; 		R(JZ(loc_13ab0));	// 9747 jz      short loc_13AB0 ;~ 01
 	R(MOV(bx, 0));	// 9749 mov     bx, 0 ;~ 0192:3A87
 	R(SUB(bx, dx));	// 9750 sub     bx, dx ;~ 0192:3A8A
 cs=0x192;eip=0x003a8c; 	R(CALL(sub_13b95,0));	// 9751 call    sub_13B95 ;~ 0192:3A8C
-ret_192_3a8f:	// 5572 
+ret_192_3a8f:	// 5602 
 cs=0x192;eip=0x003a8f; 		R(JNC(loc_13a94));	// 9752 jnb     short loc_13A94 ;~ 0192:3A8F
 cs=0x192;eip=0x003a91; 		R(JMP(loc_13b58));	// 9753 jmp     loc_13B58 ;~ 0192:3A91
-loc_13a94:	// 5573 
+loc_13a94:	// 5603 
 	R(MOV(ah, *(raddr(ds,si+0x1F))));	// 9757 mov     ah, [si+1Fh] ;~ 0192:3A94
 	R(SUB(ah, cl));	// 9758 sub     ah, cl ;~ 0192:3A97
 cs=0x192;eip=0x003a99; 		R(JNC(loc_13a9e));	// 9759 jnb     short loc_13A9E ;~ 0192:3A99
 cs=0x192;eip=0x003a9b; 		R(JMP(loc_13b58));	// 9760 jmp     loc_13B58 ;~ 0192:3A9B
-loc_13a9e:	// 5574 
+loc_13a9e:	// 5604 
 cs=0x192;eip=0x003a9e; 		R(JNZ(loc_13aa3));	// 9764 jnz     short loc_13AA3 ;~ 0192:3A9E
 cs=0x192;eip=0x003aa0; 		R(JMP(loc_13b58));	// 9765 jmp     loc_13B58 ;~ 0192:3AA0
-loc_13aa3:	// 5575 
+loc_13aa3:	// 5605 
 	R(MOV(*(raddr(ds,si+0x1F)), ah));	// 9769 mov     [si+1Fh], ah ;~ 0192:3AA3
 	R(MOV(ah, *(raddr(ds,si+0x1D))));	// 9770 mov     ah, [si+1Dh] ;~ 0192:3AA6
 	R(ADD(ah, cl));	// 9771 add     ah, cl ;~ 0192:3AA9
 	R(MOV(*(raddr(ds,si+0x1D)), ah));	// 9772 mov     [si+1Dh], ah ;~ 0192:3AAB
 cs=0x192;eip=0x003aae; 		R(JMP(loc_13ac9));	// 9773 jmp     short loc_13AC9 ;~ 0192:3AAE
-loc_13ab0:	// 5576 
+loc_13ab0:	// 5606 
 	R(XCHG(dx, bx));	// 9777 xchg    dx, bx ;~ 0192:3AB0
 cs=0x192;eip=0x003ab2; 	R(CALL(sub_13b95,0));	// 9778 call    sub_13B95 ;~ 0192:3AB2
-ret_192_3ab5:	// 5577 
+ret_192_3ab5:	// 5607 
 cs=0x192;eip=0x003ab5; 		R(JNC(loc_13aba));	// 9779 jnb     short loc_13ABA ;~ 0192:3AB5
 cs=0x192;eip=0x003ab7; 		R(JMP(loc_13b58));	// 9780 jmp     loc_13B58 ;~ 0192:3AB7
-loc_13aba:	// 5578 
+loc_13aba:	// 5608 
 	R(MOV(*(raddr(ds,si+0x1B)), cl));	// 9784 mov     [si+1Bh], cl ;~ 0192:3ABA
 	R(MOV(ah, 0x0A0));	// 9785 mov     ah, 0A0h ; ' ' ;~ 0192:3ABD
 	R(SUB(ah, cl));	// 9786 sub     ah, cl ;~ 0192:3ABF
 	R(CMP(ah, *(raddr(ds,si+0x1F))));	// 9787 cmp     ah, [si+1Fh] ;~ 0192:3AC1
 cs=0x192;eip=0x003ac4; 		R(JNC(loc_13ac9));	// 9788 jnb     short loc_13AC9 ;~ 0192:3AC4
 	R(MOV(*(raddr(ds,si+0x1F)), ah));	// 9789 mov     [si+1Fh], ah ;~ 0192:3AC6
-loc_13ac9:	// 5579 
+loc_13ac9:	// 5609 
 	R(TEST(*(raddr(ds,si)), 0x40));	// 9793 test    byte ptr [si], 40h ;~ 0192:3AC9
 cs=0x192;eip=0x003acc; 		R(JNZ(loc_13adf));	// 9794 jnz     short loc_13ADF ;~ 0192:3ACC
 	R(MOV(ah, byte_1f17a));	// 9795 mov     ah, byte_1F17A ;~ 0192:3ACE
@@ -7842,7 +7871,7 @@ cs=0x192;eip=0x003ad5; 		R(JZ(loc_13afe));	// 9797 jz      short loc_13AFE ;~ 01
 	R(TEST(*(raddr(ds,si)), 0x20));	// 9798 test    byte ptr [si], 20h ;~ 0192:3AD7
 cs=0x192;eip=0x003ada; 		R(JZ(loc_13adf));	// 9799 jz      short loc_13ADF ;~ 0192:3ADA
 cs=0x192;eip=0x003adc; 		R(JMP(loc_13b58));	// 9800 jmp     loc_13B58 ;~ 0192:3ADC
-loc_13adf:	// 5580 
+loc_13adf:	// 5610 
 	R(MOV(ah, *(raddr(ds,si+0x1A))));	// 9805 mov     ah, [si+1Ah] ;~ 0192:3ADF
 	R(MOV(*(raddr(ds,si+0x16)), ah));	// 9806 mov     [si+16h], ah ;~ 0192:3AE2
 	R(ADD(ah, *(raddr(ds,si+0x1E))));	// 9807 add     ah, [si+1Eh] ;~ 0192:3AE5
@@ -7855,24 +7884,24 @@ loc_13adf:	// 5580
 	R(ADD(ah, al));	// 9814 add     ah, al ;~ 0192:3AF8
 	R(MOV(*(raddr(ds,si+0x19)), ah));	// 9815 mov     [si+19h], ah ;~ 0192:3AFA
 cs=0x192;eip=0x003afd; 	R(RETN);	// 9816 retn ;~ 0192:3AFD
-loc_13afe:	// 5581 
+loc_13afe:	// 5611 
 	R(MOV(cx, word_1f164));	// 9820 mov     cx, word_1F164 ;~ 0192:3AFE
 	R(MOV(ah, *(raddr(ds,si+0x1A))));	// 9821 mov     ah, [si+1Ah] ;~ 0192:3B02
 	R(CMP(ah, cl));	// 9822 cmp     ah, cl ;~ 0192:3B05
 cs=0x192;eip=0x003b07; 		R(JC(loc_13b0e));	// 9823 jb      short loc_13B0E ;~ 0192:3B07
 	R(MOV(*(raddr(ds,si+0x16)), cl));	// 9824 mov     [si+16h], cl ;~ 0192:3B09
 cs=0x192;eip=0x003b0c; 		R(JMP(loc_13b11));	// 9825 jmp     short loc_13B11 ;~ 0192:3B0C
-loc_13b0e:	// 5582 
+loc_13b0e:	// 5612 
 	R(MOV(*(raddr(ds,si+0x16)), ah));	// 9829 mov     [si+16h], ah ;~ 0192:3B0E
-loc_13b11:	// 5583 
+loc_13b11:	// 5613 
 	R(MOV(ah, *(raddr(ds,si+0x1B))));	// 9832 mov     ah, [si+1Bh] ;~ 0192:3B11
 	R(CMP(ah, ch));	// 9833 cmp     ah, ch ;~ 0192:3B14
 cs=0x192;eip=0x003b16; 		R(JC(loc_13b1d));	// 9834 jb      short loc_13B1D ;~ 0192:3B16
 	R(MOV(*(raddr(ds,si+0x18)), ch));	// 9835 mov     [si+18h], ch ;~ 0192:3B18
 cs=0x192;eip=0x003b1b; 		R(JMP(loc_13b20));	// 9836 jmp     short loc_13B20 ;~ 0192:3B1B
-loc_13b1d:	// 5584 
+loc_13b1d:	// 5614 
 	R(MOV(*(raddr(ds,si+0x18)), ah));	// 9840 mov     [si+18h], ah ;~ 0192:3B1D
-loc_13b20:	// 5585 
+loc_13b20:	// 5615 
 	R(ADD(cl, *(db*)(((db*)&word_1f166))));	// 9843 add     cl, byte ptr word_1F166 ;~ 0192:3B20
 	R(MOV(ah, *(db*)(((db*)&word_1f166)+1)));	// 9844 mov     ah, byte ptr word_1F166+1 ;~ 0192:3B24
 	R(SHR(ah, 1));	// 9845 shr     ah, 1 ;~ 0192:3B28
@@ -7884,9 +7913,9 @@ loc_13b20:	// 5585
 cs=0x192;eip=0x003b36; 		R(JC(loc_13b3d));	// 9851 jb      short loc_13B3D ;~ 0192:3B36
 	R(MOV(*(raddr(ds,si+0x17)), ah));	// 9852 mov     [si+17h], ah ;~ 0192:3B38
 cs=0x192;eip=0x003b3b; 		R(JMP(loc_13b40));	// 9853 jmp     short loc_13B40 ;~ 0192:3B3B
-loc_13b3d:	// 5586 
+loc_13b3d:	// 5616 
 	R(MOV(*(raddr(ds,si+0x17)), cl));	// 9857 mov     [si+17h], cl ;~ 0192:3B3D
-loc_13b40:	// 5587 
+loc_13b40:	// 5617 
 	R(MOV(ah, *(raddr(ds,si+0x1B))));	// 9860 mov     ah, [si+1Bh] ;~ 0192:3B40
 	R(MOV(al, *(raddr(ds,si+0x1F))));	// 9861 mov     al, [si+1Fh] ;~ 0192:3B43
 	R(SHR(al, 1));	// 9862 shr     al, 1 ;~ 0192:3B46
@@ -7896,10 +7925,10 @@ loc_13b40:	// 5587
 cs=0x192;eip=0x003b4e; 		R(JC(loc_13b54));	// 9866 jb      short loc_13B54 ;~ 0192:3B4E
 	R(MOV(*(raddr(ds,si+0x19)), ah));	// 9867 mov     [si+19h], ah ;~ 0192:3B50
 cs=0x192;eip=0x003b53; 	R(RETN);	// 9868 retn ;~ 0192:3B53
-loc_13b54:	// 5588 
+loc_13b54:	// 5618 
 	R(MOV(*(raddr(ds,si+0x19)), ch));	// 9872 mov     [si+19h], ch ;~ 0192:3B54
 cs=0x192;eip=0x003b57; 	R(RETN);	// 9873 retn ;~ 0192:3B57
-loc_13b58:	// 5589 
+loc_13b58:	// 5619 
 	R(OR(*(raddr(ds,si+1)), 2));	// 9878 or      byte ptr [si+1], 2 ;~ 0192:3B58
 	R(OR(*(raddr(ds,si+1)), 4));	// 9879 or      byte ptr [si+1], 4 ;~ 0192:3B5C
 cs=0x192;eip=0x003b60; 	R(RETN);	// 9880 retn ;~ 0192:3B60
@@ -7927,7 +7956,7 @@ sub_13b8a:	// 9912
 cs=0x192;eip=0x003b8e; 		R(JC(locret_13b94));	// 9916 jb      short locret_13B94 ;~ 0192:3B8E
 	R(RCL(bx, 1));	// 9917 rcl     bx, 1 ;~ 0192:3B90
 	R(MOV(cl, bh));	// 9918 mov     cl, bh ;~ 0192:3B92
-locret_13b94:	// 5590 
+locret_13b94:	// 5620 
 cs=0x192;eip=0x003b94; 	R(RETN);	// 9922 retn ;~ 0192:3B94
 sub_13b95:	// 9929 
 	R(MOV(ah, 0x13));	// 9931 mov     ah, 13h ;~ 0192:3B95
@@ -7939,7 +7968,7 @@ cs=0x192;eip=0x003b99; 		R(JC(locret_13b94));	// 9933 jb      short locret_13B94
 cs=0x192;eip=0x003ba1; 	R(RETN);	// 9937 retn ;~ 0192:3BA1
 sub_13ba2:	// 9944 
 cs=0x192;eip=0x003ba2; 	R(CALL(sub_13c10,0));	// 9945 call    sub_13C10 ;~ 0192:3BA2
-ret_192_3ba5:	// 5591 
+ret_192_3ba5:	// 5621 
 	R(MOV(byte_1f168, 1));	// 9946 mov     byte_1F168, 1 ;~ 0192:3BA5
 	R(MOV(ah, *(raddr(ds,si+0x16))));	// 9947 mov     ah, [si+16h] ;~ 0192:3BAA
 	R(MOV(*(db*)(((db*)&word_1f169)), ah));	// 9948 mov     byte ptr word_1F169, ah ;~ 0192:3BAD
@@ -7951,31 +7980,31 @@ ret_192_3ba5:	// 5591
 	R(MOV(*(db*)(((db*)&word_1f16b)+1), ah));	// 9954 mov     byte ptr word_1F16B+1, ah ;~ 0192:3BC2
 	R(OR(*(raddr(ds,si)), 8));	// 9955 or      byte ptr [si], 8 ;~ 0192:3BC6
 cs=0x192;eip=0x003bc9; 	R(CALL(sub_13bf6,0));	// 9956 call    sub_13BF6 ;~ 0192:3BC9
-loc_13bcc:	// 5592 
+loc_13bcc:	// 5622 
 	R(PUSH(si));	// 9959 push    si ;~ 0192:3BCC
 	R(PUSH(di));	// 9960 push    di ;~ 0192:3BCD
 	R(MOV(byte_1f16d, 0));	// 9961 mov     byte_1F16D, 0 ;~ 0192:3BCE
-loc_13bd3:	// 5593 
+loc_13bd3:	// 5623 
 cs=0x192;eip=0x003bd3; 	R(CALL(sub_139ee,0));	// 9965 call    sub_139EE ;~ 0192:3BD3
-ret_192_3bd6:	// 5594 
+ret_192_3bd6:	// 5624 
 cs=0x192;eip=0x003bd6; 		R(JZ(loc_13be3));	// 9966 jz      short loc_13BE3 ;~ 0192:3BD6
 	R(TEST(*(raddr(ds,si+1)), 1));	// 9967 test    byte ptr [si+1], 1 ;~ 0192:3BD8
 cs=0x192;eip=0x003bdc; 		R(JNZ(loc_13bd3));	// 9968 jnz     short loc_13BD3 ;~ 0192:3BDC
 cs=0x192;eip=0x003bde; 	R(CALL(sub_13c19,0));	// 9969 call    sub_13C19 ;~ 0192:3BDE
-ret_192_3be1:	// 5595 
+ret_192_3be1:	// 5625 
 cs=0x192;eip=0x003be1; 		R(JMP(loc_13bd3));	// 9970 jmp     short loc_13BD3 ;~ 0192:3BE1
-loc_13be3:	// 5596 
+loc_13be3:	// 5626 
 	R(POP(di));	// 9974 pop     di ;~ 0192:3BE3
 	R(MOV(ah, byte_1f16d));	// 9975 mov     ah, byte_1F16D ;~ 0192:3BE4
 	R(OR(ah, ah));	// 9976 or      ah, ah ;~ 0192:3BE8
 cs=0x192;eip=0x003bea; 		R(JZ(loc_13bef));	// 9977 jz      short loc_13BEF ;~ 0192:3BEA
 	R(POP(si));	// 9978 pop     si ;~ 0192:3BEC
 cs=0x192;eip=0x003bed; 		R(JMP(loc_13bcc));	// 9979 jmp     short loc_13BCC ;~ 0192:3BED
-loc_13bef:	// 5597 
+loc_13bef:	// 5627 
 	R(POP(si));	// 9983 pop     si ;~ 0192:3BEF
 	R(PUSH(si));	// 9984 push    si ;~ 0192:3BF0
 cs=0x192;eip=0x003bf1; 	R(CALL(sub_13cb6,0));	// 9985 call    sub_13CB6 ;~ 0192:3BF1
-ret_192_3bf4:	// 5598 
+ret_192_3bf4:	// 5628 
 	R(POP(si));	// 9986 pop     si ;~ 0192:3BF4
 cs=0x192;eip=0x003bf5; 	R(RETN);	// 9987 retn ;~ 0192:3BF5
 sub_13bf6:	// 9994 
@@ -7990,7 +8019,7 @@ sub_13c03:	// 10008
 	R(MOV(si, *(dw*)(raddr(ds,bx))));	// 10010 mov     si, [bx] ;~ 0192:3C07
 	R(INC(bx));	// 10011 inc     bx ;~ 0192:3C09
 	R(INC(bx));	// 10012 inc     bx ;~ 0192:3C0A
-loc_13c0b:	// 5599 
+loc_13c0b:	// 5629 
 	R(MOV(word_1f14a, bx));	// 10015 mov     word_1F14A, bx ;~ 0192:3C0B
 cs=0x192;eip=0x003c0f; 	R(RETN);	// 10016 retn ;~ 0192:3C0F
 sub_13c10:	// 10023 
@@ -8003,26 +8032,26 @@ sub_13c19:	// 10034
 	R(MOV(dh, *(db*)(((db*)&word_1f169))));	// 10037 mov     dh, byte ptr word_1F169 ;~ 0192:3C1F
 	R(MOV(dl, *(db*)(((db*)&word_1f169)+1)));	// 10038 mov     dl, byte ptr word_1F169+1 ;~ 0192:3C23
 cs=0x192;eip=0x003c27; 	R(CALL(sub_13caa,0));	// 10039 call    sub_13CAA ;~ 0192:3C27
-ret_192_3c2a:	// 5600 
+ret_192_3c2a:	// 5630 
 cs=0x192;eip=0x003c2a; 		R(JC(loc_13c2f));	// 10040 jb      short loc_13C2F ;~ 0192:3C2A
 cs=0x192;eip=0x003c2c; 		R(JMP(locret_13c9b));	// 10041 jmp     locret_13C9B ;~ 0192:3C2C
-loc_13c2f:	// 5601 
+loc_13c2f:	// 5631 
 	R(MOV(bh, *(raddr(ds,si+0x18))));	// 10045 mov     bh, [si+18h] ;~ 0192:3C2F
 	R(MOV(bl, *(raddr(ds,si+0x19))));	// 10046 mov     bl, [si+19h] ;~ 0192:3C32
 	R(MOV(dh, *(db*)(((db*)&word_1f16b))));	// 10047 mov     dh, byte ptr word_1F16B ;~ 0192:3C35
 	R(MOV(dl, *(db*)(((db*)&word_1f16b)+1)));	// 10048 mov     dl, byte ptr word_1F16B+1 ;~ 0192:3C39
 cs=0x192;eip=0x003c3d; 	R(CALL(sub_13caa,0));	// 10049 call    sub_13CAA ;~ 0192:3C3D
-ret_192_3c40:	// 5602 
+ret_192_3c40:	// 5632 
 cs=0x192;eip=0x003c40; 		R(JNC(locret_13c9b));	// 10050 jnb     short locret_13C9B ;~ 0192:3C40
 	R(MOV(ch, *(raddr(ds,si+0x16))));	// 10051 mov     ch, [si+16h] ;~ 0192:3C42
 	R(MOV(ah, *(db*)(((db*)&word_1f169))));	// 10052 mov     ah, byte ptr word_1F169 ;~ 0192:3C45
 cs=0x192;eip=0x003c49; 	R(CALL(sub_13ca3,0));	// 10053 call    sub_13CA3 ;~ 0192:3C49
-ret_192_3c4c:	// 5603 
+ret_192_3c4c:	// 5633 
 	R(MOV(dl, ah));	// 10054 mov     dl, ah ;~ 0192:3C4C
 	R(MOV(ch, *(raddr(ds,si+0x17))));	// 10055 mov     ch, [si+17h] ;~ 0192:3C4E
 	R(MOV(ah, *(db*)(((db*)&word_1f169)+1)));	// 10056 mov     ah, byte ptr word_1F169+1 ;~ 0192:3C51
 cs=0x192;eip=0x003c55; 	R(CALL(sub_13c9c,0));	// 10057 call    sub_13C9C ;~ 0192:3C55
-ret_192_3c58:	// 5604 
+ret_192_3c58:	// 5634 
 	R(MOV(dh, ah));	// 10058 mov     dh, ah ;~ 0192:3C58
 	R(SUB(ah, dl));	// 10059 sub     ah, dl ;~ 0192:3C5A
 	R(CMP(ah, 0x3E));	// 10060 cmp     ah, 3Eh ; '>' ;~ 0192:3C5C
@@ -8030,12 +8059,12 @@ cs=0x192;eip=0x003c5f; 		R(JNC(locret_13c9b));	// 10061 jnb     short locret_13C
 	R(MOV(ch, *(raddr(ds,si+0x18))));	// 10062 mov     ch, [si+18h] ;~ 0192:3C61
 	R(MOV(ah, *(db*)(((db*)&word_1f16b))));	// 10063 mov     ah, byte ptr word_1F16B ;~ 0192:3C64
 cs=0x192;eip=0x003c68; 	R(CALL(sub_13ca3,0));	// 10064 call    sub_13CA3 ;~ 0192:3C68
-ret_192_3c6b:	// 5605 
+ret_192_3c6b:	// 5635 
 	R(MOV(bl, ah));	// 10065 mov     bl, ah ;~ 0192:3C6B
 	R(MOV(ch, *(raddr(ds,si+0x19))));	// 10066 mov     ch, [si+19h] ;~ 0192:3C6D
 	R(MOV(ah, *(db*)(((db*)&word_1f16b)+1)));	// 10067 mov     ah, byte ptr word_1F16B+1 ;~ 0192:3C70
 cs=0x192;eip=0x003c74; 	R(CALL(sub_13c9c,0));	// 10068 call    sub_13C9C ;~ 0192:3C74
-ret_192_3c77:	// 5606 
+ret_192_3c77:	// 5636 
 	R(MOV(bh, ah));	// 10069 mov     bh, ah ;~ 0192:3C77
 	R(SUB(ah, bl));	// 10070 sub     ah, bl ;~ 0192:3C79
 	R(CMP(ah, 0x80));	// 10071 cmp     ah, 80h ; '€' ;~ 0192:3C7B
@@ -8043,18 +8072,18 @@ cs=0x192;eip=0x003c7e; 		R(JNC(locret_13c9b));	// 10072 jnb     short locret_13C
 	R(MOV(word_1f169, dx));	// 10073 mov     word_1F169, dx ;~ 0192:3C80
 	R(MOV(word_1f16b, bx));	// 10074 mov     word_1F16B, bx ;~ 0192:3C84
 cs=0x192;eip=0x003c88; 	R(CALL(sub_13bf6,0));	// 10075 call    sub_13BF6 ;~ 0192:3C88
-ret_192_3c8b:	// 5607 
+ret_192_3c8b:	// 5637 
 	R(MOV(byte_1f16d, 1));	// 10076 mov     byte_1F16D, 1 ;~ 0192:3C8B
 	R(OR(*(raddr(ds,si+1)), 1));	// 10077 or      byte ptr [si+1], 1 ;~ 0192:3C90
 	R(OR(*(raddr(ds,si)), 8));	// 10078 or      byte ptr [si], 8 ;~ 0192:3C94
 	R(INC(byte_1f168));	// 10079 inc     byte_1F168 ;~ 0192:3C97
-locret_13c9b:	// 5608 
+locret_13c9b:	// 5638 
 cs=0x192;eip=0x003c9b; 	R(RETN);	// 10083 retn ;~ 0192:3C9B
 sub_13c9c:	// 10090 
 	R(CMP(ah, ch));	// 10092 cmp     ah, ch ;~ 0192:3C9C
 cs=0x192;eip=0x003c9e; 		R(JNC(locret_13ca2));	// 10093 jnb     short locret_13CA2 ;~ 0192:3C9E
 	R(MOV(ah, ch));	// 10094 mov     ah, ch ;~ 0192:3CA0
-locret_13ca2:	// 5609 
+locret_13ca2:	// 5639 
 cs=0x192;eip=0x003ca2; 	R(RETN);	// 10098 retn ;~ 0192:3CA2
 sub_13ca3:	// 10105 
 	R(CMP(ah, ch));	// 10107 cmp     ah, ch ;~ 0192:3CA3
@@ -8067,7 +8096,7 @@ sub_13caa:	// 10117
 cs=0x192;eip=0x003cae; 		R(JC(loc_13cb4));	// 10121 jb      short loc_13CB4 ;~ 0192:3CAE
 	R(MOV(ah, bl));	// 10122 mov     ah, bl ;~ 0192:3CB0
 	R(CMP(ah, dh));	// 10123 cmp     ah, dh ;~ 0192:3CB2
-loc_13cb4:	// 5610 
+loc_13cb4:	// 5640 
 	R(CMC);	// 10126 cmc ;~ 0192:3CB4
 cs=0x192;eip=0x003cb5; 	R(RETN);	// 10127 retn ;~ 0192:3CB5
 sub_13cb6:	// 10134 
@@ -8086,7 +8115,7 @@ cs=0x192;eip=0x003cd2; 		R(JZ(loc_13cdc));	// 10146 jz      short loc_13CDC ;~ 0
 	R(TEST(*(raddr(ds,bx)), 2));	// 10147 test    byte ptr [bx], 2 ;~ 0192:3CD4
 cs=0x192;eip=0x003cd7; 		R(JZ(loc_13cdc));	// 10148 jz      short loc_13CDC ;~ 0192:3CD7
 cs=0x192;eip=0x003cd9; 		R(JMP(sub_13ef4));	// 10149 jmp     sub_13EF4 ;~ 0192:3CD9
-loc_13cdc:	// 5611 
+loc_13cdc:	// 5641 
 	R(MOV(cl, *(db*)(((db*)&word_1f169))));	// 10154 mov     cl, byte ptr word_1F169 ;~ 0192:3CDC
 	R(SHR(cl, 1));	// 10155 shr     cl, 1 ;~ 0192:3CE0
 	R(MOV(ch, *(db*)(((db*)&word_1f16b))));	// 10156 mov     ch, byte ptr word_1F16B ;~ 0192:3CE2
@@ -8097,14 +8126,14 @@ loc_13cdc:	// 5611
 	R(TEST(dl, 1));	// 10161 test    dl, 1 ;~ 0192:3CF2
 cs=0x192;eip=0x003cf5; 		R(JZ(loc_13cfa));	// 10162 jz      short loc_13CFA ;~ 0192:3CF5
 	R(ADD(dl, 2));	// 10163 add     dl, 2 ;~ 0192:3CF7
-loc_13cfa:	// 5612 
+loc_13cfa:	// 5642 
 	R(SHR(dl, 1));	// 10166 shr     dl, 1 ;~ 0192:3CFA
 	R(SUB(dl, cl));	// 10167 sub     dl, cl ;~ 0192:3CFC
 	R(MOV(dh, *(db*)(((db*)&word_1f16b)+1)));	// 10168 mov     dh, byte ptr word_1F16B+1 ;~ 0192:3CFE
 	R(TEST(dh, 3));	// 10169 test    dh, 3 ;~ 0192:3D02
 cs=0x192;eip=0x003d05; 		R(JZ(loc_13d0a));	// 10170 jz      short loc_13D0A ;~ 0192:3D05
 	R(ADD(dh, 4));	// 10171 add     dh, 4 ;~ 0192:3D07
-loc_13d0a:	// 5613 
+loc_13d0a:	// 5643 
 	R(SHR(dh, 1));	// 10174 shr     dh, 1 ;~ 0192:3D0A
 	R(SHR(dh, 1));	// 10175 shr     dh, 1 ;~ 0192:3D0C
 	R(SUB(dh, ch));	// 10176 sub     dh, ch ;~ 0192:3D0E
@@ -8116,7 +8145,7 @@ cs=0x192;eip=0x003d1d; 		R(JC(loc_13d28));	// 10181 jb      short loc_13D28 ;~ 0
 	R(SUB(ch, 0x14));	// 10182 sub     ch, 14h ;~ 0192:3D1F
 	R(SUB(dh, ch));	// 10183 sub     dh, ch ;~ 0192:3D22
 	R(MOV(*(db*)(((db*)&word_1f176)+1), dh));	// 10184 mov     byte ptr word_1F176+1, dh ;~ 0192:3D24
-loc_13d28:	// 5614 
+loc_13d28:	// 5644 
 	R(MOV(cx, word_1f174));	// 10187 mov     cx, word_1F174 ;~ 0192:3D28
 	R(ADD(cl, cl));	// 10188 add     cl, cl ;~ 0192:3D2C
 	R(ADD(ch, ch));	// 10189 add     ch, ch ;~ 0192:3D2E
@@ -8155,11 +8184,11 @@ loc_13d28:	// 5614
 	R(MOV(bx, ax));	// 10222 mov     bx, ax ;~ 0192:3D7F
 	R(MOV(dx, word_1f176));	// 10223 mov     dx, word_1F176 ;~ 0192:3D81
 	R(MOV(di, offset(seg000,word_1f4f3)));	// 10224 mov     di, offset word_1F4F3 ;~ 0192:3D85
-loc_13d88:	// 5615 
+loc_13d88:	// 5645 
 	R(PUSH(dx));	// 10227 push    dx ;~ 0192:3D88
 	R(PUSH(bx));	// 10228 push    bx ;~ 0192:3D89
 	R(PUSH(di));	// 10229 push    di ;~ 0192:3D8A
-loc_13d8b:	// 5616 
+loc_13d8b:	// 5646 
 	R(PUSH(bx));	// 10232 push    bx ;~ 0192:3D8B
 	R(PUSH(dx));	// 10233 push    dx ;~ 0192:3D8C
 	R(MOV(al, *(raddr(ds,bx))));	// 10234 mov     al, [bx] ;~ 0192:3D8D
@@ -8167,7 +8196,7 @@ loc_13d8b:	// 5616
 cs=0x192;eip=0x003d91; 		R(JZ(loc_13d98));	// 10236 jz      short loc_13D98 ;~ 0192:3D91
 	R(MOV(ah, 0));	// 10237 mov     ah, 0 ;~ 0192:3D93
 cs=0x192;eip=0x003d95; 	R(CALL(sub_13e31,0));	// 10238 call    sub_13E31 ;~ 0192:3D95
-loc_13d98:	// 5617 
+loc_13d98:	// 5647 
 	R(INC(di));	// 10241 inc     di ;~ 0192:3D98
 	R(INC(di));	// 10242 inc     di ;~ 0192:3D99
 	R(POP(dx));	// 10243 pop     dx ;~ 0192:3D9A
@@ -8187,33 +8216,33 @@ cs=0x192;eip=0x003db1; 		R(JNZ(loc_13d88));	// 10256 jnz     short loc_13D88 ;~ 
 	R(POP(di));	// 10257 pop     di ;~ 0192:3DB3
 	R(POP(si));	// 10258 pop     si ;~ 0192:3DB4
 cs=0x192;eip=0x003db5; 	R(CALL(sub_13c10,0));	// 10259 call    sub_13C10 ;~ 0192:3DB5
-ret_192_3db8:	// 5618 
+ret_192_3db8:	// 5648 
 	R(MOV(word_1f148, di));	// 10260 mov     word_1F148, di ;~ 0192:3DB8
 	R(MOV(ah, byte_1f168));	// 10261 mov     ah, byte_1F168 ;~ 0192:3DBC
 	R(PUSH(si));	// 10262 push    si ;~ 0192:3DC0
-loc_13dc1:	// 5619 
+loc_13dc1:	// 5649 
 	R(PUSH(ax));	// 10265 push    ax ;~ 0192:3DC1
 cs=0x192;eip=0x003dc2; 	R(CALL(sub_13c03,0));	// 10266 call    sub_13C03 ;~ 0192:3DC2
-ret_192_3dc5:	// 5620 
+ret_192_3dc5:	// 5650 
 	R(TEST(*(raddr(ds,si)), 0x10));	// 10267 test    byte ptr [si], 10h ;~ 0192:3DC5
 cs=0x192;eip=0x003dc8; 		R(JZ(loc_13dcf));	// 10268 jz      short loc_13DCF ;~ 0192:3DC8
 cs=0x192;eip=0x003dca; 	R(CALL(sub_13f08,0));	// 10269 call    sub_13F08 ;~ 0192:3DCA
-ret_192_3dcd:	// 5621 
+ret_192_3dcd:	// 5651 
 cs=0x192;eip=0x003dcd; 		R(JMP(loc_13de5));	// 10270 jmp     short loc_13DE5 ;~ 0192:3DCD
-loc_13dcf:	// 5622 
+loc_13dcf:	// 5652 
 	R(TEST(*(raddr(ds,si+1)), 2));	// 10274 test    byte ptr [si+1], 2 ;~ 0192:3DCF
 cs=0x192;eip=0x003dd3; 		R(JNZ(loc_13dda));	// 10275 jnz     short loc_13DDA ;~ 0192:3DD3
 	R(TEST(*(raddr(ds,si)), 0x20));	// 10276 test    byte ptr [si], 20h ;~ 0192:3DD5
 cs=0x192;eip=0x003dd8; 		R(JZ(loc_13ddf));	// 10277 jz      short loc_13DDF ;~ 0192:3DD8
-loc_13dda:	// 5623 
+loc_13dda:	// 5653 
 cs=0x192;eip=0x003dda; 	R(CALL(sub_13ef4,0));	// 10280 call    sub_13EF4 ;~ 0192:3DDA
-ret_192_3ddd:	// 5624 
+ret_192_3ddd:	// 5654 
 cs=0x192;eip=0x003ddd; 		R(JMP(loc_13de5));	// 10281 jmp     short loc_13DE5 ;~ 0192:3DDD
-loc_13ddf:	// 5625 
+loc_13ddf:	// 5655 
 cs=0x192;eip=0x003ddf; 	R(CALL(sub_13e4e,0));	// 10285 call    sub_13E4E ;~ 0192:3DDF
-ret_192_3de2:	// 5626 
+ret_192_3de2:	// 5656 
 cs=0x192;eip=0x003de2; 	R(CALL(sub_13ef4,0));	// 10286 call    sub_13EF4 ;~ 0192:3DE2
-loc_13de5:	// 5627 
+loc_13de5:	// 5657 
 	R(POP(ax));	// 10290 pop     ax ;~ 0192:3DE5
 	R(DEC(ah));	// 10291 dec     ah ;~ 0192:3DE6
 cs=0x192;eip=0x003de8; 		R(JNZ(loc_13dc1));	// 10292 jnz     short loc_13DC1 ;~ 0192:3DE8
@@ -8234,7 +8263,7 @@ cs=0x192;eip=0x003de8; 		R(JNZ(loc_13dc1));	// 10292 jnz     short loc_13DC1 ;~ 
 	R(MOV(cx, word_1f176));	// 10308 mov     cx, word_1F176 ;~ 0192:3E09
 	R(SHL(ch, 1));	// 10309 shl     ch, 1 ;~ 0192:3E0D
 	R(SHL(ch, 1));	// 10310 shl     ch, 1 ;~ 0192:3E0F
-loc_13e11:	// 5628 
+loc_13e11:	// 5658 
 	R(PUSH(cx));	// 10313 push    cx ;~ 0192:3E11
 	R(MOV(ch, 0));	// 10314 mov     ch, 0 ;~ 0192:3E12
 	R(PUSH(di));	// 10315 push    di ;~ 0192:3E14	// 10316 rep movsw ;~ 0192:3E15
@@ -8267,7 +8296,7 @@ sub_13e31:	// 10340
 	R(DEC(dx));	// 10349 dec     dx ;~ 0192:3E42
 	R(CLD);	// 10350 cld ;~ 0192:3E43
 	R(MOV(cx, 8));	// 10351 mov     cx, 8 ;~ 0192:3E44
-loc_13e47:	// 5629 
+loc_13e47:	// 5659 
 MOVSW;	// 10354 movsw ;~ 0192:3E47
 	R(ADD(di, dx));	// 10355 add     di, dx ;~ 0192:3E48
 		R(LOOP(loc_13e47));	// 10356 loop    loc_13E47 ;~ 0192:3E4A
@@ -8308,13 +8337,13 @@ sub_13e4e:	// 10365
 	R(MOV(dl, byte_1f146));	// 10397 mov     dl, byte_1F146 ;~ 0192:3E9A
 	R(MOV(dh, 0));	// 10398 mov     dh, 0 ;~ 0192:3E9E
 	R(CLD);	// 10399 cld ;~ 0192:3EA0
-loc_13ea1:	// 5630 
+loc_13ea1:	// 5660 
 	R(PUSH(cx));	// 10402 push    cx ;~ 0192:3EA1
 	R(PUSH(si));	// 10403 push    si ;~ 0192:3EA2
 	R(PUSH(di));	// 10404 push    di ;~ 0192:3EA3
 	R(MOV(ch, 0));	// 10405 mov     ch, 0 ;~ 0192:3EA4
 cs=0x192;eip=0x003ea6; 	R(CALL(sub_13eb7,0));	// 10406 call    sub_13EB7 ;~ 0192:3EA6
-ret_192_3ea9:	// 5631 
+ret_192_3ea9:	// 5661 
 	R(POP(di));	// 10407 pop     di ;~ 0192:3EA9
 	R(ADD(di, bx));	// 10408 add     di, bx ;~ 0192:3EAA
 	R(POP(si));	// 10409 pop     si ;~ 0192:3EAC
@@ -8332,28 +8361,29 @@ cs=0x192;eip=0x003ebb; 		R(JZ(loc_13edd));	// 10427 jz      short loc_13EDD ;~ 0
 	R(TEST(al, 3));	// 10428 test    al, 3 ;~ 0192:3EBD
 cs=0x192;eip=0x003ebf; 		R(JZ(loc_13ec3));	// 10429 jz      short loc_13EC3 ;~ 0192:3EBF
 	R(OR(al, 3));	// 10430 or      al, 3 ;~ 0192:3EC1
-loc_13ec3:	// 5632 
+loc_13ec3:	// 5662 
 	R(TEST(al, 0x0C));	// 10433 test    al, 0Ch ;~ 0192:3EC3
 cs=0x192;eip=0x003ec5; 		R(JZ(loc_13ec9));	// 10434 jz      short loc_13EC9 ;~ 0192:3EC5
 	R(OR(al, 0x0C));	// 10435 or      al, 0Ch ;~ 0192:3EC7
-loc_13ec9:	// 5633 
+loc_13ec9:	// 5663 
 	R(TEST(al, 0x30));	// 10438 test    al, 30h ;~ 0192:3EC9
 cs=0x192;eip=0x003ecb; 		R(JZ(loc_13ecf));	// 10439 jz      short loc_13ECF ;~ 0192:3ECB
 	R(OR(al, 0x30));	// 10440 or      al, 30h ;~ 0192:3ECD
-loc_13ecf:	// 5634 
+loc_13ecf:	// 5664 
 	R(TEST(al, 0x0C0));	// 10443 test    al, 0C0h ;~ 0192:3ECF
 cs=0x192;eip=0x003ed1; 		R(JZ(loc_13ed5));	// 10444 jz      short loc_13ED5 ;~ 0192:3ED1
 	R(OR(al, 0x0C0));	// 10445 or      al, 0C0h ;~ 0192:3ED3
-loc_13ed5:	// 5635 
+loc_13ed5:	// 5665 
 	R(XOR(al, 0x0FF));	// 10448 xor     al, 0FFh ;~ 0192:3ED5
 	R(AND(al, *(raddr(ds,di))));	// 10449 and     al, [di] ;~ 0192:3ED7
 	R(OR(al, *(raddr(ds,si))));	// 10450 or      al, [si] ;~ 0192:3ED9
 	R(MOV(*(raddr(ds,di)), al));	// 10451 mov     [di], al ;~ 0192:3EDB
-loc_13edd:	// 5636 
+loc_13edd:	// 5666 
 	R(INC(di));	// 10454 inc     di ;~ 0192:3EDD
 	R(INC(si));	// 10455 inc     si ;~ 0192:3EDE
 		R(LOOP(sub_13eb7));	// 10456 loop    sub_13EB7 ;~ 0192:3EDF
 cs=0x192;eip=0x003ee1; 	R(RETN);	// 10457 retn ;~ 0192:3EE1
+ret_192_3ee2:	// 5667 
 	R(PUSH(si));	// 10461 push    si ;~ 0192:3EE2
 	R(PUSH(di));	// 10462 push    di ;~ 0192:3EE3
 	R(ADD(si, 3));	// 10463 add     si, 3 ;~ 0192:3EE4
@@ -8381,20 +8411,20 @@ cs=0x192;eip=0x003f07; 	R(RETN);	// 10489 retn ;~ 0192:3F07
 sub_13f08:	// 10496 
 	R(MOV(*(raddr(ds,si)), 0));	// 10497 mov     byte ptr [si], 0 ;~ 0192:3F08
 cs=0x192;eip=0x003f0b; 	R(CALL(sub_13f1d,0));	// 10498 call    sub_13F1D ;~ 0192:3F0B
-ret_192_3f0e:	// 5637 
+ret_192_3f0e:	// 5668 
 	R(MOV(cx, word_1f148));	// 10499 mov     cx, word_1F148 ;~ 0192:3F0E
 	R(SUB(bx, cx));	// 10500 sub     bx, cx ;~ 0192:3F12
 cs=0x192;eip=0x003f14; 		R(JNC(locret_13f1c));	// 10501 jnb     short locret_13F1C ;~ 0192:3F14
 	R(DEC(cx));	// 10502 dec     cx ;~ 0192:3F16
 	R(DEC(cx));	// 10503 dec     cx ;~ 0192:3F17
 	R(MOV(word_1f148, cx));	// 10504 mov     word_1F148, cx ;~ 0192:3F18
-locret_13f1c:	// 5638 
+locret_13f1c:	// 5669 
 cs=0x192;eip=0x003f1c; 	R(RETN);	// 10507 retn ;~ 0192:3F1C
 sub_13f1d:	// 10514 
 	R(MOV(dx, si));	// 10516 mov     dx, si ;~ 0192:3F1D
 	R(MOV(ch, byte_1f17b));	// 10517 mov     ch, byte_1F17B ;~ 0192:3F1F
 	R(MOV(bx, offset(seg000,off_1f17c)));	// 10518 mov     bx, offset off_1F17C ;~ 0192:3F23
-loc_13f26:	// 5639 
+loc_13f26:	// 5670 
 	R(MOV(ax, *(dw*)(raddr(ds,bx))));	// 10521 mov     ax, [bx] ;~ 0192:3F26
 	R(CMP(ax, dx));	// 10522 cmp     ax, dx ;~ 0192:3F28
 cs=0x192;eip=0x003f2a; 		R(JZ(loc_13f33));	// 10523 jz      short loc_13F33 ;~ 0192:3F2A
@@ -8403,7 +8433,7 @@ cs=0x192;eip=0x003f2a; 		R(JZ(loc_13f33));	// 10523 jz      short loc_13F33 ;~ 0
 	R(DEC(ch));	// 10526 dec     ch ;~ 0192:3F2E
 cs=0x192;eip=0x003f30; 		R(JNZ(loc_13f26));	// 10527 jnz     short loc_13F26 ;~ 0192:3F30
 cs=0x192;eip=0x003f32; 	R(RETN);	// 10528 retn ;~ 0192:3F32
-loc_13f33:	// 5640 
+loc_13f33:	// 5671 
 	R(DEC(ch));	// 10532 dec     ch ;~ 0192:3F33
 	R(MOV(ah, ch));	// 10533 mov     ah, ch ;~ 0192:3F35
 cs=0x192;eip=0x003f37; 		R(JZ(loc_13f54));	// 10534 jz      short loc_13F54 ;~ 0192:3F37
@@ -8420,11 +8450,11 @@ cs=0x192;eip=0x003f37; 		R(JZ(loc_13f54));	// 10534 jz      short loc_13F54 ;~ 0
 	REP MOVSW;	// 10545 rep movsw ;~ 0192:3F48
 	R(XCHG(si, dx));	// 10546 xchg    si, dx ;~ 0192:3F4A
 	R(XCHG(di, bx));	// 10547 xchg    di, bx ;~ 0192:3F4C
-loc_13f4e:	// 5641 
+loc_13f4e:	// 5672 
 	R(DEC(byte_1f17b));	// 10550 dec     byte_1F17B ;~ 0192:3F4E
 	R(POP(bx));	// 10551 pop     bx ;~ 0192:3F52
 cs=0x192;eip=0x003f53; 	R(RETN);	// 10552 retn ;~ 0192:3F53
-loc_13f54:	// 5642 
+loc_13f54:	// 5673 
 	R(PUSH(bx));	// 10556 push    bx ;~ 0192:3F54
 	R(MOV(*(dw*)(raddr(ds,bx)), 0));	// 10557 mov     word ptr [bx], 0 ;~ 0192:3F55
 cs=0x192;eip=0x003f59; 		R(JMP(loc_13f4e));	// 10558 jmp     short loc_13F4E ;~ 0192:3F59
@@ -8433,12 +8463,12 @@ sub_13f5b:	// 10565
 	R(OR(ah, ah));	// 10568 or      ah, ah ;~ 0192:3F5C
 cs=0x192;eip=0x003f5e; 		R(JNZ(loc_13f62));	// 10569 jnz     short loc_13F62 ;~ 0192:3F5E
 	R(INC(ah));	// 10570 inc     ah ;~ 0192:3F60
-loc_13f62:	// 5643 
+loc_13f62:	// 5674 
 	R(MOV(*(raddr(ds,si+0x25)), ah));	// 10573 mov     [si+25h], ah ;~ 0192:3F62
 	R(MOV(cl, ah));	// 10574 mov     cl, ah ;~ 0192:3F65
 	R(MOV(ch, byte_1f17b));	// 10575 mov     ch, byte_1F17B ;~ 0192:3F67
 	R(MOV(di, offset(seg000,off_1f17c)));	// 10576 mov     di, offset off_1F17C ;~ 0192:3F6B
-loc_13f6e:	// 5644 
+loc_13f6e:	// 5675 
 	R(MOV(ax, *(dw*)(raddr(ds,di))));	// 10579 mov     ax, [di] ;~ 0192:3F6E
 	R(OR(ax, ax));	// 10580 or      ax, ax ;~ 0192:3F70
 cs=0x192;eip=0x003f72; 		R(JZ(loc_13fac));	// 10581 jz      short loc_13FAC ;~ 0192:3F72
@@ -8452,7 +8482,7 @@ cs=0x192;eip=0x003f7d; 		R(JNC(loc_13f85));	// 10587 jnb     short loc_13F85 ;~ 
 	R(INC(di));	// 10589 inc     di ;~ 0192:3F80
 	R(DEC(ch));	// 10590 dec     ch ;~ 0192:3F81
 cs=0x192;eip=0x003f83; 		R(JMP(loc_13f6e));	// 10591 jmp     short loc_13F6E ;~ 0192:3F83
-loc_13f85:	// 5645 
+loc_13f85:	// 5676 
 	R(PUSH(bx));	// 10595 push    bx ;~ 0192:3F85
 	R(MOV(cl, ch));	// 10596 mov     cl, ch ;~ 0192:3F86
 	R(ADD(cl, cl));	// 10597 add     cl, cl ;~ 0192:3F88
@@ -8473,31 +8503,31 @@ loc_13f85:	// 5645
 	R(XCHG(si, bx));	// 10612 xchg    si, bx ;~ 0192:3F9D
 	R(XCHG(di, dx));	// 10613 xchg    di, dx ;~ 0192:3F9F
 	R(POP(cx));	// 10614 pop     cx ;~ 0192:3FA1
-loc_13fa2:	// 5646 
+loc_13fa2:	// 5677 
 	R(POP(si));	// 10617 pop     si ;~ 0192:3FA2
 	R(PUSH(si));	// 10618 push    si ;~ 0192:3FA3
 	R(POP(bx));	// 10619 pop     bx ;~ 0192:3FA4
 	R(MOV(*(dw*)(raddr(ds,di)), bx));	// 10620 mov     [di], bx ;~ 0192:3FA5
 	R(INC(byte_1f17b));	// 10621 inc     byte_1F17B ;~ 0192:3FA7
 cs=0x192;eip=0x003fab; 	R(RETN);	// 10622 retn ;~ 0192:3FAB
-loc_13fac:	// 5647 
+loc_13fac:	// 5678 
 	R(MOV(*(dw*)(raddr(ds,di+2)), 0));	// 10626 mov     word ptr [di+2], 0 ;~ 0192:3FAC
 cs=0x192;eip=0x003fb1; 		R(JMP(loc_13fa2));	// 10627 jmp     short loc_13FA2 ;~ 0192:3FB1
 sub_13fb3:	// 10634 
 	R(PUSH(di));	// 10635 push    di ;~ 0192:3FB3
 	R(PUSH(ax));	// 10636 push    ax ;~ 0192:3FB4
 cs=0x192;eip=0x003fb5; 	R(CALL(sub_13fcb,0));	// 10637 call    sub_13FCB ;~ 0192:3FB5
-ret_192_3fb8:	// 5648 
+ret_192_3fb8:	// 5679 
 cs=0x192;eip=0x003fb8; 		R(JC(loc_13fc7));	// 10638 jb      short loc_13FC7 ;~ 0192:3FB8
 	R(POP(ax));	// 10639 pop     ax ;~ 0192:3FBA
 cs=0x192;eip=0x003fbb; 	R(CALL(sub_13f5b,0));	// 10640 call    sub_13F5B ;~ 0192:3FBB
-ret_192_3fbe:	// 5649 
+ret_192_3fbe:	// 5680 
 	R(OR(*(raddr(ds,si)), 0x80));	// 10641 or      byte ptr [si], 80h ;~ 0192:3FBE
 	R(OR(*(raddr(ds,si)), 0x40));	// 10642 or      byte ptr [si], 40h ;~ 0192:3FC1
 	R(POP(di));	// 10643 pop     di ;~ 0192:3FC4
 	R(CLC);	// 10644 clc ;~ 0192:3FC5
 cs=0x192;eip=0x003fc6; 	R(RETN);	// 10645 retn ;~ 0192:3FC6
-loc_13fc7:	// 5650 
+loc_13fc7:	// 5681 
 	R(POP(ax));	// 10649 pop     ax ;~ 0192:3FC7
 	R(POP(di));	// 10650 pop     di ;~ 0192:3FC8
 	R(STC);	// 10651 stc ;~ 0192:3FC9
@@ -8506,7 +8536,7 @@ sub_13fcb:	// 10659
 	R(MOV(ch, 0x0C));	// 10660 mov     ch, 0Ch ;~ 0192:3FCB
 	R(MOV(dx, 0x29));	// 10661 mov     dx, 29h ; ')' ;~ 0192:3FCD
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 10662 mov     si, offset byte_1F1CF ;~ 0192:3FD0
-loc_13fd3:	// 5651 
+loc_13fd3:	// 5682 
 	R(TEST(*(raddr(ds,si)), 0x80));	// 10665 test    byte ptr [si], 80h ;~ 0192:3FD3
 cs=0x192;eip=0x003fd6; 		R(JZ(loc_13fe0));	// 10666 jz      short loc_13FE0 ;~ 0192:3FD6
 	R(ADD(si, dx));	// 10667 add     si, dx ;~ 0192:3FD8
@@ -8514,7 +8544,7 @@ cs=0x192;eip=0x003fd6; 		R(JZ(loc_13fe0));	// 10666 jz      short loc_13FE0 ;~ 0
 cs=0x192;eip=0x003fdc; 		R(JNZ(loc_13fd3));	// 10669 jnz     short loc_13FD3 ;~ 0192:3FDC
 	R(STC);	// 10670 stc ;~ 0192:3FDE
 cs=0x192;eip=0x003fdf; 	R(RETN);	// 10671 retn ;~ 0192:3FDF
-loc_13fe0:	// 5652 
+loc_13fe0:	// 5683 
 	R(PUSH(si));	// 10675 push    si ;~ 0192:3FE0
 	R(PUSH(di));	// 10676 push    di ;~ 0192:3FE1
 	R(MOV(di, si));	// 10677 mov     di, si ;~ 0192:3FE2
@@ -8527,6 +8557,7 @@ loc_13fe0:	// 5652
 	R(POP(si));	// 10684 pop     si ;~ 0192:3FEF
 	R(CLC);	// 10685 clc ;~ 0192:3FF0
 cs=0x192;eip=0x003ff1; 	R(RETN);	// 10686 retn ;~ 0192:3FF1
+ret_192_3ff2:	// 5684 
 	R(MOV(si, offset(seg000,byte_1f1cf)));	// 10690 mov     si, offset byte_1F1CF ;~ 0192:3FF2
 	R(MOV(di, offset(seg000,byte_1f1d0)));	// 10691 mov     di, offset byte_1F1D0 ;~ 0192:3FF5
 	R(MOV(cx, 0x1EB));	// 10692 mov     cx, 1EBh ;~ 0192:3FF8
@@ -8541,10 +8572,11 @@ cs=0x192;eip=0x003ff1; 	R(RETN);	// 10686 retn ;~ 0192:3FF1
 	R(MOV(di, offset(seg000,off_1f17c)));	// 10701 mov     di, offset off_1F17C ;~ 0192:400D
 	R(MOV(*(dw*)(raddr(ds,di)), ax));	// 10702 mov     [di], ax ;~ 0192:4010
 cs=0x192;eip=0x004012; 	R(RETN);	// 10703 retn ;~ 0192:4012
+ret_192_4013:	// 5685 
 	R(PUSH(dx));	// 10705 push    dx ;~ 0192:4013
 	R(PUSH(bx));	// 10706 push    bx ;~ 0192:4014
 cs=0x192;eip=0x004015; 	R(CALL(sub_13fb3,0));	// 10707 call    sub_13FB3 ;~ 0192:4015
-ret_192_4018:	// 5653 
+ret_192_4018:	// 5686 
 	R(POP(bx));	// 10708 pop     bx ;~ 0192:4018
 cs=0x192;eip=0x004019; 		R(JC(loc_1403b));	// 10709 jb      short loc_1403B ;~ 0192:4019
 	R(POP(dx));	// 10710 pop     dx ;~ 0192:401B
@@ -8552,7 +8584,7 @@ cs=0x192;eip=0x004019; 		R(JC(loc_1403b));	// 10709 jb      short loc_1403B ;~ 0
 	R(PUSH(si));	// 10712 push    si ;~ 0192:401D
 	R(MOV(di, bx));	// 10713 mov     di, bx ;~ 0192:401E
 	R(MOV(ah, 0));	// 10714 mov     ah, 0 ;~ 0192:4020
-loc_14022:	// 5654 
+loc_14022:	// 5687 
 	R(MOV(bx, dx));	// 10717 mov     bx, dx ;~ 0192:4022
 	R(MOV(al, *(raddr(ds,bx))));	// 10718 mov     al, [bx] ;~ 0192:4024
 	R(OR(al, al));	// 10719 or      al, al ;~ 0192:4026
@@ -8563,22 +8595,24 @@ cs=0x192;eip=0x004028; 		R(JZ(loc_14034));	// 10720 jz      short loc_14034 ;~ 0
 	R(MOV(*(raddr(ds,bx+si)), al));	// 10724 mov     [bx+si], al ;~ 0192:402F
 	R(INC(di));	// 10725 inc     di ;~ 0192:4031
 cs=0x192;eip=0x004032; 		R(JMP(loc_14022));	// 10726 jmp     short loc_14022 ;~ 0192:4032
-loc_14034:	// 5655 
+loc_14034:	// 5688 
 	R(POP(si));	// 10730 pop     si ;~ 0192:4034
 cs=0x192;eip=0x004035; 	R(CALL(sub_13ef4,0));	// 10731 call    sub_13EF4 ;~ 0192:4035
-ret_192_4038:	// 5656 
+ret_192_4038:	// 5689 
 	R(CLC);	// 10732 clc ;~ 0192:4038
 	R(MOV(bx, di));	// 10733 mov     bx, di ;~ 0192:4039
-loc_1403b:	// 5657 
+loc_1403b:	// 5690 
 	R(POP(dx));	// 10736 pop     dx ;~ 0192:403B
 cs=0x192;eip=0x00403c; 	R(RETN);	// 10737 retn ;~ 0192:403C
+ret_192_403d:	// 5691 
 	R(PUSH(ax));	// 10739 push    ax ;~ 0192:403D
 cs=0x192;eip=0x00403e; 	R(CALL(sub_13f1d,0));	// 10740 call    sub_13F1D ;~ 0192:403E
-ret_192_4041:	// 5658 
+ret_192_4041:	// 5692 
 	R(POP(ax));	// 10741 pop     ax ;~ 0192:4041
 cs=0x192;eip=0x004042; 	R(CALL(sub_13f5b,0));	// 10742 call    sub_13F5B ;~ 0192:4042
-ret_192_4045:	// 5659 
+ret_192_4045:	// 5693 
 cs=0x192;eip=0x004045; 	R(RETN);	// 10743 retn ;~ 0192:4045
+ret_192_4046:	// 5694 
 	R(INC(cx));	// 10745 inc     cx ;~ 0192:4046
 	R(PUSH(cx));	// 10746 push    cx ;~ 0192:4047
 	R(PUSH(bp));	// 10747 push    bp ;~ 0192:4048
@@ -8603,7 +8637,7 @@ cs=0x192;eip=0x004069; 		R(JZ(loc_14075));	// 10769 jz      short loc_14075 ;~ 0
 	R(OR(ah, 0x40));	// 10771 or      ah, 40h ;~ 0192:406D
 	R(MOV(byte_1f115, ah));	// 10772 mov     byte_1F115, ah ;~ 0192:4070
 cs=0x192;eip=0x004074; 	R(RETN);	// 10773 retn ;~ 0192:4074
-loc_14075:	// 5660 
+loc_14075:	// 5695 
 	cs=seg_offset(seg000);
 	R(MOV(ah, *(&byte_1413c)));	// 10777 mov     ah, cs:byte_1413C ;~ 0192:4075
 	R(OR(ah, ah));	// 10778 or      ah, ah ;~ 0192:407A
@@ -8614,9 +8648,9 @@ cs=0x192;eip=0x00407c; 		R(JZ(loc_1408f));	// 10779 jz      short loc_1408F ;~ 0
 	cs=seg_offset(seg000);
 	R(MOV(ah, *(&byte_1413d)));	// 10782 mov     ah, cs:byte_1413D ;~ 0192:4085
 	R(MOV(byte_1f115, ah));	// 10783 mov     byte_1F115, ah ;~ 0192:408A
-locret_1408e:	// 5661 
+locret_1408e:	// 5696 
 cs=0x192;eip=0x00408e; 	R(RETN);	// 10786 retn ;~ 0192:408E
-loc_1408f:	// 5662 
+loc_1408f:	// 5697 
 	cs=seg_offset(seg000);
 	R(MOV(bx, *(dw*)(((db*)&off_1413e))));	// 10790 mov     bx, cs:off_1413E ;~ 0192:408F
 	R(MOV(ah, *(raddr(ds,bx))));	// 10791 mov     ah, [bx] ;~ 0192:4094
@@ -8632,11 +8666,12 @@ loc_1408f:	// 5662
 	R(MOV(*(dw*)(((db*)&off_1413e)), bx));	// 10798 mov     cs:off_1413E, bx ;~ 0192:40A6
 	R(MOV(byte_1f115, ah));	// 10799 mov     byte_1F115, ah ;~ 0192:40AB
 cs=0x192;eip=0x0040af; 	R(RETN);	// 10800 retn ;~ 0192:40AF
+ret_192_40b0:	// 5698 
 	R(MOV(ah, byte_1f115));	// 10804 mov     ah, byte_1F115 ;~ 0192:40B0
 	R(MOV(bx, offset(seg000,byte_1413d)));	// 10805 mov     bx, offset byte_1413D ;~ 0192:40B4
 	R(CMP(ah, *(raddr(ds,bx))));	// 10806 cmp     ah, [bx] ;~ 0192:40B7
 cs=0x192;eip=0x0040b9; 		R(JZ(loc_14123));	// 10807 jz      short loc_14123 ;~ 0192:40B9
-loc_140bb:	// 5663 
+loc_140bb:	// 5699 
 	cs=seg_offset(seg000);
 	R(MOV(bx, *(dw*)(((db*)&off_1413e))));	// 10810 mov     bx, cs:off_1413E ;~ 0192:40BB
 	R(INC(bx));	// 10811 inc     bx ;~ 0192:40C0
@@ -8663,7 +8698,7 @@ cs=0x192;eip=0x0040d3; 		R(JNZ(loc_1410d));	// 10819 jnz     short loc_1410D ;~ 
 	R(MOV(dl, 0x10));	// 10830 mov     dl, 10h ;~ 0192:40F0
 	R(MOV(ch, 0x0E));	// 10831 mov     ch, 0Eh ;~ 0192:40F2
 	R(MOV(cl, 1));	// 10832 mov     cl, 1 ;~ 0192:40F4
-loc_140f6:	// 5664 
+loc_140f6:	// 5700 
 	R(PUSH(dx));	// 10835 push    dx ;~ 0192:40F6
 	R(MOV(ax, 0x308));	// 10836 mov     ax, 308h ;~ 0192:40F7
 	R(MOV(dx, 0));	// 10837 mov     dx, 0 ;~ 0192:40FA
@@ -8674,7 +8709,7 @@ cs=0x192;eip=0x0040fd; 	R(_INT(0x13));	// 10838 int     13h             ; DISK -
 	R(DEC(dl));	// 10845 dec     dl ;~ 0192:4106
 cs=0x192;eip=0x004108; 		R(JNZ(loc_140f6));	// 10846 jnz     short loc_140F6 ;~ 0192:4108
 cs=0x192;eip=0x00410a; 		R(JMP(start));	// 10847 jmp     start ;~ 0192:410A
-loc_1410d:	// 5665 
+loc_1410d:	// 5701 
 	R(MOV(ah, 1));	// 10851 mov     ah, 1 ;~ 0192:410D
 	cs=seg_offset(seg000);
 	R(MOV(bx, *(dw*)(((db*)&off_1413e))));	// 10852 mov     bx, cs:off_1413E ;~ 0192:410F
@@ -8685,7 +8720,7 @@ loc_1410d:	// 5665
 	R(MOV(*(&byte_1413d), ah));	// 10856 mov     cs:byte_1413D, ah ;~ 0192:411B
 	R(MOV(*(raddr(ds,bx)), ah));	// 10857 mov     [bx], ah ;~ 0192:4120
 cs=0x192;eip=0x004122; 	R(RETN);	// 10858 retn ;~ 0192:4122
-loc_14123:	// 5666 
+loc_14123:	// 5702 
 	cs=seg_offset(seg000);
 	R(MOV(bx, *(dw*)(((db*)&off_1413e))));	// 10862 mov     bx, cs:off_1413E ;~ 0192:4123
 	R(MOV(ah, *(raddr(ds,bx))));	// 10863 mov     ah, [bx] ;~ 0192:4128
@@ -9527,6 +9562,7 @@ __dispatch_call_:
         case m2c::kret_192_104c: 	goto ret_192_104c;
         case m2c::kret_192_1053: 	goto ret_192_1053;
         case m2c::kret_192_105b: 	goto ret_192_105b;
+        case m2c::kret_192_107b: 	goto ret_192_107b;
         case m2c::kret_192_10f6: 	goto ret_192_10f6;
         case m2c::kret_192_10fe: 	goto ret_192_10fe;
         case m2c::kret_192_1104: 	goto ret_192_1104;
@@ -9541,6 +9577,9 @@ __dispatch_call_:
         case m2c::kret_192_1277: 	goto ret_192_1277;
         case m2c::kret_192_128f: 	goto ret_192_128f;
         case m2c::kret_192_12ce: 	goto ret_192_12ce;
+        case m2c::kret_192_12f2: 	goto ret_192_12f2;
+        case m2c::kret_192_1308: 	goto ret_192_1308;
+        case m2c::kret_192_1362: 	goto ret_192_1362;
         case m2c::kret_192_137c: 	goto ret_192_137c;
         case m2c::kret_192_13b9: 	goto ret_192_13b9;
         case m2c::kret_192_13e0: 	goto ret_192_13e0;
@@ -9691,6 +9730,7 @@ __dispatch_call_:
         case m2c::kret_192_20e9: 	goto ret_192_20e9;
         case m2c::kret_192_2120: 	goto ret_192_2120;
         case m2c::kret_192_218: 	goto ret_192_218;
+        case m2c::kret_192_219e: 	goto ret_192_219e;
         case m2c::kret_192_21dc: 	goto ret_192_21dc;
         case m2c::kret_192_21f8: 	goto ret_192_21f8;
         case m2c::kret_192_21fb: 	goto ret_192_21fb;
@@ -9735,6 +9775,7 @@ __dispatch_call_:
         case m2c::kret_192_26cc: 	goto ret_192_26cc;
         case m2c::kret_192_26db: 	goto ret_192_26db;
         case m2c::kret_192_2754: 	goto ret_192_2754;
+        case m2c::kret_192_275a: 	goto ret_192_275a;
         case m2c::kret_192_277f: 	goto ret_192_277f;
         case m2c::kret_192_2796: 	goto ret_192_2796;
         case m2c::kret_192_279b: 	goto ret_192_279b;
@@ -9751,6 +9792,7 @@ __dispatch_call_:
         case m2c::kret_192_28ba: 	goto ret_192_28ba;
         case m2c::kret_192_28d4: 	goto ret_192_28d4;
         case m2c::kret_192_28ec: 	goto ret_192_28ec;
+        case m2c::kret_192_28fc: 	goto ret_192_28fc;
         case m2c::kret_192_291a: 	goto ret_192_291a;
         case m2c::kret_192_2920: 	goto ret_192_2920;
         case m2c::kret_192_2931: 	goto ret_192_2931;
@@ -9758,12 +9800,16 @@ __dispatch_call_:
         case m2c::kret_192_2940: 	goto ret_192_2940;
         case m2c::kret_192_2948: 	goto ret_192_2948;
         case m2c::kret_192_2962: 	goto ret_192_2962;
+        case m2c::kret_192_2976: 	goto ret_192_2976;
         case m2c::kret_192_299d: 	goto ret_192_299d;
         case m2c::kret_192_29a0: 	goto ret_192_29a0;
         case m2c::kret_192_29a3: 	goto ret_192_29a3;
         case m2c::kret_192_29a6: 	goto ret_192_29a6;
         case m2c::kret_192_29a9: 	goto ret_192_29a9;
+        case m2c::kret_192_29c2: 	goto ret_192_29c2;
         case m2c::kret_192_29f1: 	goto ret_192_29f1;
+        case m2c::kret_192_2a84: 	goto ret_192_2a84;
+        case m2c::kret_192_2ad2: 	goto ret_192_2ad2;
         case m2c::kret_192_2ae0: 	goto ret_192_2ae0;
         case m2c::kret_192_2aee: 	goto ret_192_2aee;
         case m2c::kret_192_2af7: 	goto ret_192_2af7;
@@ -9773,20 +9819,25 @@ __dispatch_call_:
         case m2c::kret_192_2c20: 	goto ret_192_2c20;
         case m2c::kret_192_2c47: 	goto ret_192_2c47;
         case m2c::kret_192_2c5d: 	goto ret_192_2c5d;
+        case m2c::kret_192_2c63: 	goto ret_192_2c63;
         case m2c::kret_192_2c7: 	goto ret_192_2c7;
         case m2c::kret_192_2c77: 	goto ret_192_2c77;
+        case m2c::kret_192_2c8a: 	goto ret_192_2c8a;
+        case m2c::kret_192_2c97: 	goto ret_192_2c97;
         case m2c::kret_192_2cc1: 	goto ret_192_2cc1;
         case m2c::kret_192_2ccd: 	goto ret_192_2ccd;
         case m2c::kret_192_2cd9: 	goto ret_192_2cd9;
         case m2c::kret_192_2cee: 	goto ret_192_2cee;
         case m2c::kret_192_2cfc: 	goto ret_192_2cfc;
         case m2c::kret_192_2d55: 	goto ret_192_2d55;
+        case m2c::kret_192_2d69: 	goto ret_192_2d69;
         case m2c::kret_192_2d86: 	goto ret_192_2d86;
         case m2c::kret_192_2d8c: 	goto ret_192_2d8c;
         case m2c::kret_192_2d9c: 	goto ret_192_2d9c;
         case m2c::kret_192_2d9f: 	goto ret_192_2d9f;
         case m2c::kret_192_2db0: 	goto ret_192_2db0;
         case m2c::kret_192_2db3: 	goto ret_192_2db3;
+        case m2c::kret_192_2dcc: 	goto ret_192_2dcc;
         case m2c::kret_192_2dcf: 	goto ret_192_2dcf;
         case m2c::kret_192_2dd2: 	goto ret_192_2dd2;
         case m2c::kret_192_2dd5: 	goto ret_192_2dd5;
@@ -9806,8 +9857,11 @@ __dispatch_call_:
         case m2c::kret_192_2e94: 	goto ret_192_2e94;
         case m2c::kret_192_2ea6: 	goto ret_192_2ea6;
         case m2c::kret_192_2eaf: 	goto ret_192_2eaf;
+        case m2c::kret_192_2ebe: 	goto ret_192_2ebe;
         case m2c::kret_192_2ec1: 	goto ret_192_2ec1;
+        case m2c::kret_192_2ec4: 	goto ret_192_2ec4;
         case m2c::kret_192_2ec7: 	goto ret_192_2ec7;
+        case m2c::kret_192_2ed6: 	goto ret_192_2ed6;
         case m2c::kret_192_2edf: 	goto ret_192_2edf;
         case m2c::kret_192_2ee5: 	goto ret_192_2ee5;
         case m2c::kret_192_2eeb: 	goto ret_192_2eeb;
@@ -9826,6 +9880,7 @@ __dispatch_call_:
         case m2c::kret_192_2fa0: 	goto ret_192_2fa0;
         case m2c::kret_192_2fa9: 	goto ret_192_2fa9;
         case m2c::kret_192_2fb1: 	goto ret_192_2fb1;
+        case m2c::kret_192_2fb8: 	goto ret_192_2fb8;
         case m2c::kret_192_2fbb: 	goto ret_192_2fbb;
         case m2c::kret_192_2fc5: 	goto ret_192_2fc5;
         case m2c::kret_192_2fca: 	goto ret_192_2fca;
@@ -9838,6 +9893,7 @@ __dispatch_call_:
         case m2c::kret_192_31d8: 	goto ret_192_31d8;
         case m2c::kret_192_338f: 	goto ret_192_338f;
         case m2c::kret_192_33ad: 	goto ret_192_33ad;
+        case m2c::kret_192_33b5: 	goto ret_192_33b5;
         case m2c::kret_192_33b9: 	goto ret_192_33b9;
         case m2c::kret_192_33bc: 	goto ret_192_33bc;
         case m2c::kret_192_33c2: 	goto ret_192_33c2;
@@ -9850,6 +9906,7 @@ __dispatch_call_:
         case m2c::kret_192_3421: 	goto ret_192_3421;
         case m2c::kret_192_348: 	goto ret_192_348;
         case m2c::kret_192_34b: 	goto ret_192_34b;
+        case m2c::kret_192_3606: 	goto ret_192_3606;
         case m2c::kret_192_3614: 	goto ret_192_3614;
         case m2c::kret_192_361a: 	goto ret_192_361a;
         case m2c::kret_192_364d: 	goto ret_192_364d;
@@ -9862,8 +9919,12 @@ __dispatch_call_:
         case m2c::kret_192_36bd: 	goto ret_192_36bd;
         case m2c::kret_192_36c5: 	goto ret_192_36c5;
         case m2c::kret_192_36cb: 	goto ret_192_36cb;
+        case m2c::kret_192_36f2: 	goto ret_192_36f2;
+        case m2c::kret_192_36ff: 	goto ret_192_36ff;
         case m2c::kret_192_370: 	goto ret_192_370;
         case m2c::kret_192_3781: 	goto ret_192_3781;
+        case m2c::kret_192_381c: 	goto ret_192_381c;
+        case m2c::kret_192_381d: 	goto ret_192_381d;
         case m2c::kret_192_38cf: 	goto ret_192_38cf;
         case m2c::kret_192_38e9: 	goto ret_192_38e9;
         case m2c::kret_192_396: 	goto ret_192_396;
@@ -9901,15 +9962,21 @@ __dispatch_call_:
         case m2c::kret_192_3de2: 	goto ret_192_3de2;
         case m2c::kret_192_3ea9: 	goto ret_192_3ea9;
         case m2c::kret_192_3ec: 	goto ret_192_3ec;
+        case m2c::kret_192_3ee2: 	goto ret_192_3ee2;
         case m2c::kret_192_3f0e: 	goto ret_192_3f0e;
         case m2c::kret_192_3f7: 	goto ret_192_3f7;
         case m2c::kret_192_3fb8: 	goto ret_192_3fb8;
         case m2c::kret_192_3fbe: 	goto ret_192_3fbe;
         case m2c::kret_192_3fd: 	goto ret_192_3fd;
+        case m2c::kret_192_3ff2: 	goto ret_192_3ff2;
+        case m2c::kret_192_4013: 	goto ret_192_4013;
         case m2c::kret_192_4018: 	goto ret_192_4018;
         case m2c::kret_192_4038: 	goto ret_192_4038;
+        case m2c::kret_192_403d: 	goto ret_192_403d;
         case m2c::kret_192_4041: 	goto ret_192_4041;
         case m2c::kret_192_4045: 	goto ret_192_4045;
+        case m2c::kret_192_4046: 	goto ret_192_4046;
+        case m2c::kret_192_40b0: 	goto ret_192_40b0;
         case m2c::kret_192_41e: 	goto ret_192_41e;
         case m2c::kret_192_421: 	goto ret_192_421;
         case m2c::kret_192_424: 	goto ret_192_424;
@@ -9967,10 +10034,12 @@ __dispatch_call_:
         case m2c::kret_192_a20: 	goto ret_192_a20;
         case m2c::kret_192_a23: 	goto ret_192_a23;
         case m2c::kret_192_a26: 	goto ret_192_a26;
+        case m2c::kret_192_a28: 	goto ret_192_a28;
         case m2c::kret_192_a4f: 	goto ret_192_a4f;
         case m2c::kret_192_a6e: 	goto ret_192_a6e;
         case m2c::kret_192_a72: 	goto ret_192_a72;
         case m2c::kret_192_b55: 	goto ret_192_b55;
+        case m2c::kret_192_ba8: 	goto ret_192_ba8;
         case m2c::kret_192_bb5: 	goto ret_192_bb5;
         case m2c::kret_192_bbd: 	goto ret_192_bbd;
         case m2c::kret_192_bc0: 	goto ret_192_bc0;
@@ -10011,6 +10080,8 @@ __dispatch_call_:
         case m2c::kret_192_f92: 	goto ret_192_f92;
         case m2c::kret_192_fcc: 	goto ret_192_fcc;
         case m2c::kret_192_fd8: 	goto ret_192_fd8;
+        case m2c::kret_192_fe4: 	goto ret_192_fe4;
+        case m2c::kret_192_ff4: 	goto ret_192_ff4;
         case m2c::kret_192_fff: 	goto ret_192_fff;
         case m2c::ksettable1: 	goto settable1;
         case m2c::kstart: 	goto start;
@@ -10239,7 +10310,6 @@ __dispatch_call_:
         case m2c::ksub_13fcb: 	goto sub_13fcb;
         case m2c::ksub_14059: 	goto sub_14059;
         case m2c::ktable1_14: 	goto table1_14;
-        case m2c::kloc_104ac:   goto loc_104ac;
         default: 
 if (try_<4) {++try_;++__disp;goto __dispatch_call_;}
 m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
@@ -11070,6 +11140,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_104c: 	_group1(__disp, _state); break;
         case m2c::kret_192_1053: 	_group1(__disp, _state); break;
         case m2c::kret_192_105b: 	_group1(__disp, _state); break;
+        case m2c::kret_192_107b: 	_group1(__disp, _state); break;
         case m2c::kret_192_10f6: 	_group1(__disp, _state); break;
         case m2c::kret_192_10fe: 	_group1(__disp, _state); break;
         case m2c::kret_192_1104: 	_group1(__disp, _state); break;
@@ -11084,6 +11155,9 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_1277: 	_group1(__disp, _state); break;
         case m2c::kret_192_128f: 	_group1(__disp, _state); break;
         case m2c::kret_192_12ce: 	_group1(__disp, _state); break;
+        case m2c::kret_192_12f2: 	_group1(__disp, _state); break;
+        case m2c::kret_192_1308: 	_group1(__disp, _state); break;
+        case m2c::kret_192_1362: 	_group1(__disp, _state); break;
         case m2c::kret_192_137c: 	_group1(__disp, _state); break;
         case m2c::kret_192_13b9: 	_group1(__disp, _state); break;
         case m2c::kret_192_13e0: 	_group1(__disp, _state); break;
@@ -11234,6 +11308,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_20e9: 	_group1(__disp, _state); break;
         case m2c::kret_192_2120: 	_group1(__disp, _state); break;
         case m2c::kret_192_218: 	_group1(__disp, _state); break;
+        case m2c::kret_192_219e: 	_group1(__disp, _state); break;
         case m2c::kret_192_21dc: 	_group1(__disp, _state); break;
         case m2c::kret_192_21f8: 	_group1(__disp, _state); break;
         case m2c::kret_192_21fb: 	_group1(__disp, _state); break;
@@ -11278,6 +11353,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_26cc: 	_group1(__disp, _state); break;
         case m2c::kret_192_26db: 	_group1(__disp, _state); break;
         case m2c::kret_192_2754: 	_group1(__disp, _state); break;
+        case m2c::kret_192_275a: 	_group1(__disp, _state); break;
         case m2c::kret_192_277f: 	_group1(__disp, _state); break;
         case m2c::kret_192_2796: 	_group1(__disp, _state); break;
         case m2c::kret_192_279b: 	_group1(__disp, _state); break;
@@ -11294,6 +11370,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_28ba: 	_group1(__disp, _state); break;
         case m2c::kret_192_28d4: 	_group1(__disp, _state); break;
         case m2c::kret_192_28ec: 	_group1(__disp, _state); break;
+        case m2c::kret_192_28fc: 	_group1(__disp, _state); break;
         case m2c::kret_192_291a: 	_group1(__disp, _state); break;
         case m2c::kret_192_2920: 	_group1(__disp, _state); break;
         case m2c::kret_192_2931: 	_group1(__disp, _state); break;
@@ -11301,12 +11378,16 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_2940: 	_group1(__disp, _state); break;
         case m2c::kret_192_2948: 	_group1(__disp, _state); break;
         case m2c::kret_192_2962: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2976: 	_group1(__disp, _state); break;
         case m2c::kret_192_299d: 	_group1(__disp, _state); break;
         case m2c::kret_192_29a0: 	_group1(__disp, _state); break;
         case m2c::kret_192_29a3: 	_group1(__disp, _state); break;
         case m2c::kret_192_29a6: 	_group1(__disp, _state); break;
         case m2c::kret_192_29a9: 	_group1(__disp, _state); break;
+        case m2c::kret_192_29c2: 	_group1(__disp, _state); break;
         case m2c::kret_192_29f1: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2a84: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2ad2: 	_group1(__disp, _state); break;
         case m2c::kret_192_2ae0: 	_group1(__disp, _state); break;
         case m2c::kret_192_2aee: 	_group1(__disp, _state); break;
         case m2c::kret_192_2af7: 	_group1(__disp, _state); break;
@@ -11316,20 +11397,25 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_2c20: 	_group1(__disp, _state); break;
         case m2c::kret_192_2c47: 	_group1(__disp, _state); break;
         case m2c::kret_192_2c5d: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2c63: 	_group1(__disp, _state); break;
         case m2c::kret_192_2c7: 	_group1(__disp, _state); break;
         case m2c::kret_192_2c77: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2c8a: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2c97: 	_group1(__disp, _state); break;
         case m2c::kret_192_2cc1: 	_group1(__disp, _state); break;
         case m2c::kret_192_2ccd: 	_group1(__disp, _state); break;
         case m2c::kret_192_2cd9: 	_group1(__disp, _state); break;
         case m2c::kret_192_2cee: 	_group1(__disp, _state); break;
         case m2c::kret_192_2cfc: 	_group1(__disp, _state); break;
         case m2c::kret_192_2d55: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2d69: 	_group1(__disp, _state); break;
         case m2c::kret_192_2d86: 	_group1(__disp, _state); break;
         case m2c::kret_192_2d8c: 	_group1(__disp, _state); break;
         case m2c::kret_192_2d9c: 	_group1(__disp, _state); break;
         case m2c::kret_192_2d9f: 	_group1(__disp, _state); break;
         case m2c::kret_192_2db0: 	_group1(__disp, _state); break;
         case m2c::kret_192_2db3: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2dcc: 	_group1(__disp, _state); break;
         case m2c::kret_192_2dcf: 	_group1(__disp, _state); break;
         case m2c::kret_192_2dd2: 	_group1(__disp, _state); break;
         case m2c::kret_192_2dd5: 	_group1(__disp, _state); break;
@@ -11349,8 +11435,11 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_2e94: 	_group1(__disp, _state); break;
         case m2c::kret_192_2ea6: 	_group1(__disp, _state); break;
         case m2c::kret_192_2eaf: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2ebe: 	_group1(__disp, _state); break;
         case m2c::kret_192_2ec1: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2ec4: 	_group1(__disp, _state); break;
         case m2c::kret_192_2ec7: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2ed6: 	_group1(__disp, _state); break;
         case m2c::kret_192_2edf: 	_group1(__disp, _state); break;
         case m2c::kret_192_2ee5: 	_group1(__disp, _state); break;
         case m2c::kret_192_2eeb: 	_group1(__disp, _state); break;
@@ -11369,6 +11458,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_2fa0: 	_group1(__disp, _state); break;
         case m2c::kret_192_2fa9: 	_group1(__disp, _state); break;
         case m2c::kret_192_2fb1: 	_group1(__disp, _state); break;
+        case m2c::kret_192_2fb8: 	_group1(__disp, _state); break;
         case m2c::kret_192_2fbb: 	_group1(__disp, _state); break;
         case m2c::kret_192_2fc5: 	_group1(__disp, _state); break;
         case m2c::kret_192_2fca: 	_group1(__disp, _state); break;
@@ -11381,6 +11471,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_31d8: 	_group1(__disp, _state); break;
         case m2c::kret_192_338f: 	_group1(__disp, _state); break;
         case m2c::kret_192_33ad: 	_group1(__disp, _state); break;
+        case m2c::kret_192_33b5: 	_group1(__disp, _state); break;
         case m2c::kret_192_33b9: 	_group1(__disp, _state); break;
         case m2c::kret_192_33bc: 	_group1(__disp, _state); break;
         case m2c::kret_192_33c2: 	_group1(__disp, _state); break;
@@ -11393,6 +11484,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_3421: 	_group1(__disp, _state); break;
         case m2c::kret_192_348: 	_group1(__disp, _state); break;
         case m2c::kret_192_34b: 	_group1(__disp, _state); break;
+        case m2c::kret_192_3606: 	_group1(__disp, _state); break;
         case m2c::kret_192_3614: 	_group1(__disp, _state); break;
         case m2c::kret_192_361a: 	_group1(__disp, _state); break;
         case m2c::kret_192_364d: 	_group1(__disp, _state); break;
@@ -11405,8 +11497,12 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_36bd: 	_group1(__disp, _state); break;
         case m2c::kret_192_36c5: 	_group1(__disp, _state); break;
         case m2c::kret_192_36cb: 	_group1(__disp, _state); break;
+        case m2c::kret_192_36f2: 	_group1(__disp, _state); break;
+        case m2c::kret_192_36ff: 	_group1(__disp, _state); break;
         case m2c::kret_192_370: 	_group1(__disp, _state); break;
         case m2c::kret_192_3781: 	_group1(__disp, _state); break;
+        case m2c::kret_192_381c: 	_group1(__disp, _state); break;
+        case m2c::kret_192_381d: 	_group1(__disp, _state); break;
         case m2c::kret_192_38cf: 	_group1(__disp, _state); break;
         case m2c::kret_192_38e9: 	_group1(__disp, _state); break;
         case m2c::kret_192_396: 	_group1(__disp, _state); break;
@@ -11444,15 +11540,21 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_3de2: 	_group1(__disp, _state); break;
         case m2c::kret_192_3ea9: 	_group1(__disp, _state); break;
         case m2c::kret_192_3ec: 	_group1(__disp, _state); break;
+        case m2c::kret_192_3ee2: 	_group1(__disp, _state); break;
         case m2c::kret_192_3f0e: 	_group1(__disp, _state); break;
         case m2c::kret_192_3f7: 	_group1(__disp, _state); break;
         case m2c::kret_192_3fb8: 	_group1(__disp, _state); break;
         case m2c::kret_192_3fbe: 	_group1(__disp, _state); break;
         case m2c::kret_192_3fd: 	_group1(__disp, _state); break;
+        case m2c::kret_192_3ff2: 	_group1(__disp, _state); break;
+        case m2c::kret_192_4013: 	_group1(__disp, _state); break;
         case m2c::kret_192_4018: 	_group1(__disp, _state); break;
         case m2c::kret_192_4038: 	_group1(__disp, _state); break;
+        case m2c::kret_192_403d: 	_group1(__disp, _state); break;
         case m2c::kret_192_4041: 	_group1(__disp, _state); break;
         case m2c::kret_192_4045: 	_group1(__disp, _state); break;
+        case m2c::kret_192_4046: 	_group1(__disp, _state); break;
+        case m2c::kret_192_40b0: 	_group1(__disp, _state); break;
         case m2c::kret_192_41e: 	_group1(__disp, _state); break;
         case m2c::kret_192_421: 	_group1(__disp, _state); break;
         case m2c::kret_192_424: 	_group1(__disp, _state); break;
@@ -11510,10 +11612,12 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_a20: 	_group1(__disp, _state); break;
         case m2c::kret_192_a23: 	_group1(__disp, _state); break;
         case m2c::kret_192_a26: 	_group1(__disp, _state); break;
+        case m2c::kret_192_a28: 	_group1(__disp, _state); break;
         case m2c::kret_192_a4f: 	_group1(__disp, _state); break;
         case m2c::kret_192_a6e: 	_group1(__disp, _state); break;
         case m2c::kret_192_a72: 	_group1(__disp, _state); break;
         case m2c::kret_192_b55: 	_group1(__disp, _state); break;
+        case m2c::kret_192_ba8: 	_group1(__disp, _state); break;
         case m2c::kret_192_bb5: 	_group1(__disp, _state); break;
         case m2c::kret_192_bbd: 	_group1(__disp, _state); break;
         case m2c::kret_192_bc0: 	_group1(__disp, _state); break;
@@ -11554,6 +11658,8 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::kret_192_f92: 	_group1(__disp, _state); break;
         case m2c::kret_192_fcc: 	_group1(__disp, _state); break;
         case m2c::kret_192_fd8: 	_group1(__disp, _state); break;
+        case m2c::kret_192_fe4: 	_group1(__disp, _state); break;
+        case m2c::kret_192_ff4: 	_group1(__disp, _state); break;
         case m2c::kret_192_fff: 	_group1(__disp, _state); break;
         case m2c::ksettable1: 	_group1(__disp, _state); break;
         case m2c::kstart: 	_group1(__disp, _state); break;
@@ -12717,7 +12823,7 @@ if (p) {printf(" m=%p addr=%x size=%d found at %x \n",&m2c::m,((db*)&x)-((db*)&m
     {db tmp999[9]={255,255,170,170,42,170,42,202,42};MYCOPY(dummyc_80ae)} // 0192:658d
     {db tmp999[2]={10,42};MYCOPY(dummyc_80b7)} // 0192:658d
     {db tmp999=170;MYCOPY(dummyc_80b9)} // 0192:6799
-    {char tmp999[9]="\x08\x88\"\"\x08\x88\"\"";MYCOPY(aii)} // 01a2:679a
+    {char tmp999[9]="\x08\x88\"\"\x08\x88\"\"";MYCOPY(aii)} // 0192:679a
     {char tmp999[2]="\xaa";MYCOPY(ak)} // 0192:67a4
     {db tmp999[10]={254,128,171,160,170,232,42,184,138,184};MYCOPY(dummyc_80c6)} // 0192:67a6
     {db tmp999[10]={34,184,42,202,42,10,42,170,42,170};MYCOPY(dummyc_80d0)} // 0192:67a6

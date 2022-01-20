@@ -1132,7 +1132,7 @@ db dummyc_80ae[9]; // 0192:658d
 db dummyc_80b7[2]; // 0192:658d
 db dummyc_80b9; // 0192:6799
 char aii[9]; // 0192:679a
-db dummyc_80c1[1];
+db dummyc_80c3[1];
 char ak[2]; // 0192:67a4
 db dummyc_80c6[10]; // 0192:67a6
 db dummyc_80d0[10]; // 0192:67a6
