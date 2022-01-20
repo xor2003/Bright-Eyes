@@ -5,8 +5,11 @@
 
 #include "init.h"
 
-#include "iplay.h"
-
+//#include "iplay.h"
+extern bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state);
+namespace m2c{
+extern void   Initializer();
+}
 // Is the game running?
 static int init = 0;
 

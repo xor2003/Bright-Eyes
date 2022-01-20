@@ -12,12 +12,14 @@
 #include "asm.h"
 #include "init.h"
 #include <unistd.h>
+#include <vector>
 
 static Bit8u custom_runs;
 volatile bool defered_custom_call = false;
 
 static Bit8u init_runs;
 Bit16u custom_oldCS, custom_oldIP;
+
 
 void
 custom_init_prog (char *name, Bit16u relocate, Bit16u init_cs, Bit16u init_ip)
@@ -97,6 +99,8 @@ custom_init_entrypoint (char *name, Bit16u relocate)
 
 namespace m2c
 {
+std::vector<MWORDSIZE> return_stack;
+
   bool fix_segs()
   {
     for (size_t i = 0; i < 7; i++)

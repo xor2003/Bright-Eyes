@@ -104,14 +104,22 @@ int init_callf(unsigned selector, unsigned offs)
 	return 0;
 }
 
-
+#include <cstdio>
 //namespace m2c{ m2cf* _ENTRY_POINT_; }
 void init_entrypoint(Bit16u relocate)
 {
     X86_REGREF
    m2c::log_debug("Starting program\n");
    m2c::log_debug("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
-   memset(((db*)&m2c::m)+0x1a20,0,0x3080);
+   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
    m2c::Initializer();
+/*
+FILE* file_to_write = 0;
+if((file_to_write = fopen("goody.com", "wb")) != 0){
+
+    fwrite(((db*)&m2c::m)+0x1920+0x100, 0xff00, 1, file_to_write);
+    fclose(file_to_write);
+}
+*/
   (*m2c::_ENTRY_POINT_)(0,0);
 }

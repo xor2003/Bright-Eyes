@@ -5,8 +5,11 @@
 
 #include "init.h"
 
-#include "iplay.h"
-
+//#include "iplay.h"
+extern bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state);
+namespace m2c{
+extern void   Initializer();
+}
 // Is the game running?
 static int init = 0;
 
@@ -56,7 +59,7 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 
 	init_get_fname(fname, name);
 
-	if (strcmp(fname, "iplay.exe")) return false;
+	if (strcmp(fname, "goodym.com")) return false;
 
 	/* Check CS:IP in the EXE-Header are 0:0
 	 * and the first executed instruction is mov dx,i16 */
@@ -64,7 +67,6 @@ bool masm2c_init(char *name, unsigned short reloc, unsigned short _cs, unsigned 
 //		return false;
 
 	/* Show CS:IP on the virtual machine and the pointer to 0:0 */
-	m2c::log_debug("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", reloc, ip, MemBase);
 
 	/* Read and show the Datasegment */
 	datseg_bak = datseg;
@@ -102,11 +104,22 @@ int init_callf(unsigned selector, unsigned offs)
 	return 0;
 }
 
-
+#include <cstdio>
 //namespace m2c{ m2cf* _ENTRY_POINT_; }
 void init_entrypoint(Bit16u relocate)
 {
+    X86_REGREF
    m2c::log_debug("Starting program\n");
+   m2c::log_debug("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
+   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
    m2c::Initializer();
+/*
+FILE* file_to_write = 0;
+if((file_to_write = fopen("goody.com", "wb")) != 0){
+
+    fwrite(((db*)&m2c::m)+0x1920+0x100, 0xff00, 1, file_to_write);
+    fclose(file_to_write);
+}
+*/
   (*m2c::_ENTRY_POINT_)(0,0);
 }

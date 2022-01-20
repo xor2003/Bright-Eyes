@@ -39,6 +39,8 @@
 #include <pic.h>
 #include <video.h>
 #include <timer.h>
+#include <vector>
+
 extern Bit32u ticksRemain;
 void increaseticks();
 #endif
@@ -290,34 +292,52 @@ constexpr bool isaddrbelongtom(const S * const a)
 template<class S>
 S getdata(const S& s);
 
+extern struct Memory& types;
+static int log_debug(const char *format, ...);
+
+template<class S>
+inline void check_type(const S& s)
+{
+  size_t addr = (((db*)&s)-((db*)&m2c::m));
+  if (addr >= (0x1920+0x100) && addr < (0x1920+0x10000) && ( *(S*)(((db*)&m2c::types)+addr) )==0 && s !=0)
+     log_debug("Read of uninit addr:%zx size:%zd %zx\n",addr-0x1920,(size_t)sizeof(S),(*(S*)(((db*)&m2c::types)+addr)) );
+}
+
 template<>
 inline db getdata<db>(const db& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readb((db*)&s-(db*)&m);} else return s; }
 template<>
 inline dw getdata<dw>(const dw& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readw((db*)&s-(db*)&m);} else return s; }
 template<>
 inline dd getdata<dd>(const dd& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readd((db*)&s-(db*)&m);} else return s; }
 template<>
 inline char getdata<char>(const char& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readb((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readb((db*)&s-(db*)&m);} else return s; }
 template<>
 inline short int getdata<short int>(const short int& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readw((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readw((db*)&s-(db*)&m);} else return s; }
 template<>
 inline int getdata<int>(const int& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readd((db*)&s-(db*)&m);} else return s; }
 template<>
 inline long getdata<long>(const long& s)
-{ return m2c::isaddrbelongtom(&s)?mem_readd((db*)&s-(db*)&m):s; }
+{ if (m2c::isaddrbelongtom(&s)) {check_type(s);return mem_readd((db*)&s-(db*)&m);} else return s; }
+
+template<class S>
+inline void set_type(const S& s)
+{
+  size_t addr = (((db*)&s)-((db*)&m2c::m));
+  memset((((db*)&m2c::types)+addr),0xff,sizeof(S));
+}
 
 static void setdata(db* d, db s)
-{ if (m2c::isaddrbelongtom(d)) mem_writeb((db*)d-(db*)&m, s); else *d = s; }
+{ if (m2c::isaddrbelongtom(d)) {set_type(*d);mem_writeb((db*)d-(db*)&m, s);} else *d = s; }
 static void setdata(dw* d, dw s)
-{ if (m2c::isaddrbelongtom(d)) mem_writew((db*)d-(db*)&m, s); else *d = s; }
+{ if (m2c::isaddrbelongtom(d)) {set_type(*d);mem_writew((db*)d-(db*)&m, s);} else *d = s; }
 static void setdata(dd* d, dd s)
-{ if (m2c::isaddrbelongtom(d)) mem_writed((db*)d-(db*)&m, s); else *d = s; }
+{ if (m2c::isaddrbelongtom(d)) {set_type(*d);mem_writed((db*)d-(db*)&m, s);} else *d = s; }
 /*
 template<>
 inline db getdata<db>(const db& s)
@@ -1263,37 +1283,42 @@ inline void MOV_(D* dest, const S& src)
  		POP(jmpbuffer); stackPointer-=2; longjmp(jmpbuffer, 0);}
 */
 
+extern std::vector<MWORDSIZE> return_stack;
 #define RETF RETFN(0)
 #if DEBUG>=2
 
  #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	m2c::log_debug("after ret %x\n",stackPointer); \
-	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}return;}
+	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}\
+   m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
 
  #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
 	m2c::log_debug("after retf %x\n",stackPointer); \
-	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; return;}
+	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; \
+   m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
 #else
 
- #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; return;}
+ #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
+   __disp=eip;goto __dispatch_call;}
 
  #define RETFN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
-        dw averytemporary11;POP(averytemporary11); cs=averytemporary11; esp+=i; return;}
+        dw averytemporary11;POP(averytemporary11); cs=averytemporary11; esp+=i;\
+   __disp=eip;goto __dispatch_call;}
 #endif
 
 
-#define CALL(label, disp) {m2c::MWORDSIZE oldeip=eip;m2c::CALL_(label, _state, disp);if (oldeip!=eip) {__disp=eip;goto __dispatch_call;}}
+#define CALL(label, disp) {m2c::log_debug("call eip %x\n",eip);m2c::CALL_(label, _state, disp);if (disp) {__disp=disp;} else {__disp=m2c::k##label;}goto __dispatch_call;}
 static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  X86_REGREF
-	  MWORDSIZE averytemporary8=eip; PUSH(averytemporary8);
+	  MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
 #if DEBUG
 	  m2c::log_debug("after call %x\n",stackPointer);
 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
 #endif
-	  label(_i, _state);
+//	  label(_i, _state);
  }
 
 #define RETN RET
