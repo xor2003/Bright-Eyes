@@ -1286,7 +1286,7 @@ inline void MOV_(D* dest, const S& src)
  		POP(jmpbuffer); stackPointer-=2; longjmp(jmpbuffer, 0);}
 */
 
-#define RETF RETFN(0)
+//#define RETF RETFN(0)
 
 #if SINGLEPROC
 
@@ -1297,7 +1297,7 @@ inline void MOV_(D* dest, const S& src)
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}\
    m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
 
- #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+ #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
 	m2c::log_debug("after retf %x\n",stackPointer); \
@@ -1307,7 +1307,7 @@ inline void MOV_(D* dest, const S& src)
  #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
    __disp=eip;goto __dispatch_call;}
 
- #define RETFN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
+ #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
         dw averytemporary11;POP(averytemporary11); cs=averytemporary11; esp+=i;\
    __disp=eip;goto __dispatch_call;}
 #endif
@@ -1333,7 +1333,7 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	return;}
  
-  #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+  #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
  	dw averytemporary11;POP(averytemporary11);  \
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
@@ -1346,7 +1346,7 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	return;}
  
-  #define RETFN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+  #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
         dw averytemporary11;POP(averytemporary11); esp+=i; \
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
