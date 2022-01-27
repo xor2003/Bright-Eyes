@@ -12,6 +12,7 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
 #endif
 
  #define offset(segment,name) ((db*)(&name)-(db*)(&segment))
+ #define far_offset(segment,name) (offset(segment,name)+(seg_offset(segment)<<16))
 /*
  #define MOVSS(a) {void * dest;void * src;src=realAddress(si,ds); dest=realAddress(di,es); \
 		memmove(dest,src,a); di+=(GET_DF()==0)?a:-a; si+=(GET_DF()==0)?a:-a; }

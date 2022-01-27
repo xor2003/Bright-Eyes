@@ -99,7 +99,15 @@ custom_init_entrypoint (char *name, Bit16u relocate)
 
 namespace m2c
 {
-std::vector<MWORDSIZE> return_stack;
+
+db _indent=0; 
+const char *_str="";
+const char* log_spaces(int n)
+{
+ static const char s[]="                                                                                          ";
+  return s+(88-n);
+}
+
 
   bool fix_segs()
   {
@@ -178,6 +186,26 @@ void single_step()
 					CPU_Cycles=old_cycles-1;
 				}
 				CPU_CycleLeft+=old_cycles;
+}
+
+void mycopy(db* d, db* s, size_t size, const char* name)
+{
+
+int res = memcmp(d,s,size); 
+if (res) {
+log_debug("not equal %s", name);
+          void *p=memmem(((db*)&m2c::m)+0x1920,1024*1024,s,size);
+          if (size>3 && p) {log_debug(" addr=%x size=%d found at %x",d-((db*)&m2c::m),size,((db*)p)-d);}
+                            log_debug("\n");
+hexDump(s,size);
+hexDump(d,size);
+ }
+
+/*
+   { memcpy(d,s,size);
+   log_debug("Init %zx %zd\n",d-((db*)&m2c::m)-0x1920,size);
+   memset(((db*)&m2c::types)+(d-((db*)&m2c::m)),0xff,size);}
+*/
 }
 
 }

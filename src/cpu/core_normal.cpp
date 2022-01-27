@@ -139,7 +139,9 @@ static INLINE Bit32u Fetchd() {
 
 Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
+//mem_writeb(0xa0000,mem_readb(0xa0000)+1);
 		LOADIP;
+printf("~%x:%x\n",SegBase(cs),cpu_regs.ip);
 		core.opcode_index=cpu.code.big*0x200;
 		core.prefixes=cpu.code.big;
 		core.ea_table=&EATable[cpu.code.big*256];

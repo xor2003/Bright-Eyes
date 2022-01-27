@@ -281,6 +281,9 @@ m2c::eflags& m2cflags= *(m2c::eflags*)&cpu_regs.flags; \
 dd& stackPointer = esp;\
 m2c::_offsets __disp; \
 dw _source;
+
+extern db _indent; 
+extern const char *_str;
  
 #endif
 
@@ -409,7 +412,7 @@ static int log_info(const char *format, ...)
 
     return result;
 }
-static const char* log_spaces(int n){return "";}
+extern const char* log_spaces(int n);
 
 #else
 void log_error(const char *fmt, ...);
@@ -1283,10 +1286,11 @@ inline void MOV_(D* dest, const S& src)
  		POP(jmpbuffer); stackPointer-=2; longjmp(jmpbuffer, 0);}
 */
 
-extern std::vector<MWORDSIZE> return_stack;
 #define RETF RETFN(0)
-#if DEBUG>=2
 
+#if SINGLEPROC
+
+#if DEBUG>=2
  #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	m2c::log_debug("after ret %x\n",stackPointer); \
@@ -1300,7 +1304,6 @@ extern std::vector<MWORDSIZE> return_stack;
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; \
    m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
 #else
-
  #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
    __disp=eip;goto __dispatch_call;}
 
@@ -1309,8 +1312,7 @@ extern std::vector<MWORDSIZE> return_stack;
    __disp=eip;goto __dispatch_call;}
 #endif
 
-
-#define CALL(label, disp) {m2c::log_debug("call eip %x\n",eip);m2c::CALL_(label, _state, disp);if (disp) {__disp=disp;} else {__disp=m2c::k##label;}goto __dispatch_call;}
+#define CALL(label, disp) {m2c::CALL_(label, _state, disp);if (disp) {__disp=disp;} else {__disp=m2c::k##label;}goto __dispatch_call;}
 static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  X86_REGREF
 	  MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
@@ -1320,6 +1322,50 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 #endif
 //	  label(_i, _state);
  }
+
+#else
+// Multiproc
+ #if DEBUG>=2
+ 
+  #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+ 	m2c::log_debug("after ret %x\n",stackPointer); \
+	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
+	return;}
+ 
+  #define RETFN(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+ 	dw averytemporary11;POP(averytemporary11);  \
+	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
+	esp+=i; m2c::log_debug("after retf %x\n",stackPointer); \
+	 return;}
+ #else
+ 
+ #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
+	return;}
+ 
+  #define RETFN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+        dw averytemporary11;POP(averytemporary11); esp+=i; \
+	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
+	return;}
+ #endif
+ 
+#define CALL(label, disp) {m2c::_indent+=2;m2c::_str=m2c::log_spaces(m2c::_indent);m2c::CALL_(label, _state, disp);}
+ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
+  X86_REGREF
+	  MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
+ #if DEBUG
+ 	  m2c::log_debug("after call %x\n",stackPointer);
+// 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
+ #endif
+	  label(_i, _state);
+  }
+ 
+
+#endif
 
 #define RETN RET
 
@@ -1433,12 +1479,12 @@ void run_hw_interrupts();
 static void log_regs(int line, const char * instr, struct _STATE* _state)
 {
 X86_REGREF
-  log_debug("%06d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
-                         line,cs,eip,instr,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
+  log_debug("%06d %04X:%08X %s%-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
+                         line,cs,eip,_str,instr,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
 }
 
 #if DEBUG==2
-    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_state->_str,__LINE__,#a);}; a
+    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
 #elif DEBUG==3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
