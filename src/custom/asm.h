@@ -576,7 +576,7 @@ inline void POP_(dd& a)
 #define AFFECT_DF(a) m2cflags.bits.setDF(a)
 #define AFFECT_CF(a) m2cflags.bits.setCF(a)
 #define AFFECT_AF(a) m2cflags.bits.setAF(a)
-#define AFFECT_OF(a) (a) // m2cflags.bits.setOF(a)
+#define AFFECT_OF(a) m2cflags.bits.setOF(a)
 #define AFFECT_IF(a) m2cflags.bits.setIF(a)
 #define ISNEGATIVE(f,a) ( (a) & (1 << (m2c::bitsizeof(f)-1)) )
 #define AFFECT_SF(a) m2cflags.bits.setSF(a)
@@ -609,6 +609,7 @@ inline void OR_(D& dest, const S& src, m2c::eflags& m2cflags)
 		AFFECT_ZFifz(dest); 
 		AFFECT_SF_(dest,dest); 
 		AFFECT_CF(0);
+		AFFECT_OF(0);
  }
 
 #define XOR(a, b) m2c::XOR_(a, b, m2cflags)
@@ -620,6 +621,7 @@ inline void XOR_(D& dest, const S& src, m2c::eflags& m2cflags)
 		AFFECT_ZFifz(dest); 
 		AFFECT_SF_(dest,dest); 
 		AFFECT_CF(0);
+		AFFECT_OF(0);
  }
 
 #define AND(a, b) m2c::AND_(a, b, m2cflags)
@@ -650,7 +652,9 @@ template <class D, class S>
 inline void TEST_(D& a, const S& b, m2c::eflags& m2cflags)
 {AFFECT_ZFifz((a)&(b));
 		AFFECT_CF(0);
-		AFFECT_SF_(a,(a)&(b));}
+		AFFECT_SF_(a,(a)&(b));
+		AFFECT_OF(0);
+}
 
 #define SHR(a, b) m2c::SHR_(a, b, m2cflags)
 template <class D, class S>
@@ -1143,16 +1147,16 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define JNA(label) if (GET_CF() || GET_ZF()) GOTOLABEL(label)
 #define JBE(label) JNA(label)
 
-#define JGE(label) if (!GET_SF()) GOTOLABEL(label)
+#define JGE(label) if (GET_SF()==GET_OF()) GOTOLABEL(label)
 #define JNL(label) JGE(label)
 
 #define JG(label) if (!GET_ZF() && !GET_SF()) GOTOLABEL(label)
 #define JNLE(label) JG(label)
 
-#define JLE(label) if (GET_ZF() || GET_SF()) GOTOLABEL(label) // TODO
+#define JLE(label) if (GET_ZF() || GET_SF()!=GET_OF()) GOTOLABEL(label) // TODO
 #define JNG(label) JLE(label)
 
-#define JL(label) if (GET_SF()) GOTOLABEL(label) // TODO
+#define JL(label) if (GET_SF()!=GET_OF()) GOTOLABEL(label) // TODO
 #define JNGE(label) JL(label)
 
 #define JCXZ(label) if (cx == 0) GOTOLABEL(label) // TODO
@@ -1513,18 +1517,19 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {m2c::run_hw_interrupts(); \
+    #define T(a) {dw oldip=ip;m2c::run_hw_interrupts(); \
            {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
         Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
 	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
-        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
+        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
 	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); \
         Segs=oldSegs; cpu_regs=oldcpu_regs; \
 	{a;} \
-        m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF; \
+        m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
         cpu_regs.ip=realcpu_regs.ip; \
         if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) \
         { \
+	m2c::hexDump(raddr(cs,oldip),8); \
            {m2c::log_debug("m ");m2c::log_regs(__LINE__,#a,_state);} \
            m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
         Segs=realSegs; cpu_regs=realcpu_regs; \
