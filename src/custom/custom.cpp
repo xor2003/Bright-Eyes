@@ -100,6 +100,9 @@ custom_init_entrypoint (char *name, Bit16u relocate)
 namespace m2c
 {
 
+db om[1024*1024]; // for instruction trace compare
+db rm[1024*1024];
+
 db _indent=0; 
 const char *_str="";
 const char* log_spaces(int n)

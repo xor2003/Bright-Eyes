@@ -1456,23 +1456,23 @@ X86_REGREF
 
     #define X(a) {dw oldip=ip;m2c::run_hw_interrupts(); \
            {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
-        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); db om[1024*1024];memcpy(om,&m2c::m,1024*1024);\
+        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); memcpy(m2c::om,&m2c::m,1024*1024);\
 	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
         cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
-	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); db rm[1024*1024];memcpy(rm,&m2c::m,1024*1024);\
-        Segs=oldSegs; cpu_regs=oldcpu_regs; memcpy(&m2c::m,om,1024*1024);\
+	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); memcpy(m2c::rm,&m2c::m,1024*1024);\
+        Segs=oldSegs; cpu_regs=oldcpu_regs; memcpy(&m2c::m,m2c::om,1024*1024);\
 	{a;} \
         m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
         cpu_regs.ip=realcpu_regs.ip; \
         if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0 ||\
-           memcmp(&m2c::m,rm,1024*1024)!=0) \
+           memcmp(&m2c::m,m2c::rm,1024*1024)!=0) \
         { \
 	m2c::hexDump(raddr(cs,oldip),8); \
            {m2c::log_debug("m ");m2c::log_regs(__LINE__,#a,_state);} \
            m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
         Segs=realSegs; cpu_regs=realcpu_regs; \
            {m2c::log_debug("d ");m2c::log_regs(__LINE__,#a,_state);} \
-           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); m2c::cmpHexDump(&m2c::m,rm,1024*1024);\
+           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); m2c::cmpHexDump(&m2c::m,m2c::rm,1024*1024);\
          exit(1);} \
 	cpu_regs.flags = realflags; \
         }
@@ -1620,7 +1620,8 @@ extern db vgaPalette[256*3];
 extern db(& stack)[STACK_SIZE];
 extern db(& heap)[HEAP_SIZE];
 extern  m2cf* _ENTRY_POINT_;
-
+extern db om[1024*1024];
+extern db rm[1024*1024];
 
 #define TODB(X) (*(db*)(&(X)))
 #define TODW(X) (*(dw*)(&(X)))
