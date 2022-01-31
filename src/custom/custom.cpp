@@ -200,7 +200,7 @@ void mycopy(db* d, db* s, size_t size, const char* name)
 
  int res = memcmp(d,s,size); 
  if (res) {
- log_debug("not equal %s", name);
+ log_debug("non-equal %s", name);
           void *p=memmem(((db*)&m2c::m)+0x1920,1024*1024,s,size);
           if (size>3 && p) {log_debug(" addr=%x size=%d found at %x",d-((db*)&m2c::m),size,((db*)p)-d);}
                             log_debug("\n");
@@ -273,7 +273,7 @@ void cmpHexDump(void *addr1, void *addr2, int len) {
 	unsigned char *pc1 = (unsigned char*)addr1;
 	unsigned char *pc2 = (unsigned char*)addr2;
 //	(void) buff;
-	log_debug ("hexDump %p %p:\n", pc1, pc2);
+	log_debug ("cmpHexDump %p %p:\n", pc1, pc2);
 
 	if (len == 0) {
 		log_debug("  ZERO LENGTH\n");
@@ -305,6 +305,8 @@ void cmpHexDump(void *addr1, void *addr2, int len) {
                                    }
 		buff1[j] = '\0';
 
+	log_debug ("  %s\n", buff1);
+	log_debug ("       ");
 	for (j = 0; j < size; j++) {
 		// Now the hex code for the specific character.
 		log_debug (" %02x", pc2[i+j]);
@@ -318,7 +320,6 @@ void cmpHexDump(void *addr1, void *addr2, int len) {
 		buff2[j + 1] = '\0';
 
 	// And print the final ASCII bit.
-	log_debug ("  %s", buff1);
 	log_debug ("  %s\n", buff2);
 	}
        i+=size;

@@ -1307,14 +1307,17 @@ inline void MOV_(D* dest, const S& src)
 	dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
 	m2c::log_debug("after retf %x\n",stackPointer); \
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; \
-   m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
+   m2c::log_debug("return eip %x\n",eip);__disp=(cs<<16)+eip;goto __dispatch_call;}
 #else
- #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
+ #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+     eip=averytemporary9; \
    __disp=eip;goto __dispatch_call;}
 
- #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); eip=averytemporary9; \
-        dw averytemporary11;POP(averytemporary11); cs=averytemporary11; esp+=i;\
-   __disp=eip;goto __dispatch_call;}
+ #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+      eip=averytemporary9; \
+        dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
+        esp+=i;\
+   __disp=(cs<<16)+eip;goto __dispatch_call;}
 #endif
 
 #define CALL(label, disp) {m2c::CALL_(label, _state, disp);if (disp) {__disp=disp;} else {__disp=m2c::k##label;}goto __dispatch_call;}
@@ -1348,13 +1351,11 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  
  #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
-	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	return;}
  
   #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
         dw averytemporary11;POP(averytemporary11); esp+=i; \
-	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	return;}
  #endif
  
@@ -1444,12 +1445,12 @@ X86_REGREF
         cpu_regs.ip=realcpu_regs.ip; \
         if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) \
         { \
-	m2c::hexDump(raddr(cs,oldip),8); \
-           {m2c::log_debug("m ");m2c::log_regs(__LINE__,#a,_state);} \
-           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+	   m2c::log_debug("cs:ip: ");m2c::hexDump(raddr(cs,oldip),8); \
+           m2c::log_debug("~m2c ");m2c::log_regs(__LINE__,#a,_state); \
+           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
         Segs=realSegs; cpu_regs=realcpu_regs; \
-           {m2c::log_debug("d ");m2c::log_regs(__LINE__,#a,_state);} \
-           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+           m2c::log_debug("~dbx ");m2c::log_regs(__LINE__,#a,_state); \
+           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
          exit(1);} \
 	cpu_regs.flags = realflags; \
         }
@@ -1467,12 +1468,13 @@ X86_REGREF
         if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0 ||\
            memcmp(&m2c::m,m2c::rm,1024*1024)!=0) \
         { \
-	m2c::hexDump(raddr(cs,oldip),8); \
-           {m2c::log_debug("m ");m2c::log_regs(__LINE__,#a,_state);} \
-           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+	   m2c::log_debug("cs:ip: ");m2c::hexDump(raddr(cs,oldip),8); \
+           m2c::log_debug("~m2c ");m2c::log_regs(__LINE__,#a,_state); \
+           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
         Segs=realSegs; cpu_regs=realcpu_regs; \
-           {m2c::log_debug("d ");m2c::log_regs(__LINE__,#a,_state);} \
-           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); m2c::cmpHexDump(&m2c::m,m2c::rm,1024*1024);\
+           m2c::log_debug("~dbx ");m2c::log_regs(__LINE__,#a,_state); \
+           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
+           m2c::log_debug("~mem m2c / dbx\n");m2c::cmpHexDump(&m2c::m,m2c::rm,1024*1024);\
          exit(1);} \
 	cpu_regs.flags = realflags; \
         }

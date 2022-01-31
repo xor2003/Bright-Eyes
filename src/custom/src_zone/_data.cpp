@@ -3,10 +3,14 @@ namespace m2c{
 static struct Memory mm;
 struct Memory& m = mm;
 
+static struct Memory t;
+struct Memory& types = t;
+
 db(& stack)[STACK_SIZE]=m.stack;
 db(& heap)[HEAP_SIZE]=m.heap;
 }
-db (& seg001)[0] = m2c::m.seg001;
+db& default_seg=*((db*)&m2c::m+0x0);
+db& seg001=*((db*)&m2c::m+0x1c20);
 db (& dummy8_1c20)[256] = m2c::m.dummy8_1c20;
 db& dummy8_1d25 = m2c::m.dummy8_1d25;
 db& dummy8_1d26 = m2c::m.dummy8_1d26;
@@ -200,7 +204,7 @@ db (& dummy8_56b3)[13] = m2c::m.dummy8_56b3;
 db& dummy8_57bc = m2c::m.dummy8_57bc;
 db (& dummy8_58bd)[3] = m2c::m.dummy8_58bd;
 db (& dummy8_5c6b)[5] = m2c::m.dummy8_5c6b;
-db (& seg002)[0] = m2c::m.seg002;
+db& seg002=*((db*)&m2c::m+0x6060);
 db& dummy8_6060 = m2c::m.dummy8_6060;
 db& dummy8_6061 = m2c::m.dummy8_6061;
 db& dummy8_6062 = m2c::m.dummy8_6062;
@@ -17001,10 +17005,10 @@ db& dummy8_1271c = m2c::m.dummy8_1271c;
 db& dummy8_1271d = m2c::m.dummy8_1271d;
 db& dummy8_1271e = m2c::m.dummy8_1271e;
 db& dummy8_1271f = m2c::m.dummy8_1271f;
-db (& seg1277)[0] = m2c::m.seg1277;
-db (& dummy8_12770)[324] = m2c::m.dummy8_12770;
-db (& dummy8_128b4)[1353] = m2c::m.dummy8_128b4;
-db (& dummy8_12dfd)[4420] = m2c::m.dummy8_12dfd;
-db (& dummy8_13f41)[59423] = m2c::m.dummy8_13f41;
+db& seg1277=*((db*)&m2c::m+0x12720);
+db (& dummy8_12720)[324] = m2c::m.dummy8_12720;
+db (& dummy8_12864)[1353] = m2c::m.dummy8_12864;
+db (& dummy8_12dad)[4420] = m2c::m.dummy8_12dad;
+db (& dummy8_13ef1)[59423] = m2c::m.dummy8_13ef1;
 
         
