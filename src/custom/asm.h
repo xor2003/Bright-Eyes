@@ -633,6 +633,7 @@ inline void AND_(D& dest, const S& src, m2c::eflags& m2cflags)
 		AFFECT_ZFifz(dest); 
 		AFFECT_SF_(dest,dest); 
 		AFFECT_CF(0);
+		AFFECT_OF(0);
  }
 
 #define NEG(a) m2c::NEG_(a, m2cflags)
