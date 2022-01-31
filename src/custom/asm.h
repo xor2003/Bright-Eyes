@@ -498,10 +498,10 @@ inline db MSB(D a)  // get highest bit
 
 //pusha AX, CX, DX, BX, SP, BP, SI, DI
 //pushad EAX, ECX, EDX, EBX, ESP, EBP, ESI, EDI
-#define PUSHAD {PUSH(eax);PUSH(ecx);PUSH(edx);PUSH(ebx); PUSH(esp);PUSH(ebp);PUSH(esi);PUSH(edi);}
+#define PUSHAD {dw oldesp=esp;PUSH(eax);PUSH(ecx);PUSH(edx);PUSH(ebx); PUSH(oldesp);PUSH(ebp);PUSH(esi);PUSH(edi);}
 #define POPAD {POP(edi);POP(esi);POP(ebp); POP(ebx); POP(ebx);POP(edx);POP(ecx);POP(eax); }
 
-#define PUSHA {PUSH(ax);PUSH(cx);PUSH(dx);PUSH(bx); PUSH(sp);PUSH(bp);PUSH(si);PUSH(di);}
+#define PUSHA {dw oldsp=sp;PUSH(ax);PUSH(cx);PUSH(dx);PUSH(bx); PUSH(oldsp);PUSH(bp);PUSH(si);PUSH(di);}
 #define POPA {POP(di);POP(si);POP(bp); POP(bx); POP(bx);POP(dx);POP(cx);POP(ax); }
 
 /*
@@ -1386,95 +1386,6 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 
 #define RDTSC {dq averytemporary = realElapsedTime(); eax=averytemporary&0xffffffff; edx=(averytemporary>32)&0xffffffff;}
 
-// thanks to paxdiablo http://stackoverflow.com/users/14860/paxdiablo for the hexDump function
-static void hexDump (void *addr, int len) {
-	int i;
-	unsigned char buff[17];
-	unsigned char *pc = (unsigned char*)addr;
-	(void) buff;
-	log_debug ("hexDump %p:\n", addr);
-
-	if (len == 0) {
-		log_debug("  ZERO LENGTH\n");
-		return;
-	}
-	if (len < 0) {
-		log_debug("  NEGATIVE LENGTH: %i\n",len);
-		return;
-	}
-
-	// Process every byte in the data.
-	for (i = 0; i < len; i++) {
-		// Multiple of 16 means new line (with line offset).
-
-		if ((i % 16) == 0) {
-			// Just don't print ASCII for the zeroth line.
-			if (i != 0)
-				log_debug ("  %s\n", buff);
-
-			// Output the offset.
-			log_debug ("  %04x ", i);
-		}
-
-		// Now the hex code for the specific character.
-		log_debug (" %02x", pc[i]);
-
-		// And store a printable ASCII character for later.
-		if ((pc[i] < 0x20) || (pc[i] > 0x7e))
-			buff[i % 16] = '.';
-		else
-			buff[i % 16] = pc[i];
-		buff[(i % 16) + 1] = '\0';
-	}
-
-	// Pad out last line if not exactly 16 characters.
-	while ((i % 16) != 0) {
-		log_debug ("   ");
-		i++;
-	}
-
-	// And print the final ASCII bit.
-	log_debug ("  %s\n", buff);
-}
-
-static void stackDump(struct _STATE* _state) {
-X86_REGREF
-
-	log_debug("is_little_endian()=%d\n",__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__);
-	log_debug("sizeof(dd)=%zu\n",sizeof(dd));
-	log_debug("sizeof(dd *)=%zu\n",sizeof(dd *));
-	log_debug("sizeof(dw)=%zu\n",sizeof(dw));
-	log_debug("sizeof(db)=%zu\n",sizeof(db));
-//	log_debug("sizeof(jmp_buf)=%zu\n",sizeof(jmp_buf));
-//	log_debug("sizeof(mem)=%zu\n",sizeof(m));
-	log_debug("eax: %x\n",eax);
-//	hexDump(&eax,sizeof(dd));
-	log_debug("ebx: %x\n",ebx);
-	log_debug("ecx: %x\n",ecx);
-	log_debug("edx: %x\n",edx);
-	log_debug("ebp: %x\n",ebp);
-	log_debug("cs: %d -> %p\n",cs,(void *) realAddress(0,cs));
-	log_debug("ds: %d -> %p\n",ds,(void *) realAddress(0,ds));
-	log_debug("esi: %x\n",esi);
-	log_debug("ds:esi %p\n",(void *) realAddress(esi,ds));
-	log_debug("es: %d -> %p\n",es,(void *) realAddress(0,es));
-	hexDump(&es,sizeof(dd));
-	log_debug("edi: %x\n",edi);
-	log_debug("es:edi %p\n",(void *) realAddress(edi,es));
-	hexDump((void *) realAddress(edi,es),50);
-	log_debug("fs: %d -> %p\n",fs,(void *) realAddress(0,fs));
-	log_debug("gs: %d -> %p\n",gs,(void *) realAddress(0,gs));
-//	log_debug("adress heap: %p\n",(void *) &m.heap);
-#ifndef NOSDL
- #if SDL_MAJOR_VERSION == 2
-	log_debug("adress vgaRam: %p\n",(void *) &vgaRam);
-	log_debug("first pixels vgaRam: %x\n",*vgaRam);
- #endif
-#endif
-	log_debug("flags: ZF = %d\n",GET_ZF());
-	log_debug("top stack=%d\n",stackPointer);
-//	checkIfVgaRamEmpty();
-}
 
 bool fix_segs();
 
@@ -1489,6 +1400,8 @@ X86_REGREF
 
 #if DEBUG==2
     #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
+    #define T(a) R(a)
+    #define X(a) R(a)
 #elif DEBUG==3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
@@ -1502,7 +1415,8 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
+    #define T(a) R(a)
+    #define X(a) R(a)
 
 #elif DEBUG>=4
 // clean format
@@ -1539,10 +1453,34 @@ X86_REGREF
 	cpu_regs.flags = realflags; \
         }
 
+    #define X(a) {dw oldip=ip;m2c::run_hw_interrupts(); \
+           {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
+        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); db om[1024*1024];memcpy(om,&m2c::m,1024*1024);\
+	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
+        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
+	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); db rm[1024*1024];memcpy(rm,&m2c::m,1024*1024);\
+        Segs=oldSegs; cpu_regs=oldcpu_regs; memcpy(&m2c::m,om,1024*1024);\
+	{a;} \
+        m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
+        cpu_regs.ip=realcpu_regs.ip; \
+        if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0 ||\
+           memcmp(&m2c::m,rm,1024*1024)!=0) \
+        { \
+	m2c::hexDump(raddr(cs,oldip),8); \
+           {m2c::log_debug("m ");m2c::log_regs(__LINE__,#a,_state);} \
+           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); \
+        Segs=realSegs; cpu_regs=realcpu_regs; \
+           {m2c::log_debug("d ");m2c::log_regs(__LINE__,#a,_state);} \
+           m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::hexDump(&Segs,sizeof(Segments)); m2c::cmpHexDump(&m2c::m,rm,1024*1024);\
+         exit(1);} \
+	cpu_regs.flags = realflags; \
+        }
+
 #else
 
     #define R(a) {m2c::run_hw_interrupts();} {a;}
     #define T(a) R(a)
+    #define X(a) R(a)
 
 #endif
 bool is_little_endian();
@@ -1653,8 +1591,10 @@ int8_t asm2C_IN(int16_t data);
 dw __disp; \
 dw _source;
 */
+void mycopy(db*,db*,size_t,const char *);
 void stackDump(struct _STATE* state);
 void hexDump (void *addr, int len);
+void cmpHexDump(void *addr1, void *addr2, int len);
 void asm2C_INT(struct _STATE* state, int a);
 void asm2C_init();
 void asm2C_printOffsets(unsigned int offset);

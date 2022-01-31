@@ -5,7 +5,7 @@
 
 #if defined(_PROTECTED_MODE)
 //  #define raddr(segment,offset) ((db *)&m2c::m+(db)(offset)+selectors[segment])
-static inline db* raddr_(dw segment,dw offset) {return ((db *)&m+(db)(offset)+selectors[segment]);}
+static inline db* raddr_(dw segment,dw offset) {return ((db *)&m+(dw)(offset)+selectors[segment]);}
 #else
  //#define raddr(segment,offset) (((db *)&m2c::m + ((segment)<<4) + (offset) ))
 static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) + offset;}
