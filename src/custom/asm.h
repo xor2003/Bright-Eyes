@@ -662,11 +662,13 @@ template <class D, class S>
 inline void SHR_(D& a, const S& b, m2c::eflags& m2cflags)
 {
 	if (b) {AFFECT_CF((a>>(b-1))&1);
-		D highestbitset = (1<<( m2c::bitsizeof(a)-1));
-		AFFECT_OF(((b&0x1f)==1)?(a > highestbitset):false);
-		a=a>>b;
-		AFFECT_ZFifz(a);
-		AFFECT_SF_(a,a);
+		static const D highestbitset = (1<<( m2c::bitsizeof(a)-1));
+                D res=a>>b;
+		AFFECT_OF((b&0x1f)==1? a>highestbitset : false);
+		AFFECT_ZFifz(res);
+		AFFECT_SF_(res,res);
+//log_debug("SHR a=%x b=%x h=%x res=%x OF=%d\n",a,b,highestbitset,res,GET_OF());
+                a = res;
 		}
 }
 
@@ -1248,8 +1250,8 @@ inline void MOV_(D* dest, const S& src)
 #define CLC {AFFECT_CF(0);}
 #define CMC {AFFECT_CF(GET_CF() ^ 1);}
 
-#define PUSHF {PUSH( m2cflags.value );}
-#define POPF {dd averytemporary; POP(averytemporary); m2cflags.value=averytemporary;}
+#define PUSHF {PUSH( (m2c::MWORDSIZE)m2cflags.value );}
+#define POPF {m2c::MWORDSIZE averytemporary; POP(averytemporary); m2cflags.value=averytemporary;}
 
 //#define PUSHF {PUSH( (dd) ((GET_CF()?1:0)|(GET_PF()?4:0)|(GET_AF()?0x10:0)|(GET_ZF()?0x40:0)|(GET_SF()?0x80:0)|(GET_DF()?0x400:0)|(GET_OF()?0x800:0)) );}
 //#define POPF {dd averytemporary; POP(averytemporary); CF=averytemporary&1;  PF=(averytemporary&4);AF=(averytemporary&0x10);ZF=(averytemporary&0x40);SF=(averytemporary&0x80);DF=(averytemporary&0x400);OF=(averytemporary&0x800);}
@@ -1433,50 +1435,14 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {dw oldip=ip;m2c::run_hw_interrupts(); \
-           {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
-        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); \
-	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
-        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
-	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); \
-        Segs=oldSegs; cpu_regs=oldcpu_regs; \
+    #define T(a) {m2c::Tstart(__LINE__,#a); \
 	{a;} \
-        m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
-        cpu_regs.ip=realcpu_regs.ip; \
-        if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0) \
-        { \
-	   m2c::log_debug("cs:ip: ");m2c::hexDump(raddr(cs,oldip),8); \
-           m2c::log_debug("~m2c ");m2c::log_regs(__LINE__,#a,_state); \
-           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
-        Segs=realSegs; cpu_regs=realcpu_regs; \
-           m2c::log_debug("~dbx ");m2c::log_regs(__LINE__,#a,_state); \
-           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
-         exit(1);} \
-	cpu_regs.flags = realflags; \
+        m2c::Tend(__LINE__,#a); \
         }
 
-    #define X(a) {dw oldip=ip;m2c::run_hw_interrupts(); \
-           {m2c::log_debug("b ");m2c::log_regs(__LINE__,#a,_state);} \
-        Segments oldSegs(Segs); CPU_Regs oldcpu_regs(cpu_regs); memcpy(m2c::om,&m2c::m,1024*1024);\
-	m2c::single_step(); Bitu realflags= cpu_regs.flags; \
-        cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
-	Segments realSegs(Segs); CPU_Regs realcpu_regs(cpu_regs); memcpy(m2c::rm,&m2c::m,1024*1024);\
-        Segs=oldSegs; cpu_regs=oldcpu_regs; memcpy(&m2c::m,m2c::om,1024*1024);\
+    #define X(a) {m2c::Xstart(__LINE__,#a); \
 	{a;} \
-        m2c::fix_segs();cpu_regs.flags &= FLAG_CF|FLAG_SF|FLAG_ZF|FLAG_OF; \
-        cpu_regs.ip=realcpu_regs.ip; \
-        if (memcmp(&cpu_regs,&realcpu_regs,sizeof(CPU_Regs))!=0 || memcmp(&Segs,&realSegs,sizeof(Segments))!=0 ||\
-           memcmp(&m2c::m,m2c::rm,1024*1024)!=0) \
-        { \
-	   m2c::log_debug("cs:ip: ");m2c::hexDump(raddr(cs,oldip),8); \
-           m2c::log_debug("~m2c ");m2c::log_regs(__LINE__,#a,_state); \
-           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
-        Segs=realSegs; cpu_regs=realcpu_regs; \
-           m2c::log_debug("~dbx ");m2c::log_regs(__LINE__,#a,_state); \
-           m2c::log_debug("reg ");m2c::hexDump(&cpu_regs,sizeof(CPU_Regs)); m2c::log_debug("seg ");m2c::hexDump(&Segs,sizeof(Segments)); \
-           m2c::log_debug("~mem m2c / dbx\n");m2c::cmpHexDump(&m2c::m,m2c::rm,1024*1024);\
-         exit(1);} \
-	cpu_regs.flags = realflags; \
+        m2c::Xend(__LINE__,#a); \
         }
 
 #else
@@ -1622,8 +1588,11 @@ extern db vgaPalette[256*3];
 extern db(& stack)[STACK_SIZE];
 extern db(& heap)[HEAP_SIZE];
 extern  m2cf* _ENTRY_POINT_;
-extern db om[1024*1024];
-extern db rm[1024*1024];
+extern void Tstart(int line, const char * instr);
+extern void Tend(int line, const char * instr);
+extern void Xstart(int line, const char * instr);
+extern void Xend(int line, const char * instr);
+
 
 #define TODB(X) (*(db*)(&(X)))
 #define TODW(X) (*(dw*)(&(X)))

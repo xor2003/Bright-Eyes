@@ -102,9 +102,9 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
  #define INSB {db averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?1:-1;}
  #define INSW {dw averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?2:-2;}
 
-#define LOOP(label) DEC(cx); JNZ(label)
-#define LOOPE(label) --cx; if (cx!=0 && GET_ZF()) GOTOLABEL(label) //TODO
-#define LOOPNE(label) --cx; if (cx!=0 && !GET_ZF()) GOTOLABEL(label) //TODO
+#define LOOP(label) if (--cx) GOTOLABEL(label)
+#define LOOPE(label) if (--cx && GET_ZF()) GOTOLABEL(label)
+#define LOOPNE(label) if (--cx && !GET_ZF()) GOTOLABEL(label)
 
 
 #endif
