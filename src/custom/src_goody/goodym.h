@@ -22,7 +22,8 @@ struct struct_0 {
 #pragma pack(pop)
 
 
-extern db (& seg000)[0];
+extern db& default_seg;
+extern db& seg000;
 extern struct_0& stru_10310;
 extern struct_0& dummyc_1c34;
 extern struct_0& dummyc_1c38;
@@ -11114,7 +11115,7 @@ static const dd kloc_140f6 = 0x19240f6;
 static const dd kloc_1410d = 0x192410d;
 static const dd kloc_14123 = 0x1924123;
 static const dd k_group1 = 0x1924124;
-static const dd k__dispatch_call =0;
+static const dd k__dispatch_call=0;
 }
 void _group1(m2c::_offsets, struct m2c::_STATE*);
 void callsubbx(m2c::_offsets, struct m2c::_STATE*);

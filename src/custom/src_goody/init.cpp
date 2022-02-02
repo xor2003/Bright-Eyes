@@ -111,7 +111,7 @@ void init_entrypoint(Bit16u relocate)
     X86_REGREF
    m2c::log_debug("Starting program\n");
    m2c::log_debug("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
-   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
+//   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
    m2c::Initializer();
 /*
 FILE* file_to_write = 0;

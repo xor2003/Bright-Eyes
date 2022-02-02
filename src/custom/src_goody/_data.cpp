@@ -9,7 +9,8 @@ struct Memory& types = t;
 db(& stack)[STACK_SIZE]=m.stack;
 db(& heap)[HEAP_SIZE]=m.heap;
 }
-db (& seg000)[0] = m2c::m.seg000;
+db& default_seg=*((db*)&m2c::m+0x0);
+db& seg000=*((db*)&m2c::m+0x1920);
 struct_0& stru_10310 = m2c::m.stru_10310;
 struct_0& dummyc_1c34 = m2c::m.dummyc_1c34;
 struct_0& dummyc_1c38 = m2c::m.dummyc_1c38;

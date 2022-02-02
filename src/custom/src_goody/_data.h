@@ -17,7 +17,6 @@ struct struct_0 {
 namespace m2c{
 struct Memory{
 db dummyc_0[6432];
-db seg000[0];
 db dummyc_1920[784];
 struct_0 stru_10310;
 struct_0 dummyc_1c34;
