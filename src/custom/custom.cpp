@@ -209,7 +209,7 @@ namespace m2c
 
   void mycopy (db * d, db * s, size_t size, const char *name)
   {
-/*
+#if DEBUG
     int res = memcmp (d, s, size);
     if (res)
       {
@@ -223,12 +223,11 @@ namespace m2c
         hexDump (s, size);
         hexDump (d, size);
       }
-*/
-
-   { memcpy(d,s,size);
+#else
+   memcpy(d,s,size);
    log_debug("Init %zx %zd\n",d-((db*)&m)-0x1920,size);
-   memset(((db*)&types)+(d-((db*)&m)),0xff,size);}
-
+   memset(((db*)&types)+(d-((db*)&m)),0xff,size);
+#endif
   }
 
 // thanks to paxdiablo http://stackoverflow.com/users/14860/paxdiablo for the hexDump function

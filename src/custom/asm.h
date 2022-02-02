@@ -1193,12 +1193,13 @@ inline void MOV_(D* dest, const S& src)
 { m2c::setdata(dest, static_cast<D>(m2c::getdata<S>(src))); }
 //{ *dest = static_cast<D>(src); }
 
+#define LEAVE {MOV(esp, ebp));POP(ebp);}
 #define LFS(dest,src) {dest = src; fs= *(dw*)((db*)&(src) + sizeof(dest));}
 #define LES(dest,src) {dest = src; es = *(dw*)((db*)&(src) + sizeof(dest));}
 #define LGS(dest,src) {dest = src; gs = *(dw*)((db*)&(src) + sizeof(dest));}
 #define LDS(dest,src) {dest = src; ds = *(dw*)((db*)&(src) + sizeof(dest));}
 
-#define MOVZX(dest,src) dest = src
+#define MOVZX(dest,src) {dest = src;}
 #define MOVSX(dest,src) {if (ISNEGATIVE(src,src)) { dest = ((-1 ^ (( 1 << (m2c::bitsizeof(src)) )-1)) | src ); } else { dest = src; }}
 
 #define BT(dest,src) {AFFECT_CF(dest & m2c::nthbitone(dest,src));} //TODO
@@ -1207,7 +1208,7 @@ inline void MOV_(D* dest, const S& src)
 #define BTR(dest,src) {AFFECT_CF(dest & m2c::nthbitone(dest,src)); dest &= ~(m2c::nthbitone(dest,src));}
 
 // LEA - Load Effective Address
-#define LEA(dest,src) dest = src
+#define LEA(dest,src) {dest = src;}
 
 #define XCHG(dest,src) {dd averytemporary = (dd) dest; dest = src; src = averytemporary;}//std::swap(dest,src); TODO
 
@@ -1554,6 +1555,8 @@ int8_t asm2C_IN(int16_t data);
 #define IN(a,b) a = m2c::asm2C_IN(b); TESTJUMPTOBACKGROUND
 
 #endif
+
+#define XLATP(x) {al = *(x + al);}
 
 /*
 #define X86_REGREF \
