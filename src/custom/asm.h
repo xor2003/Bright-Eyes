@@ -593,7 +593,7 @@ inline void CMP_(const D& dest, const S& src, m2c::eflags& m2cflags)
 {
  D result=dest-src; 
 		AFFECT_CF(result>dest); 
-            D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
+       static const D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src) & (dest ^ result)) & highestbitset);
 		AFFECT_ZFifz(result); 
 		AFFECT_SF_(result,result); 
@@ -996,7 +996,7 @@ inline void ADD_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
  D result=dest+(D)src; 
 		AFFECT_CF(result<dest); 
-            D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
+       static const D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src ^ highestbitset ) & (result ^ src)) & highestbitset);
    dest = result;
 		AFFECT_ZFifz(dest); 
@@ -1017,7 +1017,7 @@ inline void SUB_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
  dd result=(dest-src) & m2c::MASK[sizeof(dest)]; 
 		AFFECT_CF(result>dest); 
-            D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
+       static const D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src) & (dest ^ result)) & highestbitset);
    dest = result;
 		AFFECT_ZFifz(dest); 
@@ -1030,7 +1030,7 @@ inline void ADC_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
  dq result=(dq)dest+(dq)src+(dq)GET_CF(); 
 		AFFECT_CF((result)>m2c::MASK[sizeof(dest)]); 
-            D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
+       static const D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src ^ highestbitset ) & (result ^ src)) & highestbitset);
    dest = result;
 		AFFECT_ZFifz(dest); 
@@ -1044,7 +1044,7 @@ inline void SBB_(D& dest, const S& src, m2c::eflags& m2cflags)
  bool oldCF = GET_CF();
  dq result=((dq)dest-(dq)src-(dq)GET_CF()) & m2c::MASK[sizeof(dest)]; 
 		AFFECT_CF(result>dest || (oldCF && (src==m2c::MASK[sizeof(dest)]) )); 
-            D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
+       static const D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
           AFFECT_OF(((dest ^ src) & (dest ^ result)) & highestbitset);
    dest = result;
 		AFFECT_ZFifz(dest); 
@@ -1299,10 +1299,10 @@ inline void MOV_(D* dest, const S& src)
 #if SINGLEPROC
 
 #if DEBUG>=2
- #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+ #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	m2c::log_debug("after ret %x\n",stackPointer); \
-	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}\
+	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);} esp+=i; \
    m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
 
  #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
@@ -1312,8 +1312,9 @@ inline void MOV_(D* dest, const S& src)
 	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; \
    m2c::log_debug("return eip %x\n",eip);__disp=(cs<<16)+eip;goto __dispatch_call;}
 #else
- #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+ #define RETN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
      eip=averytemporary9; \
+        esp+=i;\
    __disp=eip;goto __dispatch_call;}
 
  #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
@@ -1338,9 +1339,9 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 // Multiproc
  #if DEBUG>=2
  
-  #define RET {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+  #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
- 	m2c::log_debug("after ret %x\n",stackPointer); \
+ 	esp+=i; m2c::log_debug("after ret %x\n",stackPointer); \
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	return;}
  
@@ -1352,8 +1353,9 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 	 return;}
  #else
  
- #define RET {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
+ #define RETN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+	esp+=i; \
 	return;}
  
   #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
@@ -1376,7 +1378,7 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 
 #endif
 
-#define RETN RET
+#define RET RETN(0)
 
 /*
 #define IRET {m2c::MWORDSIZE averytemporary11=0; POP(averytemporary11); eip=averytemporary11;\

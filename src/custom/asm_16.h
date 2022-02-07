@@ -20,8 +20,8 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
 */
 
  #define REP cx++;while (--cx != 0)
- #define REPE AFFECT_ZFifz(0);cx++;while (--cx != 0 && GET_ZF())
- #define REPNE AFFECT_ZFifz(1);cx++;while (--cx != 0 && !GET_ZF())
+ #define REPE if (cx) {AFFECT_ZFifz(0);};cx++;while (--cx != 0 && GET_ZF())
+ #define REPNE if (cx) {AFFECT_ZFifz(1);};cx++;while (--cx != 0 && !GET_ZF())
  #define XLAT {al = *m2c::raddr_(ds,bx+al);}
  #define CMPSB \
 	{ \

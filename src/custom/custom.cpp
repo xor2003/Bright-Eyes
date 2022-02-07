@@ -204,7 +204,7 @@ namespace m2c
         CPU_Cycles = old_cycles;
       }
     //CPU_CycleLeft += old_cycles;
-    log_debug ("CPU_Cycles=%d CPU_CycleLeft=%d\n", CPU_Cycles, CPU_CycleLeft);
+    //log_debug ("CPU_Cycles=%d CPU_CycleLeft=%d\n", CPU_Cycles, CPU_CycleLeft);
   }
 
   void mycopy (db * d, db * s, size_t size, const char *name)
@@ -213,14 +213,15 @@ namespace m2c
     int res = memcmp (d, s, size);
     if (res)
       {
-        log_debug ("non-equal %s", name);
+        log_debug ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
         void *p = memmem (((db *) & m2c::m) + 0x1920, 1024 * 1024, s, size);
         if (size > 3 && p)
           {
-            log_debug (" addr=%x size=%d found at %x", d - ((db *) & m2c::m), size, ((db *) p) - d);
+            log_debug (" found at %x", ((db *) p) - d);
           }
-        log_debug ("\n");
+        log_debug ("\nm2c ");
         hexDump (s, size);
+        log_debug ("memory ");
         hexDump (d, size);
       }
 #else
