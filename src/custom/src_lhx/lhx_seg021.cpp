@@ -117,7 +117,7 @@ loc_319bf:
 	// 9245 
 cs=0x2331;eip=0x0000cf; 	R(CALL(sub_32292,0));	// 75974 call    sub_32292 ;~ 2331:00CF
 cs=0x2331;eip=0x0000d2; 	X(PUSH(*(dw*)((&unk_5651c))));	// 75975 push    word ptr unk_5651C ;~ 2331:00D2
-cs=0x2331;eip=0x0000d6; 	X(PUSH(*(dw*)((&unk_5651a))));	// 75976 push    word ptr unk_5651A ;~ 2331:00D6
+cs=0x2331;eip=0x0000d6; 	X(PUSH(word_5651a));	// 75976 push    word_5651A ;~ 2331:00D6
 cs=0x2331;eip=0x0000da; 	R(CALLF(sub_3174e,0));	// 75977 call    sub_3174E ;~ 2331:00DA
 loc_319cf:
 	// 9246 
@@ -139,12 +139,12 @@ cs=0x2331;eip=0x000101; 	X(PUSH(ax));	// 75994 push    ax ;~ 2331:0101
 cs=0x2331;eip=0x000102; 	R(CALLF(sub_316b2,0));	// 75995 call    sub_316B2 ;~ 2331:0102
 loc_319f7:
 	// 9248 
-cs=0x2331;eip=0x000107; 	X(PUSH(*(dw*)((&unk_5651a))));	// 75998 push    word ptr unk_5651A ;~ 2331:0107
+cs=0x2331;eip=0x000107; 	X(PUSH(word_5651a));	// 75998 push    word_5651A ;~ 2331:0107
 cs=0x2331;eip=0x00010b; 	X(PUSH(*(dw*)((&unk_5651c))));	// 75999 push    word ptr unk_5651C ;~ 2331:010B
 cs=0x2331;eip=0x00010f; 	R(CALLF(sub_2c939,0));	// 76000 call    sub_2C939 ;~ 2331:010F
 cs=0x2331;eip=0x000114; 	T(CMP(*(raddr(ss,bp+arg_4)), 0));	// 76001 cmp     [bp+arg_4], 0 ;~ 2331:0114
 cs=0x2331;eip=0x000118; 	R(JZ(loc_31a76));	// 76002 jz      short loc_31A76 ;~ 2331:0118
-cs=0x2331;eip=0x00011a; 	X(PUSH(*(dw*)((&unk_5651a))));	// 76003 push    word ptr unk_5651A ;~ 2331:011A
+cs=0x2331;eip=0x00011a; 	X(PUSH(word_5651a));	// 76003 push    word_5651A ;~ 2331:011A
 cs=0x2331;eip=0x00011e; 	R(CALLF(sub_202f1,0));	// 76004 call    sub_202F1 ;~ 2331:011E
 cs=0x2331;eip=0x000123; 	T(MOV(ax, 0x20));	// 76005 mov     ax, 20h ; ' ' ;~ 2331:0123
 cs=0x2331;eip=0x000126; 	X(PUSH(ax));	// 76006 push    ax ;~ 2331:0126
@@ -173,11 +173,11 @@ cs=0x2331;eip=0x00015f; 	T(ADD(sp, 8));	// 76028 add     sp, 8 ;~ 2331:015F
 cs=0x2331;eip=0x000162; 	R(CALLF(sub_3059c,0));	// 76029 call    sub_3059C ;~ 2331:0162
 cs=0x2331;eip=0x000167; 	R(CALLF(sub_35bae,0));	// 76030 call    sub_35BAE ;~ 2331:0167
 cs=0x2331;eip=0x00016c; 	T(MOV(ax, 1));	// 76031 mov     ax, 1 ;~ 2331:016C
-cs=0x2331;eip=0x00016f; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 76032 sub     ax, word ptr unk_5651A ;~ 2331:016F
+cs=0x2331;eip=0x00016f; 	T(SUB(ax, word_5651a));	// 76032 sub     ax, word_5651A ;~ 2331:016F
 cs=0x2331;eip=0x000173; 	X(PUSH(ax));	// 76033 push    ax ;~ 2331:0173
 cs=0x2331;eip=0x000174; 	R(CALLF(sub_202f1,0));	// 76034 call    sub_202F1 ;~ 2331:0174
 cs=0x2331;eip=0x000179; 	X(PUSH(*(dw*)((&unk_5651c))));	// 76035 push    word ptr unk_5651C ;~ 2331:0179
-cs=0x2331;eip=0x00017d; 	X(PUSH(*(dw*)((&unk_5651a))));	// 76036 push    word ptr unk_5651A ;~ 2331:017D
+cs=0x2331;eip=0x00017d; 	X(PUSH(word_5651a));	// 76036 push    word_5651A ;~ 2331:017D
 cs=0x2331;eip=0x000181; 	R(CALLF(sub_2c939,0));	// 76037 call    sub_2C939 ;~ 2331:0181
 loc_31a76:
 	// 9249 
@@ -357,11 +357,11 @@ loc_31bd0:
 cs=0x2331;eip=0x0002e0; 	R(CALL(sub_32887,0));	// 76240 call    sub_32887 ;~ 2331:02E0
 loc_31bd3:
 	// 9276 
-cs=0x2331;eip=0x0002e3; 	X(PUSH(*(dw*)((&unk_5651a))));	// 76243 push    word ptr unk_5651A ;~ 2331:02E3
+cs=0x2331;eip=0x0002e3; 	X(PUSH(word_5651a));	// 76243 push    word_5651A ;~ 2331:02E3
 cs=0x2331;eip=0x0002e7; 	R(CALLF(sub_202f1,0));	// 76244 call    sub_202F1 ;~ 2331:02E7
 cs=0x2331;eip=0x0002ec; 	R(CALL(sub_327c9,0));	// 76245 call    sub_327C9 ;~ 2331:02EC
 cs=0x2331;eip=0x0002ef; 	T(MOV(ax, 1));	// 76246 mov     ax, 1 ;~ 2331:02EF
-cs=0x2331;eip=0x0002f2; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 76247 sub     ax, word ptr unk_5651A ;~ 2331:02F2
+cs=0x2331;eip=0x0002f2; 	T(SUB(ax, word_5651a));	// 76247 sub     ax, word_5651A ;~ 2331:02F2
 cs=0x2331;eip=0x0002f6; 	X(PUSH(ax));	// 76248 push    ax ;~ 2331:02F6
 cs=0x2331;eip=0x0002f7; 	R(CALLF(sub_202f1,0));	// 76249 call    sub_202F1 ;~ 2331:02F7
 cs=0x2331;eip=0x0002fc; 	R(JMP(loc_31a79));	// 76250 jmp     loc_31A79 ;~ 2331:02FC
@@ -1912,7 +1912,7 @@ cs=0x2331;eip=0x000ef8; 	X(PUSH(bp));	// 77885 push    bp ;~ 2331:0EF8
 cs=0x2331;eip=0x000ef9; 	T(MOV(bp, sp));	// 77886 mov     bp, sp ;~ 2331:0EF9
 cs=0x2331;eip=0x000efb; 	T(SUB(sp, 8));	// 77887 sub     sp, 8 ;~ 2331:0EFB
 cs=0x2331;eip=0x000efe; 	X(PUSH(si));	// 77888 push    si ;~ 2331:0EFE
-cs=0x2331;eip=0x000eff; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 77889 cmp     word ptr unk_47B2E, 0 ;~ 2331:0EFF
+cs=0x2331;eip=0x000eff; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 77889 cmp     word ptr byte_47B2E, 0 ;~ 2331:0EFF
 cs=0x2331;eip=0x000f04; 	R(JNZ(loc_327fb));	// 77890 jnz     short loc_327FB ;~ 2331:0F04
 cs=0x2331;eip=0x000f06; 	T(MOV(ax, 0x0FF0D));	// 77891 mov     ax, 0FF0Dh ;~ 2331:0F06
 cs=0x2331;eip=0x000f09; 	R(JMP(loc_327fe));	// 77892 jmp     short loc_327FE ;~ 2331:0F09
@@ -2499,7 +2499,7 @@ loc_32c4f:
 	// 9423 
 cs=0x2331;eip=0x00135f; 	X(MOV(*(dw*)((&unk_47bde)), 0x0FF0F));	// 78479 mov     word ptr unk_47BDE, 0FF0Fh ;~ 2331:135F
 cs=0x2331;eip=0x001365; 	X(MOV(unk_56885, 0));	// 78480 mov     byte ptr unk_56885, 0 ;~ 2331:1365
-cs=0x2331;eip=0x00136a; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 78481 cmp     word ptr unk_47B2E, 0 ;~ 2331:136A
+cs=0x2331;eip=0x00136a; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 78481 cmp     word ptr byte_47B2E, 0 ;~ 2331:136A
 cs=0x2331;eip=0x00136f; 	R(JNZ(loc_32c66));	// 78482 jnz     short loc_32C66 ;~ 2331:136F
 cs=0x2331;eip=0x001371; 	T(MOV(ax, 0x0FF00));	// 78483 mov     ax, 0FF00h ;~ 2331:1371
 cs=0x2331;eip=0x001374; 	R(JMP(loc_32c69));	// 78484 jmp     short loc_32C69 ;~ 2331:1374
@@ -3096,7 +3096,7 @@ cs=0x2331;eip=0x001812; 	T(ADD(ax, *(dw*)((&unk_49e94))));	// 79159 add     ax, 
 cs=0x2331;eip=0x001816; 	T(ADD(ax, 3));	// 79160 add     ax, 3 ;~ 2331:1816
 cs=0x2331;eip=0x001819; 	X(PUSH(ax));	// 79161 push    ax ;~ 2331:1819
 cs=0x2331;eip=0x00181a; 	R(CALLF(sub_2dce4,0));	// 79162 call    sub_2DCE4 ;~ 2331:181A
-cs=0x2331;eip=0x00181f; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 79163 cmp     word ptr unk_47B2E, 0 ;~ 2331:181F
+cs=0x2331;eip=0x00181f; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 79163 cmp     word ptr byte_47B2E, 0 ;~ 2331:181F
 cs=0x2331;eip=0x001824; 	R(JNZ(loc_3311b));	// 79164 jnz     short loc_3311B ;~ 2331:1824
 cs=0x2331;eip=0x001826; 	T(MOV(ax, 0x0FF00));	// 79165 mov     ax, 0FF00h ;~ 2331:1826
 cs=0x2331;eip=0x001829; 	R(JMP(loc_3311e));	// 79166 jmp     short loc_3311E ;~ 2331:1829
@@ -3144,7 +3144,7 @@ cs=0x2331;eip=0x00186f; 	X(POP(bp));	// 79208 pop     bp ;~ 2331:186F
 cs=0x2331;eip=0x001870; 	R(RETN(0));	// 79209 retn ;~ 2331:1870
 sub_33161:
 	// 79216 
-cs=0x2331;eip=0x001871; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 79218 cmp     word ptr unk_47B2E, 0 ;~ 2331:1871
+cs=0x2331;eip=0x001871; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 79218 cmp     word ptr byte_47B2E, 0 ;~ 2331:1871
 cs=0x2331;eip=0x001876; 	R(JNZ(loc_3316d));	// 79219 jnz     short loc_3316D ;~ 2331:1876
 cs=0x2331;eip=0x001878; 	T(MOV(ax, 0x0D));	// 79220 mov     ax, 0Dh ;~ 2331:1878
 cs=0x2331;eip=0x00187b; 	R(JMP(loc_33170));	// 79221 jmp     short loc_33170 ;~ 2331:187B
@@ -3661,7 +3661,7 @@ cs=0x2331;eip=0x001c96; 	X(PUSH(ax));	// 79815 push    ax ;~ 2331:1C96
 cs=0x2331;eip=0x001c97; 	R(CALL(sub_33198,0));	// 79816 call    sub_33198 ;~ 2331:1C97
 cs=0x2331;eip=0x001c9a; 	R(CALL(sub_33713,0));	// 79817 call    sub_33713 ;~ 2331:1C9A
 cs=0x2331;eip=0x001c9d; 	X(PUSH(*(dw*)((&unk_5651c))));	// 79818 push    word ptr unk_5651C ;~ 2331:1C9D
-cs=0x2331;eip=0x001ca1; 	X(PUSH(*(dw*)((&unk_5651a))));	// 79819 push    word ptr unk_5651A ;~ 2331:1CA1
+cs=0x2331;eip=0x001ca1; 	X(PUSH(word_5651a));	// 79819 push    word_5651A ;~ 2331:1CA1
 cs=0x2331;eip=0x001ca5; 	R(CALLF(sub_3174e,0));	// 79820 call    sub_3174E ;~ 2331:1CA5
 loc_3359a:
 	// 9509 
@@ -3689,9 +3689,9 @@ cs=0x2331;eip=0x001cd6; 	R(JZ(loc_33615));	// 79845 jz      short loc_33615 ;~ 2
 cs=0x2331;eip=0x001cd8; 	R(JMP(loc_3359a));	// 79846 jmp     short loc_3359A ;~ 2331:1CD8
 loc_335ca:
 	// 9511 
-cs=0x2331;eip=0x001cda; 	X(PUSH(*(dw*)((&unk_5651a))));	// 79850 push    word ptr unk_5651A ;~ 2331:1CDA
+cs=0x2331;eip=0x001cda; 	X(PUSH(word_5651a));	// 79850 push    word_5651A ;~ 2331:1CDA
 cs=0x2331;eip=0x001cde; 	R(CALLF(sub_202f1,0));	// 79851 call    sub_202F1 ;~ 2331:1CDE
-cs=0x2331;eip=0x001ce3; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 79852 cmp     word ptr unk_47B2E, 0 ;~ 2331:1CE3
+cs=0x2331;eip=0x001ce3; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 79852 cmp     word ptr byte_47B2E, 0 ;~ 2331:1CE3
 cs=0x2331;eip=0x001ce8; 	R(JNZ(loc_3363d));	// 79853 jnz     short loc_3363D ;~ 2331:1CE8
 cs=0x2331;eip=0x001cea; 	T(MOV(ax, 0x5A0F));	// 79854 mov     ax, 5A0Fh ;~ 2331:1CEA
 cs=0x2331;eip=0x001ced; 	R(JMP(loc_33640));	// 79855 jmp     short loc_33640 ;~ 2331:1CED
@@ -3772,7 +3772,7 @@ cs=0x2331;eip=0x001d50; 	X(MOV(*(dw*)((&unk_54440)), ax));	// 79942 mov     word
 cs=0x2331;eip=0x001d53; 	X(PUSH(*(dw*)((&unk_54448))));	// 79943 push    word ptr unk_54448 ;~ 2331:1D53
 cs=0x2331;eip=0x001d57; 	R(CALL(sub_338a1,0));	// 79944 call    sub_338A1 ;~ 2331:1D57
 cs=0x2331;eip=0x001d5a; 	T(MOV(ax, 1));	// 79945 mov     ax, 1 ;~ 2331:1D5A
-cs=0x2331;eip=0x001d5d; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 79946 sub     ax, word ptr unk_5651A ;~ 2331:1D5D
+cs=0x2331;eip=0x001d5d; 	T(SUB(ax, word_5651a));	// 79946 sub     ax, word_5651A ;~ 2331:1D5D
 cs=0x2331;eip=0x001d61; 	X(PUSH(ax));	// 79947 push    ax ;~ 2331:1D61
 cs=0x2331;eip=0x001d62; 	R(CALLF(sub_202f1,0));	// 79948 call    sub_202F1 ;~ 2331:1D62
 cs=0x2331;eip=0x001d67; 	T(MOV(ax, 0x0F615));	// 79949 mov     ax, 0F615h ;~ 2331:1D67
@@ -4038,14 +4038,14 @@ cs=0x2331;eip=0x001f71; 	T(MOV(bx, 0x0C));	// 80226 mov     bx, 0Ch ;~ 2331:1F71
 cs=0x2331;eip=0x001f74; 	T(IDIV2(bx));	// 80227 idiv    bx ;~ 2331:1F74
 cs=0x2331;eip=0x001f76; 	T(CMP(ax, cx));	// 80228 cmp     ax, cx ;~ 2331:1F76
 cs=0x2331;eip=0x001f78; 	R(JNZ(loc_3388d));	// 80229 jnz     short loc_3388D ;~ 2331:1F78
-cs=0x2331;eip=0x001f7a; 	X(PUSH(*(dw*)((&unk_5651a))));	// 80230 push    word ptr unk_5651A ;~ 2331:1F7A
+cs=0x2331;eip=0x001f7a; 	X(PUSH(word_5651a));	// 80230 push    word_5651A ;~ 2331:1F7A
 cs=0x2331;eip=0x001f7e; 	R(CALLF(sub_202f1,0));	// 80231 call    sub_202F1 ;~ 2331:1F7E
 cs=0x2331;eip=0x001f83; 	X(PUSH(si));	// 80232 push    si ;~ 2331:1F83
 cs=0x2331;eip=0x001f84; 	R(CALL(sub_338a1,0));	// 80233 call    sub_338A1 ;~ 2331:1F84
 cs=0x2331;eip=0x001f87; 	X(PUSH(*(dw*)((&unk_54448))));	// 80234 push    word ptr unk_54448 ;~ 2331:1F87
 cs=0x2331;eip=0x001f8b; 	R(CALL(sub_338a1,0));	// 80235 call    sub_338A1 ;~ 2331:1F8B
 cs=0x2331;eip=0x001f8e; 	T(MOV(ax, 1));	// 80236 mov     ax, 1 ;~ 2331:1F8E
-cs=0x2331;eip=0x001f91; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 80237 sub     ax, word ptr unk_5651A ;~ 2331:1F91
+cs=0x2331;eip=0x001f91; 	T(SUB(ax, word_5651a));	// 80237 sub     ax, word_5651A ;~ 2331:1F91
 cs=0x2331;eip=0x001f95; 	X(PUSH(ax));	// 80238 push    ax ;~ 2331:1F95
 cs=0x2331;eip=0x001f96; 	R(CALLF(sub_202f1,0));	// 80239 call    sub_202F1 ;~ 2331:1F96
 cs=0x2331;eip=0x001f9b; 	R(JMP(loc_3389a));	// 80240 jmp     short loc_3389A ;~ 2331:1F9B
@@ -4141,7 +4141,7 @@ cs=0x2331;eip=0x002032; 	X(PUSH(si));	// 80345 push    si ;~ 2331:2032
 cs=0x2331;eip=0x002033; 	R(CALL(sub_3318a,0));	// 80346 call    sub_3318A ;~ 2331:2033
 cs=0x2331;eip=0x002036; 	X(MOV(*(dw*)((&unk_47bde)), 0x0FF00));	// 80347 mov     word ptr unk_47BDE, 0FF00h ;~ 2331:2036
 cs=0x2331;eip=0x00203c; 	X(MOV(unk_56885, 0));	// 80348 mov     byte ptr unk_56885, 0 ;~ 2331:203C
-cs=0x2331;eip=0x002041; 	T(CMP(*(dw*)((&unk_47b2e)), 4));	// 80349 cmp     word ptr unk_47B2E, 4 ;~ 2331:2041
+cs=0x2331;eip=0x002041; 	T(CMP(*(dw*)((&byte_47b2e)), 4));	// 80349 cmp     word ptr byte_47B2E, 4 ;~ 2331:2041
 cs=0x2331;eip=0x002046; 	R(JNZ(loc_3393d));	// 80350 jnz     short loc_3393D ;~ 2331:2046
 cs=0x2331;eip=0x002048; 	T(MOV(ax, 0x2880));	// 80351 mov     ax, 2880h ;~ 2331:2048
 cs=0x2331;eip=0x00204b; 	R(JMP(loc_33940));	// 80352 jmp     short loc_33940 ;~ 2331:204B
@@ -4153,7 +4153,7 @@ loc_33940:
 cs=0x2331;eip=0x002050; 	X(MOV(*(dw*)((&unk_544d0)), ax));	// 80359 mov     word ptr unk_544D0, ax ;~ 2331:2050
 cs=0x2331;eip=0x002053; 	R(CALLF(sub_203b0,0));	// 80360 call    sub_203B0 ;~ 2331:2053
 cs=0x2331;eip=0x002058; 	R(CALLF(sub_20565,0));	// 80361 call    sub_20565 ;~ 2331:2058
-cs=0x2331;eip=0x00205d; 	T(CMP(*(dw*)((&unk_5651a)), 1));	// 80362 cmp     word ptr unk_5651A, 1 ;~ 2331:205D
+cs=0x2331;eip=0x00205d; 	T(CMP(word_5651a, 1));	// 80362 cmp     word_5651A, 1 ;~ 2331:205D
 cs=0x2331;eip=0x002062; 	R(JNZ(loc_33960));	// 80363 jnz     short loc_33960 ;~ 2331:2062
 cs=0x2331;eip=0x002064; 	T(MOV(ax, 1));	// 80364 mov     ax, 1 ;~ 2331:2064
 cs=0x2331;eip=0x002067; 	X(PUSH(ax));	// 80365 push    ax ;~ 2331:2067
@@ -4553,7 +4553,7 @@ cs=0x2331;eip=0x0023a5; 	X(PUSH(ax));	// 80795 push    ax ;~ 2331:23A5
 cs=0x2331;eip=0x0023a6; 	T(MOV(ax, 0x0FF0F));	// 80796 mov     ax, 0FF0Fh ;~ 2331:23A6
 cs=0x2331;eip=0x0023a9; 	X(PUSH(ax));	// 80797 push    ax ;~ 2331:23A9
 cs=0x2331;eip=0x0023aa; 	R(CALLF(sub_233c4,0));	// 80798 call    sub_233C4 ;~ 2331:23AA
-cs=0x2331;eip=0x0023af; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 80799 cmp     word ptr unk_47B2E, 0 ;~ 2331:23AF
+cs=0x2331;eip=0x0023af; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 80799 cmp     word ptr byte_47B2E, 0 ;~ 2331:23AF
 cs=0x2331;eip=0x0023b4; 	R(JNZ(loc_33cab));	// 80800 jnz     short loc_33CAB ;~ 2331:23B4
 cs=0x2331;eip=0x0023b6; 	T(MOV(ax, 0x0D));	// 80801 mov     ax, 0Dh ;~ 2331:23B6
 cs=0x2331;eip=0x0023b9; 	R(JMP(loc_33cae));	// 80802 jmp     short loc_33CAE ;~ 2331:23B9
@@ -4755,7 +4755,7 @@ cs=0x2331;eip=0x00255c; 	T(MOV(ax, 0x0FF00));	// 81009 mov     ax, 0FF00h ;~ 233
 cs=0x2331;eip=0x00255f; 	X(PUSH(ax));	// 81010 push    ax ;~ 2331:255F
 cs=0x2331;eip=0x002560; 	R(CALLF(sub_203c2,0));	// 81011 call    sub_203C2 ;~ 2331:2560
 cs=0x2331;eip=0x002565; 	X(PUSH(*(dw*)((&unk_5651c))));	// 81012 push    word ptr unk_5651C ;~ 2331:2565
-cs=0x2331;eip=0x002569; 	X(PUSH(*(dw*)((&unk_5651a))));	// 81013 push    word ptr unk_5651A ;~ 2331:2569
+cs=0x2331;eip=0x002569; 	X(PUSH(word_5651a));	// 81013 push    word_5651A ;~ 2331:2569
 cs=0x2331;eip=0x00256d; 	R(CALLF(sub_3174e,0));	// 81014 call    sub_3174E ;~ 2331:256D
 cs=0x2331;eip=0x002572; 	R(CALL(sub_33248,0));	// 81015 call    sub_33248 ;~ 2331:2572
 cs=0x2331;eip=0x002575; 	T(CMP(ax, 0x1B));	// 81016 cmp     ax, 1Bh ;~ 2331:2575
@@ -4792,7 +4792,7 @@ cs=0x2331;eip=0x0025bd; 	R(CALL(sub_33056,0));	// 81048 call    sub_33056 ;~ 233
 cs=0x2331;eip=0x0025c0; 	X(PUSH(ax));	// 81049 push    ax ;~ 2331:25C0
 cs=0x2331;eip=0x0025c1; 	R(CALL(sub_33198,0));	// 81050 call    sub_33198 ;~ 2331:25C1
 cs=0x2331;eip=0x0025c4; 	X(PUSH(*(dw*)((&unk_5651c))));	// 81051 push    word ptr unk_5651C ;~ 2331:25C4
-cs=0x2331;eip=0x0025c8; 	X(PUSH(*(dw*)((&unk_5651a))));	// 81052 push    word ptr unk_5651A ;~ 2331:25C8
+cs=0x2331;eip=0x0025c8; 	X(PUSH(word_5651a));	// 81052 push    word_5651A ;~ 2331:25C8
 cs=0x2331;eip=0x0025cc; 	R(CALLF(sub_3174e,0));	// 81053 call    sub_3174E ;~ 2331:25CC
 cs=0x2331;eip=0x0025d1; 	T(MOV(ax, 0x0F503));	// 81054 mov     ax, 0F503h ;~ 2331:25D1
 cs=0x2331;eip=0x0025d4; 	X(PUSH(ax));	// 81055 push    ax ;~ 2331:25D4
@@ -5017,7 +5017,7 @@ cs=0x2331;eip=0x002748; 	T(MOV(ax, 8));	// 81277 mov     ax, 8 ;~ 2331:2748
 cs=0x2331;eip=0x00274b; 	X(PUSH(ax));	// 81278 push    ax ;~ 2331:274B
 cs=0x2331;eip=0x00274c; 	T(MOV(ax, 9));	// 81279 mov     ax, 9 ;~ 2331:274C
 cs=0x2331;eip=0x00274f; 	X(PUSH(ax));	// 81280 push    ax ;~ 2331:274F
-cs=0x2331;eip=0x002750; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 81281 cmp     word ptr unk_47B2E, 0 ;~ 2331:2750
+cs=0x2331;eip=0x002750; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 81281 cmp     word ptr byte_47B2E, 0 ;~ 2331:2750
 cs=0x2331;eip=0x002755; 	R(JNZ(loc_3404c));	// 81282 jnz     short loc_3404C ;~ 2331:2755
 cs=0x2331;eip=0x002757; 	T(MOV(ax, 0x0FF0D));	// 81283 mov     ax, 0FF0Dh ;~ 2331:2757
 cs=0x2331;eip=0x00275a; 	R(JMP(loc_3404f));	// 81284 jmp     short loc_3404F ;~ 2331:275A
@@ -5083,7 +5083,7 @@ cs=0x2331;eip=0x002796; 	X(MOV(*(dw*)((&unk_544d2)), ax));	// 81335 mov     word
 cs=0x2331;eip=0x002799; 	X(MOV(*(raddr(ds,si)), 0));	// 81336 mov     byte ptr [si], 0 ;~ 2331:2799
 cs=0x2331;eip=0x00279c; 	T(MOV(ax, *(dw*)((&unk_5651c))));	// 81337 mov     ax, word ptr unk_5651C ;~ 2331:279C
 cs=0x2331;eip=0x00279f; 	X(MOV(*(dw*)(raddr(ss,bp+var_a)), ax));	// 81338 mov     [bp+var_A], ax ;~ 2331:279F
-cs=0x2331;eip=0x0027a2; 	X(PUSH(*(dw*)((&unk_5651a))));	// 81339 push    word ptr unk_5651A ;~ 2331:27A2
+cs=0x2331;eip=0x0027a2; 	X(PUSH(word_5651a));	// 81339 push    word_5651A ;~ 2331:27A2
 cs=0x2331;eip=0x0027a6; 	R(CALLF(sub_202f1,0));	// 81340 call    sub_202F1 ;~ 2331:27A6
 cs=0x2331;eip=0x0027ab; 	T(MOV(ax, 0x20));	// 81341 mov     ax, 20h ; ' ' ;~ 2331:27AB
 cs=0x2331;eip=0x0027ae; 	X(PUSH(ax));	// 81342 push    ax ;~ 2331:27AE
@@ -6044,7 +6044,7 @@ cs=0x2331;eip=0x002f14; 	R(JNC(loc_34809));	// 82256 jnb     short loc_34809 ;~ 
 cs=0x2331;eip=0x002f16; 	R(JMP(loc_343b8));	// 82257 jmp     loc_343B8 ;~ 2331:2F16
 loc_34809:
 	// 9659 
-cs=0x2331;eip=0x002f19; 	X(PUSH(*(dw*)((&unk_5651a))));	// 82262 push    word ptr unk_5651A ;~ 2331:2F19
+cs=0x2331;eip=0x002f19; 	X(PUSH(word_5651a));	// 82262 push    word_5651A ;~ 2331:2F19
 cs=0x2331;eip=0x002f1d; 	X(PUSH(*(dw*)((&unk_5651c))));	// 82263 push    word ptr unk_5651C ;~ 2331:2F1D
 cs=0x2331;eip=0x002f21; 	R(CALLF(sub_2c939,0));	// 82264 call    sub_2C939 ;~ 2331:2F21
 cs=0x2331;eip=0x002f26; 	T(MOV(ax, 1));	// 82265 mov     ax, 1 ;~ 2331:2F26
@@ -6052,7 +6052,7 @@ cs=0x2331;eip=0x002f29; 	X(PUSH(ax));	// 82266 push    ax ;~ 2331:2F29
 cs=0x2331;eip=0x002f2a; 	X(PUSH(ax));	// 82267 push    ax ;~ 2331:2F2A
 cs=0x2331;eip=0x002f2b; 	R(CALL(sub_34206,0));	// 82268 call    sub_34206 ;~ 2331:2F2B
 cs=0x2331;eip=0x002f2e; 	X(PUSH(*(dw*)((&unk_5651c))));	// 82269 push    word ptr unk_5651C ;~ 2331:2F2E
-cs=0x2331;eip=0x002f32; 	X(PUSH(*(dw*)((&unk_5651a))));	// 82270 push    word ptr unk_5651A ;~ 2331:2F32
+cs=0x2331;eip=0x002f32; 	X(PUSH(word_5651a));	// 82270 push    word_5651A ;~ 2331:2F32
 cs=0x2331;eip=0x002f36; 	R(CALLF(sub_2c939,0));	// 82271 call    sub_2C939 ;~ 2331:2F36
 cs=0x2331;eip=0x002f3b; 	X(MOV(*(raddr(ss,bp+var_68)), 1));	// 82272 mov     [bp+var_68], 1 ;~ 2331:2F3B
 loc_3482f:
@@ -6404,7 +6404,7 @@ cs=0x2331;eip=0x0031e9; 	X(PUSH(ax));	// 82655 push    ax ;~ 2331:31E9
 cs=0x2331;eip=0x0031ea; 	R(CALL(sub_33f01,0));	// 82656 call    sub_33F01 ;~ 2331:31EA
 cs=0x2331;eip=0x0031ed; 	X(MOV(*(dw*)(raddr(ss,bp+var_54)), ax));	// 82657 mov     [bp+var_54], ax ;~ 2331:31ED
 cs=0x2331;eip=0x0031f0; 	X(PUSH(*(dw*)((&unk_5651c))));	// 82658 push    word ptr unk_5651C ;~ 2331:31F0
-cs=0x2331;eip=0x0031f4; 	X(PUSH(*(dw*)((&unk_5651a))));	// 82659 push    word ptr unk_5651A ;~ 2331:31F4
+cs=0x2331;eip=0x0031f4; 	X(PUSH(word_5651a));	// 82659 push    word_5651A ;~ 2331:31F4
 cs=0x2331;eip=0x0031f8; 	R(CALLF(sub_3174e,0));	// 82660 call    sub_3174E ;~ 2331:31F8
 cs=0x2331;eip=0x0031fd; 	T(SUB(si, si));	// 82661 sub     si, si ;~ 2331:31FD
 cs=0x2331;eip=0x0031ff; 	T(MOV(di, *(dw*)(raddr(ss,bp+var_58))));	// 82662 mov     di, [bp+var_58] ;~ 2331:31FF
@@ -6770,7 +6770,7 @@ cs=0x2331;eip=0x003474; 	T(SHL(bx, 1));	// 83033 shl     bx, 1 ;~ 2331:3474
 cs=0x2331;eip=0x003476; 	T(MOV(ax, *(dw*)(raddr(ds,bx-0x33BE))));	// 83034 mov     ax, [bx-33BEh] ;~ 2331:3476
 cs=0x2331;eip=0x00347a; 	X(MOV(*(dw*)(raddr(ss,bp+var_54)), ax));	// 83035 mov     [bp+var_54], ax ;~ 2331:347A
 cs=0x2331;eip=0x00347d; 	R(CALL(sub_3318a,0));	// 83036 call    sub_3318A ;~ 2331:347D
-cs=0x2331;eip=0x003480; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 83037 cmp     word ptr unk_47B2E, 0 ;~ 2331:3480
+cs=0x2331;eip=0x003480; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 83037 cmp     word ptr byte_47B2E, 0 ;~ 2331:3480
 cs=0x2331;eip=0x003485; 	R(JNZ(loc_34d7b));	// 83038 jnz     short loc_34D7B ;~ 2331:3485
 cs=0x2331;eip=0x003487; 	T(MOV(al, 0x0D));	// 83039 mov     al, 0Dh ;~ 2331:3487
 cs=0x2331;eip=0x003489; 	R(JMP(loc_34d7d));	// 83040 jmp     short loc_34D7D ;~ 2331:3489
@@ -6953,7 +6953,7 @@ cs=0x2331;eip=0x00361d; 	X(POP(bp));	// 83221 pop     bp ;~ 2331:361D
 cs=0x2331;eip=0x00361e; 	R(RETN(2));	// 83222 retn    2 ;~ 2331:361E
 seg021_proc:
 	// 83226 
-cs=0x2331;eip=0x003621; 	X(PUSH(*(dw*)((&unk_5651a))));	// 83226 push    word ptr unk_5651A ;~ 2331:3621
+cs=0x2331;eip=0x003621; 	X(PUSH(word_5651a));	// 83226 push    word_5651A ;~ 2331:3621
 cs=0x2331;eip=0x003625; 	R(CALLF(sub_202f1,0));	// 83227 call    sub_202F1 ;~ 2331:3625
 cs=0x2331;eip=0x00362a; 	R(JMP(loc_34f34));	// 83228 jmp     short loc_34F34 ;~ 2331:362A
 loc_34f1c:
@@ -6975,13 +6975,13 @@ cs=0x2331;eip=0x00364e; 	R(JS(loc_34f1c));	// 83246 js      short loc_34F1C ;~ 2
 cs=0x2331;eip=0x003650; 	X(PUSH(*(dw*)((&unk_545f0))));	// 83247 push    word ptr unk_545F0 ;~ 2331:3650
 cs=0x2331;eip=0x003654; 	R(CALL(sub_34d59,0));	// 83248 call    sub_34D59 ;~ 2331:3654
 cs=0x2331;eip=0x003657; 	T(MOV(ax, 1));	// 83249 mov     ax, 1 ;~ 2331:3657
-cs=0x2331;eip=0x00365a; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 83250 sub     ax, word ptr unk_5651A ;~ 2331:365A
+cs=0x2331;eip=0x00365a; 	T(SUB(ax, word_5651a));	// 83250 sub     ax, word_5651A ;~ 2331:365A
 cs=0x2331;eip=0x00365e; 	X(PUSH(ax));	// 83251 push    ax ;~ 2331:365E
 cs=0x2331;eip=0x00365f; 	R(CALLF(sub_202f1,0));	// 83252 call    sub_202F1 ;~ 2331:365F
 cs=0x2331;eip=0x003664; 	R(RETN(0));	// 83253 retn ;~ 2331:3664
 sub_34f55:
 	// 83258 
-cs=0x2331;eip=0x003665; 	X(PUSH(*(dw*)((&unk_5651a))));	// 83259 push    word ptr unk_5651A ;~ 2331:3665
+cs=0x2331;eip=0x003665; 	X(PUSH(word_5651a));	// 83259 push    word_5651A ;~ 2331:3665
 cs=0x2331;eip=0x003669; 	R(CALLF(sub_202f1,0));	// 83260 call    sub_202F1 ;~ 2331:3669
 cs=0x2331;eip=0x00366e; 	T(MOV(bx, *(dw*)((&unk_545f0))));	// 83261 mov     bx, word ptr unk_545F0 ;~ 2331:366E
 cs=0x2331;eip=0x003672; 	T(SHL(bx, 1));	// 83262 shl     bx, 1 ;~ 2331:3672
@@ -6999,7 +6999,7 @@ loc_34f82:
 cs=0x2331;eip=0x003692; 	X(PUSH(*(dw*)((&unk_545f0))));	// 83274 push    word ptr unk_545F0 ;~ 2331:3692
 cs=0x2331;eip=0x003696; 	R(CALL(sub_34d59,0));	// 83275 call    sub_34D59 ;~ 2331:3696
 cs=0x2331;eip=0x003699; 	T(MOV(ax, 1));	// 83276 mov     ax, 1 ;~ 2331:3699
-cs=0x2331;eip=0x00369c; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 83277 sub     ax, word ptr unk_5651A ;~ 2331:369C
+cs=0x2331;eip=0x00369c; 	T(SUB(ax, word_5651a));	// 83277 sub     ax, word_5651A ;~ 2331:369C
 cs=0x2331;eip=0x0036a0; 	X(PUSH(ax));	// 83278 push    ax ;~ 2331:36A0
 cs=0x2331;eip=0x0036a1; 	R(CALLF(sub_202f1,0));	// 83279 call    sub_202F1 ;~ 2331:36A1
 cs=0x2331;eip=0x0036a6; 	R(RETN(0));	// 83280 retn ;~ 2331:36A6
@@ -7009,7 +7009,7 @@ cs=0x2331;eip=0x0036a7; 	X(PUSH(bp));	// 83289 push    bp ;~ 2331:36A7
 cs=0x2331;eip=0x0036a8; 	T(MOV(bp, sp));	// 83290 mov     bp, sp ;~ 2331:36A8
 cs=0x2331;eip=0x0036aa; 	T(SUB(sp, 2));	// 83291 sub     sp, 2 ;~ 2331:36AA
 cs=0x2331;eip=0x0036ad; 	X(PUSH(si));	// 83292 push    si ;~ 2331:36AD
-cs=0x2331;eip=0x0036ae; 	X(PUSH(*(dw*)((&unk_5651a))));	// 83293 push    word ptr unk_5651A ;~ 2331:36AE
+cs=0x2331;eip=0x0036ae; 	X(PUSH(word_5651a));	// 83293 push    word_5651A ;~ 2331:36AE
 cs=0x2331;eip=0x0036b2; 	R(CALLF(sub_202f1,0));	// 83294 call    sub_202F1 ;~ 2331:36B2
 cs=0x2331;eip=0x0036b7; 	T(MOV(si, *(dw*)((&unk_545f0))));	// 83295 mov     si, word ptr unk_545F0 ;~ 2331:36B7
 cs=0x2331;eip=0x0036bb; 	X(DEC(*(dw*)((&unk_545f0))));	// 83296 dec     word ptr unk_545F0 ;~ 2331:36BB
@@ -7026,7 +7026,7 @@ cs=0x2331;eip=0x0036d3; 	R(CALL(sub_34d59,0));	// 83306 call    sub_34D59 ;~ 233
 cs=0x2331;eip=0x0036d6; 	X(PUSH(si));	// 83307 push    si ;~ 2331:36D6
 cs=0x2331;eip=0x0036d7; 	R(CALL(sub_34d59,0));	// 83308 call    sub_34D59 ;~ 2331:36D7
 cs=0x2331;eip=0x0036da; 	T(MOV(ax, 1));	// 83309 mov     ax, 1 ;~ 2331:36DA
-cs=0x2331;eip=0x0036dd; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 83310 sub     ax, word ptr unk_5651A ;~ 2331:36DD
+cs=0x2331;eip=0x0036dd; 	T(SUB(ax, word_5651a));	// 83310 sub     ax, word_5651A ;~ 2331:36DD
 cs=0x2331;eip=0x0036e1; 	X(PUSH(ax));	// 83311 push    ax ;~ 2331:36E1
 cs=0x2331;eip=0x0036e2; 	R(CALLF(sub_202f1,0));	// 83312 call    sub_202F1 ;~ 2331:36E2
 cs=0x2331;eip=0x0036e7; 	X(POP(si));	// 83313 pop     si ;~ 2331:36E7
@@ -7039,7 +7039,7 @@ cs=0x2331;eip=0x0036ec; 	X(PUSH(bp));	// 83325 push    bp ;~ 2331:36EC
 cs=0x2331;eip=0x0036ed; 	T(MOV(bp, sp));	// 83326 mov     bp, sp ;~ 2331:36ED
 cs=0x2331;eip=0x0036ef; 	T(SUB(sp, 2));	// 83327 sub     sp, 2 ;~ 2331:36EF
 cs=0x2331;eip=0x0036f2; 	X(PUSH(si));	// 83328 push    si ;~ 2331:36F2
-cs=0x2331;eip=0x0036f3; 	X(PUSH(*(dw*)((&unk_5651a))));	// 83329 push    word ptr unk_5651A ;~ 2331:36F3
+cs=0x2331;eip=0x0036f3; 	X(PUSH(word_5651a));	// 83329 push    word_5651A ;~ 2331:36F3
 cs=0x2331;eip=0x0036f7; 	R(CALLF(sub_202f1,0));	// 83330 call    sub_202F1 ;~ 2331:36F7
 cs=0x2331;eip=0x0036fc; 	T(MOV(si, *(dw*)((&unk_545f0))));	// 83331 mov     si, word ptr unk_545F0 ;~ 2331:36FC
 cs=0x2331;eip=0x003700; 	T(MOV(bx, *(dw*)((&unk_47ab2))));	// 83332 mov     bx, word ptr unk_47AB2 ;~ 2331:3700
@@ -7056,7 +7056,7 @@ cs=0x2331;eip=0x00371e; 	R(CALL(sub_34d59,0));	// 83342 call    sub_34D59 ;~ 233
 cs=0x2331;eip=0x003721; 	X(PUSH(si));	// 83343 push    si ;~ 2331:3721
 cs=0x2331;eip=0x003722; 	R(CALL(sub_34d59,0));	// 83344 call    sub_34D59 ;~ 2331:3722
 cs=0x2331;eip=0x003725; 	T(MOV(ax, 1));	// 83345 mov     ax, 1 ;~ 2331:3725
-cs=0x2331;eip=0x003728; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 83346 sub     ax, word ptr unk_5651A ;~ 2331:3728
+cs=0x2331;eip=0x003728; 	T(SUB(ax, word_5651a));	// 83346 sub     ax, word_5651A ;~ 2331:3728
 cs=0x2331;eip=0x00372c; 	X(PUSH(ax));	// 83347 push    ax ;~ 2331:372C
 cs=0x2331;eip=0x00372d; 	R(CALLF(sub_202f1,0));	// 83348 call    sub_202F1 ;~ 2331:372D
 cs=0x2331;eip=0x003732; 	X(POP(si));	// 83349 pop     si ;~ 2331:3732
@@ -7671,7 +7671,7 @@ cs=0x2331;eip=0x003787; 	R(RETF(0));	// 83421 retf ;~ 2331:3787
         case m2c::ksub_34fdc: 	goto sub_34fdc;
         case m2c::ksub_35027: 	goto sub_35027;
         case m2c::ksub_35067: 	goto sub_35067;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

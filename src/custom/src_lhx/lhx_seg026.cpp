@@ -2558,8 +2558,8 @@ cs=0x28f0;eip=0x001693; 	X(MOV(*(dw*)((&unk_57116)), ax));	// 90997 mov     word
 cs=0x28f0;eip=0x001696; 	T(MOV(ax, *(dw*)((&unk_57056))));	// 90998 mov     ax, word ptr unk_57056 ;~ 28F0:1696
 cs=0x28f0;eip=0x001699; 	X(MOV(*(dw*)((&unk_57111)), ax));	// 90999 mov     word ptr unk_57111, ax ;~ 28F0:1699
 cs=0x28f0;eip=0x00169c; 	T(LES(bx, *(dd*)(raddr(ss,bp+arg_0))));	// 91000 les     bx, [bp+arg_0] ;~ 28F0:169C
-cs=0x28f0;eip=0x00169f; 	T(MOV(ax, *(dw*)((&unk_5705a))));	// 91001 mov     ax, word ptr unk_5705A ;~ 28F0:169F
-cs=0x28f0;eip=0x0016a2; 	T(MOV(dx, *(dw*)((&unk_5705c))));	// 91002 mov     dx, word ptr unk_5705C ;~ 28F0:16A2
+cs=0x28f0;eip=0x00169f; 	T(MOV(ax, word_5705a));	// 91001 mov     ax, word_5705A ;~ 28F0:169F
+cs=0x28f0;eip=0x0016a2; 	T(MOV(dx, word_5705c));	// 91002 mov     dx, word_5705C ;~ 28F0:16A2
 cs=0x28f0;eip=0x0016a6; 	X(MOV(*(dw*)(raddr(es,bx+0x318)), ax));	// 91003 mov     es:[bx+318h], ax ;~ 28F0:16A6
 cs=0x28f0;eip=0x0016ab; 	X(MOV(*(dw*)(raddr(es,bx+0x31A)), dx));	// 91004 mov     es:[bx+31Ah], dx ;~ 28F0:16AB
 cs=0x28f0;eip=0x0016b0; 	X(PUSH(es));	// 91005 push    es ;~ 28F0:16B0
@@ -9867,8 +9867,8 @@ cs=0x28f0;eip=0x005857; 	R(JMP(loc_3cf13));	// 98814 jmp     loc_3CF13 ;~ 28F0:5
 loc_3cd3a:
 	// 10663 
 cs=0x28f0;eip=0x00585a; 	T(LES(bx, *(dd*)(raddr(ss,bp+arg_0))));	// 98819 les     bx, [bp+arg_0] ;~ 28F0:585A
-cs=0x28f0;eip=0x00585d; 	T(MOV(ax, *(dw*)((&unk_5705a))));	// 98820 mov     ax, word ptr unk_5705A ;~ 28F0:585D
-cs=0x28f0;eip=0x005860; 	T(MOV(dx, *(dw*)((&unk_5705c))));	// 98821 mov     dx, word ptr unk_5705C ;~ 28F0:5860
+cs=0x28f0;eip=0x00585d; 	T(MOV(ax, word_5705a));	// 98820 mov     ax, word_5705A ;~ 28F0:585D
+cs=0x28f0;eip=0x005860; 	T(MOV(dx, word_5705c));	// 98821 mov     dx, word_5705C ;~ 28F0:5860
 cs=0x28f0;eip=0x005864; 	T(CMP(*(dw*)(raddr(es,bx+0x1F6)), dx));	// 98822 cmp     es:[bx+1F6h], dx ;~ 28F0:5864
 cs=0x28f0;eip=0x005869; 	R(JLE(loc_3cd4e));	// 98823 jle     short loc_3CD4E ;~ 28F0:5869
 cs=0x28f0;eip=0x00586b; 	R(JMP(loc_3cf13));	// 98824 jmp     loc_3CF13 ;~ 28F0:586B
@@ -9880,8 +9880,8 @@ cs=0x28f0;eip=0x005875; 	R(JBE(loc_3cd5a));	// 98830 jbe     short loc_3CD5A ;~ 
 cs=0x28f0;eip=0x005877; 	R(JMP(loc_3cf13));	// 98831 jmp     loc_3CF13 ;~ 28F0:5877
 loc_3cd5a:
 	// 10665 
-cs=0x28f0;eip=0x00587a; 	T(MOV(ax, *(dw*)((&unk_5705a))));	// 98836 mov     ax, word ptr unk_5705A ;~ 28F0:587A
-cs=0x28f0;eip=0x00587d; 	T(MOV(dx, *(dw*)((&unk_5705c))));	// 98837 mov     dx, word ptr unk_5705C ;~ 28F0:587D
+cs=0x28f0;eip=0x00587a; 	T(MOV(ax, word_5705a));	// 98836 mov     ax, word_5705A ;~ 28F0:587A
+cs=0x28f0;eip=0x00587d; 	T(MOV(dx, word_5705c));	// 98837 mov     dx, word_5705C ;~ 28F0:587D
 cs=0x28f0;eip=0x005881; 	T(CMP(*(dw*)(raddr(es,bx+0x1FA)), dx));	// 98838 cmp     es:[bx+1FAh], dx ;~ 28F0:5881
 cs=0x28f0;eip=0x005886; 	R(JL(loc_3cda9));	// 98839 jl      short loc_3CDA9 ;~ 28F0:5886
 cs=0x28f0;eip=0x005888; 	R(JG(loc_3cd71));	// 98840 jg      short loc_3CD71 ;~ 28F0:5888
@@ -9919,8 +9919,8 @@ cs=0x28f0;eip=0x0058c9; 	T(MOV(ax, 0x200));	// 98873 mov     ax, 200h ;~ 28F0:58
 cs=0x28f0;eip=0x0058cc; 	X(PUSH(ax));	// 98874 push    ax ;~ 28F0:58CC
 cs=0x28f0;eip=0x0058cd; 	R(CALLF(sub_2937a,0));	// 98875 call    sub_2937A ;~ 28F0:58CD
 cs=0x28f0;eip=0x0058d2; 	T(CWD);	// 98876 cwd ;~ 28F0:58D2
-cs=0x28f0;eip=0x0058d3; 	T(ADD(ax, *(dw*)((&unk_5705a))));	// 98877 add     ax, word ptr unk_5705A ;~ 28F0:58D3
-cs=0x28f0;eip=0x0058d7; 	T(ADC(dx, *(dw*)((&unk_5705c))));	// 98878 adc     dx, word ptr unk_5705C ;~ 28F0:58D7
+cs=0x28f0;eip=0x0058d3; 	T(ADD(ax, word_5705a));	// 98877 add     ax, word_5705A ;~ 28F0:58D3
+cs=0x28f0;eip=0x0058d7; 	T(ADC(dx, word_5705c));	// 98878 adc     dx, word_5705C ;~ 28F0:58D7
 cs=0x28f0;eip=0x0058db; 	T(LES(bx, *(dd*)(raddr(ss,bp+arg_0))));	// 98879 les     bx, [bp+arg_0] ;~ 28F0:58DB
 cs=0x28f0;eip=0x0058de; 	X(MOV(*(dw*)(raddr(es,bx+0x1F4)), ax));	// 98880 mov     es:[bx+1F4h], ax ;~ 28F0:58DE
 cs=0x28f0;eip=0x0058e3; 	X(MOV(*(dw*)(raddr(es,bx+0x1F6)), dx));	// 98881 mov     es:[bx+1F6h], dx ;~ 28F0:58E3
@@ -11142,7 +11142,7 @@ cs=0x28f0;eip=0x005d01; 	R(RETN(4));	// 99364 retn    4 ;~ 28F0:5D01
         case m2c::ksub_3cc2d: 	goto sub_3cc2d;
         case m2c::ksub_3ccd7: 	goto sub_3ccd7;
         case m2c::ksub_3cf1a: 	goto sub_3cf1a;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

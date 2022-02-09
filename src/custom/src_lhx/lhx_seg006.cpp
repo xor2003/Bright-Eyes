@@ -89,7 +89,7 @@ cs=0x1fed;eip=0x00009f; 	T(ADD(di, *(dw*)(raddr(ss,bp+arg_4))));	// 67568 add   
 cs=0x1fed;eip=0x0000a2; 	T(MOV(cx, *(dw*)((&unk_47ff2))));	// 67569 mov     cx, word ptr unk_47FF2 ;~ 1FED:00A2
 	// 67570 rep stosb ;~ 1FED:00A6
 cs=0x1fed;eip=0x0000a6; 	X(	REP STOSB);	// 67570 rep stosb ;~ 1FED:00A6
-cs=0x1fed;eip=0x0000a8; 	T(MOV(bx, *(dw*)((&unk_47b2e))));	// 67571 mov     bx, word ptr unk_47B2E ;~ 1FED:00A8
+cs=0x1fed;eip=0x0000a8; 	T(MOV(bx, *(dw*)((&byte_47b2e))));	// 67571 mov     bx, word ptr byte_47B2E ;~ 1FED:00A8
 cs=0x1fed;eip=0x0000ac; 	T(SHL(bx, 1));	// 67572 shl     bx, 1 ;~ 1FED:00AC
 cs=0x1fed;eip=0x0000ae; 	R(CALL(__dispatch_call,*(dw*)(((db*)&off_47fc8)+bx)));	// 67573 call    off_47FC8[bx] ;~ 1FED:00AE
 loc_2e562:
@@ -489,7 +489,7 @@ cs=0x1fed;eip=0x0003d9; 	R(RETN(0));	// 67979 retn ;~ 1FED:03D9
         case m2c::ksub_2e621: 	goto sub_2e621;
         case m2c::ksub_2e6a8: 	goto sub_2e6a8;
         case m2c::ksub_2e757: 	goto sub_2e757;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

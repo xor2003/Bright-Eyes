@@ -392,9 +392,9 @@ cs=0x26a9;eip=0x0001e2; 	R(JNZ(loc_35257));	// 83714 jnz     short loc_35257 ;~ 
 cs=0x26a9;eip=0x0001e4; 	R(JMP(loc_355a6));	// 83715 jmp     loc_355A6 ;~ 26A9:01E4
 loc_35257:
 	// 9726 
-cs=0x26a9;eip=0x0001e7; 	X(PUSH(*(dw*)((&unk_5651a))));	// 83719 push    word ptr unk_5651A ;~ 26A9:01E7
+cs=0x26a9;eip=0x0001e7; 	X(PUSH(word_5651a));	// 83719 push    word_5651A ;~ 26A9:01E7
 cs=0x26a9;eip=0x0001eb; 	T(MOV(ax, 1));	// 83720 mov     ax, 1 ;~ 26A9:01EB
-cs=0x26a9;eip=0x0001ee; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 83721 sub     ax, word ptr unk_5651A ;~ 26A9:01EE
+cs=0x26a9;eip=0x0001ee; 	T(SUB(ax, word_5651a));	// 83721 sub     ax, word_5651A ;~ 26A9:01EE
 cs=0x26a9;eip=0x0001f2; 	X(PUSH(ax));	// 83722 push    ax ;~ 26A9:01F2
 cs=0x26a9;eip=0x0001f3; 	R(CALLF(sub_2c939,0));	// 83723 call    sub_2C939 ;~ 26A9:01F3
 cs=0x26a9;eip=0x0001f8; 	R(CALLF(sub_3101f,0));	// 83724 call    sub_3101F ;~ 26A9:01F8
@@ -438,7 +438,7 @@ loc_352c5:
 	// 9731 
 cs=0x26a9;eip=0x000255; 	T(CMP(*(dw*)((&unk_57058)), 2));	// 83766 cmp     word ptr unk_57058, 2 ;~ 26A9:0255
 cs=0x26a9;eip=0x00025a; 	R(JNC(loc_352e8));	// 83767 jnb     short loc_352E8 ;~ 26A9:025A
-cs=0x26a9;eip=0x00025c; 	X(PUSH(*(dw*)((&unk_5705a))));	// 83768 push    word ptr unk_5705A ;~ 26A9:025C
+cs=0x26a9;eip=0x00025c; 	X(PUSH(word_5705a));	// 83768 push    word_5705A ;~ 26A9:025C
 cs=0x26a9;eip=0x000260; 	T(MOV(ax, 0x0A0));	// 83769 mov     ax, 0A0h ; ' ' ;~ 26A9:0260
 cs=0x26a9;eip=0x000263; 	T(SUB(ax, *(dw*)(raddr(ss,bp+var_3e))));	// 83770 sub     ax, [bp+var_3E] ;~ 26A9:0263
 cs=0x26a9;eip=0x000266; 	X(PUSH(ax));	// 83771 push    ax ;~ 26A9:0266
@@ -1088,9 +1088,9 @@ cs=0x26a9;eip=0x0006ad; 	R(CALLF(sub_259bd,0));	// 84369 call    sub_259BD ;~ 26
 cs=0x26a9;eip=0x0006b2; 	T(MOV(ax, 0x0F6B2));	// 84370 mov     ax, 0F6B2h ;~ 26A9:06B2
 cs=0x26a9;eip=0x0006b5; 	X(PUSH(ax));	// 84371 push    ax ;~ 26A9:06B5
 cs=0x26a9;eip=0x0006b6; 	R(CALLF(sub_259bd,0));	// 84372 call    sub_259BD ;~ 26A9:06B6
-cs=0x26a9;eip=0x0006bb; 	T(CMP(*(dw*)((&unk_47b2e)), 4));	// 84373 cmp     word ptr unk_47B2E, 4 ;~ 26A9:06BB
+cs=0x26a9;eip=0x0006bb; 	T(CMP(*(dw*)((&byte_47b2e)), 4));	// 84373 cmp     word ptr byte_47B2E, 4 ;~ 26A9:06BB
 cs=0x26a9;eip=0x0006c0; 	R(JZ(loc_35739));	// 84374 jz      short loc_35739 ;~ 26A9:06C0
-cs=0x26a9;eip=0x0006c2; 	T(CMP(*(dw*)((&unk_47b2e)), 5));	// 84375 cmp     word ptr unk_47B2E, 5 ;~ 26A9:06C2
+cs=0x26a9;eip=0x0006c2; 	T(CMP(*(dw*)((&byte_47b2e)), 5));	// 84375 cmp     word ptr byte_47B2E, 5 ;~ 26A9:06C2
 cs=0x26a9;eip=0x0006c7; 	R(JNZ(loc_3573d));	// 84376 jnz     short loc_3573D ;~ 26A9:06C7
 loc_35739:
 	// 9778 
@@ -1368,7 +1368,7 @@ cs=0x26a9;eip=0x00093e; 	X(PUSH(*(dw*)((&unk_47b36))));	// 84653 push    word pt
 cs=0x26a9;eip=0x000942; 	R(CALLF(sub_2c4d3,0));	// 84654 call    sub_2C4D3 ;~ 26A9:0942
 loc_359b7:
 	// 9794 
-cs=0x26a9;eip=0x000947; 	T(TEST(unk_5687c, 2));	// 84657 test    byte ptr unk_5687C, 2 ;~ 26A9:0947
+cs=0x26a9;eip=0x000947; 	T(TEST(byte_5687c, 2));	// 84657 test    byte_5687C, 2 ;~ 26A9:0947
 cs=0x26a9;eip=0x00094c; 	R(JZ(loc_359c6));	// 84658 jz      short loc_359C6 ;~ 26A9:094C
 cs=0x26a9;eip=0x00094e; 	T(MOV(si, *(dw*)((&unk_5651c))));	// 84659 mov     si, word ptr unk_5651C ;~ 26A9:094E
 cs=0x26a9;eip=0x000952; 	X(MOV(*(raddr(ss,bp+si+var_34)), 1));	// 84660 mov     [bp+si+var_34], 1 ;~ 26A9:0952
@@ -1495,7 +1495,7 @@ cs=0x26a9;eip=0x000a62; 	R(JZ(loc_35af2));	// 84785 jz      short loc_35AF2 ;~ 2
 cs=0x26a9;eip=0x000a64; 	T(MOV(si, *(dw*)((&unk_5651c))));	// 84786 mov     si, word ptr unk_5651C ;~ 26A9:0A64
 cs=0x26a9;eip=0x000a68; 	T(CMP(*(raddr(ss,bp+si+var_34)), 0));	// 84787 cmp     [bp+si+var_34], 0 ;~ 26A9:0A68
 cs=0x26a9;eip=0x000a6c; 	R(JNZ(loc_35af2));	// 84788 jnz     short loc_35AF2 ;~ 26A9:0A6C
-cs=0x26a9;eip=0x000a6e; 	T(TEST(unk_5687c, 2));	// 84789 test    byte ptr unk_5687C, 2 ;~ 26A9:0A6E
+cs=0x26a9;eip=0x000a6e; 	T(TEST(byte_5687c, 2));	// 84789 test    byte_5687C, 2 ;~ 26A9:0A6E
 cs=0x26a9;eip=0x000a73; 	R(JNZ(loc_35af2));	// 84790 jnz     short loc_35AF2 ;~ 26A9:0A73
 cs=0x26a9;eip=0x000a75; 	R(CALLF(sub_203b0,0));	// 84791 call    sub_203B0 ;~ 26A9:0A75
 cs=0x26a9;eip=0x000a7a; 	T(MOV(si, *(dw*)((&unk_5651c))));	// 84792 mov     si, word ptr unk_5651C ;~ 26A9:0A7A
@@ -1694,7 +1694,7 @@ cs=0x26a9;eip=0x000b3d; 	R(RETF(0));	// 84883 retf ;~ 26A9:0B3D
         case m2c::ksub_35147: 	goto sub_35147;
         case m2c::ksub_355f8: 	goto sub_355f8;
         case m2c::ksub_35707: 	goto sub_35707;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

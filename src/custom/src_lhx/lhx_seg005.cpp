@@ -73,7 +73,7 @@ cs=0x1f7f;eip=0x00004d; 	X(PUSH(si));	// 66573 push    si ;~ 1F7F:004D
 cs=0x1f7f;eip=0x00004e; 	X(PUSH(di));	// 66574 push    di ;~ 1F7F:004E
 loc_2de1f:
 	// 8675 
-cs=0x1f7f;eip=0x00004f; 	T(MOV(bx, *(dw*)((&unk_47b2e))));	// 66577 mov     bx, word ptr unk_47B2E ;~ 1F7F:004F
+cs=0x1f7f;eip=0x00004f; 	T(MOV(bx, *(dw*)((&byte_47b2e))));	// 66577 mov     bx, word ptr byte_47B2E ;~ 1F7F:004F
 cs=0x1f7f;eip=0x000053; 	T(SHL(bx, 1));	// 66578 shl     bx, 1 ;~ 1F7F:0053
 cs=0x1f7f;eip=0x000055; 	T(CMP(unk_56885, 0));	// 66579 cmp     byte ptr unk_56885, 0 ;~ 1F7F:0055
 cs=0x1f7f;eip=0x00005a; 	R(JNZ(loc_2de30));	// 66580 jnz     short loc_2DE30 ;~ 1F7F:005A
@@ -657,7 +657,7 @@ cs=0x1f7f;eip=0x0004e4; 	X(POP(bp));	// 67221 pop     bp ;~ 1F7F:04E4
 cs=0x1f7f;eip=0x0004e5; 	R(RETF(6));	// 67222 retf    6 ;~ 1F7F:04E5
 loc_2e2b8:
 	// 8718 
-cs=0x1f7f;eip=0x0004e8; 	T(MOV(si, *(dw*)((&unk_47b2e))));	// 67226 mov     si, word ptr unk_47B2E ;~ 1F7F:04E8
+cs=0x1f7f;eip=0x0004e8; 	T(MOV(si, *(dw*)((&byte_47b2e))));	// 67226 mov     si, word ptr byte_47B2E ;~ 1F7F:04E8
 cs=0x1f7f;eip=0x0004ec; 	T(SHL(si, 1));	// 67227 shl     si, 1 ;~ 1F7F:04EC
 cs=0x1f7f;eip=0x0004ee; 	T(CMP(unk_56885, 0));	// 67228 cmp     byte ptr unk_56885, 0 ;~ 1F7F:04EE
 cs=0x1f7f;eip=0x0004f3; 	R(JZ(loc_2e2de));	// 67229 jz      short loc_2E2DE ;~ 1F7F:04F3
@@ -961,7 +961,7 @@ cs=0x1f7f;eip=0x0006dd; 	R(RETF(6));	// 67486 retf    6 ;~ 1F7F:06DD
         case m2c::kseg005_proc: 	goto seg005_proc;
         case m2c::ksub_2de1a: 	goto sub_2de1a;
         case m2c::ksub_2e285: 	goto sub_2e285;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

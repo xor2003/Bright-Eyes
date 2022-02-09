@@ -151,7 +151,7 @@ cs=0x1f3e;eip=0x0000ec; 	T(MOV(dx, *(dw*)(raddr(ss,bp+var_238))));	// 65988 mov 
 cs=0x1f3e;eip=0x0000f0; 	X(MOV(*(dw*)((dw*)(raddr(ss,bp+var_4))), ax));	// 65989 mov     word ptr [bp+var_4], ax ;~ 1F3E:00F0
 cs=0x1f3e;eip=0x0000f3; 	X(MOV(*(dw*)((dw*)(raddr(ss,bp+var_4+2))), dx));	// 65990 mov     word ptr [bp+var_4+2], dx ;~ 1F3E:00F3
 cs=0x1f3e;eip=0x0000f6; 	T(MOV(si, 6));	// 65991 mov     si, 6 ;~ 1F3E:00F6
-cs=0x1f3e;eip=0x0000f9; 	T(MOV(di, *(dw*)((&unk_47b2e))));	// 65992 mov     di, word ptr unk_47B2E ;~ 1F3E:00F9
+cs=0x1f3e;eip=0x0000f9; 	T(MOV(di, *(dw*)((&byte_47b2e))));	// 65992 mov     di, word ptr byte_47B2E ;~ 1F3E:00F9
 loc_2dabd:
 	// 8654 
 cs=0x1f3e;eip=0x0000fd; 	T(LES(bx, *(dd*)(raddr(ss,bp+var_8))));	// 65995 les     bx, [bp+var_8] ;~ 1F3E:00FD
@@ -648,7 +648,7 @@ cs=0x1f3e;eip=0x000410; 	R(RETF(0));	// 66507 retf ;~ 1F3E:0410
         case m2c::ksub_2dd68: 	goto sub_2dd68;
         case m2c::ksub_2dd9d: 	goto sub_2dd9d;
         case m2c::ksub_2ddba: 	goto sub_2ddba;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

@@ -195,7 +195,7 @@ cs=0x2243;eip=0x000105; 	R(RETN(6));	// 73664 retn    6 ;~ 2243:0105
         case m2c::kseg017_proc: 	goto seg017_proc;
         case m2c::ksub_30a14: 	goto sub_30a14;
         case m2c::ksub_30a28: 	goto sub_30a28;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

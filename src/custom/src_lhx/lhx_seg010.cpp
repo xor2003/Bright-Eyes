@@ -1213,7 +1213,6 @@ cs=0x2088;eip=0x00068c; 	R(RETF(0));	// 70139 retf ;~ 2088:068C
         case m2c::knullsub_12: 	goto nullsub_12;
         case m2c::knullsub_17: 	goto nullsub_17;
         case m2c::kret_2088_5d0: 	goto ret_2088_5d0;
-  //      case m2c::kseg010_proc: 	goto seg010_proc;
         case m2c::ksub_2ee6e: 	goto sub_2ee6e;
         case m2c::ksub_2ee71: 	goto sub_2ee71;
         case m2c::ksub_2eee2: 	goto sub_2eee2;
@@ -1240,7 +1239,7 @@ cs=0x2088;eip=0x00068c; 	R(RETF(0));	// 70139 retf ;~ 2088:068C
         case m2c::ksub_2f484: 	goto sub_2f484;
         case m2c::ksub_2f4a4: 	goto sub_2f4a4;
         case m2c::ksub_2f4c2: 	goto sub_2f4c2;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

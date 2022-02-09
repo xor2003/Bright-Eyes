@@ -6,7 +6,9 @@
 
 #include "lhx.h"
 
-namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
+
+                 void start(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kstart, _state);}
+                namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 
 
  void nullsub_1(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::knullsub_1, _state);}
@@ -75,11 +77,13 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 
  void seg026_proc(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kseg026_proc, _state);}
 
+ void seg027_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg027_proc, _state);}
+
  void seg029_proc(m2c::_offsets, struct m2c::_STATE* _state){_group27(m2c::kseg029_proc, _state);}
 
  void seg031_proc(m2c::_offsets, struct m2c::_STATE* _state){_group29(m2c::kseg031_proc, _state);}
 
- void start(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kstart, _state);}
+
 
  void sub_10000(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10000, _state);}
 
@@ -2469,7 +2473,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_12242: 	_group2(__disp, _state); break;
         case m2c::kloc_12263: 	_group2(__disp, _state); break;
         case m2c::kloc_1231a: 	_group2(__disp, _state); break;
-        case m2c::kloc_12322: 	_group2(__disp, _state); break;
         case m2c::kloc_12360: 	_group2(__disp, _state); break;
         case m2c::kloc_1236f: 	_group2(__disp, _state); break;
         case m2c::kloc_12375: 	_group2(__disp, _state); break;
@@ -4385,7 +4388,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::knullsub_3: 	_group2(__disp, _state); break;
         case m2c::knullsub_4: 	_group2(__disp, _state); break;
         case m2c::kret_210_127: 	_group2(__disp, _state); break;
-//        case m2c::kseg002_proc: 	_group2(__disp, _state); break;
+        case m2c::kseg002_proc: 	_group2(__disp, _state); break;
         case m2c::ksub_106e4: 	_group2(__disp, _state); break;
         case m2c::ksub_11b92: 	_group2(__disp, _state); break;
         case m2c::ksub_11bdc: 	_group2(__disp, _state); break;
@@ -7223,7 +7226,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::knullsub_12: 	_group9(__disp, _state); break;
         case m2c::knullsub_17: 	_group9(__disp, _state); break;
         case m2c::kret_2088_5d0: 	_group9(__disp, _state); break;
-  //      case m2c::kseg010_proc: 	_group9(__disp, _state); break;
         case m2c::ksub_2ee6e: 	_group9(__disp, _state); break;
         case m2c::ksub_2ee71: 	_group9(__disp, _state); break;
         case m2c::ksub_2eee2: 	_group9(__disp, _state); break;
@@ -8399,7 +8401,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_365ba: 	_group21(__disp, _state); break;
         case m2c::kloc_3660f: 	_group21(__disp, _state); break;
         case m2c::kloc_36610: 	_group21(__disp, _state); break;
-        case m2c::kloc_36614: 	_group21(__disp, _state); break;
         case m2c::kloc_36640: 	_group21(__disp, _state); break;
         case m2c::kloc_36643: 	_group21(__disp, _state); break;
         case m2c::kloc_36658: 	_group21(__disp, _state); break;
@@ -8449,7 +8450,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_36aeb: 	_group21(__disp, _state); break;
         case m2c::klocret_35c43: 	_group21(__disp, _state); break;
         case m2c::klocret_3609d: 	_group21(__disp, _state); break;
-    //    case m2c::kseg023_proc: 	_group21(__disp, _state); break;
+        case m2c::kseg023_proc: 	_group21(__disp, _state); break;
         case m2c::ksub_35bae: 	_group21(__disp, _state); break;
         case m2c::ksub_35bc3: 	_group21(__disp, _state); break;
         case m2c::ksub_35c17: 	_group21(__disp, _state); break;
@@ -9348,6 +9349,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::ksub_3cc2d: 	_group24(__disp, _state); break;
         case m2c::ksub_3ccd7: 	_group24(__disp, _state); break;
         case m2c::ksub_3cf1a: 	_group24(__disp, _state); break;
+        case m2c::kloc_3d270: 	_group25(__disp, _state); break;
+        case m2c::kloc_3d2b6: 	_group25(__disp, _state); break;
+        case m2c::kloc_3d2e2: 	_group25(__disp, _state); break;
+        case m2c::kloc_3d2f1: 	_group25(__disp, _state); break;
+        case m2c::kloc_3d2f4: 	_group25(__disp, _state); break;
+        case m2c::kloc_3d311: 	_group25(__disp, _state); break;
         case m2c::kloc_3d355: 	_group25(__disp, _state); break;
         case m2c::kloc_3d36d: 	_group25(__disp, _state); break;
         case m2c::kloc_3d384: 	_group25(__disp, _state); break;
@@ -9365,6 +9372,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_3d478: 	_group25(__disp, _state); break;
         case m2c::klocret_3d3a0: 	_group25(__disp, _state); break;
         case m2c::klocret_3d47f: 	_group25(__disp, _state); break;
+        case m2c::kseg027_proc: 	_group25(__disp, _state); break;
         case m2c::ksub_3d1e6: 	_group25(__disp, _state); break;
         case m2c::ksub_3d237: 	_group25(__disp, _state); break;
         case m2c::ksub_3d324: 	_group25(__disp, _state); break;
@@ -9464,7 +9472,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_3ddc8: 	_group27(__disp, _state); break;
         case m2c::kloc_3ddea: 	_group27(__disp, _state); break;
         case m2c::kloc_3de12: 	_group27(__disp, _state); break;
-        case m2c::kloc_3de16: 	_group27(__disp, _state); break;
         case m2c::kloc_3de3a: 	_group27(__disp, _state); break;
         case m2c::kloc_3de3c: 	_group27(__disp, _state); break;
         case m2c::kloc_3de46: 	_group27(__disp, _state); break;
@@ -9511,7 +9518,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::klocret_3df4d: 	_group27(__disp, _state); break;
         case m2c::klocret_3e276: 	_group27(__disp, _state); break;
         case m2c::kret_2f3d_59e: 	_group27(__disp, _state); break;
-      //  case m2c::kseg029_proc: 	_group27(__disp, _state); break;
+        case m2c::kseg029_proc: 	_group27(__disp, _state); break;
         case m2c::ksub_3d9b2: 	_group27(__disp, _state); break;
         case m2c::ksub_3da0d: 	_group27(__disp, _state); break;
         case m2c::ksub_3da51: 	_group27(__disp, _state); break;
@@ -9745,7 +9752,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::ksub_106cc: 	sub_106cc(0, _state); break;
         case m2c::ksub_2edd8: 	sub_2edd8(0, _state); break;
         case m2c::ksub_2f4ee: 	sub_2f4ee(0, _state); break;
-        default: m2c::log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to call to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
      };
      return true;
 }
@@ -10302,28 +10309,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999=m2c::kloc_37247;MYCOPY(dummy0_28c63)} // 2879:04d3
     {dw tmp999=m2c::kloc_370da;MYCOPY(dummy0_28c65)} // 2879:04d5
     {dw tmp999=0;MYCOPY(word_3d1e4)} // 2ec0:0004
-
-    {db tmp999[12]={80,176,1,46,134,6,125,0,10,192,116,6};MYCOPY(byte_3d25e)} // 2ec0:007e
-    {db tmp999[10]={176,32,230,32,88,207,83,81,82,86};MYCOPY(dummy0_2ec8a)} // 2ec0:007e
-    {db tmp999[6]={87,85,30,6,251,184};MYCOPY(dummy0_2ec94)} // 2ec0:007e
-    {dw tmp999=seg_offset(dseg);MYCOPY(dummy0_2ec9a)} // 2ec0:009a
-    {db tmp999[11]={142,216,255,6,188,50,131,6,46,246,1};MYCOPY(dummy0_2ec9c)} // 2ec0:009c
-    {db tmp999[11]={131,22,48,246,0,252,198,6,186,50,1};MYCOPY(dummy0_2eca7)} // 2ec0:009c
-    {db tmp999[11]={80,83,81,82,86,87,85,30,154,200,1};MYCOPY(dummy0_2ecb2)} // 2ec0:009c
-    {dw tmp999=seg_offset(seg025);MYCOPY(dummy0_2ecbd)} // 2ec0:00bd
-    {db tmp999[10]={31,93,95,94,90,89,91,88,252,254};MYCOPY(dummy0_2ecbf)} // 2ec0:00bf
-    {db tmp999[11]={14,174,50,121,8,198,6,174,50,7,232};MYCOPY(dummy0_2ecc9)} // 2ec0:00bf
-    {db tmp999[11]={99,1,128,62,84,216,1,117,55,254,14};MYCOPY(dummy0_2ecd4)} // 2ec0:00bf
-    {db tmp999[11]={175,50,121,49,198,6,175,50,3,51,192};MYCOPY(dummy0_2ecdf)} // 2ec0:00bf
-    {db tmp999[4]={80,154,40,1};MYCOPY(dummy0_2ecea)} // 2ec0:00bf
-    {dw tmp999=seg_offset(seg012);MYCOPY(dummy0_2ecee)} // 2ec0:00ee
-    {db tmp999[11]={131,196,2,168,1,116,11,246,6,226,234};MYCOPY(dummy0_2ecf0)} // 2ec0:00f0
-    {db tmp999[13]={1,117,4,254,6,4,1,168,2,116,11,246,6};MYCOPY(dummy0_2ecfb)} // 2ec0:00f0
-    {db tmp999[12]={226,234,2,117,4,254,6,5,1,162,226,234};MYCOPY(dummy0_2ed08)} // 2ec0:00f0
-    {db tmp999[11]={7,31,93,95,94,90,89,91,46,129,46};MYCOPY(dummy0_2ed14)} // 2ec0:00f0
-    {db tmp999[11]={4,0,182,0,120,12,176,32,230,32,88};MYCOPY(dummy0_2ed1f)} // 2ec0:00f0
-    {db tmp999[13]={46,198,6,125,0,0,207,46,129,6,4,0,0};MYCOPY(dummy0_2ed2a)} // 2ec0:00f0
-    {db tmp999[9]={10,88,46,198,6,125,0,0,234};MYCOPY(dummy0_2ed37)} // 2ec0:00f0
+    {db tmp999=0;MYCOPY(byte_3d25d)} // 2ec0:007d
+    {db tmp999=234;MYCOPY(dummy0_2ed3f)} // 2ec0:013f
     {dw tmp999=0;MYCOPY(word_3d320)} // 2ec0:0140
     {dw tmp999=0;MYCOPY(word_3d322)} // 2ec0:0142
     {db tmp999=144;MYCOPY(dummy0_2fe9a)} // 2fe6:003a
@@ -10427,15 +10414,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=63;MYCOPY(dummy0_31ca4)} // 3170:05a4
     {db tmp999=255;MYCOPY(dummy0_31ca5)} // 3170:05a5
     {db tmp999=63;MYCOPY(dummy0_31ca6)} // 3170:05a6
-
-
-
-
-
-
-
-
-
     {db tmp999[32]={82,61,49,127,162,128,22,237,191,66,65,92,94,12,38,146,139,165,45,72,217,100,173,130,121,225,75,33,76,129,54,215};MYCOPY(dummy0_31cb0)} // 31cb:0000
     {db tmp999[32]={207,151,177,174,203,247,155,106,89,12,52,133,137,113,147,21,197,107,172,7,127,60,62,164,105,218,30,24,209,155,127,213};MYCOPY(dummy0_31cd0)} // 31cb:0020
     {db tmp999[32]={0};MYCOPY(dummy0_31cf0)} // 31cf:0000
@@ -10481,10 +10459,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=1;MYCOPY(dummy0_3207c)} // 31f3:014c
     {db tmp999=172;MYCOPY(dummy0_3207d)} // 31f3:014d
     {db tmp999=69;MYCOPY(dummy0_3207e)} // 31f3:014e
-
     {db tmp999=112;MYCOPY(dummy0_32080)} // 31f3:0150
     {db tmp999=27;MYCOPY(dummy0_32081)} // 31f3:0151
-
     {db tmp999=12;MYCOPY(dummy0_32083)} // 31f3:0153
     {db tmp999=32;MYCOPY(dummy0_32084)} // 31f3:0154
     {db tmp999=1;MYCOPY(dummy0_32085)} // 31f3:0155
@@ -10505,7 +10481,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=30;MYCOPY(dummy0_320b3)} // 31f3:0183
     {db tmp999=10;MYCOPY(dummy0_320b4)} // 31f3:0184
     {db tmp999=10;MYCOPY(dummy0_320b5)} // 31f3:0185
-
     {db tmp999=33;MYCOPY(dummy0_320b7)} // 31f3:0187
     {db tmp999=10;MYCOPY(dummy0_320b8)} // 31f3:0188
     {db tmp999=5;MYCOPY(dummy0_320b9)} // 31f3:0189
@@ -10519,34 +10494,24 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=10;MYCOPY(dummy0_320c1)} // 31f3:0191
     {db tmp999=10;MYCOPY(dummy0_320c2)} // 31f3:0192
     {db tmp999=38;MYCOPY(dummy0_320c3)} // 31f3:0193
-
     {db tmp999=5;MYCOPY(dummy0_320c5)} // 31f3:0195
     {db tmp999=5;MYCOPY(dummy0_320c6)} // 31f3:0196
     {db tmp999=39;MYCOPY(dummy0_320c7)} // 31f3:0197
     {db tmp999=5;MYCOPY(unk_406a8)} // 31f3:0198
     {db tmp999[32]={0,0,48,5,5,5,47,5,5,0,20,0,5,10,21,10,5,5,22,0,5,10,25,0,10,15,26,0,0,5,27,5};MYCOPY(dummy0_320c9)} // 31f3:0199
     {db tmp999[32]={5,0,28,5,5,0,29,20,15,10,30,10,5,0,33,10,5,5,34,5,5,0,37,10,10,5,38,0,5,5,39,5};MYCOPY(dummy0_320e9)} // 31f3:01b9
-
-
     {db tmp999=67;MYCOPY(dummy0_3210b)} // 31f3:01db
     {db tmp999=5;MYCOPY(dummy0_3210c)} // 31f3:01dc
-
-
     {db tmp999=68;MYCOPY(dummy0_3210f)} // 31f3:01df
-
     {db tmp999=5;MYCOPY(dummy0_32111)} // 31f3:01e1
     {db tmp999=5;MYCOPY(dummy0_32112)} // 31f3:01e2
     {db tmp999=69;MYCOPY(dummy0_32113)} // 31f3:01e3
-
     {db tmp999=5;MYCOPY(dummy0_32115)} // 31f3:01e5
     {db tmp999=10;MYCOPY(dummy0_32116)} // 31f3:01e6
     {db tmp999=70;MYCOPY(dummy0_32117)} // 31f3:01e7
-
-
     {db tmp999=10;MYCOPY(dummy0_3211a)} // 31f3:01ea
     {db tmp999=71;MYCOPY(dummy0_3211b)} // 31f3:01eb
     {db tmp999=0;MYCOPY(unk_406fc)} // 31f3:01ec
-
     {db tmp999=5;MYCOPY(dummy0_3211e)} // 31f3:01ee
     {db tmp999=73;MYCOPY(dummy0_3211f)} // 31f3:01ef
     {db tmp999=10;MYCOPY(dummy0_32120)} // 31f3:01f0
@@ -10565,12 +10530,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=35;MYCOPY(dummy0_3212d)} // 31f3:01fd
     {db tmp999=30;MYCOPY(dummy0_3212e)} // 31f3:01fe
     {db tmp999=11;MYCOPY(dummy0_3212f)} // 31f3:01ff
-
     {db tmp999=15;MYCOPY(dummy0_32131)} // 31f3:0201
     {db tmp999=30;MYCOPY(dummy0_32132)} // 31f3:0202
     {db tmp999=12;MYCOPY(dummy0_32133)} // 31f3:0203
-
-
     {db tmp999=5;MYCOPY(dummy0_32136)} // 31f3:0206
     {db tmp999=16;MYCOPY(dummy0_32137)} // 31f3:0207
     {db tmp999=33;MYCOPY(unk_40718)} // 31f3:0208
@@ -10599,8 +10561,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=5;MYCOPY(dummy0_3216e)} // 31f3:023e
     {db tmp999=30;MYCOPY(dummy0_3216f)} // 31f3:023f
     {db tmp999=10;MYCOPY(dummy0_32170)} // 31f3:0240
-
-
     {db tmp999=34;MYCOPY(dummy0_32173)} // 31f3:0243
     {db tmp999=20;MYCOPY(dummy0_32174)} // 31f3:0244
     {db tmp999=10;MYCOPY(dummy0_32175)} // 31f3:0245
@@ -10610,7 +10570,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=15;MYCOPY(dummy0_32179)} // 31f3:0249
     {db tmp999=10;MYCOPY(dummy0_3217a)} // 31f3:024a
     {db tmp999=38;MYCOPY(dummy0_3217b)} // 31f3:024b
-
     {db tmp999=5;MYCOPY(dummy0_3217d)} // 31f3:024d
     {db tmp999=15;MYCOPY(dummy0_3217e)} // 31f3:024e
     {db tmp999=39;MYCOPY(dummy0_3217f)} // 31f3:024f
@@ -10620,17 +10579,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=10;MYCOPY(dummy0_321c1)} // 31f3:0291
     {db tmp999=5;MYCOPY(dummy0_321c2)} // 31f3:0292
     {db tmp999=69;MYCOPY(dummy0_321c3)} // 31f3:0293
-
     {db tmp999=5;MYCOPY(dummy0_321c5)} // 31f3:0295
     {db tmp999=5;MYCOPY(dummy0_321c6)} // 31f3:0296
     {db tmp999=71;MYCOPY(dummy0_321c7)} // 31f3:0297
-
-
     {db tmp999=5;MYCOPY(dummy0_321ca)} // 31f3:029a
     {db tmp999=72;MYCOPY(dummy0_321cb)} // 31f3:029b
     {db tmp999=0;MYCOPY(unk_407ac)} // 31f3:029c
-
-
     {db tmp999=73;MYCOPY(dummy0_321cf)} // 31f3:029f
     {db tmp999=10;MYCOPY(dummy0_321d0)} // 31f3:02a0
     {db tmp999=15;MYCOPY(dummy0_321d1)} // 31f3:02a1
@@ -10648,12 +10602,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=35;MYCOPY(dummy0_321dd)} // 31f3:02ad
     {db tmp999=30;MYCOPY(dummy0_321de)} // 31f3:02ae
     {db tmp999=11;MYCOPY(dummy0_321df)} // 31f3:02af
-
     {db tmp999=15;MYCOPY(dummy0_321e1)} // 31f3:02b1
     {db tmp999=30;MYCOPY(dummy0_321e2)} // 31f3:02b2
     {db tmp999=12;MYCOPY(dummy0_321e3)} // 31f3:02b3
-
-
     {db tmp999=5;MYCOPY(dummy0_321e6)} // 31f3:02b6
     {db tmp999=16;MYCOPY(dummy0_321e7)} // 31f3:02b7
     {db tmp999=33;MYCOPY(unk_407c8)} // 31f3:02b8
@@ -10676,7 +10627,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=37;MYCOPY(dummy0_32237)} // 31f3:0307
     {db tmp999=10;MYCOPY(dummy0_32238)} // 31f3:0308
     {db tmp999=10;MYCOPY(dummy0_32239)} // 31f3:0309
-
     {db tmp999=38;MYCOPY(dummy0_3223b)} // 31f3:030b
     {db tmp999=5;MYCOPY(dummy0_3223c)} // 31f3:030c
     {db tmp999=10;MYCOPY(dummy0_3223d)} // 31f3:030d
@@ -10685,20 +10635,15 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=5;MYCOPY(unk_40820)} // 31f3:0310
     {db tmp999[32]={0,0,48,5,5,5,47,0,0,0,20,5,10,5,21,10,5,0,22,5,5,5,23,0,0,5,25,5,10,5,26,0};MYCOPY(dummy0_32241)} // 31f3:0311
     {db tmp999[32]={5,10,27,5,0,0,28,5,0,0,29,10,5,0,30,0,5,10,31,0,5,10,32,10,5,0,33,5,5,0,34,5};MYCOPY(dummy0_32261)} // 31f3:0331
-
-
     {db tmp999=37;MYCOPY(dummy0_32283)} // 31f3:0353
     {db tmp999=5;MYCOPY(dummy0_32284)} // 31f3:0354
     {db tmp999=5;MYCOPY(dummy0_32285)} // 31f3:0355
-
     {db tmp999=38;MYCOPY(dummy0_32287)} // 31f3:0357
     {db tmp999=5;MYCOPY(dummy0_32288)} // 31f3:0358
     {db tmp999=10;MYCOPY(dummy0_32289)} // 31f3:0359
     {db tmp999=15;MYCOPY(dummy0_3228a)} // 31f3:035a
     {db tmp999=39;MYCOPY(dummy0_3228b)} // 31f3:035b
     {db tmp999=5;MYCOPY(dummy0_3228c)} // 31f3:035c
-
-
     {db tmp999=68;MYCOPY(dummy0_3228f)} // 31f3:035f
     {db tmp999=5;MYCOPY(dummy0_32290)} // 31f3:0360
     {db tmp999=5;MYCOPY(dummy0_32291)} // 31f3:0361
@@ -10708,11 +10653,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=5;MYCOPY(dummy0_32295)} // 31f3:0365
     {db tmp999=10;MYCOPY(dummy0_32296)} // 31f3:0366
     {db tmp999=70;MYCOPY(dummy0_32297)} // 31f3:0367
-
     {db tmp999=5;MYCOPY(dummy0_32299)} // 31f3:0369
     {db tmp999=5;MYCOPY(dummy0_3229a)} // 31f3:036a
     {db tmp999=71;MYCOPY(dummy0_3229b)} // 31f3:036b
-
     {db tmp999=5;MYCOPY(dummy0_3229d)} // 31f3:036d
     {db tmp999=10;MYCOPY(dummy0_3229e)} // 31f3:036e
     {db tmp999=72;MYCOPY(dummy0_3229f)} // 31f3:036f
@@ -10726,7 +10669,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=17;MYCOPY(dummy0_322a7)} // 31f3:0377
     {db tmp999=25;MYCOPY(dummy0_322a8)} // 31f3:0378
     {db tmp999=10;MYCOPY(dummy0_322a9)} // 31f3:0379
-
     {db tmp999=9;MYCOPY(dummy0_322ab)} // 31f3:037b
     {db tmp999=15;MYCOPY(dummy0_322ac)} // 31f3:037c
     {db tmp999=10;MYCOPY(dummy0_322ad)} // 31f3:037d
@@ -10744,7 +10686,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=10;MYCOPY(dummy0_322b9)} // 31f3:0389
     {db tmp999=20;MYCOPY(dummy0_322ba)} // 31f3:038a
     {db tmp999=16;MYCOPY(dummy0_322bb)} // 31f3:038b
-
     {db tmp999=5;MYCOPY(dummy0_322bd)} // 31f3:038d
     {db tmp999=15;MYCOPY(dummy0_322be)} // 31f3:038e
     {db tmp999=15;MYCOPY(dummy0_322bf)} // 31f3:038f
@@ -10760,10 +10701,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=30;MYCOPY(dummy0_322c9)} // 31f3:0399
     {db tmp999=20;MYCOPY(dummy0_322ca)} // 31f3:039a
     {db tmp999=52;MYCOPY(dummy0_322cb)} // 31f3:039b
-
-
-
-
     {char tmp999[22]="  End Mission  Ctrl-Q";MYCOPY(aendmissionctrl)} // 322d:0000
     {char tmp999[23]="  Exit to DOS  Ctrl-C*";MYCOPY(aexittodosctrlc)} // 322d:0016
     {char tmp999[15]="  About LHX...";MYCOPY(aaboutlhx)} // 322d:002d
@@ -10795,7 +10732,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=35;MYCOPY(dummy0_32495)} // 322d:01c5
     {db tmp999=35;MYCOPY(dummy0_32496)} // 322d:01c6
     {db tmp999=45;MYCOPY(dummy0_32497)} // 322d:01c7
-
     {char tmp999[13]="  Low Detail";MYCOPY(alowdetail)} // 322d:01c9
     {char tmp999[16]="  Medium Detail";MYCOPY(amediumdetail)} // 322d:01d6
     {char tmp999[15]="  High Detail*";MYCOPY(ahighdetail)} // 322d:01e6
@@ -10810,20 +10746,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,244,0,231,25,0,206,25,0,244,0,0,206,244,0,0,0,0,231,25,0,206,25,0,231,244,0,206,231,244,0,0};MYCOPY(dummy0_32570)} // 3257:0000
     {db tmp999[32]={0,231,25,0,206,25,0,231,231,0,206,231,0,0,0,0,0,25,0,244,25,0,0,0,0,244,0,0,0,0,0,0};MYCOPY(dummy0_32590)} // 3257:0020
     {db tmp999=25;MYCOPY(dummy0_325b0)} // 3257:0040
-
     {db tmp999=244;MYCOPY(dummy0_325b2)} // 3257:0042
     {db tmp999=25;MYCOPY(dummy0_325b3)} // 3257:0043
-
-
-
-
     {db tmp999=244;MYCOPY(dummy0_325b8)} // 3257:0048
-
-
-
-
-
-
     {db tmp999=25;MYCOPY(dummy0_325bf)} // 3257:004f
     {db tmp999[32]={0,244,25,0,0,0,0,244,0,0,0,27,49,50,51,52,53,54,55,56,57,48,45,61,8,9,113,119,101,114,116,121};MYCOPY(dummy0_325c0)} // 325c:0000
     {db tmp999[32]={117,105,111,112,91,93,13,0,97,115,100,102,103,104,106,107,108,59,39,96,0,92,122,120,99,118,98,110,109,44,46,47};MYCOPY(dummy0_325e0)} // 325c:0020
@@ -10833,22 +10758,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={85,73,79,80,123,125,13,0,65,83,68,70,71,72,74,75,76,58,34,126,0,124,90,88,67,86,66,78,77,60,62,63};MYCOPY(dummy0_32660)} // 325c:00a0
     {db tmp999[32]={0,0,0,32,0,49,50,51,52,53,54,55,56,57,48,0,0,55,56,57,45,52,53,54,43,49,50,51,48,46,0,0};MYCOPY(dummy0_32680)} // 325c:00c0
     {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,27,13,0,47,0,0,0,56,0,52,54,0,50,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_326a0)} // 325c:00e0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {char tmp999[20]="HARDPOINT 1 DAMAGED";MYCOPY(ahardpoint1dama)} // 326d:0000
     {char tmp999[20]="HARDPOINT 2 DAMAGED";MYCOPY(ahardpoint2dama)} // 326d:0014
     {char tmp999[20]="HARDPOINT 3 DAMAGED";MYCOPY(ahardpoint3dama)} // 326d:0028
@@ -10940,9 +10849,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={5,30,70,104,119,121,121,121,117,108,97,86,61,21,0,0,15,50,87,108,112,112,112,112,112,106,97,86,70,34,4,5};MYCOPY(dummy0_32b7b)} // 32af:008b
     {db tmp999[32]={30,66,93,104,104,104,104,104,104,102,96,86,74,47,22,9,33,58,77,89,94,95,96,96,96,96,90,77,62,41,30,4};MYCOPY(dummy0_32b9b)} // 32af:00ab
     {db tmp999[32]={13,26,44,61,74,83,87,87,86,80,67,49,29,15,15,0,0,4,13,26,44,60,71,73,65,49,29,15,5,0,0,0};MYCOPY(dummy0_32bbb)} // 32af:00cb
-
-
-
     {db tmp999=4;MYCOPY(dummy0_32bde)} // 32af:00ee
     {db tmp999=13;MYCOPY(dummy0_32bdf)} // 32af:00ef
     {db tmp999=26;MYCOPY(dummy0_32be0)} // 32af:00f0
@@ -10951,32 +10857,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=29;MYCOPY(dummy0_32be3)} // 32af:00f3
     {db tmp999=15;MYCOPY(dummy0_32be4)} // 32af:00f4
     {db tmp999=5;MYCOPY(dummy0_32be5)} // 32af:00f5
-
-
-
-
-
-
-
-
-
-
     {db tmp999=4;MYCOPY(dummy0_32bf0)} // 32bf:0000
     {db tmp999=22;MYCOPY(dummy0_32bf1)} // 32bf:0001
     {db tmp999=32;MYCOPY(dummy0_32bf2)} // 32bf:0002
     {db tmp999=15;MYCOPY(dummy0_32bf3)} // 32bf:0003
-
-
-
-
-
-
     {db tmp999=11;MYCOPY(unk_411da)} // 32bf:000a
     {db tmp999=13;MYCOPY(dummy0_32bfb)} // 32bf:000b
-
-
-
-
     {dd tmp999=far_offset(seg044,unk_41288);MYCOPY(dummy0_32c00)} // 32bf:0010
     {db tmp999[32]={173,0,10,4,16,24,0,12,255,0,4,1,0,3,2,16,35,0,4,255,0,4,5,4,7,6,16,46,0,4,255,0};MYCOPY(dummy0_32c04)} // 32bf:0014
     {db tmp999[32]={4,3,7,4,2,16,57,0,12,255,0,4,0,6,7,3,16,68,0,4,255,0,4,1,5,6,0,16,79,0,4,255};MYCOPY(dummy0_32c24)} // 32bf:0034
@@ -10986,7 +10872,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_32ca4)} // 32bf:00b4
     {db tmp999=111;MYCOPY(dummy0_32ca5)} // 32bf:00b5
     {db tmp999=97;MYCOPY(dummy0_32ca6)} // 32bf:00b6
-
     {db tmp999=92;MYCOPY(unk_41288)} // 32bf:00b8
     {db tmp999=31;MYCOPY(dummy0_32ca9)} // 32bf:00b9
     {db tmp999=30;MYCOPY(dummy0_32caa)} // 32bf:00ba
@@ -11011,9 +10896,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=32;MYCOPY(dummy0_32cbd)} // 32bf:00cd
     {db tmp999=31;MYCOPY(dummy0_32cbe)} // 32bf:00ce
     {db tmp999=226;MYCOPY(dummy0_32cbf)} // 32bf:00cf
-
-
-
     {db tmp999=196;MYCOPY(dummy0_32cc3)} // 32cc:0003
     {db tmp999=32;MYCOPY(dummy0_32cc4)} // 32cc:0004
     {db tmp999=252;MYCOPY(dummy0_32cc5)} // 32cc:0005
@@ -11028,41 +10910,28 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=226;MYCOPY(dummy0_32cce)} // 32cc:000e
     {db tmp999=10;MYCOPY(unk_412af)} // 32cc:000f
     {db tmp999=25;MYCOPY(dummy0_32cd0)} // 32cc:0010
-
-
-
-
     {dd tmp999=far_offset(seg045,unk_41348);MYCOPY(dummy0_32cd5)} // 32cc:0015
     {db tmp999[32]={140,0,9,4,0,29,0,6,255,0,5,4,3,2,1,0,0,41,0,6,255,0,4,6,5,3,4,0,52,0,6,255};MYCOPY(dummy0_32cd9)} // 32cc:0019
     {db tmp999[32]={0,4,6,8,7,5,0,63,0,6,255,0,4,8,10,9,7,0,74,0,6,255,0,7,15,17,22,23,16,9,10,0};MYCOPY(dummy0_32cf9)} // 32cc:0039
     {db tmp999[32]={88,0,6,255,0,4,12,15,10,11,0,99,0,6,255,0,4,14,15,10,13,0,110,0,6,255,0,4,20,21,18,19};MYCOPY(dummy0_32d19)} // 32cc:0059
     {db tmp999[32]={0,121,0,6,255,0,4,21,22,17,18,3,132,0,0,255,1,0,24,3,10,29,0,41,0,52,0,63,0,74,0,121};MYCOPY(dummy0_32d39)} // 32cc:0079
-
     {db tmp999=88;MYCOPY(dummy0_32d5a)} // 32cc:009a
-
     {db tmp999=99;MYCOPY(dummy0_32d5c)} // 32cc:009c
-
     {db tmp999=110;MYCOPY(dummy0_32d5e)} // 32cc:009e
-
     {db tmp999=132;MYCOPY(dummy0_32d60)} // 32cc:00a0
-
     {db tmp999=99;MYCOPY(dummy0_32d62)} // 32cc:00a2
     {db tmp999=97;MYCOPY(dummy0_32d63)} // 32cc:00a3
     {db tmp999=109;MYCOPY(dummy0_32d64)} // 32cc:00a4
     {db tmp999=101;MYCOPY(dummy0_32d65)} // 32cc:00a5
     {db tmp999=108;MYCOPY(dummy0_32d66)} // 32cc:00a6
-
     {db tmp999=0;MYCOPY(unk_41348)} // 32cc:00a8
     {db tmp999[32]={8,40,0,10,40,0,13,34,0,10,29,0,8,32,0,5,26,0,2,29,0,2,21,0,254,21,0,2,16,0,248,16};MYCOPY(dummy0_32d69)} // 32cc:00a9
     {db tmp999[32]={0,227,21,0,227,18,0,227,10,0,227,8,0,246,10,0,8,0,0,246,243,0,243,240,0,227,240,0,227,238,0,248};MYCOPY(dummy0_32d89)} // 32cc:00c9
     {db tmp999=232;MYCOPY(dummy0_32da9)} // 32cc:00e9
-
     {db tmp999=254;MYCOPY(dummy0_32dab)} // 32cc:00eb
     {db tmp999=232;MYCOPY(dummy0_32dac)} // 32cc:00ec
-
     {db tmp999=2;MYCOPY(dummy0_32dae)} // 32cc:00ee
     {db tmp999=235;MYCOPY(dummy0_32daf)} // 32cc:00ef
-
     {db tmp999=11;MYCOPY(dummy0_32db1)} // 32db:0001
     {db tmp999=35;MYCOPY(dummy0_32db2)} // 32db:0002
     {db tmp999=19;MYCOPY(unk_41393)} // 32db:0003
@@ -11115,19 +10984,13 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=97;MYCOPY(dummy0_33127)} // 3312:0007
     {db tmp999=49;MYCOPY(dummy0_33128)} // 3312:0008
     {db tmp999=50;MYCOPY(dummy0_33129)} // 3312:0009
-
     {db tmp999=9;MYCOPY(unk_4170b)} // 3312:000b
     {db tmp999=12;MYCOPY(dummy0_3312c)} // 3312:000c
-
-
-
-
     {dd tmp999=far_offset(seg047,unk_418c4);MYCOPY(dummy0_33131)} // 3312:0011
     {db tmp999[32]={124,0,9,4,16,25,0,0,255,0,4,1,0,3,2,16,36,0,0,255,0,4,9,6,7,8,16,47,0,0,255,0};MYCOPY(dummy0_33135)} // 3312:0015
     {db tmp999[32]={4,7,6,0,1,16,58,0,0,255,0,4,3,9,8,2,16,25,0,7,255,0,4,4,1,2,5,16,36,0,7,255};MYCOPY(dummy0_33155)} // 3312:0035
     {db tmp999[32]={0,4,7,10,11,8,16,91,0,8,255,0,4,7,1,4,10,16,102,0,10,255,0,4,10,4,5,11,16,113,0,8};MYCOPY(dummy0_33175)} // 3312:0055
     {db tmp999[32]={255,0,4,11,5,2,8,3,9,25,0,36,0,47,0,58,0,69,0,80,0,91,0,102,0,113,0,19,31,0,0,0};MYCOPY(dummy0_33195)} // 3312:0075
-
     {dd tmp999=far_offset(seg047,unk_418e8);MYCOPY(dummy0_331b6)} // 3312:0096
     {db tmp999[32]={184,1,19,4,0,158,0,0,255,0,6,1,3,7,8,9,0,16,171,0,0,255,0,4,11,3,1,2,16,182,0,0};MYCOPY(dummy0_331ba)} // 3312:009a
     {db tmp999[32]={255,0,4,10,7,3,11,16,193,0,0,255,0,4,8,13,12,9,16,204,0,0,255,0,4,9,12,14,0,16,204,0};MYCOPY(dummy0_331da)} // 3312:00ba
@@ -11138,7 +11001,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={29,17,5,16,93,1,10,255,0,4,30,0,15,29,16,104,1,10,255,0,4,17,28,6,5,3,1,158,0,3,1,237};MYCOPY(dummy0_3327a)} // 3312:015a
     {db tmp999[32]={0,3,5,82,1,104,1,71,1,60,1,49,1,3,1,93,1,3,11,38,1,5,1,250,0,182,0,171,0,16,1,193};MYCOPY(dummy0_3329a)} // 3312:017a
     {db tmp999[32]={0,27,1,215,0,204,0,226,0,16,93,1,135,1,139,1,16,93,1,123,1,163,1,16,237,0,119,1,170,1,16,158};MYCOPY(dummy0_332ba)} // 3312:019a
-
     {db tmp999=115;MYCOPY(dummy0_332db)} // 3312:01bb
     {db tmp999=1;MYCOPY(dummy0_332dc)} // 3312:01bc
     {db tmp999=177;MYCOPY(dummy0_332dd)} // 3312:01bd
@@ -11147,7 +11009,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=49;MYCOPY(dummy0_332e0)} // 3312:01c0
     {db tmp999=49;MYCOPY(dummy0_332e1)} // 3312:01c1
     {db tmp999=51;MYCOPY(dummy0_332e2)} // 3312:01c2
-
     {db tmp999=14;MYCOPY(unk_418c4)} // 3312:01c4
     {db tmp999[32]={246,26,14,252,30,14,252,228,14,246,232,14,10,20,14,10,226,242,246,26,242,252,30,242,252,228,242,246,232,242,10,20};MYCOPY(dummy0_332e5)} // 3312:01c5
     {db tmp999=242;MYCOPY(dummy0_33305)} // 3312:01e5
@@ -11164,10 +11025,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=250;MYCOPY(dummy0_3334e)} // 3312:022e
     {db tmp999=28;MYCOPY(dummy0_3334f)} // 3312:022f
     {db tmp999=242;MYCOPY(dummy0_33350)} // 3312:0230
-
     {db tmp999=32;MYCOPY(dummy0_33352)} // 3312:0232
     {db tmp999=248;MYCOPY(dummy0_33353)} // 3312:0233
-
     {db tmp999=32;MYCOPY(dummy0_33355)} // 3312:0235
     {db tmp999=248;MYCOPY(dummy0_33356)} // 3312:0236
     {db tmp999=250;MYCOPY(dummy0_33357)} // 3312:0237
@@ -11179,21 +11038,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=10;MYCOPY(dummy0_3335d)} // 3312:023d
     {db tmp999=20;MYCOPY(dummy0_3335e)} // 3312:023e
     {db tmp999=242;MYCOPY(dummy0_3335f)} // 3312:023f
-
     {db tmp999=230;MYCOPY(dummy0_33361)} // 3336:0001
     {db tmp999=14;MYCOPY(dummy0_33362)} // 3336:0002
-
     {db tmp999=230;MYCOPY(dummy0_33364)} // 3336:0004
     {db tmp999=6;MYCOPY(unk_41945)} // 3336:0005
     {db tmp999=8;MYCOPY(dummy0_33366)} // 3336:0006
-
-
-
-
     {dd tmp999=far_offset(seg048,unk_419a9);MYCOPY(dummy0_3336b)} // 3336:000b
     {db tmp999[32]={85,0,6,4,16,19,0,7,255,0,4,3,2,1,0,16,30,0,7,255,0,4,2,6,7,1,16,41,0,8,255,0};MYCOPY(dummy0_3336f)} // 3336:000f
     {db tmp999[32]={4,6,5,4,7,16,52,0,8,255,0,4,5,3,0,4,16,63,0,15,255,0,4,0,1,7,4,16,74,0,0,255};MYCOPY(dummy0_3338f)} // 3336:002f
-
     {db tmp999=4;MYCOPY(dummy0_333b0)} // 3336:0050
     {db tmp999=2;MYCOPY(dummy0_333b1)} // 3336:0051
     {db tmp999=3;MYCOPY(dummy0_333b2)} // 3336:0052
@@ -11202,23 +11054,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=3;MYCOPY(dummy0_333b5)} // 3336:0055
     {db tmp999=6;MYCOPY(dummy0_333b6)} // 3336:0056
     {db tmp999=19;MYCOPY(dummy0_333b7)} // 3336:0057
-
     {db tmp999=30;MYCOPY(dummy0_333b9)} // 3336:0059
-
     {db tmp999=41;MYCOPY(dummy0_333bb)} // 3336:005b
-
     {db tmp999=52;MYCOPY(dummy0_333bd)} // 3336:005d
-
     {db tmp999=63;MYCOPY(dummy0_333bf)} // 3336:005f
-
     {db tmp999=74;MYCOPY(dummy0_333c1)} // 3336:0061
-
     {db tmp999=99;MYCOPY(dummy0_333c3)} // 3336:0063
     {db tmp999=114;MYCOPY(dummy0_333c4)} // 3336:0064
     {db tmp999=97;MYCOPY(dummy0_333c5)} // 3336:0065
     {db tmp999=116;MYCOPY(dummy0_333c6)} // 3336:0066
     {db tmp999=101;MYCOPY(dummy0_333c7)} // 3336:0067
-
     {db tmp999=252;MYCOPY(unk_419a9)} // 3336:0069
     {db tmp999=8;MYCOPY(dummy0_333ca)} // 3336:006a
     {db tmp999=4;MYCOPY(dummy0_333cb)} // 3336:006b
@@ -11226,19 +11071,15 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=8;MYCOPY(dummy0_333cd)} // 3336:006d
     {db tmp999=4;MYCOPY(dummy0_333ce)} // 3336:006e
     {db tmp999=4;MYCOPY(dummy0_333cf)} // 3336:006f
-
     {db tmp999=4;MYCOPY(dummy0_333d1)} // 3336:0071
     {db tmp999=252;MYCOPY(dummy0_333d2)} // 3336:0072
-
     {db tmp999=4;MYCOPY(dummy0_333d4)} // 3336:0074
     {db tmp999=252;MYCOPY(dummy0_333d5)} // 3336:0075
     {db tmp999=8;MYCOPY(dummy0_333d6)} // 3336:0076
     {db tmp999=252;MYCOPY(dummy0_333d7)} // 3336:0077
     {db tmp999=252;MYCOPY(dummy0_333d8)} // 3336:0078
-
     {db tmp999=252;MYCOPY(dummy0_333da)} // 3336:007a
     {db tmp999=4;MYCOPY(dummy0_333db)} // 3336:007b
-
     {db tmp999=252;MYCOPY(dummy0_333dd)} // 3336:007d
     {db tmp999=4;MYCOPY(dummy0_333de)} // 3336:007e
     {db tmp999=8;MYCOPY(dummy0_333df)} // 3336:007f
@@ -11254,24 +11095,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={21,16,196,0,6,255,0,3,23,21,22,16,196,0,8,255,0,4,11,23,22,1,8,15,0,7,255,0,3,15,17,12};MYCOPY(dummy0_334c2)} // 333e:00e2
     {db tmp999[32]={3,16,103,0,15,0,26,0,37,0,48,0,59,0,70,0,81,0,92,0,114,0,125,0,196,0,207,0,217,0,227,0};MYCOPY(dummy0_334e2)} // 333e:0102
     {db tmp999=237;MYCOPY(dummy0_33502)} // 333e:0122
-
     {db tmp999=3;MYCOPY(dummy0_33504)} // 333e:0124
     {db tmp999=6;MYCOPY(dummy0_33505)} // 333e:0125
     {db tmp999=136;MYCOPY(dummy0_33506)} // 333e:0126
-
     {db tmp999=146;MYCOPY(dummy0_33508)} // 333e:0128
-
     {db tmp999=156;MYCOPY(dummy0_3350a)} // 333e:012a
-
     {db tmp999=166;MYCOPY(dummy0_3350c)} // 333e:012c
-
     {db tmp999=176;MYCOPY(dummy0_3350e)} // 333e:012e
-
     {db tmp999=186;MYCOPY(dummy0_33510)} // 3351:0000
-
     {db tmp999=16;MYCOPY(dummy0_33512)} // 3351:0002
     {db tmp999=248;MYCOPY(dummy0_33513)} // 3351:0003
-
     {db tmp999=2;MYCOPY(dummy0_33515)} // 3351:0005
     {db tmp999=1;MYCOPY(dummy0_33516)} // 3351:0006
     {db tmp999=36;MYCOPY(dummy0_33517)} // 3351:0007
@@ -11280,13 +11113,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_3351a)} // 3351:000a
     {db tmp999=110;MYCOPY(dummy0_3351b)} // 3351:000b
     {db tmp999=116;MYCOPY(dummy0_3351c)} // 3351:000c
-
     {db tmp999=15;MYCOPY(unk_41afe)} // 3351:000e
     {db tmp999=22;MYCOPY(dummy0_3351f)} // 3351:000f
-
-
-
-
     {dd tmp999=far_offset(seg050,unk_41d5c);MYCOPY(dummy0_33524)} // 3351:0014
     {db tmp999[32]={227,0,15,4,16,28,0,7,255,0,4,3,0,1,2,16,39,0,7,255,0,4,7,4,5,6,16,50,0,8,255,0};MYCOPY(dummy0_33528)} // 3351:0018
     {db tmp999=4;MYCOPY(dummy0_33548)} // 3351:0038
@@ -11299,22 +11127,13 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={127,0,0,255,0,4,17,8,9,14,16,28,0,7,255,0,4,8,3,12,9,16,39,0,7,255,0,4,17,14,13,7};MYCOPY(dummy0_33590)} // 3351:0080
     {db tmp999[32]={16,160,0,7,255,0,4,13,12,18,21,16,94,0,0,255,0,4,1,5,20,19,16,182,0,9,255,0,4,21,18,19};MYCOPY(dummy0_335b0)} // 3351:00a0
     {db tmp999[32]={20,3,7,50,0,61,0,72,0,83,0,127,0,138,0,149,0,3,8,28,0,39,0,94,0,105,0,116,0,160,0,171};MYCOPY(dummy0_335d0)} // 3351:00c0
-
     {db tmp999=182;MYCOPY(dummy0_335f1)} // 3351:00e1
-
     {db tmp999=16;MYCOPY(dummy0_335f3)} // 3351:00e3
     {db tmp999=160;MYCOPY(dummy0_335f4)} // 3351:00e4
-
     {db tmp999=193;MYCOPY(dummy0_335f6)} // 3351:00e6
-
     {db tmp999=209;MYCOPY(dummy0_335f8)} // 3351:00e8
-
     {db tmp999=24;MYCOPY(dummy0_335fa)} // 3351:00ea
     {db tmp999=62;MYCOPY(dummy0_335fb)} // 3351:00eb
-
-
-
-
     {dd tmp999=far_offset(seg050,unk_41d9e);MYCOPY(dummy0_33600)} // 3351:00f0
     {db tmp999[32]={95,2,24,4,0,248,0,0,255,0,6,5,4,3,2,1,0,0,248,0,0,255,0,6,7,8,9,10,11,6,0,248};MYCOPY(dummy0_33604)} // 3351:00f4
     {db tmp999[32]={0,0,255,0,6,15,16,17,12,13,14,0,248,0,0,255,0,6,18,20,23,21,22,19,0,248,0,0,255,0,6,24};MYCOPY(dummy0_33624)} // 3351:0114
@@ -11340,7 +11159,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=2;MYCOPY(dummy0_3376e)} // 3351:025e
     {db tmp999=16;MYCOPY(dummy0_3376f)} // 3351:025f
     {db tmp999=248;MYCOPY(dummy0_33770)} // 3351:0260
-
     {db tmp999=16;MYCOPY(dummy0_33772)} // 3351:0262
     {db tmp999=2;MYCOPY(dummy0_33773)} // 3351:0263
     {db tmp999=88;MYCOPY(dummy0_33774)} // 3351:0264
@@ -11350,7 +11168,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=117;MYCOPY(dummy0_33778)} // 3351:0268
     {db tmp999=99;MYCOPY(dummy0_33779)} // 3351:0269
     {db tmp999=107;MYCOPY(dummy0_3377a)} // 3351:026a
-
     {db tmp999=19;MYCOPY(unk_41d5c)} // 3351:026c
     {db tmp999[32]={237,175,19,252,175,19,252,40,19,237,40,237,252,40,237,252,175,237,237,175,237,237,40,19,237,90,19,0,90,15,19,79};MYCOPY(dummy0_3377d)} // 3351:026d
     {db tmp999[32]={15,19,40,19,0,40,237,0,40,237,0,90,241,19,79,241,19,40,237,237,90,19,30,40,19,30,175,237,30,175,237,30};MYCOPY(dummy0_3379d)} // 3351:028d
@@ -11371,10 +11188,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=19;MYCOPY(dummy0_33866)} // 3351:0356
     {db tmp999=30;MYCOPY(dummy0_33867)} // 3351:0357
     {db tmp999=40;MYCOPY(dummy0_33868)} // 3351:0358
-
     {db tmp999=36;MYCOPY(dummy0_3386a)} // 3351:035a
     {db tmp999=40;MYCOPY(dummy0_3386b)} // 3351:035b
-
     {db tmp999=36;MYCOPY(dummy0_3386d)} // 3351:035d
     {db tmp999=175;MYCOPY(dummy0_3386e)} // 3351:035e
     {db tmp999=19;MYCOPY(dummy0_3386f)} // 3351:035f
@@ -11446,30 +11261,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=97;MYCOPY(dummy0_33b7a)} // 33b7:000a
     {db tmp999=114;MYCOPY(dummy0_33b7b)} // 33b7:000b
     {db tmp999=115;MYCOPY(dummy0_33b7c)} // 33b7:000c
-
     {db tmp999=0;MYCOPY(unk_4215e)} // 33b7:000e
     {db tmp999[32]={7,0,250,11,0,253,13,0,3,13,0,6,11,0,253,5,0,255,5,0,1,5,0,3,5,0,252,253,0,254,253,0};MYCOPY(dummy0_33b7f)} // 33b7:000f
-
     {db tmp999=253;MYCOPY(dummy0_33ba0)} // 33ba:0000
-
     {db tmp999=2;MYCOPY(dummy0_33ba2)} // 33ba:0002
     {db tmp999=253;MYCOPY(dummy0_33ba3)} // 33ba:0003
-
     {db tmp999=4;MYCOPY(dummy0_33ba5)} // 33ba:0005
     {db tmp999=253;MYCOPY(dummy0_33ba6)} // 33ba:0006
-
     {db tmp999=252;MYCOPY(dummy0_33ba8)} // 33ba:0008
     {db tmp999=241;MYCOPY(dummy0_33ba9)} // 33ba:0009
-
     {db tmp999=4;MYCOPY(dummy0_33bab)} // 33ba:000b
     {db tmp999=241;MYCOPY(dummy0_33bac)} // 33ba:000c
-
     {db tmp999=18;MYCOPY(unk_4218e)} // 33ba:000e
     {db tmp999=30;MYCOPY(dummy0_33baf)} // 33ba:000f
-
-
-
-
     {dd tmp999=far_offset(seg053,unk_42660);MYCOPY(dummy0_33bb4)} // 33ba:0014
     {db tmp999[32]={36,1,18,4,16,28,0,15,255,0,4,6,10,1,3,0,28,0,8,255,0,4,15,14,13,16,0,28,0,3,255,0};MYCOPY(dummy0_33bb8)} // 33ba:0018
     {db tmp999[32]={4,20,19,18,17,0,28,0,3,255,0,4,22,21,8,7,0,28,0,3,255,0,4,24,11,12,23,16,83,0,8,255};MYCOPY(dummy0_33bd8)} // 33ba:0038
@@ -11479,31 +11283,21 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={3,25,16,186,0,8,255,0,3,0,2,25,0,28,0,3,255,0,4,29,26,27,28,8,207,0,7,255,0,4,6,10};MYCOPY(dummy0_33c58)} // 33ba:00b8
     {db tmp999[32]={4,5,3,1,72,0,3,1,196,0,3,1,39,0,3,1,50,0,3,1,61,0,3,12,145,0,186,0,176,0,166,0};MYCOPY(dummy0_33c78)} // 33ba:00d8
     {db tmp999[32]={156,0,134,0,123,0,113,0,103,0,93,0,83,0,28,0,16,123,0,234,0,238,0,16,83,0,230,0,8,1,16,93};MYCOPY(dummy0_33c98)} // 33ba:00f8
-
     {db tmp999=226;MYCOPY(dummy0_33cb9)} // 33ba:0119
-
     {db tmp999=15;MYCOPY(dummy0_33cbb)} // 33ba:011b
     {db tmp999=1;MYCOPY(dummy0_33cbc)} // 33ba:011c
     {db tmp999=16;MYCOPY(dummy0_33cbd)} // 33ba:011d
     {db tmp999=103;MYCOPY(dummy0_33cbe)} // 33ba:011e
-
     {db tmp999=222;MYCOPY(dummy0_33cc0)} // 33ba:0120
-
     {db tmp999=22;MYCOPY(dummy0_33cc2)} // 33ba:0122
     {db tmp999=1;MYCOPY(dummy0_33cc3)} // 33ba:0123
     {db tmp999=16;MYCOPY(dummy0_33cc4)} // 33ba:0124
     {db tmp999=134;MYCOPY(dummy0_33cc5)} // 33ba:0125
-
     {db tmp999=218;MYCOPY(dummy0_33cc7)} // 33ba:0127
-
     {db tmp999=29;MYCOPY(dummy0_33cc9)} // 33ba:0129
     {db tmp999=1;MYCOPY(dummy0_33cca)} // 33ba:012a
     {db tmp999=66;MYCOPY(dummy0_33ccb)} // 33ba:012b
     {db tmp999=83;MYCOPY(dummy0_33ccc)} // 33ba:012c
-
-
-
-
     {dd tmp999=far_offset(seg053,unk_426ba);MYCOPY(dummy0_33cd1)} // 33ba:0131
     {db tmp999[32]={212,4,62,4,16,57,1,8,255,0,4,3,1,0,2,16,68,1,8,255,0,4,7,4,5,6,16,79,1,7,255,0};MYCOPY(dummy0_33cd5)} // 33ba:0135
     {db tmp999[32]={4,4,2,0,5,16,90,1,15,255,0,4,1,3,7,6,16,101,1,6,255,0,4,3,2,4,7,16,112,1,7,255};MYCOPY(dummy0_33cf5)} // 33ba:0155
@@ -11544,7 +11338,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=117;MYCOPY(dummy0_3407c)} // 33ba:04dc
     {db tmp999=50;MYCOPY(dummy0_3407d)} // 33ba:04dd
     {db tmp999=53;MYCOPY(dummy0_3407e)} // 33ba:04de
-
     {db tmp999=7;MYCOPY(unk_42660)} // 33ba:04e0
     {db tmp999[32]={5,40,7,239,40,249,5,40,249,239,40,7,5,216,249,5,216,249,239,216,7,0,0,7,0,216,0,5,139,7,239,216};MYCOPY(dummy0_34081)} // 33ba:04e1
     {db tmp999[32]={249,0,0,249,0,216,0,45,169,0,45,161,0,5,156,0,5,196,30,7,154,30,7,164,3,2,176,1,1,151,90,249};MYCOPY(dummy0_340a1)} // 33ba:0501
@@ -11558,7 +11351,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=166;MYCOPY(dummy0_340c8)} // 33ba:0528
     {db tmp999=249;MYCOPY(dummy0_340c9)} // 33ba:0529
     {db tmp999=231;MYCOPY(dummy0_340ca)} // 33ba:052a
-
     {db tmp999=246;MYCOPY(dummy0_340cc)} // 33ba:052c
     {db tmp999=80;MYCOPY(dummy0_340cd)} // 33ba:052d
     {db tmp999=226;MYCOPY(dummy0_340ce)} // 33ba:052e
@@ -11607,10 +11399,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=236;MYCOPY(dummy0_341d2)} // 341d:0002
     {db tmp999=15;MYCOPY(unk_427b3)} // 341d:0003
     {db tmp999=35;MYCOPY(dummy0_341d4)} // 341d:0004
-
-
-
-
     {dd tmp999=far_offset(seg054,unk_42b18);MYCOPY(dummy0_341d9)} // 341d:0009
     {db tmp999[32]={3,1,15,4,0,17,0,15,255,0,4,12,11,10,9,0,28,0,8,255,0,5,19,18,26,17,20,0,40,0,8,255};MYCOPY(dummy0_341dd)} // 341d:000d
     {db tmp999[32]={0,5,16,25,15,14,13,16,52,0,8,255,0,4,4,21,22,5,16,63,0,8,255,0,4,8,7,24,23,0,74,0};MYCOPY(dummy0_341fd)} // 341d:002d
@@ -11620,9 +11408,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,0,4,29,30,27,28,3,1,158,0,3,1,28,0,16,158,0,180,0,184,0,3,1,169,0,3,1,40,0,16,169};MYCOPY(dummy0_3427d)} // 341d:00ad
     {db tmp999[32]={0,195,0,199,0,3,1,17,0,3,1,74,0,3,9,148,0,138,0,128,0,118,0,107,0,96,0,85,0,63,0,52};MYCOPY(dummy0_3429d)} // 341d:00cd
     {db tmp999[32]={0,16,96,0,214,0,218,0,16,85,0,210,0,238,0,16,63,0,203,0,245,0,16,52,0,188,0,252,0,39,61,0};MYCOPY(dummy0_342bd)} // 341d:00ed
-
-
-
     {dd tmp999=far_offset(seg054,unk_42b81);MYCOPY(dummy0_342e0)} // 341d:0110
     {db tmp999[32]={91,3,35,4,0,24,1,7,255,0,6,1,0,5,4,3,2,16,37,1,4,255,0,3,14,12,16,16,47,1,12,255};MYCOPY(dummy0_342e4)} // 341d:0114
     {db tmp999[32]={0,3,12,13,16,16,57,1,4,255,0,3,13,15,16,16,67,1,4,255,0,3,15,14,16,16,77,1,0,255,0,4};MYCOPY(dummy0_34304)} // 341d:0134
@@ -11661,17 +11446,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=103;MYCOPY(dummy0_34534)} // 341d:0364
     {db tmp999=50;MYCOPY(dummy0_34535)} // 341d:0365
     {db tmp999=55;MYCOPY(dummy0_34536)} // 341d:0366
-
     {db tmp999=10;MYCOPY(unk_42b18)} // 341d:0368
     {db tmp999[32]={255,3,9,255,228,86,251,220,86,251,235,13,243,60,13,4,60,0,251,105,243,4,60,243,243,60,0,1,230,0,28,170};MYCOPY(dummy0_34539)} // 341d:0369
     {db tmp999[32]={0,26,159,0,255,164,250,254,200,222,254,162,230,254,154,251,254,166,5,254,166,26,254,154,34,254,162,6,254,200,5,247};MYCOPY(dummy0_34559)} // 341d:0389
     {db tmp999[32]={162,5,255,162,251,247,162,251,255,162,249,254,160,7,254,160,247,255,3,248,255,229,170,251,220,170,251,235,0,247,174,0};MYCOPY(dummy0_34579)} // 341d:03a9
     {db tmp999=233;MYCOPY(dummy0_34599)} // 341d:03c9
     {db tmp999=175;MYCOPY(dummy0_3459a)} // 341d:03ca
-
     {db tmp999=230;MYCOPY(dummy0_3459c)} // 341d:03cc
     {db tmp999=185;MYCOPY(dummy0_3459d)} // 341d:03cd
-
     {db tmp999=245;MYCOPY(dummy0_3459f)} // 341d:03cf
     {db tmp999=218;MYCOPY(dummy0_345a0)} // 341d:03d0
     {db tmp999=22;MYCOPY(unk_42b81)} // 341d:03d1
@@ -11684,16 +11466,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=172;MYCOPY(dummy0_34643)} // 341d:0473
     {db tmp999=251;MYCOPY(dummy0_34644)} // 341d:0474
     {db tmp999=235;MYCOPY(dummy0_34645)} // 341d:0475
-
     {db tmp999=243;MYCOPY(dummy0_34647)} // 341d:0477
     {db tmp999=175;MYCOPY(dummy0_34648)} // 341d:0478
-
     {db tmp999=233;MYCOPY(dummy0_3464a)} // 341d:047a
     {db tmp999=175;MYCOPY(dummy0_3464b)} // 341d:047b
-
     {db tmp999=230;MYCOPY(dummy0_3464d)} // 341d:047d
     {db tmp999=185;MYCOPY(dummy0_3464e)} // 341d:047e
-
     {db tmp999=242;MYCOPY(dummy0_34650)} // 3465:0000
     {db tmp999=212;MYCOPY(dummy0_34651)} // 3465:0001
     {db tmp999=245;MYCOPY(dummy0_34652)} // 3465:0002
@@ -11704,10 +11482,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=21;MYCOPY(dummy0_34657)} // 3465:0007
     {db tmp999=8;MYCOPY(unk_42c38)} // 3465:0008
     {db tmp999=18;MYCOPY(dummy0_34659)} // 3465:0009
-
-
-
-
     {dd tmp999=far_offset(seg055,unk_42cf7);MYCOPY(dummy0_3465e)} // 3465:000e
     {db tmp999[32]={184,0,8,4,0,22,0,15,255,0,4,1,17,16,3,0,33,0,15,255,0,4,2,12,11,0,0,44,0,7,255,0};MYCOPY(dummy0_34662)} // 3465:0012
     {db tmp999[32]={4,5,13,12,2,0,55,0,8,255,0,4,6,14,13,5,0,66,0,0,255,0,4,7,15,14,6,0,77,0,8,255};MYCOPY(dummy0_34682)} // 3465:0032
@@ -11715,18 +11489,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={3,1,77,0,16,66,0,110,0,114,0,3,1,55,0,3,1,22,0,3,1,33,0,3,1,44,0,3,1,99,0,3};MYCOPY(dummy0_346c2)} // 3465:0072
     {db tmp999[32]={1,88,0,16,88,0,141,0,145,0,16,66,0,137,0,149,0,16,33,0,133,0,156,0,16,22,0,129,0,163,0,16};MYCOPY(dummy0_346e2)} // 3465:0092
     {db tmp999=55;MYCOPY(dummy0_34702)} // 3465:00b2
-
     {db tmp999=125;MYCOPY(dummy0_34704)} // 3465:00b4
-
     {db tmp999=170;MYCOPY(dummy0_34706)} // 3465:00b6
-
     {db tmp999=16;MYCOPY(dummy0_34708)} // 3465:00b8
     {db tmp999=55;MYCOPY(dummy0_34709)} // 3465:00b9
-
     {db tmp999=118;MYCOPY(dummy0_3470b)} // 3465:00bb
-
     {db tmp999=177;MYCOPY(dummy0_3470d)} // 3465:00bd
-
     {db tmp999=104;MYCOPY(dummy0_3470f)} // 3465:00bf
     {db tmp999=97;MYCOPY(dummy0_34710)} // 3465:00c0
     {db tmp999=110;MYCOPY(dummy0_34711)} // 3465:00c1
@@ -11734,7 +11502,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=97;MYCOPY(dummy0_34713)} // 3465:00c3
     {db tmp999=114;MYCOPY(dummy0_34714)} // 3465:00c4
     {db tmp999=100;MYCOPY(dummy0_34715)} // 3465:00c5
-
     {db tmp999=56;MYCOPY(unk_42cf7)} // 3465:00c7
     {db tmp999[32]={216,147,200,216,147,52,8,155,200,11,148,222,39,155,36,28,152,8,32,153,252,40,147,56,216,108,200,216,108,222,39,219};MYCOPY(dummy0_34718)} // 3465:00c8
     {db tmp999=56;MYCOPY(dummy0_34738)} // 3465:00e8
@@ -11760,36 +11527,23 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=229;MYCOPY(dummy0_3474c)} // 3474:000c
     {db tmp999=13;MYCOPY(unk_42d2d)} // 3474:000d
     {db tmp999=31;MYCOPY(dummy0_3474e)} // 3474:000e
-
-
-
-
     {dd tmp999=far_offset(seg056,unk_42deb);MYCOPY(dummy0_34753)} // 3474:0013
     {db tmp999[32]={170,0,13,0,0,27,0,6,90,0,4,3,2,7,6,0,38,0,6,90,0,4,3,6,4,0,0,49,0,6,90,0};MYCOPY(dummy0_34757)} // 3474:0017
     {db tmp999[32]={4,0,4,5,1,0,60,0,6,90,0,4,1,5,7,2,0,71,0,7,255,0,4,10,8,9,11,0,82,0,7,255};MYCOPY(dummy0_34777)} // 3474:0037
     {db tmp999[32]={0,4,10,11,12,13,0,93,0,7,255,0,4,13,12,14,15,0,104,0,7,255,0,4,15,14,16,17,0,115,0,7};MYCOPY(dummy0_34797)} // 3474:0057
     {db tmp999[32]={255,0,4,19,17,16,18,0,126,0,7,255,0,4,19,18,20,21,0,137,0,7,255,0,4,22,20,24,23,0,148,0};MYCOPY(dummy0_347b7)} // 3474:0077
     {db tmp999[32]={7,255,0,4,30,29,28,27,0,159,0,7,255,0,4,27,28,26,25,3,13,137,0,93,0,126,0,148,0,115,0,82};MYCOPY(dummy0_347d7)} // 3474:0097
-
     {db tmp999=60;MYCOPY(dummy0_347f8)} // 3474:00b8
-
     {db tmp999=49;MYCOPY(dummy0_347fa)} // 3474:00ba
-
     {db tmp999=38;MYCOPY(dummy0_347fc)} // 3474:00bc
-
     {db tmp999=27;MYCOPY(dummy0_347fe)} // 3474:00be
-
     {db tmp999=159;MYCOPY(dummy0_34800)} // 3474:00c0
-
     {db tmp999=104;MYCOPY(dummy0_34802)} // 3474:00c2
-
     {db tmp999=71;MYCOPY(dummy0_34804)} // 3474:00c4
-
     {db tmp999=99;MYCOPY(dummy0_34806)} // 3474:00c6
     {db tmp999=97;MYCOPY(dummy0_34807)} // 3474:00c7
     {db tmp999=109;MYCOPY(dummy0_34808)} // 3474:00c8
     {db tmp999=112;MYCOPY(dummy0_34809)} // 3474:00c9
-
     {db tmp999=192;MYCOPY(unk_42deb)} // 3474:00cb
     {db tmp999[32]={244,0,0,0,250,64,11,0,0,0,250,64,11,0,0,0,9,192,244,0,0,0,9,192,244,32,0,0,250,64,11,32};MYCOPY(dummy0_3480c)} // 3474:00cc
     {db tmp999[32]={0,0,250,192,244,32,0,0,9,64,11,32,0,0,9,208,255,0,0,0,250,0,0,0,0,0,250,208,255,0,0,176};MYCOPY(dummy0_3482c)} // 3474:00ec
@@ -11799,27 +11553,17 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=2;MYCOPY(dummy0_348ac)} // 3474:016c
     {db tmp999=208;MYCOPY(dummy0_348ad)} // 3474:016d
     {db tmp999=5;MYCOPY(dummy0_348ae)} // 3474:016e
-
-
     {db tmp999=208;MYCOPY(dummy0_348b1)} // 3474:0171
     {db tmp999=5;MYCOPY(dummy0_348b2)} // 3474:0172
     {db tmp999=160;MYCOPY(dummy0_348b3)} // 3474:0173
     {db tmp999=5;MYCOPY(dummy0_348b4)} // 3474:0174
-
-
     {db tmp999=208;MYCOPY(dummy0_348b7)} // 3474:0177
     {db tmp999=5;MYCOPY(dummy0_348b8)} // 3474:0178
     {db tmp999=128;MYCOPY(dummy0_348b9)} // 3474:0179
     {db tmp999=2;MYCOPY(dummy0_348ba)} // 3474:017a
-
-
-
     {db tmp999=9;MYCOPY(dummy0_348be)} // 3474:017e
     {db tmp999=176;MYCOPY(dummy0_348bf)} // 3474:017f
     {db tmp999=2;MYCOPY(dummy0_348c0)} // 348c:0000
-
-
-
     {db tmp999=9;MYCOPY(dummy0_348c4)} // 348c:0004
     {db tmp999=5;MYCOPY(unk_42ea5)} // 348c:0005
     {db tmp999[32]={8,6,4,1,0,0,0,0,0,12,25,23,19,14,11,8,6,4,1,14,37,45,41,37,33,28,23,19,11,14,41,60};MYCOPY(dummy0_348c6)} // 348c:0006
@@ -11827,7 +11571,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={122,116,88,35,9,14,41,67,94,121,139,128,83,27,0,14,41,67,92,113,131,120,71,21,0,10,30,49,67,81,93,93};MYCOPY(dummy0_34906)} // 348c:0046
     {db tmp999=59;MYCOPY(dummy0_34926)} // 348c:0066
     {db tmp999=15;MYCOPY(dummy0_34927)} // 348c:0067
-
     {db tmp999=3;MYCOPY(dummy0_34929)} // 348c:0069
     {db tmp999=10;MYCOPY(dummy0_3492a)} // 348c:006a
     {db tmp999=16;MYCOPY(dummy0_3492b)} // 348c:006b
@@ -11837,48 +11580,30 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=55;MYCOPY(dummy0_3492f)} // 348c:006f
     {db tmp999=39;MYCOPY(dummy0_34930)} // 3493:0000
     {db tmp999=9;MYCOPY(dummy0_34931)} // 3493:0001
-
-
-
-
-
     {db tmp999=3;MYCOPY(dummy0_34937)} // 3493:0007
     {db tmp999=17;MYCOPY(dummy0_34938)} // 3493:0008
     {db tmp999=29;MYCOPY(dummy0_34939)} // 3493:0009
     {db tmp999=31;MYCOPY(dummy0_3493a)} // 3493:000a
     {db tmp999=9;MYCOPY(dummy0_3493b)} // 3493:000b
-
     {db tmp999=0;MYCOPY(unk_42f1d)} // 3493:000d
     {db tmp999[32]={0,3,8,10,9,8,8,7,5,1,0,0,1,9,24,31,30,28,27,26,17,5,0,0,5,19,36,49,52,51,50,48};MYCOPY(dummy0_3493e)} // 3493:000e
     {db tmp999[32]={32,9,0,2,12,30,47,64,73,74,72,67,45,13,0,5,21,40,58,76,91,96,94,84,54,17,0,3,16,39,65,86};MYCOPY(dummy0_3495e)} // 3493:002e
     {db tmp999[32]={104,115,116,99,63,22,1,0,3,20,50,81,107,129,134,111,71,30,8,0,0,4,17,42,75,105,123,114,80,39,16,0};MYCOPY(dummy0_3497e)} // 3493:004e
     {db tmp999[32]={0,0,0,7,22,37,56,70,71,47,24,0,0,0,0,0,0,0,3,14,29,26,24,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3499e)} // 3493:006e
-
-
-
     {db tmp999=10;MYCOPY(unk_42fa1)} // 349c:0001
     {db tmp999=19;MYCOPY(dummy0_349c2)} // 349c:0002
-
-
-
-
     {dd tmp999=far_offset(seg059,unk_43020);MYCOPY(dummy0_349c7)} // 349c:0007
     {db tmp999[32]={113,0,1,0,0,15,0,6,255,0,4,7,8,9,10,1,26,0,0,255,4,3,1,33,0,0,255,3,0,1,40,0};MYCOPY(dummy0_349cb)} // 349c:000b
     {db tmp999[32]={0,255,2,1,1,47,0,0,255,5,3,1,54,0,0,255,6,0,1,61,0,0,255,15,16,1,68,0,0,255,18,17};MYCOPY(dummy0_349eb)} // 349c:002b
     {db tmp999[32]={1,75,0,0,255,13,14,1,82,0,0,255,11,12,3,9,26,0,33,0,40,0,47,0,54,0,61,0,68,0,75,0};MYCOPY(dummy0_34a0b)} // 349c:004b
     {db tmp999=82;MYCOPY(dummy0_34a2b)} // 349c:006b
-
     {db tmp999=3;MYCOPY(dummy0_34a2d)} // 349c:006d
     {db tmp999=1;MYCOPY(dummy0_34a2e)} // 349c:006e
     {db tmp999=15;MYCOPY(dummy0_34a2f)} // 349c:006f
-
     {db tmp999=16;MYCOPY(dummy0_34a31)} // 349c:0071
     {db tmp999=15;MYCOPY(dummy0_34a32)} // 349c:0072
-
     {db tmp999=89;MYCOPY(dummy0_34a34)} // 349c:0074
-
     {db tmp999=109;MYCOPY(dummy0_34a36)} // 349c:0076
-
     {db tmp999=111;MYCOPY(dummy0_34a38)} // 349c:0078
     {db tmp999=105;MYCOPY(dummy0_34a39)} // 349c:0079
     {db tmp999=108;MYCOPY(dummy0_34a3a)} // 349c:007a
@@ -11886,69 +11611,38 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=97;MYCOPY(dummy0_34a3c)} // 349c:007c
     {db tmp999=115;MYCOPY(dummy0_34a3d)} // 349c:007d
     {db tmp999=101;MYCOPY(dummy0_34a3e)} // 349c:007e
-
     {db tmp999=0;MYCOPY(unk_43020)} // 349c:0080
     {db tmp999[32]={0,16,0,96,9,32,254,16,0,240,0,224,1,16,0,208,2,0,0,16,0,32,254,224,1,16,0,32,254,0,0,0};MYCOPY(dummy0_34a41)} // 349c:0081
     {db tmp999[32]={0,32,254,0,0,0,0,96,9,0,12,0,0,16,248,16,251,0,0,16,248,0,251,0,0,16,14,0,12,0,0,16};MYCOPY(dummy0_34a61)} // 349c:00a1
     {db tmp999[32]={14,32,254,16,0,176,4,224,1,16,0,144,6,32,254,16,0,112,8,224,1,16,0,80,10,0,0,16,0,224,1,0};MYCOPY(dummy0_34a81)} // 349c:00c1
-
-
-
     {db tmp999=224;MYCOPY(dummy0_34aa4)} // 349c:00e4
     {db tmp999=1;MYCOPY(dummy0_34aa5)} // 349c:00e5
-
-
-
-
     {db tmp999=160;MYCOPY(dummy0_34aaa)} // 349c:00ea
     {db tmp999=5;MYCOPY(dummy0_34aab)} // 349c:00eb
-
-
     {db tmp999=16;MYCOPY(dummy0_34aae)} // 349c:00ee
-
     {db tmp999=160;MYCOPY(dummy0_34ab0)} // 34ab:0000
     {db tmp999=5;MYCOPY(dummy0_34ab1)} // 34ab:0001
     {db tmp999=13;MYCOPY(unk_43092)} // 34ab:0002
     {db tmp999=48;MYCOPY(dummy0_34ab3)} // 34ab:0003
-
-
-
-
     {dd tmp999=far_offset(seg060,unk_4340c);MYCOPY(dummy0_34ab8)} // 34ab:0008
     {db tmp999[32]={167,0,13,0,16,16,0,7,255,0,4,11,22,23,10,16,27,0,7,255,0,4,25,24,27,26,16,38,0,8,255,0};MYCOPY(dummy0_34abc)} // 34ab:000c
     {db tmp999[32]={4,22,26,27,23,16,49,0,8,255,0,4,11,25,26,22,16,60,0,8,255,0,4,10,24,25,11,16,16,0,1,255};MYCOPY(dummy0_34adc)} // 34ab:002c
     {db tmp999[32]={0,5,9,5,6,7,8,16,16,0,1,255,0,5,4,0,1,2,3,16,16,0,1,255,0,5,14,13,12,16,15,16};MYCOPY(dummy0_34afc)} // 34ab:004c
     {db tmp999[32]={16,0,1,255,0,5,19,18,17,21,20,16,27,0,1,255,0,5,33,37,36,35,34,16,27,0,1,255,0,5,28,32};MYCOPY(dummy0_34b1c)} // 34ab:006c
     {db tmp999[32]={31,30,29,16,27,0,1,255,0,5,39,40,41,42,38,16,27,0,1,255,0,5,44,45,46,47,43,3,13,27,0,16};MYCOPY(dummy0_34b3c)} // 34ab:008c
-
     {db tmp999=155;MYCOPY(dummy0_34b5d)} // 34ab:00ad
-
     {db tmp999=143;MYCOPY(dummy0_34b5f)} // 34ab:00af
-
     {db tmp999=131;MYCOPY(dummy0_34b61)} // 34ab:00b1
-
     {db tmp999=119;MYCOPY(dummy0_34b63)} // 34ab:00b3
-
     {db tmp999=107;MYCOPY(dummy0_34b65)} // 34ab:00b5
-
     {db tmp999=95;MYCOPY(dummy0_34b67)} // 34ab:00b7
-
     {db tmp999=83;MYCOPY(dummy0_34b69)} // 34ab:00b9
-
     {db tmp999=71;MYCOPY(dummy0_34b6b)} // 34ab:00bb
-
     {db tmp999=60;MYCOPY(dummy0_34b6d)} // 34ab:00bd
-
     {db tmp999=49;MYCOPY(dummy0_34b6f)} // 34ab:00bf
-
     {db tmp999=38;MYCOPY(dummy0_34b71)} // 34ab:00c1
-
     {db tmp999=45;MYCOPY(dummy0_34b73)} // 34ab:00c3
     {db tmp999=68;MYCOPY(dummy0_34b74)} // 34ab:00c4
-
-
-
-
     {dd tmp999=far_offset(seg060,unk_4352c);MYCOPY(dummy0_34b79)} // 34ab:00c9
     {db tmp999[32]={110,3,45,0,0,209,0,7,255,0,4,0,1,2,3,0,220,0,7,255,0,6,8,11,12,13,14,9,0,233,0,7};MYCOPY(dummy0_34b7d)} // 34ab:00cd
     {db tmp999[32]={255,0,4,2,15,6,3,0,244,0,7,255,0,4,9,14,15,2,16,209,0,7,255,0,4,12,4,5,13,16,10,1};MYCOPY(dummy0_34b9d)} // 34ab:00ed
@@ -11985,7 +11679,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=100;MYCOPY(dummy0_34e28)} // 34ab:0378
     {db tmp999=103;MYCOPY(dummy0_34e29)} // 34ab:0379
     {db tmp999=101;MYCOPY(dummy0_34e2a)} // 34ab:037a
-
     {db tmp999=12;MYCOPY(unk_4340c)} // 34ab:037c
     {db tmp999[32]={0,244,255,232,255,12,0,244,255,184,255,12,0,250,255,184,255,12,0,0,0,208,255,12,0,250,255,232,255,12,0,244};MYCOPY(dummy0_34e2d)} // 34ab:037d
     {db tmp999[32]={255,136,255,12,0,244,255,88,255,12,0,250,255,88,255,12,0,0,0,112,255,12,0,250,255,136,255,12,0,244,255,56};MYCOPY(dummy0_34e4d)} // 34ab:039d
@@ -11995,37 +11688,29 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,244,255,244,255,200,1,244,255,244,255,232,255,244,255,244,255,184,255,244,255,250,255,184,255,244,255,0,0,208,255,244};MYCOPY(dummy0_34ecd)} // 34ab:041d
     {db tmp999[32]={255,250,255,232,255,244,255,244,255,136,255,244,255,244,255,88,255,244,255,250,255,88,255,244,255,0,0,112,255,244,255,250};MYCOPY(dummy0_34eed)} // 34ab:043d
     {db tmp999[32]={255,136,255,244,255,244,255,24,0,244,255,244,255,72,0,244,255,250,255,72,0,244,255,0,0,48,0,244,255,250,255,24};MYCOPY(dummy0_34f0d)} // 34ab:045d
-
     {db tmp999=244;MYCOPY(dummy0_34f2e)} // 34ab:047e
     {db tmp999=255;MYCOPY(dummy0_34f2f)} // 34ab:047f
     {db tmp999=244;MYCOPY(dummy0_34f30)} // 34ab:0480
     {db tmp999=255;MYCOPY(dummy0_34f31)} // 34ab:0481
     {db tmp999=120;MYCOPY(dummy0_34f32)} // 34ab:0482
-
     {db tmp999=244;MYCOPY(dummy0_34f34)} // 34ab:0484
     {db tmp999=255;MYCOPY(dummy0_34f35)} // 34ab:0485
     {db tmp999=244;MYCOPY(dummy0_34f36)} // 34ab:0486
     {db tmp999=255;MYCOPY(dummy0_34f37)} // 34ab:0487
     {db tmp999=168;MYCOPY(dummy0_34f38)} // 34ab:0488
-
     {db tmp999=244;MYCOPY(dummy0_34f3a)} // 34ab:048a
     {db tmp999=255;MYCOPY(dummy0_34f3b)} // 34ab:048b
     {db tmp999=250;MYCOPY(dummy0_34f3c)} // 34ab:048c
     {db tmp999=255;MYCOPY(dummy0_34f3d)} // 34ab:048d
     {db tmp999=168;MYCOPY(dummy0_34f3e)} // 34ab:048e
-
     {db tmp999=244;MYCOPY(dummy0_34f40)} // 34ab:0490
     {db tmp999=255;MYCOPY(dummy0_34f41)} // 34ab:0491
-
-
     {db tmp999=144;MYCOPY(dummy0_34f44)} // 34ab:0494
-
     {db tmp999=244;MYCOPY(dummy0_34f46)} // 34ab:0496
     {db tmp999=255;MYCOPY(dummy0_34f47)} // 34ab:0497
     {db tmp999=250;MYCOPY(dummy0_34f48)} // 34ab:0498
     {db tmp999=255;MYCOPY(dummy0_34f49)} // 34ab:0499
     {db tmp999=120;MYCOPY(dummy0_34f4a)} // 34ab:049a
-
     {db tmp999=12;MYCOPY(unk_4352c)} // 34ab:049c
     {db tmp999[32]={0,244,255,56,254,12,0,250,255,56,254,12,0,12,0,40,255,12,0,244,255,40,255,12,0,244,255,184,255,12,0,244};MYCOPY(dummy0_34f4d)} // 34ab:049d
     {db tmp999[32]={255,136,255,12,0,244,255,88,255,12,0,244,255,232,255,12,0,12,0,232,255,12,0,12,0,88,255,12,0,250,255,232};MYCOPY(dummy0_34f6d)} // 34ab:04bd
@@ -12039,13 +11724,11 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,244,255,24,0,244,255,244,255,72,0,244,255,250,255,72,0,244,255,0,0,48,0,244,255,250,255,24,0,244,255,244};MYCOPY(dummy0_3506d)} // 34ab:05bd
     {db tmp999[32]={255,120,0,244,255,244,255,168,0,244,255,250,255,168,0,244,255,0,0,144,0,244,255,250,255,120,0,12,0,6,0,216};MYCOPY(dummy0_3508d)} // 34ab:05dd
     {db tmp999[32]={0,244,255,12,0,216,0,244,255,244,255,216,0,244,255,12,0,24,0,244,255,12,0,168,0,244,255,6,0,216,0,12};MYCOPY(dummy0_350ad)} // 34ab:05fd
-
     {db tmp999=244;MYCOPY(dummy0_350ce)} // 34ab:061e
     {db tmp999=255;MYCOPY(dummy0_350cf)} // 34ab:061f
     {db tmp999=200;MYCOPY(dummy0_350d0)} // 34ab:0620
     {db tmp999=1;MYCOPY(dummy0_350d1)} // 34ab:0621
     {db tmp999=12;MYCOPY(dummy0_350d2)} // 34ab:0622
-
     {db tmp999=250;MYCOPY(dummy0_350d4)} // 34ab:0624
     {db tmp999=255;MYCOPY(dummy0_350d5)} // 34ab:0625
     {db tmp999=200;MYCOPY(dummy0_350d6)} // 34ab:0626
@@ -12064,10 +11747,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=1;MYCOPY(dummy0_350e3)} // 350e:0003
     {db tmp999=11;MYCOPY(unk_436c4)} // 350e:0004
     {db tmp999=18;MYCOPY(dummy0_350e5)} // 350e:0005
-
-
-
-
     {dd tmp999=far_offset(seg061,unk_43776);MYCOPY(dummy0_350ea)} // 350e:000a
     {db tmp999[32]={167,0,11,4,16,18,0,1,255,0,5,4,3,2,1,0,16,30,0,8,255,0,5,7,6,5,9,8,16,42,0,9};MYCOPY(dummy0_350ee)} // 350e:000e
     {db tmp999[32]={255,0,4,1,9,5,0,16,53,0,7,255,0,4,2,8,9,1,16,64,0,15,255,0,4,3,7,8,2,16,75,0};MYCOPY(dummy0_3510e)} // 350e:002e
@@ -12081,7 +11760,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=111;MYCOPY(dummy0_35192)} // 350e:00b2
     {db tmp999=114;MYCOPY(dummy0_35193)} // 350e:00b3
     {db tmp999=121;MYCOPY(dummy0_35194)} // 350e:00b4
-
     {db tmp999=48;MYCOPY(unk_43776)} // 350e:00b6
     {db tmp999[32]={244,160,48,4,160,24,12,160,208,4,160,208,244,160,48,244,104,208,244,104,208,4,104,24,12,104,48,4,104,248,8,192};MYCOPY(dummy0_35197)} // 350e:00b7
     {db tmp999=240;MYCOPY(dummy0_351b7)} // 350e:00d7
@@ -12107,10 +11785,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=184;MYCOPY(dummy0_351cb)} // 351c:000b
     {db tmp999=21;MYCOPY(unk_437ac)} // 351c:000c
     {db tmp999=52;MYCOPY(dummy0_351cd)} // 351c:000d
-
-
-
-
     {dd tmp999=far_offset(seg062,unk_438a5);MYCOPY(dummy0_351d2)} // 351c:0012
     {db tmp999[32]={212,0,10,4,0,26,0,15,255,0,4,2,3,0,1,0,37,0,15,255,0,4,20,24,25,21,0,48,0,15,255,0};MYCOPY(dummy0_351d6)} // 351c:0016
     {db tmp999[32]={4,18,16,15,19,0,59,0,15,255,0,4,36,46,47,35,0,70,0,15,255,0,4,44,45,27,28,0,81,0,15,255};MYCOPY(dummy0_351f6)} // 351c:0036
@@ -12120,20 +11794,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={23,22,1,184,0,15,255,34,37,1,191,0,15,255,38,41,1,198,0,15,255,26,29,1,205,0,15,255,30,33,3,21};MYCOPY(dummy0_35276)} // 351c:00b6
     {db tmp999[32]={92,0,70,0,125,0,114,0,103,0,81,0,59,0,205,0,198,0,191,0,184,0,48,0,37,0,26,0,177,0,170,0};MYCOPY(dummy0_35296)} // 351c:00d6
     {db tmp999=163;MYCOPY(dummy0_352b6)} // 351c:00f6
-
     {db tmp999=156;MYCOPY(dummy0_352b8)} // 351c:00f8
-
     {db tmp999=149;MYCOPY(dummy0_352ba)} // 351c:00fa
-
     {db tmp999=142;MYCOPY(dummy0_352bc)} // 351c:00fc
-
     {db tmp999=135;MYCOPY(dummy0_352be)} // 351c:00fe
-
     {db tmp999=108;MYCOPY(dummy0_352c0)} // 351c:0100
     {db tmp999=111;MYCOPY(dummy0_352c1)} // 351c:0101
     {db tmp999=103;MYCOPY(dummy0_352c2)} // 351c:0102
     {db tmp999=111;MYCOPY(dummy0_352c3)} // 351c:0103
-
     {db tmp999=92;MYCOPY(unk_438a5)} // 351c:0105
     {db tmp999[32]={32,0,80,32,0,80,216,0,92,216,0,48,216,0,100,216,0,100,32,0,72,32,0,36,32,0,8,32,0,248,32,0};MYCOPY(dummy0_352c6)} // 351c:0106
     {db tmp999[32]={220,32,0,36,216,0,8,216,0,248,216,0,240,216,0,228,216,0,220,216,0,228,32,0,240,32,0,16,32,0,28,32};MYCOPY(dummy0_352e6)} // 351c:0126
@@ -12141,85 +11809,53 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={32,0,148,32,0,148,216,0,154,216,0,165,216,0,172,216,0,180,216,0,188,216,0,198,216,0,204,216,0,154,26,0};MYCOPY(dummy0_35326)} // 351c:0166
     {db tmp999=164;MYCOPY(dummy0_35346)} // 351c:0186
     {db tmp999=26;MYCOPY(dummy0_35347)} // 351c:0187
-
     {db tmp999=188;MYCOPY(dummy0_35349)} // 351c:0189
     {db tmp999=26;MYCOPY(dummy0_3534a)} // 351c:018a
-
     {db tmp999=198;MYCOPY(dummy0_3534c)} // 351c:018c
     {db tmp999=26;MYCOPY(dummy0_3534d)} // 351c:018d
-
     {db tmp999=165;MYCOPY(dummy0_3534f)} // 351c:018f
     {db tmp999=223;MYCOPY(dummy0_35350)} // 351c:0190
-
     {db tmp999=154;MYCOPY(dummy0_35352)} // 351c:0192
     {db tmp999=223;MYCOPY(dummy0_35353)} // 351c:0193
-
     {db tmp999=198;MYCOPY(dummy0_35355)} // 351c:0195
     {db tmp999=223;MYCOPY(dummy0_35356)} // 351c:0196
-
     {db tmp999=188;MYCOPY(dummy0_35358)} // 351c:0198
     {db tmp999=223;MYCOPY(dummy0_35359)} // 351c:0199
-
     {db tmp999=48;MYCOPY(dummy0_3535b)} // 351c:019b
     {db tmp999=224;MYCOPY(dummy0_3535c)} // 351c:019c
-
     {db tmp999=56;MYCOPY(dummy0_3535e)} // 351c:019e
     {db tmp999=216;MYCOPY(dummy0_3535f)} // 351c:019f
-
     {db tmp999=7;MYCOPY(unk_43941)} // 3536:0001
     {db tmp999=12;MYCOPY(dummy0_35362)} // 3536:0002
-
-
-
-
     {dd tmp999=far_offset(seg063,unk_43a56);MYCOPY(dummy0_35367)} // 3536:0007
     {db tmp999[32]={96,0,7,4,16,15,0,3,255,0,6,3,2,1,0,5,4,16,28,0,3,255,0,6,9,8,7,6,11,10,16,41};MYCOPY(dummy0_3536b)} // 3536:000b
     {db tmp999[32]={0,15,255,0,4,5,11,6,4,16,52,0,8,255,0,4,0,10,11,5,16,63,0,0,255,0,4,1,9,10,0,16};MYCOPY(dummy0_3538b)} // 3536:002b
     {db tmp999[32]={74,0,8,255,0,4,2,8,9,1,16,85,0,15,255,0,4,3,7,8,2,3,7,85,0,74,0,63,0,52,0,41};MYCOPY(dummy0_353ab)} // 3536:004b
-
     {db tmp999=28;MYCOPY(dummy0_353cc)} // 3536:006c
-
     {db tmp999=15;MYCOPY(dummy0_353ce)} // 3536:006e
-
     {db tmp999=11;MYCOPY(dummy0_353d0)} // 3536:0070
     {db tmp999=20;MYCOPY(dummy0_353d1)} // 3536:0071
-
-
-
-
     {dd tmp999=far_offset(seg063,unk_43a7a);MYCOPY(dummy0_353d6)} // 3536:0076
     {db tmp999[32]={247,0,9,4,16,126,0,3,255,0,8,7,6,5,2,0,1,3,4,16,141,0,3,255,0,8,13,12,11,10,9,8};MYCOPY(dummy0_353da)} // 3536:007a
     {db tmp999[32]={15,14,16,156,0,7,255,0,4,3,15,8,4,16,167,0,15,255,0,4,1,14,15,3,16,178,0,15,255,0,4,2};MYCOPY(dummy0_353fa)} // 3536:009a
     {db tmp999[32]={12,13,0,16,189,0,7,255,0,4,5,11,12,2,16,200,0,8,255,0,4,6,10,11,5,16,211,0,0,255,0,4};MYCOPY(dummy0_3541a)} // 3536:00ba
     {db tmp999[32]={7,9,10,6,16,222,0,8,255,0,4,4,8,9,7,17,141,0,0,255,17,16,17,126,0,0,255,18,19,3,11,126};MYCOPY(dummy0_3543a)} // 3536:00da
-
     {db tmp999=156;MYCOPY(dummy0_3545b)} // 3536:00fb
-
     {db tmp999=167;MYCOPY(dummy0_3545d)} // 3536:00fd
-
     {db tmp999=178;MYCOPY(dummy0_3545f)} // 3536:00ff
-
     {db tmp999=189;MYCOPY(dummy0_35461)} // 3536:0101
-
     {db tmp999=200;MYCOPY(dummy0_35463)} // 3536:0103
-
     {db tmp999=211;MYCOPY(dummy0_35465)} // 3536:0105
-
     {db tmp999=222;MYCOPY(dummy0_35467)} // 3536:0107
-
     {db tmp999=141;MYCOPY(dummy0_35469)} // 3536:0109
-
     {db tmp999=233;MYCOPY(dummy0_3546b)} // 3536:010b
-
     {db tmp999=240;MYCOPY(dummy0_3546d)} // 3536:010d
-
     {db tmp999=104;MYCOPY(dummy0_3546f)} // 3536:010f
     {db tmp999=97;MYCOPY(dummy0_35470)} // 3536:0110
     {db tmp999=110;MYCOPY(dummy0_35471)} // 3536:0111
     {db tmp999=103;MYCOPY(dummy0_35472)} // 3536:0112
     {db tmp999=97;MYCOPY(dummy0_35473)} // 3536:0113
     {db tmp999=114;MYCOPY(dummy0_35474)} // 3536:0114
-
     {db tmp999=225;MYCOPY(unk_43a56)} // 3536:0116
     {db tmp999[32]={36,108,31,36,108,56,12,108,56,216,108,200,216,108,200,11,108,200,216,147,56,216,147,56,12,147,31,36,147,225,36,147};MYCOPY(dummy0_35477)} // 3536:0117
     {db tmp999=200;MYCOPY(dummy0_35497)} // 3536:0137
@@ -12242,16 +11878,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=200;MYCOPY(dummy0_354c7)} // 3536:0167
     {db tmp999=11;MYCOPY(dummy0_354c8)} // 3536:0168
     {db tmp999=108;MYCOPY(dummy0_354c9)} // 3536:0169
-
     {db tmp999=216;MYCOPY(dummy0_354cb)} // 3536:016b
     {db tmp999=108;MYCOPY(dummy0_354cc)} // 3536:016c
-
     {db tmp999=40;MYCOPY(dummy0_354ce)} // 3536:016e
     {db tmp999=108;MYCOPY(dummy0_354cf)} // 3536:016f
-
     {db tmp999=40;MYCOPY(dummy0_354d1)} // 354d:0001
     {db tmp999=148;MYCOPY(dummy0_354d2)} // 354d:0002
-
     {db tmp999=216;MYCOPY(dummy0_354d4)} // 354d:0004
     {db tmp999=148;MYCOPY(dummy0_354d5)} // 354d:0005
     {db tmp999=10;MYCOPY(unk_43ab6)} // 354d:0006
@@ -12269,7 +11901,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={1,6,255,3,15,1,108,1,6,255,2,14,1,115,1,6,255,1,13,1,122,1,6,255,0,12,3,5,34,1,24,1};MYCOPY(dummy0_35637)} // 354d:0167
     {db tmp999[32]={14,1,4,1,250,0,3,1,195,0,3,4,206,0,108,1,80,1,73,1,16,206,0,141,1,145,1,3,4,239,0,101};MYCOPY(dummy0_35657)} // 354d:0187
     {db tmp999[32]={1,94,1,87,1,16,239,0,155,1,162,1,3,4,217,0,115,1,52,1,45,1,16,217,0,172,1,179,1,3,4,228};MYCOPY(dummy0_35677)} // 354d:01a7
-
     {db tmp999=122;MYCOPY(dummy0_35698)} // 354d:01c8
     {db tmp999=1;MYCOPY(dummy0_35699)} // 354d:01c9
     {db tmp999=66;MYCOPY(dummy0_3569a)} // 354d:01ca
@@ -12278,7 +11909,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=1;MYCOPY(dummy0_3569d)} // 354d:01cd
     {db tmp999=16;MYCOPY(dummy0_3569e)} // 354d:01ce
     {db tmp999=228;MYCOPY(dummy0_3569f)} // 354d:01cf
-
     {db tmp999=189;MYCOPY(dummy0_356a1)} // 354d:01d1
     {db tmp999=1;MYCOPY(dummy0_356a2)} // 354d:01d2
     {db tmp999=196;MYCOPY(dummy0_356a3)} // 354d:01d3
@@ -12295,13 +11925,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=119;MYCOPY(dummy0_356ae)} // 354d:01de
     {db tmp999=101;MYCOPY(dummy0_356af)} // 354d:01df
     {db tmp999=114;MYCOPY(dummy0_356b0)} // 356b:0000
-
     {db tmp999=3;MYCOPY(unk_43c92)} // 356b:0002
     {db tmp999=11;MYCOPY(dummy0_356b3)} // 356b:0003
-
-
-
-
     {dd tmp999=far_offset(seg065,unk_43d55);MYCOPY(dummy0_356b8)} // 356b:0008
     {db tmp999[32]={47,0,2,0,0,16,0,10,90,0,5,2,6,1,5,0,0,28,0,10,90,0,5,9,8,1,7,10,1,40,0,6};MYCOPY(dummy0_356bc)} // 356b:000c
     {db tmp999=255;MYCOPY(dummy0_356dc)} // 356b:002c
@@ -12310,17 +11935,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=3;MYCOPY(dummy0_356df)} // 356b:002f
     {db tmp999=3;MYCOPY(dummy0_356e0)} // 356b:0030
     {db tmp999=28;MYCOPY(dummy0_356e1)} // 356b:0031
-
     {db tmp999=16;MYCOPY(dummy0_356e3)} // 356b:0033
-
     {db tmp999=40;MYCOPY(dummy0_356e5)} // 356b:0035
-
     {db tmp999=8;MYCOPY(dummy0_356e7)} // 356b:0037
     {db tmp999=31;MYCOPY(dummy0_356e8)} // 356b:0038
-
-
-
-
     {dd tmp999=far_offset(seg065,unk_43d97);MYCOPY(dummy0_356ed)} // 356b:003d
     {db tmp999[32]={184,0,8,0,0,69,0,10,90,0,7,2,1,0,6,5,4,3,0,69,0,10,90,0,9,14,13,12,11,10,9,8};MYCOPY(dummy0_356f1)} // 356b:0041
     {db tmp999[32]={7,3,0,69,0,10,90,0,5,17,16,15,1,18,0,69,0,10,90,0,5,23,22,21,20,19,0,69,0,10,90,0};MYCOPY(dummy0_35711)} // 356b:0061
@@ -12329,121 +11947,74 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_35771)} // 356b:00c1
     {db tmp999=101;MYCOPY(dummy0_35772)} // 356b:00c2
     {db tmp999=49;MYCOPY(dummy0_35773)} // 356b:00c3
-
     {db tmp999=224;MYCOPY(unk_43d55)} // 356b:00c5
     {db tmp999[32]={255,48,0,0,0,0,0,187,0,0,0,24,0,48,0,0,0,0,0,80,0,0,0,0,0,0,0,0,0,231,255,146};MYCOPY(dummy0_35776)} // 356b:00c6
     {db tmp999[32]={0,0,0,35,0,101,0,0,0,0,0,111,0,30,0,0,0,129,0,231,255,0,0,48,0,232,255,0,0,48,0,24};MYCOPY(dummy0_35796)} // 356b:00e6
-
     {db tmp999=224;MYCOPY(unk_43d97)} // 356b:0107
     {db tmp999[32]={255,48,0,0,0,216,255,72,0,0,0,226,255,152,0,0,0,0,0,187,0,0,0,13,0,164,0,0,0,32,0,108};MYCOPY(dummy0_357b8)} // 356b:0108
     {db tmp999[32]={0,0,0,24,0,48,0,0,0,0,0,160,0,240,255,0,0,120,0,224,255,0,0,60,0,212,255,0,0,48,0,228};MYCOPY(dummy0_357d8)} // 356b:0128
     {db tmp999[32]={255,0,0,48,0,24,0,0,0,72,0,48,0,0,0,136,0,40,0,0,0,168,0,16,0,228,255,72,0,228,255,24};MYCOPY(dummy0_357f8)} // 356b:0148
     {db tmp999[32]={0,72,0,232,255,20,0,72,0,24,0,228,255,72,0,28,0,247,255,112,0,220,255,28,0,112,0,244,255,12,0,112};MYCOPY(dummy0_35818)} // 356b:0168
     {db tmp999[32]={0,32,0,240,255,112,0,32,0,226,255,112,0,241,255,240,255,152,0,240,255,12,0,152,0,248,255,248,255,152,0,20};MYCOPY(dummy0_35838)} // 356b:0188
-
     {db tmp999=4;MYCOPY(dummy0_35859)} // 356b:01a9
-
-
-
     {db tmp999=4;MYCOPY(dummy0_3585d)} // 356b:01ad
-
     {db tmp999=252;MYCOPY(dummy0_3585f)} // 356b:01af
     {db tmp999=255;MYCOPY(dummy0_35860)} // 356b:01b0
-
-
     {db tmp999=4;MYCOPY(dummy0_35863)} // 356b:01b3
-
-
-
-
-
     {db tmp999=252;MYCOPY(dummy0_35869)} // 356b:01b9
     {db tmp999=255;MYCOPY(dummy0_3586a)} // 356b:01ba
-
-
     {db tmp999=80;MYCOPY(dummy0_3586d)} // 356b:01bd
-
-
-
     {db tmp999=2;MYCOPY(unk_43e51)} // 3587:0001
     {db tmp999=3;MYCOPY(dummy0_35872)} // 3587:0002
-
-
-
-
     {dd tmp999=far_offset(seg066,unk_43f0f);MYCOPY(dummy0_35877)} // 3587:0007
     {db tmp999=30;MYCOPY(dummy0_3587b)} // 3587:000b
-
-
     {db tmp999=4;MYCOPY(dummy0_3587e)} // 3587:000e
     {db tmp999=1;MYCOPY(dummy0_3587f)} // 3587:000f
     {db tmp999=15;MYCOPY(dummy0_35880)} // 3587:0010
-
     {db tmp999=6;MYCOPY(dummy0_35882)} // 3587:0012
     {db tmp999=255;MYCOPY(dummy0_35883)} // 3587:0013
-
     {db tmp999=1;MYCOPY(dummy0_35885)} // 3587:0015
     {db tmp999=3;MYCOPY(dummy0_35886)} // 3587:0016
     {db tmp999=22;MYCOPY(dummy0_35887)} // 3587:0017
-
     {db tmp999=10;MYCOPY(dummy0_35889)} // 3587:0019
     {db tmp999=90;MYCOPY(dummy0_3588a)} // 3587:001a
     {db tmp999=45;MYCOPY(dummy0_3588b)} // 3587:001b
-
     {db tmp999=2;MYCOPY(dummy0_3588d)} // 3587:001d
     {db tmp999=3;MYCOPY(dummy0_3588e)} // 3587:001e
     {db tmp999=2;MYCOPY(dummy0_3588f)} // 3587:001f
     {db tmp999=15;MYCOPY(dummy0_35890)} // 3587:0020
-
     {db tmp999=22;MYCOPY(dummy0_35892)} // 3587:0022
-
     {db tmp999=14;MYCOPY(dummy0_35894)} // 3587:0024
     {db tmp999=8;MYCOPY(dummy0_35895)} // 3587:0025
-
-
-
-
     {dd tmp999=far_offset(seg066,unk_43f18);MYCOPY(dummy0_3589a)} // 3587:002a
     {db tmp999[32]={155,0,0,4,1,50,0,6,255,0,1,1,57,0,6,255,1,2,1,64,0,6,255,1,3,1,71,0,6,255,1,4};MYCOPY(dummy0_3589e)} // 3587:002e
     {db tmp999[32]={1,78,0,6,255,4,5,1,85,0,6,255,3,7,1,92,0,6,255,1,6,3,99,0,10,90,15,0,2,3,107,0};MYCOPY(dummy0_358be)} // 3587:004e
     {db tmp999[32]={14,90,20,0,6,3,115,0,14,90,15,0,3,3,123,0,10,90,30,0,7,3,131,0,10,90,20,0,5,3,139,0};MYCOPY(dummy0_358de)} // 3587:006e
     {db tmp999[32]={10,90,25,0,4,3,147,0,14,90,15,0,1,3,14,50,0,57,0,64,0,71,0,78,0,85,0,92,0,99,0,107};MYCOPY(dummy0_358fe)} // 3587:008e
-
     {db tmp999=115;MYCOPY(dummy0_3591f)} // 3587:00af
-
     {db tmp999=123;MYCOPY(dummy0_35921)} // 3587:00b1
-
     {db tmp999=131;MYCOPY(dummy0_35923)} // 3587:00b3
-
     {db tmp999=139;MYCOPY(dummy0_35925)} // 3587:00b5
-
     {db tmp999=147;MYCOPY(dummy0_35927)} // 3587:00b7
-
     {db tmp999=116;MYCOPY(dummy0_35929)} // 3587:00b9
     {db tmp999=114;MYCOPY(dummy0_3592a)} // 3587:00ba
     {db tmp999=101;MYCOPY(dummy0_3592b)} // 3587:00bb
     {db tmp999=101;MYCOPY(dummy0_3592c)} // 3587:00bc
     {db tmp999=50;MYCOPY(dummy0_3592d)} // 3587:00bd
-
     {db tmp999=0;MYCOPY(unk_43f0f)} // 3587:00bf
     {db tmp999=184;MYCOPY(dummy0_35930)} // 3587:00c0
-
     {db tmp999=248;MYCOPY(dummy0_35932)} // 3587:00c2
     {db tmp999=232;MYCOPY(dummy0_35933)} // 3587:00c3
     {db tmp999=248;MYCOPY(dummy0_35934)} // 3587:00c4
-
     {db tmp999=20;MYCOPY(dummy0_35936)} // 3587:00c6
     {db tmp999=248;MYCOPY(dummy0_35937)} // 3587:00c7
     {db tmp999=0;MYCOPY(unk_43f18)} // 3587:00c8
     {db tmp999=184;MYCOPY(dummy0_35939)} // 3587:00c9
-
     {db tmp999=248;MYCOPY(dummy0_3593b)} // 3587:00cb
     {db tmp999=232;MYCOPY(dummy0_3593c)} // 3587:00cc
     {db tmp999=248;MYCOPY(dummy0_3593d)} // 3587:00cd
     {db tmp999=224;MYCOPY(dummy0_3593e)} // 3587:00ce
-
     {db tmp999=216;MYCOPY(dummy0_35940)} // 3587:00d0
-
     {db tmp999=16;MYCOPY(dummy0_35942)} // 3587:00d2
     {db tmp999=224;MYCOPY(dummy0_35943)} // 3587:00d3
     {db tmp999=8;MYCOPY(dummy0_35944)} // 3587:00d4
@@ -12460,10 +12031,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=240;MYCOPY(dummy0_3594f)} // 3587:00df
     {db tmp999=13;MYCOPY(unk_43f30)} // 3595:0000
     {db tmp999=14;MYCOPY(dummy0_35951)} // 3595:0001
-
-
-
-
     {dd tmp999=far_offset(seg067,aaaaaamararaiaa);MYCOPY(dummy0_35956)} // 3595:0006
     {db tmp999[32]={187,0,5,4,0,14,0,7,255,0,4,9,7,4,8,0,25,0,7,255,0,3,6,9,7,0,35,0,7,255,0,3};MYCOPY(dummy0_3595a)} // 3595:000a
     {db tmp999[32]={4,8,5,0,45,0,0,255,0,3,6,4,7,0,55,0,0,255,0,3,5,4,6,1,65,0,6,255,6,1,1,72};MYCOPY(dummy0_3597a)} // 3595:002a
@@ -12471,36 +12038,25 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={12,1,107,0,6,255,1,11,1,114,0,6,255,0,10,3,3,25,0,79,0,93,0,3,3,72,0,107,0,35,0,3};MYCOPY(dummy0_359ba)} // 3595:006a
     {db tmp999[32]={1,45,0,3,1,55,0,3,2,65,0,100,0,16,55,0,141,0,145,0,16,45,0,137,0,151,0,16,35,0,129,0};MYCOPY(dummy0_359da)} // 3595:008a
     {db tmp999=158;MYCOPY(dummy0_359fa)} // 3595:00aa
-
     {db tmp999=16;MYCOPY(dummy0_359fc)} // 3595:00ac
     {db tmp999=25;MYCOPY(dummy0_359fd)} // 3595:00ad
-
     {db tmp999=121;MYCOPY(dummy0_359ff)} // 3595:00af
-
     {db tmp999=165;MYCOPY(dummy0_35a01)} // 3595:00b1
-
     {db tmp999=3;MYCOPY(dummy0_35a03)} // 3595:00b3
     {db tmp999=3;MYCOPY(dummy0_35a04)} // 3595:00b4
     {db tmp999=86;MYCOPY(dummy0_35a05)} // 3595:00b5
-
     {db tmp999=14;MYCOPY(dummy0_35a07)} // 3595:00b7
-
     {db tmp999=114;MYCOPY(dummy0_35a09)} // 3595:00b9
-
     {db tmp999=16;MYCOPY(dummy0_35a0b)} // 3595:00bb
     {db tmp999=14;MYCOPY(dummy0_35a0c)} // 3595:00bc
-
     {db tmp999=172;MYCOPY(dummy0_35a0e)} // 3595:00be
-
     {db tmp999=179;MYCOPY(dummy0_35a10)} // 3595:00c0
-
     {db tmp999=116;MYCOPY(dummy0_35a12)} // 3595:00c2
     {db tmp999=111;MYCOPY(dummy0_35a13)} // 3595:00c3
     {db tmp999=119;MYCOPY(dummy0_35a14)} // 3595:00c4
     {db tmp999=101;MYCOPY(dummy0_35a15)} // 3595:00c5
     {db tmp999=114;MYCOPY(dummy0_35a16)} // 3595:00c6
     {db tmp999=100;MYCOPY(dummy0_35a17)} // 3595:00c7
-
     {char tmp999[29]="\xe0\x90\xe0 \x90\xe0 \x90 \xe0\x90 \xe0\xec\xe0 \xd0\xe0 \xf0 \xe0\xe8 \xe0\x08\xe0\xe0";MYCOPY(aaaaaamararaiaa)} // 3595:00c9
     {db tmp999=32;MYCOPY(dummy0_35a36)} // 3595:00e6
     {db tmp999=224;MYCOPY(dummy0_35a37)} // 3595:00e7
@@ -12517,24 +12073,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=32;MYCOPY(dummy0_35a42)} // 35a4:0002
     {db tmp999=1;MYCOPY(unk_44023)} // 35a4:0003
     {db tmp999=10;MYCOPY(dummy0_35a44)} // 35a4:0004
-
-
-
-
     {dd tmp999=far_offset(seg068,unk_4404b);MYCOPY(dummy0_35a49)} // 35a4:0009
     {db tmp999=34;MYCOPY(dummy0_35a4d)} // 35a4:000d
-
     {db tmp999=1;MYCOPY(dummy0_35a4f)} // 35a4:000f
-
-
     {db tmp999=17;MYCOPY(dummy0_35a52)} // 35a4:0012
-
     {db tmp999=1;MYCOPY(dummy0_35a54)} // 35a4:0014
     {db tmp999=255;MYCOPY(dummy0_35a55)} // 35a4:0015
-
     {db tmp999=10;MYCOPY(dummy0_35a57)} // 35a4:0017
     {db tmp999=5;MYCOPY(dummy0_35a58)} // 35a4:0018
-
     {db tmp999=6;MYCOPY(dummy0_35a5a)} // 35a4:001a
     {db tmp999=7;MYCOPY(dummy0_35a5b)} // 35a4:001b
     {db tmp999=8;MYCOPY(dummy0_35a5c)} // 35a4:001c
@@ -12546,39 +12092,26 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=3;MYCOPY(dummy0_35a62)} // 35a4:0022
     {db tmp999=1;MYCOPY(dummy0_35a63)} // 35a4:0023
     {db tmp999=17;MYCOPY(dummy0_35a64)} // 35a4:0024
-
     {db tmp999=112;MYCOPY(dummy0_35a66)} // 35a4:0026
     {db tmp999=111;MYCOPY(dummy0_35a67)} // 35a4:0027
     {db tmp999=111;MYCOPY(dummy0_35a68)} // 35a4:0028
     {db tmp999=108;MYCOPY(dummy0_35a69)} // 35a4:0029
-
     {db tmp999=192;MYCOPY(unk_4404b)} // 35a4:002b
     {db tmp999[32]={0,0,0,0,1,32,255,0,0,160,255,152,255,0,0,24,255,0,255,0,0,64,0,96,255,0,0,192,0,248,255,0};MYCOPY(dummy0_35a6c)} // 35a4:002c
-
     {db tmp999=8;MYCOPY(dummy0_35a8d)} // 35a4:004d
     {db tmp999=1;MYCOPY(dummy0_35a8e)} // 35a4:004e
     {db tmp999=128;MYCOPY(dummy0_35a8f)} // 35a4:004f
     {db tmp999=1;MYCOPY(dummy0_35a90)} // 35a4:0050
-
-
     {db tmp999=160;MYCOPY(dummy0_35a93)} // 35a4:0053
-
     {db tmp999=160;MYCOPY(dummy0_35a95)} // 35a4:0055
     {db tmp999=1;MYCOPY(dummy0_35a96)} // 35a4:0056
-
-
     {db tmp999=224;MYCOPY(dummy0_35a99)} // 35a4:0059
     {db tmp999=255;MYCOPY(dummy0_35a9a)} // 35a4:005a
     {db tmp999=64;MYCOPY(dummy0_35a9b)} // 35a4:005b
     {db tmp999=1;MYCOPY(dummy0_35a9c)} // 35a4:005c
-
-
     {db tmp999=64;MYCOPY(dummy0_35a9f)} // 35a4:005f
     {db tmp999=255;MYCOPY(dummy0_35aa0)} // 35aa:0000
     {db tmp999=136;MYCOPY(dummy0_35aa1)} // 35aa:0001
-
-
-
     {db tmp999=16;MYCOPY(dummy0_35aa5)} // 35aa:0005
     {db tmp999=255;MYCOPY(dummy0_35aa6)} // 35aa:0006
     {db tmp999=2;MYCOPY(unk_44087)} // 35aa:0007
@@ -12590,27 +12123,17 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,0,4,27,28,1,0,16,56,0,6,255,0,4,29,2,1,28,16,66,0,6,255,0,4,0,2,29,27,3,7,119};MYCOPY(dummy0_35b48)} // 35aa:00a8
     {db tmp999[32]={0,130,0,141,0,86,0,108,0,97,0,152,0,3,3,56,0,66,0,76,0,3,3,186,0,175,0,164,0,16,152,0};MYCOPY(dummy0_35b68)} // 35aa:00c8
     {db tmp999=213;MYCOPY(dummy0_35b88)} // 35aa:00e8
-
     {db tmp999=221;MYCOPY(dummy0_35b8a)} // 35aa:00ea
-
     {db tmp999=16;MYCOPY(dummy0_35b8c)} // 35aa:00ec
     {db tmp999=152;MYCOPY(dummy0_35b8d)} // 35aa:00ed
-
     {db tmp999=197;MYCOPY(dummy0_35b8f)} // 35aa:00ef
-
     {db tmp999=229;MYCOPY(dummy0_35b91)} // 35b9:0001
-
     {db tmp999=112;MYCOPY(dummy0_35b93)} // 35b9:0003
     {db tmp999=97;MYCOPY(dummy0_35b94)} // 35b9:0004
     {db tmp999=108;MYCOPY(dummy0_35b95)} // 35b9:0005
     {db tmp999=109;MYCOPY(dummy0_35b96)} // 35b9:0006
-
     {db tmp999=9;MYCOPY(unk_44178)} // 35b9:0008
     {db tmp999=16;MYCOPY(dummy0_35b99)} // 35b9:0009
-
-
-
-
     {dd tmp999=far_offset(seg070,unk_44205);MYCOPY(dummy0_35b9e)} // 35b9:000e
     {db tmp999[32]={125,0,9,0,16,22,0,1,255,0,8,13,12,11,10,9,8,15,14,16,37,0,0,255,0,4,1,15,8,2,16,48};MYCOPY(dummy0_35ba2)} // 35b9:0012
     {db tmp999[32]={0,8,255,0,4,0,14,15,1,16,59,0,7,255,0,4,7,13,14,0,16,70,0,7,255,0,4,6,12,13,7,16};MYCOPY(dummy0_35bc2)} // 35b9:0032
@@ -12618,65 +12141,42 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={16,114,0,8,255,0,4,2,8,9,3,3,9,114,0,103,0,92,0,81,0,70,0,59,0,48,0,37,0,22,0,111};MYCOPY(dummy0_35c02)} // 35b9:0072
     {db tmp999=105;MYCOPY(dummy0_35c22)} // 35b9:0092
     {db tmp999=108;MYCOPY(dummy0_35c23)} // 35b9:0093
-
     {db tmp999=64;MYCOPY(unk_44205)} // 35b9:0095
     {db tmp999[32]={255,208,255,12,0,116,255,208,255,130,255,250,255,208,255,68,255,132,0,208,255,118,255,194,0,208,255,254,255,144,0,208};MYCOPY(dummy0_35c26)} // 35b9:0096
     {db tmp999[32]={255,134,0,8,0,208,255,198,0,128,255,208,255,146,0,250,255,32,0,68,255,132,0,32,0,118,255,194,0,32,0,254};MYCOPY(dummy0_35c46)} // 35b9:00b6
     {db tmp999=255;MYCOPY(dummy0_35c66)} // 35b9:00d6
     {db tmp999=144;MYCOPY(dummy0_35c67)} // 35b9:00d7
-
     {db tmp999=32;MYCOPY(dummy0_35c69)} // 35b9:00d9
-
     {db tmp999=134;MYCOPY(dummy0_35c6b)} // 35b9:00db
-
     {db tmp999=8;MYCOPY(dummy0_35c6d)} // 35b9:00dd
-
     {db tmp999=32;MYCOPY(dummy0_35c6f)} // 35b9:00df
-
     {db tmp999=198;MYCOPY(dummy0_35c71)} // 35b9:00e1
-
     {db tmp999=128;MYCOPY(dummy0_35c73)} // 35b9:00e3
     {db tmp999=255;MYCOPY(dummy0_35c74)} // 35b9:00e4
     {db tmp999=32;MYCOPY(dummy0_35c75)} // 35b9:00e5
-
     {db tmp999=146;MYCOPY(dummy0_35c77)} // 35b9:00e7
-
     {db tmp999=64;MYCOPY(dummy0_35c79)} // 35b9:00e9
     {db tmp999=255;MYCOPY(dummy0_35c7a)} // 35b9:00ea
     {db tmp999=32;MYCOPY(dummy0_35c7b)} // 35b9:00eb
-
     {db tmp999=12;MYCOPY(dummy0_35c7d)} // 35b9:00ed
-
     {db tmp999=116;MYCOPY(dummy0_35c7f)} // 35b9:00ef
     {db tmp999=255;MYCOPY(dummy0_35c80)} // 35c8:0000
     {db tmp999=32;MYCOPY(dummy0_35c81)} // 35c8:0001
-
     {db tmp999=130;MYCOPY(dummy0_35c83)} // 35c8:0003
     {db tmp999=255;MYCOPY(dummy0_35c84)} // 35c8:0004
     {db tmp999=8;MYCOPY(unk_44265)} // 35c8:0005
     {db tmp999[32]={16,16,16,16,8,0,16,32,32,32,32,16,0,16,32,32,32,32,24,8,16,32,32,32,32,24,24,16,32,32,32,32};MYCOPY(dummy0_35c86)} // 35c8:0006
     {db tmp999=16;MYCOPY(dummy0_35ca6)} // 35c8:0026
-
     {db tmp999=8;MYCOPY(dummy0_35ca8)} // 35c8:0028
     {db tmp999=16;MYCOPY(dummy0_35ca9)} // 35c8:0029
     {db tmp999=24;MYCOPY(dummy0_35caa)} // 35c8:002a
     {db tmp999=24;MYCOPY(dummy0_35cab)} // 35c8:002b
     {db tmp999=16;MYCOPY(dummy0_35cac)} // 35c8:002c
     {db tmp999=8;MYCOPY(dummy0_35cad)} // 35c8:002d
-
-
-
     {db tmp999=8;MYCOPY(dummy0_35cb1)} // 35cb:0001
     {db tmp999=24;MYCOPY(dummy0_35cb2)} // 35cb:0002
-
-
-
     {db tmp999=9;MYCOPY(unk_44296)} // 35cb:0006
     {db tmp999=17;MYCOPY(dummy0_35cb7)} // 35cb:0007
-
-
-
-
     {dd tmp999=far_offset(seg072,unk_44324);MYCOPY(dummy0_35cbc)} // 35cb:000c
     {db tmp999[32]={123,0,9,0,16,20,0,0,255,0,3,11,15,2,16,30,0,15,255,0,5,5,10,14,16,6,16,42,0,7,255,0};MYCOPY(dummy0_35cc0)} // 35cb:0010
     {db tmp999[32]={4,4,9,10,5,16,53,0,8,255,0,4,3,8,9,4,16,64,0,8,255,0,5,2,15,13,8,3,16,76,0,0};MYCOPY(dummy0_35ce0)} // 35cb:0030
@@ -12685,11 +12185,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=105;MYCOPY(dummy0_35d40)} // 35cb:0090
     {db tmp999=108;MYCOPY(dummy0_35d41)} // 35cb:0091
     {db tmp999=100;MYCOPY(dummy0_35d42)} // 35cb:0092
-
     {db tmp999=64;MYCOPY(unk_44324)} // 35cb:0094
     {db tmp999[32]={255,208,255,12,0,116,255,208,255,130,255,250,255,208,255,68,255,132,0,208,255,118,255,194,0,208,255,254,255,144,0,208};MYCOPY(dummy0_35d45)} // 35cb:0095
     {db tmp999[32]={255,134,0,8,0,208,255,198,0,128,255,208,255,146,0,132,0,32,0,118,255,194,0,32,0,254,255,144,0,32,0,134};MYCOPY(dummy0_35d65)} // 35cb:00b5
-
     {db tmp999=172;MYCOPY(dummy0_35d86)} // 35cb:00d6
     {db tmp999=255;MYCOPY(dummy0_35d87)} // 35cb:00d7
     {db tmp999=208;MYCOPY(dummy0_35d88)} // 35cb:00d8
@@ -12701,32 +12199,20 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=208;MYCOPY(dummy0_35d8e)} // 35cb:00de
     {db tmp999=255;MYCOPY(dummy0_35d8f)} // 35cb:00df
     {db tmp999=162;MYCOPY(dummy0_35d90)} // 35cb:00e0
-
     {db tmp999=58;MYCOPY(dummy0_35d92)} // 35cb:00e2
-
     {db tmp999=32;MYCOPY(dummy0_35d94)} // 35cb:00e4
-
     {db tmp999=92;MYCOPY(dummy0_35d96)} // 35cb:00e6
     {db tmp999=255;MYCOPY(dummy0_35d97)} // 35cb:00e7
     {db tmp999=58;MYCOPY(dummy0_35d98)} // 35cb:00e8
-
     {db tmp999=32;MYCOPY(dummy0_35d9a)} // 35cb:00ea
-
     {db tmp999=174;MYCOPY(dummy0_35d9c)} // 35cb:00ec
-
     {db tmp999=250;MYCOPY(dummy0_35d9e)} // 35cb:00ee
     {db tmp999=255;MYCOPY(dummy0_35d9f)} // 35cb:00ef
     {char tmp999[6]="\xfc\xff" "F\xff\x08";MYCOPY(dummy0_35da0)} // 35da:0000
     {db tmp999=4;MYCOPY(dummy0_35da6)} // 35da:0006
-
     {db tmp999=198;MYCOPY(dummy0_35da8)} // 35da:0008
-
     {db tmp999=2;MYCOPY(unk_4438a)} // 35da:000a
     {db tmp999=8;MYCOPY(dummy0_35dab)} // 35da:000b
-
-
-
-
     {dd tmp999=far_offset(seg073,unk_443bb);MYCOPY(dummy0_35db0)} // 35da:0010
     {db tmp999[32]={46,0,2,4,0,24,0,6,255,0,4,7,4,5,6,0,35,0,0,255,0,4,0,1,2,3,3,2,35,0,24,0};MYCOPY(dummy0_35db4)} // 35da:0014
     {db tmp999=104;MYCOPY(dummy0_35dd4)} // 35da:0034
@@ -12735,7 +12221,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=99;MYCOPY(dummy0_35dd7)} // 35da:0037
     {db tmp999=104;MYCOPY(dummy0_35dd8)} // 35da:0038
     {db tmp999=100;MYCOPY(dummy0_35dd9)} // 35da:0039
-
     {db tmp999=244;MYCOPY(unk_443bb)} // 35da:003b
     {db tmp999=250;MYCOPY(dummy0_35ddc)} // 35da:003c
     {db tmp999=24;MYCOPY(dummy0_35ddd)} // 35da:003d
@@ -12821,13 +12306,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=109;MYCOPY(dummy0_3607a)} // 3607:000a
     {db tmp999=112;MYCOPY(dummy0_3607b)} // 3607:000b
     {db tmp999=50;MYCOPY(dummy0_3607c)} // 3607:000c
-
     {db tmp999=9;MYCOPY(unk_4465e)} // 3607:000e
     {db tmp999=16;MYCOPY(dummy0_3607f)} // 3607:000f
-
-
-
-
     {dd tmp999=far_offset(seg075,unk_446eb);MYCOPY(dummy0_36084)} // 3607:0014
     {db tmp999[32]={145,0,9,0,0,28,0,0,255,0,4,4,1,2,3,0,39,0,0,255,0,4,6,1,4,5,0,50,0,0,255,0};MYCOPY(dummy0_36088)} // 3607:0018
     {db tmp999[32]={4,9,8,7,1,0,61,0,0,255,0,4,7,11,10,1,16,72,0,3,255,0,3,14,13,1,16,82,0,3,255,0};MYCOPY(dummy0_360a8)} // 3607:0038
@@ -12835,70 +12315,39 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={1,6,0,3,5,61,0,50,0,28,0,112,0,39,0,3,4,102,0,92,0,82,0,72,0,16,28,0,123,0,135,0};MYCOPY(dummy0_360e8)} // 3607:0078
     {db tmp999=98;MYCOPY(dummy0_36108)} // 3607:0098
     {db tmp999=50;MYCOPY(dummy0_36109)} // 3607:0099
-
     {db tmp999=0;MYCOPY(unk_446eb)} // 3607:009b
     {db tmp999[32]={0,0,0,216,255,0,0,0,0,56,0,128,255,0,0,224,255,148,255,0,0,212,255,188,255,0,0,240,255,220,255,0};MYCOPY(dummy0_3610c)} // 3607:009c
     {db tmp999[32]={0,220,255,236,255,0,0,228,255,68,0,0,0,240,255,36,0,0,0,220,255,20,0,0,0,228,255,128,0,0,0,224};MYCOPY(dummy0_3612c)} // 3607:00bc
     {db tmp999=255;MYCOPY(dummy0_3614c)} // 3607:00dc
     {db tmp999=108;MYCOPY(dummy0_3614d)} // 3607:00dd
-
-
-
     {db tmp999=212;MYCOPY(dummy0_36151)} // 3607:00e1
     {db tmp999=255;MYCOPY(dummy0_36152)} // 3607:00e2
     {db tmp999=12;MYCOPY(dummy0_36153)} // 3607:00e3
-
-
-
     {db tmp999=32;MYCOPY(dummy0_36157)} // 3607:00e7
-
     {db tmp999=244;MYCOPY(dummy0_36159)} // 3607:00e9
     {db tmp999=255;MYCOPY(dummy0_3615a)} // 3607:00ea
-
-
     {db tmp999=32;MYCOPY(dummy0_3615d)} // 3607:00ed
-
-
-
     {db tmp999=12;MYCOPY(dummy0_36161)} // 3616:0001
-
     {db tmp999=32;MYCOPY(dummy0_36163)} // 3616:0003
-
-
-
     {db tmp999=240;MYCOPY(dummy0_36167)} // 3616:0007
     {db tmp999=255;MYCOPY(dummy0_36168)} // 3616:0008
-
-
     {db tmp999=6;MYCOPY(unk_4474b)} // 3616:000b
     {db tmp999=8;MYCOPY(dummy0_3616c)} // 3616:000c
-
-
-
-
     {dd tmp999=far_offset(seg076,unk_447b2);MYCOPY(dummy0_36171)} // 3616:0011
     {db tmp999[32]={91,0,6,4,16,25,0,0,255,0,4,4,7,6,5,16,36,0,0,255,0,4,2,3,0,1,16,47,0,0,255,0};MYCOPY(dummy0_36175)} // 3616:0015
     {db tmp999[32]={4,5,6,2,1,16,58,0,0,255,0,4,7,3,2,6,16,69,0,0,255,0,4,4,0,3,7,16,80,0,0,255};MYCOPY(dummy0_36195)} // 3616:0035
-
     {db tmp999=4;MYCOPY(dummy0_361b6)} // 3616:0056
     {db tmp999=5;MYCOPY(dummy0_361b7)} // 3616:0057
     {db tmp999=1;MYCOPY(dummy0_361b8)} // 3616:0058
-
     {db tmp999=4;MYCOPY(dummy0_361ba)} // 3616:005a
     {db tmp999=3;MYCOPY(dummy0_361bb)} // 3616:005b
     {db tmp999=6;MYCOPY(dummy0_361bc)} // 3616:005c
     {db tmp999=80;MYCOPY(dummy0_361bd)} // 3616:005d
-
     {db tmp999=69;MYCOPY(dummy0_361bf)} // 3616:005f
-
     {db tmp999=58;MYCOPY(dummy0_361c1)} // 3616:0061
-
     {db tmp999=47;MYCOPY(dummy0_361c3)} // 3616:0063
-
     {db tmp999=36;MYCOPY(dummy0_361c5)} // 3616:0065
-
     {db tmp999=25;MYCOPY(dummy0_361c7)} // 3616:0067
-
     {db tmp999=109;MYCOPY(dummy0_361c9)} // 3616:0069
     {db tmp999=111;MYCOPY(dummy0_361ca)} // 3616:006a
     {db tmp999=110;MYCOPY(dummy0_361cb)} // 3616:006b
@@ -12907,7 +12356,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=105;MYCOPY(dummy0_361ce)} // 3616:006e
     {db tmp999=116;MYCOPY(dummy0_361cf)} // 3616:006f
     {db tmp999=104;MYCOPY(dummy0_361d0)} // 3616:0070
-
     {db tmp999=32;MYCOPY(unk_447b2)} // 3616:0072
     {db tmp999=184;MYCOPY(dummy0_361d3)} // 3616:0073
     {db tmp999=248;MYCOPY(dummy0_361d4)} // 3616:0074
@@ -12925,9 +12373,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {char tmp999[11]="\x08\xe0\xb8\x08\xe0H\x08 H\x08";MYCOPY(aaahh)} // 361e:0000
     {db tmp999[32]={15,49,68,58,24,0,0,0,0,0,7,60,125,143,133,98,54,17,0,0,0,44,119,149,149,148,147,127,78,25,0,0};MYCOPY(dummy0_361eb)} // 361e:000b
     {db tmp999[32]={58,131,147,147,146,145,145,133,63,3,0,20,93,145,144,143,143,142,141,90,20,0,0,36,107,142,141,141,140,139,117,48};MYCOPY(dummy0_3620b)} // 361e:002b
-
-
-
     {db tmp999=46;MYCOPY(dummy0_3622e)} // 361e:004e
     {db tmp999=115;MYCOPY(dummy0_3622f)} // 361e:004f
     {db tmp999=139;MYCOPY(dummy0_36230)} // 361e:0050
@@ -12937,8 +12382,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=99;MYCOPY(dummy0_36234)} // 361e:0054
     {db tmp999=45;MYCOPY(dummy0_36235)} // 361e:0055
     {db tmp999=2;MYCOPY(dummy0_36236)} // 361e:0056
-
-
     {db tmp999=10;MYCOPY(dummy0_36239)} // 361e:0059
     {db tmp999=55;MYCOPY(dummy0_3623a)} // 361e:005a
     {db tmp999=79;MYCOPY(dummy0_3623b)} // 361e:005b
@@ -12948,17 +12391,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=33;MYCOPY(dummy0_3623f)} // 361e:005f
     {db tmp999=14;MYCOPY(dummy0_36240)} // 3624:0000
     {db tmp999=7;MYCOPY(dummy0_36241)} // 3624:0001
-
-
-
     {db tmp999=10;MYCOPY(dummy0_36245)} // 3624:0005
     {db tmp999=30;MYCOPY(dummy0_36246)} // 3624:0006
     {db tmp999=1;MYCOPY(dummy0_36247)} // 3624:0007
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4482d)} // 3624:000d
     {db tmp999[32]={0,13,13,0,0,0,0,0,13,63,83,32,0,0,0,2,44,117,140,94,28,0,0,2,54,127,141,123,81,24,0,0};MYCOPY(dummy0_3624e)} // 3624:000e
     {db tmp999=39;MYCOPY(dummy0_3626e)} // 3624:002e
@@ -12967,37 +12402,20 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=117;MYCOPY(dummy0_36271)} // 3624:0031
     {db tmp999=87;MYCOPY(dummy0_36272)} // 3624:0032
     {db tmp999=35;MYCOPY(dummy0_36273)} // 3624:0033
-
-
     {db tmp999=26;MYCOPY(dummy0_36276)} // 3624:0036
     {db tmp999=87;MYCOPY(dummy0_36277)} // 3624:0037
     {db tmp999=105;MYCOPY(dummy0_36278)} // 3624:0038
     {db tmp999=67;MYCOPY(dummy0_36279)} // 3624:0039
     {db tmp999=34;MYCOPY(dummy0_3627a)} // 3624:003a
     {db tmp999=11;MYCOPY(dummy0_3627b)} // 3624:003b
-
-
     {db tmp999=13;MYCOPY(dummy0_3627e)} // 3624:003e
     {db tmp999=36;MYCOPY(dummy0_3627f)} // 3624:003f
     {db tmp999=34;MYCOPY(dummy0_36280)} // 3628:0000
     {db tmp999=11;MYCOPY(dummy0_36281)} // 3628:0001
-
-
-
-
     {db tmp999=3;MYCOPY(dummy0_36286)} // 3628:0006
     {db tmp999=10;MYCOPY(dummy0_36287)} // 3628:0007
-
-
-
-
-
     {db tmp999=52;MYCOPY(unk_4486d)} // 3628:000d
     {db tmp999=77;MYCOPY(dummy0_3628e)} // 3628:000e
-
-
-
-
     {dd tmp999=far_offset(seg079,arr0);MYCOPY(dummy0_36293)} // 3628:0013
     {db tmp999[32]={233,2,44,0,0,27,0,4,255,0,3,1,5,13,0,37,0,12,255,0,3,13,6,1,0,47,0,4,255,0,3,0};MYCOPY(dummy0_36297)} // 3628:0017
     {db tmp999[32]={11,12,0,57,0,4,255,0,3,0,12,4,0,67,0,12,255,0,3,7,14,2,0,77,0,12,255,0,3,14,8,2};MYCOPY(dummy0_362b7)} // 3628:0037
@@ -13049,26 +12467,18 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={250,255,42,0,42,0,250,255,238,255,42,0,244,255,160,255,42,0,250,255,160,255,42,0,6,0,168,0,166,255,250,255};MYCOPY(dummy0_366d7)} // 3628:0457
     {db tmp999[32]={168,0,166,255,6,0,180,0,154,255,172,255,168,0,154,255,36,0,162,0,166,255,250,255,162,0,166,255,6,0,24,0};MYCOPY(dummy0_366f7)} // 3628:0477
     {db tmp999[32]={154,255,160,255,184,255,154,255,160,255,184,255,154,255,0,0,24,0,154,255,0,0,208,255,154,255,229,255,0,0,154,255};MYCOPY(dummy0_36717)} // 3628:0497
-
-
     {db tmp999=24;MYCOPY(dummy0_36739)} // 3628:04b9
-
     {db tmp999=154;MYCOPY(dummy0_3673b)} // 3628:04bb
     {db tmp999=255;MYCOPY(dummy0_3673c)} // 3628:04bc
     {db tmp999=232;MYCOPY(dummy0_3673d)} // 3628:04bd
     {db tmp999=255;MYCOPY(dummy0_3673e)} // 3628:04be
     {db tmp999=12;MYCOPY(dummy0_3673f)} // 3628:04bf
-
     {db tmp999=154;MYCOPY(dummy0_36741)} // 3674:0001
     {db tmp999=255;MYCOPY(dummy0_36742)} // 3674:0002
     {db tmp999=178;MYCOPY(dummy0_36743)} // 3674:0003
     {db tmp999=255;MYCOPY(dummy0_36744)} // 3674:0004
     {db tmp999=20;MYCOPY(unk_44d25)} // 3674:0005
     {db tmp999=27;MYCOPY(dummy0_36746)} // 3674:0006
-
-
-
-
     {dd tmp999=far_offset(seg080,arr0_0);MYCOPY(dummy0_3674b)} // 3674:000b
     {db tmp999[32]={28,1,13,0,16,19,0,6,255,0,4,7,6,5,4,16,30,0,0,255,0,4,14,13,16,15,16,41,0,4,255,0};MYCOPY(dummy0_3674f)} // 3674:000f
     {db tmp999[32]={4,5,16,13,4,16,52,0,12,255,0,4,6,15,16,5,16,63,0,12,255,0,4,7,14,15,6,16,74,0,4,255};MYCOPY(dummy0_3676f)} // 3674:002f
@@ -13082,28 +12492,20 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=1;MYCOPY(dummy0_36850)} // 3674:0110
     {db tmp999=16;MYCOPY(dummy0_36851)} // 3674:0111
     {db tmp999=19;MYCOPY(dummy0_36852)} // 3674:0112
-
     {db tmp999=235;MYCOPY(dummy0_36854)} // 3674:0114
-
     {db tmp999=10;MYCOPY(dummy0_36856)} // 3674:0116
     {db tmp999=1;MYCOPY(dummy0_36857)} // 3674:0117
     {db tmp999=3;MYCOPY(dummy0_36858)} // 3674:0118
     {db tmp999=1;MYCOPY(dummy0_36859)} // 3674:0119
     {db tmp999=206;MYCOPY(dummy0_3685a)} // 3674:011a
-
     {db tmp999=24;MYCOPY(dummy0_3685c)} // 3674:011c
     {db tmp999=52;MYCOPY(dummy0_3685d)} // 3674:011d
-
     {db tmp999=17;MYCOPY(dummy0_3685f)} // 3674:011f
     {db tmp999=1;MYCOPY(dummy0_36860)} // 3674:0120
     {db tmp999=24;MYCOPY(dummy0_36861)} // 3674:0121
     {db tmp999=1;MYCOPY(dummy0_36862)} // 3674:0122
     {db tmp999=55;MYCOPY(dummy0_36863)} // 3674:0123
     {db tmp999=75;MYCOPY(dummy0_36864)} // 3674:0124
-
-
-
-
     {dd tmp999=far_offset(seg080,arr0_1);MYCOPY(dummy0_36869)} // 3674:0129
     {db tmp999[32]={64,4,49,0,0,49,1,4,255,0,3,1,5,13,0,59,1,12,255,0,3,13,6,1,0,69,1,4,255,0,3,0};MYCOPY(dummy0_3686d)} // 3674:012d
     {db tmp999[32]={11,12,0,79,1,4,255,0,3,0,12,4,0,89,1,12,255,0,3,7,14,2,0,99,1,12,255,0,3,14,8,2};MYCOPY(dummy0_3688d)} // 3674:014d
@@ -13142,23 +12544,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={220,255,208,255,208,255,220,255,48,0,48,0,220,255,48,0,48,0,220,255,208,255,166,255,0,0,244,255,166,255,0,0};MYCOPY(dummy0_36bdd)} // 3674:049d
     {db tmp999[32]={12,0,30,0,0,0,24,0,48,0,0,0,0,0,30,0,0,0,232,255,166,255,36,0,0,0,126,0,132,0,0,0};MYCOPY(dummy0_36bfd)} // 3674:04bd
     {db tmp999=156;MYCOPY(dummy0_36c1d)} // 3674:04dd
-
     {db tmp999=168;MYCOPY(dummy0_36c1f)} // 3674:04df
-
-
-
     {db tmp999=174;MYCOPY(dummy0_36c23)} // 3674:04e3
-
     {db tmp999=192;MYCOPY(dummy0_36c25)} // 3674:04e5
-
-
-
     {db tmp999=156;MYCOPY(dummy0_36c29)} // 3674:04e9
-
     {db tmp999=172;MYCOPY(dummy0_36c2b)} // 3674:04eb
     {db tmp999=255;MYCOPY(dummy0_36c2c)} // 3674:04ec
-
-
     {char tmp999[8]="\xd0\xff\x9a\xff\xd0\xff" "0";MYCOPY(arr0_1)} // 3674:04ef
     {char tmp999[6]="\x9a\xff\xd0\xff" "0";MYCOPY(ar0_5)} // 3674:04f7
     {char tmp999[4]="\x9a\xff" "0";MYCOPY(a0_2)} // 3674:04fd
@@ -13190,10 +12581,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=255;MYCOPY(dummy0_36df0)} // 36df:0000
     {db tmp999=13;MYCOPY(unk_453d1)} // 36df:0001
     {db tmp999=22;MYCOPY(dummy0_36df2)} // 36df:0002
-
-
-
-
     {dd tmp999=far_offset(seg081,unk_454a8);MYCOPY(dummy0_36df7)} // 36df:0007
     {db tmp999[32]={200,0,13,4,16,15,0,1,255,0,5,4,3,2,1,0,16,27,0,9,255,0,4,1,16,15,0,16,38,0,7,255};MYCOPY(dummy0_36dfb)} // 36df:000b
     {db tmp999[32]={0,4,2,17,16,1,16,49,0,15,255,0,5,3,19,18,17,2,16,61,0,8,255,0,4,4,20,19,3,16,72,0};MYCOPY(dummy0_36e1b)} // 36df:002b
@@ -13202,9 +12589,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={16,139,0,0,255,0,4,21,18,19,20,0,150,0,0,255,0,4,5,15,20,6,3,5,116,0,83,0,72,0,105,0};MYCOPY(dummy0_36e7b)} // 36df:008b
     {db tmp999[32]={94,0,3,7,139,0,127,0,61,0,49,0,38,0,27,0,15,0,3,1,150,0,16,150,0,173,0,189,0,16,49,0};MYCOPY(dummy0_36e9b)} // 36df:00ab
     {db tmp999=161;MYCOPY(dummy0_36ebb)} // 36df:00cb
-
     {db tmp999=193;MYCOPY(dummy0_36ebd)} // 36df:00cd
-
     {db tmp999=102;MYCOPY(dummy0_36ebf)} // 36df:00cf
     {db tmp999=97;MYCOPY(dummy0_36ec0)} // 36df:00d0
     {db tmp999=99;MYCOPY(dummy0_36ec1)} // 36df:00d1
@@ -13213,7 +12598,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=114;MYCOPY(dummy0_36ec4)} // 36df:00d4
     {db tmp999=121;MYCOPY(dummy0_36ec5)} // 36df:00d5
     {db tmp999=100;MYCOPY(dummy0_36ec6)} // 36df:00d6
-
     {db tmp999=48;MYCOPY(unk_454a8)} // 36df:00d8
     {db tmp999[32]={244,160,48,4,160,24,12,160,208,4,160,208,244,160,48,244,104,208,244,104,248,8,192,240,8,192,248,20,192,240,20,192};MYCOPY(dummy0_36ec9)} // 36df:00d9
     {db tmp999=240;MYCOPY(dummy0_36ee9)} // 36df:00f9
@@ -13236,7 +12620,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=16;MYCOPY(dummy0_36efa)} // 36df:010a
     {db tmp999=24;MYCOPY(dummy0_36efb)} // 36df:010b
     {db tmp999=12;MYCOPY(dummy0_36efc)} // 36df:010c
-
     {db tmp999=225;MYCOPY(dummy0_36efe)} // 36df:010e
     {db tmp999=6;MYCOPY(dummy0_36eff)} // 36df:010f
     {db tmp999=12;MYCOPY(dummy0_36f00)} // 36f0:0000
@@ -13251,10 +12634,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=49;MYCOPY(dummy0_36f09)} // 36f0:0009
     {db tmp999=22;MYCOPY(unk_454ea)} // 36f0:000a
     {db tmp999=37;MYCOPY(dummy0_36f0b)} // 36f0:000b
-
-
-
-
     {dd tmp999=far_offset(seg082,unk_4565d);MYCOPY(dummy0_36f10)} // 36f0:0010
     {db tmp999[32]={110,1,22,0,16,24,0,8,255,0,4,0,14,17,13,16,35,0,8,255,0,4,20,26,27,22,16,46,0,8,255,0};MYCOPY(dummy0_36f14)} // 36f0:0014
     {db tmp999[32]={4,31,28,30,33,16,57,0,0,255,0,3,36,24,25,16,67,0,7,255,0,3,36,19,24,16,77,0,8,255,0,3};MYCOPY(dummy0_36f34)} // 36f0:0034
@@ -13275,7 +12654,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=103;MYCOPY(dummy0_37079)} // 36f0:0179
     {db tmp999=101;MYCOPY(dummy0_3707a)} // 36f0:017a
     {db tmp999=100;MYCOPY(dummy0_3707b)} // 36f0:017b
-
     {db tmp999=12;MYCOPY(unk_4565d)} // 36f0:017d
     {db tmp999[32]={0,244,255,56,254,12,0,248,255,56,254,12,0,12,0,40,255,12,0,248,255,136,255,12,0,244,255,88,255,2,0,244};MYCOPY(dummy0_3707e)} // 36f0:017e
     {db tmp999[32]={255,238,255,12,0,244,255,184,255,12,0,244,255,136,255,12,0,252,255,88,255,244,255,244,255,178,255,244,255,244,255,88};MYCOPY(dummy0_3709e)} // 36f0:019e
@@ -13283,7 +12661,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,12,0,40,255,244,255,4,0,40,255,12,0,12,0,216,0,8,0,244,255,90,0,12,0,244,255,168,0,8,0,244};MYCOPY(dummy0_370de)} // 36f0:01de
     {db tmp999[32]={255,18,0,12,0,248,255,168,0,244,255,244,255,18,0,250,255,244,255,78,0,248,255,244,255,120,0,244,255,244,255,168};MYCOPY(dummy0_370fe)} // 36f0:01fe
     {db tmp999[32]={0,244,255,252,255,168,0,12,0,4,0,216,0,244,255,12,0,216,0,244,255,4,0,216,0,12,0,244,255,200,1,12};MYCOPY(dummy0_3711e)} // 36f0:021e
-
     {db tmp999=248;MYCOPY(dummy0_3713f)} // 36f0:023f
     {db tmp999=255;MYCOPY(dummy0_37140)} // 36f0:0240
     {db tmp999=200;MYCOPY(dummy0_37141)} // 36f0:0241
@@ -13301,44 +12678,28 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=200;MYCOPY(dummy0_3714d)} // 36f0:024d
     {db tmp999=1;MYCOPY(dummy0_3714e)} // 36f0:024e
     {db tmp999=2;MYCOPY(dummy0_3714f)} // 36f0:024f
-
     {db tmp999=248;MYCOPY(dummy0_37151)} // 3715:0001
     {db tmp999=255;MYCOPY(dummy0_37152)} // 3715:0002
     {db tmp999=6;MYCOPY(dummy0_37153)} // 3715:0003
-
     {db tmp999=254;MYCOPY(dummy0_37155)} // 3715:0005
     {db tmp999=255;MYCOPY(dummy0_37156)} // 3715:0006
     {db tmp999=250;MYCOPY(dummy0_37157)} // 3715:0007
     {db tmp999=255;MYCOPY(dummy0_37158)} // 3715:0008
     {db tmp999=102;MYCOPY(dummy0_37159)} // 3715:0009
-
     {db tmp999=9;MYCOPY(unk_4573b)} // 3715:000b
     {db tmp999=21;MYCOPY(dummy0_3715c)} // 3715:000c
-
-
-
-
     {dd tmp999=far_offset(seg083,unk_458ac);MYCOPY(dummy0_37161)} // 3715:0011
     {db tmp999[32]={152,0,6,4,0,25,0,8,255,0,4,4,5,3,2,16,36,0,0,255,0,4,14,13,12,15,16,47,0,0,255,0};MYCOPY(dummy0_37165)} // 3715:0015
     {db tmp999[32]={4,17,16,19,18,16,58,0,0,255,0,4,12,19,16,15,16,69,0,0,255,0,4,14,17,18,13,16,80,0,0,255};MYCOPY(dummy0_37185)} // 3715:0035
     {db tmp999[32]={0,4,15,16,17,14,1,91,0,0,255,7,6,1,98,0,7,255,20,1,1,105,0,7,255,20,0,3,1,91,0,3};MYCOPY(dummy0_371a5)} // 3715:0055
     {db tmp999[32]={1,25,0,3,2,98,0,105,0,3,5,36,0,47,0,58,0,69,0,80,0,16,69,0,120,0,126,0,16,25,0,116};MYCOPY(dummy0_371c5)} // 3715:0075
-
     {db tmp999=138;MYCOPY(dummy0_371e6)} // 3715:0096
-
     {db tmp999=16;MYCOPY(dummy0_371e8)} // 3715:0098
     {db tmp999=25;MYCOPY(dummy0_371e9)} // 3715:0099
-
     {db tmp999=112;MYCOPY(dummy0_371eb)} // 3715:009b
-
     {db tmp999=145;MYCOPY(dummy0_371ed)} // 3715:009d
-
     {db tmp999=14;MYCOPY(dummy0_371ef)} // 3715:009f
     {db tmp999=27;MYCOPY(dummy0_371f0)} // 3715:00a0
-
-
-
-
     {dd tmp999=far_offset(seg083,unk_458eb);MYCOPY(dummy0_371f5)} // 3715:00a5
     {db tmp999[32]={113,1,13,4,16,173,0,7,255,0,3,4,0,2,16,183,0,7,255,0,3,1,4,2,16,193,0,7,255,0,3,4};MYCOPY(dummy0_371f9)} // 3715:00a9
     {db tmp999[32]={3,0,16,203,0,7,255,0,3,1,3,4,0,213,0,8,255,0,4,8,9,6,5,0,224,0,8,255,0,4,18,9};MYCOPY(dummy0_37219)} // 3715:00c9
@@ -13346,7 +12707,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={23,26,25,16,12,1,0,255,0,4,19,26,23,22,16,23,1,0,255,0,4,20,25,26,19,16,34,1,0,255,0,4};MYCOPY(dummy0_37259)} // 3715:0109
     {db tmp999[32]={21,24,25,20,16,45,1,15,255,0,4,22,23,24,21,1,56,1,0,255,12,11,3,1,56,1,3,3,224,0,235,0};MYCOPY(dummy0_37279)} // 3715:0129
     {db tmp999[32]={213,0,16,213,0,63,1,67,1,3,4,183,0,203,0,193,0,173,0,3,6,45,1,34,1,23,1,12,1,1,1,246};MYCOPY(dummy0_37299)} // 3715:0149
-
     {db tmp999=16;MYCOPY(dummy0_372ba)} // 3715:016a
     {db tmp999=34;MYCOPY(dummy0_372bb)} // 3715:016b
     {db tmp999=1;MYCOPY(dummy0_372bc)} // 3715:016c
@@ -13364,18 +12724,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=115;MYCOPY(dummy0_372c8)} // 3715:0178
     {db tmp999=54;MYCOPY(dummy0_372c9)} // 3715:0179
     {db tmp999=48;MYCOPY(dummy0_372ca)} // 3715:017a
-
     {db tmp999=48;MYCOPY(unk_458ac)} // 3715:017c
     {db tmp999[32]={232,212,208,232,212,240,236,8,240,12,251,16,236,8,16,12,251,0,24,44,0,0,251,252,0,0,0,0,0,0,236,8};MYCOPY(dummy0_372cd)} // 3715:017d
     {db tmp999=4;MYCOPY(dummy0_372ed)} // 3715:019d
-
-
     {db tmp999=252;MYCOPY(dummy0_372f0)} // 3715:01a0
     {db tmp999=2;MYCOPY(dummy0_372f1)} // 3715:01a1
     {db tmp999=252;MYCOPY(dummy0_372f2)} // 3715:01a2
     {db tmp999=252;MYCOPY(dummy0_372f3)} // 3715:01a3
     {db tmp999=250;MYCOPY(dummy0_372f4)} // 3715:01a4
-
     {db tmp999=252;MYCOPY(dummy0_372f6)} // 3715:01a6
     {db tmp999=236;MYCOPY(dummy0_372f7)} // 3715:01a7
     {db tmp999=228;MYCOPY(dummy0_372f8)} // 3715:01a8
@@ -13390,11 +12746,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=228;MYCOPY(dummy0_37301)} // 3715:01b1
     {db tmp999=4;MYCOPY(dummy0_37302)} // 3715:01b2
     {db tmp999=250;MYCOPY(dummy0_37303)} // 3715:01b3
-
     {db tmp999=4;MYCOPY(dummy0_37305)} // 3715:01b5
     {db tmp999=2;MYCOPY(dummy0_37306)} // 3715:01b6
     {db tmp999=252;MYCOPY(dummy0_37307)} // 3715:01b7
-
     {db tmp999=232;MYCOPY(dummy0_37309)} // 3715:01b9
     {db tmp999=252;MYCOPY(dummy0_3730a)} // 3715:01ba
     {db tmp999=0;MYCOPY(unk_458eb)} // 3715:01bb
@@ -13412,7 +12766,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=228;MYCOPY(dummy0_37355)} // 3735:0005
     {db tmp999=4;MYCOPY(dummy0_37356)} // 3735:0006
     {db tmp999=250;MYCOPY(dummy0_37357)} // 3735:0007
-
     {db tmp999=4;MYCOPY(dummy0_37359)} // 3735:0009
     {db tmp999=2;MYCOPY(dummy0_3735a)} // 3735:000a
     {db tmp999=252;MYCOPY(dummy0_3735b)} // 3735:000b
@@ -13420,7 +12773,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={7,0,253,5,0,254,3,0,2,3,0,3,5,0,252,5,4,254,253,0,0,253,0,2,253,0,5,3,2,252,240,2};MYCOPY(dummy0_3735d)} // 3735:000d
     {db tmp999=4;MYCOPY(dummy0_3737d)} // 3735:002d
     {db tmp999=240;MYCOPY(dummy0_3737e)} // 3735:002e
-
     {db tmp999=3;MYCOPY(dummy0_37380)} // 3738:0000
     {db tmp999=7;MYCOPY(dummy0_37381)} // 3738:0001
     {db tmp999=6;MYCOPY(dummy0_37382)} // 3738:0002
@@ -13459,22 +12811,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={4,4,52,224,0,56,236,0,56,32,0,56,20,0,56,224,0,200,236,0,200,32,0,200,20,0,200,208,0,224,208,0};MYCOPY(dummy0_373c2)} // 3738:0042
     {db tmp999=236;MYCOPY(dummy0_373e2)} // 3738:0062
     {db tmp999=208;MYCOPY(dummy0_373e3)} // 3738:0063
-
     {db tmp999=32;MYCOPY(dummy0_373e5)} // 3738:0065
     {db tmp999=208;MYCOPY(dummy0_373e6)} // 3738:0066
-
     {db tmp999=20;MYCOPY(dummy0_373e8)} // 3738:0068
     {db tmp999=48;MYCOPY(dummy0_373e9)} // 3738:0069
-
     {db tmp999=224;MYCOPY(dummy0_373eb)} // 3738:006b
     {db tmp999=48;MYCOPY(dummy0_373ec)} // 3738:006c
-
     {db tmp999=236;MYCOPY(dummy0_373ee)} // 3738:006e
     {db tmp999=48;MYCOPY(dummy0_373ef)} // 3738:006f
-
     {db tmp999=32;MYCOPY(dummy0_373f1)} // 373f:0001
     {db tmp999=48;MYCOPY(dummy0_373f2)} // 373f:0002
-
     {db tmp999=20;MYCOPY(dummy0_373f4)} // 373f:0004
     {char tmp999[23]="7\xf8\xcd\xc8\xf8\xc0\xc8\xf8@4\xf8@\xd8\x08\xd9\xf3\x08" "0\xd8\x08" "0\xe0";MYCOPY(a7niai4u00a)} // 373f:0005
     {char tmp999[3]="8\xec";MYCOPY(a8m)} // 373f:001c
@@ -13493,22 +12839,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=248;MYCOPY(dummy0_37423)} // 373f:0033
     {db tmp999=64;MYCOPY(dummy0_37424)} // 373f:0034
     {db tmp999=216;MYCOPY(dummy0_37425)} // 373f:0035
-
     {db tmp999=224;MYCOPY(dummy0_37427)} // 373f:0037
     {db tmp999=216;MYCOPY(dummy0_37428)} // 373f:0038
-
     {db tmp999=236;MYCOPY(dummy0_3742a)} // 373f:003a
     {db tmp999=216;MYCOPY(dummy0_3742b)} // 373f:003b
-
     {db tmp999=20;MYCOPY(dummy0_3742d)} // 373f:003d
     {db tmp999=216;MYCOPY(dummy0_3742e)} // 373f:003e
-
     {db tmp999=32;MYCOPY(dummy0_37430)} // 3743:0000
     {db tmp999=224;MYCOPY(dummy0_37431)} // 3743:0001
-
     {db tmp999=48;MYCOPY(dummy0_37433)} // 3743:0003
     {db tmp999=236;MYCOPY(dummy0_37434)} // 3743:0004
-
     {db tmp999=48;MYCOPY(dummy0_37436)} // 3743:0006
     {db tmp999=236;MYCOPY(dummy0_37437)} // 3743:0007
     {db tmp999=248;MYCOPY(dummy0_37438)} // 3743:0008
@@ -13518,10 +12858,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=188;MYCOPY(dummy0_3743c)} // 3743:000c
     {db tmp999=16;MYCOPY(unk_45a1d)} // 3743:000d
     {db tmp999=26;MYCOPY(dummy0_3743e)} // 3743:000e
-
-
-
-
     {dd tmp999=far_offset(seg087,unk_45d08);MYCOPY(dummy0_37443)} // 3743:0013
     {db tmp999[32]={245,0,15,0,16,27,0,7,255,0,4,4,3,0,5,16,38,0,7,255,0,4,15,14,17,16,16,49,0,8,255,0};MYCOPY(dummy0_37447)} // 3743:0017
     {db tmp999[32]={4,0,17,14,5,16,60,0,7,255,0,4,4,15,16,3,16,71,0,8,255,0,4,5,14,15,4,16,27,0,0,255};MYCOPY(dummy0_37467)} // 3743:0037
@@ -13530,17 +12866,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={3,255,0,4,8,11,10,7,16,159,0,3,255,0,4,25,23,22,24,16,170,0,15,255,0,5,24,22,9,10,11,16};MYCOPY(dummy0_374c7)} // 3743:0097
     {db tmp999[32]={182,0,3,255,0,4,25,24,11,8,1,193,0,15,255,13,12,3,9,38,0,27,0,115,0,104,0,93,0,82,0,71};MYCOPY(dummy0_374e7)} // 3743:00b7
     {db tmp999[32]={0,60,0,49,0,3,1,193,0,3,6,182,0,170,0,159,0,148,0,137,0,126,0,16,126,0,220,0,224,0,24,71};MYCOPY(dummy0_37507)} // 3743:00d7
-
     {db tmp999=200;MYCOPY(dummy0_37528)} // 3743:00f8
-
     {db tmp999=238;MYCOPY(dummy0_3752a)} // 3743:00fa
-
     {db tmp999=31;MYCOPY(dummy0_3752c)} // 3743:00fc
     {db tmp999=56;MYCOPY(dummy0_3752d)} // 3743:00fd
-
-
-
-
     {dd tmp999=far_offset(seg087,unk_45da4);MYCOPY(dummy0_37532)} // 3743:0102
     {db tmp999[32]={238,2,31,0,0,10,1,0,255,0,5,1,0,4,3,2,16,22,1,8,255,0,4,0,20,12,8,16,33,1,8,255};MYCOPY(dummy0_37536)} // 3743:0106
     {db tmp999[32]={0,4,11,19,20,0,16,44,1,8,255,0,4,4,17,18,10,16,55,1,7,255,0,4,5,16,17,4,16,66,1,8};MYCOPY(dummy0_37556)} // 3743:0126
@@ -13574,37 +12903,29 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=2;MYCOPY(dummy0_37724)} // 3743:02f4
     {db tmp999=109;MYCOPY(dummy0_37725)} // 3743:02f5
     {db tmp999=49;MYCOPY(dummy0_37726)} // 3743:02f6
-
     {db tmp999=37;MYCOPY(unk_45d08)} // 3743:02f8
     {db tmp999[32]={0,3,0,172,255,37,0,244,255,205,255,37,0,244,255,84,0,37,0,3,0,118,0,37,0,16,0,110,0,37,0,25};MYCOPY(dummy0_37729)} // 3743:02f9
     {db tmp999[32]={0,172,255,0,0,21,0,84,0,28,0,21,0,60,0,17,0,28,0,214,255,0,0,40,0,73,0,26,0,41,0,51};MYCOPY(dummy0_37749)} // 3743:0319
     {db tmp999[32]={0,15,0,45,0,213,255,0,0,33,0,76,0,0,0,46,0,186,0,219,255,25,0,172,255,219,255,16,0,110,0,219};MYCOPY(dummy0_37769)} // 3743:0339
     {db tmp999[32]={255,3,0,118,0,219,255,3,0,172,255,219,255,3,0,118,0,219,255,244,255,84,0,219,255,244,255,205,255,219,255,3};MYCOPY(dummy0_37789)} // 3743:0359
-
     {db tmp999=172;MYCOPY(dummy0_377aa)} // 3743:037a
     {db tmp999=255;MYCOPY(dummy0_377ab)} // 3743:037b
     {db tmp999=230;MYCOPY(dummy0_377ac)} // 3743:037c
     {db tmp999=255;MYCOPY(dummy0_377ad)} // 3743:037d
     {db tmp999=41;MYCOPY(dummy0_377ae)} // 3743:037e
-
     {db tmp999=51;MYCOPY(dummy0_377b0)} // 3743:0380
-
     {db tmp999=228;MYCOPY(dummy0_377b2)} // 3743:0382
     {db tmp999=255;MYCOPY(dummy0_377b3)} // 3743:0383
     {db tmp999=21;MYCOPY(dummy0_377b4)} // 3743:0384
-
     {db tmp999=60;MYCOPY(dummy0_377b6)} // 3743:0386
-
     {db tmp999=241;MYCOPY(dummy0_377b8)} // 3743:0388
     {db tmp999=255;MYCOPY(dummy0_377b9)} // 3743:0389
     {db tmp999=45;MYCOPY(dummy0_377ba)} // 3743:038a
-
     {db tmp999=213;MYCOPY(dummy0_377bc)} // 3743:038c
     {db tmp999=255;MYCOPY(dummy0_377bd)} // 3743:038d
     {db tmp999=239;MYCOPY(dummy0_377be)} // 3743:038e
     {db tmp999=255;MYCOPY(dummy0_377bf)} // 3743:038f
     {db tmp999=28;MYCOPY(dummy0_377c0)} // 3743:0390
-
     {db tmp999=214;MYCOPY(dummy0_377c2)} // 3743:0392
     {db tmp999=255;MYCOPY(dummy0_377c3)} // 3743:0393
     {db tmp999=37;MYCOPY(unk_45da4)} // 3743:0394
@@ -13618,27 +12939,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,214,255,15,0,37,0,205,255,240,255,37,0,205,255,239,255,28,0,214,255,234,255,21,0,248,255,3,0,40,0,73};MYCOPY(dummy0_378a5)} // 3743:0475
     {db tmp999[32]={0,26,0,41,0,51,0,253,255,40,0,73,0,230,255,41,0,50,0,15,0,45,0,213,255,240,255,45,0,213,255,253};MYCOPY(dummy0_378c5)} // 3743:0495
     {db tmp999[32]={255,35,0,76,0,3,0,35,0,76,0,3,0,26,0,81,0,253,255,26,0,81,0,1,0,47,0,184,0,255,255,47};MYCOPY(dummy0_378e5)} // 3743:04b5
-
     {db tmp999=184;MYCOPY(dummy0_37906)} // 3743:04d6
-
     {db tmp999=1;MYCOPY(dummy0_37908)} // 3743:04d8
-
     {db tmp999=43;MYCOPY(dummy0_3790a)} // 3743:04da
-
     {db tmp999=185;MYCOPY(dummy0_3790c)} // 3743:04dc
-
     {db tmp999=255;MYCOPY(dummy0_3790e)} // 3743:04de
     {db tmp999=255;MYCOPY(dummy0_3790f)} // 3743:04df
     {db tmp999=43;MYCOPY(dummy0_37910)} // 3791:0000
-
     {db tmp999=185;MYCOPY(dummy0_37912)} // 3791:0002
-
     {db tmp999=20;MYCOPY(unk_45ef4)} // 3791:0004
     {db tmp999=46;MYCOPY(dummy0_37915)} // 3791:0005
-
-
-
-
     {dd tmp999=far_offset(seg088,unk_45feb);MYCOPY(dummy0_3791a)} // 3791:000a
     {db tmp999[32]={236,0,6,4,0,18,0,15,255,0,5,4,3,2,1,0,0,30,0,0,255,0,4,8,11,10,9,0,41,0,0,255};MYCOPY(dummy0_3791e)} // 3791:000e
     {db tmp999[32]={0,4,35,34,37,36,0,52,0,0,255,0,4,39,38,41,40,0,63,0,0,255,0,4,43,42,45,44,0,74,0,8};MYCOPY(dummy0_3793e)} // 3791:002e
@@ -13647,11 +12957,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={18,0,7,255,28,29,1,18,0,7,255,31,30,1,18,0,7,255,32,33,1,18,0,7,255,1,0,1,18,0,7,255};MYCOPY(dummy0_3799e)} // 3791:008e
     {db tmp999[32]={7,6,1,18,0,7,255,3,4,3,5,18,0,63,0,52,0,41,0,30,0,3,14,85,0,92,0,99,0,106,0,113};MYCOPY(dummy0_379be)} // 3791:00ae
     {db tmp999[32]={0,120,0,127,0,134,0,141,0,148,0,155,0,162,0,169,0,176,0,3,1,74,0,16,74,0,195,0,225,0,16,18};MYCOPY(dummy0_379de)} // 3791:00ce
-
     {db tmp999=183;MYCOPY(dummy0_379ff)} // 3791:00ef
-
     {db tmp999=229;MYCOPY(dummy0_37a01)} // 3791:00f1
-
     {db tmp999=104;MYCOPY(dummy0_37a03)} // 3791:00f3
     {db tmp999=111;MYCOPY(dummy0_37a04)} // 3791:00f4
     {db tmp999=117;MYCOPY(dummy0_37a05)} // 3791:00f5
@@ -13659,7 +12966,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_37a07)} // 3791:00f7
     {db tmp999=49;MYCOPY(dummy0_37a08)} // 3791:00f8
     {db tmp999=100;MYCOPY(dummy0_37a09)} // 3791:00f9
-
     {db tmp999=220;MYCOPY(unk_45feb)} // 3791:00fb
     {db tmp999[32]={202,72,220,18,72,0,54,72,36,18,72,36,202,72,220,202,216,36,202,189,36,220,188,247,202,72,247,234,72,8,234,72};MYCOPY(dummy0_37a0c)} // 3791:00fc
     {db tmp999[32]={8,202,72,36,202,45,36,12,48,36,202,22,36,4,20,36,202,0,36,4,0,36,202,234,36,0,236,36,202,211,36,236};MYCOPY(dummy0_37a2c)} // 3791:011c
@@ -13676,10 +12982,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=72;MYCOPY(dummy0_37a94)} // 37a9:0004
     {db tmp999=20;MYCOPY(unk_46075)} // 37a9:0005
     {db tmp999=30;MYCOPY(dummy0_37a96)} // 37a9:0006
-
-
-
-
     {dd tmp999=far_offset(seg089,unk_461a1);MYCOPY(dummy0_37a9b)} // 37a9:000b
     {db tmp999[32]={34,1,20,0,16,19,0,7,255,0,5,3,5,1,4,2,16,31,0,7,255,0,5,6,9,8,7,0,16,43,0,0};MYCOPY(dummy0_37a9f)} // 37a9:000f
     {db tmp999[32]={255,0,4,11,10,13,12,16,43,0,0,255,0,4,15,14,17,16,16,65,0,15,255,0,4,7,19,18,0,16,76,0};MYCOPY(dummy0_37abf)} // 37a9:002f
@@ -13691,38 +12993,27 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={119,0,98,0,129,0,31,0,43,0,65,0,76,0,87,0,109,0,3,1,226,0,16,226,0,237,0,1,1,3,10,196};MYCOPY(dummy0_37b7f)} // 37a9:00ef
     {db tmp999[32]={0,206,0,139,0,216,0,19,0,54,0,151,0,162,0,173,0,185,0,16,185,0,5,1,12,1,104,111,117,115,101,50};MYCOPY(dummy0_37b9f)} // 37a9:010f
     {db tmp999=100;MYCOPY(dummy0_37bbf)} // 37a9:012f
-
     {db tmp999=140;MYCOPY(unk_461a1)} // 37a9:0131
     {db tmp999[32]={0,236,255,33,0,116,255,18,0,10,0,116,255,236,255,224,255,116,255,236,255,33,0,116,255,8,0,224,255,116,255,8};MYCOPY(dummy0_37bc2)} // 37a9:0132
     {db tmp999[32]={0,33,0,140,0,236,255,224,255,140,0,8,0,33,0,140,0,18,0,10,0,140,0,8,0,224,255,108,0,4,0,224};MYCOPY(dummy0_37be2)} // 37a9:0152
     {db tmp999[32]={255,108,0,252,255,224,255,116,0,252,255,224,255,116,0,4,0,224,255,140,255,4,0,224,255,140,255,252,255,224,255,148};MYCOPY(dummy0_37c02)} // 37a9:0172
     {db tmp999[32]={255,252,255,224,255,148,255,4,0,224,255,101,0,236,255,33,0,92,0,8,0,33,0,97,0,18,0,10,0,93,0,8};MYCOPY(dummy0_37c22)} // 37a9:0192
     {db tmp999[32]={0,224,255,83,0,236,255,224,255,202,255,236,255,224,255,202,255,236,255,33,0,202,255,252,255,224,255,202,255,246,255,33};MYCOPY(dummy0_37c42)} // 37a9:01b2
-
     {db tmp999=160;MYCOPY(dummy0_37c63)} // 37a9:01d3
     {db tmp999=255;MYCOPY(dummy0_37c64)} // 37a9:01d4
     {db tmp999=8;MYCOPY(dummy0_37c65)} // 37a9:01d5
-
     {db tmp999=224;MYCOPY(dummy0_37c67)} // 37a9:01d7
     {db tmp999=255;MYCOPY(dummy0_37c68)} // 37a9:01d8
     {db tmp999=152;MYCOPY(dummy0_37c69)} // 37a9:01d9
     {db tmp999=255;MYCOPY(dummy0_37c6a)} // 37a9:01da
     {db tmp999=18;MYCOPY(dummy0_37c6b)} // 37a9:01db
-
     {db tmp999=10;MYCOPY(dummy0_37c6d)} // 37a9:01dd
-
     {db tmp999=160;MYCOPY(dummy0_37c6f)} // 37a9:01df
     {db tmp999=255;MYCOPY(dummy0_37c70)} // 37c7:0000
     {db tmp999=8;MYCOPY(dummy0_37c71)} // 37c7:0001
-
     {db tmp999=33;MYCOPY(dummy0_37c73)} // 37c7:0003
-
     {db tmp999=15;MYCOPY(unk_46255)} // 37c7:0005
     {db tmp999=36;MYCOPY(dummy0_37c76)} // 37c7:0006
-
-
-
-
     {dd tmp999=far_offset(seg090,unk_46342);MYCOPY(dummy0_37c7b)} // 37c7:000b
     {db tmp999[32]={227,0,15,0,16,19,0,15,255,0,7,6,5,4,3,2,8,7,16,19,0,0,255,0,4,12,9,10,11,16,19,0};MYCOPY(dummy0_37c7f)} // 37c7:000f
     {db tmp999[32]={0,255,0,4,16,13,14,15,16,55,0,0,255,0,4,20,19,18,17,16,66,0,0,255,0,4,24,21,22,23,16,66};MYCOPY(dummy0_37c9f)} // 37c7:002f
@@ -13733,7 +13024,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={111,0,100,0,88,0,77,0,66,0,55,0,44,0,33,0,3,1,182,0,16,182,0,193,0,223,0,104,111,117,115,101};MYCOPY(dummy0_37d3f)} // 37c7:00cf
     {db tmp999=51;MYCOPY(dummy0_37d5f)} // 37c7:00ef
     {db tmp999=100;MYCOPY(dummy0_37d60)} // 37c7:00f0
-
     {db tmp999=193;MYCOPY(unk_46342)} // 37c7:00f2
     {db tmp999[32]={255,218,255,166,0,63,0,216,255,166,0,193,255,216,255,90,255,63,0,216,255,90,255,63,0,0,0,90,255,40,0,40};MYCOPY(dummy0_37d63)} // 37c7:00f3
     {db tmp999[32]={0,90,255,0,0,63,0,90,255,216,255,40,0,90,255,193,255,0,0,90,255,19,0,216,255,90,255,19,0,247,255,90};MYCOPY(dummy0_37d83)} // 37c7:0113
@@ -13741,19 +13031,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,216,255,90,255,63,0,216,255,153,255,63,0,247,255,153,255,63,0,247,255,130,255,63,0,216,255,130,255,193,255,216};MYCOPY(dummy0_37dc3)} // 37c7:0153
     {db tmp999[32]={255,153,255,193,255,247,255,153,255,193,255,247,255,130,255,193,255,216,255,130,255,216,255,40,0,165,255,0,0,63,0,142};MYCOPY(dummy0_37de3)} // 37c7:0173
     {db tmp999[32]={255,40,0,40,0,162,255,63,0,0,0,198,255,193,255,0,0,160,255,193,255,216,255,160,255,213,255,34,0,171,255,63};MYCOPY(dummy0_37e03)} // 37c7:0193
-
     {db tmp999=214;MYCOPY(dummy0_37e24)} // 37c7:01b4
     {db tmp999=255;MYCOPY(dummy0_37e25)} // 37c7:01b5
     {db tmp999=171;MYCOPY(dummy0_37e26)} // 37c7:01b6
     {db tmp999=255;MYCOPY(dummy0_37e27)} // 37c7:01b7
     {db tmp999=63;MYCOPY(dummy0_37e28)} // 37c7:01b8
-
     {db tmp999=254;MYCOPY(dummy0_37e2a)} // 37c7:01ba
     {db tmp999=255;MYCOPY(dummy0_37e2b)} // 37c7:01bb
     {db tmp999=200;MYCOPY(dummy0_37e2c)} // 37c7:01bc
     {db tmp999=255;MYCOPY(dummy0_37e2d)} // 37c7:01bd
     {db tmp999=41;MYCOPY(dummy0_37e2e)} // 37c7:01be
-
     {char tmp999[6]="\xed\xff\xd9\xff ";MYCOPY(an)} // 37e3:0000
     {db tmp999=214;MYCOPY(dummy0_37e36)} // 37e3:0006
     {db tmp999=255;MYCOPY(dummy0_37e37)} // 37e3:0007
@@ -13761,10 +13048,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=255;MYCOPY(dummy0_37e39)} // 37e3:0009
     {db tmp999=17;MYCOPY(unk_4641a)} // 37e3:000a
     {db tmp999=31;MYCOPY(dummy0_37e3b)} // 37e3:000b
-
-
-
-
     {dd tmp999=far_offset(seg091,unk_46522);MYCOPY(dummy0_37e40)} // 37e3:0010
     {db tmp999[32]={3,1,17,4,0,24,0,15,255,0,5,2,3,4,14,1,0,36,0,0,255,0,4,9,6,7,8,0,47,0,0,255};MYCOPY(dummy0_37e44)} // 37e3:0014
     {db tmp999[32]={0,4,13,10,11,12,0,58,0,0,255,0,4,3,5,0,2,16,69,0,6,255,0,4,16,22,19,15,16,80,0,6};MYCOPY(dummy0_37e64)} // 37e3:0034
@@ -13774,27 +13057,18 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={179,0,6,255,0,4,25,29,30,24,16,190,0,6,255,0,4,26,28,29,25,16,201,0,6,255,0,4,23,27,28,26};MYCOPY(dummy0_37ee4)} // 37e3:00b4
     {db tmp999[32]={3,3,24,0,36,0,47,0,3,13,168,0,190,0,124,0,135,0,146,0,113,0,80,0,69,0,91,0,179,0,201,0};MYCOPY(dummy0_37f04)} // 37e3:00d4
     {db tmp999=157;MYCOPY(dummy0_37f24)} // 37e3:00f4
-
     {db tmp999=102;MYCOPY(dummy0_37f26)} // 37e3:00f6
-
     {db tmp999=3;MYCOPY(dummy0_37f28)} // 37e3:00f8
     {db tmp999=1;MYCOPY(dummy0_37f29)} // 37e3:00f9
     {db tmp999=58;MYCOPY(dummy0_37f2a)} // 37e3:00fa
-
     {db tmp999=16;MYCOPY(dummy0_37f2c)} // 37e3:00fc
     {db tmp999=58;MYCOPY(dummy0_37f2d)} // 37e3:00fd
-
     {db tmp999=220;MYCOPY(dummy0_37f2f)} // 37e3:00ff
-
     {db tmp999=248;MYCOPY(dummy0_37f31)} // 37e3:0101
-
     {db tmp999=16;MYCOPY(dummy0_37f33)} // 37e3:0103
     {db tmp999=24;MYCOPY(dummy0_37f34)} // 37e3:0104
-
     {db tmp999=212;MYCOPY(dummy0_37f36)} // 37e3:0106
-
     {db tmp999=252;MYCOPY(dummy0_37f38)} // 37e3:0108
-
     {db tmp999=104;MYCOPY(dummy0_37f3a)} // 37e3:010a
     {db tmp999=111;MYCOPY(dummy0_37f3b)} // 37e3:010b
     {db tmp999=117;MYCOPY(dummy0_37f3c)} // 37e3:010c
@@ -13802,7 +13076,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_37f3e)} // 37e3:010e
     {db tmp999=52;MYCOPY(dummy0_37f3f)} // 37e3:010f
     {db tmp999=100;MYCOPY(dummy0_37f40)} // 37e3:0110
-
     {db tmp999=56;MYCOPY(unk_46522)} // 37e3:0112
     {db tmp999[32]={230,201,201,244,200,201,230,201,201,230,55,201,1,55,56,230,55,201,230,27,201,251,27,201,251,13,201,230,13,201,230,243};MYCOPY(dummy0_37f43)} // 37e3:0113
     {db tmp999[32]={201,251,243,201,251,229,201,230,229,201,253,225,52,230,232,44,230,232,44,230,244,52,230,244,52,243,232,52,243,244,44,243};MYCOPY(dummy0_37f63)} // 37e3:0133
@@ -13836,17 +13109,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=236;MYCOPY(dummy0_37f9e)} // 37f9:000e
     {db tmp999=8;MYCOPY(unk_4657f)} // 37f9:000f
     {db tmp999=16;MYCOPY(dummy0_37fa0)} // 37f9:0010
-
-
-
-
     {dd tmp999=far_offset(seg092,unk_4660b);MYCOPY(dummy0_37fa5)} // 37f9:0015
     {db tmp999[32]={140,0,8,4,16,29,0,15,255,0,4,11,10,0,1,16,40,0,15,255,0,4,6,7,1,0,16,51,0,15,255,0};MYCOPY(dummy0_37fa9)} // 37f9:0019
     {db tmp999[32]={4,12,13,9,8,16,62,0,0,255,0,4,14,15,4,5,16,73,0,8,255,0,5,10,14,5,6,0,16,85,0,0};MYCOPY(dummy0_37fc9)} // 37f9:0039
     {db tmp999[32]={255,0,5,13,15,14,10,11,0,97,0,0,255,0,4,2,3,13,11,16,108,0,0,255,0,5,7,6,5,8,9,3};MYCOPY(dummy0_37fe9)} // 37f9:0059
     {db tmp999[32]={7,29,0,40,0,51,0,62,0,85,0,108,0,73,0,3,1,97,0,16,97,0,120,0,136,0,104,111,117,115,101,53};MYCOPY(dummy0_38009)} // 37f9:0079
     {db tmp999=100;MYCOPY(dummy0_38029)} // 37f9:0099
-
     {db tmp999=56;MYCOPY(unk_4660b)} // 37f9:009b
     {db tmp999[32]={251,37,56,237,37,56,237,182,201,237,182,201,251,236,0,16,32,4,14,37,4,237,37,201,251,236,201,237,236,56,251,222};MYCOPY(dummy0_3802c)} // 37f9:009c
     {db tmp999=56;MYCOPY(dummy0_3804c)} // 37f9:00bc
@@ -13861,16 +13129,11 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=222;MYCOPY(dummy0_3805a)} // 3805:000a
     {db tmp999=8;MYCOPY(unk_4663b)} // 3805:000b
     {db tmp999=14;MYCOPY(dummy0_3805c)} // 3805:000c
-
-
-
-
     {dd tmp999=far_offset(seg093,unk_466ce);MYCOPY(dummy0_38061)} // 3805:0011
     {db tmp999[32]={143,0,8,0,16,25,0,0,255,0,4,0,7,6,2,0,36,0,15,90,0,4,6,8,1,2,16,47,0,8,255,0};MYCOPY(dummy0_38065)} // 3805:0015
     {db tmp999[32]={4,3,4,0,2,0,58,0,15,90,0,4,5,3,2,1,16,69,0,7,255,0,4,6,9,3,2,16,80,0,8,255};MYCOPY(dummy0_38085)} // 3805:0035
     {db tmp999[32]={0,4,9,10,4,3,16,91,0,8,255,0,4,10,9,6,7,0,102,0,0,255,0,5,13,4,7,11,12,3,2,58};MYCOPY(dummy0_380a5)} // 3805:0055
     {db tmp999[32]={0,36,0,3,5,91,0,80,0,69,0,47,0,25,0,3,1,102,0,16,102,0,120,0,132,0,16,69,0,114,0,136};MYCOPY(dummy0_380c5)} // 3805:0075
-
     {db tmp999=104;MYCOPY(dummy0_380e6)} // 3805:0096
     {db tmp999=111;MYCOPY(dummy0_380e7)} // 3805:0097
     {db tmp999=117;MYCOPY(dummy0_380e8)} // 3805:0098
@@ -13878,27 +13141,20 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_380ea)} // 3805:009a
     {db tmp999=54;MYCOPY(dummy0_380eb)} // 3805:009b
     {db tmp999=100;MYCOPY(dummy0_380ec)} // 3805:009c
-
     {db tmp999=96;MYCOPY(unk_466ce)} // 3805:009e
     {db tmp999[32]={1,0,0,32,1,96,1,52,0,32,1,96,1,28,0,32,1,216,254,28,0,32,1,196,254,0,0,32,1,216,254,52};MYCOPY(dummy0_380ef)} // 3805:009f
     {db tmp999[32]={0,32,1,96,1,28,0,220,255,96,1,0,0,220,255,96,1,52,0,220,255,80,0,28,0,128,255,64,0,0,0,124};MYCOPY(dummy0_3810f)} // 3805:00bf
     {db tmp999=255;MYCOPY(dummy0_3812f)} // 3805:00df
     {db tmp999=96;MYCOPY(dummy0_38130)} // 3805:00e0
     {db tmp999=1;MYCOPY(dummy0_38131)} // 3805:00e1
-
-
     {db tmp999=224;MYCOPY(dummy0_38134)} // 3805:00e4
     {db tmp999=254;MYCOPY(dummy0_38135)} // 3805:00e5
     {db tmp999=144;MYCOPY(dummy0_38136)} // 3805:00e6
     {db tmp999=254;MYCOPY(dummy0_38137)} // 3805:00e7
-
-
     {db tmp999=224;MYCOPY(dummy0_3813a)} // 3805:00ea
     {db tmp999=254;MYCOPY(dummy0_3813b)} // 3805:00eb
     {db tmp999=144;MYCOPY(dummy0_3813c)} // 3805:00ec
     {db tmp999=254;MYCOPY(dummy0_3813d)} // 3805:00ed
-
-
     {db tmp999=32;MYCOPY(dummy0_38140)} // 3814:0000
     {db tmp999=1;MYCOPY(dummy0_38141)} // 3814:0001
     {db tmp999=17;MYCOPY(unk_46722)} // 3814:0002
@@ -13938,13 +13194,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=114;MYCOPY(dummy0_3840e)} // 3814:02ce
     {db tmp999=55;MYCOPY(dummy0_3840f)} // 3814:02cf
     {db tmp999=48;MYCOPY(dummy0_38410)} // 3841:0000
-
     {db tmp999=15;MYCOPY(unk_469f2)} // 3841:0002
     {db tmp999=26;MYCOPY(dummy0_38413)} // 3841:0003
-
-
-
-
     {dd tmp999=far_offset(seg095,unk_46c65);MYCOPY(dummy0_38418)} // 3841:0008
     {db tmp999[32]={228,0,14,4,16,16,0,7,255,0,4,15,14,10,11,16,27,0,3,255,0,4,16,15,11,12,16,38,0,7,255,0};MYCOPY(dummy0_3841c)} // 3841:000c
     {db tmp999[32]={4,17,16,12,13,16,49,0,8,255,0,6,20,18,25,22,10,14,16,62,0,8,255,0,6,23,24,19,21,17,13,16};MYCOPY(dummy0_3843c)} // 3841:002c
@@ -13954,10 +13205,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,4,6,2,1,7,1,178,0,0,255,9,8,3,1,178,0,3,5,167,0,156,0,145,0,134,0,123,0,16,167,0};MYCOPY(dummy0_384bc)} // 3841:00ac
     {db tmp999[32]={185,0,189,0,3,9,112,0,99,0,88,0,75,0,62,0,49,0,38,0,27,0,16,0,16,27,0,201,0,208,0,27};MYCOPY(dummy0_384dc)} // 3841:00cc
     {db tmp999=46;MYCOPY(dummy0_384fc)} // 3841:00ec
-
-
-
-
     {dd tmp999=far_offset(seg095,unk_46cb3);MYCOPY(dummy0_38501)} // 3841:00f1
     {db tmp999[32]={107,2,26,4,16,249,0,0,255,0,6,1,3,4,5,6,0,16,6,1,0,255,0,4,8,3,1,2,16,17,1,0};MYCOPY(dummy0_38505)} // 3841:00f5
     {db tmp999[32]={255,0,4,7,4,3,8,16,28,1,0,255,0,4,5,10,9,6,16,39,1,0,255,0,4,6,9,11,0,16,39,1};MYCOPY(dummy0_38525)} // 3841:0115
@@ -14026,18 +13273,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=10;MYCOPY(dummy0_38754)} // 3875:0004
     {db tmp999=26;MYCOPY(dummy0_38755)} // 3875:0005
     {db tmp999=243;MYCOPY(dummy0_38756)} // 3875:0006
-
     {db tmp999=21;MYCOPY(dummy0_38758)} // 3875:0008
     {db tmp999=10;MYCOPY(dummy0_38759)} // 3875:0009
-
     {db tmp999=24;MYCOPY(dummy0_3875b)} // 3875:000b
     {db tmp999=36;MYCOPY(dummy0_3875c)} // 3875:000c
     {db tmp999=15;MYCOPY(unk_46d3d)} // 3875:000d
     {db tmp999=20;MYCOPY(dummy0_3875e)} // 3875:000e
-
-
-
-
     {dd tmp999=far_offset(seg096,unk_47041);MYCOPY(dummy0_38763)} // 3875:0013
     {db tmp999[32]={231,0,14,0,16,27,0,0,255,0,4,1,0,3,2,16,38,0,0,255,0,4,9,6,7,8,16,49,0,0,255,0};MYCOPY(dummy0_38767)} // 3875:0017
     {db tmp999[32]={4,7,6,0,1,16,60,0,0,255,0,4,3,9,8,2,16,71,0,8,255,0,4,8,11,5,2,16,82,0,8,255};MYCOPY(dummy0_38787)} // 3875:0037
@@ -14046,34 +13287,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={7,255,0,4,15,13,12,14,16,159,0,8,255,0,4,16,17,14,12,16,170,0,0,255,0,4,5,11,17,16,1,27};MYCOPY(dummy0_387e7)} // 3875:0097
     {db tmp999[32]={0,15,255,19,18,3,1,181,0,3,5,115,0,126,0,137,0,148,0,159,0,16,115,0,188,0,192,0,3,9,27,0};MYCOPY(dummy0_38807)} // 3875:00b7
     {db tmp999=38;MYCOPY(dummy0_38827)} // 3875:00d7
-
     {db tmp999=49;MYCOPY(dummy0_38829)} // 3875:00d9
-
     {db tmp999=60;MYCOPY(dummy0_3882b)} // 3875:00db
-
     {db tmp999=71;MYCOPY(dummy0_3882d)} // 3875:00dd
-
     {db tmp999=82;MYCOPY(dummy0_3882f)} // 3875:00df
-
     {db tmp999=93;MYCOPY(dummy0_38831)} // 3875:00e1
-
     {db tmp999=104;MYCOPY(dummy0_38833)} // 3875:00e3
-
     {db tmp999=170;MYCOPY(dummy0_38835)} // 3875:00e5
-
     {db tmp999=16;MYCOPY(dummy0_38837)} // 3875:00e7
     {db tmp999=170;MYCOPY(dummy0_38838)} // 3875:00e8
-
     {db tmp999=204;MYCOPY(dummy0_3883a)} // 3875:00ea
-
     {db tmp999=211;MYCOPY(dummy0_3883c)} // 3875:00ec
-
     {db tmp999=37;MYCOPY(dummy0_3883e)} // 3875:00ee
     {db tmp999=60;MYCOPY(dummy0_3883f)} // 3875:00ef
-
-
-
-
     {dd tmp999=far_offset(seg096,unk_470b9);MYCOPY(dummy0_38844)} // 3875:00f4
     {db tmp999[32]={6,3,37,4,16,252,0,0,255,0,6,1,3,5,6,7,0,16,9,1,7,255,0,4,9,3,1,2,16,20,1,0};MYCOPY(dummy0_38848)} // 3875:00f8
     {db tmp999[32]={255,0,4,8,5,3,9,16,31,1,0,255,0,4,6,11,10,7,16,42,1,0,255,0,4,7,10,12,0,16,42,1};MYCOPY(dummy0_38868)} // 3875:0118
@@ -14115,34 +13341,22 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=116;MYCOPY(dummy0_38a5d)} // 3875:030d
     {db tmp999=56;MYCOPY(dummy0_38a5e)} // 3875:030e
     {db tmp999=48;MYCOPY(dummy0_38a5f)} // 3875:030f
-
     {db tmp999=37;MYCOPY(unk_47041)} // 3875:0311
     {db tmp999[32]={0,234,255,71,0,37,0,253,255,83,0,37,0,253,255,200,255,37,0,234,255,210,255,18,0,3,0,37,0,18,0,3};MYCOPY(dummy0_38a62)} // 3875:0312
     {db tmp999[32]={0,211,255,219,255,234,255,71,0,219,255,253,255,83,0,219,255,253,255,200,255,219,255,234,255,210,255,238,255,3,0,37};MYCOPY(dummy0_38a82)} // 3875:0332
     {db tmp999[32]={0,238,255,3,0,211,255,12,0,18,0,238,255,12,0,18,0,18,0,244,255,18,0,238,255,244,255,18,0,18,0,18};MYCOPY(dummy0_38aa2)} // 3875:0352
-
     {db tmp999=3;MYCOPY(dummy0_38ac3)} // 3875:0373
-
     {db tmp999=238;MYCOPY(dummy0_38ac5)} // 3875:0375
     {db tmp999=255;MYCOPY(dummy0_38ac6)} // 3875:0376
     {db tmp999=238;MYCOPY(dummy0_38ac7)} // 3875:0377
     {db tmp999=255;MYCOPY(dummy0_38ac8)} // 3875:0378
     {db tmp999=3;MYCOPY(dummy0_38ac9)} // 3875:0379
-
     {db tmp999=238;MYCOPY(dummy0_38acb)} // 3875:037b
     {db tmp999=255;MYCOPY(dummy0_38acc)} // 3875:037c
-
-
     {db tmp999=8;MYCOPY(dummy0_38acf)} // 3875:037f
-
     {db tmp999=31;MYCOPY(dummy0_38ad1)} // 3875:0381
-
-
-
     {db tmp999=25;MYCOPY(dummy0_38ad5)} // 3875:0385
-
     {db tmp999=130;MYCOPY(dummy0_38ad7)} // 3875:0387
-
     {db tmp999=33;MYCOPY(unk_470b9)} // 3875:0389
     {db tmp999[32]={4,198,33,4,64,22,4,64,33,252,72,22,252,195,33,234,52,33,234,219,33,252,195,22,234,52,22,252,72,22,252,195};MYCOPY(dummy0_38ada)} // 3875:038a
     {db tmp999[32]={22,234,219,22,4,198,234,252,195,234,4,198,234,4,64,234,252,72,22,9,247,22,9,22,234,9,247,234,9,22,17,22};MYCOPY(dummy0_38afa)} // 3875:03aa
@@ -14170,10 +13384,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=239;MYCOPY(dummy0_38b8c)} // 38b8:000c
     {db tmp999=13;MYCOPY(unk_4716d)} // 38b8:000d
     {db tmp999=22;MYCOPY(dummy0_38b8e)} // 38b8:000e
-
-
-
-
     {dd tmp999=far_offset(seg097,unk_47468);MYCOPY(dummy0_38b93)} // 38b8:0013
     {db tmp999[32]={212,0,11,4,16,27,0,15,255,0,4,8,6,7,9,16,38,0,6,255,0,4,6,11,10,7,16,49,0,7,255,0};MYCOPY(dummy0_38b97)} // 38b8:0017
     {db tmp999[32]={3,10,9,7,16,59,0,7,255,0,3,6,8,11,16,69,0,8,255,0,6,5,4,3,2,1,0,16,82,0,8,255};MYCOPY(dummy0_38bb7)} // 38b8:0037
@@ -14182,15 +13392,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={150,0,8,255,18,19,1,157,0,8,255,20,21,3,7,139,0,128,0,117,0,106,0,95,0,82,0,69,0,3,1,150};MYCOPY(dummy0_38c17)} // 38b8:0097
     {db tmp999[32]={0,3,4,59,0,49,0,38,0,27,0,16,59,0,180,0,184,0,3,1,157,0,24,49,0,194,0,201,0,24,117,0};MYCOPY(dummy0_38c37)} // 38b8:00b7
     {db tmp999=164;MYCOPY(dummy0_38c57)} // 38b8:00d7
-
     {db tmp999=205;MYCOPY(dummy0_38c59)} // 38b8:00d9
-
     {db tmp999=37;MYCOPY(dummy0_38c5b)} // 38b8:00db
     {db tmp999=62;MYCOPY(dummy0_38c5c)} // 38b8:00dc
-
-
-
-
     {dd tmp999=far_offset(seg097,unk_474aa);MYCOPY(dummy0_38c61)} // 38b8:00e1
     {db tmp999[32]={252,2,37,4,16,233,0,8,255,0,6,4,3,2,1,6,5,16,246,0,8,255,0,6,11,10,9,8,13,12,16,3};MYCOPY(dummy0_38c65)} // 38b8:00e5
     {db tmp999[32]={1,8,255,0,4,1,12,13,6,16,14,1,7,255,0,4,2,11,12,1,16,25,1,3,255,0,4,3,10,11,2,16};MYCOPY(dummy0_38c85)} // 38b8:0105
@@ -14211,7 +13415,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={113,1,198,2,218,2,3,4,91,1,80,1,69,1,58,1,16,69,1,228,2,235,2,16,25,1,191,2,245,2,115,115};MYCOPY(dummy0_38e65)} // 38b8:02e5
     {db tmp999=99;MYCOPY(dummy0_38e85)} // 38b8:0305
     {db tmp999=52;MYCOPY(dummy0_38e86)} // 38b8:0306
-
     {db tmp999=33;MYCOPY(unk_47468)} // 38b8:0308
     {db tmp999[32]={216,29,33,233,62,33,0,44,33,0,160,33,240,160,33,216,194,12,28,200,244,28,200,12,0,224,244,0,224,244,0,192};MYCOPY(dummy0_38e89)} // 38b8:0309
     {db tmp999[32]={12,0,192,223,216,29,223,216,194,223,240,160,223,0,160,223,0,44,223,233,62,20,36,16,20,16,168,236,36,16,236,16};MYCOPY(dummy0_38ea9)} // 38b8:0329
@@ -14245,31 +13448,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=251;MYCOPY(dummy0_38f7f)} // 38b8:03ff
     {char tmp999[5]={'0','\xe8','\xf5','5','\n'};MYCOPY(a0i5)} // 38f8:0000
     {db tmp999[2]={13,0};MYCOPY(dummy0_38f85)} // 38f8:0000
-
-
-
     {dd tmp999=far_offset(seg098,a0iaria);MYCOPY(dummy0_38f8a)} // 38f8:000a
     {db tmp999[32]={146,0,7,4,16,18,0,8,255,0,4,6,5,4,7,16,29,0,8,255,0,4,9,8,11,10,16,40,0,7,255,0};MYCOPY(dummy0_38f8e)} // 38f8:000e
     {db tmp999[32]={4,4,11,8,7,16,51,0,0,255,0,4,6,9,10,5,16,62,0,0,255,0,4,7,8,9,6,16,73,0,7,255};MYCOPY(dummy0_38fae)} // 38f8:002e
     {db tmp999[32]={0,4,5,10,11,4,8,84,0,7,255,0,3,0,1,12,1,94,0,3,255,3,2,1,101,0,15,255,12,1,1,108};MYCOPY(dummy0_38fce)} // 38f8:004e
     {db tmp999[32]={0,15,255,12,0,3,1,94,0,3,6,18,0,29,0,40,0,51,0,62,0,73,0,3,2,101,0,108,0,16,84,0};MYCOPY(dummy0_38fee)} // 38f8:006e
     {db tmp999=119;MYCOPY(dummy0_3900e)} // 38f8:008e
-
     {db tmp999=133;MYCOPY(dummy0_39010)} // 38f8:0090
-
     {db tmp999=16;MYCOPY(dummy0_39012)} // 38f8:0092
     {db tmp999=73;MYCOPY(dummy0_39013)} // 38f8:0093
-
     {db tmp999=115;MYCOPY(dummy0_39015)} // 38f8:0095
-
     {db tmp999=139;MYCOPY(dummy0_39017)} // 38f8:0097
-
     {db tmp999=46;MYCOPY(dummy0_39019)} // 38f8:0099
     {db tmp999=72;MYCOPY(dummy0_3901a)} // 38f8:009a
-
-
-
-
     {dd tmp999=far_offset(seg098,unk_478d3);MYCOPY(dummy0_3901f)} // 38f8:009f
     {db tmp999[32]={65,3,46,4,16,167,0,0,255,0,6,9,8,7,6,5,4,16,180,0,0,255,0,6,15,14,13,12,11,10,16,193};MYCOPY(dummy0_39023)} // 38f8:00a3
     {db tmp999[32]={0,0,255,0,6,19,18,17,16,21,20,16,206,0,0,255,0,4,6,20,21,5,16,217,0,0,255,0,4,7,19,20};MYCOPY(dummy0_39043)} // 38f8:00c3
@@ -14292,7 +13483,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={1,191,1,180,1,167,1,154,1,16,239,0,204,2,220,2,3,7,250,0,239,0,228,0,217,0,206,0,193,0,167,0};MYCOPY(dummy0_39263)} // 38f8:02e3
     {db tmp999[32]={3,3,130,2,140,2,150,2,3,4,100,2,110,2,120,2,160,2,16,120,2,3,3,11,3,16,100,2,243,2,21,3};MYCOPY(dummy0_39283)} // 38f8:0303
     {db tmp999[32]={16,140,2,236,2,28,3,3,7,62,1,51,1,40,1,29,1,18,1,5,1,180,0,16,5,1,35,3,42,3,16,228};MYCOPY(dummy0_392a3)} // 38f8:0323
-
     {db tmp999=197;MYCOPY(dummy0_392c4)} // 38f8:0344
     {db tmp999=2;MYCOPY(dummy0_392c5)} // 38f8:0345
     {db tmp999=58;MYCOPY(dummy0_392c6)} // 38f8:0346
@@ -14300,7 +13490,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=115;MYCOPY(dummy0_392c8)} // 38f8:0348
     {db tmp999=50;MYCOPY(dummy0_392c9)} // 38f8:0349
     {db tmp999=51;MYCOPY(dummy0_392ca)} // 38f8:034a
-
     {char tmp999[7]="0\xe8\xc0\xd0\xe8\xc0";MYCOPY(a0iaria)} // 38f8:034c
     {char tmp999[3]="8X";MYCOPY(a8x)} // 38f8:0353
     {db tmp999=16;MYCOPY(dummy0_392d6)} // 38f8:0356
@@ -14329,7 +13518,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=4;MYCOPY(dummy0_392ed)} // 38f8:036d
     {db tmp999=20;MYCOPY(dummy0_392ee)} // 38f8:036e
     {db tmp999=23;MYCOPY(dummy0_392ef)} // 38f8:036f
-
     {db tmp999=232;MYCOPY(dummy0_392f1)} // 38f8:0371
     {db tmp999=16;MYCOPY(dummy0_392f2)} // 38f8:0372
     {db tmp999=8;MYCOPY(unk_478d3)} // 38f8:0373
@@ -14356,17 +13544,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=207;MYCOPY(dummy0_393c2)} // 38f8:0442
     {db tmp999=232;MYCOPY(dummy0_393c3)} // 38f8:0443
     {db tmp999=191;MYCOPY(dummy0_393c4)} // 38f8:0444
-
     {db tmp999=232;MYCOPY(dummy0_393c6)} // 38f8:0446
     {db tmp999=4;MYCOPY(dummy0_393c7)} // 38f8:0447
-
     {db tmp999=242;MYCOPY(dummy0_393c9)} // 38f8:0449
     {db tmp999=3;MYCOPY(dummy0_393ca)} // 38f8:044a
-
-
-
-
-
     {db tmp999=0;MYCOPY(byte_479b0)} // 393d:0000
     {dw tmp999=0;MYCOPY(word_479b1)} // 393d:0001
     {dw tmp999=0;MYCOPY(word_479b3)} // 393d:0003
@@ -14395,7 +13576,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=114;MYCOPY(dummy0_3940e)} // 393d:003e
     {db tmp999=112;MYCOPY(dummy0_3940f)} // 393d:003f
     {db tmp999=17;MYCOPY(dummy0_39410)} // 393d:0040
-
     {db tmp999=255;MYCOPY(dummy0_39412)} // 393d:0042
     {db tmp999=255;MYCOPY(dummy0_39413)} // 393d:0043
     {db tmp999=255;MYCOPY(dummy0_39414)} // 393d:0044
@@ -14403,77 +13583,28 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=64;MYCOPY(unk_479f6)} // 393d:0046
     {db tmp999=249;MYCOPY(dummy0_39417)} // 393d:0047
     {db tmp999=0;MYCOPY(unk_479f8)} // 393d:0048
-
     {db tmp999=0;MYCOPY(unk_479fa)} // 393d:004a
-
     {db tmp999=254;MYCOPY(unk_479fc)} // 393d:004c
-
     {dd tmp999=far_offset(dseg,byte_479b0);MYCOPY(dummy0_3941e)} // 393d:004e
     {db tmp999[32]={0};MYCOPY(dummy0_39422)} // 393d:0052
     {db tmp999[32]={0};MYCOPY(dummy0_39442)} // 393d:0072
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=78;MYCOPY(dummy0_3946e)} // 393d:009e
-
     {db tmp999=0;MYCOPY(unk_47a50)} // 393d:00a0
-
-
-
     {db tmp999=0;MYCOPY(unk_47a54)} // 393d:00a4
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47a5a)} // 393d:00aa
-
     {db tmp999=0;MYCOPY(unk_47a5c)} // 393d:00ac
-
-
     {db tmp999=0;MYCOPY(unk_47a5f)} // 393d:00af
-
     {db tmp999=20;MYCOPY(dummy0_39481)} // 393d:00b1
-
     {db tmp999=129;MYCOPY(dummy0_39483)} // 393d:00b3
     {db tmp999=129;MYCOPY(dummy0_39484)} // 393d:00b4
     {db tmp999=129;MYCOPY(dummy0_39485)} // 393d:00b5
     {db tmp999=1;MYCOPY(dummy0_39486)} // 393d:00b6
     {db tmp999=1;MYCOPY(dummy0_39487)} // 393d:00b7
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47a77)} // 393d:00c7
-
     {db tmp999=0;MYCOPY(unk_47a79)} // 393d:00c9
-
     {db tmp999=0;MYCOPY(unk_47a7b)} // 393d:00cb
-
     {dd tmp999=far_offset(dseg,unk_47a81);MYCOPY(off_47a7d)} // 393d:00cd
     {db tmp999=67;MYCOPY(unk_47a81)} // 393d:00d1
-
-
     {dw tmp999=0;MYCOPY(word_47a84)} // 393d:00d4
     {dw tmp999=0;MYCOPY(word_47a86)} // 393d:00d6
     {db tmp999=1;MYCOPY(unk_47a88)} // 393d:00d8
@@ -14487,79 +13618,38 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=2;MYCOPY(unk_47a90)} // 393d:00e0
     {db tmp999=11;MYCOPY(unk_47a91)} // 393d:00e1
     {db tmp999=1;MYCOPY(dummy0_394b2)} // 393d:00e2
-
     {db tmp999=2;MYCOPY(unk_47a94)} // 393d:00e4
-
     {db tmp999=2;MYCOPY(unk_47a96)} // 393d:00e6
-
     {db tmp999=0;MYCOPY(unk_47a98)} // 393d:00e8
-
     {db tmp999=0;MYCOPY(unk_47a9a)} // 393d:00ea
-
     {db tmp999=0;MYCOPY(unk_47a9c)} // 393d:00ec
-
     {db tmp999=0;MYCOPY(unk_47a9e)} // 393d:00ee
-
     {db tmp999=6;MYCOPY(unk_47aa0)} // 393d:00f0
     {db tmp999=9;MYCOPY(unk_47aa1)} // 393d:00f1
-
-
     {db tmp999=1;MYCOPY(dummy0_394c4)} // 393d:00f4
-
     {db tmp999=1;MYCOPY(dummy0_394c6)} // 393d:00f6
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47ab0)} // 393d:0100
-
     {db tmp999=0;MYCOPY(unk_47ab2)} // 393d:0102
-
-    {db tmp999=0;MYCOPY(unk_47ab4)} // 393d:0104
-    {db tmp999=0;MYCOPY(unk_47ab5)} // 393d:0105
-
-
-
-
+    {db tmp999=0;MYCOPY(byte_47ab4)} // 393d:0104
+    {db tmp999=0;MYCOPY(byte_47ab5)} // 393d:0105
     {db tmp999=0;MYCOPY(unk_47aba)} // 393d:010a
-
     {db tmp999=0;MYCOPY(unk_47abc)} // 393d:010c
-
-
-
-
-
     {db tmp999=1;MYCOPY(unk_47ac2)} // 393d:0112
     {db tmp999=1;MYCOPY(unk_47ac3)} // 393d:0113
     {db tmp999=1;MYCOPY(unk_47ac4)} // 393d:0114
     {db tmp999=0;MYCOPY(unk_47ac5)} // 393d:0115
     {db tmp999=0;MYCOPY(unk_47ac6)} // 393d:0116
-
     {db tmp999=0;MYCOPY(unk_47ac8)} // 393d:0118
     {db tmp999=0;MYCOPY(unk_47ac9)} // 393d:0119
     {db tmp999=0;MYCOPY(unk_47aca)} // 393d:011a
-
     {db tmp999=0;MYCOPY(unk_47acc)} // 393d:011c
-
     {db tmp999=0;MYCOPY(unk_47ace)} // 393d:011e
-
     {db tmp999=0;MYCOPY(unk_47ad0)} // 393d:0120
-
     {db tmp999=0;MYCOPY(unk_47ad2)} // 393d:0122
-
     {db tmp999=0;MYCOPY(unk_47ad4)} // 393d:0124
-
     {db tmp999=0;MYCOPY(unk_47ad6)} // 393d:0126
-
     {db tmp999=0;MYCOPY(unk_47ad8)} // 393d:0128
-
     {db tmp999=0;MYCOPY(unk_47ada)} // 393d:012a
-
     {db tmp999=0;MYCOPY(unk_47adc)} // 393d:012c
     {db tmp999[32]={0,215,35,87,31,0,0,0,0,87,51,105,46,215,45,151,37,0,0,0,0,215,60,233,53,78,111,116,32,101,110,111};MYCOPY(dummy0_394fd)} // 393d:012d
     {db tmp999[32]={117,103,104,32,109,101,109,111,114,121,32,116,111,32,114,117,110,32,76,72,88,46,0,126,92,132,118,52,55,62,60,184};MYCOPY(dummy0_3951d)} // 393d:014d
@@ -14579,22 +13669,11 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=166;MYCOPY(dummy0_3954a)} // 393d:017a
     {db tmp999=84;MYCOPY(dummy0_3954b)} // 393d:017b
     {db tmp999=0;MYCOPY(unk_47b2c)} // 393d:017c
-
-    {db tmp999=255;MYCOPY(unk_47b2e)} // 393d:017e
+    {db tmp999=255;MYCOPY(byte_47b2e)} // 393d:017e
     {db tmp999=255;MYCOPY(dummy0_3954f)} // 393d:017f
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47b34)} // 393d:0184
-
     {db tmp999=0;MYCOPY(unk_47b36)} // 393d:0186
-
     {db tmp999=0;MYCOPY(unk_47b38)} // 393d:0188
-
-
-
-
     {db tmp999=3;MYCOPY(dummy0_3955d)} // 393d:018d
     {db tmp999=12;MYCOPY(dummy0_3955e)} // 393d:018e
     {db tmp999=15;MYCOPY(dummy0_3955f)} // 393d:018f
@@ -14618,45 +13697,22 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=3;MYCOPY(dummy0_39590)} // 393d:01c0
     {db tmp999=2;MYCOPY(dummy0_39591)} // 393d:01c1
     {db tmp999=1;MYCOPY(dummy0_39592)} // 393d:01c2
-
-    {db tmp999=0;MYCOPY(unk_47b74)} // 393d:01c4
-
+    {dw tmp999=0;MYCOPY(word_47b74)} // 393d:01c4
     {db tmp999=0;MYCOPY(unk_47b76)} // 393d:01c6
-
     {db tmp999=0;MYCOPY(unk_47b78)} // 393d:01c8
-
     {db tmp999=0;MYCOPY(unk_47b7a)} // 393d:01ca
-
     {db tmp999=0;MYCOPY(unk_47b7c)} // 393d:01cc
-
     {db tmp999=0;MYCOPY(unk_47b7e)} // 393d:01ce
-
     {db tmp999=0;MYCOPY(unk_47b80)} // 393d:01d0
-
     {db tmp999=0;MYCOPY(unk_47b82)} // 393d:01d2
-
     {db tmp999=0;MYCOPY(unk_47b84)} // 393d:01d4
-
     {db tmp999=0;MYCOPY(unk_47b86)} // 393d:01d6
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47b8e)} // 393d:01de
-
     {db tmp999=0;MYCOPY(unk_47b90)} // 393d:01e0
-
     {db tmp999=192;MYCOPY(dummy0_395b2)} // 393d:01e2
-
     {db tmp999=240;MYCOPY(dummy0_395b4)} // 393d:01e4
-
     {db tmp999=252;MYCOPY(dummy0_395b6)} // 393d:01e6
-
     {db tmp999=255;MYCOPY(dummy0_395b8)} // 393d:01e8
-
     {db tmp999=255;MYCOPY(dummy0_395ba)} // 393d:01ea
     {db tmp999=192;MYCOPY(dummy0_395bb)} // 393d:01eb
     {db tmp999=255;MYCOPY(dummy0_395bc)} // 393d:01ec
@@ -14666,28 +13722,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=255;MYCOPY(dummy0_395c0)} // 393d:01f0
     {db tmp999=255;MYCOPY(dummy0_395c1)} // 393d:01f1
     {db tmp999=240;MYCOPY(dummy0_395c2)} // 393d:01f2
-
     {db tmp999=255;MYCOPY(dummy0_395c4)} // 393d:01f4
-
     {db tmp999=255;MYCOPY(dummy0_395c6)} // 393d:01f6
     {db tmp999=240;MYCOPY(dummy0_395c7)} // 393d:01f7
     {db tmp999=255;MYCOPY(dummy0_395c8)} // 393d:01f8
     {db tmp999=255;MYCOPY(dummy0_395c9)} // 393d:01f9
     {db tmp999=0;MYCOPY(unk_47baa)} // 393d:01fa
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47bb1)} // 393d:0201
-
     {db tmp999=0;MYCOPY(unk_47bb3)} // 393d:0203
-
     {db tmp999=0;MYCOPY(unk_47bb5)} // 393d:0205
-
     {db tmp999=0;MYCOPY(unk_47bb7)} // 393d:0207
-
     {dw tmp999=m2c::ksub_209d8;MYCOPY(off_47bb9)} // 393d:0209
     {dw tmp999=m2c::ksub_20884;MYCOPY(dummy0_395db)} // 393d:020b
     {dw tmp999=m2c::ksub_20884;MYCOPY(dummy0_395dd)} // 393d:020d
@@ -14705,100 +13749,40 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=0;MYCOPY(unk_47bd3)} // 393d:0223
     {char tmp999[8]="4x6.fnt";MYCOPY(a4x6fnt)} // 393d:0224
     {db tmp999=0;MYCOPY(unk_47bdc)} // 393d:022c
-
     {db tmp999=15;MYCOPY(unk_47bde)} // 393d:022e
     {db tmp999=0;MYCOPY(unk_47bdf)} // 393d:022f
     {char tmp999[9]="prop.fnt";MYCOPY(apropfnt)} // 393d:0230
     {char tmp999[8]="4x6.fnt";MYCOPY(a4x6fnt_0)} // 393d:0239
-
     {db tmp999=0;MYCOPY(unk_47bf2)} // 393d:0242
-
     {db tmp999=0;MYCOPY(unk_47bf4)} // 393d:0244
-
     {db tmp999=0;MYCOPY(unk_47bf6)} // 393d:0246
-
     {db tmp999=0;MYCOPY(unk_47bf8)} // 393d:0248
-
     {db tmp999=255;MYCOPY(unk_47bfa)} // 393d:024a
     {db tmp999=255;MYCOPY(dummy0_3961b)} // 393d:024b
     {db tmp999=4;MYCOPY(dummy0_3961c)} // 393d:024c
-
     {db tmp999=0;MYCOPY(unk_47bfe)} // 393d:024e
-
-
-
     {db tmp999=0;MYCOPY(unk_47c02)} // 393d:0252
-
     {db tmp999=0;MYCOPY(unk_47c04)} // 393d:0254
-
     {db tmp999=0;MYCOPY(unk_47c06)} // 393d:0256
-
     {db tmp999=0;MYCOPY(unk_47c08)} // 393d:0258
-
     {db tmp999=0;MYCOPY(unk_47c0a)} // 393d:025a
-
     {db tmp999=0;MYCOPY(unk_47c0c)} // 393d:025c
-
     {db tmp999=0;MYCOPY(unk_47c0e)} // 393d:025e
-
     {db tmp999=0;MYCOPY(unk_47c10)} // 393d:0260
-
     {db tmp999=0;MYCOPY(unk_47c12)} // 393d:0262
-
     {db tmp999=0;MYCOPY(unk_47c14)} // 393d:0264
-
     {db tmp999=0;MYCOPY(unk_47c16)} // 393d:0266
-
     {db tmp999=0;MYCOPY(unk_47c18)} // 393d:0268
-
     {db tmp999=0;MYCOPY(unk_47c1a)} // 393d:026a
-
     {db tmp999=0;MYCOPY(unk_47c1c)} // 393d:026c
-
     {db tmp999=0;MYCOPY(unk_47c1e)} // 393d:026e
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47c34)} // 393d:0284
-
     {db tmp999=0;MYCOPY(unk_47c36)} // 393d:0286
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_47c3e)} // 393d:028e
-
     {db tmp999=0;MYCOPY(unk_47c40)} // 393d:0290
-
-
-
     {db tmp999=0;MYCOPY(unk_47c44)} // 393d:0294
-
     {db tmp999=0;MYCOPY(unk_47c46)} // 393d:0296
-
     {db tmp999=0;MYCOPY(unk_47c48)} // 393d:0298
-
     {db tmp999=0;MYCOPY(unk_47c4a)} // 393d:029a
     {db tmp999[32]={0,226,238,238,238,250,238,6,239,18,239,30,239,42,239,54,239,66,239,78,239,90,239,102,239,114,239,126,239,138,239,150};MYCOPY(dummy0_3966b)} // 393d:029b
     {db tmp999=239;MYCOPY(dummy0_3968b)} // 393d:02bb
@@ -14821,15 +13805,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=2;MYCOPY(dummy0_3969c)} // 393d:02cc
     {db tmp999=240;MYCOPY(dummy0_3969d)} // 393d:02cd
     {db tmp999=0;MYCOPY(unk_47c7e)} // 393d:02ce
-
     {db tmp999=0;MYCOPY(unk_47c80)} // 393d:02d0
-
     {db tmp999=0;MYCOPY(unk_47c82)} // 393d:02d2
-
     {db tmp999=0;MYCOPY(unk_47c84)} // 393d:02d4
-
     {db tmp999=0;MYCOPY(unk_47c86)} // 393d:02d6
-
     {dw tmp999=m2c::kloc_2def1;MYCOPY(off_47c88)} // 393d:02d8
     {dw tmp999=m2c::kloc_2e015;MYCOPY(dummy0_396aa)} // 393d:02da
     {dw tmp999=m2c::kloc_2e015;MYCOPY(dummy0_396ac)} // 393d:02dc
@@ -14848,22 +13827,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999=m2c::kloc_2e36e;MYCOPY(dummy0_396c6)} // 393d:02f6
     {dw tmp999=m2c::kloc_2e40c;MYCOPY(dummy0_396c8)} // 393d:02f8
     {dw tmp999=m2c::kloc_2e412;MYCOPY(dummy0_396ca)} // 393d:02fa
-
     {db tmp999=0;MYCOPY(unk_47cad)} // 393d:02fd
     {db tmp999=0;MYCOPY(unk_47cae)} // 393d:02fe
-
     {db tmp999=0;MYCOPY(unk_47cb0)} // 393d:0300
-
     {db tmp999=0;MYCOPY(unk_47cb2)} // 393d:0302
-
     {db tmp999=0;MYCOPY(unk_47cb4)} // 393d:0304
-
     {db tmp999=0;MYCOPY(unk_47cb6)} // 393d:0306
-
     {db tmp999=0;MYCOPY(unk_47cb8)} // 393d:0308
-
     {db tmp999=0;MYCOPY(unk_47cba)} // 393d:030a
-
     {db tmp999=128;MYCOPY(dummy0_396dc)} // 393d:030c
     {db tmp999=64;MYCOPY(dummy0_396dd)} // 393d:030d
     {db tmp999=32;MYCOPY(dummy0_396de)} // 393d:030e
@@ -14879,15 +13850,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=240;MYCOPY(dummy0_396e8)} // 393d:0318
     {db tmp999=15;MYCOPY(dummy0_396e9)} // 393d:0319
     {db tmp999=0;MYCOPY(unk_47cca)} // 393d:031a
-
     {db tmp999=0;MYCOPY(unk_47ccc)} // 393d:031c
-
-
-
     {db tmp999=0;MYCOPY(unk_47cd0)} // 393d:0320
-
     {db tmp999=0;MYCOPY(unk_47cd2)} // 393d:0322
-
     {db tmp999=0;MYCOPY(unk_47cd4)} // 393d:0324
     {db tmp999[32]={0,143,42,208,38,208,38,208,38,171,41,31,44,106,43,75,40,75,40,75,40,34,42,252,44,174,46,44,46,44,46,44};MYCOPY(dummy0_396f5)} // 393d:0325
     {db tmp999=46;MYCOPY(dummy0_39715)} // 393d:0345
@@ -14896,7 +13861,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=234;MYCOPY(dummy0_39718)} // 393d:0348
     {db tmp999=46;MYCOPY(dummy0_39719)} // 393d:0349
     {db tmp999=0;MYCOPY(unk_47cfa)} // 393d:034a
-
     {db tmp999=0;MYCOPY(unk_47cfc)} // 393d:034c
     {db tmp999[32]={0,0,0,255,127,63,31,15,7,3,1,128,192,224,240,248,252,254,255,255,63,15,3,192,240,252,255,255,127,63,31,15};MYCOPY(dummy0_3971d)} // 393d:034d
     {db tmp999[32]={7,3,1,128,192,224,240,248,252,254,255,255,255,15,255,0,255,0,15,240,0,255,0,255,240,255,255,0,0,4,64,170};MYCOPY(dummy0_3973d)} // 393d:036d
@@ -14942,18 +13906,13 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=47;MYCOPY(dummy0_3989b)} // 393d:04cb
     {db tmp999=240;MYCOPY(dummy0_3989c)} // 393d:04cc
     {db tmp999=48;MYCOPY(dummy0_3989d)} // 393d:04cd
-
     {db tmp999=24;MYCOPY(dummy0_3989f)} // 393d:04cf
     {db tmp999=16;MYCOPY(dummy0_398a0)} // 393d:04d0
-
     {db tmp999=8;MYCOPY(dummy0_398a2)} // 393d:04d2
-
     {db tmp999=250;MYCOPY(unk_47e84)} // 393d:04d4
     {db tmp999=175;MYCOPY(dummy0_398a5)} // 393d:04d5
     {db tmp999=0;MYCOPY(unk_47e86)} // 393d:04d6
-
     {db tmp999=255;MYCOPY(unk_47e88)} // 393d:04d8
-
     {db tmp999=255;MYCOPY(unk_47e8a)} // 393d:04da
     {db tmp999=255;MYCOPY(dummy0_398ab)} // 393d:04db
     {char tmp999[5]="\xff\xff\xff\xff";MYCOPY(asc_47e8c)} // 393d:04dc
@@ -14996,15 +13955,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999=m2c::ksub_2e621;MYCOPY(dummy0_399f0)} // 393d:0620
     {dw tmp999=m2c::ksub_2e6a8;MYCOPY(dummy0_399f2)} // 393d:0622
     {db tmp999=0;MYCOPY(unk_47fd4)} // 393d:0624
-
-
-
-
-
-
-
-
-
     {db tmp999=255;MYCOPY(dummy0_399fe)} // 393d:062e
     {db tmp999=127;MYCOPY(dummy0_399ff)} // 393d:062f
     {db tmp999=63;MYCOPY(dummy0_39a00)} // 393d:0630
@@ -15022,95 +13972,53 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=254;MYCOPY(dummy0_39a0c)} // 393d:063c
     {db tmp999=255;MYCOPY(dummy0_39a0d)} // 393d:063d
     {db tmp999=0;MYCOPY(unk_47fee)} // 393d:063e
-
     {db tmp999=0;MYCOPY(unk_47ff0)} // 393d:0640
-
     {db tmp999=0;MYCOPY(unk_47ff2)} // 393d:0642
-
     {db tmp999=0;MYCOPY(unk_47ff4)} // 393d:0644
-
     {db tmp999=0;MYCOPY(unk_47ff6)} // 393d:0646
-
     {db tmp999=0;MYCOPY(unk_47ff8)} // 393d:0648
-
     {db tmp999=0;MYCOPY(unk_47ffa)} // 393d:064a
-
     {db tmp999=0;MYCOPY(unk_47ffc)} // 393d:064c
-
     {db tmp999=0;MYCOPY(unk_47ffe)} // 393d:064e
-
     {db tmp999=0;MYCOPY(unk_48000)} // 393d:0650
-
     {db tmp999=0;MYCOPY(unk_48002)} // 393d:0652
-
     {db tmp999=0;MYCOPY(unk_48004)} // 393d:0654
-
     {db tmp999=0;MYCOPY(unk_48006)} // 393d:0656
-
-
-
     {db tmp999=0;MYCOPY(unk_4800a)} // 393d:065a
-
     {db tmp999=0;MYCOPY(unk_4800c)} // 393d:065c
-
     {db tmp999=0;MYCOPY(unk_4800e)} // 393d:065e
-
     {db tmp999=0;MYCOPY(unk_48010)} // 393d:0660
-
     {db tmp999=0;MYCOPY(unk_48012)} // 393d:0662
-
     {db tmp999=0;MYCOPY(unk_48014)} // 393d:0664
     {db tmp999=0;MYCOPY(unk_48015)} // 393d:0665
     {db tmp999=0;MYCOPY(unk_48016)} // 393d:0666
-
     {db tmp999=0;MYCOPY(unk_48018)} // 393d:0668
-
     {db tmp999=0;MYCOPY(unk_4801a)} // 393d:066a
-
     {db tmp999=0;MYCOPY(unk_4801c)} // 393d:066c
-
     {db tmp999=0;MYCOPY(unk_4801e)} // 393d:066e
-
     {db tmp999=0;MYCOPY(unk_48020)} // 393d:0670
-
     {db tmp999=0;MYCOPY(unk_48022)} // 393d:0672
-
     {db tmp999=0;MYCOPY(unk_48024)} // 393d:0674
-
     {db tmp999=0;MYCOPY(unk_48026)} // 393d:0676
-
     {db tmp999=0;MYCOPY(unk_48028)} // 393d:0678
-
     {db tmp999=0;MYCOPY(unk_4802a)} // 393d:067a
     {db tmp999=0;MYCOPY(unk_4802b)} // 393d:067b
     {db tmp999=0;MYCOPY(unk_4802c)} // 393d:067c
-
     {db tmp999=0;MYCOPY(unk_4802e)} // 393d:067e
-
     {db tmp999=0;MYCOPY(unk_48030)} // 393d:0680
-
     {db tmp999=0;MYCOPY(unk_48032)} // 393d:0682
-
     {db tmp999=0;MYCOPY(unk_48034)} // 393d:0684
-
     {db tmp999=0;MYCOPY(unk_48036)} // 393d:0686
-
     {db tmp999=0;MYCOPY(unk_48038)} // 393d:0688
-
     {db tmp999=0;MYCOPY(unk_4803a)} // 393d:068a
-
     {db tmp999=0;MYCOPY(unk_4803c)} // 393d:068c
     {db tmp999=0;MYCOPY(unk_4803d)} // 393d:068d
     {db tmp999=0;MYCOPY(unk_4803e)} // 393d:068e
     {db tmp999=0;MYCOPY(unk_4803f)} // 393d:068f
     {db tmp999=0;MYCOPY(unk_48040)} // 393d:0690
-
     {db tmp999=0;MYCOPY(unk_48042)} // 393d:0692
-
     {db tmp999=0;MYCOPY(unk_48044)} // 393d:0694
-
     {db tmp999=0;MYCOPY(unk_48046)} // 393d:0696
-
     {db tmp999=13;MYCOPY(dummy0_39a68)} // 393d:0698
     {db tmp999=3;MYCOPY(dummy0_39a69)} // 393d:0699
     {db tmp999=30;MYCOPY(dummy0_39a6a)} // 393d:069a
@@ -15127,68 +14035,24 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=3;MYCOPY(dummy0_39a75)} // 393d:06a5
     {db tmp999=3;MYCOPY(dummy0_39a76)} // 393d:06a6
     {db tmp999=3;MYCOPY(dummy0_39a77)} // 393d:06a7
-
     {db tmp999=1;MYCOPY(dummy0_39a79)} // 393d:06a9
     {db tmp999=3;MYCOPY(dummy0_39a7a)} // 393d:06aa
-
     {db tmp999=7;MYCOPY(dummy0_39a7c)} // 393d:06ac
-
     {db tmp999=7;MYCOPY(dummy0_39a7e)} // 393d:06ae
-
     {db tmp999=7;MYCOPY(dummy0_39a80)} // 393d:06b0
-
-
-
     {db tmp999=1;MYCOPY(dummy0_39a84)} // 393d:06b4
-
     {db tmp999=0;MYCOPY(unk_48066)} // 393d:06b6
-
     {db tmp999=0;MYCOPY(unk_48068)} // 393d:06b8
-
     {db tmp999=0;MYCOPY(unk_4806a)} // 393d:06ba
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_48072)} // 393d:06c2
     {db tmp999=0;MYCOPY(unk_48073)} // 393d:06c3
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4807e)} // 393d:06ce
     {db tmp999=0;MYCOPY(unk_4807f)} // 393d:06cf
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4808b)} // 393d:06db
-
-
     {db tmp999=0;MYCOPY(unk_4808e)} // 393d:06de
-
     {db tmp999=1;MYCOPY(unk_48090)} // 393d:06e0
-
     {db tmp999=0;MYCOPY(unk_48092)} // 393d:06e2
-
     {db tmp999=1;MYCOPY(unk_48094)} // 393d:06e4
-
     {db tmp999=0;MYCOPY(unk_48096)} // 393d:06e6
     {db tmp999=0;MYCOPY(unk_48097)} // 393d:06e7
     {db tmp999=255;MYCOPY(unk_48098)} // 393d:06e8
@@ -15223,17 +14087,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=255;MYCOPY(dummy0_39ad9)} // 393d:0709
     {char tmp999[5]="\xff\xff\xff\xff";MYCOPY(asc_480ba)} // 393d:070a
     {db tmp999=0;MYCOPY(unk_480c0)} // 393d:0710
-
     {db tmp999=0;MYCOPY(unk_480c2)} // 393d:0712
     {db tmp999=0;MYCOPY(unk_480c3)} // 393d:0713
     {db tmp999=0;MYCOPY(unk_480c4)} // 393d:0714
-
     {db tmp999=0;MYCOPY(unk_480c6)} // 393d:0716
-
     {db tmp999=0;MYCOPY(unk_480c8)} // 393d:0718
-
     {db tmp999=0;MYCOPY(unk_480ca)} // 393d:071a
-
     {db tmp999=0;MYCOPY(unk_480cc)} // 393d:071c
     {char tmp999[11]="GHIKMOPQRS";MYCOPY(aghikmopqrs)} // 393d:071d
     {db tmp999=1;MYCOPY(dummy0_39af8)} // 393d:0728
@@ -15251,55 +14110,32 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=61;MYCOPY(dummy0_39b04)} // 393d:0734
     {db tmp999=62;MYCOPY(dummy0_39b05)} // 393d:0735
     {db tmp999=63;MYCOPY(dummy0_39b06)} // 393d:0736
-
     {db tmp999=46;MYCOPY(dummy0_39b08)} // 393d:0738
     {db tmp999=112;MYCOPY(dummy0_39b09)} // 393d:0739
     {db tmp999=110;MYCOPY(dummy0_39b0a)} // 393d:073a
     {db tmp999=116;MYCOPY(dummy0_39b0b)} // 393d:073b
-
     {db tmp999=255;MYCOPY(unk_480ed)} // 393d:073d
     {db tmp999=0;MYCOPY(unk_480ee)} // 393d:073e
-
     {db tmp999=0;MYCOPY(unk_480f0)} // 393d:0740
-
     {db tmp999=0;MYCOPY(unk_480f2)} // 393d:0742
-
     {db tmp999=0;MYCOPY(unk_480f4)} // 393d:0744
-
     {db tmp999=0;MYCOPY(unk_480f6)} // 393d:0746
-
     {db tmp999=0;MYCOPY(unk_480f8)} // 393d:0748
-
     {db tmp999=0;MYCOPY(unk_480fa)} // 393d:074a
-
     {db tmp999=0;MYCOPY(unk_480fc)} // 393d:074c
-
     {db tmp999=0;MYCOPY(unk_480fe)} // 393d:074e
-
     {db tmp999=0;MYCOPY(unk_48100)} // 393d:0750
-
     {db tmp999=0;MYCOPY(unk_48102)} // 393d:0752
-
     {db tmp999=0;MYCOPY(unk_48104)} // 393d:0754
-
     {db tmp999=0;MYCOPY(unk_48106)} // 393d:0756
-
     {db tmp999=0;MYCOPY(unk_48108)} // 393d:0758
-
     {db tmp999=0;MYCOPY(unk_4810a)} // 393d:075a
-
     {db tmp999=0;MYCOPY(unk_4810c)} // 393d:075c
-
     {db tmp999=0;MYCOPY(unk_4810e)} // 393d:075e
-
     {db tmp999=0;MYCOPY(unk_48110)} // 393d:0760
-
     {db tmp999=0;MYCOPY(unk_48112)} // 393d:0762
-
     {db tmp999=0;MYCOPY(unk_48114)} // 393d:0764
-
     {db tmp999=0;MYCOPY(unk_48116)} // 393d:0766
-
     {dw tmp999=m2c::kloc_26e2b;MYCOPY(off_48118)} // 393d:0768
     {dw tmp999=m2c::kloc_26e1f;MYCOPY(dummy0_39b3a)} // 393d:076a
     {dw tmp999=m2c::kloc_26e13;MYCOPY(dummy0_39b3c)} // 393d:076c
@@ -15318,130 +14154,80 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999=m2c::kloc_26d77;MYCOPY(dummy0_39b56)} // 393d:0786
     {dw tmp999=0;MYCOPY(word_48138)} // 393d:0788
     {db tmp999=0;MYCOPY(unk_4813a)} // 393d:078a
-
     {db tmp999=0;MYCOPY(unk_4813c)} // 393d:078c
-
     {db tmp999=0;MYCOPY(unk_4813e)} // 393d:078e
-
     {db tmp999=0;MYCOPY(unk_48140)} // 393d:0790
-
     {db tmp999=0;MYCOPY(unk_48142)} // 393d:0792
-
     {db tmp999=0;MYCOPY(unk_48144)} // 393d:0794
-
     {db tmp999=0;MYCOPY(unk_48146)} // 393d:0796
     {db tmp999=0;MYCOPY(unk_48147)} // 393d:0797
-
     {db tmp999=0;MYCOPY(unk_48149)} // 393d:0799
-
     {db tmp999=0;MYCOPY(unk_4814b)} // 393d:079b
-
     {db tmp999=0;MYCOPY(unk_4814d)} // 393d:079d
-
     {db tmp999=0;MYCOPY(unk_4814f)} // 393d:079f
-
     {db tmp999=0;MYCOPY(unk_48151)} // 393d:07a1
-
     {db tmp999=0;MYCOPY(unk_48153)} // 393d:07a3
-
     {db tmp999=0;MYCOPY(unk_48155)} // 393d:07a5
-
     {db tmp999=0;MYCOPY(unk_48157)} // 393d:07a7
-
     {db tmp999=0;MYCOPY(unk_48159)} // 393d:07a9
-
-
     {db tmp999=0;MYCOPY(unk_4815c)} // 393d:07ac
-
     {db tmp999=0;MYCOPY(unk_4815e)} // 393d:07ae
-
     {db tmp999=0;MYCOPY(unk_48160)} // 393d:07b0
-
     {db tmp999=0;MYCOPY(unk_48162)} // 393d:07b2
-
     {db tmp999=0;MYCOPY(unk_48164)} // 393d:07b4
-
     {db tmp999=0;MYCOPY(unk_48166)} // 393d:07b6
-
     {db tmp999=0;MYCOPY(unk_48168)} // 393d:07b8
-
     {db tmp999=0;MYCOPY(unk_4816a)} // 393d:07ba
-
     {db tmp999=0;MYCOPY(unk_4816c)} // 393d:07bc
-
     {db tmp999=255;MYCOPY(unk_4816e)} // 393d:07be
     {db tmp999=255;MYCOPY(dummy0_39b8f)} // 393d:07bf
     {db tmp999=0;MYCOPY(unk_48170)} // 393d:07c0
     {db tmp999=0;MYCOPY(unk_48171)} // 393d:07c1
     {db tmp999=0;MYCOPY(unk_48172)} // 393d:07c2
-
     {db tmp999=0;MYCOPY(unk_48174)} // 393d:07c4
-
     {db tmp999=0;MYCOPY(unk_48176)} // 393d:07c6
     {db tmp999=0;MYCOPY(unk_48177)} // 393d:07c7
     {db tmp999=0;MYCOPY(unk_48178)} // 393d:07c8
     {db tmp999=0;MYCOPY(unk_48179)} // 393d:07c9
-
     {db tmp999=0;MYCOPY(unk_4817b)} // 393d:07cb
-
     {db tmp999=0;MYCOPY(unk_4817d)} // 393d:07cd
-
     {db tmp999=0;MYCOPY(unk_4817f)} // 393d:07cf
     {db tmp999=0;MYCOPY(unk_48180)} // 393d:07d0
-
     {db tmp999=0;MYCOPY(unk_48182)} // 393d:07d2
-
     {db tmp999=4;MYCOPY(dummy0_39ba4)} // 393d:07d4
     {db tmp999=8;MYCOPY(dummy0_39ba5)} // 393d:07d5
     {db tmp999=12;MYCOPY(dummy0_39ba6)} // 393d:07d6
     {db tmp999=6;MYCOPY(dummy0_39ba7)} // 393d:07d7
     {db tmp999=0;MYCOPY(unk_48188)} // 393d:07d8
-
     {db tmp999=0;MYCOPY(unk_4818a)} // 393d:07da
-
     {db tmp999=1;MYCOPY(dummy0_39bac)} // 393d:07dc
     {db tmp999=2;MYCOPY(dummy0_39bad)} // 393d:07dd
     {db tmp999=3;MYCOPY(dummy0_39bae)} // 393d:07de
     {db tmp999=4;MYCOPY(dummy0_39baf)} // 393d:07df
     {db tmp999=0;MYCOPY(unk_48190)} // 393d:07e0
-
     {db tmp999=0;MYCOPY(unk_48192)} // 393d:07e2
     {db tmp999[32]={0,82,61,49,127,162,128,22,237,191,66,65,92,94,12,38,146,139,165,45,72,217,100,173,130,121,225,75,33,76,129,54};MYCOPY(dummy0_39bb3)} // 393d:07e3
     {db tmp999[32]={215,207,151,177,174,203,247,155,106,89,12,52,133,137,113,147,21,197,107,172,7,127,60,62,164,105,218,30,24,209,155,127};MYCOPY(dummy0_39bd3)} // 393d:0803
     {db tmp999=213;MYCOPY(dummy0_39bf3)} // 393d:0823
     {db tmp999=0;MYCOPY(unk_481d4)} // 393d:0824
-
     {db tmp999=15;MYCOPY(unk_481d6)} // 393d:0826
-
     {db tmp999=0;MYCOPY(unk_481d8)} // 393d:0828
-
     {db tmp999=0;MYCOPY(unk_481da)} // 393d:082a
-
     {db tmp999=0;MYCOPY(unk_481dc)} // 393d:082c
-
     {db tmp999=0;MYCOPY(unk_481de)} // 393d:082e
-
     {db tmp999=0;MYCOPY(unk_481e0)} // 393d:0830
-
     {db tmp999=0;MYCOPY(unk_481e2)} // 393d:0832
-
     {db tmp999=0;MYCOPY(unk_481e4)} // 393d:0834
-
     {db tmp999=0;MYCOPY(unk_481e6)} // 393d:0836
-
     {db tmp999=0;MYCOPY(unk_481e8)} // 393d:0838
-
     {db tmp999=0;MYCOPY(unk_481ea)} // 393d:083a
-
     {db tmp999=0;MYCOPY(unk_481ec)} // 393d:083c
-
     {dw tmp999=m2c::ksub_2a1b1;MYCOPY(off_481ee)} // 393d:083e
     {dw tmp999=m2c::ksub_2a786;MYCOPY(dummy0_39c10)} // 393d:0840
     {dw tmp999=m2c::ksub_2a8d5;MYCOPY(dummy0_39c12)} // 393d:0842
     {dw tmp999=m2c::ksub_2a934;MYCOPY(dummy0_39c14)} // 393d:0844
     {dw tmp999=m2c::ksub_2a9c8;MYCOPY(dummy0_39c16)} // 393d:0846
     {db tmp999=0;MYCOPY(unk_481f8)} // 393d:0848
-
     {dw tmp999=0;MYCOPY(word_481fa)} // 393d:084a
     {dw tmp999=m2c::kloc_29bde;MYCOPY(dummy0_39c1c)} // 393d:084c
     {dw tmp999=m2c::kloc_29bdb;MYCOPY(dummy0_39c1e)} // 393d:084e
@@ -15468,163 +14254,56 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_39c84)} // 393d:08b4
     {db tmp999[32]={0};MYCOPY(dummy0_39ca4)} // 393d:08d4
     {db tmp999[32]={0};MYCOPY(dummy0_39cc4)} // 393d:08f4
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_482cc)} // 393d:091c
-
     {db tmp999=0;MYCOPY(unk_482ce)} // 393d:091e
-
     {db tmp999=0;MYCOPY(unk_482d0)} // 393d:0920
-
     {db tmp999=0;MYCOPY(unk_482d2)} // 393d:0922
-
     {db tmp999=0;MYCOPY(unk_482d4)} // 393d:0924
-
     {db tmp999=0;MYCOPY(unk_482d6)} // 393d:0926
     {db tmp999[32]={0};MYCOPY(dummy0_39cf7)} // 393d:0927
     {db tmp999[32]={0};MYCOPY(dummy0_39d17)} // 393d:0947
     {db tmp999[32]={0};MYCOPY(dummy0_39d37)} // 393d:0967
     {db tmp999[32]={0};MYCOPY(dummy0_39d57)} // 393d:0987
     {db tmp999[32]={0};MYCOPY(dummy0_39d77)} // 393d:09a7
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4838c)} // 393d:09dc
-
     {db tmp999=0;MYCOPY(unk_4838e)} // 393d:09de
-
     {db tmp999=0;MYCOPY(unk_48390)} // 393d:09e0
-
     {db tmp999=0;MYCOPY(unk_48392)} // 393d:09e2
-
     {db tmp999=0;MYCOPY(unk_48394)} // 393d:09e4
-
     {db tmp999=0;MYCOPY(unk_48396)} // 393d:09e6
     {db tmp999[32]={0};MYCOPY(dummy0_39db7)} // 393d:09e7
     {db tmp999[32]={0};MYCOPY(dummy0_39dd7)} // 393d:0a07
     {db tmp999[32]={0};MYCOPY(dummy0_39df7)} // 393d:0a27
     {db tmp999[32]={0};MYCOPY(dummy0_39e17)} // 393d:0a47
     {db tmp999[32]={0};MYCOPY(dummy0_39e37)} // 393d:0a67
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4844c)} // 393d:0a9c
-
     {db tmp999=0;MYCOPY(unk_4844e)} // 393d:0a9e
-
     {db tmp999=0;MYCOPY(unk_48450)} // 393d:0aa0
-
     {db tmp999=0;MYCOPY(unk_48452)} // 393d:0aa2
-
     {db tmp999=0;MYCOPY(unk_48454)} // 393d:0aa4
-
     {db tmp999=0;MYCOPY(unk_48456)} // 393d:0aa6
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=20;MYCOPY(unk_48464)} // 393d:0ab4
-
     {db tmp999=0;MYCOPY(unk_48466)} // 393d:0ab6
-
     {db tmp999=0;MYCOPY(unk_48468)} // 393d:0ab8
-
     {db tmp999=0;MYCOPY(unk_4846a)} // 393d:0aba
-
     {db tmp999=0;MYCOPY(unk_4846c)} // 393d:0abc
-
     {db tmp999=0;MYCOPY(unk_4846e)} // 393d:0abe
-
     {db tmp999=0;MYCOPY(unk_48470)} // 393d:0ac0
-
     {db tmp999=0;MYCOPY(unk_48472)} // 393d:0ac2
-
     {db tmp999=0;MYCOPY(unk_48474)} // 393d:0ac4
-
     {db tmp999=0;MYCOPY(unk_48476)} // 393d:0ac6
-
     {db tmp999=0;MYCOPY(unk_48478)} // 393d:0ac8
-
     {db tmp999=0;MYCOPY(unk_4847a)} // 393d:0aca
-
     {db tmp999=0;MYCOPY(unk_4847c)} // 393d:0acc
     {db tmp999[32]={0};MYCOPY(dummy0_39e9d)} // 393d:0acd
     {db tmp999[32]={0};MYCOPY(dummy0_39ebd)} // 393d:0aed
     {db tmp999[32]={0};MYCOPY(dummy0_39edd)} // 393d:0b0d
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_484e2)} // 393d:0b32
-
     {db tmp999=0;MYCOPY(unk_484e4)} // 393d:0b34
-
     {db tmp999=0;MYCOPY(unk_484e6)} // 393d:0b36
-
     {db tmp999=0;MYCOPY(unk_484e8)} // 393d:0b38
-
     {db tmp999=0;MYCOPY(unk_484ea)} // 393d:0b3a
-
     {db tmp999=0;MYCOPY(unk_484ec)} // 393d:0b3c
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_484f4)} // 393d:0b44
     {db tmp999[32]={0};MYCOPY(dummy0_39f15)} // 393d:0b45
     {db tmp999[32]={0};MYCOPY(dummy0_39f35)} // 393d:0b65
@@ -15639,171 +14318,58 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_3a055)} // 393d:0c85
     {db tmp999[32]={0};MYCOPY(dummy0_3a075)} // 393d:0ca5
     {db tmp999[32]={0};MYCOPY(dummy0_3a095)} // 393d:0cc5
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_486a4)} // 393d:0cf4
-
     {db tmp999=0;MYCOPY(unk_486a6)} // 393d:0cf6
-
     {db tmp999=0;MYCOPY(unk_486a8)} // 393d:0cf8
-
     {db tmp999=0;MYCOPY(unk_486aa)} // 393d:0cfa
-
     {db tmp999=0;MYCOPY(unk_486ac)} // 393d:0cfc
-
     {db tmp999=0;MYCOPY(unk_486ae)} // 393d:0cfe
-
     {db tmp999=0;MYCOPY(unk_486b0)} // 393d:0d00
-
     {db tmp999=0;MYCOPY(unk_486b2)} // 393d:0d02
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_486cc)} // 393d:0d1c
-
     {db tmp999=0;MYCOPY(unk_486ce)} // 393d:0d1e
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_486d4)} // 393d:0d24
-
     {db tmp999=0;MYCOPY(unk_486d6)} // 393d:0d26
-
     {db tmp999=0;MYCOPY(unk_486d8)} // 393d:0d28
-
     {db tmp999=0;MYCOPY(unk_486da)} // 393d:0d2a
-
     {db tmp999=0;MYCOPY(unk_486dc)} // 393d:0d2c
-
     {db tmp999=0;MYCOPY(unk_486de)} // 393d:0d2e
-
     {db tmp999=0;MYCOPY(unk_486e0)} // 393d:0d30
-
     {db tmp999=0;MYCOPY(unk_486e2)} // 393d:0d32
-
     {db tmp999=0;MYCOPY(unk_486e4)} // 393d:0d34
-
     {db tmp999=0;MYCOPY(unk_486e6)} // 393d:0d36
-
     {db tmp999=0;MYCOPY(unk_486e8)} // 393d:0d38
-
     {db tmp999=0;MYCOPY(unk_486ea)} // 393d:0d3a
-
     {db tmp999=0;MYCOPY(unk_486ec)} // 393d:0d3c
-
     {db tmp999=0;MYCOPY(unk_486ee)} // 393d:0d3e
-
     {db tmp999=0;MYCOPY(unk_486f0)} // 393d:0d40
-
     {db tmp999=0;MYCOPY(unk_486f2)} // 393d:0d42
-
     {db tmp999=0;MYCOPY(unk_486f4)} // 393d:0d44
-
     {db tmp999=0;MYCOPY(unk_486f6)} // 393d:0d46
-
     {db tmp999=0;MYCOPY(unk_486f8)} // 393d:0d48
-
     {db tmp999=0;MYCOPY(unk_486fa)} // 393d:0d4a
-
     {db tmp999=0;MYCOPY(unk_486fc)} // 393d:0d4c
-
     {db tmp999=0;MYCOPY(unk_486fe)} // 393d:0d4e
-
     {db tmp999=0;MYCOPY(unk_48700)} // 393d:0d50
-
     {db tmp999=0;MYCOPY(unk_48702)} // 393d:0d52
-
     {db tmp999=0;MYCOPY(unk_48704)} // 393d:0d54
-
     {db tmp999=0;MYCOPY(unk_48706)} // 393d:0d56
-
     {db tmp999=0;MYCOPY(unk_48708)} // 393d:0d58
-
     {db tmp999=0;MYCOPY(unk_4870a)} // 393d:0d5a
-
     {db tmp999=0;MYCOPY(unk_4870c)} // 393d:0d5c
-
     {db tmp999=0;MYCOPY(unk_4870e)} // 393d:0d5e
-
     {db tmp999=0;MYCOPY(unk_48710)} // 393d:0d60
-
     {db tmp999=0;MYCOPY(unk_48712)} // 393d:0d62
-
     {db tmp999=0;MYCOPY(unk_48714)} // 393d:0d64
-
     {db tmp999=0;MYCOPY(unk_48716)} // 393d:0d66
-
     {db tmp999=0;MYCOPY(unk_48718)} // 393d:0d68
-
     {db tmp999=0;MYCOPY(unk_4871a)} // 393d:0d6a
-
     {db tmp999=0;MYCOPY(unk_4871c)} // 393d:0d6c
-
     {db tmp999=0;MYCOPY(unk_4871e)} // 393d:0d6e
-
     {db tmp999=0;MYCOPY(unk_48720)} // 393d:0d70
-
     {db tmp999=0;MYCOPY(unk_48722)} // 393d:0d72
-
     {db tmp999=0;MYCOPY(unk_48724)} // 393d:0d74
-
     {db tmp999=0;MYCOPY(unk_48726)} // 393d:0d76
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=128;MYCOPY(dummy0_3a15a)} // 393d:0d8a
     {db tmp999=64;MYCOPY(dummy0_3a15b)} // 393d:0d8b
     {db tmp999=32;MYCOPY(dummy0_3a15c)} // 393d:0d8c
@@ -15813,139 +14379,58 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=2;MYCOPY(dummy0_3a160)} // 393d:0d90
     {db tmp999=1;MYCOPY(dummy0_3a161)} // 393d:0d91
     {db tmp999=7;MYCOPY(unk_48742)} // 393d:0d92
-
     {db tmp999=26;MYCOPY(unk_48744)} // 393d:0d94
-
     {db tmp999=3;MYCOPY(unk_48746)} // 393d:0d96
-
     {db tmp999=108;MYCOPY(unk_48748)} // 393d:0d98
-
     {db tmp999=28;MYCOPY(unk_4874a)} // 393d:0d9a
-
     {db tmp999=6;MYCOPY(unk_4874c)} // 393d:0d9c
-
     {db tmp999=15;MYCOPY(unk_4874e)} // 393d:0d9e
-
     {db tmp999=24;MYCOPY(unk_48750)} // 393d:0da0
-
     {db tmp999=0;MYCOPY(unk_48752)} // 393d:0da2
-
-
-
     {db tmp999=0;MYCOPY(unk_48756)} // 393d:0da6
-
-
-
     {db tmp999=0;MYCOPY(unk_4875a)} // 393d:0daa
-
-
-
     {db tmp999=0;MYCOPY(unk_4875e)} // 393d:0dae
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_48772)} // 393d:0dc2
-
     {db tmp999=0;MYCOPY(unk_48774)} // 393d:0dc4
-
     {db tmp999=0;MYCOPY(unk_48776)} // 393d:0dc6
-
     {db tmp999=0;MYCOPY(unk_48778)} // 393d:0dc8
-
     {db tmp999=0;MYCOPY(unk_4877a)} // 393d:0dca
-
-
-
     {db tmp999=0;MYCOPY(unk_4877e)} // 393d:0dce
-
     {db tmp999=0;MYCOPY(unk_48780)} // 393d:0dd0
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_48786)} // 393d:0dd6
-
     {db tmp999=0;MYCOPY(unk_48788)} // 393d:0dd8
-
     {db tmp999=0;MYCOPY(unk_4878a)} // 393d:0dda
-
     {db tmp999=0;MYCOPY(unk_4878c)} // 393d:0ddc
-
-
-
     {db tmp999=0;MYCOPY(unk_48790)} // 393d:0de0
-
     {db tmp999=0;MYCOPY(unk_48792)} // 393d:0de2
-
     {db tmp999=0;MYCOPY(unk_48794)} // 393d:0de4
-
     {db tmp999=0;MYCOPY(unk_48796)} // 393d:0de6
-
     {db tmp999=0;MYCOPY(unk_48798)} // 393d:0de8
     {db tmp999=0;MYCOPY(unk_48799)} // 393d:0de9
     {db tmp999[32]={78,111,116,32,101,110,111,117,103,104,32,109,101,109,111,114,121,46,0,69,114,114,111,114,32,99,111,100,101,58,32,37};MYCOPY(dummy0_3a1ba)} // 393d:0dea
     {db tmp999=100;MYCOPY(dummy0_3a1da)} // 393d:0e0a
-
     {db tmp999=0;MYCOPY(unk_487bc)} // 393d:0e0c
-
     {db tmp999=0;MYCOPY(unk_487be)} // 393d:0e0e
-
     {db tmp999=0;MYCOPY(unk_487c0)} // 393d:0e10
-
     {db tmp999=0;MYCOPY(unk_487c2)} // 393d:0e12
     {db tmp999=0;MYCOPY(unk_487c3)} // 393d:0e13
-
     {db tmp999=0;MYCOPY(unk_487c5)} // 393d:0e15
-
     {db tmp999=0;MYCOPY(unk_487c7)} // 393d:0e17
-
-
     {db tmp999=0;MYCOPY(unk_487ca)} // 393d:0e1a
     {db tmp999[32]={0,10,32,55,75,96,37,0,0,0,22,238,8,0,246,13,0,246,18,0,246,8,24,248,14,17,252,19,17,251,0,0};MYCOPY(dummy0_3a1eb)} // 393d:0e1b
-
-
     {db tmp999=33;MYCOPY(dummy0_3a20d)} // 393d:0e3d
     {db tmp999=238;MYCOPY(dummy0_3a20e)} // 393d:0e3e
-
     {db tmp999=10;MYCOPY(dummy0_3a210)} // 393d:0e40
     {db tmp999=236;MYCOPY(dummy0_3a211)} // 393d:0e41
     {db tmp999=23;MYCOPY(dummy0_3a212)} // 393d:0e42
     {db tmp999=242;MYCOPY(dummy0_3a213)} // 393d:0e43
     {db tmp999=243;MYCOPY(dummy0_3a214)} // 393d:0e44
-
-
-
-
     {db tmp999=40;MYCOPY(dummy0_3a219)} // 393d:0e49
     {db tmp999=241;MYCOPY(dummy0_3a21a)} // 393d:0e4a
     {db tmp999=10;MYCOPY(dummy0_3a21b)} // 393d:0e4b
     {db tmp999=251;MYCOPY(dummy0_3a21c)} // 393d:0e4c
     {db tmp999=246;MYCOPY(dummy0_3a21d)} // 393d:0e4d
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_48804)} // 393d:0e54
-
     {db tmp999=255;MYCOPY(unk_48806)} // 393d:0e56
     {db tmp999=255;MYCOPY(dummy0_3a227)} // 393d:0e57
     {db tmp999=0;MYCOPY(unk_48808)} // 393d:0e58
@@ -15954,7 +14439,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,8,0,248,255,241,255,248,255,8,0,255,0,190,0,90,0,20,0,65,0,114,7,154,2,57,5,114,1,12,0,109};MYCOPY(dummy0_3a269)} // 393d:0e99
     {db tmp999=6;MYCOPY(dummy0_3a289)} // 393d:0eb9
     {db tmp999=159;MYCOPY(dummy0_3a28a)} // 393d:0eba
-
     {db tmp999=21;MYCOPY(dummy0_3a28c)} // 393d:0ebc
     {db tmp999=4;MYCOPY(dummy0_3a28d)} // 393d:0ebd
     {db tmp999=35;MYCOPY(dummy0_3a28e)} // 393d:0ebe
@@ -15986,7 +14470,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=6;MYCOPY(unk_48888)} // 393d:0ed8
     {db tmp999=14;MYCOPY(unk_48889)} // 393d:0ed9
     {db tmp999=12;MYCOPY(unk_4888a)} // 393d:0eda
-
     {db tmp999=4;MYCOPY(dummy0_3a2ac)} // 393d:0edc
     {db tmp999=1;MYCOPY(dummy0_3a2ad)} // 393d:0edd
     {db tmp999=7;MYCOPY(dummy0_3a2ae)} // 393d:0ede
@@ -16014,30 +14497,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={150,170,200,220,240,0,90,60,45,30,0,0,103,117,108,102,46,119,0,97,115,105,97,46,119,0,101,117,114,111,112,101};MYCOPY(dummy0_3a2c4)} // 393d:0ef4
     {db tmp999=46;MYCOPY(dummy0_3a2e4)} // 393d:0f14
     {db tmp999=119;MYCOPY(dummy0_3a2e5)} // 393d:0f15
-
-
-
     {db tmp999=15;MYCOPY(dummy0_3a2e9)} // 393d:0f19
     {db tmp999=7;MYCOPY(dummy0_3a2ea)} // 393d:0f1a
     {db tmp999=15;MYCOPY(dummy0_3a2eb)} // 393d:0f1b
     {db tmp999=14;MYCOPY(dummy0_3a2ec)} // 393d:0f1c
     {db tmp999=15;MYCOPY(dummy0_3a2ed)} // 393d:0f1d
     {db tmp999=0;MYCOPY(unk_488ce)} // 393d:0f1e
-
     {db tmp999=0;MYCOPY(unk_488d0)} // 393d:0f20
-
     {db tmp999=0;MYCOPY(unk_488d2)} // 393d:0f22
-
     {db tmp999=0;MYCOPY(unk_488d4)} // 393d:0f24
-
     {db tmp999=0;MYCOPY(unk_488d6)} // 393d:0f26
-
     {db tmp999=0;MYCOPY(unk_488d8)} // 393d:0f28
-
     {db tmp999=0;MYCOPY(unk_488da)} // 393d:0f2a
-
     {db tmp999=0;MYCOPY(unk_488dc)} // 393d:0f2c
-
     {db tmp999=0;MYCOPY(unk_488de)} // 393d:0f2e
     {db tmp999[32]={0,8,26,192,25,44,26,228,25,126,92,132,118,52,55,62,60,178,110,240,123,150,125,152,124,60,110,111,32,108,111,99};MYCOPY(dummy0_3a2ff)} // 393d:0f2f
     {db tmp999[32]={97,116,105,111,110,62,0,208,2,160,5,208,2,140,28,0,0,0,0,190,27,0,0,144,1,64,28,144,1,112,254,0};MYCOPY(dummy0_3a31f)} // 393d:0f4f
@@ -16048,12 +14520,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=254;MYCOPY(dummy0_3a3bf)} // 393d:0fef
     {db tmp999=144;MYCOPY(dummy0_3a3c0)} // 393d:0ff0
     {db tmp999=1;MYCOPY(dummy0_3a3c1)} // 393d:0ff1
-
-
-
-
-
-
     {db tmp999=92;MYCOPY(dummy0_3a3c8)} // 393d:0ff8
     {db tmp999=15;MYCOPY(dummy0_3a3c9)} // 393d:0ff9
     {db tmp999=116;MYCOPY(dummy0_3a3ca)} // 393d:0ffa
@@ -16068,199 +14534,53 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=15;MYCOPY(dummy0_3a3d3)} // 393d:1003
     {dd tmp999=far_offset(seg037,unk_40668);MYCOPY(dummy0_3a3d4)} // 393d:1004
     {dd tmp999=far_offset(seg037,unk_406a8);MYCOPY(dummy0_3a3d8)} // 393d:1008
-
-
-
-
-
-
-
-
-
-
-
-
     {dd tmp999=far_offset(seg037,unk_406fc);MYCOPY(dummy0_3a3e8)} // 393d:1018
-
-
-
-
-
-
-
-
     {dd tmp999=far_offset(seg037,unk_40718);MYCOPY(dummy0_3a3f4)} // 393d:1024
     {dd tmp999=far_offset(seg037,unk_40724);MYCOPY(dummy0_3a3f8)} // 393d:1028
     {dd tmp999=far_offset(seg037,unk_40760);MYCOPY(dummy0_3a3fc)} // 393d:102c
-
-
-
-
-
-
-
-
-
-
-
-
     {dd tmp999=far_offset(seg037,unk_407ac);MYCOPY(dummy0_3a40c)} // 393d:103c
-
-
-
-
-
-
-
-
     {dd tmp999=far_offset(seg037,unk_407c8);MYCOPY(dummy0_3a418)} // 393d:1048
     {dd tmp999=far_offset(seg037,unk_407d4);MYCOPY(dummy0_3a41c)} // 393d:104c
     {dd tmp999=far_offset(seg037,unk_40820);MYCOPY(dummy0_3a420)} // 393d:1050
     {dd tmp999=far_offset(seg037,unk_40880);MYCOPY(dummy0_3a430)} // 393d:1060
-
-
-
-
-
-
-
-
     {dd tmp999=far_offset(seg037,unk_408a0);MYCOPY(dummy0_3a43c)} // 393d:106c
-
-
-
-
     {db tmp999=0;MYCOPY(unk_48a24)} // 393d:1074
     {db tmp999=0;MYCOPY(unk_48a25)} // 393d:1075
     {db tmp999=1;MYCOPY(dummy0_3a446)} // 393d:1076
-
     {db tmp999=1;MYCOPY(dummy0_3a448)} // 393d:1078
-
     {db tmp999=1;MYCOPY(dummy0_3a44a)} // 393d:107a
-
     {db tmp999=112;MYCOPY(dummy0_3a44c)} // 393d:107c
     {db tmp999=16;MYCOPY(dummy0_3a44d)} // 393d:107d
     {db tmp999=0;MYCOPY(unk_48a2e)} // 393d:107e
-
     {db tmp999=0;MYCOPY(unk_48a30)} // 393d:1080
-
     {db tmp999=0;MYCOPY(unk_48a32)} // 393d:1082
-
     {db tmp999=0;MYCOPY(unk_48a34)} // 393d:1084
     {db tmp999[32]={0,83,69,65,82,67,72,73,78,71,0,84,82,65,67,75,73,78,71,0,70,73,82,73,78,71,0,91,32,76,79,67};MYCOPY(dummy0_3a455)} // 393d:1085
     {db tmp999[32]={75,32,93,0,78,79,32,76,79,67,75,0,91,32,77,73,83,83,73,79,78,32,71,79,65,76,32,93,0,134,16,144};MYCOPY(dummy0_3a475)} // 393d:10a5
     {db tmp999[32]={16,153,16,63,0,83,111,117,110,100,0,67,111,110,116,114,111,108,0,86,105,101,119,0,83,105,109,0,0,0,0,0};MYCOPY(dummy0_3a495)} // 393d:10c5
-
-
-
-
-
-
-
     {db tmp999=7;MYCOPY(unk_48a9c)} // 393d:10ec
     {db tmp999=255;MYCOPY(dummy0_3a4bd)} // 393d:10ed
     {db tmp999=5;MYCOPY(unk_48a9e)} // 393d:10ee
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=200;MYCOPY(dummy0_3a4d0)} // 393d:1100
     {db tmp999=16;MYCOPY(dummy0_3a4d1)} // 393d:1101
     {dd tmp999=far_offset(seg038,aendmissionctrl);MYCOPY(dummy0_3a4d2)} // 393d:1102
     {db tmp999=3;MYCOPY(dummy0_3a4d6)} // 393d:1106
     {db tmp999=21;MYCOPY(dummy0_3a4d7)} // 393d:1107
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=202;MYCOPY(dummy0_3a4e8)} // 393d:1118
     {db tmp999=16;MYCOPY(dummy0_3a4e9)} // 393d:1119
     {dd tmp999=far_offset(seg038,asound);MYCOPY(dummy0_3a4ea)} // 393d:111a
     {db tmp999=4;MYCOPY(dummy0_3a4ee)} // 393d:111e
     {db tmp999=24;MYCOPY(dummy0_3a4ef)} // 393d:111f
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=208;MYCOPY(dummy0_3a500)} // 393d:1130
     {db tmp999=16;MYCOPY(dummy0_3a501)} // 393d:1131
     {dd tmp999=far_offset(seg038,akeyboard);MYCOPY(dummy0_3a502)} // 393d:1132
     {db tmp999=4;MYCOPY(dummy0_3a506)} // 393d:1136
     {db tmp999=23;MYCOPY(dummy0_3a507)} // 393d:1137
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=216;MYCOPY(dummy0_3a518)} // 393d:1148
     {db tmp999=16;MYCOPY(dummy0_3a519)} // 393d:1149
     {dd tmp999=far_offset(seg038,acockpitf1);MYCOPY(dummy0_3a51a)} // 393d:114a
     {db tmp999=16;MYCOPY(dummy0_3a51e)} // 393d:114e
     {db tmp999=23;MYCOPY(dummy0_3a51f)} // 393d:114f
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=221;MYCOPY(dummy0_3a530)} // 393d:1160
     {db tmp999=16;MYCOPY(dummy0_3a531)} // 393d:1161
     {dd tmp999=far_offset(seg038,alowdetail);MYCOPY(dummy0_3a532)} // 393d:1162
@@ -16324,81 +14644,124 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={175,100,0,200,200,150,125,3,0,2,76,48,117,6,7,0,76,19,152,58,4,0,0,0,0,3,1,1,7,240,0,82};MYCOPY(dummy0_3aacf)} // 393d:16ff
     {db tmp999[32]={99,144,1,20,0,208,7,144,1,30,1,152,58,30,0,40,20,45,45,7,0,3,76,16,39,6,5,0,76,19,112,23};MYCOPY(dummy0_3aaef)} // 393d:171f
     {db tmp999[32]={255,0,0,0,0,3,1,1,7,240,0,82,99,144,1,20,0,184,11,88,2,30,1,112,23,30,0,30,20,40,40,3};MYCOPY(dummy0_3ab0f)} // 393d:173f
-    {db tmp999[32]={0,85,72,45,54,48,32,66,108,97,99,107,104,97,119,107,0,86,45,50,50,32,79,115,112,114,101,121,0,65,72,45};MYCOPY(dummy0_3ab2f)} // 393d:175f
-    {db tmp999[32]={54,52,32,65,112,97,99,104,101,0,76,72,88,0,77,105,45,56,32,72,105,112,0,77,105,45,50,52,32,72,105,110};MYCOPY(dummy0_3ab4f)} // 393d:177f
-    {db tmp999[32]={100,45,65,0,77,105,45,50,52,32,72,105,110,100,45,68,0,77,105,45,50,52,32,72,105,110,100,45,70,0,75,97};MYCOPY(dummy0_3ab6f)} // 393d:179f
-    {db tmp999[32]={45,51,52,32,72,111,107,117,109,0,77,105,45,50,56,32,72,97,118,111,99,0,77,105,71,45,50,55,32,70,108,111};MYCOPY(dummy0_3ab8f)} // 393d:17bf
-    {db tmp999[32]={103,103,101,114,0,83,117,45,50,53,32,70,114,111,103,102,111,111,116,0,66,45,50,32,83,116,101,97,108,116,104,0};MYCOPY(dummy0_3abaf)} // 393d:17df
-    {db tmp999[32]={83,65,45,54,32,71,97,105,110,102,117,108,0,83,65,45,56,32,71,101,99,107,111,0,83,65,45,57,32,71,97,115};MYCOPY(dummy0_3abcf)} // 393d:17ff
-    {db tmp999[32]={107,105,110,0,83,65,45,49,49,32,71,97,100,102,108,121,0,83,65,45,49,50,32,71,108,97,100,105,97,116,111,114};MYCOPY(dummy0_3abef)} // 393d:181f
-    {db tmp999[32]={0,83,65,45,49,51,32,71,111,112,104,101,114,0,83,45,54,48,0,90,83,85,45,53,55,0,90,83,85,45,50,51};MYCOPY(dummy0_3ac0f)} // 393d:183f
-    {db tmp999[32]={32,83,104,105,108,107,97,0,90,83,85,45,51,48,0,82,97,100,97,114,32,86,101,104,105,99,108,101,0,67,38,67};MYCOPY(dummy0_3ac2f)} // 393d:185f
-    {db tmp999[32]={32,86,101,104,105,99,108,101,0,83,45,50,51,32,49,56,48,109,109,32,71,117,110,0,83,83,67,45,52,32,83,101};MYCOPY(dummy0_3ac4f)} // 393d:187f
-    {db tmp999[32]={112,97,108,0,84,45,55,50,0,84,45,56,48,0,66,84,82,45,55,48,0,66,82,68,77,45,50,0,66,77,80,45};MYCOPY(dummy0_3ac6f)} // 393d:189f
-    {db tmp999[32]={50,0,77,49,32,65,98,114,97,109,115,0,77,50,32,66,114,97,100,108,101,121,0,77,49,49,51,0,77,97,110,0};MYCOPY(dummy0_3ac8f)} // 393d:18bf
-    {db tmp999[32]={77,97,110,0,77,97,110,32,119,105,116,104,32,65,75,45,52,55,0,77,97,110,32,119,105,116,104,32,83,65,45,55};MYCOPY(dummy0_3acaf)} // 393d:18df
-    {db tmp999[32]={0,77,97,110,32,119,105,116,104,32,83,65,45,49,52,0,84,114,117,99,107,0,66,114,105,100,103,101,0,66,117,110};MYCOPY(dummy0_3accf)} // 393d:18ff
-    {db tmp999[32]={107,101,114,0,67,114,97,110,101,0,83,116,114,117,99,116,117,114,101,0,83,116,114,117,99,116,117,114,101,0,83,116};MYCOPY(dummy0_3acef)} // 393d:191f
-    {db tmp999[32]={114,117,99,116,117,114,101,0,83,116,114,117,99,116,117,114,101,0,83,116,114,117,99,116,117,114,101,0,83,116,114,117};MYCOPY(dummy0_3ad0f)} // 393d:193f
-    {db tmp999[32]={99,116,117,114,101,0,83,116,114,117,99,116,117,114,101,0,83,116,114,117,99,116,117,114,101,0,83,116,114,117,99,116};MYCOPY(dummy0_3ad2f)} // 393d:195f
-    {db tmp999[32]={117,114,101,0,70,117,101,108,32,84,97,110,107,0,84,101,110,116,0,83,116,114,117,99,116,117,114,101,0,83,116,114};MYCOPY(dummy0_3ad4f)} // 393d:197f
-    {db tmp999[32]={117,99,116,117,114,101,0,67,114,97,116,101,0,0,67,97,109,101,108,0,0,64,1,200,0,150,0,80,0,40,0,250};MYCOPY(dummy0_3ad6f)} // 393d:199f
-    {db tmp999[32]={0,132,118,0,33,96,23,70,57,96,57,0,135,0,0,0,0,0,0,1,180,25,50,20,0,240,0,118,2,84,1,80};MYCOPY(dummy0_3ad8f)} // 393d:19bf
-    {db tmp999[32]={0,40,0,250,0,62,60,0,33,112,23,70,64,96,64,0,135,0,0,0,0,0,0,1,216,25,50,20,0,24,1,54};MYCOPY(dummy0_3adaf)} // 393d:19df
-    {db tmp999[32]={1,150,0,80,0,40,0,250,0,126,92,0,33,124,23,57,57,70,57,0,145,0,0,0,0,0,0,1,252,25,50,20};MYCOPY(dummy0_3adcf)} // 393d:19ff
-    {db tmp999[32]={0,64,1,94,1,160,0,80,0,40,0,250,0,52,55,0,33,137,23,38,51,48,51,0,135,0,0,0,0,0,0,1};MYCOPY(dummy0_3adef)} // 393d:1a1f
-    {db tmp999[32]={32,26,50,20,0,240,0,230,0,130,0,80,0,40,0,250,0,192,145,0,33,141,23,87,53,96,53,0,80,196,19,224};MYCOPY(dummy0_3ae0f)} // 393d:1a3f
-    {db tmp999[32]={17,16,50,1,68,26,12,22,0,240,0,14,1,150,0,80,0,40,0,250,0,234,101,0,33,150,23,87,53,96,53,0};MYCOPY(dummy0_3ae2f)} // 393d:1a5f
-    {db tmp999[32]={105,80,21,224,17,2,50,1,104,26,15,22,0,24,1,54,1,150,0,80,0,40,0,250,0,234,101,0,33,163,23,80};MYCOPY(dummy0_3ae4f)} // 393d:1a7f
-    {db tmp999[32]={53,87,53,0,105,168,21,56,18,4,50,1,140,26,20,22,0,64,1,79,1,170,0,80,0,40,0,250,0,234,101,0};MYCOPY(dummy0_3ae6f)} // 393d:1a9f
-    {db tmp999[32]={33,176,23,71,53,80,53,0,105,168,21,144,18,4,50,1,176,26,22,22,0,184,1,84,1,185,0,80,0,40,0,250};MYCOPY(dummy0_3ae8f)} // 393d:1abf
-    {db tmp999[32]={0,132,126,0,33,189,23,64,49,80,49,0,118,36,21,196,19,2,16,1,212,26,25,22,0,104,1,44,1,170,0,80};MYCOPY(dummy0_3aeaf)} // 393d:1adf
-    {db tmp999[32]={0,40,0,250,0,184,136,0,33,201,23,55,53,71,53,0,118,248,20,240,19,2,16,1,248,26,25,22,0,240,0,238};MYCOPY(dummy0_3aecf)} // 393d:1aff
-    {db tmp999[32]={2,44,1,180,0,80,0,244,1,162,135,0,33,213,23,96,88,71,88,0,105,36,21,248,20,1,1,0,28,27,20,22};MYCOPY(dummy0_3aeef)} // 393d:1b1f
-    {db tmp999[32]={0,144,1,38,2,200,0,180,0,80,0,44,1,58,126,0,33,228,23,96,88,71,88,0,105,36,21,144,18,2,50,0};MYCOPY(dummy0_3af0f)} // 393d:1b3f
-    {db tmp999[32]={64,27,22,22,0,200,0,238,2,94,1,180,0,80,0,44,1,242,176,0,33,243,23,32,32,32,32,0,100,0,0,0};MYCOPY(dummy0_3af2f)} // 393d:1b5f
-    {db tmp999[32]={0,0,0,0,100,27,100,20,0,8,1,140,80,0,33,255,23,64,83,48,83,0,80,0,22,0,0,3,0,4,136,27};MYCOPY(dummy0_3af4f)} // 393d:1b7f
-    {db tmp999[32]={5,30,0,8,1,166,84,0,33,12,24,64,72,48,72,0,80,88,22,0,0,4,0,4,162,27,10,30,0,8,1,196};MYCOPY(dummy0_3af6f)} // 393d:1b9f
-    {db tmp999[32]={185,0,33,23,24,64,57,48,57,0,80,132,22,0,0,4,0,4,188,27,5,30,0,8,1,192,74,0,33,35,24,64};MYCOPY(dummy0_3af8f)} // 393d:1bbf
-    {db tmp999[32]={72,48,72,0,80,176,22,0,0,3,0,4,214,27,10,30,0,80,0,66,80,0,33,48,24,64,73,51,73,0,80,220};MYCOPY(dummy0_3afaf)} // 393d:1bdf
-    {db tmp999[32]={22,0,0,2,0,4,240,27,10,30,0,104,1,248,70,0,33,64,24,64,67,48,67,0,80,8,23,0,0,4,0,4};MYCOPY(dummy0_3afcf)} // 393d:1bff
-    {db tmp999[32]={10,28,15,30,0,160,0,46,180,0,33,77,24,55,67,48,67,0,80,240,19,0,0,19,0,4,36,28,5,30,0,160};MYCOPY(dummy0_3afef)} // 393d:1c1f
-    {db tmp999[32]={0,214,153,0,33,82,24,55,70,48,70,0,80,20,19,0,0,16,0,4,62,28,5,30,0,104,1,106,191,0,33,89};MYCOPY(dummy0_3b00f)} // 393d:1c3f
-    {db tmp999[32]={24,55,64,48,64,0,80,188,18,0,0,50,0,4,88,28,12,30,0,104,1,106,191,0,33,103,24,55,64,48,64,0};MYCOPY(dummy0_3b02f)} // 393d:1c5f
-    {db tmp999[32]={80,232,18,0,0,50,0,4,114,28,17,30,0,130,158,0,33,110,24,64,70,96,70,0,40,0,0,0,0,0,0,5};MYCOPY(dummy0_3b04f)} // 393d:1c7f
-    {db tmp999[32]={0,0,5,26,0,130,158,0,33,124,24,64,70,96,70,0,40,0,0,0,0,0,0,5,0,0,5,26,0,32,191,0};MYCOPY(dummy0_3b06f)} // 393d:1c9f
-    {db tmp999[32]={33,136,24,57,57,48,57,0,80,0,0,0,0,0,0,5,0,0,5,26,0,134,189,0,33,151,24,57,57,48,57,0};MYCOPY(dummy0_3b08f)} // 393d:1cbf
-    {db tmp999[32]={80,0,0,0,0,0,0,5,0,0,5,26,0,160,0,60,189,0,33,163,24,80,76,64,76,1,85,64,19,0,0,30};MYCOPY(dummy0_3b0af)} // 393d:1cdf
-    {db tmp999[32]={0,4,236,28,10,30,0,8,1,60,189,0,33,168,24,71,76,64,76,1,105,212,21,64,19,1,30,4,6,29,15,30};MYCOPY(dummy0_3b0cf)} // 393d:1cff
-    {db tmp999[32]={0,184,0,168,188,0,33,173,24,64,67,55,67,1,50,224,17,0,0,50,0,4,32,29,5,30,0,184,0,196,185,0};MYCOPY(dummy0_3b0ef)} // 393d:1d1f
-    {db tmp999[32]={33,180,24,64,67,55,67,1,50,56,18,224,17,20,50,4,58,29,5,30,0,184,0,168,176,0,33,187,24,64,64,55};MYCOPY(dummy0_3b10f)} // 393d:1d3f
-    {db tmp999[32]={64,1,40,124,21,144,18,1,50,4,84,29,7,30,0,190,183,0,33,193,24,64,74,64,74,1,120,0,0,0,0,0};MYCOPY(dummy0_3b12f)} // 393d:1d5f
-    {db tmp999[32]={0,5,0,0,50,24,0,242,188,0,33,203,24,64,70,55,70,0,40,0,0,0,0,0,0,5,0,0,40,24,0,70};MYCOPY(dummy0_3b14f)} // 393d:1d7f
-    {db tmp999[32]={90,0,33,214,24,64,70,55,70,0,40,0,0,0,0,0,0,5,0,0,40,24,0,208,2,250,100,0,1,219,24,39};MYCOPY(dummy0_3b16f)} // 393d:1d9f
-    {db tmp999[32]={51,39,51,2,1,0,0,0,0,0,0,4,182,29,25,28,0,208,2,120,180,0,1,223,24,39,51,39,51,2,1,0};MYCOPY(dummy0_3b18f)} // 393d:1dbf
-    {db tmp999[32]={0,0,0,0,0,4,208,29,25,28,0,208,2,120,180,0,1,227,24,39,51,39,51,2,1,224,17,0,0,20,0,4};MYCOPY(dummy0_3b1af)} // 393d:1ddf
-    {db tmp999[32]={234,29,2,30,0,208,2,76,117,0,1,242,24,39,51,39,51,2,1,44,22,0,0,1,0,4,4,30,5,30,0,208};MYCOPY(dummy0_3b1cf)} // 393d:1dff
-    {db tmp999[32]={2,76,117,0,1,0,25,39,51,39,51,2,1,52,23,0,0,1,0,4,30,30,5,30,0,104,1,80,0,80,0,0};MYCOPY(dummy0_3b1ef)} // 393d:1e1f
-    {db tmp999[32]={0,10,0,250,0,52,92,0,33,15,25,76,64,64,64,0,42,0,0,0,0,0,0,2,56,30,5,30,0,210,156,0};MYCOPY(dummy0_3b20f)} // 393d:1e3f
-    {db tmp999[32]={1,21,25,48,96,96,96,3,150,0,0,0,0,0,0,5,0,0,10,42,0,114,181,0,129,28,25,39,82,55,82,3};MYCOPY(dummy0_3b22f)} // 393d:1e5f
-    {db tmp999[32]={250,0,0,0,0,0,0,5,0,0,10,10,0,80,179,0,1,35,25,64,96,87,96,0,50,0,0,0,0,0,0,5};MYCOPY(dummy0_3b24f)} // 393d:1e7f
-    {db tmp999[32]={0,0,8,26,0,28,157,0,1,41,25,64,96,87,96,0,250,0,0,0,0,0,0,5,0,0,10,10,0,74,162,0};MYCOPY(dummy0_3b26f)} // 393d:1e9f
-    {db tmp999[32]={1,51,25,64,96,87,96,0,150,0,0,0,0,0,0,5,0,0,10,10,0,148,162,0,1,61,25,64,96,87,96,0};MYCOPY(dummy0_3b28f)} // 393d:1ebf
-    {db tmp999[32]={20,0,0,0,0,0,0,5,0,0,1,10,0,66,163,0,1,71,25,39,82,55,82,3,50,0,0,0,0,0,0,5};MYCOPY(dummy0_3b2af)} // 393d:1edf
-    {db tmp999[32]={0,0,2,10,0,76,165,0,1,81,25,39,82,55,82,3,75,0,0,0,0,0,0,5,0,0,2,10,0,172,166,0};MYCOPY(dummy0_3b2cf)} // 393d:1eff
-    {db tmp999[32]={1,91,25,48,96,71,96,3,50,0,0,0,0,0,0,5,0,0,2,10,0,174,168,0,1,101,25,48,96,71,96,3};MYCOPY(dummy0_3b2ef)} // 393d:1f1f
-    {db tmp999[32]={50,0,0,0,0,0,0,5,0,0,2,10,0,54,170,0,1,111,25,48,96,71,96,3,75,0,0,0,0,0,0,5};MYCOPY(dummy0_3b30f)} // 393d:1f3f
-    {db tmp999[32]={0,0,2,10,0,150,171,0,129,121,25,64,96,87,96,0,250,0,0,0,0,0,0,5,0,0,10,10,0,186,175,0};MYCOPY(dummy0_3b32f)} // 393d:1f5f
-    {db tmp999[32]={1,131,25,64,96,87,96,0,75,0,0,0,0,0,0,5,0,0,10,10,0,234,91,0,1,141,25,39,82,55,82,3};MYCOPY(dummy0_3b34f)} // 393d:1f7f
-    {db tmp999[32]={40,0,0,0,0,0,0,5,0,0,2,10,0,242,172,0,1,146,25,64,96,87,96,0,40,0,0,0,0,0,0,5};MYCOPY(dummy0_3b36f)} // 393d:1f9f
-    {db tmp999[32]={0,0,1,10,0,254,173,0,1,156,25,64,96,87,96,0,40,0,0,0,0,0,0,5,0,0,5,26,0,144,90,0};MYCOPY(dummy0_3b38f)} // 393d:1fbf
-    {db tmp999[32]={1,166,25,32,64,32,64,0,20,0,0,0,0,0,0,5,0,0,2,26,0,218,90,0,0,172,25,0,0,0,0,3};MYCOPY(dummy0_3b3af)} // 393d:1fdf
-    {db tmp999[32]={0,0,0,0,0,0,0,5,0,0,0,26,0,174,70,0,1,173,25,32,64,32,64,2,20,0,0,0,0,0,0,5};MYCOPY(dummy0_3b3cf)} // 393d:1fff
-
-
+    {char tmp999[16]="UH-60 Blackhawk";MYCOPY(auh60blackhawk)} // 393d:1760
+    {char tmp999[12]="V-22 Osprey";MYCOPY(av22osprey)} // 393d:1770
+    {char tmp999[13]="AH-64 Apache";MYCOPY(aah64apache)} // 393d:177c
+    {char tmp999[4]="LHX";MYCOPY(alhx)} // 393d:1789
+    {char tmp999[9]="Mi-8 Hip";MYCOPY(ami8hip)} // 393d:178d
+    {char tmp999[13]="Mi-24 Hind-A";MYCOPY(ami24hinda)} // 393d:1796
+    {char tmp999[13]="Mi-24 Hind-D";MYCOPY(ami24hindd)} // 393d:17a3
+    {char tmp999[13]="Mi-24 Hind-F";MYCOPY(ami24hindf)} // 393d:17b0
+    {char tmp999[12]="Ka-34 Hokum";MYCOPY(aka34hokum)} // 393d:17bd
+    {char tmp999[12]="Mi-28 Havoc";MYCOPY(ami28havoc)} // 393d:17c9
+    {char tmp999[15]="MiG-27 Flogger";MYCOPY(amig27flogger)} // 393d:17d5
+    {char tmp999[15]="Su-25 Frogfoot";MYCOPY(asu25frogfoot)} // 393d:17e4
+    {char tmp999[12]="B-2 Stealth";MYCOPY(ab2stealth)} // 393d:17f3
+    {char tmp999[13]="SA-6 Gainful";MYCOPY(asa6gainful)} // 393d:17ff
+    {char tmp999[11]="SA-8 Gecko";MYCOPY(asa8gecko)} // 393d:180c
+    {char tmp999[12]="SA-9 Gaskin";MYCOPY(asa9gaskin)} // 393d:1817
+    {char tmp999[13]="SA-11 Gadfly";MYCOPY(asa11gadfly)} // 393d:1823
+    {char tmp999[16]="SA-12 Gladiator";MYCOPY(asa12gladiator)} // 393d:1830
+    {char tmp999[13]="SA-13 Gopher";MYCOPY(asa13gopher)} // 393d:1840
+    {char tmp999[5]="S-60";MYCOPY(as60)} // 393d:184d
+    {char tmp999[7]="ZSU-57";MYCOPY(azsu57)} // 393d:1852
+    {char tmp999[14]="ZSU-23 Shilka";MYCOPY(azsu23shilka)} // 393d:1859
+    {char tmp999[7]="ZSU-30";MYCOPY(azsu30)} // 393d:1867
+    {char tmp999[14]="Radar Vehicle";MYCOPY(aradarvehicle)} // 393d:186e
+    {char tmp999[12]="C&C Vehicle";MYCOPY(accvehicle)} // 393d:187c
+    {char tmp999[15]="S-23 180mm Gun";MYCOPY(as23180mmgun)} // 393d:1888
+    {char tmp999[12]="SSC-4 Sepal";MYCOPY(assc4sepal)} // 393d:1897
+    {char tmp999[5]="T-72";MYCOPY(at72)} // 393d:18a3
+    {char tmp999[5]="T-80";MYCOPY(at80)} // 393d:18a8
+    {char tmp999[7]="BTR-70";MYCOPY(abtr70)} // 393d:18ad
+    {char tmp999[7]="BRDM-2";MYCOPY(abrdm2)} // 393d:18b4
+    {char tmp999[6]="BMP-2";MYCOPY(abmp2)} // 393d:18bb
+    {char tmp999[10]="M1 Abrams";MYCOPY(am1abrams)} // 393d:18c1
+    {char tmp999[11]="M2 Bradley";MYCOPY(am2bradley)} // 393d:18cb
+    {char tmp999[5]="M113";MYCOPY(am113)} // 393d:18d6
+    {char tmp999[4]="Man";MYCOPY(aman)} // 393d:18db
+    {char tmp999[4]="Man";MYCOPY(aman_0)} // 393d:18df
+    {char tmp999[15]="Man with AK-47";MYCOPY(amanwithak47)} // 393d:18e3
+    {char tmp999[14]="Man with SA-7";MYCOPY(amanwithsa7)} // 393d:18f2
+    {char tmp999[15]="Man with SA-14";MYCOPY(amanwithsa14)} // 393d:1900
+    {char tmp999[6]="Truck";MYCOPY(atruck)} // 393d:190f
+    {char tmp999[7]="Bridge";MYCOPY(abridge)} // 393d:1915
+    {char tmp999[7]="Bunker";MYCOPY(abunker)} // 393d:191c
+    {char tmp999[6]="Crane";MYCOPY(acrane)} // 393d:1923
+    {char tmp999[10]="Structure";MYCOPY(astructure)} // 393d:1929
+    {char tmp999[10]="Structure";MYCOPY(astructure_0)} // 393d:1933
+    {char tmp999[10]="Structure";MYCOPY(astructure_1)} // 393d:193d
+    {char tmp999[10]="Structure";MYCOPY(astructure_2)} // 393d:1947
+    {char tmp999[10]="Structure";MYCOPY(astructure_3)} // 393d:1951
+    {char tmp999[10]="Structure";MYCOPY(astructure_4)} // 393d:195b
+    {char tmp999[10]="Structure";MYCOPY(astructure_5)} // 393d:1965
+    {char tmp999[10]="Structure";MYCOPY(astructure_6)} // 393d:196f
+    {char tmp999[10]="Structure";MYCOPY(astructure_7)} // 393d:1979
+    {char tmp999[10]="Fuel Tank";MYCOPY(afueltank)} // 393d:1983
+    {char tmp999[5]="Tent";MYCOPY(atent)} // 393d:198d
+    {char tmp999[10]="Structure";MYCOPY(astructure_8)} // 393d:1992
+    {char tmp999[10]="Structure";MYCOPY(astructure_9)} // 393d:199c
+    {char tmp999[6]="Crate";MYCOPY(acrate)} // 393d:19a6
+    {char tmp999[6]="Camel";MYCOPY(acamel)} // 393d:19ad
+    {db tmp999[32]={0,64,1,200,0,150,0,80,0,40,0,250,0,132,118,0,33,96,23,70,57,96,57,0,135,0,0,0,0,0,0,1};MYCOPY(dummy0_3ad83)} // 393d:19b3
+    {db tmp999[32]={180,25,50,20,0,240,0,118,2,84,1,80,0,40,0,250,0,62,60,0,33,112,23,70,64,96,64,0,135,0,0,0};MYCOPY(dummy0_3ada3)} // 393d:19d3
+    {db tmp999[32]={0,0,0,1,216,25,50,20,0,24,1,54,1,150,0,80,0,40,0,250,0,126,92,0,33,124,23,57,57,70,57,0};MYCOPY(dummy0_3adc3)} // 393d:19f3
+    {db tmp999[32]={145,0,0,0,0,0,0,1,252,25,50,20,0,64,1,94,1,160,0,80,0,40,0,250,0,52,55,0,33,137,23,38};MYCOPY(dummy0_3ade3)} // 393d:1a13
+    {db tmp999[32]={51,48,51,0,135,0,0,0,0,0,0,1,32,26,50,20,0,240,0,230,0,130,0,80,0,40,0,250,0,192,145,0};MYCOPY(dummy0_3ae03)} // 393d:1a33
+    {db tmp999[32]={33,141,23,87,53,96,53,0,80,196,19,224,17,16,50,1,68,26,12,22,0,240,0,14,1,150,0,80,0,40,0,250};MYCOPY(dummy0_3ae23)} // 393d:1a53
+    {db tmp999[32]={0,234,101,0,33,150,23,87,53,96,53,0,105,80,21,224,17,2,50,1,104,26,15,22,0,24,1,54,1,150,0,80};MYCOPY(dummy0_3ae43)} // 393d:1a73
+    {db tmp999[32]={0,40,0,250,0,234,101,0,33,163,23,80,53,87,53,0,105,168,21,56,18,4,50,1,140,26,20,22,0,64,1,79};MYCOPY(dummy0_3ae63)} // 393d:1a93
+    {db tmp999[32]={1,170,0,80,0,40,0,250,0,234,101,0,33,176,23,71,53,80,53,0,105,168,21,144,18,4,50,1,176,26,22,22};MYCOPY(dummy0_3ae83)} // 393d:1ab3
+    {db tmp999[32]={0,184,1,84,1,185,0,80,0,40,0,250,0,132,126,0,33,189,23,64,49,80,49,0,118,36,21,196,19,2,16,1};MYCOPY(dummy0_3aea3)} // 393d:1ad3
+    {db tmp999[32]={212,26,25,22,0,104,1,44,1,170,0,80,0,40,0,250,0,184,136,0,33,201,23,55,53,71,53,0,118,248,20,240};MYCOPY(dummy0_3aec3)} // 393d:1af3
+    {db tmp999[32]={19,2,16,1,248,26,25,22,0,240,0,238,2,44,1,180,0,80,0,244,1,162,135,0,33,213,23,96,88,71,88,0};MYCOPY(dummy0_3aee3)} // 393d:1b13
+    {db tmp999[32]={105,36,21,248,20,1,1,0,28,27,20,22,0,144,1,38,2,200,0,180,0,80,0,44,1,58,126,0,33,228,23,96};MYCOPY(dummy0_3af03)} // 393d:1b33
+    {db tmp999[32]={88,71,88,0,105,36,21,144,18,2,50,0,64,27,22,22,0,200,0,238,2,94,1,180,0,80,0,44,1,242,176,0};MYCOPY(dummy0_3af23)} // 393d:1b53
+    {db tmp999[32]={33,243,23,32,32,32,32,0,100,0,0,0,0,0,0,0,100,27,100,20,0,8,1,140,80,0,33,255,23,64,83,48};MYCOPY(dummy0_3af43)} // 393d:1b73
+    {db tmp999[32]={83,0,80,0,22,0,0,3,0,4,136,27,5,30,0,8,1,166,84,0,33,12,24,64,72,48,72,0,80,88,22,0};MYCOPY(dummy0_3af63)} // 393d:1b93
+    {db tmp999[32]={0,4,0,4,162,27,10,30,0,8,1,196,185,0,33,23,24,64,57,48,57,0,80,132,22,0,0,4,0,4,188,27};MYCOPY(dummy0_3af83)} // 393d:1bb3
+    {db tmp999[32]={5,30,0,8,1,192,74,0,33,35,24,64,72,48,72,0,80,176,22,0,0,3,0,4,214,27,10,30,0,80,0,66};MYCOPY(dummy0_3afa3)} // 393d:1bd3
+    {db tmp999[32]={80,0,33,48,24,64,73,51,73,0,80,220,22,0,0,2,0,4,240,27,10,30,0,104,1,248,70,0,33,64,24,64};MYCOPY(dummy0_3afc3)} // 393d:1bf3
+    {db tmp999[32]={67,48,67,0,80,8,23,0,0,4,0,4,10,28,15,30,0,160,0,46,180,0,33,77,24,55,67,48,67,0,80,240};MYCOPY(dummy0_3afe3)} // 393d:1c13
+    {db tmp999[32]={19,0,0,19,0,4,36,28,5,30,0,160,0,214,153,0,33,82,24,55,70,48,70,0,80,20,19,0,0,16,0,4};MYCOPY(dummy0_3b003)} // 393d:1c33
+    {db tmp999[32]={62,28,5,30,0,104,1,106,191,0,33,89,24,55,64,48,64,0,80,188,18,0,0,50,0,4,88,28,12,30,0,104};MYCOPY(dummy0_3b023)} // 393d:1c53
+    {db tmp999[32]={1,106,191,0,33,103,24,55,64,48,64,0,80,232,18,0,0,50,0,4,114,28,17,30,0,130,158,0,33,110,24,64};MYCOPY(dummy0_3b043)} // 393d:1c73
+    {db tmp999[32]={70,96,70,0,40,0,0,0,0,0,0,5,0,0,5,26,0,130,158,0,33,124,24,64,70,96,70,0,40,0,0,0};MYCOPY(dummy0_3b063)} // 393d:1c93
+    {db tmp999[32]={0,0,0,5,0,0,5,26,0,32,191,0,33,136,24,57,57,48,57,0,80,0,0,0,0,0,0,5,0,0,5,26};MYCOPY(dummy0_3b083)} // 393d:1cb3
+    {db tmp999[32]={0,134,189,0,33,151,24,57,57,48,57,0,80,0,0,0,0,0,0,5,0,0,5,26,0,160,0,60,189,0,33,163};MYCOPY(dummy0_3b0a3)} // 393d:1cd3
+    {db tmp999[32]={24,80,76,64,76,1,85,64,19,0,0,30,0,4,236,28,10,30,0,8,1,60,189,0,33,168,24,71,76,64,76,1};MYCOPY(dummy0_3b0c3)} // 393d:1cf3
+    {db tmp999[32]={105,212,21,64,19,1,30,4,6,29,15,30,0,184,0,168,188,0,33,173,24,64,67,55,67,1,50,224,17,0,0,50};MYCOPY(dummy0_3b0e3)} // 393d:1d13
+    {db tmp999[32]={0,4,32,29,5,30,0,184,0,196,185,0,33,180,24,64,67,55,67,1,50,56,18,224,17,20,50,4,58,29,5,30};MYCOPY(dummy0_3b103)} // 393d:1d33
+    {db tmp999[32]={0,184,0,168,176,0,33,187,24,64,64,55,64,1,40,124,21,144,18,1,50,4,84,29,7,30,0,190,183,0,33,193};MYCOPY(dummy0_3b123)} // 393d:1d53
+    {db tmp999[32]={24,64,74,64,74,1,120,0,0,0,0,0,0,5,0,0,50,24,0,242,188,0,33,203,24,64,70,55,70,0,40,0};MYCOPY(dummy0_3b143)} // 393d:1d73
+    {db tmp999[32]={0,0,0,0,0,5,0,0,40,24,0,70,90,0,33,214,24,64,70,55,70,0,40,0,0,0,0,0,0,5,0,0};MYCOPY(dummy0_3b163)} // 393d:1d93
+    {db tmp999[32]={40,24,0,208,2,250,100,0,1,219,24,39,51,39,51,2,1,0,0,0,0,0,0,4,182,29,25,28,0,208,2,120};MYCOPY(dummy0_3b183)} // 393d:1db3
+    {db tmp999[32]={180,0,1,223,24,39,51,39,51,2,1,0,0,0,0,0,0,4,208,29,25,28,0,208,2,120,180,0,1,227,24,39};MYCOPY(dummy0_3b1a3)} // 393d:1dd3
+    {db tmp999[32]={51,39,51,2,1,224,17,0,0,20,0,4,234,29,2,30,0,208,2,76,117,0,1,242,24,39,51,39,51,2,1,44};MYCOPY(dummy0_3b1c3)} // 393d:1df3
+    {db tmp999[32]={22,0,0,1,0,4,4,30,5,30,0,208,2,76,117,0,1,0,25,39,51,39,51,2,1,52,23,0,0,1,0,4};MYCOPY(dummy0_3b1e3)} // 393d:1e13
+    {db tmp999[32]={30,30,5,30,0,104,1,80,0,80,0,0,0,10,0,250,0,52,92,0,33,15,25,76,64,64,64,0,42,0,0,0};MYCOPY(dummy0_3b203)} // 393d:1e33
+    {db tmp999[32]={0,0,0,2,56,30,5,30,0,210,156,0,1,21,25,48,96,96,96,3,150,0,0,0,0,0,0,5,0,0,10,42};MYCOPY(dummy0_3b223)} // 393d:1e53
+    {db tmp999[32]={0,114,181,0,129,28,25,39,82,55,82,3,250,0,0,0,0,0,0,5,0,0,10,10,0,80,179,0,1,35,25,64};MYCOPY(dummy0_3b243)} // 393d:1e73
+    {db tmp999[32]={96,87,96,0,50,0,0,0,0,0,0,5,0,0,8,26,0,28,157,0,1,41,25,64,96,87,96,0,250,0,0,0};MYCOPY(dummy0_3b263)} // 393d:1e93
+    {db tmp999[32]={0,0,0,5,0,0,10,10,0,74,162,0,1,51,25,64,96,87,96,0,150,0,0,0,0,0,0,5,0,0,10,10};MYCOPY(dummy0_3b283)} // 393d:1eb3
+    {db tmp999[32]={0,148,162,0,1,61,25,64,96,87,96,0,20,0,0,0,0,0,0,5,0,0,1,10,0,66,163,0,1,71,25,39};MYCOPY(dummy0_3b2a3)} // 393d:1ed3
+    {db tmp999[32]={82,55,82,3,50,0,0,0,0,0,0,5,0,0,2,10,0,76,165,0,1,81,25,39,82,55,82,3,75,0,0,0};MYCOPY(dummy0_3b2c3)} // 393d:1ef3
+    {db tmp999[32]={0,0,0,5,0,0,2,10,0,172,166,0,1,91,25,48,96,71,96,3,50,0,0,0,0,0,0,5,0,0,2,10};MYCOPY(dummy0_3b2e3)} // 393d:1f13
+    {db tmp999[32]={0,174,168,0,1,101,25,48,96,71,96,3,50,0,0,0,0,0,0,5,0,0,2,10,0,54,170,0,1,111,25,48};MYCOPY(dummy0_3b303)} // 393d:1f33
+    {db tmp999[32]={96,71,96,3,75,0,0,0,0,0,0,5,0,0,2,10,0,150,171,0,129,121,25,64,96,87,96,0,250,0,0,0};MYCOPY(dummy0_3b323)} // 393d:1f53
+    {db tmp999[32]={0,0,0,5,0,0,10,10,0,186,175,0,1,131,25,64,96,87,96,0,75,0,0,0,0,0,0,5,0,0,10,10};MYCOPY(dummy0_3b343)} // 393d:1f73
+    {db tmp999[32]={0,234,91,0,1,141,25,39,82,55,82,3,40,0,0,0,0,0,0,5,0,0,2,10,0,242,172,0,1,146,25,64};MYCOPY(dummy0_3b363)} // 393d:1f93
+    {db tmp999[32]={96,87,96,0,40,0,0,0,0,0,0,5,0,0,1,10,0,254,173,0,1,156,25,64,96,87,96,0,40,0,0,0};MYCOPY(dummy0_3b383)} // 393d:1fb3
+    {db tmp999[32]={0,0,0,5,0,0,5,26,0,144,90,0,1,166,25,32,64,32,64,0,20,0,0,0,0,0,0,5,0,0,2,26};MYCOPY(dummy0_3b3a3)} // 393d:1fd3
+    {db tmp999[32]={0,218,90,0,0,172,25,0,0,0,0,3,0,0,0,0,0,0,0,5,0,0,0,26,0,174,70,0,1,173,25,32};MYCOPY(dummy0_3b3c3)} // 393d:1ff3
+    {db tmp999=64;MYCOPY(dummy0_3b3e3)} // 393d:2013
+    {db tmp999=32;MYCOPY(dummy0_3b3e4)} // 393d:2014
+    {db tmp999=64;MYCOPY(dummy0_3b3e5)} // 393d:2015
+    {db tmp999=2;MYCOPY(dummy0_3b3e6)} // 393d:2016
+    {db tmp999=20;MYCOPY(dummy0_3b3e7)} // 393d:2017
+    {db tmp999=5;MYCOPY(dummy0_3b3ee)} // 393d:201e
     {db tmp999=1;MYCOPY(dummy0_3b3f1)} // 393d:2021
     {db tmp999=26;MYCOPY(dummy0_3b3f2)} // 393d:2022
-
     {db tmp999=255;MYCOPY(unk_499d4)} // 393d:2024
     {db tmp999[32]={255,126,92,178,110,132,118,240,123,52,55,150,125,62,60,152,124,184,136,26,145,234,101,8,135,192,145,108,151,132,126,72};MYCOPY(dummy0_3b3f5)} // 393d:2025
     {db tmp999[32]={134,162,135,236,135,0,0,100,144,97,104,54,52,46,102,109,100,0,117,104,54,48,46,102,109,100,0,108,104,120,46,102};MYCOPY(dummy0_3b415)} // 393d:2045
@@ -16417,8 +14780,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=173;MYCOPY(dummy0_3b4fb)} // 393d:212b
     {db tmp999=220;MYCOPY(dummy0_3b4fc)} // 393d:212c
     {db tmp999=174;MYCOPY(dummy0_3b4fd)} // 393d:212d
-
-
     {db tmp999=0;MYCOPY(unk_49ae0)} // 393d:2130
     {db tmp999[32]={37,100,32,70,84,0,32,77,73,0,37,115,32,65,84,32,37,100,127,0,51,48,109,109,32,67,72,65,73,78,0,50};MYCOPY(dummy0_3b501)} // 393d:2131
     {db tmp999[32]={48,109,109,32,67,72,65,73,78,0,55,46,54,50,109,109,32,120,32,53,0,50,53,109,109,32,120,32,53,0,53,55};MYCOPY(dummy0_3b521)} // 393d:2151
@@ -16427,155 +14788,148 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={78,32,71,85,78,0,55,46,54,50,109,109,32,71,85,78,0,55,46,54,50,109,109,32,120,32,53,32,71,85,78,0};MYCOPY(dummy0_3b581)} // 393d:21b1
     {db tmp999[32]={50,53,109,109,32,120,32,53,32,71,85,78,0,42,32,68,65,77,65,71,69,68,32,42,0,108,19,69,33,152,19,80};MYCOPY(dummy0_3b5a1)} // 393d:21d1
     {db tmp999[32]={33,12,18,91,33,100,18,102,33,0,0,0,0,240,19,111,33,72,20,121,33,28,20,130,33,116,20,134,33,160,20,142};MYCOPY(dummy0_3b5c1)} // 393d:21f1
-    {db tmp999[32]={33,108,19,153,33,152,19,168,33,224,17,183,33,12,18,194,33,100,18,209,33,0,0,0,0,112,97,108,101,116,116,101};MYCOPY(dummy0_3b5e1)} // 393d:2211
-    {db tmp999=46;MYCOPY(dummy0_3b601)} // 393d:2231
-    {db tmp999=50;MYCOPY(dummy0_3b602)} // 393d:2232
-
-    {db tmp999=108;MYCOPY(dummy0_3b604)} // 393d:2234
-    {db tmp999=104;MYCOPY(dummy0_3b605)} // 393d:2235
-    {db tmp999=120;MYCOPY(dummy0_3b606)} // 393d:2236
-    {db tmp999=48;MYCOPY(dummy0_3b607)} // 393d:2237
-    {db tmp999=46;MYCOPY(dummy0_3b608)} // 393d:2238
-    {db tmp999=108;MYCOPY(dummy0_3b609)} // 393d:2239
-    {db tmp999=105;MYCOPY(dummy0_3b60a)} // 393d:223a
-    {db tmp999=98;MYCOPY(dummy0_3b60b)} // 393d:223b
-
-
-
-
-
-    {db tmp999=68;MYCOPY(dummy0_3b611)} // 393d:2241
-    {db tmp999=73;MYCOPY(dummy0_3b612)} // 393d:2242
-    {db tmp999=83;MYCOPY(dummy0_3b613)} // 393d:2243
-    {db tmp999=75;MYCOPY(dummy0_3b614)} // 393d:2244
-    {db tmp999=32;MYCOPY(dummy0_3b615)} // 393d:2245
-    {db tmp999=79;MYCOPY(dummy0_3b616)} // 393d:2246
-    {db tmp999=78;MYCOPY(dummy0_3b617)} // 393d:2247
-    {db tmp999=69;MYCOPY(dummy0_3b618)} // 393d:2248
-
-
-
-
-
-
+    {db tmp999=33;MYCOPY(dummy0_3b5e1)} // 393d:2211
+    {db tmp999=108;MYCOPY(dummy0_3b5e2)} // 393d:2212
+    {db tmp999=19;MYCOPY(dummy0_3b5e3)} // 393d:2213
+    {db tmp999=153;MYCOPY(dummy0_3b5e4)} // 393d:2214
+    {db tmp999=33;MYCOPY(dummy0_3b5e5)} // 393d:2215
+    {db tmp999=152;MYCOPY(dummy0_3b5e6)} // 393d:2216
+    {db tmp999=19;MYCOPY(dummy0_3b5e7)} // 393d:2217
+    {db tmp999=168;MYCOPY(dummy0_3b5e8)} // 393d:2218
+    {db tmp999=33;MYCOPY(dummy0_3b5e9)} // 393d:2219
+    {db tmp999=224;MYCOPY(dummy0_3b5ea)} // 393d:221a
+    {db tmp999=17;MYCOPY(dummy0_3b5eb)} // 393d:221b
+    {db tmp999=183;MYCOPY(dummy0_3b5ec)} // 393d:221c
+    {db tmp999=33;MYCOPY(dummy0_3b5ed)} // 393d:221d
+    {db tmp999=12;MYCOPY(dummy0_3b5ee)} // 393d:221e
+    {db tmp999=18;MYCOPY(dummy0_3b5ef)} // 393d:221f
+    {db tmp999=194;MYCOPY(dummy0_3b5f0)} // 393d:2220
+    {db tmp999=33;MYCOPY(dummy0_3b5f1)} // 393d:2221
+    {db tmp999=100;MYCOPY(dummy0_3b5f2)} // 393d:2222
+    {db tmp999=18;MYCOPY(dummy0_3b5f3)} // 393d:2223
+    {db tmp999=209;MYCOPY(dummy0_3b5f4)} // 393d:2224
+    {db tmp999=33;MYCOPY(dummy0_3b5f5)} // 393d:2225
+    {char tmp999[10]="palette.2";MYCOPY(apalette2_0)} // 393d:222a
+    {char tmp999[9]="lhx0.lib";MYCOPY(alhx0lib)} // 393d:2234
+    {char tmp999[9]="DISK ONE";MYCOPY(adiskone_0)} // 393d:2241
     {db tmp999=0;MYCOPY(unk_49bff)} // 393d:224f
-    {db tmp999[32]={108,104,120,49,46,108,105,98,0,0,0,0,0,68,73,83,75,32,79,78,69,0,0,0,0,0,0,0,108,104,120,50};MYCOPY(dummy0_3b620)} // 393d:2250
-    {db tmp999[32]={46,108,105,98,0,0,0,0,0,68,73,83,75,32,84,87,79,0,0,0,0,0,0,0,108,104,120,51,46,108,105,98};MYCOPY(dummy0_3b640)} // 393d:2270
-    {db tmp999[32]={0,0,0,0,0,68,73,83,75,32,84,87,79,0,0,0,0,0,0,0,108,104,120,52,46,108,105,98,0,0,0,0};MYCOPY(dummy0_3b660)} // 393d:2290
-    {db tmp999[32]={0,68,73,83,75,32,84,87,79,0,0,0,0,0,0,0,0,112,97,108,101,116,116,101,46,50,0,0,0,0,2,112};MYCOPY(dummy0_3b680)} // 393d:22b0
-    {db tmp999[32]={114,111,112,46,102,110,116,0,0,0,0,0,2,115,116,114,105,110,103,115,46,98,105,110,0,0,2,115,116,114,105,110};MYCOPY(dummy0_3b6a0)} // 393d:22d0
-    {db tmp999[32]={103,115,50,46,98,105,110,0,2,115,99,101,110,97,114,105,111,46,98,105,110,0,2,42,46,100,114,118,0,0,0,0};MYCOPY(dummy0_3b6c0)} // 393d:22f0
-    {db tmp999[32]={0,0,0,0,3,42,46,119,0,0,0,0,0,0,0,0,0,0,3,42,46,115,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3b6e0)} // 393d:2310
-    {db tmp999[32]={3,42,46,109,115,107,0,0,0,0,0,0,0,0,3,42,46,102,109,100,0,0,0,0,0,0,0,0,3,42,46,102};MYCOPY(dummy0_3b700)} // 393d:2330
-    {db tmp999[32]={109,101,0,0,0,0,0,0,0,0,3,42,46,98,105,110,0,0,0,0,0,0,0,0,4,42,46,112,105,99,0,0};MYCOPY(dummy0_3b720)} // 393d:2350
-    {db tmp999[32]={0,0,0,0,0,0,112,97,108,101,116,116,101,46,50,0,0,0,0,0,0,0,0,0,0,0,37,115,32,110,111,116};MYCOPY(dummy0_3b740)} // 393d:2370
-    {db tmp999[32]={32,105,110,32,100,114,105,118,101,46,0,80,108,101,97,115,101,32,105,110,115,101,114,116,32,37,115,32,105,110,32,97};MYCOPY(dummy0_3b760)} // 393d:2390
-    {db tmp999[32]={110,121,32,100,114,105,118,101,32,97,110,100,32,112,114,101,115,115,32,83,80,65,67,69,46,0,73,78,84,69,82,78};MYCOPY(dummy0_3b780)} // 393d:23b0
-    {db tmp999[32]={65,76,32,69,82,82,79,82,32,37,100,46,32,32,80,114,101,115,115,32,97,110,121,32,107,101,121,32,116,111,32,101};MYCOPY(dummy0_3b7a0)} // 393d:23d0
-    {db tmp999[32]={120,105,116,32,116,111,32,68,79,83,46,0,79,85,84,32,79,70,32,77,69,77,79,82,89,46,32,32,80,114,101,115};MYCOPY(dummy0_3b7c0)} // 393d:23f0
-    {db tmp999[32]={115,32,97,110,121,32,107,101,121,32,116,111,32,101,120,105,116,32,116,111,32,68,79,83,46,0,68,73,83,75,32,69};MYCOPY(dummy0_3b7e0)} // 393d:2410
-    {db tmp999[32]={82,82,79,82,58,32,67,111,117,108,100,110,39,116,32,108,111,97,100,32,37,115,46,32,80,114,101,115,115,32,97,110};MYCOPY(dummy0_3b800)} // 393d:2430
-    {db tmp999[32]={121,32,107,101,121,32,116,111,32,101,120,105,116,32,116,111,32,68,79,83,46,0,50,0,46,112,105,99,0,80,114,101};MYCOPY(dummy0_3b820)} // 393d:2450
-    {db tmp999[32]={115,115,32,34,89,34,32,116,111,32,101,120,105,116,32,116,111,32,68,79,83,44,32,111,114,32,97,110,121,32,111,116};MYCOPY(dummy0_3b840)} // 393d:2470
-    {db tmp999=104;MYCOPY(dummy0_3b860)} // 393d:2490
-    {db tmp999=101;MYCOPY(dummy0_3b861)} // 393d:2491
-    {db tmp999=114;MYCOPY(dummy0_3b862)} // 393d:2492
-    {db tmp999=32;MYCOPY(dummy0_3b863)} // 393d:2493
-    {db tmp999=107;MYCOPY(dummy0_3b864)} // 393d:2494
-    {db tmp999=101;MYCOPY(dummy0_3b865)} // 393d:2495
-    {db tmp999=121;MYCOPY(dummy0_3b866)} // 393d:2496
-    {db tmp999=32;MYCOPY(dummy0_3b867)} // 393d:2497
-    {db tmp999=116;MYCOPY(dummy0_3b868)} // 393d:2498
-    {db tmp999=111;MYCOPY(dummy0_3b869)} // 393d:2499
-    {db tmp999=32;MYCOPY(dummy0_3b86a)} // 393d:249a
-    {db tmp999=99;MYCOPY(dummy0_3b86b)} // 393d:249b
-    {db tmp999=111;MYCOPY(dummy0_3b86c)} // 393d:249c
-    {db tmp999=110;MYCOPY(dummy0_3b86d)} // 393d:249d
-    {db tmp999=116;MYCOPY(dummy0_3b86e)} // 393d:249e
-    {db tmp999=105;MYCOPY(dummy0_3b86f)} // 393d:249f
-    {db tmp999=110;MYCOPY(dummy0_3b870)} // 393d:24a0
-    {db tmp999=117;MYCOPY(dummy0_3b871)} // 393d:24a1
-    {db tmp999=101;MYCOPY(dummy0_3b872)} // 393d:24a2
-    {db tmp999=46;MYCOPY(dummy0_3b873)} // 393d:24a3
-
-
-
-
+    {char tmp999[9]="lhx1.lib";MYCOPY(alhx1lib)} // 393d:2250
+    {char tmp999[9]="DISK ONE";MYCOPY(adiskone)} // 393d:225d
+    {char tmp999[9]="lhx2.lib";MYCOPY(alhx2lib)} // 393d:226c
+    {char tmp999[9]="DISK TWO";MYCOPY(adisktwo_1)} // 393d:2279
+    {char tmp999[9]="lhx3.lib";MYCOPY(alhx3lib)} // 393d:2288
+    {char tmp999[9]="DISK TWO";MYCOPY(adisktwo_0)} // 393d:2295
+    {char tmp999[9]="lhx4.lib";MYCOPY(alhx4lib)} // 393d:22a4
+    {char tmp999[9]="DISK TWO";MYCOPY(adisktwo)} // 393d:22b1
+    {char tmp999[10]="palette.2";MYCOPY(apalette2)} // 393d:22c1
+    {db tmp999=2;MYCOPY(dummy0_3b69e)} // 393d:22ce
+    {char tmp999[9]="prop.fnt";MYCOPY(apropfnt_0)} // 393d:22cf
+    {db tmp999=2;MYCOPY(dummy0_3b6ac)} // 393d:22dc
+    {char tmp999[12]="strings.bin";MYCOPY(astringsbin)} // 393d:22dd
+    {db tmp999=2;MYCOPY(dummy0_3b6ba)} // 393d:22ea
+    {char tmp999[13]="strings2.bin";MYCOPY(astrings2bin)} // 393d:22eb
+    {db tmp999=2;MYCOPY(dummy0_3b6c8)} // 393d:22f8
+    {char tmp999[13]="scenario.bin";MYCOPY(ascenariobin)} // 393d:22f9
+    {db tmp999=2;MYCOPY(dummy0_3b6d6)} // 393d:2306
+    {char tmp999[6]="*.drv";MYCOPY(adrv)} // 393d:2307
+    {db tmp999[32]={0,0,0,0,0,0,0,3,42,46,119,0,0,0,0,0,0,0,0,0,0,3,42,46,115,0,0,0,0,0,0,0};MYCOPY(dummy0_3b6dd)} // 393d:230d
+    {db tmp999[32]={0,0,0,3,42,46,109,115,107,0,0,0,0,0,0,0,0,3,42,46,102,109,100,0,0,0,0,0,0,0,0,3};MYCOPY(dummy0_3b6fd)} // 393d:232d
+    {db tmp999=42;MYCOPY(dummy0_3b71d)} // 393d:234d
+    {db tmp999=46;MYCOPY(dummy0_3b71e)} // 393d:234e
+    {db tmp999=102;MYCOPY(dummy0_3b71f)} // 393d:234f
+    {db tmp999=109;MYCOPY(dummy0_3b720)} // 393d:2350
+    {db tmp999=101;MYCOPY(dummy0_3b721)} // 393d:2351
+    {db tmp999=3;MYCOPY(dummy0_3b72a)} // 393d:235a
+    {char tmp999[6]="*.bin";MYCOPY(abin)} // 393d:235b
+    {db tmp999=4;MYCOPY(dummy0_3b738)} // 393d:2368
+    {char tmp999[6]="*.pic";MYCOPY(apic)} // 393d:2369
+    {db tmp999=112;MYCOPY(dummy0_3b746)} // 393d:2376
+    {db tmp999=97;MYCOPY(dummy0_3b747)} // 393d:2377
+    {db tmp999=108;MYCOPY(dummy0_3b748)} // 393d:2378
+    {db tmp999=101;MYCOPY(dummy0_3b749)} // 393d:2379
+    {db tmp999=116;MYCOPY(dummy0_3b74a)} // 393d:237a
+    {db tmp999=116;MYCOPY(dummy0_3b74b)} // 393d:237b
+    {db tmp999=101;MYCOPY(dummy0_3b74c)} // 393d:237c
+    {db tmp999=46;MYCOPY(dummy0_3b74d)} // 393d:237d
+    {db tmp999=50;MYCOPY(dummy0_3b74e)} // 393d:237e
+    {char tmp999[17]="%s not in drive.";MYCOPY(asnotindrive)} // 393d:238a
+    {char tmp999[47]="Please insert %s in any drive and press SPACE.";MYCOPY(apleaseinsertsi)} // 393d:239b
+    {char tmp999[50]="INTERNAL ERROR %d.  Press any key to exit to DOS.";MYCOPY(ainternalerrord)} // 393d:23ca
+    {char tmp999[46]="OUT OF MEMORY.  Press any key to exit to DOS.";MYCOPY(aoutofmemorypre)} // 393d:23fc
+    {char tmp999[59]={'D','I','S','K',' ','E','R','R','O','R',':',' ','C','o','u','l','d','n',39,'t',' ','l','o','a','d',' ','%','s','.',' ','P','r','e','s','s',' ','a','n','y',' ','k','e','y',' ','t','o',' ','e','x','i','t',' ','t','o',' ','D','O','S','.'};MYCOPY(adiskerrorcould)} // 393d:242a
+    {db tmp999=50;MYCOPY(dummy0_3b836)} // 393d:2466
+    {char tmp999[5]=".pic";MYCOPY(apic_0)} // 393d:2468
+    {char tmp999[56]="Press \"Y\" to exit to DOS, or any other key to continue.";MYCOPY(apressytoexitto)} // 393d:246d
     {db tmp999=208;MYCOPY(unk_49e58)} // 393d:24a8
-
     {db tmp999=36;MYCOPY(unk_49e5a)} // 393d:24aa
     {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,12,1,0,176,36,3,0,32,12,1,0,32,12,1,0};MYCOPY(dummy0_3b87b)} // 393d:24ab
     {db tmp999=176;MYCOPY(dummy0_3b89b)} // 393d:24cb
     {db tmp999=36;MYCOPY(dummy0_3b89c)} // 393d:24cc
     {db tmp999=3;MYCOPY(dummy0_3b89d)} // 393d:24cd
-
     {db tmp999=32;MYCOPY(dummy0_3b89f)} // 393d:24cf
     {db tmp999=12;MYCOPY(dummy0_3b8a0)} // 393d:24d0
     {db tmp999=1;MYCOPY(dummy0_3b8a1)} // 393d:24d1
-
     {db tmp999=208;MYCOPY(dummy0_3b8a3)} // 393d:24d3
     {db tmp999=1;MYCOPY(dummy0_3b8a4)} // 393d:24d4
     {db tmp999=1;MYCOPY(dummy0_3b8a5)} // 393d:24d5
-
     {db tmp999=112;MYCOPY(dummy0_3b8a7)} // 393d:24d7
     {db tmp999=5;MYCOPY(dummy0_3b8a8)} // 393d:24d8
     {db tmp999=3;MYCOPY(dummy0_3b8a9)} // 393d:24d9
-
     {db tmp999=208;MYCOPY(dummy0_3b8ab)} // 393d:24db
     {db tmp999=1;MYCOPY(dummy0_3b8ac)} // 393d:24dc
     {db tmp999=1;MYCOPY(dummy0_3b8ad)} // 393d:24dd
     {db tmp999=32;MYCOPY(unk_49e8e)} // 393d:24de
-
     {db tmp999=28;MYCOPY(unk_49e90)} // 393d:24e0
-
     {db tmp999=192;MYCOPY(unk_49e92)} // 393d:24e2
-
     {db tmp999=149;MYCOPY(unk_49e94)} // 393d:24e4
-    {db tmp999[32]={0,0,0,48,0,14,0,0,0,0,0,115,101,99,114,101,116,46,112,105,99,0,115,101,108,101,99,116,0,109,101,100};MYCOPY(dummy0_3b8b5)} // 393d:24e5
-    {db tmp999[32]={97,108,115,0,42,42,42,32,80,82,69,80,65,82,73,78,71,32,77,73,83,83,73,79,78,32,42,42,42,0,115,111};MYCOPY(dummy0_3b8d5)} // 393d:2505
-    {db tmp999[32]={117,116,104,0,115,111,117,116,104,101,97,115,116,0,101,97,115,116,0,110,111,114,116,104,101,97,115,116,0,110,111,114};MYCOPY(dummy0_3b8f5)} // 393d:2525
-    {db tmp999[32]={116,104,0,110,111,114,116,104,119,101,115,116,0,119,101,115,116,0,115,111,117,116,104,119,101,115,116,0,0,37,115,32};MYCOPY(dummy0_3b915)} // 393d:2545
-    {db tmp999[32]={37,115,0,32,97,110,100,32,116,104,101,32,37,115,0,46,32,32,0,0,0,1,1,0,0,35,37,41,37,51,37,56};MYCOPY(dummy0_3b935)} // 393d:2565
-    {db tmp999[32]={37,66,37,72,37,82,37,87,37,46,0,6,0,29,0,43,0,79,0,6,0,27,0,43,0,111,0,6,0,25,0,42};MYCOPY(dummy0_3b955)} // 393d:2585
-    {db tmp999[32]={0,14,0,50,0,31,0,46,0,47,0,50,0,28,0,46,0,77,0,50,0,28,0,46,0,109,0,50,0,30,0,46};MYCOPY(dummy0_3b975)} // 393d:25a5
-    {db tmp999[32]={0,140,0,5,0,54,0,91,0,68,79,67,85,77,69,78,84,32,80,82,69,80,65,82,69,68,58,32,37,100,32,37};MYCOPY(dummy0_3b995)} // 393d:25c5
-    {db tmp999[32]={115,32,37,100,0,80,82,69,80,65,82,69,68,32,70,79,82,58,32,37,115,0,48,0,77,73,76,69,83,0,70,69};MYCOPY(dummy0_3b9b5)} // 393d:25e5
-    {db tmp999=69;MYCOPY(dummy0_3b9d5)} // 393d:2605
-    {db tmp999=84;MYCOPY(dummy0_3b9d6)} // 393d:2606
-
-    {db tmp999=115;MYCOPY(dummy0_3b9d8)} // 393d:2608
-    {db tmp999=116;MYCOPY(dummy0_3b9d9)} // 393d:2609
-    {db tmp999=114;MYCOPY(dummy0_3b9da)} // 393d:260a
-    {db tmp999=105;MYCOPY(dummy0_3b9db)} // 393d:260b
-    {db tmp999=110;MYCOPY(dummy0_3b9dc)} // 393d:260c
-    {db tmp999=103;MYCOPY(dummy0_3b9dd)} // 393d:260d
-    {db tmp999=115;MYCOPY(dummy0_3b9de)} // 393d:260e
-    {db tmp999=46;MYCOPY(dummy0_3b9df)} // 393d:260f
-    {db tmp999=98;MYCOPY(dummy0_3b9e0)} // 393d:2610
-    {db tmp999=105;MYCOPY(dummy0_3b9e1)} // 393d:2611
-    {db tmp999=110;MYCOPY(dummy0_3b9e2)} // 393d:2612
-
-    {db tmp999=100;MYCOPY(dummy0_3b9e4)} // 393d:2614
-    {db tmp999=101;MYCOPY(dummy0_3b9e5)} // 393d:2615
-    {db tmp999=115;MYCOPY(dummy0_3b9e6)} // 393d:2616
-    {db tmp999=107;MYCOPY(dummy0_3b9e7)} // 393d:2617
-
+    {db tmp999=48;MYCOPY(dummy0_3b8b8)} // 393d:24e8
+    {db tmp999=14;MYCOPY(dummy0_3b8ba)} // 393d:24ea
+    {char tmp999[11]="secret.pic";MYCOPY(asecretpic)} // 393d:24f0
+    {char tmp999[7]="select";MYCOPY(aselect)} // 393d:24fb
+    {char tmp999[7]="medals";MYCOPY(amedals)} // 393d:2502
+    {char tmp999[26]="*** PREPARING MISSION ***";MYCOPY(apreparingmissi)} // 393d:2509
+    {char tmp999[6]="south";MYCOPY(asouth)} // 393d:2523
+    {char tmp999[10]="southeast";MYCOPY(asoutheast)} // 393d:2529
+    {char tmp999[5]="east";MYCOPY(aeast)} // 393d:2533
+    {char tmp999[10]="northeast";MYCOPY(anortheast)} // 393d:2538
+    {char tmp999[6]="north";MYCOPY(anorth)} // 393d:2542
+    {char tmp999[10]="northwest";MYCOPY(anorthwest)} // 393d:2548
+    {char tmp999[5]="west";MYCOPY(awest)} // 393d:2552
+    {char tmp999[10]="southwest";MYCOPY(asouthwest)} // 393d:2557
+    {char tmp999[6]="%s %s";MYCOPY(ass)} // 393d:2562
+    {char tmp999[12]=" and the %s";MYCOPY(aandthes)} // 393d:2568
+    {char tmp999[4]=".  ";MYCOPY(dummy0_3b944)} // 393d:2574
+    {db tmp999[32]={0,0,1,1,0,0,35,37,41,37,51,37,56,37,66,37,72,37,82,37,87,37,46,0,6,0,29,0,43,0,79,0};MYCOPY(dummy0_3b948)} // 393d:2578
+    {db tmp999[32]={6,0,27,0,43,0,111,0,6,0,25,0,42,0,14,0,50,0,31,0,46,0,47,0,50,0,28,0,46,0,77,0};MYCOPY(dummy0_3b968)} // 393d:2598
+    {db tmp999=50;MYCOPY(dummy0_3b988)} // 393d:25b8
+    {db tmp999=28;MYCOPY(dummy0_3b98a)} // 393d:25ba
+    {db tmp999=46;MYCOPY(dummy0_3b98c)} // 393d:25bc
+    {db tmp999=109;MYCOPY(dummy0_3b98e)} // 393d:25be
+    {db tmp999=50;MYCOPY(dummy0_3b990)} // 393d:25c0
+    {db tmp999=30;MYCOPY(dummy0_3b992)} // 393d:25c2
+    {db tmp999=46;MYCOPY(dummy0_3b994)} // 393d:25c4
+    {db tmp999=140;MYCOPY(dummy0_3b996)} // 393d:25c6
+    {db tmp999=5;MYCOPY(dummy0_3b998)} // 393d:25c8
+    {db tmp999=54;MYCOPY(dummy0_3b99a)} // 393d:25ca
+    {db tmp999=91;MYCOPY(dummy0_3b99c)} // 393d:25cc
+    {char tmp999[28]="DOCUMENT PREPARED: %d %s %d";MYCOPY(adocumentprepar)} // 393d:25ce
+    {char tmp999[17]="PREPARED FOR: %s";MYCOPY(apreparedfors)} // 393d:25ea
+    {db tmp999=48;MYCOPY(dummy0_3b9cb)} // 393d:25fb
+    {char tmp999[6]="MILES";MYCOPY(amiles)} // 393d:25fd
+    {char tmp999[5]="FEET";MYCOPY(afeet)} // 393d:2603
+    {char tmp999[12]="strings.bin";MYCOPY(astringsbin_0)} // 393d:2608
+    {char tmp999[5]="desk";MYCOPY(adesk)} // 393d:2614
     {db tmp999=0;MYCOPY(unk_49fc9)} // 393d:2619
-    {db tmp999[32]={100,140,75,120,80,100,130,0,115,99,101,110,97,114,105,111,46,98,105,110,0,84,79,85,82,58,37,115,32,32,0,68};MYCOPY(dummy0_3b9ea)} // 393d:261a
-    {db tmp999=73;MYCOPY(dummy0_3ba0a)} // 393d:263a
-    {db tmp999=70;MYCOPY(dummy0_3ba0b)} // 393d:263b
-    {db tmp999=70;MYCOPY(dummy0_3ba0c)} // 393d:263c
-    {db tmp999=73;MYCOPY(dummy0_3ba0d)} // 393d:263d
-    {db tmp999=67;MYCOPY(dummy0_3ba0e)} // 393d:263e
-    {db tmp999=85;MYCOPY(dummy0_3ba0f)} // 393d:263f
-    {db tmp999=76;MYCOPY(dummy0_3ba10)} // 393d:2640
-    {db tmp999=84;MYCOPY(dummy0_3ba11)} // 393d:2641
-    {db tmp999=89;MYCOPY(dummy0_3ba12)} // 393d:2642
-    {db tmp999=58;MYCOPY(dummy0_3ba13)} // 393d:2643
-    {db tmp999=37;MYCOPY(dummy0_3ba14)} // 393d:2644
-    {db tmp999=115;MYCOPY(dummy0_3ba15)} // 393d:2645
-
-
+    {db tmp999=100;MYCOPY(dummy0_3b9ea)} // 393d:261a
+    {db tmp999=140;MYCOPY(dummy0_3b9eb)} // 393d:261b
+    {db tmp999=75;MYCOPY(dummy0_3b9ec)} // 393d:261c
+    {db tmp999=120;MYCOPY(dummy0_3b9ed)} // 393d:261d
+    {db tmp999=80;MYCOPY(dummy0_3b9ee)} // 393d:261e
+    {db tmp999=100;MYCOPY(dummy0_3b9ef)} // 393d:261f
+    {db tmp999=130;MYCOPY(dummy0_3b9f0)} // 393d:2620
+    {char tmp999[13]="scenario.bin";MYCOPY(ascenariobin_0)} // 393d:2622
+    {char tmp999[10]="TOUR:%s  ";MYCOPY(atours)} // 393d:262f
+    {char tmp999[14]="DIFFICULTY:%s";MYCOPY(adifficultys)} // 393d:2639
     {db tmp999=255;MYCOPY(unk_49ff8)} // 393d:2648
     {db tmp999=255;MYCOPY(dummy0_3ba19)} // 393d:2649
     {db tmp999=208;MYCOPY(dummy0_3ba1a)} // 393d:264a
@@ -16585,308 +14939,174 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=88;MYCOPY(dummy0_3ba1e)} // 393d:264e
     {db tmp999=2;MYCOPY(dummy0_3ba1f)} // 393d:264f
     {db tmp999=200;MYCOPY(dummy0_3ba20)} // 393d:2650
-
     {db tmp999=100;MYCOPY(dummy0_3ba22)} // 393d:2652
-
     {db tmp999=50;MYCOPY(dummy0_3ba24)} // 393d:2654
-
     {db tmp999=25;MYCOPY(dummy0_3ba26)} // 393d:2656
-
-
-
-    {db tmp999=100;MYCOPY(dummy0_3ba2a)} // 393d:265a
-    {db tmp999=101;MYCOPY(dummy0_3ba2b)} // 393d:265b
-    {db tmp999=115;MYCOPY(dummy0_3ba2c)} // 393d:265c
-    {db tmp999=107;MYCOPY(dummy0_3ba2d)} // 393d:265d
-
-    {db tmp999=100;MYCOPY(dummy0_3ba2f)} // 393d:265f
-    {db tmp999=101;MYCOPY(dummy0_3ba30)} // 393d:2660
-    {db tmp999=115;MYCOPY(dummy0_3ba31)} // 393d:2661
-    {db tmp999=107;MYCOPY(dummy0_3ba32)} // 393d:2662
-
+    {char tmp999[5]="desk";MYCOPY(adesk_0)} // 393d:265a
+    {char tmp999[5]="desk";MYCOPY(adesk_1)} // 393d:265f
     {db tmp999=6;MYCOPY(unk_4a014)} // 393d:2664
     {db tmp999=9;MYCOPY(unk_4a015)} // 393d:2665
-
-
     {db tmp999=1;MYCOPY(dummy0_3ba38)} // 393d:2668
-
     {db tmp999=1;MYCOPY(dummy0_3ba3a)} // 393d:266a
-
     {db tmp999=0;MYCOPY(unk_4a01c)} // 393d:266c
-
     {db tmp999=0;MYCOPY(unk_4a01e)} // 393d:266e
-
-
-
     {db tmp999=0;MYCOPY(unk_4a022)} // 393d:2672
-
     {db tmp999=0;MYCOPY(unk_4a024)} // 393d:2674
-
     {db tmp999=0;MYCOPY(unk_4a026)} // 393d:2676
-
     {db tmp999=0;MYCOPY(unk_4a028)} // 393d:2678
-
     {db tmp999=0;MYCOPY(unk_4a02a)} // 393d:267a
-
-
-
     {db tmp999=0;MYCOPY(unk_4a02e)} // 393d:267e
-
-
-
     {db tmp999=0;MYCOPY(unk_4a032)} // 393d:2682
-
     {db tmp999=0;MYCOPY(unk_4a034)} // 393d:2684
-
     {db tmp999=0;MYCOPY(unk_4a036)} // 393d:2686
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4a03c)} // 393d:268c
     {db tmp999=0;MYCOPY(unk_4a03d)} // 393d:268d
     {db tmp999=0;MYCOPY(unk_4a03e)} // 393d:268e
-
     {db tmp999=0;MYCOPY(unk_4a040)} // 393d:2690
-
     {db tmp999=0;MYCOPY(unk_4a042)} // 393d:2692
-
     {db tmp999=0;MYCOPY(unk_4a044)} // 393d:2694
-
     {db tmp999=0;MYCOPY(unk_4a046)} // 393d:2696
-
     {db tmp999=0;MYCOPY(unk_4a048)} // 393d:2698
-
     {db tmp999=0;MYCOPY(unk_4a04a)} // 393d:269a
-
     {db tmp999=0;MYCOPY(unk_4a04c)} // 393d:269c
-
     {db tmp999=0;MYCOPY(unk_4a04e)} // 393d:269e
-
     {db tmp999=0;MYCOPY(unk_4a050)} // 393d:26a0
-
     {db tmp999=0;MYCOPY(unk_4a052)} // 393d:26a2
-
     {db tmp999=0;MYCOPY(unk_4a054)} // 393d:26a4
-
     {db tmp999=0;MYCOPY(unk_4a056)} // 393d:26a6
-
     {db tmp999=0;MYCOPY(unk_4a058)} // 393d:26a8
-
     {db tmp999=0;MYCOPY(unk_4a05a)} // 393d:26aa
-
     {db tmp999=0;MYCOPY(unk_4a05c)} // 393d:26ac
-
     {db tmp999=0;MYCOPY(unk_4a05e)} // 393d:26ae
-
     {db tmp999=0;MYCOPY(unk_4a060)} // 393d:26b0
-
     {db tmp999=0;MYCOPY(unk_4a062)} // 393d:26b2
-
     {db tmp999=0;MYCOPY(unk_4a064)} // 393d:26b4
-
     {db tmp999=0;MYCOPY(unk_4a066)} // 393d:26b6
-
     {db tmp999=0;MYCOPY(unk_4a068)} // 393d:26b8
-
     {db tmp999=0;MYCOPY(unk_4a06a)} // 393d:26ba
-
     {db tmp999=0;MYCOPY(unk_4a06c)} // 393d:26bc
-
     {db tmp999=0;MYCOPY(unk_4a06e)} // 393d:26be
-
     {db tmp999=0;MYCOPY(unk_4a070)} // 393d:26c0
-
     {db tmp999=0;MYCOPY(unk_4a072)} // 393d:26c2
-
     {db tmp999=0;MYCOPY(unk_4a074)} // 393d:26c4
-
     {db tmp999=0;MYCOPY(unk_4a076)} // 393d:26c6
-
     {db tmp999=0;MYCOPY(unk_4a078)} // 393d:26c8
-
     {db tmp999=0;MYCOPY(unk_4a07a)} // 393d:26ca
-
     {db tmp999=0;MYCOPY(unk_4a07c)} // 393d:26cc
     {db tmp999=0;MYCOPY(unk_4a07d)} // 393d:26cd
     {db tmp999=0;MYCOPY(unk_4a07e)} // 393d:26ce
     {db tmp999=0;MYCOPY(unk_4a07f)} // 393d:26cf
-
     {db tmp999=0;MYCOPY(unk_4a081)} // 393d:26d1
-
     {db tmp999=0;MYCOPY(unk_4a083)} // 393d:26d3
-
     {db tmp999=0;MYCOPY(unk_4a085)} // 393d:26d5
     {db tmp999=0;MYCOPY(unk_4a086)} // 393d:26d6
-
     {db tmp999=0;MYCOPY(unk_4a088)} // 393d:26d8
-
     {db tmp999=0;MYCOPY(unk_4a08a)} // 393d:26da
-
     {db tmp999=0;MYCOPY(unk_4a08c)} // 393d:26dc
-
     {db tmp999=0;MYCOPY(unk_4a08e)} // 393d:26de
-
     {db tmp999=0;MYCOPY(unk_4a090)} // 393d:26e0
-
     {db tmp999=0;MYCOPY(unk_4a092)} // 393d:26e2
-
     {db tmp999=0;MYCOPY(unk_4a094)} // 393d:26e4
-
     {db tmp999=0;MYCOPY(unk_4a096)} // 393d:26e6
-
     {db tmp999=0;MYCOPY(unk_4a098)} // 393d:26e8
-
     {db tmp999=0;MYCOPY(unk_4a09a)} // 393d:26ea
-
     {db tmp999=0;MYCOPY(unk_4a09c)} // 393d:26ec
-
     {db tmp999=0;MYCOPY(unk_4a09e)} // 393d:26ee
-
     {db tmp999=0;MYCOPY(unk_4a0a0)} // 393d:26f0
-
     {db tmp999=0;MYCOPY(unk_4a0a2)} // 393d:26f2
-
     {db tmp999=0;MYCOPY(unk_4a0a4)} // 393d:26f4
-
     {db tmp999=0;MYCOPY(unk_4a0a6)} // 393d:26f6
-
     {db tmp999=0;MYCOPY(unk_4a0a8)} // 393d:26f8
-
     {db tmp999=0;MYCOPY(unk_4a0aa)} // 393d:26fa
-
     {db tmp999=0;MYCOPY(unk_4a0ac)} // 393d:26fc
-
     {db tmp999=0;MYCOPY(unk_4a0ae)} // 393d:26fe
-
     {db tmp999=0;MYCOPY(unk_4a0b0)} // 393d:2700
-
     {db tmp999=0;MYCOPY(unk_4a0b2)} // 393d:2702
-
     {db tmp999=0;MYCOPY(unk_4a0b4)} // 393d:2704
-
     {db tmp999=0;MYCOPY(unk_4a0b6)} // 393d:2706
-
     {db tmp999=0;MYCOPY(unk_4a0b8)} // 393d:2708
-
     {db tmp999=0;MYCOPY(unk_4a0ba)} // 393d:270a
     {db tmp999[32]={0,101,3,69,3,234,15,234,15,4,0,1,0,60,1,1,0,4,0,198,0,60,1,198,0,1,0,198,0,4,0,60};MYCOPY(dummy0_3badb)} // 393d:270b
     {db tmp999[32]={1,4,0,1,0,60,1,1,0,16,0,92,0,48,1,92,0,1,0,92,0,4,0,60,1,4,0,4,0,48,1,5};MYCOPY(dummy0_3bafb)} // 393d:272b
     {db tmp999[32]={0,4,0,93,0,24,1,93,0,6,0,93,0,4,0,48,1,4,0,1,0,60,1,1,0,4,0,120,0,60,1,120};MYCOPY(dummy0_3bb1b)} // 393d:274b
     {db tmp999[32]={0,1,0,114,0,4,0,60,1,4,0,19,0,40,1,10,0,4,0,108,0,48,1,101,0,6,0,108,0,4,0,48};MYCOPY(dummy0_3bb3b)} // 393d:276b
-    {db tmp999[32]={1,2,0,0,84,72,82,58,37,100,37,37,0,32,40,65,82,41,0,65,76,84,58,37,117,0,86,83,73,58,0,72};MYCOPY(dummy0_3bb5b)} // 393d:278b
-    {db tmp999[32]={68,71,58,37,100,0,37,115,58,37,100,0,37,0,71,69,65,82,0,90,79,79,77,58,0,84,73,77,69,58,0,84};MYCOPY(dummy0_3bb7b)} // 393d:27ab
-    {db tmp999[32]={79,87,45,67,65,77,32,40,116,109,41,0,82,69,77,65,73,78,58,37,100,0,83,80,68,58,32,0,37,48,52,100};MYCOPY(dummy0_3bb9b)} // 393d:27cb
-    {db tmp999[32]={0,98,117,108,108,101,116,109,46,109,115,107,0,98,117,108,108,101,116,46,112,105,99,0,0,0,0,48,0,38,0,0};MYCOPY(dummy0_3bbbb)} // 393d:27eb
-
-
-
-    {db tmp999=78;MYCOPY(dummy0_3bbde)} // 393d:280e
-    {db tmp999=69;MYCOPY(dummy0_3bbdf)} // 393d:280f
-    {db tmp999=83;MYCOPY(dummy0_3bbe0)} // 393d:2810
-    {db tmp999=87;MYCOPY(dummy0_3bbe1)} // 393d:2811
-    {db tmp999=0;MYCOPY(unk_4a1c2)} // 393d:2812
-
-
-
-
-
-
-
-
-
+    {db tmp999=1;MYCOPY(dummy0_3bb5b)} // 393d:278b
+    {db tmp999=2;MYCOPY(dummy0_3bb5c)} // 393d:278c
+    {char tmp999[9]="THR:%d%%";MYCOPY(athrd)} // 393d:278f
+    {char tmp999[6]=" (AR)";MYCOPY(aar_0)} // 393d:2798
+    {char tmp999[7]="ALT:%u";MYCOPY(aaltu)} // 393d:279e
+    {char tmp999[5]="VSI:";MYCOPY(avsi)} // 393d:27a5
+    {char tmp999[7]="HDG:%d";MYCOPY(ahdgd)} // 393d:27aa
+    {char tmp999[6]="%s:%d";MYCOPY(asd)} // 393d:27b1
+    {db tmp999=37;MYCOPY(dummy0_3bb87)} // 393d:27b7
+    {char tmp999[5]="GEAR";MYCOPY(agear)} // 393d:27b9
+    {char tmp999[6]="ZOOM:";MYCOPY(azoom)} // 393d:27be
+    {char tmp999[6]="TIME:";MYCOPY(atime)} // 393d:27c4
+    {char tmp999[13]="TOW-CAM (tm)";MYCOPY(atowcamtm)} // 393d:27ca
+    {char tmp999[10]="REMAIN:%d";MYCOPY(aremaind)} // 393d:27d7
+    {char tmp999[6]="SPD: ";MYCOPY(aspd)} // 393d:27e1
+    {char tmp999[5]="%04d";MYCOPY(a04d)} // 393d:27e7
+    {char tmp999[12]="bulletm.msk";MYCOPY(abulletmmsk)} // 393d:27ec
+    {char tmp999[11]="bullet.pic";MYCOPY(abulletpic)} // 393d:27f8
+    {db tmp999=48;MYCOPY(dummy0_3bbd6)} // 393d:2806
+    {db tmp999=38;MYCOPY(dummy0_3bbd8)} // 393d:2808
+    {char tmp999[5]="NESW";MYCOPY(anesw)} // 393d:280e
     {db tmp999=0;MYCOPY(unk_4a1cc)} // 393d:281c
     {db tmp999=0;MYCOPY(unk_4a1cd)} // 393d:281d
-
     {db tmp999=0;MYCOPY(unk_4a1cf)} // 393d:281f
-
-
     {db tmp999=0;MYCOPY(unk_4a1d2)} // 393d:2822
-
     {db tmp999=0;MYCOPY(unk_4a1d4)} // 393d:2824
-    {db tmp999[32]={0,76,105,98,121,97,0,86,105,101,116,110,97,109,0,69,97,115,116,32,71,101,114,109,97,110,121,0,116,111,117,114};MYCOPY(dummy0_3bbf5)} // 393d:2825
-    {db tmp999[32]={0,109,97,103,110,105,102,121,0,112,105,108,111,116,115,0,0,0,0,96,0,210,0,0,0,0,0,0,0,96,0,70};MYCOPY(dummy0_3bc15)} // 393d:2845
-
-
-
-
-
-
-
+    {char tmp999[6]="Libya";MYCOPY(alibya)} // 393d:2826
+    {char tmp999[8]="Vietnam";MYCOPY(avietnam)} // 393d:282c
+    {char tmp999[13]="East Germany";MYCOPY(aeastgermany)} // 393d:2834
+    {char tmp999[5]="tour";MYCOPY(atour)} // 393d:2841
+    {char tmp999[8]="magnify";MYCOPY(amagnify)} // 393d:2846
+    {char tmp999[7]="pilots";MYCOPY(apilots)} // 393d:284e
+    {db tmp999=96;MYCOPY(dummy0_3bc28)} // 393d:2858
+    {db tmp999=210;MYCOPY(dummy0_3bc2a)} // 393d:285a
+    {db tmp999=96;MYCOPY(dummy0_3bc32)} // 393d:2862
+    {db tmp999=70;MYCOPY(dummy0_3bc34)} // 393d:2864
     {db tmp999=0;MYCOPY(unk_4a21c)} // 393d:286c
     {db tmp999[32]={0,0,0,0,0,0,0,136,0,54,0,208,0,60,0,128,0,24,0,136,0,44,0,208,0,50,0,128,0,14,0,38};MYCOPY(dummy0_3bc3d)} // 393d:286d
-    {db tmp999[32]={40,44,40,52,40,68,105,102,102,105,99,117,108,116,121,32,37,100,32,40,37,115,41,0,69,110,101,109,105,101,115,32};MYCOPY(dummy0_3bc5d)} // 393d:288d
-    {db tmp999=97;MYCOPY(dummy0_3bc7d)} // 393d:28ad
-    {db tmp999=114;MYCOPY(dummy0_3bc7e)} // 393d:28ae
-    {db tmp999=101;MYCOPY(dummy0_3bc7f)} // 393d:28af
-    {db tmp999=32;MYCOPY(dummy0_3bc80)} // 393d:28b0
-    {db tmp999=37;MYCOPY(dummy0_3bc81)} // 393d:28b1
-    {db tmp999=115;MYCOPY(dummy0_3bc82)} // 393d:28b2
-
-    {db tmp999=67;MYCOPY(dummy0_3bc84)} // 393d:28b4
-    {db tmp999=76;MYCOPY(dummy0_3bc85)} // 393d:28b5
-    {db tmp999=65;MYCOPY(dummy0_3bc86)} // 393d:28b6
-    {db tmp999=83;MYCOPY(dummy0_3bc87)} // 393d:28b7
-    {db tmp999=83;MYCOPY(dummy0_3bc88)} // 393d:28b8
-    {db tmp999=73;MYCOPY(dummy0_3bc89)} // 393d:28b9
-    {db tmp999=70;MYCOPY(dummy0_3bc8a)} // 393d:28ba
-    {db tmp999=73;MYCOPY(dummy0_3bc8b)} // 393d:28bb
-    {db tmp999=69;MYCOPY(dummy0_3bc8c)} // 393d:28bc
-    {db tmp999=68;MYCOPY(dummy0_3bc8d)} // 393d:28bd
-
-
+    {db tmp999=40;MYCOPY(dummy0_3bc5d)} // 393d:288d
+    {db tmp999=44;MYCOPY(dummy0_3bc5e)} // 393d:288e
+    {db tmp999=40;MYCOPY(dummy0_3bc5f)} // 393d:288f
+    {db tmp999=52;MYCOPY(dummy0_3bc60)} // 393d:2890
+    {db tmp999=40;MYCOPY(dummy0_3bc61)} // 393d:2891
+    {db tmp999=68;MYCOPY(dummy0_3bc62)} // 393d:2892
+    {db tmp999=105;MYCOPY(dummy0_3bc63)} // 393d:2893
+    {db tmp999=102;MYCOPY(dummy0_3bc64)} // 393d:2894
+    {db tmp999=102;MYCOPY(dummy0_3bc65)} // 393d:2895
+    {db tmp999=105;MYCOPY(dummy0_3bc66)} // 393d:2896
+    {db tmp999=99;MYCOPY(dummy0_3bc67)} // 393d:2897
+    {db tmp999=117;MYCOPY(dummy0_3bc68)} // 393d:2898
+    {db tmp999=108;MYCOPY(dummy0_3bc69)} // 393d:2899
+    {db tmp999=116;MYCOPY(dummy0_3bc6a)} // 393d:289a
+    {db tmp999=121;MYCOPY(dummy0_3bc6b)} // 393d:289b
+    {db tmp999=32;MYCOPY(dummy0_3bc6c)} // 393d:289c
+    {db tmp999=37;MYCOPY(dummy0_3bc6d)} // 393d:289d
+    {db tmp999=100;MYCOPY(dummy0_3bc6e)} // 393d:289e
+    {db tmp999=32;MYCOPY(dummy0_3bc6f)} // 393d:289f
+    {db tmp999=40;MYCOPY(dummy0_3bc70)} // 393d:28a0
+    {db tmp999=37;MYCOPY(dummy0_3bc71)} // 393d:28a1
+    {db tmp999=115;MYCOPY(dummy0_3bc72)} // 393d:28a2
+    {db tmp999=41;MYCOPY(dummy0_3bc73)} // 393d:28a3
+    {char tmp999[15]="Enemies are %s";MYCOPY(aenemiesares)} // 393d:28a5
+    {char tmp999[11]="CLASSIFIED";MYCOPY(aclassified)} // 393d:28b4
     {db tmp999=0;MYCOPY(unk_4a270)} // 393d:28c0
     {db tmp999[32]={0};MYCOPY(dummy0_3bc91)} // 393d:28c1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4a2b0)} // 393d:2900
     {db tmp999=0;MYCOPY(unk_4a2b1)} // 393d:2901
     {db tmp999=0;MYCOPY(unk_4a2b2)} // 393d:2902
-
     {db tmp999=0;MYCOPY(unk_4a2b4)} // 393d:2904
-
     {db tmp999=0;MYCOPY(unk_4a2b6)} // 393d:2906
     {db tmp999=0;MYCOPY(unk_4a2b7)} // 393d:2907
     {db tmp999=0;MYCOPY(unk_4a2b8)} // 393d:2908
-
-
-
     {db tmp999=0;MYCOPY(unk_4a2bc)} // 393d:290c
     {db tmp999[32]={0};MYCOPY(dummy0_3bcdd)} // 393d:290d
     {db tmp999[32]={0};MYCOPY(dummy0_3bcfd)} // 393d:292d
     {db tmp999[32]={0};MYCOPY(dummy0_3bd1d)} // 393d:294d
     {db tmp999[32]={0};MYCOPY(dummy0_3bd3d)} // 393d:296d
-
     {db tmp999=0;MYCOPY(unk_4a33e)} // 393d:298e
     {db tmp999=192;MYCOPY(unk_4a33f)} // 393d:298f
     {db tmp999=40;MYCOPY(dummy0_3bd60)} // 393d:2990
@@ -16952,56 +15172,24 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=82;MYCOPY(dummy0_3be56)} // 393d:2a86
     {db tmp999=84;MYCOPY(dummy0_3be57)} // 393d:2a87
     {db tmp999=83;MYCOPY(dummy0_3be58)} // 393d:2a88
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4a43e)} // 393d:2a8e
     {db tmp999=0;MYCOPY(unk_4a43f)} // 393d:2a8f
     {db tmp999=1;MYCOPY(dummy0_3be60)} // 393d:2a90
-
     {db tmp999=1;MYCOPY(dummy0_3be62)} // 393d:2a92
-
     {db tmp999=1;MYCOPY(dummy0_3be64)} // 393d:2a94
-
     {db tmp999=138;MYCOPY(dummy0_3be66)} // 393d:2a96
     {db tmp999=42;MYCOPY(dummy0_3be67)} // 393d:2a97
     {db tmp999=0;MYCOPY(unk_4a448)} // 393d:2a98
-
     {db tmp999=0;MYCOPY(unk_4a44a)} // 393d:2a9a
-
     {db tmp999=0;MYCOPY(unk_4a44c)} // 393d:2a9c
-
-    {db tmp999=115;MYCOPY(dummy0_3be6e)} // 393d:2a9e
-    {db tmp999=116;MYCOPY(dummy0_3be6f)} // 393d:2a9f
-    {db tmp999=114;MYCOPY(dummy0_3be70)} // 393d:2aa0
-    {db tmp999=105;MYCOPY(dummy0_3be71)} // 393d:2aa1
-    {db tmp999=110;MYCOPY(dummy0_3be72)} // 393d:2aa2
-    {db tmp999=103;MYCOPY(dummy0_3be73)} // 393d:2aa3
-    {db tmp999=115;MYCOPY(dummy0_3be74)} // 393d:2aa4
-    {db tmp999=50;MYCOPY(dummy0_3be75)} // 393d:2aa5
-    {db tmp999=46;MYCOPY(dummy0_3be76)} // 393d:2aa6
-    {db tmp999=98;MYCOPY(dummy0_3be77)} // 393d:2aa7
-    {db tmp999=105;MYCOPY(dummy0_3be78)} // 393d:2aa8
-    {db tmp999=110;MYCOPY(dummy0_3be79)} // 393d:2aa9
-
+    {char tmp999[13]="strings2.bin";MYCOPY(astrings2bin_0)} // 393d:2a9e
     {db tmp999=0;MYCOPY(unk_4a45b)} // 393d:2aab
-    {db tmp999[32]={105,98,109,100,114,105,118,101,46,100,114,118,0,97,100,108,100,114,105,118,101,46,100,114,118,0,116,110,100,100,114,105};MYCOPY(dummy0_3be7c)} // 393d:2aac
-    {db tmp999=118;MYCOPY(dummy0_3be9c)} // 393d:2acc
-    {db tmp999=101;MYCOPY(dummy0_3be9d)} // 393d:2acd
-    {db tmp999=46;MYCOPY(dummy0_3be9e)} // 393d:2ace
-    {db tmp999=100;MYCOPY(dummy0_3be9f)} // 393d:2acf
-    {db tmp999=114;MYCOPY(dummy0_3bea0)} // 393d:2ad0
-    {db tmp999=118;MYCOPY(dummy0_3bea1)} // 393d:2ad1
-
-
+    {char tmp999[13]="ibmdrive.drv";MYCOPY(aibmdrivedrv)} // 393d:2aac
+    {char tmp999[13]="adldrive.drv";MYCOPY(aadldrivedrv)} // 393d:2ab9
+    {char tmp999[13]="tnddrive.drv";MYCOPY(atnddrivedrv)} // 393d:2ac6
     {db tmp999=0;MYCOPY(unk_4a484)} // 393d:2ad4
-
     {db tmp999=0;MYCOPY(unk_4a486)} // 393d:2ad6
-
     {db tmp999=0;MYCOPY(unk_4a488)} // 393d:2ad8
-
     {db tmp999=0;MYCOPY(unk_4a48a)} // 393d:2ada
     {db tmp999[32]={0,172,42,185,42,198,42,99,104,111,112,112,101,114,46,115,110,103,0,99,104,111,112,108,105,98,46,115,110,103,0,99};MYCOPY(dummy0_3beab)} // 393d:2adb
     {db tmp999=104;MYCOPY(dummy0_3becb)} // 393d:2afb
@@ -17014,7 +15202,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=115;MYCOPY(dummy0_3bed2)} // 393d:2b02
     {db tmp999=110;MYCOPY(dummy0_3bed3)} // 393d:2b03
     {db tmp999=103;MYCOPY(dummy0_3bed4)} // 393d:2b04
-
     {db tmp999=226;MYCOPY(dummy0_3bed6)} // 393d:2b06
     {db tmp999=42;MYCOPY(dummy0_3bed7)} // 393d:2b07
     {db tmp999=238;MYCOPY(dummy0_3bed8)} // 393d:2b08
@@ -17022,32 +15209,51 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=250;MYCOPY(dummy0_3beda)} // 393d:2b0a
     {db tmp999=42;MYCOPY(dummy0_3bedb)} // 393d:2b0b
     {db tmp999=0;MYCOPY(unk_4a4bc)} // 393d:2b0c
-    {db tmp999[32]={0,0,22,0,0,128,17,0,0,128,21,0,0,0,23,0,0,46,102,109,101,0,0,97,112,95,109,49,46,109,115,107};MYCOPY(dummy0_3bedd)} // 393d:2b0d
-    {db tmp999[32]={0,97,112,95,109,50,46,109,115,107,0,97,112,95,109,51,46,109,115,107,0,98,108,107,95,109,49,46,109,115,107,0};MYCOPY(dummy0_3befd)} // 393d:2b2d
-    {db tmp999[32]={98,108,107,95,109,50,46,109,115,107,0,98,108,107,95,109,51,46,109,115,107,0,111,115,112,95,109,49,46,109,115,107};MYCOPY(dummy0_3bf1d)} // 393d:2b4d
-    {db tmp999[32]={0,111,115,112,95,109,50,46,109,115,107,0,111,115,112,95,109,51,46,109,115,107,0,108,104,120,95,109,49,46,109,115};MYCOPY(dummy0_3bf3d)} // 393d:2b6d
-    {db tmp999[32]={107,0,108,104,120,95,109,50,46,109,115,107,0,97,104,45,109,99,103,97,46,98,105,110,0,117,104,45,109,99,103,97};MYCOPY(dummy0_3bf5d)} // 393d:2b8d
-    {db tmp999[32]={46,98,105,110,0,108,104,120,45,109,99,103,97,46,98,105,110,0,118,45,109,99,103,97,46,98,105,110,0,97,104,45};MYCOPY(dummy0_3bf7d)} // 393d:2bad
-    {db tmp999[32]={101,103,97,46,98,105,110,0,117,104,45,101,103,97,46,98,105,110,0,108,104,120,45,101,103,97,46,98,105,110,0,118};MYCOPY(dummy0_3bf9d)} // 393d:2bcd
-    {db tmp999[32]={45,101,103,97,46,98,105,110,0,97,104,45,99,103,97,46,98,105,110,0,117,104,45,99,103,97,46,98,105,110,0,108};MYCOPY(dummy0_3bfbd)} // 393d:2bed
-    {db tmp999[32]={104,120,45,99,103,97,46,98,105,110,0,118,45,99,103,97,46,98,105,110,0,97,104,45,116,110,100,121,46,98,105,110};MYCOPY(dummy0_3bfdd)} // 393d:2c0d
-    {db tmp999[32]={0,117,104,45,116,110,100,121,46,98,105,110,0,108,104,120,45,116,110,100,121,46,98,105,110,0,118,45,116,110,100,121};MYCOPY(dummy0_3bffd)} // 393d:2c2d
-    {db tmp999[32]={46,98,105,110,0,0,0,0,0,64,1,103,0,0,0,0,0,48,1,101,0,0,0,0,0,64,1,139,0,0,0,0};MYCOPY(dummy0_3c01d)} // 393d:2c4d
-    {db tmp999[32]={0,48,1,111,0,0,0,65,0,16,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,5,36,43,48,1,65,0};MYCOPY(dummy0_3c03d)} // 393d:2c6d
-    {db tmp999[32]={16,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,5,46,43,0,0,93,0,64,1,10,0,0,0,0,0,0};MYCOPY(dummy0_3c05d)} // 393d:2c8d
-    {db tmp999[32]={0,0,0,0,0,0,0,5,56,43,0,0,0,94,0,32,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,5};MYCOPY(dummy0_3c07d)} // 393d:2cad
-    {db tmp999[32]={66,43,32,0,94,0,16,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,16,1,69,0,32,0,25};MYCOPY(dummy0_3c09d)} // 393d:2ccd
-    {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,5,77,43,0,0,0,0,48,1,4,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c0bd)} // 393d:2ced
-    {db tmp999[32]={0,0,0,0,5,88,43,0,0,0,0,80,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,99,43,80,0};MYCOPY(dummy0_3c0dd)} // 393d:2d0d
-    {db tmp999[32]={0,0,208,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,32,1,0,0,32,0,17,0,0,0,0};MYCOPY(dummy0_3c0fd)} // 393d:2d2d
-    {db tmp999[32]={0,0,0,0,0,0,0,0,0,5,110,43,0,0,102,0,48,1,9,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c11d)} // 393d:2d4d
-    {db tmp999[32]={5,121,43,0,0,116,0,64,1,12,0,0,0,0,0,0,0,0,0,0,0,0,0,5,132,43,0,0,128,0,64,1};MYCOPY(dummy0_3c13d)} // 393d:2d6d
-    {db tmp999[32]={11,0,0,0,0,0,0,0,0,0,0,0,0,0,3,143,43,154,43,166,43,178,43,191,43,202,43,213,43,224,43,236};MYCOPY(dummy0_3c15d)} // 393d:2d8d
-    {db tmp999=43;MYCOPY(dummy0_3c17d)} // 393d:2dad
-    {db tmp999=246;MYCOPY(dummy0_3c17e)} // 393d:2dae
-    {db tmp999=43;MYCOPY(dummy0_3c17f)} // 393d:2daf
-    {db tmp999=1;MYCOPY(dummy0_3c180)} // 393d:2db0
-    {db tmp999=44;MYCOPY(dummy0_3c181)} // 393d:2db1
+    {db tmp999=22;MYCOPY(dummy0_3bedf)} // 393d:2b0f
+    {db tmp999=128;MYCOPY(dummy0_3bee2)} // 393d:2b12
+    {db tmp999=17;MYCOPY(dummy0_3bee3)} // 393d:2b13
+    {db tmp999=128;MYCOPY(dummy0_3bee6)} // 393d:2b16
+    {db tmp999=21;MYCOPY(dummy0_3bee7)} // 393d:2b17
+    {db tmp999=23;MYCOPY(dummy0_3beeb)} // 393d:2b1b
+    {char tmp999[5]=".fme";MYCOPY(afme)} // 393d:2b1e
+    {char tmp999[10]="ap_m1.msk";MYCOPY(aapm1msk)} // 393d:2b24
+    {char tmp999[10]="ap_m2.msk";MYCOPY(aapm2msk)} // 393d:2b2e
+    {char tmp999[10]="ap_m3.msk";MYCOPY(aapm3msk)} // 393d:2b38
+    {char tmp999[11]="blk_m1.msk";MYCOPY(ablkm1msk)} // 393d:2b42
+    {char tmp999[11]="blk_m2.msk";MYCOPY(ablkm2msk)} // 393d:2b4d
+    {char tmp999[11]="blk_m3.msk";MYCOPY(ablkm3msk)} // 393d:2b58
+    {char tmp999[11]="osp_m1.msk";MYCOPY(aospm1msk)} // 393d:2b63
+    {char tmp999[11]="osp_m2.msk";MYCOPY(aospm2msk)} // 393d:2b6e
+    {char tmp999[11]="osp_m3.msk";MYCOPY(aospm3msk)} // 393d:2b79
+    {char tmp999[11]="lhx_m1.msk";MYCOPY(alhxm1msk)} // 393d:2b84
+    {char tmp999[11]="lhx_m2.msk";MYCOPY(alhxm2msk)} // 393d:2b8f
+    {char tmp999[12]="ah-mcga.bin";MYCOPY(aahmcgabin)} // 393d:2b9a
+    {char tmp999[12]="uh-mcga.bin";MYCOPY(auhmcgabin)} // 393d:2ba6
+    {char tmp999[13]="lhx-mcga.bin";MYCOPY(alhxmcgabin)} // 393d:2bb2
+    {char tmp999[11]="v-mcga.bin";MYCOPY(avmcgabin)} // 393d:2bbf
+    {char tmp999[11]="ah-ega.bin";MYCOPY(aahegabin)} // 393d:2bca
+    {char tmp999[11]="uh-ega.bin";MYCOPY(auhegabin)} // 393d:2bd5
+    {char tmp999[12]="lhx-ega.bin";MYCOPY(alhxegabin)} // 393d:2be0
+    {char tmp999[10]="v-ega.bin";MYCOPY(avegabin)} // 393d:2bec
+    {char tmp999[11]="ah-cga.bin";MYCOPY(aahcgabin)} // 393d:2bf6
+    {char tmp999[11]="uh-cga.bin";MYCOPY(auhcgabin)} // 393d:2c01
+    {char tmp999[12]="lhx-cga.bin";MYCOPY(alhxcgabin)} // 393d:2c0c
+    {char tmp999[10]="v-cga.bin";MYCOPY(avcgabin)} // 393d:2c18
+    {char tmp999[12]="ah-tndy.bin";MYCOPY(aahtndybin)} // 393d:2c22
+    {char tmp999[12]="uh-tndy.bin";MYCOPY(auhtndybin)} // 393d:2c2e
+    {char tmp999[13]="lhx-tndy.bin";MYCOPY(alhxtndybin)} // 393d:2c3a
+    {char tmp999[11]="v-tndy.bin";MYCOPY(avtndybin)} // 393d:2c47
+    {db tmp999[32]={0,0,0,0,64,1,103,0,0,0,0,0,48,1,101,0,0,0,0,0,64,1,139,0,0,0,0,0,48,1,111,0};MYCOPY(dummy0_3c022)} // 393d:2c52
+    {db tmp999[32]={0,0,65,0,16,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,5,36,43,48,1,65,0,16,0,28,0,0};MYCOPY(dummy0_3c042)} // 393d:2c72
+    {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,0,5,46,43,0,0,93,0,64,1,10,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c062)} // 393d:2c92
+    {db tmp999[32]={0,0,5,56,43,0,0,0,94,0,32,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,5,66,43,32,0,94};MYCOPY(dummy0_3c082)} // 393d:2cb2
+    {db tmp999[32]={0,16,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,16,1,69,0,32,0,25,0,0,0,0,0};MYCOPY(dummy0_3c0a2)} // 393d:2cd2
+    {db tmp999[32]={0,0,0,0,0,0,0,0,5,77,43,0,0,0,0,48,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,5};MYCOPY(dummy0_3c0c2)} // 393d:2cf2
+    {db tmp999[32]={88,43,0,0,0,0,80,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,99,43,80,0,0,0,208,0,5};MYCOPY(dummy0_3c0e2)} // 393d:2d12
+    {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,32,1,0,0,32,0,17,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c102)} // 393d:2d32
+    {db tmp999[32]={0,0,0,0,5,110,43,0,0,102,0,48,1,9,0,0,0,0,0,0,0,0,0,0,0,0,0,5,121,43,0,0};MYCOPY(dummy0_3c122)} // 393d:2d52
+    {db tmp999[32]={116,0,64,1,12,0,0,0,0,0,0,0,0,0,0,0,0,0,5,132,43,0,0,128,0,64,1,11,0,0,0,0};MYCOPY(dummy0_3c142)} // 393d:2d72
+    {db tmp999[32]={0,0,0,0,0,0,0,0,0,3,143,43,154,43,166,43,178,43,191,43,202,43,213,43,224,43,236,43,246,43,1,44};MYCOPY(dummy0_3c162)} // 393d:2d92
     {db tmp999=12;MYCOPY(dummy0_3c182)} // 393d:2db2
     {db tmp999=44;MYCOPY(dummy0_3c183)} // 393d:2db3
     {db tmp999=24;MYCOPY(dummy0_3c184)} // 393d:2db4
@@ -17061,224 +15267,193 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=71;MYCOPY(dummy0_3c18c)} // 393d:2dbc
     {db tmp999=44;MYCOPY(dummy0_3c18d)} // 393d:2dbd
     {db tmp999=0;MYCOPY(unk_4a76e)} // 393d:2dbe
-
     {db tmp999=0;MYCOPY(unk_4a770)} // 393d:2dc0
     {db tmp999[32]={0,0,0,0,0,0,0,120,0,134,0,80,0,57,0,0,0,0,0,0,0,232,0,139,0,80,0,57,0,0,0,0};MYCOPY(dummy0_3c191)} // 393d:2dc1
     {db tmp999[32]={0,0,0,16,0,126,0,80,0,57,0,0,0,0,0,0,0,112,0,126,0,80,0,57,0,0,0,0,0,0,0,32};MYCOPY(dummy0_3c1b1)} // 393d:2de1
     {db tmp999[32]={0,134,0,80,0,57,0,0,0,0,0,0,0,120,0,128,0,80,0,57,0,0,0,0,0,0,0,208,0,134,0,80};MYCOPY(dummy0_3c1d1)} // 393d:2e01
-
     {db tmp999=57;MYCOPY(dummy0_3c1f2)} // 393d:2e22
-
     {db tmp999=19;MYCOPY(dummy0_3c1f4)} // 393d:2e24
     {db tmp999=19;MYCOPY(dummy0_3c1f5)} // 393d:2e25
     {db tmp999=63;MYCOPY(dummy0_3c1f6)} // 393d:2e26
     {db tmp999=59;MYCOPY(dummy0_3c1f7)} // 393d:2e27
     {db tmp999=19;MYCOPY(dummy0_3c1f8)} // 393d:2e28
-
-
     {db tmp999=19;MYCOPY(dummy0_3c1fb)} // 393d:2e2b
-
-
     {db tmp999=56;MYCOPY(dummy0_3c1fe)} // 393d:2e2e
     {db tmp999=3;MYCOPY(dummy0_3c1ff)} // 393d:2e2f
     {db tmp999=4;MYCOPY(dummy0_3c200)} // 393d:2e30
     {db tmp999=3;MYCOPY(dummy0_3c201)} // 393d:2e31
     {db tmp999=56;MYCOPY(dummy0_3c202)} // 393d:2e32
-
     {db tmp999=255;MYCOPY(unk_4a7e4)} // 393d:2e34
     {db tmp999[32]={0,64,0,154,0,48,0,43,0,120,0,156,0,48,0,41,0,0,0,0,0,0,0,0,0,192,0,121,0,48,0,19};MYCOPY(dummy0_3c205)} // 393d:2e35
     {db tmp999[32]={0,63,0,154,0,119,0,154,0,0,0,0,0,203,0,120,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c225)} // 393d:2e55
     {db tmp999[32]={0,0,0,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,153,0,48,0,43,0,8,0,155};MYCOPY(dummy0_3c245)} // 393d:2e75
     {db tmp999[32]={0,48,0,41,0,0,0,0,0,0,0,0,0,8,1,156,0,48,0,39,0,31,1,174,0,30,0,175,0,0,0,0};MYCOPY(dummy0_3c265)} // 393d:2e95
-
     {db tmp999=34;MYCOPY(dummy0_3c286)} // 393d:2eb6
     {db tmp999=1;MYCOPY(dummy0_3c287)} // 393d:2eb7
     {db tmp999=175;MYCOPY(dummy0_3c288)} // 393d:2eb8
-
     {db tmp999=7;MYCOPY(dummy0_3c28a)} // 393d:2eba
     {db tmp999=1;MYCOPY(dummy0_3c28b)} // 393d:2ebb
     {db tmp999=153;MYCOPY(dummy0_3c28c)} // 393d:2ebc
-
     {db tmp999=6;MYCOPY(dummy0_3c28e)} // 393d:2ebe
-
     {db tmp999=154;MYCOPY(dummy0_3c290)} // 393d:2ec0
-
-
-
-
-
     {db tmp999=11;MYCOPY(dummy0_3c296)} // 393d:2ec6
     {db tmp999=1;MYCOPY(dummy0_3c297)} // 393d:2ec7
     {db tmp999=154;MYCOPY(dummy0_3c298)} // 393d:2ec8
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4a884)} // 393d:2ed4
-
     {db tmp999=0;MYCOPY(unk_4a886)} // 393d:2ed6
     {db tmp999[32]={0,0,0,0,0,128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c2a7)} // 393d:2ed7
-
     {db tmp999=1;MYCOPY(unk_4a8a8)} // 393d:2ef8
-    {db tmp999[32]={99,112,95,97,112,52,46,112,105,99,0,99,112,95,98,108,107,52,46,112,105,99,0,99,112,95,108,104,120,52,46,112};MYCOPY(dummy0_3c2c9)} // 393d:2ef9
-    {db tmp999[32]={105,99,0,99,112,95,111,115,112,52,46,112,105,99,0,99,112,95,97,112,46,112,105,99,0,99,112,95,98,108,107,46};MYCOPY(dummy0_3c2e9)} // 393d:2f19
-    {db tmp999[32]={112,105,99,0,99,112,95,108,104,120,46,112,105,99,0,99,112,95,111,115,112,46,112,105,99,0,99,112,95,97,112,50};MYCOPY(dummy0_3c309)} // 393d:2f39
-    {db tmp999[32]={46,112,105,99,0,99,112,95,98,108,107,50,46,112,105,99,0,99,112,95,108,104,120,50,46,112,105,99,0,99,112,95};MYCOPY(dummy0_3c329)} // 393d:2f59
-    {db tmp999=111;MYCOPY(dummy0_3c349)} // 393d:2f79
-    {db tmp999=115;MYCOPY(dummy0_3c34a)} // 393d:2f7a
-    {db tmp999=112;MYCOPY(dummy0_3c34b)} // 393d:2f7b
-    {db tmp999=50;MYCOPY(dummy0_3c34c)} // 393d:2f7c
-    {db tmp999=46;MYCOPY(dummy0_3c34d)} // 393d:2f7d
-    {db tmp999=112;MYCOPY(dummy0_3c34e)} // 393d:2f7e
-    {db tmp999=105;MYCOPY(dummy0_3c34f)} // 393d:2f7f
-    {db tmp999=99;MYCOPY(dummy0_3c350)} // 393d:2f80
-
-
-
-
-
-
-
-
-
-    {db tmp999=0;MYCOPY(unk_4a93a)} // 393d:2f8a
-    {db tmp999[32]={0,249,46,4,47,16,47,28,47,40,47,50,47,61,47,72,47,83,47,94,47,106,47,118,47,42,32,78,65,86,32,83};MYCOPY(dummy0_3c35b)} // 393d:2f8b
-    {db tmp999[32]={84,65,84,85,83,32,42,0,37,100,46,37,115,0,42,32,67,65,77,69,82,65,32,68,65,77,65,71,69,68,32,42};MYCOPY(dummy0_3c37b)} // 393d:2fab
-    {db tmp999[32]={0,42,32,87,69,65,80,79,78,32,83,84,65,84,85,83,32,42,0,37,52,100,32,37,115,0,42,32,69,78,71,73};MYCOPY(dummy0_3c39b)} // 393d:2fcb
-    {db tmp999[32]={78,69,32,83,84,65,84,85,83,32,42,0,70,85,69,76,58,32,32,32,32,32,37,52,100,32,76,66,83,0,84,72};MYCOPY(dummy0_3c3bb)} // 393d:2feb
-    {db tmp999[32]={82,79,84,84,76,69,58,32,32,32,32,32,37,51,100,37,37,0,82,79,84,79,82,58,32,32,32,32,32,32,32,32};MYCOPY(dummy0_3c3db)} // 393d:300b
-    {db tmp999[32]={37,51,100,37,37,0,79,73,76,32,80,82,69,83,83,85,82,69,58,32,37,51,100,37,37,0,72,89,68,32,80,82};MYCOPY(dummy0_3c3fb)} // 393d:302b
-    {db tmp999[32]={69,83,83,85,82,69,58,32,37,51,100,37,37,0,65,76,84,58,37,53,117,32,0,42,32,68,65,77,65,71,69,32};MYCOPY(dummy0_3c41b)} // 393d:304b
-    {db tmp999[32]={83,84,65,84,85,83,32,42,0,76,32,32,82,79,84,79,82,0,82,32,32,82,79,84,79,82,0,77,78,32,82,79};MYCOPY(dummy0_3c43b)} // 393d:306b
-    {db tmp999[32]={84,79,82,0,84,65,73,76,32,70,65,78,0,77,78,32,82,79,84,79,82,0,84,76,32,82,79,84,79,82,0,76};MYCOPY(dummy0_3c45b)} // 393d:308b
-    {db tmp999[32]={32,69,78,71,73,78,69,0,82,32,69,78,71,73,78,69,0,79,73,76,0,72,89,68,0,70,85,69,76,0,67,79};MYCOPY(dummy0_3c47b)} // 393d:30ab
-    {db tmp999[32]={78,84,82,79,76,83,0,83,69,78,83,79,82,83,0,74,65,77,77,69,82,83,0,67,72,70,70,0,70,76,82,0};MYCOPY(dummy0_3c49b)} // 393d:30cb
-    {db tmp999[32]={72,65,82,68,80,84,32,49,0,72,65,82,68,80,84,32,50,0,72,65,82,68,80,84,32,51,0,72,65,82,68,80};MYCOPY(dummy0_3c4bb)} // 393d:30eb
-    {db tmp999[32]={84,32,52,0,67,65,77,69,82,65,0,87,65,89,80,84,83,0,82,87,82,0,87,69,65,80,79,78,83,0,68,65};MYCOPY(dummy0_3c4db)} // 393d:310b
-    {db tmp999[32]={77,65,71,69,0,69,78,71,73,78,69,0,37,100,46,37,115,0,42,32,67,82,84,32,67,79,78,70,73,71,32,42};MYCOPY(dummy0_3c4fb)} // 393d:312b
-    {db tmp999[32]={0,83,80,65,67,69,32,66,65,82,32,84,79,32,69,88,73,84,0,15,49,22,49,29,49,33,49,41,49,48,49,109};MYCOPY(dummy0_3c51b)} // 393d:314b
-    {db tmp999[32]={105,115,99,52,46,112,105,99,0,109,105,115,99,50,46,112,105,99,0,109,105,115,99,46,112,105,99,0,114,119,114,95};MYCOPY(dummy0_3c53b)} // 393d:316b
-    {db tmp999[32]={97,112,46,109,115,107,0,114,119,114,95,98,108,107,46,109,115,107,0,114,119,114,95,111,115,112,46,109,115,107,0,104};MYCOPY(dummy0_3c55b)} // 393d:318b
-    {db tmp999[32]={122,95,97,112,46,109,115,107,0,104,122,95,98,108,107,46,109,115,107,0,104,122,95,111,115,112,46,109,115,107,0,12};MYCOPY(dummy0_3c57b)} // 393d:31ab
-
-    {db tmp999=105;MYCOPY(dummy0_3c59c)} // 393d:31cc
-
-    {db tmp999=231;MYCOPY(dummy0_3c59e)} // 393d:31ce
-
-    {db tmp999=104;MYCOPY(dummy0_3c5a0)} // 393d:31d0
-
-    {db tmp999=255;MYCOPY(dummy0_3c5a2)} // 393d:31d2
-    {db tmp999=255;MYCOPY(dummy0_3c5a3)} // 393d:31d3
-    {db tmp999=255;MYCOPY(dummy0_3c5a4)} // 393d:31d4
-    {db tmp999=255;MYCOPY(dummy0_3c5a5)} // 393d:31d5
-    {db tmp999=255;MYCOPY(dummy0_3c5a6)} // 393d:31d6
-    {db tmp999=255;MYCOPY(dummy0_3c5a7)} // 393d:31d7
-    {db tmp999=255;MYCOPY(dummy0_3c5a8)} // 393d:31d8
-    {db tmp999=255;MYCOPY(dummy0_3c5a9)} // 393d:31d9
-    {db tmp999=135;MYCOPY(dummy0_3c5aa)} // 393d:31da
-    {db tmp999=49;MYCOPY(dummy0_3c5ab)} // 393d:31db
-    {db tmp999=146;MYCOPY(dummy0_3c5ac)} // 393d:31dc
-    {db tmp999=49;MYCOPY(dummy0_3c5ad)} // 393d:31dd
-
-
-    {db tmp999=158;MYCOPY(dummy0_3c5b0)} // 393d:31e0
-    {db tmp999=49;MYCOPY(dummy0_3c5b1)} // 393d:31e1
-    {db tmp999=170;MYCOPY(dummy0_3c5b2)} // 393d:31e2
-    {db tmp999=49;MYCOPY(dummy0_3c5b3)} // 393d:31e3
-    {db tmp999=180;MYCOPY(dummy0_3c5b4)} // 393d:31e4
-    {db tmp999=49;MYCOPY(dummy0_3c5b5)} // 393d:31e5
-
-
-    {db tmp999=191;MYCOPY(dummy0_3c5b8)} // 393d:31e8
-    {db tmp999=49;MYCOPY(dummy0_3c5b9)} // 393d:31e9
+    {char tmp999[11]="cp_ap4.pic";MYCOPY(acpap4pic)} // 393d:2ef9
+    {char tmp999[12]="cp_blk4.pic";MYCOPY(acpblk4pic)} // 393d:2f04
+    {char tmp999[12]="cp_lhx4.pic";MYCOPY(acplhx4pic)} // 393d:2f10
+    {char tmp999[12]="cp_osp4.pic";MYCOPY(acposp4pic)} // 393d:2f1c
+    {char tmp999[10]="cp_ap.pic";MYCOPY(acpappic)} // 393d:2f28
+    {char tmp999[11]="cp_blk.pic";MYCOPY(acpblkpic)} // 393d:2f32
+    {char tmp999[11]="cp_lhx.pic";MYCOPY(acplhxpic)} // 393d:2f3d
+    {char tmp999[11]="cp_osp.pic";MYCOPY(acposppic)} // 393d:2f48
+    {char tmp999[11]="cp_ap2.pic";MYCOPY(acpap2pic)} // 393d:2f53
+    {char tmp999[12]="cp_blk2.pic";MYCOPY(acpblk2pic)} // 393d:2f5e
+    {char tmp999[12]="cp_lhx2.pic";MYCOPY(acplhx2pic)} // 393d:2f6a
+    {char tmp999[12]="cp_osp2.pic";MYCOPY(acposp2pic)} // 393d:2f76
+    {dw tmp999=0;MYCOPY(word_4a93a)} // 393d:2f8a
+    {dw tmp999=offset(dseg,acpap4pic);MYCOPY(dummy0_3c35c)} // 393d:2f8c
+    {dw tmp999=offset(dseg,acpblk4pic);MYCOPY(dummy0_3c35e)} // 393d:2f8e
+    {dw tmp999=offset(dseg,acplhx4pic);MYCOPY(dummy0_3c360)} // 393d:2f90
+    {dw tmp999=offset(dseg,acposp4pic);MYCOPY(dummy0_3c362)} // 393d:2f92
+    {dw tmp999=offset(dseg,acpappic);MYCOPY(dummy0_3c364)} // 393d:2f94
+    {dw tmp999=offset(dseg,acpblkpic);MYCOPY(dummy0_3c366)} // 393d:2f96
+    {dw tmp999=offset(dseg,acplhxpic);MYCOPY(dummy0_3c368)} // 393d:2f98
+    {dw tmp999=offset(dseg,acposppic);MYCOPY(dummy0_3c36a)} // 393d:2f9a
+    {dw tmp999=offset(dseg,acpap2pic);MYCOPY(dummy0_3c36c)} // 393d:2f9c
+    {dw tmp999=offset(dseg,acpblk2pic);MYCOPY(dummy0_3c36e)} // 393d:2f9e
+    {dw tmp999=offset(dseg,acplhx2pic);MYCOPY(dummy0_3c370)} // 393d:2fa0
+    {dw tmp999=offset(dseg,acposp2pic);MYCOPY(dummy0_3c372)} // 393d:2fa2
+    {char tmp999[15]="* NAV STATUS *";MYCOPY(anavstatus)} // 393d:2fa4
+    {char tmp999[6]="%d.%s";MYCOPY(ads)} // 393d:2fb3
+    {char tmp999[19]="* CAMERA DAMAGED *";MYCOPY(acameradamaged)} // 393d:2fb9
+    {char tmp999[18]="* WEAPON STATUS *";MYCOPY(aweaponstatus)} // 393d:2fcc
+    {char tmp999[7]="%4d %s";MYCOPY(a4ds)} // 393d:2fde
+    {char tmp999[18]="* ENGINE STATUS *";MYCOPY(aenginestatus)} // 393d:2fe5
+    {char tmp999[18]="FUEL:     %4d LBS";MYCOPY(afuel4dlbs)} // 393d:2ff7
+    {char tmp999[20]="THROTTLE:     %3d%%";MYCOPY(athrottle3d)} // 393d:3009
+    {char tmp999[20]="ROTOR:        %3d%%";MYCOPY(arotor3d)} // 393d:301d
+    {char tmp999[20]="OIL PRESSURE: %3d%%";MYCOPY(aoilpressure3d)} // 393d:3031
+    {char tmp999[20]="HYD PRESSURE: %3d%%";MYCOPY(ahydpressure3d)} // 393d:3045
+    {char tmp999[9]="ALT:%5u ";MYCOPY(aalt5u)} // 393d:3059
+    {char tmp999[18]="* DAMAGE STATUS *";MYCOPY(adamagestatus)} // 393d:3062
+    {char tmp999[9]="L  ROTOR";MYCOPY(alrotor)} // 393d:3074
+    {char tmp999[9]="R  ROTOR";MYCOPY(arrotor)} // 393d:307d
+    {char tmp999[9]="MN ROTOR";MYCOPY(amnrotor)} // 393d:3086
+    {char tmp999[9]="TAIL FAN";MYCOPY(atailfan)} // 393d:308f
+    {char tmp999[9]="MN ROTOR";MYCOPY(amnrotor_0)} // 393d:3098
+    {char tmp999[9]="TL ROTOR";MYCOPY(atlrotor)} // 393d:30a1
+    {char tmp999[9]="L ENGINE";MYCOPY(alengine)} // 393d:30aa
+    {char tmp999[9]="R ENGINE";MYCOPY(arengine)} // 393d:30b3
+    {char tmp999[4]="OIL";MYCOPY(aoil)} // 393d:30bc
+    {char tmp999[4]="HYD";MYCOPY(ahyd)} // 393d:30c0
+    {char tmp999[5]="FUEL";MYCOPY(afuel)} // 393d:30c4
+    {char tmp999[9]="CONTROLS";MYCOPY(acontrols)} // 393d:30c9
+    {char tmp999[8]="SENSORS";MYCOPY(asensors)} // 393d:30d2
+    {char tmp999[8]="JAMMERS";MYCOPY(ajammers)} // 393d:30da
+    {char tmp999[5]="CHFF";MYCOPY(achff)} // 393d:30e2
+    {char tmp999[4]="FLR";MYCOPY(aflr)} // 393d:30e7
+    {char tmp999[9]="HARDPT 1";MYCOPY(ahardpt1)} // 393d:30eb
+    {char tmp999[9]="HARDPT 2";MYCOPY(ahardpt2)} // 393d:30f4
+    {char tmp999[9]="HARDPT 3";MYCOPY(ahardpt3)} // 393d:30fd
+    {char tmp999[9]="HARDPT 4";MYCOPY(ahardpt4)} // 393d:3106
+    {char tmp999[7]="CAMERA";MYCOPY(acamera)} // 393d:310f
+    {char tmp999[7]="WAYPTS";MYCOPY(awaypts)} // 393d:3116
+    {char tmp999[4]="RWR";MYCOPY(arwr)} // 393d:311d
+    {char tmp999[8]="WEAPONS";MYCOPY(aweapons)} // 393d:3121
+    {char tmp999[7]="DAMAGE";MYCOPY(adamage)} // 393d:3129
+    {char tmp999[7]="ENGINE";MYCOPY(aengine)} // 393d:3130
+    {char tmp999[6]="%d.%s";MYCOPY(ads_0)} // 393d:3137
+    {char tmp999[15]="* CRT CONFIG *";MYCOPY(acrtconfig)} // 393d:313d
+    {char tmp999[18]="SPACE BAR TO EXIT";MYCOPY(aspacebartoexit)} // 393d:314c
+    {dw tmp999=offset(dseg,acamera);MYCOPY(dummy0_3c52e)} // 393d:315e
+    {dw tmp999=offset(dseg,awaypts);MYCOPY(dummy0_3c530)} // 393d:3160
+    {dw tmp999=offset(dseg,arwr);MYCOPY(dummy0_3c532)} // 393d:3162
+    {dw tmp999=offset(dseg,aweapons);MYCOPY(dummy0_3c534)} // 393d:3164
+    {dw tmp999=offset(dseg,adamage);MYCOPY(dummy0_3c536)} // 393d:3166
+    {dw tmp999=offset(dseg,aengine);MYCOPY(dummy0_3c538)} // 393d:3168
+    {char tmp999[10]="misc4.pic";MYCOPY(amisc4pic)} // 393d:316a
+    {char tmp999[10]="misc2.pic";MYCOPY(amisc2pic)} // 393d:3174
+    {char tmp999[9]="misc.pic";MYCOPY(amiscpic)} // 393d:317e
+    {char tmp999[11]="rwr_ap.msk";MYCOPY(arwrapmsk)} // 393d:3187
+    {char tmp999[12]="rwr_blk.msk";MYCOPY(arwrblkmsk)} // 393d:3192
+    {char tmp999[12]="rwr_osp.msk";MYCOPY(arwrospmsk)} // 393d:319e
+    {char tmp999[10]="hz_ap.msk";MYCOPY(ahzapmsk)} // 393d:31aa
+    {char tmp999[11]="hz_blk.msk";MYCOPY(ahzblkmsk)} // 393d:31b4
+    {char tmp999[11]="hz_osp.msk";MYCOPY(ahzospmsk)} // 393d:31bf
+    {db tmp999[32]={12,0,105,0,231,0,104,0,255,255,255,255,255,255,255,255,135,49,146,49,0,0,158,49,170,49,180,49,0,0,191,49};MYCOPY(dummy0_3c59a)} // 393d:31ca
     {db tmp999=0;MYCOPY(unk_4ab9a)} // 393d:31ea
-
     {db tmp999=8;MYCOPY(dummy0_3c5bc)} // 393d:31ec
     {db tmp999=1;MYCOPY(dummy0_3c5bd)} // 393d:31ed
     {db tmp999=64;MYCOPY(dummy0_3c5be)} // 393d:31ee
-
     {db tmp999=2;MYCOPY(dummy0_3c5c0)} // 393d:31f0
-
     {db tmp999=236;MYCOPY(dummy0_3c5c2)} // 393d:31f2
-
     {db tmp999=114;MYCOPY(dummy0_3c5c4)} // 393d:31f4
-
     {db tmp999=157;MYCOPY(dummy0_3c5c6)} // 393d:31f6
-
     {db tmp999=170;MYCOPY(dummy0_3c5c8)} // 393d:31f8
-
     {db tmp999=161;MYCOPY(dummy0_3c5ca)} // 393d:31fa
-
     {db tmp999=5;MYCOPY(unk_4abac)} // 393d:31fc
-
     {db tmp999=15;MYCOPY(unk_4abae)} // 393d:31fe
     {db tmp999[32]={255,247,255,250,255,8,0,4,0,17,0,4,0,23,0,1,0,247,255,250,255,6,0,4,0,20,0,4,0,0,0,0};MYCOPY(dummy0_3c5cf)} // 393d:31ff
     {db tmp999[32]={0,247,255,250,255,8,0,4,0,18,0,4,0,0,0,0,0,247,255,250,255,15,0,4,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c5ef)} // 393d:321f
     {db tmp999[32]={0,1,0,252,255,9,0,10,0,18,0,10,0,24,0,251,255,1,0,252,255,7,0,10,0,21,0,10,0,0,0,0};MYCOPY(dummy0_3c60f)} // 393d:323f
     {db tmp999[32]={0,1,0,252,255,9,0,10,0,19,0,10,0,0,0,0,0,1,0,252,255,16,0,10,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c62f)} // 393d:325f
     {db tmp999[32]={0,4,0,144,0,53,0,31,0,59,0,113,0,53,0,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3c64f)} // 393d:327f
-
     {db tmp999=34;MYCOPY(dummy0_3c670)} // 393d:32a0
-
     {db tmp999=27;MYCOPY(dummy0_3c672)} // 393d:32a2
-
     {db tmp999=17;MYCOPY(dummy0_3c674)} // 393d:32a4
-
     {db tmp999=10;MYCOPY(dummy0_3c676)} // 393d:32a6
-
     {db tmp999=0;MYCOPY(unk_4ac58)} // 393d:32a8
-
     {db tmp999=0;MYCOPY(unk_4ac5a)} // 393d:32aa
-
     {db tmp999=0;MYCOPY(unk_4ac5c)} // 393d:32ac
-
-
-
-    {db tmp999=0;MYCOPY(unk_4ac60)} // 393d:32b0
-    {db tmp999=0;MYCOPY(unk_4ac61)} // 393d:32b1
-    {db tmp999=0;MYCOPY(unk_4ac62)} // 393d:32b2
-
-    {db tmp999=0;MYCOPY(unk_4ac64)} // 393d:32b4
-
-    {db tmp999=0;MYCOPY(unk_4ac66)} // 393d:32b6
-
-    {db tmp999=0;MYCOPY(unk_4ac68)} // 393d:32b8
-
-    {db tmp999=1;MYCOPY(dummy0_3c68a)} // 393d:32ba
-    {db tmp999=0;MYCOPY(unk_4ac6b)} // 393d:32bb
-    {db tmp999=0;MYCOPY(unk_4ac6c)} // 393d:32bc
-
+    {db tmp999=0;MYCOPY(byte_4ac5e)} // 393d:32ae
+    {db tmp999=0;MYCOPY(byte_4ac5f)} // 393d:32af
+    {db tmp999=0;MYCOPY(byte_4ac60)} // 393d:32b0
+    {db tmp999=0;MYCOPY(byte_4ac61)} // 393d:32b1
+    {dw tmp999=0;MYCOPY(word_4ac62)} // 393d:32b2
+    {dw tmp999=0;MYCOPY(word_4ac64)} // 393d:32b4
+    {dw tmp999=0;MYCOPY(word_4ac66)} // 393d:32b6
+    {dw tmp999=0;MYCOPY(word_4ac68)} // 393d:32b8
+    {db tmp999=1;MYCOPY(byte_4ac6a)} // 393d:32ba
+    {db tmp999=0;MYCOPY(byte_4ac6b)} // 393d:32bb
+    {dw tmp999=0;MYCOPY(word_4ac6c)} // 393d:32bc
     {db tmp999=0;MYCOPY(unk_4ac6e)} // 393d:32be
-    {db tmp999[32]={67,82,65,84,69,32,68,82,79,80,80,69,68,32,73,78,32,84,65,82,71,69,84,32,65,82,69,65,0,67,82,65};MYCOPY(dummy0_3c68f)} // 393d:32bf
-    {db tmp999[32]={84,69,32,68,82,79,80,80,69,68,32,79,85,84,83,73,68,69,32,79,70,32,84,65,82,71,69,84,32,65,82,69};MYCOPY(dummy0_3c6af)} // 393d:32df
-    {db tmp999[32]={65,0,67,82,65,84,69,32,80,73,67,75,69,68,32,85,80,0,0,67,72,73,78,32,84,85,82,82,69,84,0,87};MYCOPY(dummy0_3c6cf)} // 393d:32ff
-    {db tmp999[32]={73,78,71,0,0,73,78,78,69,82,32,87,73,78,71,0,0,79,85,84,69,82,32,87,73,78,71,0,0,87,73,78};MYCOPY(dummy0_3c6ef)} // 393d:331f
-    {db tmp999[32]={71,84,73,80,0,67,65,66,73,78,32,87,73,78,68,79,87,0,0,73,78,84,69,82,78,65,76,0,0,4,3,3};MYCOPY(dummy0_3c70f)} // 393d:333f
-    {db tmp999[32]={2,108,19,176,4,10,0,0,0,0,0,72,20,8,0,1,28,20,8,0,1,240,19,38,0,2,0,0,0,0,0,160};MYCOPY(dummy0_3c72f)} // 393d:335f
-    {db tmp999[32]={20,2,0,1,116,20,4,0,1,0,0,0,0,0,0,224,17,220,5,5,0,0,0,0,0,12,18,96,9,10,28,20};MYCOPY(dummy0_3c74f)} // 393d:337f
-    {db tmp999[32]={8,0,1,240,19,38,0,2,160,20,2,0,1,116,20,4,0,1,0,0,0,0,0,28,20,8,0,1,240,19,38,0};MYCOPY(dummy0_3c76f)} // 393d:339f
-    {db tmp999[32]={2,160,20,2,0,1,116,20,4,0,1,0,0,0,0,0,0,152,19,208,7,10,0,0,0,0,0,72,20,8,0,1};MYCOPY(dummy0_3c78f)} // 393d:33bf
-    {db tmp999[32]={28,20,8,0,1,240,19,38,0,2,0,0,0,0,0,160,20,4,0,1,116,20,8,0,1,0,0,0,0,0,0,100};MYCOPY(dummy0_3c7af)} // 393d:33df
-    {db tmp999[32]={18,176,4,10,0,0,0,0,0,100,18,196,9,10,72,20,8,0,1,28,20,8,0,1,240,19,38,0,2,160,20,2};MYCOPY(dummy0_3c7cf)} // 393d:33ff
-    {db tmp999[32]={0,1,116,20,4,0,1,0,0,0,0,0,0,18,51,96,51,36,51,106,51,48,51,106,51,60,51,126,51,68,51,142};MYCOPY(dummy0_3c7ef)} // 393d:341f
-    {db tmp999[32]={51,36,51,152,51,48,51,182,51,0,0,0,0,18,51,208,51,82,51,238,51,30,51,218,51,0,0,0,0,18,51,254};MYCOPY(dummy0_3c80f)} // 393d:343f
-    {db tmp999[32]={51,82,51,8,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,25,25,15,15,25,25,15,37,100,32};MYCOPY(dummy0_3c82f)} // 393d:345f
-    {db tmp999[32]={37,115,0,10,10,10,10,10,50,10,5,5,5,5,5,200,100,100,100,250,200,250,250,50,50,50,100,50,50,50,20,20};MYCOPY(dummy0_3c84f)} // 393d:347f
-    {db tmp999[32]={5,150,0,128,0,180,0,200,0,2,1,0,1,0,1,1,1,1,1,4,1,1,1,1,1,1,1,1,1,0,1,0};MYCOPY(dummy0_3c86f)} // 393d:349f
-    {db tmp999[32]={1,5,129,5,129,5,129,5,129,6,130,5,129,5,130,5,130,5,130,3,130,6,130,8,130,5,1,6,1,6,1,3};MYCOPY(dummy0_3c88f)} // 393d:34bf
-    {db tmp999[32]={1,3,1,2,66,2,1,0,1,0,1,1,1,1,1,4,1,1,1,1,1,1,1,1,1,1,1,0,1,6,129,5};MYCOPY(dummy0_3c8af)} // 393d:34df
-    {db tmp999[32]={129,5,129,0,129,8,130,6,129,5,130,5,130,7,130,3,130,5,130,10,130,4,1,5,1,5,1,2,1,3,1,3};MYCOPY(dummy0_3c8cf)} // 393d:34ff
-    {db tmp999[32]={66,3,1,3,1,3,1,0,1,0,1,4,1,0,1,0,1,0,1,0,1,0,1,0,1,6,129,6,129,6,129,0};MYCOPY(dummy0_3c8ef)} // 393d:351f
-    {db tmp999[32]={129,6,130,5,129,6,130,6,130,5,130,3,130,5,130,3,130,7,1,7,1,7,1,3,1,4,1,2,66,2,1,2};MYCOPY(dummy0_3c90f)} // 393d:353f
-    {db tmp999[32]={1,0,1,2,1,0,1,0,1,2,1,1,1,2,1,1,1,0,1,1,1,6,129,6,129,0,129,0,129,0,130,0};MYCOPY(dummy0_3c92f)} // 393d:355f
-    {db tmp999[32]={129,9,130,9,130,7,130,3,130,7,130,7,130,8,1,7,1,8,1,3,1,4,1,3,66,168,52,228,52,32,53,92};MYCOPY(dummy0_3c94f)} // 393d:357f
+    {char tmp999[29]="CRATE DROPPED IN TARGET AREA";MYCOPY(acratedroppedin)} // 393d:32bf
+    {char tmp999[37]="CRATE DROPPED OUTSIDE OF TARGET AREA";MYCOPY(acratedroppedou)} // 393d:32dc
+    {char tmp999[16]="CRATE PICKED UP";MYCOPY(acratepickedup)} // 393d:3301
+    {char tmp999[12]="CHIN TURRET";MYCOPY(achinturret)} // 393d:3312
+    {char tmp999[5]="WING";MYCOPY(awing)} // 393d:331e
+    {char tmp999[11]="INNER WING";MYCOPY(ainnerwing)} // 393d:3324
+    {char tmp999[11]="OUTER WING";MYCOPY(aouterwing)} // 393d:3330
+    {char tmp999[8]="WINGTIP";MYCOPY(awingtip)} // 393d:333c
+    {char tmp999[13]="CABIN WINDOW";MYCOPY(acabinwindow)} // 393d:3344
+    {char tmp999[9]="INTERNAL";MYCOPY(ainternal)} // 393d:3352
+    {db tmp999[32]={0,4,3,3,2,108,19,176,4,10,0,0,0,0,0,72,20,8,0,1,28,20,8,0,1,240,19,38,0,2,0,0};MYCOPY(dummy0_3c72b)} // 393d:335b
+    {db tmp999[32]={0,0,0,160,20,2,0,1,116,20,4,0,1,0,0,0,0,0,0,224,17,220,5,5,0,0,0,0,0,12,18,96};MYCOPY(dummy0_3c74b)} // 393d:337b
+    {db tmp999[32]={9,10,28,20,8,0,1,240,19,38,0,2,160,20,2,0,1,116,20,4,0,1,0,0,0,0,0,28,20,8,0,1};MYCOPY(dummy0_3c76b)} // 393d:339b
+    {db tmp999[32]={240,19,38,0,2,160,20,2,0,1,116,20,4,0,1,0,0,0,0,0,0,152,19,208,7,10,0,0,0,0,0,72};MYCOPY(dummy0_3c78b)} // 393d:33bb
+    {db tmp999[32]={20,8,0,1,28,20,8,0,1,240,19,38,0,2,0,0,0,0,0,160,20,4,0,1,116,20,8,0,1,0,0,0};MYCOPY(dummy0_3c7ab)} // 393d:33db
+    {db tmp999[32]={0,0,0,100,18,176,4,10,0,0,0,0,0,100,18,196,9,10,72,20,8,0,1,28,20,8,0,1,240,19,38,0};MYCOPY(dummy0_3c7cb)} // 393d:33fb
+    {db tmp999[32]={2,160,20,2,0,1,116,20,4,0,1,0,0,0,0,0,0,18,51,96,51,36,51,106,51,48,51,106,51,60,51,126};MYCOPY(dummy0_3c7eb)} // 393d:341b
+    {db tmp999[32]={51,68,51,142,51,36,51,152,51,48,51,182,51,0,0,0,0,18,51,208,51,82,51,238,51,30,51,218,51,0,0,0};MYCOPY(dummy0_3c80b)} // 393d:343b
+    {db tmp999[32]={0,18,51,254,51,82,51,8,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,25,25,15,15,25,25};MYCOPY(dummy0_3c82b)} // 393d:345b
+    {db tmp999[32]={15,37,100,32,37,115,0,10,10,10,10,10,50,10,5,5,5,5,5,200,100,100,100,250,200,250,250,50,50,50,100,50};MYCOPY(dummy0_3c84b)} // 393d:347b
+    {db tmp999[32]={50,50,20,20,5,150,0,128,0,180,0,200,0,2,1,0,1,0,1,1,1,1,1,4,1,1,1,1,1,1,1,1};MYCOPY(dummy0_3c86b)} // 393d:349b
+    {db tmp999[32]={1,0,1,0,1,5,129,5,129,5,129,5,129,6,130,5,129,5,130,5,130,5,130,3,130,6,130,8,130,5,1,6};MYCOPY(dummy0_3c88b)} // 393d:34bb
+    {db tmp999[32]={1,6,1,3,1,3,1,2,66,2,1,0,1,0,1,1,1,1,1,4,1,1,1,1,1,1,1,1,1,1,1,0};MYCOPY(dummy0_3c8ab)} // 393d:34db
+    {db tmp999[32]={1,6,129,5,129,5,129,0,129,8,130,6,129,5,130,5,130,7,130,3,130,5,130,10,130,4,1,5,1,5,1,2};MYCOPY(dummy0_3c8cb)} // 393d:34fb
+    {db tmp999[32]={1,3,1,3,66,3,1,3,1,3,1,0,1,0,1,4,1,0,1,0,1,0,1,0,1,0,1,0,1,6,129,6};MYCOPY(dummy0_3c8eb)} // 393d:351b
+    {db tmp999[32]={129,6,129,0,129,6,130,5,129,6,130,6,130,5,130,3,130,5,130,3,130,7,1,7,1,7,1,3,1,4,1,2};MYCOPY(dummy0_3c90b)} // 393d:353b
+    {db tmp999[32]={66,2,1,2,1,0,1,2,1,0,1,0,1,2,1,1,1,2,1,1,1,0,1,1,1,6,129,6,129,0,129,0};MYCOPY(dummy0_3c92b)} // 393d:355b
+    {db tmp999[32]={129,0,130,0,129,9,130,9,130,7,130,3,130,7,130,7,130,8,1,7,1,8,1,3,1,4,1,3,66,168,52,228};MYCOPY(dummy0_3c94b)} // 393d:357b
+    {db tmp999=52;MYCOPY(dummy0_3c96b)} // 393d:359b
+    {db tmp999=32;MYCOPY(dummy0_3c96c)} // 393d:359c
+    {db tmp999=53;MYCOPY(dummy0_3c96d)} // 393d:359d
+    {db tmp999=92;MYCOPY(dummy0_3c96e)} // 393d:359e
     {db tmp999=53;MYCOPY(dummy0_3c96f)} // 393d:359f
     {db tmp999=208;MYCOPY(dummy0_3c970)} // 393d:35a0
     {db tmp999=7;MYCOPY(dummy0_3c971)} // 393d:35a1
@@ -17301,7 +15476,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={213,53,84,216,3,219,53,84,216,4,226,53,97,216,0,234,53,97,216,1,242,53,97,216,2,253,53,97,216,3,8,54};MYCOPY(dummy0_3ca5b)} // 393d:368b
     {db tmp999=145;MYCOPY(dummy0_3ca7b)} // 393d:36ab
     {db tmp999=246;MYCOPY(dummy0_3ca7c)} // 393d:36ac
-
     {db tmp999=12;MYCOPY(dummy0_3ca7e)} // 393d:36ae
     {db tmp999=54;MYCOPY(dummy0_3ca7f)} // 393d:36af
     {db tmp999=145;MYCOPY(dummy0_3ca80)} // 393d:36b0
@@ -17317,99 +15491,46 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=21;MYCOPY(dummy0_3ca8a)} // 393d:36ba
     {db tmp999=1;MYCOPY(dummy0_3ca8b)} // 393d:36bb
     {db tmp999=1;MYCOPY(dummy0_3ca8c)} // 393d:36bc
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4b072)} // 393d:36c2
-
     {db tmp999=0;MYCOPY(unk_4b074)} // 393d:36c4
-
     {db tmp999=0;MYCOPY(unk_4b076)} // 393d:36c6
-
     {db tmp999=0;MYCOPY(unk_4b078)} // 393d:36c8
-
     {db tmp999=0;MYCOPY(unk_4b07a)} // 393d:36ca
-
     {db tmp999=0;MYCOPY(unk_4b07c)} // 393d:36cc
     {db tmp999=0;MYCOPY(unk_4b07d)} // 393d:36cd
     {db tmp999=218;MYCOPY(dummy0_3ca9e)} // 393d:36ce
     {db tmp999=90;MYCOPY(dummy0_3ca9f)} // 393d:36cf
     {db tmp999=4;MYCOPY(unk_4b080)} // 393d:36d0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=1;MYCOPY(unk_4b096)} // 393d:36e6
-
     {db tmp999=0;MYCOPY(unk_4b098)} // 393d:36e8
-
     {dw tmp999=0;MYCOPY(word_4b09a)} // 393d:36ea
     {dw tmp999=0;MYCOPY(word_4b09c)} // 393d:36ec
     {db tmp999=0;MYCOPY(byte_4b09e)} // 393d:36ee
-
     {db tmp999=80;MYCOPY(dummy0_3cac0)} // 393d:36f0
     {db tmp999=88;MYCOPY(dummy0_3cac1)} // 393d:36f1
     {db tmp999=80;MYCOPY(dummy0_3cac2)} // 393d:36f2
     {db tmp999=75;MYCOPY(dummy0_3cac3)} // 393d:36f3
-
     {db tmp999=69;MYCOPY(dummy0_3cac5)} // 393d:36f5
     {db tmp999=65;MYCOPY(dummy0_3cac6)} // 393d:36f6
     {db tmp999=76;MYCOPY(dummy0_3cac7)} // 393d:36f7
     {db tmp999=73;MYCOPY(dummy0_3cac8)} // 393d:36f8
     {db tmp999=66;MYCOPY(dummy0_3cac9)} // 393d:36f9
-
-
     {db tmp999=0;MYCOPY(unk_4b0ac)} // 393d:36fc
-
     {db tmp999=0;MYCOPY(unk_4b0ae)} // 393d:36fe
-
     {db tmp999=0;MYCOPY(unk_4b0b0)} // 393d:3700
-
     {db tmp999=0;MYCOPY(unk_4b0b2)} // 393d:3702
-
     {db tmp999=0;MYCOPY(unk_4b0b4)} // 393d:3704
-
     {db tmp999=0;MYCOPY(unk_4b0b6)} // 393d:3706
-
     {db tmp999=0;MYCOPY(unk_4b0b8)} // 393d:3708
-
     {db tmp999=0;MYCOPY(unk_4b0ba)} // 393d:370a
     {db tmp999=0;MYCOPY(unk_4b0bb)} // 393d:370b
-
     {db tmp999=0;MYCOPY(unk_4b0bd)} // 393d:370d
-
     {db tmp999=0;MYCOPY(unk_4b0bf)} // 393d:370f
-
     {db tmp999=0;MYCOPY(unk_4b0c1)} // 393d:3711
-
     {db tmp999=0;MYCOPY(unk_4b0c3)} // 393d:3713
-
     {db tmp999=0;MYCOPY(unk_4b0c5)} // 393d:3715
-
     {db tmp999=0;MYCOPY(unk_4b0c7)} // 393d:3717
-
     {db tmp999=0;MYCOPY(unk_4b0c9)} // 393d:3719
-
-
     {db tmp999=128;MYCOPY(dummy0_3caec)} // 393d:371c
     {db tmp999=32;MYCOPY(dummy0_3caed)} // 393d:371d
     {db tmp999=160;MYCOPY(dummy0_3caee)} // 393d:371e
@@ -17426,26 +15547,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=42;MYCOPY(dummy0_3caf9)} // 393d:3729
     {db tmp999=170;MYCOPY(dummy0_3cafa)} // 393d:372a
     {db tmp999=0;MYCOPY(unk_4b0db)} // 393d:372b
-
     {db tmp999=0;MYCOPY(unk_4b0dd)} // 393d:372d
-
     {db tmp999=0;MYCOPY(unk_4b0df)} // 393d:372f
-
-
     {db tmp999=0;MYCOPY(unk_4b0e2)} // 393d:3732
     {db tmp999=0;MYCOPY(unk_4b0e3)} // 393d:3733
     {db tmp999=128;MYCOPY(unk_4b0e4)} // 393d:3734
     {db tmp999[32]={0,144,0,0,0,0,0,0,72,0,0,255,0,31,0,3,0,126,55,140,56,13,0,0,0,0,0,0,0,57,60,0};MYCOPY(dummy0_3cb05)} // 393d:3735
     {db tmp999[32]={0,0,0,0,0,0,0,128,21,0,2,128,202,255,255,0,51,0,0,128,234,255,255,0,3,0,0,128,198,255,255,0};MYCOPY(dummy0_3cb25)} // 393d:3755
     {db tmp999=59;MYCOPY(dummy0_3cb45)} // 393d:3775
-
-
-
-
     {db tmp999=31;MYCOPY(dummy0_3cb4a)} // 393d:377a
-
     {db tmp999=3;MYCOPY(dummy0_3cb4c)} // 393d:377c
-
     {db tmp999=15;MYCOPY(dummy0_3cb4e)} // 393d:377e
     {db tmp999=35;MYCOPY(dummy0_3cb4f)} // 393d:377f
     {dd tmp999=m2c::kloc_3df10;MYCOPY(dummy0_3cb50)} // 393d:3780
@@ -17485,21 +15596,18 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={15,90,0,3,88,76,94,0,154,56,15,90,0,3,89,77,94,0,154,56,15,90,0,3,90,78,94,0,154,56,15,90};MYCOPY(dummy0_3cea2)} // 393d:3ad2
     {db tmp999[32]={0,3,91,79,94,0,154,56,15,90,0,3,92,80,94,0,154,56,0,255,0,6,100,99,98,97,96,95,0,154,56,0};MYCOPY(dummy0_3cec2)} // 393d:3af2
     {db tmp999[32]={255,0,6,104,103,102,101,106,105,0,154,56,0,255,0,6,108,109,110,111,112,107,1,154,56,7,255,68,69,1,154,56};MYCOPY(dummy0_3cee2)} // 393d:3b12
-
     {db tmp999=255;MYCOPY(dummy0_3cf03)} // 393d:3b33
     {db tmp999=113;MYCOPY(dummy0_3cf04)} // 393d:3b34
     {db tmp999=117;MYCOPY(dummy0_3cf05)} // 393d:3b35
     {db tmp999=1;MYCOPY(dummy0_3cf06)} // 393d:3b36
     {db tmp999=154;MYCOPY(dummy0_3cf07)} // 393d:3b37
     {db tmp999=56;MYCOPY(dummy0_3cf08)} // 393d:3b38
-
     {db tmp999=255;MYCOPY(dummy0_3cf0a)} // 393d:3b3a
     {db tmp999=115;MYCOPY(dummy0_3cf0b)} // 393d:3b3b
     {db tmp999=116;MYCOPY(dummy0_3cf0c)} // 393d:3b3c
     {db tmp999=1;MYCOPY(dummy0_3cf0d)} // 393d:3b3d
     {db tmp999=154;MYCOPY(dummy0_3cf0e)} // 393d:3b3e
     {db tmp999=56;MYCOPY(dummy0_3cf0f)} // 393d:3b3f
-
     {db tmp999=255;MYCOPY(dummy0_3cf11)} // 393d:3b41
     {db tmp999=114;MYCOPY(dummy0_3cf12)} // 393d:3b42
     {db tmp999=118;MYCOPY(dummy0_3cf13)} // 393d:3b43
@@ -17545,9 +15653,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={6,1,59,27,59,14,59,47,59,54,59,61,59,24,180,57,29,60,36,60,108,104,120,0,0,128,0,205,0,0,0,0};MYCOPY(dummy0_3cff5)} // 393d:3c25
     {db tmp999[32]={0,128,102,0,0,255,0,29,0,3,0,136,60,176,62,13,0,0,0,0,0,0,0,210,68,0,0,0,0,0,0,0};MYCOPY(dummy0_3d015)} // 393d:3c45
     {db tmp999[32]={0,0,27,0,2,0,173,255,255,0,83,0,0,0,229,255,255,0,47,0,0,0,188,255,255,0,46,0,0,0,0,29};MYCOPY(dummy0_3d035)} // 393d:3c65
-
     {db tmp999=3;MYCOPY(dummy0_3d056)} // 393d:3c86
-
     {db tmp999=33;MYCOPY(dummy0_3d058)} // 393d:3c88
     {db tmp999=60;MYCOPY(dummy0_3d059)} // 393d:3c89
     {dd tmp999=m2c::kloc_3df2f;MYCOPY(dummy0_3d05a)} // 393d:3c8a
@@ -17564,8 +15670,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={18,7,14,16,209,61,15,255,0,3,0,6,18,16,219,61,0,255,0,3,30,0,18,16,229,61,15,255,0,3,30,13};MYCOPY(dummy0_3d19e)} // 393d:3dce
     {db tmp999[32]={0,0,239,61,15,90,0,6,54,53,52,51,50,38,0,252,61,15,90,0,6,46,57,58,47,55,56,3,1,150,60,3};MYCOPY(dummy0_3d1be)} // 393d:3dee
     {db tmp999[32]={1,161,60,16,150,60,9,62,13,62,3,1,239,61,3,1,238,60,7,6,227,60,216,60,205,60,194,60,183,60,172,60};MYCOPY(dummy0_3d1de)} // 393d:3e0e
-
-
     {db tmp999=0;MYCOPY(unk_4b7e0)} // 393d:3e30
     {db tmp999[32]={0,0,0,23,32,59,16,227,60,28,62,32,62,24,239,61,24,62,55,62,16,205,60,17,62,62,62,3,1,8,61,3};MYCOPY(dummy0_3d201)} // 393d:3e31
     {db tmp999[32]={1,19,61,16,161,60,76,62,80,62,3,1,252,61,3,1,96,61,3,6,85,61,74,61,63,61,52,61,41,61,30,61};MYCOPY(dummy0_3d221)} // 393d:3e51
@@ -17617,12 +15721,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=63;MYCOPY(dummy0_3d749)} // 393d:4379
     {db tmp999=132;MYCOPY(dummy0_3d74a)} // 393d:437a
     {db tmp999=63;MYCOPY(dummy0_3d74b)} // 393d:437b
-
-
     {db tmp999=0;MYCOPY(unk_4bd2e)} // 393d:437e
-
-
-
     {db tmp999=74;MYCOPY(dummy0_3d752)} // 393d:4382
     {db tmp999=91;MYCOPY(dummy0_3d753)} // 393d:4383
     {db tmp999=150;MYCOPY(dummy0_3d754)} // 393d:4384
@@ -17697,9 +15796,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=36;MYCOPY(dummy0_3d8ee)} // 393d:451e
     {db tmp999=69;MYCOPY(dummy0_3d8ef)} // 393d:451f
     {db tmp999=136;MYCOPY(dummy0_3d8f0)} // 393d:4520
-
-
-
     {dd tmp999=far_offset(seg043,unk_410da);MYCOPY(dummy0_3d8f4)} // 393d:4524
     {db tmp999[32]={16,0,16,0,8,0,8,0,8,0,3,0,7,12,0,0,0,0,0,0,0,0,146,69,7,2,16,66,69,6,255,0};MYCOPY(dummy0_3d8f8)} // 393d:4528
     {db tmp999[32]={4,8,7,3,2,16,77,69,8,255,0,4,7,9,4,3,16,88,69,6,255,0,5,9,10,6,0,4,16,100,69,8};MYCOPY(dummy0_3d918)} // 393d:4548
@@ -17711,43 +15807,15 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,0,4,11,16,15,14,0,15,70,8,255,0,4,18,19,0,17,1,26,70,7,255,7,3,1,33,70,7,255,8,13};MYCOPY(dummy0_3d9d8)} // 393d:4608
     {db tmp999[32]={1,40,70,7,255,6,9,1,47,70,7,255,4,11,1,54,70,7,255,12,10,1,61,70,7,255,5,0,1,68,70,7};MYCOPY(dummy0_3d9f8)} // 393d:4628
     {db tmp999[32]={255,1,2,3,9,15,70,4,70,68,70,61,70,54,70,47,70,40,70,33,70,26,70,99,105,116,121,0,128,0,122,0};MYCOPY(dummy0_3da18)} // 393d:4648
-
-
-
-
-
     {db tmp999=122;MYCOPY(dummy0_3da3d)} // 393d:466d
-
-
-
-
     {db tmp999=127;MYCOPY(dummy0_3da42)} // 393d:4672
-
-
-
     {db tmp999=10;MYCOPY(dummy0_3da46)} // 393d:4676
-
-
-
     {db tmp999=15;MYCOPY(dummy0_3da4a)} // 393d:467a
-
-
-
-
-
-
-
     {db tmp999=180;MYCOPY(dummy0_3da52)} // 393d:4682
-
     {dd tmp999=far_offset(seg044,unk_411da);MYCOPY(dummy0_3da54)} // 393d:4684
     {db tmp999[32]={10,0,174,0,0,28,0,2,0,168,255,255,0,92,0,0,0,228,255,255,0,33,0,0,0,226,255,255,0,33,0,0};MYCOPY(dummy0_3da58)} // 393d:4688
     {db tmp999[32]={0,0,127,0,0,0,128,0,49,0,0,0,0,0,128,24,0,0,255,0,13,0,0,0,15,0,0,0,12,0,0,0};MYCOPY(dummy0_3da78)} // 393d:46a8
-
-
-
-
     {db tmp999=162;MYCOPY(dummy0_3da9c)} // 393d:46cc
-
     {dd tmp999=far_offset(seg045,unk_412af);MYCOPY(dummy0_3da9e)} // 393d:46ce
     {db tmp999[32]={15,0,153,0,128,14,16,2,0,0,0,0,128,0,0,0,128,241,255,255,128,6,0,0,0,244,255,255,0,20,0,0};MYCOPY(dummy0_3daa2)} // 393d:46d2
     {db tmp999[32]={0,0,13,0,0,0,128,0,86,0,0,0,0,0,0,43,0,0,255,0,23,0,3,0,66,71,38,72,13,0,0,0};MYCOPY(dummy0_3dac2)} // 393d:46f2
@@ -17826,19 +15894,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={76,3,9,68,76,167,78,154,78,187,76,176,76,101,76,90,76,79,76,57,76,16,166,76,9,80,19,80,16,156,76,255};MYCOPY(dummy0_3e3e2)} // 393d:5012
     {db tmp999[32]={79,39,80,16,79,76,248,79,46,80,115,97,49,49,0,0,128,0,86,0,0,0,0,0,0,43,0,0,255,0,23,0};MYCOPY(dummy0_3e402)} // 393d:5032
     {db tmp999=3;MYCOPY(dummy0_3e422)} // 393d:5052
-
     {db tmp999=3;MYCOPY(dummy0_3e424)} // 393d:5054
-
     {db tmp999=19;MYCOPY(dummy0_3e426)} // 393d:5056
     {db tmp999=1;MYCOPY(dummy0_3e427)} // 393d:5057
     {db tmp999=13;MYCOPY(dummy0_3e428)} // 393d:5058
-
-
-
-
-
-
-
     {db tmp999=118;MYCOPY(dummy0_3e430)} // 393d:5060
     {db tmp999=3;MYCOPY(dummy0_3e431)} // 393d:5061
     {dd tmp999=far_offset(seg046,unk_41393);MYCOPY(dummy0_3e432)} // 393d:5062
@@ -17921,7 +15980,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=1;MYCOPY(dummy0_3ecbe)} // 393d:58ee
     {db tmp999=238;MYCOPY(dummy0_3ecbf)} // 393d:58ef
     {db tmp999=88;MYCOPY(dummy0_3ecc0)} // 393d:58f0
-
     {db tmp999=255;MYCOPY(dummy0_3ecc2)} // 393d:58f2
     {db tmp999=129;MYCOPY(dummy0_3ecc3)} // 393d:58f3
     {db tmp999=131;MYCOPY(dummy0_3ecc4)} // 393d:58f4
@@ -17945,23 +16003,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={110,87,100,87,3,6,37,86,50,86,58,87,69,87,80,87,90,87,16,37,86,250,89,2,90,3,6,63,86,74,86,85};MYCOPY(dummy0_3edce)} // 393d:59fe
     {db tmp999[32]={86,32,87,45,87,161,87,16,172,87,16,90,23,90,16,126,86,243,89,37,90,16,96,86,222,89,44,90,16,161,87,201};MYCOPY(dummy0_3edee)} // 393d:5a1e
     {db tmp999[32]={89,51,90,115,97,56,0,0,128,0,41,0,0,0,0,0,0,41,0,0,0,0,23,0,3,0,11,0,144,0,13,0};MYCOPY(dummy0_3ee0e)} // 393d:5a3e
-
-
-
-
-
-
     {db tmp999=191;MYCOPY(dummy0_3ee34)} // 393d:5a64
     {db tmp999=1;MYCOPY(dummy0_3ee35)} // 393d:5a65
     {dd tmp999=far_offset(seg047,unk_4170b);MYCOPY(dummy0_3ee36)} // 393d:5a66
     {db tmp999[32]={11,0,185,1,0,10,0,2,0,242,255,255,0,14,0,0,0,246,255,255,0,10,0,0,0,226,255,255,0,32,0,0};MYCOPY(dummy0_3ee3a)} // 393d:5a6a
     {db tmp999[32]={0,0,23,0,3,0,128,0,11,0,0,0,0,0,0,11,0,0,0,0,5,0,0,0,5,0,0,0,11,0,0,0};MYCOPY(dummy0_3ee5a)} // 393d:5a8a
-
-
-
-
     {db tmp999=99;MYCOPY(dummy0_3ee7e)} // 393d:5aae
-
     {dd tmp999=far_offset(seg048,unk_41945);MYCOPY(dummy0_3ee80)} // 393d:5ab0
     {db tmp999[32]={5,0,100,0,0,0,16,2,0,252,255,255,0,4,0,0,0,0,0,0,0,8,0,0,0,252,255,255,0,4,0,0};MYCOPY(dummy0_3ee84)} // 393d:5ab4
     {db tmp999[32]={0,0,5,0,0,0,30,0,45,0,0,0,0,0,0,45,0,0,0,0,7,0,0,0,36,91,0,0,11,0,0,0};MYCOPY(dummy0_3eea4)} // 393d:5ad4
@@ -17973,35 +16020,15 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,255,0,8,0,0,0,248,255,255,0,8,0,0,0,252,255,255,0,4,0,0,0,0,127,0,0,0,4,8,0,0};MYCOPY(dummy0_3ef64)} // 393d:5b94
     {db tmp999[32]={0,0,0,0,0,0,218,91,0,2,1,190,91,14,255,0,2,1,190,91,15,255,1,3,1,190,91,14,255,4,7,1};MYCOPY(dummy0_3ef84)} // 393d:5bb4
     {db tmp999[32]={190,91,15,255,5,6,3,4,211,91,204,91,197,91,190,91,102,108,97,114,101,0,128,0,172,0,0,0,0,0,0,86};MYCOPY(dummy0_3efa4)} // 393d:5bd4
-
-
     {db tmp999=255;MYCOPY(dummy0_3efc6)} // 393d:5bf6
-
     {db tmp999=29;MYCOPY(dummy0_3efc8)} // 393d:5bf8
-
-
-
     {db tmp999=1;MYCOPY(dummy0_3efcc)} // 393d:5bfc
-
-
-
     {db tmp999=13;MYCOPY(dummy0_3efd0)} // 393d:5c00
-
-
-
-
-
-
-
     {db tmp999=57;MYCOPY(dummy0_3efd8)} // 393d:5c08
     {db tmp999=1;MYCOPY(dummy0_3efd9)} // 393d:5c09
     {dd tmp999=far_offset(seg049,unk_419c1);MYCOPY(dummy0_3efda)} // 393d:5c0a
     {db tmp999[32]={1,0,61,1,0,32,16,2,0,202,255,255,0,54,0,0,0,224,255,255,0,32,0,0,0,192,255,255,0,64,0,0};MYCOPY(dummy0_3efde)} // 393d:5c0e
     {db tmp999[32]={0,0,29,0,0,0,128,0,113,0,0,0,0,0,128,56,0,0,255,0,19,0,3,0,14,0,234,0,13,0,0,0};MYCOPY(dummy0_3effe)} // 393d:5c2e
-
-
-
-
     {db tmp999=102;MYCOPY(dummy0_3f022)} // 393d:5c52
     {db tmp999=2;MYCOPY(dummy0_3f023)} // 393d:5c53
     {dd tmp999=far_offset(seg050,unk_41afe);MYCOPY(dummy0_3f024)} // 393d:5c54
@@ -18076,7 +16103,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=96;MYCOPY(dummy0_3f563)} // 393d:6193
     {db tmp999=165;MYCOPY(dummy0_3f564)} // 393d:6194
     {db tmp999=96;MYCOPY(dummy0_3f565)} // 393d:6195
-
     {db tmp999=75;MYCOPY(dummy0_3f567)} // 393d:6197
     {db tmp999=96;MYCOPY(dummy0_3f568)} // 393d:6198
     {db tmp999=130;MYCOPY(dummy0_3f569)} // 393d:6199
@@ -18118,51 +16144,18 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={41,98,109,98,16,91,94,209,97,116,98,16,75,96,167,97,123,98,16,2,97,126,97,130,98,16,217,94,119,97,137,98};MYCOPY(dummy0_3f647)} // 393d:6277
     {db tmp999[32]={97,112,97,99,104,101,0,128,0,0,0,0,0,0,0,0,0,0,0,0,0,127,0,0,0,232,98,0,0,15,0,0};MYCOPY(dummy0_3f667)} // 393d:6297
     {db tmp999[32]={0,0,0,0,0,2,99,0,0,0,0,0,0,0,0,0,0,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3f687)} // 393d:62b7
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=127;MYCOPY(dummy0_3f6b4)} // 393d:62e4
-
-
-
     {db tmp999=1;MYCOPY(dummy0_3f6b8)} // 393d:62e8
     {db tmp999=1;MYCOPY(dummy0_3f6b9)} // 393d:62e9
     {dd tmp999=m2c::kloc_1a0b8;MYCOPY(dummy0_3f6ba)} // 393d:62ea
-
-
-
-
     {db tmp999=254;MYCOPY(dummy0_3f6c2)} // 393d:62f2
     {db tmp999=98;MYCOPY(dummy0_3f6c3)} // 393d:62f3
-
     {db tmp999=2;MYCOPY(dummy0_3f6c5)} // 393d:62f5
     {db tmp999=3;MYCOPY(dummy0_3f6c6)} // 393d:62f6
-
-
     {db tmp999=0;MYCOPY(unk_4dca9)} // 393d:62f9
-
     {db tmp999=0;MYCOPY(unk_4dcab)} // 393d:62fb
     {db tmp999[32]={0,0,3,1,246,98,99,104,97,102,102,0,5,0,48,0,0,0,0,0,0,48,0,0,0,0,127,0,0,0,8,0};MYCOPY(dummy0_3f6cc)} // 393d:62fc
-
-
     {db tmp999=15;MYCOPY(dummy0_3f6ee)} // 393d:631e
-
-
-
-
-
-
-
     {db tmp999=8;MYCOPY(dummy0_3f6f6)} // 393d:6326
     {db tmp999=3;MYCOPY(dummy0_3f6f7)} // 393d:6327
     {dd tmp999=far_offset(seg051,unk_41e58);MYCOPY(dummy0_3f6f8)} // 393d:6328
@@ -18177,17 +16170,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={20,10,16,46,100,7,255,0,3,14,9,10,16,56,100,15,255,0,4,8,1,15,14,16,67,100,8,255,0,4,18,1};MYCOPY(dummy0_3f7fc)} // 393d:642c
     {db tmp999[32]={8,20,16,78,100,8,255,0,4,18,20,9,2,16,89,100,15,255,0,4,9,14,15,2,16,100,100,12,255,0,4,2};MYCOPY(dummy0_3f81c)} // 393d:644c
     {db tmp999[32]={15,1,18,0,111,100,14,90,0,5,18,23,21,22,15,0,123,100,12,165,0,5,1,25,21,24,2,0,135,100,12,90};MYCOPY(dummy0_3f83c)} // 393d:646c
-
     {db tmp999=3;MYCOPY(dummy0_3f85d)} // 393d:648d
     {db tmp999=15;MYCOPY(dummy0_3f85e)} // 393d:648e
     {db tmp999=26;MYCOPY(dummy0_3f85f)} // 393d:648f
     {db tmp999=18;MYCOPY(dummy0_3f860)} // 393d:6490
-
     {db tmp999=145;MYCOPY(dummy0_3f862)} // 393d:6492
     {db tmp999=100;MYCOPY(dummy0_3f863)} // 393d:6493
     {db tmp999=14;MYCOPY(dummy0_3f864)} // 393d:6494
     {db tmp999=165;MYCOPY(dummy0_3f865)} // 393d:6495
-
     {db tmp999=3;MYCOPY(dummy0_3f867)} // 393d:6497
     {db tmp999=2;MYCOPY(dummy0_3f868)} // 393d:6498
     {db tmp999=1;MYCOPY(dummy0_3f869)} // 393d:6499
@@ -18204,14 +16194,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={100,189,100,217,100,16,56,100,182,100,224,100,16,100,100,167,100,231,100,104,101,108,108,0,128,0,18,0,0,0,0,0};MYCOPY(dummy0_3f8b2)} // 393d:64e2
     {db tmp999[32]={0,9,0,0,255,6,19,0,0,0,68,101,0,0,13,0,0,0,0,0,0,0,230,101,0,0,0,0,0,0,0,0};MYCOPY(dummy0_3f8d2)} // 393d:6502
     {db tmp999[32]={128,7,0,2,0,253,255,255,0,3,0,0,128,248,255,255,128,6,0,0,0,0,0,0,0,1,0,0,0,0,19,0};MYCOPY(dummy0_3f8f2)} // 393d:6522
-
-
     {db tmp999=10;MYCOPY(dummy0_3f914)} // 393d:6544
     {db tmp999=16;MYCOPY(dummy0_3f915)} // 393d:6545
-
-
-
-
     {dd tmp999=far_offset(seg052,unk_4215e);MYCOPY(dummy0_3f91a)} // 393d:654a
     {db tmp999=223;MYCOPY(dummy0_3f91e)} // 393d:654e
     {db tmp999=101;MYCOPY(dummy0_3f91f)} // 393d:654f
@@ -18222,7 +16206,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_3f924)} // 393d:6554
     {db tmp999=8;MYCOPY(dummy0_3f925)} // 393d:6555
     {db tmp999=255;MYCOPY(dummy0_3f926)} // 393d:6556
-
     {db tmp999=3;MYCOPY(dummy0_3f928)} // 393d:6558
     {db tmp999=5;MYCOPY(dummy0_3f929)} // 393d:6559
     {db tmp999=6;MYCOPY(dummy0_3f92a)} // 393d:655a
@@ -18232,7 +16215,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_3f92e)} // 393d:655e
     {db tmp999=8;MYCOPY(dummy0_3f92f)} // 393d:655f
     {db tmp999=255;MYCOPY(dummy0_3f930)} // 393d:6560
-
     {db tmp999=3;MYCOPY(dummy0_3f932)} // 393d:6562
     {db tmp999=5;MYCOPY(dummy0_3f933)} // 393d:6563
     {db tmp999=6;MYCOPY(dummy0_3f934)} // 393d:6564
@@ -18242,7 +16224,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_3f938)} // 393d:6568
     {db tmp999=8;MYCOPY(dummy0_3f939)} // 393d:6569
     {db tmp999=255;MYCOPY(dummy0_3f93a)} // 393d:656a
-
     {db tmp999=3;MYCOPY(dummy0_3f93c)} // 393d:656c
     {db tmp999=8;MYCOPY(dummy0_3f93d)} // 393d:656d
     {db tmp999=7;MYCOPY(dummy0_3f93e)} // 393d:656e
@@ -18252,7 +16233,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_3f942)} // 393d:6572
     {db tmp999=8;MYCOPY(dummy0_3f943)} // 393d:6573
     {db tmp999=255;MYCOPY(dummy0_3f944)} // 393d:6574
-
     {db tmp999=3;MYCOPY(dummy0_3f946)} // 393d:6576
     {db tmp999=8;MYCOPY(dummy0_3f947)} // 393d:6577
     {db tmp999=7;MYCOPY(dummy0_3f948)} // 393d:6578
@@ -18262,17 +16242,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_3f94c)} // 393d:657c
     {db tmp999=8;MYCOPY(dummy0_3f94d)} // 393d:657d
     {db tmp999=255;MYCOPY(dummy0_3f94e)} // 393d:657e
-
     {db tmp999=3;MYCOPY(dummy0_3f950)} // 393d:6580
     {db tmp999=9;MYCOPY(dummy0_3f951)} // 393d:6581
     {db tmp999=6;MYCOPY(dummy0_3f952)} // 393d:6582
     {db tmp999=5;MYCOPY(dummy0_3f953)} // 393d:6583
-
     {db tmp999=173;MYCOPY(dummy0_3f955)} // 393d:6585
     {db tmp999=101;MYCOPY(dummy0_3f956)} // 393d:6586
     {db tmp999=8;MYCOPY(dummy0_3f957)} // 393d:6587
     {db tmp999=255;MYCOPY(dummy0_3f958)} // 393d:6588
-
     {db tmp999=4;MYCOPY(dummy0_3f95a)} // 393d:658a
     {db tmp999=10;MYCOPY(dummy0_3f95b)} // 393d:658b
     {db tmp999=12;MYCOPY(dummy0_3f95c)} // 393d:658c
@@ -18285,9 +16262,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,0,128,114,0,0,255,25,31,0,3,0,52,102,113,103,13,0,0,0,0,0,0,0,176,108,0,0,0,0,0,0};MYCOPY(dummy0_3f9c0)} // 393d:65f0
     {db tmp999[32]={0,0,0,20,0,2,128,196,255,255,128,59,0,0,0,236,255,255,0,31,0,0,128,163,255,255,0,64,0,0,0,0};MYCOPY(dummy0_3f9e0)} // 393d:6610
     {db tmp999=31;MYCOPY(dummy0_3fa00)} // 393d:6630
-
     {db tmp999=3;MYCOPY(dummy0_3fa02)} // 393d:6632
-
     {db tmp999=22;MYCOPY(dummy0_3fa04)} // 393d:6634
     {db tmp999=23;MYCOPY(dummy0_3fa05)} // 393d:6635
     {dd tmp999=m2c::kloc_3de98;MYCOPY(dummy0_3fa06)} // 393d:6636
@@ -18546,21 +16521,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=101;MYCOPY(dummy0_40326)} // 393d:6f56
     {db tmp999=115;MYCOPY(dummy0_40327)} // 393d:6f57
     {db tmp999=104;MYCOPY(dummy0_40328)} // 393d:6f58
-
     {db tmp999=4;MYCOPY(dummy0_4032a)} // 393d:6f5a
-
     {db tmp999=110;MYCOPY(dummy0_4032c)} // 393d:6f5c
     {db tmp999=27;MYCOPY(dummy0_4032d)} // 393d:6f5d
-
-
-
-
-
     {db tmp999=110;MYCOPY(dummy0_40333)} // 393d:6f63
     {db tmp999=27;MYCOPY(dummy0_40334)} // 393d:6f64
-
     {db tmp999=0;MYCOPY(unk_4e916)} // 393d:6f66
-
     {db tmp999=15;MYCOPY(unk_4e918)} // 393d:6f68
     {db tmp999[32]={0,0,0,164,111,0,0,12,0,0,0,0,0,0,0,58,114,0,0,0,0,0,0,0,0,0,0,0,0,0,0,240};MYCOPY(dummy0_40339)} // 393d:6f69
     {db tmp999[32]={255,0,8,16,0,0,0,0,0,0,8,0,0,0,0,240,255,0,8,16,0,0,0,15,0,0,0,81,81,0,0,0};MYCOPY(dummy0_40359)} // 393d:6f89
@@ -18585,34 +16551,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={70,3,0,0,8,255,8,0,71,3,0,0,8,255,8,0,72,3,0,0,8,255,8,0,73,3,0,0,8,255,8,0};MYCOPY(dummy0_405b9)} // 393d:71e9
     {db tmp999[32]={74,3,0,0,8,255,8,0,75,3,0,0,8,255,8,0,76,3,0,0,8,255,8,0,77,3,0,0,8,255,8,0};MYCOPY(dummy0_405d9)} // 393d:7209
     {db tmp999[32]={78,3,0,0,8,255,8,0,79,3,0,0,8,255,8,0,80,115,112,104,101,114,101,115,0,6,0,240,3,0,0,0};MYCOPY(dummy0_405f9)} // 393d:7229
-
     {db tmp999=0;MYCOPY(unk_4ebfa)} // 393d:724a
     {db tmp999=192;MYCOPY(dummy0_4061b)} // 393d:724b
     {db tmp999=15;MYCOPY(unk_4ebfc)} // 393d:724c
     {db tmp999[32]={0,2,0,78,0,19,0,140,114,169,114,15,0,0,0,0,0,0,0,228,115,0,0,0,0,0,0,0,0,0,0,20};MYCOPY(dummy0_4061d)} // 393d:724d
-
     {db tmp999=0;MYCOPY(unk_4ec1e)} // 393d:726e
-
     {db tmp999=255;MYCOPY(unk_4ec20)} // 393d:7270
     {db tmp999=255;MYCOPY(dummy0_40641)} // 393d:7271
     {db tmp999=0;MYCOPY(unk_4ec22)} // 393d:7272
-
     {db tmp999=1;MYCOPY(unk_4ec24)} // 393d:7274
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_4ec2e)} // 393d:727e
-
     {db tmp999=243;MYCOPY(unk_4ec30)} // 393d:7280
     {db tmp999=255;MYCOPY(dummy0_40651)} // 393d:7281
     {db tmp999=0;MYCOPY(unk_4ec32)} // 393d:7282
-
     {db tmp999=12;MYCOPY(unk_4ec34)} // 393d:7284
     {db tmp999[32]={0,0,0,78,0,19,0,1,4,0,0,0,0,0,0,0,0,165,114,1,2,0,154,114,7,255,0,4,3,2,1,0};MYCOPY(dummy0_40655)} // 393d:7285
     {db tmp999[32]={3,1,154,114,23,92,0,0,0,0,0,0,0,0,180,115,23,2,0,183,114,7,255,0,4,3,2,1,0,0,194,114};MYCOPY(dummy0_40675)} // 393d:72a5
@@ -18628,28 +16579,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={117,110,119,97,121,0,0,128,0,52,0,0,0,0,0,0,52,0,0,0,0,127,0,0,0,54,116,0,0,15,0,0};MYCOPY(dummy0_407b5)} // 393d:73e5
     {db tmp999[32]={0,0,0,0,0,100,116,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,34,0,0,0,0,0,0,0};MYCOPY(dummy0_407d5)} // 393d:7405
     {db tmp999=32;MYCOPY(dummy0_407f5)} // 393d:7425
-
-
-
     {db tmp999=238;MYCOPY(dummy0_407f9)} // 393d:7429
     {db tmp999=255;MYCOPY(dummy0_407fa)} // 393d:742a
     {db tmp999=255;MYCOPY(dummy0_407fb)} // 393d:742b
-
     {db tmp999=36;MYCOPY(dummy0_407fd)} // 393d:742d
-
-
-
-
     {db tmp999=127;MYCOPY(dummy0_40802)} // 393d:7432
-
-
-
     {db tmp999=3;MYCOPY(dummy0_40806)} // 393d:7436
     {db tmp999=3;MYCOPY(dummy0_40807)} // 393d:7437
     {dd tmp999=m2c::kloc_1a985;MYCOPY(dummy0_40808)} // 393d:7438
     {db tmp999=92;MYCOPY(dummy0_40810)} // 393d:7440
     {db tmp999=116;MYCOPY(dummy0_40811)} // 393d:7441
-
     {db tmp999=2;MYCOPY(dummy0_40813)} // 393d:7443
     {db tmp999=3;MYCOPY(dummy0_40814)} // 393d:7444
     {db tmp999=68;MYCOPY(dummy0_40815)} // 393d:7445
@@ -18657,15 +16596,12 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=7;MYCOPY(unk_4edf7)} // 393d:7447
     {db tmp999=40;MYCOPY(dummy0_40818)} // 393d:7448
     {db tmp999=18;MYCOPY(unk_4edf9)} // 393d:7449
-
-
     {db tmp999=3;MYCOPY(dummy0_4081c)} // 393d:744c
     {db tmp999=68;MYCOPY(dummy0_4081d)} // 393d:744d
     {db tmp999=116;MYCOPY(dummy0_4081e)} // 393d:744e
     {db tmp999=8;MYCOPY(unk_4edff)} // 393d:744f
     {db tmp999=20;MYCOPY(dummy0_40820)} // 393d:7450
     {db tmp999=20;MYCOPY(unk_4ee01)} // 393d:7451
-
     {db tmp999=1;MYCOPY(dummy0_40823)} // 393d:7453
     {db tmp999=3;MYCOPY(dummy0_40824)} // 393d:7454
     {db tmp999=68;MYCOPY(dummy0_40825)} // 393d:7455
@@ -18676,17 +16612,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,2,3,3,68,116,76,116,84,116,115,109,111,107,101,0,128,0,100,0,0,0,0,0,0,100,0,0,0,0,127,0};MYCOPY(dummy0_4082a)} // 393d:745a
     {db tmp999[32]={0,0,180,116,0,0,15,0,0,0,0,0,0,0,206,116,0,0,0,0,0,0,0,0,0,0,4,2,0,0,0,0};MYCOPY(dummy0_4084a)} // 393d:747a
     {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,127,0,0,0,1,1,0,0,0,0};MYCOPY(dummy0_4086a)} // 393d:749a
-
-
-
-
     {db tmp999=202;MYCOPY(dummy0_4088e)} // 393d:74be
     {db tmp999=116;MYCOPY(dummy0_4088f)} // 393d:74bf
-
     {db tmp999=2;MYCOPY(dummy0_40891)} // 393d:74c1
     {db tmp999=4;MYCOPY(dummy0_40892)} // 393d:74c2
-
-
     {dd tmp999=m2c::kloc_14513;MYCOPY(dummy0_40895)} // 393d:74c5
     {db tmp999=3;MYCOPY(dummy0_4089a)} // 393d:74ca
     {db tmp999=1;MYCOPY(dummy0_4089b)} // 393d:74cb
@@ -18700,72 +16629,33 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=115;MYCOPY(dummy0_408a3)} // 393d:74d3
     {db tmp999=105;MYCOPY(dummy0_408a4)} // 393d:74d4
     {db tmp999=111;MYCOPY(dummy0_408a5)} // 393d:74d5
-
-
     {db tmp999=128;MYCOPY(dummy0_408a8)} // 393d:74d8
-
     {db tmp999=38;MYCOPY(dummy0_408aa)} // 393d:74da
-
-
-
-
-
-
     {db tmp999=38;MYCOPY(dummy0_408b1)} // 393d:74e1
-
-
     {db tmp999=0;MYCOPY(unk_4ee94)} // 393d:74e4
-
     {db tmp999=127;MYCOPY(dummy0_408b6)} // 393d:74e6
-
-
-
     {db tmp999=34;MYCOPY(dummy0_408ba)} // 393d:74ea
     {db tmp999=117;MYCOPY(dummy0_408bb)} // 393d:74eb
-
-
     {db tmp999=15;MYCOPY(dummy0_408be)} // 393d:74ee
-
     {db tmp999=0;MYCOPY(unk_4eea0)} // 393d:74f0
-
     {db tmp999=0;MYCOPY(unk_4eea2)} // 393d:74f2
     {db tmp999[32]={0,0,0,67,117,0,0,0,0,0,0,0,0,0,0,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_408c3)} // 393d:74f3
-
-
     {db tmp999=224;MYCOPY(dummy0_408e5)} // 393d:7515
     {db tmp999=255;MYCOPY(dummy0_408e6)} // 393d:7516
     {db tmp999=255;MYCOPY(dummy0_408e7)} // 393d:7517
-
     {db tmp999=32;MYCOPY(dummy0_408e9)} // 393d:7519
-
-
-
-
     {db tmp999=127;MYCOPY(dummy0_408ee)} // 393d:751e
-
-
-
     {db tmp999=2;MYCOPY(dummy0_408f2)} // 393d:7522
     {db tmp999=3;MYCOPY(dummy0_408f3)} // 393d:7523
     {dd tmp999=m2c::kloc_2ce36;MYCOPY(dummy0_408f4)} // 393d:7524
-
-
-
-
     {db tmp999=63;MYCOPY(dummy0_408fc)} // 393d:752c
     {db tmp999=117;MYCOPY(dummy0_408fd)} // 393d:752d
-
     {db tmp999=2;MYCOPY(dummy0_408ff)} // 393d:752f
     {db tmp999=1;MYCOPY(unk_4eee0)} // 393d:7530
-
-
     {db tmp999=8;MYCOPY(unk_4eee3)} // 393d:7533
     {db tmp999=255;MYCOPY(dummy0_40904)} // 393d:7534
-
     {db tmp999=1;MYCOPY(dummy0_40906)} // 393d:7536
     {db tmp999=4;MYCOPY(unk_4eee7)} // 393d:7537
-
-
     {dd tmp999=m2c::kloc_2ce80;MYCOPY(dummy0_4090a)} // 393d:753a
     {db tmp999[32]={2,3,1,48,117,115,109,97,108,108,114,111,97,0,128,0,16,0,0,0,0,0,0,8,0,0,255,6,19,0,0,0};MYCOPY(dummy0_4090e)} // 393d:753e
     {db tmp999[32]={150,117,0,0,13,0,0,0,0,0,0,0,126,118,0,0,0,0,0,0,0,0,0,5,0,2,0,255,255,255,0,2};MYCOPY(dummy0_4092e)} // 393d:755e
@@ -18812,7 +16702,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={168,119,0,255,11,26,17,150,120,0,255,26,25,1,168,119,0,255,11,7,17,161,120,0,255,26,22,1,168,119,0,255};MYCOPY(dummy0_40e4e)} // 393d:7a7e
     {db tmp999[32]={71,69,1,168,119,0,255,69,70,1,168,119,0,255,67,66,1,168,119,0,255,80,78,1,168,119,0,255,78,79,1,168};MYCOPY(dummy0_40e6e)} // 393d:7a9e
     {db tmp999=119;MYCOPY(dummy0_40e8e)} // 393d:7abe
-
     {db tmp999=255;MYCOPY(dummy0_40e90)} // 393d:7ac0
     {db tmp999=87;MYCOPY(dummy0_40e91)} // 393d:7ac1
     {db tmp999=68;MYCOPY(dummy0_40e92)} // 393d:7ac2
@@ -18885,39 +16774,23 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={14,12,9,0,15,126,0,90,0,4,13,8,7,11,0,26,126,0,90,0,7,12,16,18,17,15,11,4,3,5,238,125};MYCOPY(dummy0_411dc)} // 393d:7e0c
     {db tmp999[32]={249,125,15,126,4,126,26,126,108,104,120,115,104,0,128,0,140,0,0,0,0,0,0,70,0,0,255,25,31,0,3,0};MYCOPY(dummy0_411fc)} // 393d:7e2c
     {db tmp999=14;MYCOPY(dummy0_4121c)} // 393d:7e4c
-
     {db tmp999=43;MYCOPY(dummy0_4121e)} // 393d:7e4e
     {db tmp999=1;MYCOPY(dummy0_4121f)} // 393d:7e4f
     {db tmp999=13;MYCOPY(dummy0_41220)} // 393d:7e50
-
-
-
-
-
-
-
     {db tmp999=219;MYCOPY(dummy0_41228)} // 393d:7e58
     {db tmp999=4;MYCOPY(dummy0_41229)} // 393d:7e59
     {dd tmp999=far_offset(seg053,unk_4218e);MYCOPY(dummy0_4122a)} // 393d:7e5a
     {db tmp999[32]={14,0,210,4,128,8,0,2,128,208,255,255,128,47,0,0,128,247,255,255,128,22,0,0,128,197,255,255,0,41,0,0};MYCOPY(dummy0_4122e)} // 393d:7e5e
     {db tmp999[32]={0,0,31,0,3,0,128,0,189,0,0,0,0,0,128,94,0,0,255,25,31,0,3,0,206,126,48,128,13,0,0,0};MYCOPY(dummy0_4124e)} // 393d:7e7e
     {db tmp999[32]={0,0,0,0,66,134,0,0,0,0,0,0,0,0,128,21,0,2,128,202,255,255,128,54,0,0,128,234,255,255,0,14};MYCOPY(dummy0_4126e)} // 393d:7e9e
-
-
     {db tmp999=128;MYCOPY(dummy0_41290)} // 393d:7ec0
     {db tmp999=178;MYCOPY(dummy0_41291)} // 393d:7ec1
     {db tmp999=255;MYCOPY(dummy0_41292)} // 393d:7ec2
     {db tmp999=255;MYCOPY(dummy0_41293)} // 393d:7ec3
     {db tmp999=128;MYCOPY(dummy0_41294)} // 393d:7ec4
     {db tmp999=54;MYCOPY(dummy0_41295)} // 393d:7ec5
-
-
-
-
     {db tmp999=31;MYCOPY(dummy0_4129a)} // 393d:7eca
-
     {db tmp999=3;MYCOPY(dummy0_4129c)} // 393d:7ecc
-
     {db tmp999=21;MYCOPY(dummy0_4129e)} // 393d:7ece
     {db tmp999=47;MYCOPY(dummy0_4129f)} // 393d:7ecf
     {dd tmp999=m2c::kloc_3def7;MYCOPY(dummy0_412a0)} // 393d:7ed0
@@ -19045,19 +16918,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=131;MYCOPY(dummy0_419cd)} // 393d:85fd
     {db tmp999=8;MYCOPY(dummy0_419ce)} // 393d:85fe
     {db tmp999=131;MYCOPY(dummy0_419cf)} // 393d:85ff
-
     {db tmp999=174;MYCOPY(dummy0_419d1)} // 393d:8601
     {db tmp999=130;MYCOPY(dummy0_419d2)} // 393d:8602
     {db tmp999=240;MYCOPY(dummy0_419d3)} // 393d:8603
     {db tmp999=133;MYCOPY(dummy0_419d4)} // 393d:8604
     {db tmp999=248;MYCOPY(dummy0_419d5)} // 393d:8605
     {db tmp999=133;MYCOPY(dummy0_419d6)} // 393d:8606
-
     {db tmp999=174;MYCOPY(dummy0_419d8)} // 393d:8608
     {db tmp999=130;MYCOPY(dummy0_419d9)} // 393d:8609
     {db tmp999=232;MYCOPY(dummy0_419da)} // 393d:860a
     {db tmp999=133;MYCOPY(dummy0_419db)} // 393d:860b
-
     {db tmp999=134;MYCOPY(dummy0_419dd)} // 393d:860d
     {db tmp999=3;MYCOPY(unk_4ffbe)} // 393d:860e
     {db tmp999=3;MYCOPY(dummy0_419df)} // 393d:860f
@@ -19089,7 +16959,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={2,0,96,135,0,90,0,3,7,6,0,0,106,135,0,90,0,5,4,3,2,1,5,0,118,135,0,90,0,8,9,15};MYCOPY(dummy0_41b2f)} // 393d:875f
     {db tmp999[32]={17,16,14,8,6,7,0,133,135,0,90,0,5,13,12,11,10,18,3,4,118,135,96,135,133,135,106,135,104,105,110,100};MYCOPY(dummy0_41b4f)} // 393d:877f
     {db tmp999[32]={115,104,0,128,0,127,0,0,0,0,0,128,63,0,0,255,25,31,0,3,0,3,0,10,1,13,0,0,0,0,0,0};MYCOPY(dummy0_41b6f)} // 393d:879f
-
     {db tmp999=98;MYCOPY(dummy0_41b90)} // 393d:87c0
     {db tmp999=3;MYCOPY(dummy0_41b91)} // 393d:87c1
     {dd tmp999=far_offset(seg054,unk_427b3);MYCOPY(dummy0_41b92)} // 393d:87c2
@@ -19223,33 +17092,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=3;MYCOPY(unk_5091a)} // 393d:8f6a
     {db tmp999[32]={5,18,141,48,141,78,141,108,141,148,141,0,8,141,94,143,106,143,0,8,141,82,143,118,143,24,252,140,75,143,125,143};MYCOPY(dummy0_4233b)} // 393d:8f6b
     {db tmp999[32]={104,97,118,111,99,0,0,128,0,155,0,0,0,0,0,0,54,1,0,1,125,19,0,0,0,8,0,0,0,13,0,0};MYCOPY(dummy0_4235b)} // 393d:8f8b
-
-
-
-
-
     {db tmp999=191;MYCOPY(dummy0_42380)} // 393d:8fb0
-
     {dd tmp999=far_offset(seg055,unk_42c38);MYCOPY(dummy0_42382)} // 393d:8fb2
     {db tmp999[32]={8,0,191,0,0,80,16,2,0,144,255,255,0,112,0,0,0,176,255,255,0,80,0,0,0,38,255,255,0,216,0,0};MYCOPY(dummy0_42386)} // 393d:8fb6
     {db tmp999[32]={0,0,19,0,0,0,5,0,108,0,0,0,0,0,0,192,6,0,4,0,249,7,0,0,38,144,0,0,19,0,0,0};MYCOPY(dummy0_423a6)} // 393d:8fd6
     {db tmp999[32]={0,0,0,0,90,144,0,0,0,0,0,0,0,0,0,0,4,2,0,0,252,255,0,0,4,0,0,0,0,0,0,0};MYCOPY(dummy0_423c6)} // 393d:8ff6
-
-
-
-
     {db tmp999=252;MYCOPY(dummy0_423ea)} // 393d:901a
     {db tmp999=255;MYCOPY(dummy0_423eb)} // 393d:901b
-
-
     {db tmp999=4;MYCOPY(dummy0_423ee)} // 393d:901e
-
-
-
     {db tmp999=249;MYCOPY(dummy0_423f2)} // 393d:9022
     {db tmp999=7;MYCOPY(dummy0_423f3)} // 393d:9023
-
-
     {db tmp999=3;MYCOPY(dummy0_423f6)} // 393d:9026
     {db tmp999=9;MYCOPY(dummy0_423f7)} // 393d:9027
     {dd tmp999=m2c::klocret_3e276;MYCOPY(dummy0_423f8)} // 393d:9028
@@ -19257,23 +17109,18 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=144;MYCOPY(dummy0_42401)} // 393d:9031
     {db tmp999=2;MYCOPY(dummy0_42402)} // 393d:9032
     {db tmp999=2;MYCOPY(dummy0_42403)} // 393d:9033
-
     {db tmp999=52;MYCOPY(dummy0_42405)} // 393d:9035
     {db tmp999=144;MYCOPY(dummy0_42406)} // 393d:9036
     {db tmp999=13;MYCOPY(dummy0_42407)} // 393d:9037
     {db tmp999=255;MYCOPY(dummy0_42408)} // 393d:9038
-
     {db tmp999=4;MYCOPY(dummy0_4240a)} // 393d:903a
     {db tmp999=2;MYCOPY(dummy0_4240b)} // 393d:903b
     {db tmp999=3;MYCOPY(dummy0_4240c)} // 393d:903c
     {db tmp999=1;MYCOPY(dummy0_4240d)} // 393d:903d
-
-
     {db tmp999=52;MYCOPY(dummy0_42410)} // 393d:9040
     {db tmp999=144;MYCOPY(dummy0_42411)} // 393d:9041
     {db tmp999=13;MYCOPY(dummy0_42412)} // 393d:9042
     {db tmp999=255;MYCOPY(dummy0_42413)} // 393d:9043
-
     {db tmp999=4;MYCOPY(dummy0_42415)} // 393d:9045
     {db tmp999=6;MYCOPY(dummy0_42416)} // 393d:9046
     {db tmp999=7;MYCOPY(dummy0_42417)} // 393d:9047
@@ -19399,39 +17246,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={90,0,6,4,14,2,1,13,3,0,209,151,0,90,0,3,9,8,0,0,219,151,0,90,0,6,7,11,12,10,6,5};MYCOPY(dummy0_42b98)} // 393d:97c8
     {db tmp999[32]={3,3,209,151,219,151,196,151,104,105,112,115,104,0,6,0,110,17,0,0,0,0,0,183,8,0,255,0,39,0,0,0};MYCOPY(dummy0_42bb8)} // 393d:97e8
     {db tmp999=13;MYCOPY(dummy0_42bd8)} // 393d:9808
-
-
-
     {db tmp999=14;MYCOPY(dummy0_42bdc)} // 393d:980c
-
-
-
-
-
-
-
     {db tmp999=198;MYCOPY(dummy0_42be4)} // 393d:9814
-
     {dd tmp999=far_offset(seg056,unk_42d2d);MYCOPY(dummy0_42be6)} // 393d:9816
     {db tmp999[32]={13,0,190,0,0,0,16,0,0,96,250,255,0,160,5,0,0,0,0,0,0,16,0,0,0,0,253,255,0,128,4,0};MYCOPY(dummy0_42bea)} // 393d:981a
     {db tmp999[32]={0,0,39,0,0,0,128,0,92,4,0,0,0,0,0,92,4,0,0,0,58,0,0,0,154,152,0,0,14,0,0,0};MYCOPY(dummy0_42c0a)} // 393d:983a
     {db tmp999[32]={0,0,0,0,218,152,0,0,0,0,0,0,0,0,0,0,16,3,0,0,254,255,0,0,3,0,0,0,0,0,0,64};MYCOPY(dummy0_42c2a)} // 393d:985a
     {db tmp999=1;MYCOPY(dummy0_42c4a)} // 393d:987a
-
-
-
     {db tmp999=253;MYCOPY(dummy0_42c4e)} // 393d:987e
     {db tmp999=255;MYCOPY(dummy0_42c4f)} // 393d:987f
-
-
     {db tmp999=3;MYCOPY(dummy0_42c52)} // 393d:9882
-
     {db tmp999=138;MYCOPY(dummy0_42c54)} // 393d:9884
     {db tmp999=152;MYCOPY(dummy0_42c55)} // 393d:9885
     {db tmp999=58;MYCOPY(dummy0_42c56)} // 393d:9886
-
-
-
     {dd tmp999=far_offset(seg057,unk_42ea5);MYCOPY(dummy0_42c5a)} // 393d:988a
     {db tmp999[32]={10,0,12,0,4,0,6,0,7,0,1,0,4,5,0,0,0,0,0,0,0,0,208,152,4,2,16,168,152,7,255,0};MYCOPY(dummy0_42c5e)} // 393d:988e
     {db tmp999[32]={3,1,4,0,16,178,152,8,255,0,3,2,1,0,16,188,152,7,255,0,3,3,2,0,16,198,152,8,255,0,3,4};MYCOPY(dummy0_42c7e)} // 393d:98ae
@@ -19439,66 +17266,29 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={58,0,0,0,58,153,0,0,14,0,0,0,0,0,0,0,134,153,0,0,0,0,0,0,0,0,0,0,16,3,0,160};MYCOPY(dummy0_42cbe)} // 393d:98ee
     {db tmp999=252;MYCOPY(dummy0_42cde)} // 393d:990e
     {db tmp999=255;MYCOPY(dummy0_42cdf)} // 393d:990f
-
     {db tmp999=128;MYCOPY(dummy0_42ce1)} // 393d:9911
     {db tmp999=2;MYCOPY(dummy0_42ce2)} // 393d:9912
-
-
-
-
-
-
     {db tmp999=64;MYCOPY(dummy0_42ce9)} // 393d:9919
     {db tmp999=1;MYCOPY(dummy0_42cea)} // 393d:991a
-
-
-
     {db tmp999=253;MYCOPY(dummy0_42cee)} // 393d:991e
     {db tmp999=255;MYCOPY(dummy0_42cef)} // 393d:991f
-
     {db tmp999=32;MYCOPY(dummy0_42cf1)} // 393d:9921
     {db tmp999=2;MYCOPY(dummy0_42cf2)} // 393d:9922
-
     {db tmp999=42;MYCOPY(dummy0_42cf4)} // 393d:9924
     {db tmp999=153;MYCOPY(dummy0_42cf5)} // 393d:9925
     {db tmp999=58;MYCOPY(dummy0_42cf6)} // 393d:9926
-
-
-
     {dd tmp999=far_offset(seg058,unk_42f1d);MYCOPY(dummy0_42cfa)} // 393d:992a
     {db tmp999[32]={12,0,11,0,7,0,6,0,7,0,1,0,5,6,0,0,0,0,0,0,0,0,122,153,5,2,16,72,153,7,255,0};MYCOPY(dummy0_42cfe)} // 393d:992e
     {db tmp999[32]={3,2,1,0,16,82,153,6,255,0,3,3,2,0,16,92,153,6,255,0,3,4,3,0,16,102,153,8,255,0,3,0};MYCOPY(dummy0_42d1e)} // 393d:994e
     {db tmp999[32]={1,5,16,112,153,7,255,0,3,0,5,4,3,5,102,153,112,153,72,153,82,153,92,153,104,105,108,108,50,0,5,0};MYCOPY(dummy0_42d3e)} // 393d:996e
     {db tmp999=93;MYCOPY(dummy0_42d5e)} // 393d:998e
     {db tmp999=22;MYCOPY(dummy0_42d5f)} // 393d:998f
-
-
-
-
-
     {db tmp999=93;MYCOPY(dummy0_42d65)} // 393d:9995
     {db tmp999=22;MYCOPY(dummy0_42d66)} // 393d:9996
-
-
-
     {db tmp999=46;MYCOPY(dummy0_42d6a)} // 393d:999a
-
-
-
     {db tmp999=1;MYCOPY(dummy0_42d6e)} // 393d:999e
-
-
-
     {db tmp999=14;MYCOPY(dummy0_42d72)} // 393d:99a2
-
-
-
-
-
-
-
     {db tmp999=120;MYCOPY(dummy0_42d7a)} // 393d:99aa
-
     {dd tmp999=far_offset(seg059,unk_42fa1);MYCOPY(dummy0_42d7c)} // 393d:99ac
     {db tmp999[32]={1,0,127,0,0,0,16,0,0,0,251,255,0,0,12,0,0,0,0,0,0,16,0,0,0,16,248,255,0,16,14,0};MYCOPY(dummy0_42d80)} // 393d:99b0
     {db tmp999[32]={0,0,46,0,0,0,128,0,125,0,0,0,0,0,128,62,0,0,255,25,23,0,3,0,32,154,10,155,13,0,0,0};MYCOPY(dummy0_42da0)} // 393d:99d0
@@ -19531,12 +17321,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dd tmp999=far_offset(seg060,unk_43092);MYCOPY(dummy0_430c2)} // 393d:9cf2
     {db tmp999[32]={2,0,122,3,0,24,16,2,0,232,255,255,0,24,0,0,0,232,255,255,0,24,0,0,0,112,252,255,0,144,3,0};MYCOPY(dummy0_430c6)} // 393d:9cf6
     {db tmp999[32]={0,0,29,0,7,0,128,0,138,0,0,0,0,0,0,40,2,0,2,0,29,0,0,0,4,0,0,0,13,0,0,0};MYCOPY(dummy0_430e6)} // 393d:9d16
-
-
-
-
     {db tmp999=174;MYCOPY(dummy0_4310a)} // 393d:9d3a
-
     {dd tmp999=far_offset(seg061,unk_436c4);MYCOPY(dummy0_4310c)} // 393d:9d3c
     {db tmp999[32]={4,0,178,0,0,48,16,2,0,64,255,255,0,192,0,0,0,208,255,255,0,80,0,0,0,128,254,255,0,160,1,0};MYCOPY(dummy0_43110)} // 393d:9d40
     {db tmp999[32]={0,0,29,0,0,0,128,0,181,1,0,0,0,0,0,212,6,0,2,0,19,0,0,0,176,157,0,0,13,0,0,0};MYCOPY(dummy0_43130)} // 393d:9d60
@@ -19579,42 +17364,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=161;MYCOPY(dummy0_435b1)} // 393d:a1e1
     {db tmp999=0;MYCOPY(unk_51b92)} // 393d:a1e2
     {db tmp999[32]={0,0,0,0,0,24,25,60,24,77,161,209,161,216,161,24,8,160,153,161,235,161,114,97,100,97,114,0,0,128,0,138};MYCOPY(dummy0_435b3)} // 393d:a1e3
-
-
-
-
-
-
     {db tmp999=138;MYCOPY(dummy0_435d9)} // 393d:a209
-
-
-
-
     {db tmp999=127;MYCOPY(dummy0_435de)} // 393d:a20e
-
-
-
     {db tmp999=12;MYCOPY(dummy0_435e2)} // 393d:a212
-
-
-
     {db tmp999=15;MYCOPY(dummy0_435e6)} // 393d:a216
-
-
-
-
-
-
-
-
     {db tmp999=1;MYCOPY(dummy0_435ef)} // 393d:a21f
     {dd tmp999=far_offset(seg062,unk_437ac);MYCOPY(dummy0_435f0)} // 393d:a220
     {db tmp999[32]={12,0,249,0,0,40,0,2,0,148,255,255,0,100,0,0,0,216,255,255,0,32,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_435f4)} // 393d:a224
     {db tmp999[32]={0,0,127,0,0,0,128,0,155,0,0,0,0,0,0,54,1,0,1,125,29,0,13,0,1,0,112,0,13,0,0,0};MYCOPY(dummy0_43614)} // 393d:a244
-
-
-
-
     {db tmp999=15;MYCOPY(dummy0_43638)} // 393d:a268
     {db tmp999=1;MYCOPY(dummy0_43639)} // 393d:a269
     {dd tmp999=far_offset(seg063,unk_43941);MYCOPY(dummy0_4363a)} // 393d:a26a
@@ -19712,153 +17469,74 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,0,3,9,11,10,3,6,74,173,84,173,94,173,105,173,116,173,126,173,3,6,136,173,147,173,158,173,169,173,180,173};MYCOPY(dummy0_4419e)} // 393d:adce
     {db tmp999[32]={191,173,16,202,173,212,173,226,173,116,101,110,116,50,0,0,128,0,145,0,0,0,0,0,128,72,0,0,255,0,29,0};MYCOPY(dummy0_441be)} // 393d:adee
     {db tmp999=7;MYCOPY(dummy0_441de)} // 393d:ae0e
-
     {db tmp999=6;MYCOPY(dummy0_441e0)} // 393d:ae10
-
     {db tmp999=181;MYCOPY(dummy0_441e2)} // 393d:ae12
-
     {db tmp999=13;MYCOPY(dummy0_441e4)} // 393d:ae14
-
-
-
-
-
-
-
     {db tmp999=220;MYCOPY(dummy0_441ec)} // 393d:ae1c
     {db tmp999=1;MYCOPY(dummy0_441ed)} // 393d:ae1d
     {dd tmp999=far_offset(seg064,unk_43ab6);MYCOPY(dummy0_441ee)} // 393d:ae1e
     {db tmp999[32]={6,0,220,1,0,56,16,2,0,232,255,255,0,24,0,0,0,200,255,255,0,32,0,0,0,232,255,255,0,24,0,0};MYCOPY(dummy0_441f2)} // 393d:ae22
     {db tmp999[32]={0,0,29,0,7,0,128,0,225,0,0,0,0,0,128,112,0,0,255,0,9,0,3,0,2,0,55,0,12,0,0,0};MYCOPY(dummy0_44212)} // 393d:ae42
-
-
-
-
     {db tmp999=191;MYCOPY(dummy0_44236)} // 393d:ae66
-
     {dd tmp999=far_offset(seg065,unk_43c92);MYCOPY(dummy0_44238)} // 393d:ae68
     {db tmp999[32]={2,0,195,0,0,0,0,2,0,236,255,255,128,17,0,0,0,0,0,0,128,93,0,0,0,234,255,255,0,24,0,0};MYCOPY(dummy0_4423c)} // 393d:ae6c
     {db tmp999[32]={0,0,9,0,3,0,128,0,114,0,0,0,0,0,0,57,0,0,255,0,9,0,3,0,1,0,36,0,12,0,0,0};MYCOPY(dummy0_4425c)} // 393d:ae8c
-
-
-
-
     {db tmp999=185;MYCOPY(dummy0_44280)} // 393d:aeb0
-
     {dd tmp999=far_offset(seg066,unk_43e51);MYCOPY(dummy0_44282)} // 393d:aeb2
     {db tmp999[32]={1,0,190,0,0,36,0,2,0,240,255,255,0,27,0,0,0,220,255,255,128,32,0,0,0,236,255,255,128,27,0,0};MYCOPY(dummy0_44286)} // 393d:aeb6
     {db tmp999[32]={0,0,9,0,3,0,128,0,145,0,0,0,0,0,128,72,0,0,255,0,7,0,0,0,0,0,0,0,11,0,0,0};MYCOPY(dummy0_442a6)} // 393d:aed6
-
-
-
-
     {db tmp999=194;MYCOPY(dummy0_442ca)} // 393d:aefa
-
     {dd tmp999=far_offset(seg067,unk_43f30);MYCOPY(dummy0_442cc)} // 393d:aefc
     {db tmp999[32]={0,0,201,0,0,56,0,2,0,240,255,255,0,16,0,0,0,200,255,255,0,24,0,0,0,240,255,255,0,16,0,0};MYCOPY(dummy0_442d0)} // 393d:af00
     {db tmp999[32]={0,0,7,0,0,0,40,0,247,1,0,0,0,0,0,247,1,0,0,0,15,0,0,0,3,0,0,0,12,0,0,0};MYCOPY(dummy0_442f0)} // 393d:af20
-
-
-
-
     {db tmp999=38;MYCOPY(dummy0_44314)} // 393d:af44
-
     {dd tmp999=far_offset(seg068,unk_44023);MYCOPY(dummy0_44316)} // 393d:af46
     {db tmp999[32]={3,0,40,0,0,0,20,2,0,0,255,255,0,160,1,0,0,0,0,0,0,0,0,0,0,16,255,255,0,8,1,0};MYCOPY(dummy0_4431a)} // 393d:af4a
     {db tmp999[32]={0,0,15,0,0,0,128,0,152,0,0,0,0,0,0,152,0,0,0,0,11,0,7,0,7,0,42,0,12,0,0,0};MYCOPY(dummy0_4433a)} // 393d:af6a
-
-
-
-
     {db tmp999=243;MYCOPY(dummy0_4435e)} // 393d:af8e
-
     {dd tmp999=far_offset(seg069,unk_44087);MYCOPY(dummy0_44360)} // 393d:af90
     {db tmp999[32]={7,0,241,0,0,0,0,2,0,226,255,255,0,38,0,0,0,0,0,0,0,121,0,0,0,222,255,255,0,28,0,0};MYCOPY(dummy0_44364)} // 393d:af94
     {db tmp999[32]={0,0,11,0,7,0,128,0,246,0,0,0,0,0,0,246,0,0,0,0,19,0,0,0,8,0,0,0,13,0,0,0};MYCOPY(dummy0_44384)} // 393d:afb4
-
-
-
-
     {db tmp999=145;MYCOPY(dummy0_443a8)} // 393d:afd8
-
     {dd tmp999=far_offset(seg070,unk_44178);MYCOPY(dummy0_443aa)} // 393d:afda
     {db tmp999[32]={8,0,141,0,0,48,16,2,0,64,255,255,0,194,0,0,0,208,255,255,0,32,0,0,0,68,255,255,0,198,0,0};MYCOPY(dummy0_443ae)} // 393d:afde
     {db tmp999=4;MYCOPY(dummy0_443ce)} // 393d:affe
     {db tmp999=176;MYCOPY(dummy0_443cf)} // 393d:afff
     {db tmp999=19;MYCOPY(dummy0_443d0)} // 393d:b000
-
-
-
     {dd tmp999=far_offset(seg071,unk_44265);MYCOPY(dummy0_443d4)} // 393d:b004
     {db tmp999[32]={7,0,7,0,3,0,3,0,6,0,0,0,128,0,246,0,0,0,0,0,0,246,0,0,0,0,19,0,0,0,6,0};MYCOPY(dummy0_443d8)} // 393d:b008
-
-
     {db tmp999=13;MYCOPY(dummy0_443fa)} // 393d:b02a
-
-
-
-
-
-
-
     {db tmp999=143;MYCOPY(dummy0_44402)} // 393d:b032
-
     {dd tmp999=far_offset(seg072,unk_44296);MYCOPY(dummy0_44404)} // 393d:b034
     {db tmp999[32]={6,0,142,0,0,48,16,2,0,64,255,255,0,194,0,0,0,208,255,255,0,32,0,0,0,68,255,255,0,198,0,0};MYCOPY(dummy0_44408)} // 393d:b038
     {db tmp999[32]={0,0,19,0,0,0,128,0,82,0,0,0,0,0,0,82,0,0,0,31,11,0,0,0,10,0,0,0,12,0,0,0};MYCOPY(dummy0_44428)} // 393d:b058
-
-
-
-
     {db tmp999=52;MYCOPY(dummy0_4444c)} // 393d:b07c
-
     {dd tmp999=far_offset(seg073,unk_4438a);MYCOPY(dummy0_4444e)} // 393d:b07e
     {db tmp999[32]={10,0,49,0,0,6,16,2,0,244,255,255,0,24,0,0,0,250,255,255,0,6,0,0,0,192,255,255,0,24,0,0};MYCOPY(dummy0_44452)} // 393d:b082
     {db tmp999[32]={0,0,11,0,0,0,128,0,122,0,0,0,0,0,0,61,0,0,255,0,23,0,3,0,3,0,248,0,13,0,0,0};MYCOPY(dummy0_44472)} // 393d:b0a2
-
-
-
-
     {db tmp999=137;MYCOPY(dummy0_44496)} // 393d:b0c6
     {db tmp999=2;MYCOPY(dummy0_44497)} // 393d:b0c7
     {dd tmp999=far_offset(seg074,unk_443d3);MYCOPY(dummy0_44498)} // 393d:b0c8
     {db tmp999[32]={3,0,139,2,0,23,0,2,0,237,255,255,0,19,0,0,0,233,255,255,0,12,0,0,0,211,255,255,0,41,0,0};MYCOPY(dummy0_4449c)} // 393d:b0cc
     {db tmp999[32]={0,0,23,0,3,0,128,0,159,0,0,0,0,0,0,159,0,0,0,43,31,0,0,0,14,0,0,0,13,0,0,0};MYCOPY(dummy0_444bc)} // 393d:b0ec
-
-
-
-
     {db tmp999=152;MYCOPY(dummy0_444e0)} // 393d:b110
-
     {dd tmp999=far_offset(seg075,unk_4465e);MYCOPY(dummy0_444e2)} // 393d:b112
     {db tmp999[32]={14,0,141,0,0,16,16,2,0,128,255,255,0,128,0,0,0,240,255,255,0,12,0,0,0,212,255,255,0,56,0,0};MYCOPY(dummy0_444e6)} // 393d:b116
     {db tmp999[32]={0,0,31,0,0,0,128,0,95,0,0,0,0,0,0,190,0,0,1,0,29,0,0,0,11,0,0,0,13,0,0,0};MYCOPY(dummy0_44506)} // 393d:b136
-
-
-
-
     {db tmp999=105;MYCOPY(dummy0_4452a)} // 393d:b15a
-
     {dd tmp999=far_offset(seg076,unk_4474b);MYCOPY(dummy0_4452c)} // 393d:b15c
     {db tmp999[32]={11,0,103,0,0,144,16,3,0,192,255,255,0,64,0,0,0,112,255,255,0,144,0,0,0,240,255,255,0,16,0,0};MYCOPY(dummy0_44530)} // 393d:b160
     {db tmp999[32]={0,0,29,0,0,0,128,0,101,3,0,0,0,0,0,101,3,0,0,0,58,0,0,0,224,177,0,0,14,0,0,0};MYCOPY(dummy0_44550)} // 393d:b180
     {db tmp999[32]={0,0,0,0,77,178,0,0,0,0,0,0,0,0,0,0,16,3,0,128,253,255,0,160,2,0,0,0,0,0,0,48};MYCOPY(dummy0_44570)} // 393d:b1a0
     {db tmp999=1;MYCOPY(dummy0_44590)} // 393d:b1c0
-
-
     {db tmp999=192;MYCOPY(dummy0_44593)} // 393d:b1c3
     {db tmp999=253;MYCOPY(dummy0_44594)} // 393d:b1c4
     {db tmp999=255;MYCOPY(dummy0_44595)} // 393d:b1c5
-
     {db tmp999=160;MYCOPY(dummy0_44597)} // 393d:b1c7
     {db tmp999=1;MYCOPY(dummy0_44598)} // 393d:b1c8
-
     {db tmp999=208;MYCOPY(dummy0_4459a)} // 393d:b1ca
     {db tmp999=177;MYCOPY(dummy0_4459b)} // 393d:b1cb
     {db tmp999=58;MYCOPY(dummy0_4459c)} // 393d:b1cc
-
-
-
     {dd tmp999=far_offset(seg077,aaahh)+10;MYCOPY(dummy0_445a0)} // 393d:b1d0
     {db tmp999[32]={11,0,9,0,5,0,5,0,7,0,1,0,7,12,0,0,0,0,0,0,0,0,61,178,7,2,16,238,177,7,255,0};MYCOPY(dummy0_445a4)} // 393d:b1d4
     {db tmp999[32]={4,4,7,6,5,16,249,177,6,255,0,4,6,8,0,5,16,4,178,8,255,0,4,8,9,1,0,16,15,178,0,255};MYCOPY(dummy0_445c4)} // 393d:b1f4
@@ -19866,87 +17544,45 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,0,6,10,9,8,6,7,11,3,7,48,178,238,177,249,177,4,178,15,178,26,178,37,178,104,105,108,108,51,0,0};MYCOPY(dummy0_44604)} // 393d:b234
     {db tmp999[32]={128,0,111,2,0,0,0,0,0,111,2,0,0,0,58,0,0,0,174,178,0,0,14,0,0,0,0,0,0,0,255,178};MYCOPY(dummy0_44624)} // 393d:b254
     {db tmp999[32]={0,0,0,0,0,0,0,0,0,0,16,3,0,112,254,255,0,160,1,0,0,0,0,0,0,64,1,0,0,72,254,255};MYCOPY(dummy0_44644)} // 393d:b274
-
     {db tmp999=192;MYCOPY(dummy0_44665)} // 393d:b295
     {db tmp999=1;MYCOPY(dummy0_44666)} // 393d:b296
-
     {db tmp999=158;MYCOPY(dummy0_44668)} // 393d:b298
     {db tmp999=178;MYCOPY(dummy0_44669)} // 393d:b299
     {db tmp999=58;MYCOPY(dummy0_4466a)} // 393d:b29a
-
-
-
     {dd tmp999=far_offset(seg078,unk_4482d);MYCOPY(dummy0_4466e)} // 393d:b29e
     {db tmp999[32]={8,0,8,0,4,0,4,0,7,0,1,0,5,8,0,0,0,0,0,0,0,0,243,178,5,2,16,188,178,6,255,0};MYCOPY(dummy0_44672)} // 393d:b2a2
     {db tmp999[32]={4,5,4,1,0,16,199,178,7,255,0,4,4,6,2,1,16,210,178,7,255,0,4,6,7,3,2,16,221,178,6,255};MYCOPY(dummy0_44692)} // 393d:b2c2
     {db tmp999[32]={0,4,7,5,0,3,16,232,178,8,255,0,4,6,4,5,7,3,5,232,178,221,178,210,178,199,178,188,178,104,105,108};MYCOPY(dummy0_446b2)} // 393d:b2e2
     {db tmp999[32]={108,52,0,0,128,0,13,1,0,0,0,0,128,134,0,0,255,31,7,0,0,0,13,0,0,0,11,0,0,0,0,0};MYCOPY(dummy0_446d2)} // 393d:b302
-
-
     {db tmp999=240;MYCOPY(dummy0_446f4)} // 393d:b324
     {db tmp999=2;MYCOPY(dummy0_446f5)} // 393d:b325
     {dd tmp999=far_offset(seg079,unk_4486d);MYCOPY(dummy0_446f6)} // 393d:b326
     {db tmp999[32]={13,0,234,2,0,51,16,2,0,208,255,255,0,99,0,0,0,205,255,255,0,21,0,0,0,208,255,255,0,24,0,0};MYCOPY(dummy0_446fa)} // 393d:b32a
     {db tmp999[32]={0,0,7,0,0,0,128,0,57,1,0,0,0,0,128,156,0,0,255,31,29,0,7,0,5,0,35,1,13,0,0,0};MYCOPY(dummy0_4471a)} // 393d:b34a
-
-
-
-
     {db tmp999=71;MYCOPY(dummy0_4473e)} // 393d:b36e
     {db tmp999=4;MYCOPY(dummy0_4473f)} // 393d:b36f
     {dd tmp999=far_offset(seg080,unk_44d25);MYCOPY(dummy0_44740)} // 393d:b370
     {db tmp999[32]={5,0,72,4,0,51,16,2,0,208,255,255,0,96,0,0,0,205,255,255,0,96,0,0,0,208,255,255,0,24,0,0};MYCOPY(dummy0_44744)} // 393d:b374
     {db tmp999[32]={0,0,29,0,7,0,128,0,138,0,0,0,0,0,0,40,2,0,2,0,29,0,0,0,1,0,0,0,13,0,0,0};MYCOPY(dummy0_44764)} // 393d:b394
-
-
-
-
     {db tmp999=207;MYCOPY(dummy0_44788)} // 393d:b3b8
-
     {dd tmp999=far_offset(seg081,unk_453d1);MYCOPY(dummy0_4478a)} // 393d:b3ba
     {db tmp999[32]={1,0,215,0,0,48,16,2,0,64,255,255,0,192,0,0,0,208,255,255,0,80,0,0,0,128,254,255,0,160,1,0};MYCOPY(dummy0_4478e)} // 393d:b3be
     {db tmp999[32]={0,0,29,0,0,0,128,0,39,2,0,0,0,0,0,78,4,0,1,0,11,0,0,0,10,0,0,0,12,0,0,0};MYCOPY(dummy0_447ae)} // 393d:b3de
-
-
-
-
     {db tmp999=117;MYCOPY(dummy0_447d2)} // 393d:b402
     {db tmp999=1;MYCOPY(dummy0_447d3)} // 393d:b403
     {dd tmp999=far_offset(seg082,unk_454ea);MYCOPY(dummy0_447d4)} // 393d:b404
     {db tmp999[32]={10,0,115,1,0,24,16,2,0,232,255,255,0,24,0,0,0,232,255,255,0,24,0,0,0,112,252,255,0,144,3,0};MYCOPY(dummy0_447d8)} // 393d:b408
     {db tmp999[32]={0,0,11,0,0,0,128,0,83,0,0,0,0,0,0,83,0,0,0,0,23,0,5,0,11,0,159,0,13,0,0,0};MYCOPY(dummy0_447f8)} // 393d:b428
-
-
-
-
     {db tmp999=120;MYCOPY(dummy0_4481c)} // 393d:b44c
     {db tmp999=1;MYCOPY(dummy0_4481d)} // 393d:b44d
     {dd tmp999=far_offset(seg083,unk_4573b);MYCOPY(dummy0_4481e)} // 393d:b44e
     {db tmp999[32]={11,0,113,1,0,24,0,2,0,208,255,255,0,48,0,0,0,232,255,255,0,24,0,0,0,212,255,255,0,44,0,0};MYCOPY(dummy0_44822)} // 393d:b452
     {db tmp999[32]={0,0,23,0,5,0,128,0,19,0,0,0,0,0,128,9,0,0,255,6,19,0,0,0,194,180,0,0,13,0,0,0};MYCOPY(dummy0_44842)} // 393d:b472
     {db tmp999[32]={0,0,0,0,109,181,0,0,0,0,0,0,0,0,0,8,16,2,0,254,255,255,128,2,0,0,0,248,255,255,128,4};MYCOPY(dummy0_44862)} // 393d:b492
-
-
-
-
-
-
-
     {db tmp999=6;MYCOPY(dummy0_44889)} // 393d:b4b9
-
-
-
-
     {db tmp999=19;MYCOPY(dummy0_4488e)} // 393d:b4be
-
-
-
     {db tmp999=10;MYCOPY(dummy0_44892)} // 393d:b4c2
     {db tmp999=15;MYCOPY(dummy0_44893)} // 393d:b4c3
-
-
-
-
     {dd tmp999=far_offset(seg084,unk_4593c);MYCOPY(dummy0_44898)} // 393d:b4c8
     {db tmp999[32]={102,181,6,4,0,13,181,8,255,0,3,1,2,5,0,13,181,8,255,0,4,6,8,4,1,0,13,181,8,255,0,3};MYCOPY(dummy0_4489c)} // 393d:b4cc
     {db tmp999[32]={3,4,9,0,13,181,7,255,0,3,10,7,6,0,13,181,7,255,0,3,11,8,7,0,3,181,6,255,0,3,12,4};MYCOPY(dummy0_448bc)} // 393d:b4ec
@@ -19955,28 +17591,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={65,181,16,3,181,52,181,71,181,3,1,13,181,3,2,218,180,249,180,16,239,180,85,181,89,181,16,218,180,78,181,95};MYCOPY(dummy0_4491c)} // 393d:b54c
     {db tmp999[32]={181,109,97,110,103,0,128,0,102,0,0,0,0,0,0,102,0,0,0,0,23,0,11,0,188,181,13,182,13,0,0,0};MYCOPY(dummy0_4493c)} // 393d:b56c
     {db tmp999[32]={0,0,0,0,179,182,0,0,0,0,0,0,0,0,0,8,16,2,0,200,255,255,0,56,0,0,0,248,255,255,0,8};MYCOPY(dummy0_4495c)} // 393d:b58c
-
-
-
     {db tmp999=192;MYCOPY(dummy0_4497f)} // 393d:b5af
     {db tmp999=255;MYCOPY(dummy0_44980)} // 393d:b5b0
     {db tmp999=255;MYCOPY(dummy0_44981)} // 393d:b5b1
-
     {db tmp999=64;MYCOPY(dummy0_44983)} // 393d:b5b3
-
-
-
-
     {db tmp999=23;MYCOPY(dummy0_44988)} // 393d:b5b8
-
     {db tmp999=11;MYCOPY(dummy0_4498a)} // 393d:b5ba
-
     {db tmp999=5;MYCOPY(dummy0_4498c)} // 393d:b5bc
     {db tmp999=8;MYCOPY(dummy0_4498d)} // 393d:b5bd
-
-
-
-
     {dd tmp999=far_offset(seg085,unk_45969);MYCOPY(dummy0_44992)} // 393d:b5c2
     {db tmp999[32]={1,182,5,4,16,202,181,7,255,0,4,4,5,0,1,16,213,181,7,255,0,4,2,7,4,1,16,224,181,7,255,0};MYCOPY(dummy0_44996)} // 393d:b5c6
     {db tmp999[32]={4,3,6,7,2,16,235,181,7,255,0,4,3,0,5,6,16,246,181,3,255,0,4,5,4,7,6,3,5,235,181,224};MYCOPY(dummy0_449b6)} // 393d:b5e6
@@ -19989,10 +17611,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=181;MYCOPY(dummy0_449dc)} // 393d:b60c
     {db tmp999=14;MYCOPY(dummy0_449dd)} // 393d:b60d
     {db tmp999=28;MYCOPY(dummy0_449de)} // 393d:b60e
-
-
-
-
     {dd tmp999=far_offset(seg085,unk_45981);MYCOPY(dummy0_449e3)} // 393d:b613
     {db tmp999[32]={149,182,6,4,16,27,182,7,255,0,4,4,5,0,1,16,38,182,7,255,0,4,2,7,4,1,16,49,182,7,255,0};MYCOPY(dummy0_449e7)} // 393d:b617
     {db tmp999[32]={4,3,6,7,2,16,60,182,7,255,0,4,3,0,5,6,16,71,182,3,255,0,4,5,4,7,6,16,49,182,0,255};MYCOPY(dummy0_44a07)} // 393d:b637
@@ -20004,22 +17622,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=188;MYCOPY(dummy0_44ac7)} // 393d:b6f7
     {db tmp999=255;MYCOPY(dummy0_44ac8)} // 393d:b6f8
     {db tmp999=255;MYCOPY(dummy0_44ac9)} // 393d:b6f9
-
     {db tmp999=64;MYCOPY(dummy0_44acb)} // 393d:b6fb
-
-
-
-
     {db tmp999=15;MYCOPY(dummy0_44ad0)} // 393d:b700
-
-
-
     {db tmp999=13;MYCOPY(dummy0_44ad4)} // 393d:b704
     {db tmp999=24;MYCOPY(dummy0_44ad5)} // 393d:b705
-
-
-
-
     {dd tmp999=far_offset(seg086,a7niai4u00a);MYCOPY(dummy0_44ada)} // 393d:b70a
     {db tmp999[32]={175,183,7,4,16,18,183,7,255,0,4,2,6,4,1,16,29,183,8,255,0,4,14,13,4,6,16,40,183,7,255,0};MYCOPY(dummy0_44ade)} // 393d:b70e
     {db tmp999[32]={4,15,5,6,2,0,51,183,0,255,0,5,2,3,0,23,1,16,63,183,8,255,0,4,5,22,14,6,16,74,183,15};MYCOPY(dummy0_44afe)} // 393d:b72e
@@ -20028,95 +17634,47 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={94,183,129,183,74,183,3,7,29,183,18,183,122,183,115,183,108,183,101,183,84,183,16,29,183,136,183,148,183,3,1,51};MYCOPY(dummy0_44b5e)} // 393d:b78e
     {db tmp999[32]={183,16,51,183,164,183,171,183,98,117,110,107,101,114,100,0,128,0,231,0,0,0,0,0,128,115,0,0,255,25,25,0};MYCOPY(dummy0_44b7e)} // 393d:b7ae
     {db tmp999=3;MYCOPY(dummy0_44b9e)} // 393d:b7ce
-
     {db tmp999=13;MYCOPY(dummy0_44ba0)} // 393d:b7d0
-
     {db tmp999=252;MYCOPY(dummy0_44ba2)} // 393d:b7d2
-
     {db tmp999=13;MYCOPY(dummy0_44ba4)} // 393d:b7d4
-
-
-
-
-
-
-
     {db tmp999=245;MYCOPY(dummy0_44bac)} // 393d:b7dc
     {db tmp999=2;MYCOPY(dummy0_44bad)} // 393d:b7dd
     {dd tmp999=far_offset(seg087,unk_45a1d);MYCOPY(dummy0_44bae)} // 393d:b7de
     {db tmp999[32]={13,0,235,2,0,6,16,2,128,237,255,255,128,18,0,0,0,250,255,255,128,23,0,0,0,214,255,255,0,93,0,0};MYCOPY(dummy0_44bb2)} // 393d:b7e2
     {db tmp999[32]={0,0,25,0,3,0,128,0,116,0,0,0,0,0,0,116,0,0,0,0,19,0,0,0,4,0,0,0,13,0,0,0};MYCOPY(dummy0_44bd2)} // 393d:b802
-
-
-
-
     {db tmp999=243;MYCOPY(dummy0_44bf6)} // 393d:b826
-
     {dd tmp999=far_offset(seg088,unk_45ef4);MYCOPY(dummy0_44bf8)} // 393d:b828
     {db tmp999[32]={4,0,247,0,0,54,16,2,0,220,255,255,0,36,0,0,0,202,255,255,0,54,0,0,0,188,255,255,0,72,0,0};MYCOPY(dummy0_44bfc)} // 393d:b82c
     {db tmp999[32]={0,0,19,0,0,0,128,0,174,0,0,0,0,0,0,92,1,0,1,0,19,0,0,0,5,0,0,0,13,0,0,0};MYCOPY(dummy0_44c1c)} // 393d:b84c
-
-
-
-
     {db tmp999=41;MYCOPY(dummy0_44c40)} // 393d:b870
     {db tmp999=1;MYCOPY(dummy0_44c41)} // 393d:b871
     {dd tmp999=far_offset(seg089,unk_46075);MYCOPY(dummy0_44c42)} // 393d:b872
     {db tmp999[32]={5,0,44,1,0,40,16,2,0,232,254,255,0,24,1,0,0,216,255,255,0,36,0,0,0,192,255,255,0,66,0,0};MYCOPY(dummy0_44c46)} // 393d:b876
     {db tmp999[32]={0,0,19,0,0,0,128,0,220,0,0,0,0,0,0,110,0,0,255,0,19,0,0,0,5,0,0,0,13,0,0,0};MYCOPY(dummy0_44c66)} // 393d:b896
-
-
-
-
     {db tmp999=234;MYCOPY(dummy0_44c8a)} // 393d:b8ba
-
     {dd tmp999=far_offset(seg090,unk_46255);MYCOPY(dummy0_44c8c)} // 393d:b8bc
     {db tmp999[32]={5,0,237,0,0,21,16,2,128,224,255,255,128,31,0,0,0,235,255,255,128,31,0,0,0,173,255,255,0,83,0,0};MYCOPY(dummy0_44c90)} // 393d:b8c0
     {db tmp999[32]={0,0,19,0,0,0,128,0,99,0,0,0,0,0,0,99,0,0,0,0,19,0,0,0,10,0,0,0,13,0,0,0};MYCOPY(dummy0_44cb0)} // 393d:b8e0
-
-
-
-
     {db tmp999=10;MYCOPY(dummy0_44cd4)} // 393d:b904
     {db tmp999=1;MYCOPY(dummy0_44cd5)} // 393d:b905
     {dd tmp999=far_offset(seg091,unk_4641a);MYCOPY(dummy0_44cd6)} // 393d:b906
     {db tmp999[32]={10,0,8,1,0,26,16,2,0,201,255,255,0,56,0,0,0,230,255,255,0,17,0,0,0,200,255,255,0,55,0,0};MYCOPY(dummy0_44cda)} // 393d:b90a
     {db tmp999[32]={0,0,19,0,0,0,128,0,114,0,0,0,0,0,0,228,0,0,1,0,19,0,0,0,15,0,0,0,13,0,0,0};MYCOPY(dummy0_44cfa)} // 393d:b92a
-
-
-
-
     {db tmp999=147;MYCOPY(dummy0_44d1e)} // 393d:b94e
-
     {dd tmp999=far_offset(seg092,unk_4657f);MYCOPY(dummy0_44d20)} // 393d:b950
     {db tmp999[32]={15,0,140,0,0,38,16,2,0,146,255,255,0,112,0,0,0,218,255,255,0,32,0,0,0,108,255,255,0,74,0,0};MYCOPY(dummy0_44d24)} // 393d:b954
     {db tmp999[32]={0,0,19,0,0,0,128,0,53,2,0,0,0,0,0,53,2,0,0,250,19,0,0,0,11,0,0,0,13,0,0,0};MYCOPY(dummy0_44d44)} // 393d:b974
-
-
-
-
     {db tmp999=150;MYCOPY(dummy0_44d68)} // 393d:b998
-
     {dd tmp999=far_offset(seg093,unk_4663b);MYCOPY(dummy0_44d6a)} // 393d:b99a
     {db tmp999[32]={11,0,147,0,0,0,16,2,0,144,254,255,0,96,1,0,0,0,0,0,0,52,0,0,0,224,254,255,0,32,1,0};MYCOPY(dummy0_44d6e)} // 393d:b99e
     {db tmp999[32]={0,0,19,0,0,0,128,0,100,0,0,0,0,0,0,50,0,0,255,0,23,0,3,0,14,186,237,186,13,0,0,0};MYCOPY(dummy0_44d8e)} // 393d:b9be
     {db tmp999[32]={0,0,0,0,163,188,0,0,0,0,0,0,0,0,0,12,0,2,0,242,255,255,0,14,0,0,0,244,255,255,0,21};MYCOPY(dummy0_44dae)} // 393d:b9de
-
-
-
     {db tmp999=220;MYCOPY(dummy0_44dd1)} // 393d:ba01
     {db tmp999=255;MYCOPY(dummy0_44dd2)} // 393d:ba02
     {db tmp999=255;MYCOPY(dummy0_44dd3)} // 393d:ba03
-
     {db tmp999=39;MYCOPY(dummy0_44dd5)} // 393d:ba05
-
-
-
-
     {db tmp999=23;MYCOPY(dummy0_44dda)} // 393d:ba0a
-
     {db tmp999=3;MYCOPY(dummy0_44ddc)} // 393d:ba0c
-
     {db tmp999=16;MYCOPY(dummy0_44dde)} // 393d:ba0e
     {db tmp999=26;MYCOPY(dummy0_44ddf)} // 393d:ba0f
     {dd tmp999=m2c::kloc_3de16;MYCOPY(dummy0_44de0)} // 393d:ba10
@@ -20166,11 +17724,9 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=187;MYCOPY(dummy0_45006)} // 393d:bc36
     {db tmp999=7;MYCOPY(dummy0_45007)} // 393d:bc37
     {db tmp999=255;MYCOPY(dummy0_45008)} // 393d:bc38
-
     {db tmp999=5;MYCOPY(dummy0_4500a)} // 393d:bc3a
     {db tmp999=4;MYCOPY(dummy0_4500b)} // 393d:bc3b
     {db tmp999=1;MYCOPY(dummy0_4500c)} // 393d:bc3c
-
     {db tmp999=17;MYCOPY(dummy0_4500e)} // 393d:bc3e
     {db tmp999=5;MYCOPY(dummy0_4500f)} // 393d:bc3f
     {db tmp999=16;MYCOPY(dummy0_45010)} // 393d:bc40
@@ -20178,7 +17734,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=187;MYCOPY(dummy0_45012)} // 393d:bc42
     {db tmp999=7;MYCOPY(dummy0_45013)} // 393d:bc43
     {db tmp999=255;MYCOPY(dummy0_45014)} // 393d:bc44
-
     {db tmp999=5;MYCOPY(dummy0_45016)} // 393d:bc46
     {db tmp999=19;MYCOPY(dummy0_45017)} // 393d:bc47
     {db tmp999=2;MYCOPY(dummy0_45018)} // 393d:bc48
@@ -20189,58 +17744,29 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={12,229,187,163,187,141,187,152,187,174,187,185,187,196,187,207,187,218,187,240,187,251,187,6,188,3,2,111,187,126,187,3};MYCOPY(dummy0_4501d)} // 393d:bc4d
     {db tmp999[32]={2,81,187,96,187,3,13,17,187,6,187,64,188,52,188,40,188,29,188,17,188,71,187,61,187,50,187,39,187,28,187,251};MYCOPY(dummy0_4503d)} // 393d:bc6d
     {db tmp999[32]={186,16,71,187,108,188,114,188,16,61,187,102,188,142,188,16,251,186,76,188,149,188,98,114,100,109,0,128,0,134,0,0};MYCOPY(dummy0_4505d)} // 393d:bc8d
-
-
-
-
     {db tmp999=67;MYCOPY(dummy0_45081)} // 393d:bcb1
-
-
     {db tmp999=255;MYCOPY(dummy0_45084)} // 393d:bcb4
-
     {db tmp999=23;MYCOPY(dummy0_45086)} // 393d:bcb6
-
     {db tmp999=3;MYCOPY(dummy0_45088)} // 393d:bcb8
-
     {db tmp999=2;MYCOPY(dummy0_4508a)} // 393d:bcba
-
     {db tmp999=18;MYCOPY(dummy0_4508c)} // 393d:bcbc
     {db tmp999=1;MYCOPY(dummy0_4508d)} // 393d:bcbd
     {db tmp999=13;MYCOPY(dummy0_4508e)} // 393d:bcbe
-
-
-
-
-
-
-
     {db tmp999=204;MYCOPY(dummy0_45096)} // 393d:bcc6
     {db tmp999=2;MYCOPY(dummy0_45097)} // 393d:bcc7
     {dd tmp999=far_offset(seg094,unk_46722);MYCOPY(dummy0_45098)} // 393d:bcc8
     {db tmp999[32]={2,0,208,2,128,25,0,2,0,239,255,255,0,17,0,0,128,230,255,255,128,18,0,0,128,204,255,255,128,46,0,0};MYCOPY(dummy0_4509c)} // 393d:bccc
     {db tmp999[32]={0,0,23,0,3,0,128,0,63,0,0,0,0,0,128,31,0,0,255,0,23,0,3,0,2,0,235,0,13,0,0,0};MYCOPY(dummy0_450bc)} // 393d:bcec
-
-
-
-
     {db tmp999=114;MYCOPY(dummy0_450e0)} // 393d:bd10
     {db tmp999=2;MYCOPY(dummy0_450e1)} // 393d:bd11
     {dd tmp999=far_offset(seg095,unk_469f2);MYCOPY(dummy0_450e2)} // 393d:bd12
     {db tmp999[32]={2,0,115,2,0,8,16,2,0,245,255,255,0,11,0,0,0,248,255,255,0,13,0,0,0,232,255,255,0,24,0,0};MYCOPY(dummy0_450e6)} // 393d:bd16
     {db tmp999[32]={0,0,23,0,3,0,128,0,159,0,0,0,0,0,128,79,0,0,255,25,25,0,3,0,13,0,238,0,13,0,0,0};MYCOPY(dummy0_45106)} // 393d:bd36
-
-
-
-
     {db tmp999=13;MYCOPY(dummy0_4512a)} // 393d:bd5a
     {db tmp999=3;MYCOPY(dummy0_4512b)} // 393d:bd5b
     {dd tmp999=far_offset(seg096,unk_46d3d);MYCOPY(dummy0_4512c)} // 393d:bd5c
     {db tmp999[32]={13,0,4,3,0,11,0,2,128,237,255,255,128,18,0,0,0,245,255,255,0,17,0,0,128,225,255,255,0,65,0,0};MYCOPY(dummy0_45130)} // 393d:bd60
     {db tmp999[32]={0,0,25,0,3,0,128,0,124,0,0,0,0,0,0,62,0,0,255,0,25,0,3,0,13,0,219,0,13,0,0,0};MYCOPY(dummy0_45150)} // 393d:bd80
-
-
-
-
     {db tmp999=3;MYCOPY(dummy0_45174)} // 393d:bda4
     {db tmp999=3;MYCOPY(dummy0_45175)} // 393d:bda5
     {dd tmp999=far_offset(seg097,unk_4716d);MYCOPY(dummy0_45176)} // 393d:bda6
@@ -20256,48 +17782,25 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0,0,0,0,23,191,0,0,0,0,0,0,0,0,0,0,20,2,0,0,254,255,0,0,2,0,0,0,0,0,0,0};MYCOPY(dummy0_4529a)} // 393d:beca
     {db tmp999[32]={0,0,0,0,254,255,0,0,2,0,0,0,78,0,0,0,1,4,0,0,0,0,0,0,0,0,19,191,1,2,0,8};MYCOPY(dummy0_452ba)} // 393d:beea
     {db tmp999[32]={191,3,255,0,4,2,3,1,0,3,1,8,191,115,113,117,97,114,101,51,0,0,128,0,126,0,0,0,0,0,0,63};MYCOPY(dummy0_452da)} // 393d:bf0a
-
-
     {db tmp999=255;MYCOPY(dummy0_452fc)} // 393d:bf2c
-
     {db tmp999=23;MYCOPY(dummy0_452fe)} // 393d:bf2e
-
     {db tmp999=3;MYCOPY(dummy0_45300)} // 393d:bf30
-
     {db tmp999=4;MYCOPY(dummy0_45302)} // 393d:bf32
-
     {db tmp999=153;MYCOPY(dummy0_45304)} // 393d:bf34
-
     {db tmp999=13;MYCOPY(dummy0_45306)} // 393d:bf36
-
-
-
-
-
-
-
     {db tmp999=72;MYCOPY(dummy0_4530e)} // 393d:bf3e
     {db tmp999=3;MYCOPY(dummy0_4530f)} // 393d:bf3f
     {dd tmp999=far_offset(seg098,a0i5)+4;MYCOPY(dummy0_45310)} // 393d:bf40
     {db tmp999[32]={4,0,72,3,0,16,16,2,0,228,255,255,0,28,0,0,0,240,255,255,0,29,0,0,128,218,255,255,128,44,0,0};MYCOPY(dummy0_45314)} // 393d:bf44
     {db tmp999[32]={0,0,23,0,3,0,128,0,125,0,0,0,0,0,128,62,0,0,255,25,23,0,3,0,180,191,189,192,13,0,0,0};MYCOPY(dummy0_45334)} // 393d:bf64
     {db tmp999[32]={0,0,0,0,125,194,0,0,0,0,0,0,0,0,0,20,0,2,128,239,255,255,128,16,0,0,0,236,255,255,0,20};MYCOPY(dummy0_45354)} // 393d:bf84
-
-
-
     {db tmp999=208;MYCOPY(dummy0_45377)} // 393d:bfa7
     {db tmp999=255;MYCOPY(dummy0_45378)} // 393d:bfa8
     {db tmp999=255;MYCOPY(dummy0_45379)} // 393d:bfa9
     {db tmp999=128;MYCOPY(dummy0_4537a)} // 393d:bfaa
     {db tmp999=31;MYCOPY(dummy0_4537b)} // 393d:bfab
-
-
-
-
     {db tmp999=23;MYCOPY(dummy0_45380)} // 393d:bfb0
-
     {db tmp999=3;MYCOPY(dummy0_45382)} // 393d:bfb2
-
     {db tmp999=18;MYCOPY(dummy0_45384)} // 393d:bfb4
     {db tmp999=30;MYCOPY(dummy0_45385)} // 393d:bfb5
     {dd tmp999=m2c::kloc_3de46;MYCOPY(dummy0_45386)} // 393d:bfb6
@@ -20311,28 +17814,24 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=1;MYCOPY(dummy0_4542c)} // 393d:c05c
     {db tmp999=92;MYCOPY(dummy0_4542d)} // 393d:c05d
     {db tmp999=192;MYCOPY(dummy0_4542e)} // 393d:c05e
-
     {db tmp999=255;MYCOPY(dummy0_45430)} // 393d:c060
     {db tmp999=20;MYCOPY(dummy0_45431)} // 393d:c061
     {db tmp999=14;MYCOPY(dummy0_45432)} // 393d:c062
     {db tmp999=1;MYCOPY(dummy0_45433)} // 393d:c063
     {db tmp999=99;MYCOPY(dummy0_45434)} // 393d:c064
     {db tmp999=192;MYCOPY(dummy0_45435)} // 393d:c065
-
     {db tmp999=255;MYCOPY(dummy0_45437)} // 393d:c067
     {db tmp999=21;MYCOPY(dummy0_45438)} // 393d:c068
     {db tmp999=15;MYCOPY(dummy0_45439)} // 393d:c069
     {db tmp999=1;MYCOPY(dummy0_4543a)} // 393d:c06a
     {db tmp999=106;MYCOPY(dummy0_4543b)} // 393d:c06b
     {db tmp999=192;MYCOPY(dummy0_4543c)} // 393d:c06c
-
     {db tmp999=255;MYCOPY(dummy0_4543e)} // 393d:c06e
     {db tmp999=19;MYCOPY(dummy0_4543f)} // 393d:c06f
     {db tmp999=17;MYCOPY(dummy0_45440)} // 393d:c070
     {db tmp999=1;MYCOPY(dummy0_45441)} // 393d:c071
     {db tmp999=113;MYCOPY(dummy0_45442)} // 393d:c072
     {db tmp999=192;MYCOPY(dummy0_45443)} // 393d:c073
-
     {db tmp999=255;MYCOPY(dummy0_45445)} // 393d:c075
     {db tmp999=18;MYCOPY(dummy0_45446)} // 393d:c076
     {db tmp999=16;MYCOPY(dummy0_45447)} // 393d:c077
@@ -20386,7 +17885,6 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={255,0,4,25,24,30,31,16,138,193,8,255,0,4,24,27,29,30,16,149,193,7,255,0,4,27,26,28,29,16,160,193};MYCOPY(dummy0_45553)} // 393d:c183
     {db tmp999=4;MYCOPY(dummy0_45573)} // 393d:c1a3
     {db tmp999=255;MYCOPY(dummy0_45574)} // 393d:c1a4
-
     {db tmp999=4;MYCOPY(dummy0_45576)} // 393d:c1a6
     {db tmp999=28;MYCOPY(dummy0_45577)} // 393d:c1a7
     {db tmp999=31;MYCOPY(dummy0_45578)} // 393d:c1a8
@@ -20397,19 +17895,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=193;MYCOPY(dummy0_4557d)} // 393d:c1ad
     {db tmp999=3;MYCOPY(dummy0_4557e)} // 393d:c1ae
     {db tmp999=255;MYCOPY(dummy0_4557f)} // 393d:c1af
-
     {db tmp999=4;MYCOPY(dummy0_45581)} // 393d:c1b1
     {db tmp999=34;MYCOPY(dummy0_45582)} // 393d:c1b2
     {db tmp999=33;MYCOPY(dummy0_45583)} // 393d:c1b3
     {db tmp999=32;MYCOPY(dummy0_45584)} // 393d:c1b4
     {db tmp999=35;MYCOPY(dummy0_45585)} // 393d:c1b5
-
     {db tmp999=182;MYCOPY(dummy0_45587)} // 393d:c1b7
     {db tmp999=193;MYCOPY(dummy0_45588)} // 393d:c1b8
     {db tmp999=12;MYCOPY(unk_53b69)} // 393d:c1b9
     {db tmp999[32]={255,0,6,49,48,47,46,45,44,8,195,193,7,255,0,3,16,21,22,1,205,193,0,255,42,36,1,212,193,0,255,43};MYCOPY(dummy0_4558a)} // 393d:c1ba
     {db tmp999[32]={37,1,219,193,0,255,41,39,1,226,193,0,255,40,38,1,233,193,0,255,52,53,1,240,193,0,255,53,50,1,247,193};MYCOPY(dummy0_455aa)} // 393d:c1da
-
     {db tmp999=255;MYCOPY(dummy0_455cb)} // 393d:c1fb
     {db tmp999=53;MYCOPY(dummy0_455cc)} // 393d:c1fc
     {db tmp999=51;MYCOPY(dummy0_455cd)} // 393d:c1fd
@@ -20472,100 +17967,39 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=116;MYCOPY(dummy0_45815)} // 393d:c445
     {db tmp999=13;MYCOPY(dummy0_45816)} // 393d:c446
     {db tmp999=10;MYCOPY(dummy0_45817)} // 393d:c447
-
     {db tmp999=255;MYCOPY(dummy0_45819)} // 393d:c449
     {dw tmp999=65535;MYCOPY(word_53dfa)} // 393d:c44a
     {dw tmp999=seg_offset(seg003);MYCOPY(seg_53dfc)} // 393d:c44c
     {db tmp999=0;MYCOPY(unk_53dfe)} // 393d:c44e
-
     {db tmp999=0;MYCOPY(unk_53e00)} // 393d:c450
-
     {db tmp999=0;MYCOPY(unk_53e02)} // 393d:c452
-
     {db tmp999=0;MYCOPY(unk_53e04)} // 393d:c454
-
     {db tmp999=0;MYCOPY(unk_53e06)} // 393d:c456
-
     {db tmp999=0;MYCOPY(unk_53e08)} // 393d:c458
-
     {db tmp999=0;MYCOPY(unk_53e0a)} // 393d:c45a
-
     {db tmp999=0;MYCOPY(unk_53e0c)} // 393d:c45c
-
     {db tmp999=0;MYCOPY(unk_53e0e)} // 393d:c45e
-
     {db tmp999=0;MYCOPY(unk_53e10)} // 393d:c460
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_53e2c)} // 393d:c47c
-
     {db tmp999=0;MYCOPY(unk_53e2e)} // 393d:c47e
-
     {db tmp999=0;MYCOPY(unk_53e30)} // 393d:c480
-
     {db tmp999=0;MYCOPY(unk_53e32)} // 393d:c482
-
     {db tmp999=0;MYCOPY(unk_53e34)} // 393d:c484
-
     {db tmp999=0;MYCOPY(unk_53e36)} // 393d:c486
-
     {db tmp999=0;MYCOPY(unk_53e38)} // 393d:c488
-
     {db tmp999=0;MYCOPY(unk_53e3a)} // 393d:c48a
-
     {db tmp999=0;MYCOPY(unk_53e3c)} // 393d:c48c
-
     {db tmp999=0;MYCOPY(unk_53e3e)} // 393d:c48e
-
     {db tmp999=0;MYCOPY(unk_53e40)} // 393d:c490
-
     {db tmp999=0;MYCOPY(unk_53e42)} // 393d:c492
-
     {db tmp999=0;MYCOPY(unk_53e44)} // 393d:c494
-
     {db tmp999=0;MYCOPY(unk_53e46)} // 393d:c496
-
     {db tmp999=0;MYCOPY(unk_53e48)} // 393d:c498
-
     {db tmp999=0;MYCOPY(unk_53e4a)} // 393d:c49a
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_53e50)} // 393d:c4a0
-
     {db tmp999=0;MYCOPY(unk_53e52)} // 393d:c4a2
-
     {db tmp999=0;MYCOPY(unk_53e54)} // 393d:c4a4
-
     {db tmp999=0;MYCOPY(unk_53e56)} // 393d:c4a6
-
     {db tmp999=0;MYCOPY(unk_53e58)} // 393d:c4a8
     {db tmp999[32]={0};MYCOPY(dummy0_45879)} // 393d:c4a9
     {db tmp999[32]={0};MYCOPY(dummy0_45899)} // 393d:c4c9
@@ -20574,309 +18008,84 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_458f9)} // 393d:c529
     {db tmp999[32]={0};MYCOPY(dummy0_45919)} // 393d:c549
     {db tmp999[32]={0};MYCOPY(dummy0_45939)} // 393d:c569
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_53f42)} // 393d:c592
-
     {db tmp999=0;MYCOPY(unk_53f44)} // 393d:c594
     {db tmp999[32]={0};MYCOPY(dummy0_45965)} // 393d:c595
     {db tmp999[32]={0};MYCOPY(dummy0_45985)} // 393d:c5b5
     {db tmp999[32]={0};MYCOPY(dummy0_459a5)} // 393d:c5d5
     {db tmp999[32]={0};MYCOPY(dummy0_459c5)} // 393d:c5f5
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_53fcc)} // 393d:c61c
-
     {db tmp999=0;MYCOPY(unk_53fce)} // 393d:c61e
-
     {db tmp999=0;MYCOPY(unk_53fd0)} // 393d:c620
-
     {db tmp999=0;MYCOPY(unk_53fd2)} // 393d:c622
     {db tmp999[32]={0};MYCOPY(dummy0_459f3)} // 393d:c623
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54010)} // 393d:c660
-
     {db tmp999=0;MYCOPY(unk_54012)} // 393d:c662
-
     {db tmp999=0;MYCOPY(unk_54014)} // 393d:c664
-
     {db tmp999=0;MYCOPY(unk_54016)} // 393d:c666
-
     {db tmp999=0;MYCOPY(unk_54018)} // 393d:c668
-
     {db tmp999=0;MYCOPY(unk_5401a)} // 393d:c66a
-
     {db tmp999=0;MYCOPY(unk_5401c)} // 393d:c66c
-
     {db tmp999=0;MYCOPY(unk_5401e)} // 393d:c66e
-
     {db tmp999=0;MYCOPY(unk_54020)} // 393d:c670
-
     {db tmp999=0;MYCOPY(unk_54022)} // 393d:c672
-
     {db tmp999=0;MYCOPY(unk_54024)} // 393d:c674
-
     {db tmp999=0;MYCOPY(unk_54026)} // 393d:c676
-
     {db tmp999=0;MYCOPY(unk_54028)} // 393d:c678
-
     {db tmp999=0;MYCOPY(unk_5402a)} // 393d:c67a
-
     {db tmp999=0;MYCOPY(unk_5402c)} // 393d:c67c
-
     {db tmp999=0;MYCOPY(unk_5402e)} // 393d:c67e
-
     {db tmp999=0;MYCOPY(unk_54030)} // 393d:c680
-
     {db tmp999=0;MYCOPY(unk_54032)} // 393d:c682
-
     {db tmp999=0;MYCOPY(unk_54034)} // 393d:c684
-
     {db tmp999=0;MYCOPY(unk_54036)} // 393d:c686
-
     {db tmp999=0;MYCOPY(unk_54038)} // 393d:c688
-
     {db tmp999=0;MYCOPY(unk_5403a)} // 393d:c68a
-
     {db tmp999=0;MYCOPY(unk_5403c)} // 393d:c68c
     {db tmp999[32]={0};MYCOPY(dummy0_45a5d)} // 393d:c68d
     {db tmp999[32]={0};MYCOPY(dummy0_45a7d)} // 393d:c6ad
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5408c)} // 393d:c6dc
-
     {db tmp999=0;MYCOPY(unk_5408e)} // 393d:c6de
-
     {db tmp999=0;MYCOPY(unk_54090)} // 393d:c6e0
-
     {db tmp999=0;MYCOPY(unk_54092)} // 393d:c6e2
-
     {db tmp999=0;MYCOPY(unk_54094)} // 393d:c6e4
-
     {db tmp999=0;MYCOPY(unk_54096)} // 393d:c6e6
-
     {db tmp999=0;MYCOPY(unk_54098)} // 393d:c6e8
-
     {db tmp999=0;MYCOPY(unk_5409a)} // 393d:c6ea
-
     {db tmp999=0;MYCOPY(unk_5409c)} // 393d:c6ec
-
     {db tmp999=0;MYCOPY(unk_5409e)} // 393d:c6ee
-
     {db tmp999=0;MYCOPY(unk_540a0)} // 393d:c6f0
-
     {db tmp999=0;MYCOPY(unk_540a2)} // 393d:c6f2
     {db tmp999[32]={0};MYCOPY(dummy0_45ac3)} // 393d:c6f3
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_540d0)} // 393d:c720
-
     {db tmp999=0;MYCOPY(unk_540d2)} // 393d:c722
-
     {db tmp999=0;MYCOPY(unk_540d4)} // 393d:c724
-
     {db tmp999=0;MYCOPY(unk_540d6)} // 393d:c726
-
     {db tmp999=0;MYCOPY(unk_540d8)} // 393d:c728
-
     {db tmp999=0;MYCOPY(unk_540da)} // 393d:c72a
-
     {db tmp999=0;MYCOPY(unk_540dc)} // 393d:c72c
-
     {db tmp999=0;MYCOPY(unk_540de)} // 393d:c72e
-
     {db tmp999=0;MYCOPY(unk_540e0)} // 393d:c730
-
     {db tmp999=0;MYCOPY(unk_540e2)} // 393d:c732
-
     {db tmp999=0;MYCOPY(unk_540e4)} // 393d:c734
-
     {db tmp999=0;MYCOPY(unk_540e6)} // 393d:c736
     {db tmp999[32]={0};MYCOPY(dummy0_45b07)} // 393d:c737
     {db tmp999[32]={0};MYCOPY(dummy0_45b27)} // 393d:c757
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54142)} // 393d:c792
-
     {db tmp999=0;MYCOPY(unk_54144)} // 393d:c794
-
     {db tmp999=0;MYCOPY(unk_54146)} // 393d:c796
-
     {db tmp999=0;MYCOPY(unk_54148)} // 393d:c798
-
     {db tmp999=0;MYCOPY(unk_5414a)} // 393d:c79a
-
     {db tmp999=0;MYCOPY(unk_5414c)} // 393d:c79c
-
     {db tmp999=0;MYCOPY(unk_5414e)} // 393d:c79e
     {db tmp999[32]={0};MYCOPY(dummy0_45b6f)} // 393d:c79f
     {db tmp999[32]={0};MYCOPY(dummy0_45b8f)} // 393d:c7bf
     {db tmp999[32]={0};MYCOPY(dummy0_45baf)} // 393d:c7df
     {db tmp999[32]={0};MYCOPY(dummy0_45bcf)} // 393d:c7ff
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_541e6)} // 393d:c836
-
     {db tmp999=0;MYCOPY(unk_541e8)} // 393d:c838
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_541f8)} // 393d:c848
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54212)} // 393d:c862
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5421a)} // 393d:c86a
     {db tmp999[32]={0};MYCOPY(dummy0_45c3b)} // 393d:c86b
     {db tmp999[32]={0};MYCOPY(dummy0_45c5b)} // 393d:c88b
@@ -20884,130 +18093,50 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_45c9b)} // 393d:c8cb
     {db tmp999[32]={0};MYCOPY(dummy0_45cbb)} // 393d:c8eb
     {db tmp999[32]={0};MYCOPY(dummy0_45cdb)} // 393d:c90b
-
     {db tmp999=0;MYCOPY(unk_542dc)} // 393d:c92c
-
     {db tmp999=0;MYCOPY(unk_542de)} // 393d:c92e
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_542e8)} // 393d:c938
-
     {db tmp999=0;MYCOPY(unk_542ea)} // 393d:c93a
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54308)} // 393d:c958
-
     {db tmp999=0;MYCOPY(unk_5430a)} // 393d:c95a
-
     {db tmp999=0;MYCOPY(unk_5430c)} // 393d:c95c
-
     {db tmp999=0;MYCOPY(unk_5430e)} // 393d:c95e
-
     {db tmp999=0;MYCOPY(unk_54310)} // 393d:c960
     {db tmp999=0;MYCOPY(unk_54311)} // 393d:c961
     {db tmp999=0;MYCOPY(unk_54312)} // 393d:c962
-
     {db tmp999=0;MYCOPY(unk_54314)} // 393d:c964
-
     {db tmp999=0;MYCOPY(unk_54316)} // 393d:c966
-
     {db tmp999=0;MYCOPY(unk_54318)} // 393d:c968
-
     {db tmp999=0;MYCOPY(unk_5431a)} // 393d:c96a
-
     {db tmp999=0;MYCOPY(unk_5431c)} // 393d:c96c
-
     {db tmp999=0;MYCOPY(unk_5431e)} // 393d:c96e
-
     {db tmp999=0;MYCOPY(unk_54320)} // 393d:c970
-
     {db tmp999=0;MYCOPY(unk_54322)} // 393d:c972
-
     {db tmp999=0;MYCOPY(unk_54324)} // 393d:c974
-
     {db tmp999=0;MYCOPY(unk_54326)} // 393d:c976
-
     {db tmp999=0;MYCOPY(unk_54328)} // 393d:c978
-
     {db tmp999=0;MYCOPY(unk_5432a)} // 393d:c97a
-
     {db tmp999=0;MYCOPY(unk_5432c)} // 393d:c97c
-
     {db tmp999=0;MYCOPY(unk_5432e)} // 393d:c97e
-
     {db tmp999=0;MYCOPY(unk_54330)} // 393d:c980
-
     {db tmp999=0;MYCOPY(unk_54332)} // 393d:c982
-
     {db tmp999=0;MYCOPY(unk_54334)} // 393d:c984
-
     {db tmp999=0;MYCOPY(unk_54336)} // 393d:c986
-
     {db tmp999=0;MYCOPY(unk_54338)} // 393d:c988
-
     {db tmp999=0;MYCOPY(unk_5433a)} // 393d:c98a
-
     {db tmp999=0;MYCOPY(unk_5433c)} // 393d:c98c
-
     {db tmp999=0;MYCOPY(unk_5433e)} // 393d:c98e
-
     {db tmp999=0;MYCOPY(unk_54340)} // 393d:c990
-
     {db tmp999=0;MYCOPY(unk_54342)} // 393d:c992
-
     {db tmp999=0;MYCOPY(unk_54344)} // 393d:c994
     {db tmp999[32]={0};MYCOPY(dummy0_45d65)} // 393d:c995
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5436a)} // 393d:c9ba
     {db tmp999=0;MYCOPY(unk_5436b)} // 393d:c9bb
     {db tmp999=0;MYCOPY(unk_5436c)} // 393d:c9bc
-
     {db tmp999=0;MYCOPY(unk_5436e)} // 393d:c9be
-
     {db tmp999=0;MYCOPY(unk_54370)} // 393d:c9c0
-
     {db tmp999=0;MYCOPY(unk_54372)} // 393d:c9c2
-
     {db tmp999=0;MYCOPY(unk_54374)} // 393d:c9c4
-
     {db tmp999=0;MYCOPY(unk_54376)} // 393d:c9c6
     {db tmp999[32]={0};MYCOPY(dummy0_45d97)} // 393d:c9c7
     {db tmp999[32]={0};MYCOPY(dummy0_45db7)} // 393d:c9e7
@@ -21015,382 +18144,100 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_45df7)} // 393d:ca27
     {db tmp999[32]={0};MYCOPY(dummy0_45e17)} // 393d:ca47
     {db tmp999[32]={0};MYCOPY(dummy0_45e37)} // 393d:ca67
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54440)} // 393d:ca90
-
     {db tmp999=0;MYCOPY(unk_54442)} // 393d:ca92
-
-
-
     {db tmp999=0;MYCOPY(unk_54446)} // 393d:ca96
-
     {db tmp999=0;MYCOPY(unk_54448)} // 393d:ca98
-
     {db tmp999=0;MYCOPY(unk_5444a)} // 393d:ca9a
-
     {db tmp999=0;MYCOPY(unk_5444c)} // 393d:ca9c
-
     {db tmp999=0;MYCOPY(unk_5444e)} // 393d:ca9e
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5446c)} // 393d:cabc
-
     {db tmp999=0;MYCOPY(unk_5446e)} // 393d:cabe
-
     {db tmp999=0;MYCOPY(unk_54470)} // 393d:cac0
-
     {db tmp999=0;MYCOPY(unk_54472)} // 393d:cac2
-
     {db tmp999=0;MYCOPY(unk_54474)} // 393d:cac4
-
     {db tmp999=0;MYCOPY(unk_54476)} // 393d:cac6
-
     {db tmp999=0;MYCOPY(unk_54478)} // 393d:cac8
-
     {db tmp999=0;MYCOPY(unk_5447a)} // 393d:caca
-
     {db tmp999=0;MYCOPY(unk_5447c)} // 393d:cacc
-
     {db tmp999=0;MYCOPY(unk_5447e)} // 393d:cace
-
-
-
     {db tmp999=0;MYCOPY(unk_54482)} // 393d:cad2
-
     {db tmp999=0;MYCOPY(unk_54484)} // 393d:cad4
-
     {db tmp999=0;MYCOPY(unk_54486)} // 393d:cad6
-
     {db tmp999=0;MYCOPY(unk_54488)} // 393d:cad8
-
     {db tmp999=0;MYCOPY(unk_5448a)} // 393d:cada
     {db tmp999[32]={0};MYCOPY(dummy0_45eab)} // 393d:cadb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_544be)} // 393d:cb0e
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_544c8)} // 393d:cb18
-
     {db tmp999=0;MYCOPY(unk_544ca)} // 393d:cb1a
-
     {db tmp999=0;MYCOPY(unk_544cc)} // 393d:cb1c
-
-
-
     {db tmp999=0;MYCOPY(unk_544d0)} // 393d:cb20
-
     {db tmp999=0;MYCOPY(unk_544d2)} // 393d:cb22
-
     {db tmp999=0;MYCOPY(unk_544d4)} // 393d:cb24
-
     {db tmp999=0;MYCOPY(unk_544d6)} // 393d:cb26
-
     {db tmp999=0;MYCOPY(unk_544d8)} // 393d:cb28
-
     {db tmp999=0;MYCOPY(unk_544da)} // 393d:cb2a
-
     {db tmp999=0;MYCOPY(unk_544dc)} // 393d:cb2c
-
     {db tmp999=0;MYCOPY(unk_544de)} // 393d:cb2e
-
     {db tmp999=0;MYCOPY(unk_544e0)} // 393d:cb30
-
     {db tmp999=0;MYCOPY(unk_544e2)} // 393d:cb32
-
     {db tmp999=0;MYCOPY(unk_544e4)} // 393d:cb34
-
     {db tmp999=0;MYCOPY(unk_544e6)} // 393d:cb36
-
     {db tmp999=0;MYCOPY(unk_544e8)} // 393d:cb38
-
     {db tmp999=0;MYCOPY(unk_544ea)} // 393d:cb3a
-
     {db tmp999=0;MYCOPY(unk_544ec)} // 393d:cb3c
-
     {db tmp999=0;MYCOPY(unk_544ee)} // 393d:cb3e
-
     {db tmp999=0;MYCOPY(unk_544f0)} // 393d:cb40
-
     {db tmp999=0;MYCOPY(unk_544f2)} // 393d:cb42
-
     {db tmp999=0;MYCOPY(unk_544f4)} // 393d:cb44
-
     {db tmp999=0;MYCOPY(unk_544f6)} // 393d:cb46
-
     {db tmp999=0;MYCOPY(unk_544f8)} // 393d:cb48
-
     {db tmp999=0;MYCOPY(unk_544fa)} // 393d:cb4a
-
     {db tmp999=0;MYCOPY(unk_544fc)} // 393d:cb4c
     {db tmp999[32]={0};MYCOPY(dummy0_45f1d)} // 393d:cb4d
     {db tmp999[32]={0};MYCOPY(dummy0_45f3d)} // 393d:cb6d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54558)} // 393d:cba8
     {db tmp999[32]={0};MYCOPY(dummy0_45f79)} // 393d:cba9
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54584)} // 393d:cbd4
-
     {db tmp999=0;MYCOPY(unk_54586)} // 393d:cbd6
-
     {db tmp999=0;MYCOPY(unk_54588)} // 393d:cbd8
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54594)} // 393d:cbe4
-
     {db tmp999=0;MYCOPY(unk_54596)} // 393d:cbe6
-
     {db tmp999=0;MYCOPY(unk_54598)} // 393d:cbe8
-
     {db tmp999=0;MYCOPY(unk_5459a)} // 393d:cbea
-
     {db tmp999=0;MYCOPY(unk_5459c)} // 393d:cbec
-
     {db tmp999=0;MYCOPY(unk_5459e)} // 393d:cbee
-
     {db tmp999=0;MYCOPY(unk_545a0)} // 393d:cbf0
-
     {db tmp999=0;MYCOPY(unk_545a2)} // 393d:cbf2
-
     {db tmp999=0;MYCOPY(unk_545a4)} // 393d:cbf4
-
     {db tmp999=0;MYCOPY(unk_545a6)} // 393d:cbf6
-
     {db tmp999=0;MYCOPY(unk_545a8)} // 393d:cbf8
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_545c6)} // 393d:cc16
     {db tmp999[32]={0};MYCOPY(dummy0_45fe7)} // 393d:cc17
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_545ee)} // 393d:cc3e
-
     {db tmp999=0;MYCOPY(unk_545f0)} // 393d:cc40
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_545fa)} // 393d:cc4a
-
     {db tmp999=0;MYCOPY(unk_545fc)} // 393d:cc4c
-
     {db tmp999=0;MYCOPY(unk_545fe)} // 393d:cc4e
-
     {db tmp999=0;MYCOPY(unk_54600)} // 393d:cc50
-
     {db tmp999=0;MYCOPY(unk_54602)} // 393d:cc52
-
     {db tmp999=0;MYCOPY(unk_54604)} // 393d:cc54
-
     {db tmp999=0;MYCOPY(unk_54606)} // 393d:cc56
-
     {db tmp999=0;MYCOPY(unk_54608)} // 393d:cc58
-
     {db tmp999=0;MYCOPY(unk_5460a)} // 393d:cc5a
-
     {db tmp999=0;MYCOPY(unk_5460c)} // 393d:cc5c
-
     {db tmp999=0;MYCOPY(unk_5460e)} // 393d:cc5e
-
     {db tmp999=0;MYCOPY(unk_54610)} // 393d:cc60
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5461a)} // 393d:cc6a
-
     {db tmp999=0;MYCOPY(unk_5461c)} // 393d:cc6c
-
     {db tmp999=0;MYCOPY(unk_5461e)} // 393d:cc6e
-
     {db tmp999=0;MYCOPY(unk_54620)} // 393d:cc70
-
     {db tmp999=0;MYCOPY(unk_54622)} // 393d:cc72
-
-
-
     {db tmp999=0;MYCOPY(unk_54626)} // 393d:cc76
-
     {db tmp999=0;MYCOPY(unk_54628)} // 393d:cc78
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_54644)} // 393d:cc94
-
     {db tmp999=0;MYCOPY(unk_54646)} // 393d:cc96
-
     {db tmp999=0;MYCOPY(unk_54648)} // 393d:cc98
-
     {db tmp999=0;MYCOPY(unk_5464a)} // 393d:cc9a
     {db tmp999[32]={0};MYCOPY(dummy0_4606b)} // 393d:cc9b
     {db tmp999[32]={0};MYCOPY(dummy0_4608b)} // 393d:ccbb
@@ -21485,44 +18332,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_46bab)} // 393d:d7db
     {db tmp999[32]={0};MYCOPY(dummy0_46bcb)} // 393d:d7fb
     {db tmp999[32]={0};MYCOPY(dummy0_46beb)} // 393d:d81b
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {db tmp999=0;MYCOPY(unk_55204)} // 393d:d854
+    {db tmp999=0;MYCOPY(byte_55204)} // 393d:d854
     {db tmp999=0;MYCOPY(unk_55205)} // 393d:d855
     {db tmp999=0;MYCOPY(unk_55206)} // 393d:d856
     {db tmp999=0;MYCOPY(unk_55207)} // 393d:d857
     {db tmp999=0;MYCOPY(unk_55208)} // 393d:d858
-    {db tmp999=0;MYCOPY(unk_55209)} // 393d:d859
+    {db tmp999=0;MYCOPY(byte_55209)} // 393d:d859
     {db tmp999=0;MYCOPY(unk_5520a)} // 393d:d85a
     {db tmp999=0;MYCOPY(unk_5520b)} // 393d:d85b
-
     {db tmp999=0;MYCOPY(unk_5520d)} // 393d:d85d
-
     {db tmp999=0;MYCOPY(unk_5520f)} // 393d:d85f
-
     {db tmp999=0;MYCOPY(unk_55211)} // 393d:d861
     {db tmp999=0;MYCOPY(unk_55212)} // 393d:d862
     {db tmp999=0;MYCOPY(unk_55213)} // 393d:d863
@@ -21674,111 +18493,41 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_47e35)} // 393d:ea65
     {db tmp999[32]={0};MYCOPY(dummy0_47e55)} // 393d:ea85
     {db tmp999[32]={0};MYCOPY(dummy0_47e75)} // 393d:eaa5
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56486)} // 393d:ead6
-
     {db tmp999=0;MYCOPY(unk_56488)} // 393d:ead8
-
     {db tmp999=0;MYCOPY(unk_5648a)} // 393d:eada
-
     {db tmp999=0;MYCOPY(unk_5648c)} // 393d:eadc
-
     {db tmp999=0;MYCOPY(unk_5648e)} // 393d:eade
-
     {db tmp999=0;MYCOPY(unk_56490)} // 393d:eae0
-
-    {db tmp999=0;MYCOPY(unk_56492)} // 393d:eae2
+    {db tmp999=0;MYCOPY(byte_56492)} // 393d:eae2
     {db tmp999=0;MYCOPY(unk_56493)} // 393d:eae3
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5649a)} // 393d:eaea
     {db tmp999[32]={0};MYCOPY(dummy0_47ebb)} // 393d:eaeb
     {db tmp999[32]={0};MYCOPY(dummy0_47edb)} // 393d:eb0b
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_564ec)} // 393d:eb3c
-
     {db tmp999=0;MYCOPY(unk_564ee)} // 393d:eb3e
-
     {db tmp999=0;MYCOPY(unk_564f0)} // 393d:eb40
-
     {db tmp999=0;MYCOPY(unk_564f2)} // 393d:eb42
-
     {db tmp999=0;MYCOPY(unk_564f4)} // 393d:eb44
-
     {db tmp999=0;MYCOPY(unk_564f6)} // 393d:eb46
-
     {db tmp999=0;MYCOPY(unk_564f8)} // 393d:eb48
-
     {db tmp999=0;MYCOPY(unk_564fa)} // 393d:eb4a
-
     {db tmp999=0;MYCOPY(unk_564fc)} // 393d:eb4c
-
     {db tmp999=0;MYCOPY(unk_564fe)} // 393d:eb4e
-
     {db tmp999=0;MYCOPY(unk_56500)} // 393d:eb50
-
     {db tmp999=0;MYCOPY(unk_56502)} // 393d:eb52
-
     {db tmp999=0;MYCOPY(unk_56504)} // 393d:eb54
-
     {db tmp999=0;MYCOPY(unk_56506)} // 393d:eb56
-
     {db tmp999=0;MYCOPY(unk_56508)} // 393d:eb58
-
     {db tmp999=0;MYCOPY(unk_5650a)} // 393d:eb5a
-
     {db tmp999=0;MYCOPY(unk_5650c)} // 393d:eb5c
-
     {db tmp999=0;MYCOPY(unk_5650e)} // 393d:eb5e
-
     {db tmp999=0;MYCOPY(unk_56510)} // 393d:eb60
-
     {db tmp999=0;MYCOPY(unk_56512)} // 393d:eb62
-
     {db tmp999=0;MYCOPY(unk_56514)} // 393d:eb64
-
     {db tmp999=0;MYCOPY(unk_56516)} // 393d:eb66
-
     {db tmp999=0;MYCOPY(unk_56518)} // 393d:eb68
-
-    {db tmp999=0;MYCOPY(unk_5651a)} // 393d:eb6a
-
+    {dw tmp999=0;MYCOPY(word_5651a)} // 393d:eb6a
     {db tmp999=0;MYCOPY(unk_5651c)} // 393d:eb6c
     {db tmp999[32]={0};MYCOPY(dummy0_47f3d)} // 393d:eb6d
     {db tmp999[32]={0};MYCOPY(dummy0_47f5d)} // 393d:eb8d
@@ -21792,67 +18541,19 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_4805d)} // 393d:ec8d
     {db tmp999[32]={0};MYCOPY(dummy0_4807d)} // 393d:ecad
     {db tmp999[32]={0};MYCOPY(dummy0_4809d)} // 393d:eccd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_566ae)} // 393d:ecfe
-
     {db tmp999=0;MYCOPY(unk_566b0)} // 393d:ed00
-
     {db tmp999=0;MYCOPY(unk_566b2)} // 393d:ed02
-
     {db tmp999=0;MYCOPY(unk_566b4)} // 393d:ed04
-
     {db tmp999=0;MYCOPY(unk_566b6)} // 393d:ed06
-
     {db tmp999=0;MYCOPY(unk_566b8)} // 393d:ed08
-
     {db tmp999=0;MYCOPY(unk_566ba)} // 393d:ed0a
-
     {db tmp999=0;MYCOPY(unk_566bc)} // 393d:ed0c
-
     {db tmp999=0;MYCOPY(unk_566be)} // 393d:ed0e
-
     {db tmp999=0;MYCOPY(unk_566c0)} // 393d:ed10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_566d4)} // 393d:ed24
-
     {db tmp999=0;MYCOPY(unk_566d6)} // 393d:ed26
-
     {db tmp999=0;MYCOPY(unk_566d8)} // 393d:ed28
-
     {db tmp999=0;MYCOPY(unk_566da)} // 393d:ed2a
     {db tmp999[32]={0};MYCOPY(dummy0_480fb)} // 393d:ed2b
     {db tmp999[32]={0};MYCOPY(dummy0_4811b)} // 393d:ed4b
@@ -21867,29 +18568,18 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_4823b)} // 393d:ee6b
     {db tmp999[32]={0};MYCOPY(dummy0_4825b)} // 393d:ee8b
     {db tmp999[32]={0};MYCOPY(dummy0_4827b)} // 393d:eeab
-
-    {db tmp999=0;MYCOPY(unk_5687c)} // 393d:eecc
+    {db tmp999=0;MYCOPY(byte_5687c)} // 393d:eecc
     {db tmp999=0;MYCOPY(unk_5687d)} // 393d:eecd
-
     {db tmp999=0;MYCOPY(unk_5687f)} // 393d:eecf
-
     {db tmp999=0;MYCOPY(unk_56881)} // 393d:eed1
-
     {db tmp999=0;MYCOPY(unk_56883)} // 393d:eed3
-
     {db tmp999=0;MYCOPY(unk_56885)} // 393d:eed5
     {db tmp999=0;MYCOPY(unk_56886)} // 393d:eed6
-
     {db tmp999=0;MYCOPY(unk_56888)} // 393d:eed8
-
     {db tmp999=0;MYCOPY(unk_5688a)} // 393d:eeda
-
     {db tmp999=0;MYCOPY(unk_5688c)} // 393d:eedc
-
     {db tmp999=0;MYCOPY(unk_5688e)} // 393d:eede
-
     {db tmp999=0;MYCOPY(unk_56890)} // 393d:eee0
-
     {db tmp999=0;MYCOPY(unk_56892)} // 393d:eee2
     {db tmp999[32]={0};MYCOPY(dummy0_482b3)} // 393d:eee3
     {db tmp999[32]={0};MYCOPY(dummy0_482d3)} // 393d:ef03
@@ -21900,523 +18590,210 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_48373)} // 393d:efa3
     {db tmp999[32]={0};MYCOPY(dummy0_48393)} // 393d:efc3
     {db tmp999[32]={0};MYCOPY(dummy0_483b3)} // 393d:efe3
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_569be)} // 393d:f00e
-
     {db tmp999=0;MYCOPY(unk_569c0)} // 393d:f010
-
     {db tmp999=0;MYCOPY(unk_569c2)} // 393d:f012
-
     {db tmp999=0;MYCOPY(unk_569c4)} // 393d:f014
-
     {db tmp999=0;MYCOPY(unk_569c6)} // 393d:f016
-
-    {db tmp999=0;MYCOPY(unk_569c8)} // 393d:f018
+    {db tmp999=0;MYCOPY(byte_569c8)} // 393d:f018
     {db tmp999=0;MYCOPY(unk_569c9)} // 393d:f019
-
     {db tmp999=0;MYCOPY(unk_569cb)} // 393d:f01b
-
     {db tmp999=0;MYCOPY(unk_569cd)} // 393d:f01d
-
     {db tmp999=0;MYCOPY(unk_569cf)} // 393d:f01f
-
     {db tmp999=0;MYCOPY(unk_569d1)} // 393d:f021
-
     {db tmp999=0;MYCOPY(unk_569d3)} // 393d:f023
-
     {db tmp999=0;MYCOPY(unk_569d5)} // 393d:f025
-
     {db tmp999=0;MYCOPY(unk_569d7)} // 393d:f027
-
     {db tmp999=0;MYCOPY(unk_569d9)} // 393d:f029
-
     {db tmp999=0;MYCOPY(unk_569db)} // 393d:f02b
-
     {db tmp999=0;MYCOPY(unk_569dd)} // 393d:f02d
-
     {db tmp999=0;MYCOPY(unk_569df)} // 393d:f02f
-
     {db tmp999=0;MYCOPY(unk_569e1)} // 393d:f031
-
     {db tmp999=0;MYCOPY(unk_569e3)} // 393d:f033
-
     {db tmp999=0;MYCOPY(unk_569e5)} // 393d:f035
-
     {db tmp999=0;MYCOPY(unk_569e7)} // 393d:f037
     {db tmp999=0;MYCOPY(unk_569e8)} // 393d:f038
     {db tmp999=0;MYCOPY(unk_569e9)} // 393d:f039
-
     {db tmp999=0;MYCOPY(unk_569eb)} // 393d:f03b
-
     {db tmp999=0;MYCOPY(unk_569ed)} // 393d:f03d
-
     {db tmp999=0;MYCOPY(unk_569ef)} // 393d:f03f
-
     {db tmp999=0;MYCOPY(unk_569f1)} // 393d:f041
-
     {db tmp999=0;MYCOPY(unk_569f3)} // 393d:f043
-
     {db tmp999=0;MYCOPY(unk_569f5)} // 393d:f045
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_569fd)} // 393d:f04d
-
     {db tmp999=0;MYCOPY(unk_569ff)} // 393d:f04f
-
     {db tmp999=0;MYCOPY(unk_56a01)} // 393d:f051
-
     {db tmp999=0;MYCOPY(unk_56a03)} // 393d:f053
-
     {db tmp999=0;MYCOPY(unk_56a05)} // 393d:f055
-
     {db tmp999=0;MYCOPY(unk_56a07)} // 393d:f057
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56a0f)} // 393d:f05f
-
     {db tmp999=0;MYCOPY(unk_56a11)} // 393d:f061
-
     {db tmp999=0;MYCOPY(unk_56a13)} // 393d:f063
-
     {db tmp999=0;MYCOPY(unk_56a15)} // 393d:f065
-
     {db tmp999=0;MYCOPY(unk_56a17)} // 393d:f067
-
     {db tmp999=0;MYCOPY(unk_56a19)} // 393d:f069
-
-
-
     {db tmp999=0;MYCOPY(unk_56a1d)} // 393d:f06d
-
     {db tmp999=0;MYCOPY(unk_56a1f)} // 393d:f06f
-
     {db tmp999=0;MYCOPY(unk_56a21)} // 393d:f071
-
-
-
     {db tmp999=0;MYCOPY(unk_56a25)} // 393d:f075
-
     {db tmp999=0;MYCOPY(unk_56a27)} // 393d:f077
-
     {db tmp999=0;MYCOPY(unk_56a29)} // 393d:f079
-
-
-
     {db tmp999=0;MYCOPY(unk_56a2d)} // 393d:f07d
-
     {db tmp999=0;MYCOPY(unk_56a2f)} // 393d:f07f
-
     {db tmp999=0;MYCOPY(unk_56a31)} // 393d:f081
-
     {db tmp999=0;MYCOPY(unk_56a33)} // 393d:f083
-
     {db tmp999=0;MYCOPY(unk_56a35)} // 393d:f085
-
     {db tmp999=0;MYCOPY(unk_56a37)} // 393d:f087
-
     {db tmp999=0;MYCOPY(unk_56a39)} // 393d:f089
-
     {db tmp999=0;MYCOPY(unk_56a3b)} // 393d:f08b
-
     {db tmp999=0;MYCOPY(unk_56a3d)} // 393d:f08d
-
     {db tmp999=0;MYCOPY(unk_56a3f)} // 393d:f08f
-
     {db tmp999=0;MYCOPY(unk_56a41)} // 393d:f091
-
     {db tmp999=0;MYCOPY(unk_56a43)} // 393d:f093
-
     {db tmp999=0;MYCOPY(unk_56a45)} // 393d:f095
-
     {db tmp999=0;MYCOPY(unk_56a47)} // 393d:f097
-
     {db tmp999=0;MYCOPY(unk_56a49)} // 393d:f099
-
     {db tmp999=0;MYCOPY(unk_56a4b)} // 393d:f09b
-
     {db tmp999=0;MYCOPY(unk_56a4d)} // 393d:f09d
-
     {db tmp999=0;MYCOPY(unk_56a4f)} // 393d:f09f
-
     {db tmp999=0;MYCOPY(unk_56a51)} // 393d:f0a1
     {db tmp999=0;MYCOPY(unk_56a52)} // 393d:f0a2
-
     {db tmp999=0;MYCOPY(unk_56a54)} // 393d:f0a4
-
     {db tmp999=0;MYCOPY(unk_56a56)} // 393d:f0a6
-
     {db tmp999=0;MYCOPY(unk_56a58)} // 393d:f0a8
-
     {db tmp999=0;MYCOPY(unk_56a5a)} // 393d:f0aa
-
     {db tmp999=0;MYCOPY(unk_56a5c)} // 393d:f0ac
-
     {db tmp999=0;MYCOPY(unk_56a5e)} // 393d:f0ae
     {db tmp999[32]={0};MYCOPY(dummy0_4847f)} // 393d:f0af
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56a88)} // 393d:f0d8
-
     {db tmp999=0;MYCOPY(unk_56a8a)} // 393d:f0da
     {db tmp999[32]={0};MYCOPY(dummy0_484ab)} // 393d:f0db
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56ab0)} // 393d:f100
     {db tmp999[32]={0};MYCOPY(dummy0_484d1)} // 393d:f101
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56ada)} // 393d:f12a
-
     {db tmp999=0;MYCOPY(unk_56adc)} // 393d:f12c
     {db tmp999[32]={0};MYCOPY(dummy0_484fd)} // 393d:f12d
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56b02)} // 393d:f152
     {db tmp999[32]={0};MYCOPY(dummy0_48523)} // 393d:f153
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56b2c)} // 393d:f17c
-
     {db tmp999=0;MYCOPY(unk_56b2e)} // 393d:f17e
     {db tmp999[32]={0};MYCOPY(dummy0_4854f)} // 393d:f17f
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56b54)} // 393d:f1a4
     {db tmp999[32]={0};MYCOPY(dummy0_48575)} // 393d:f1a5
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56b7e)} // 393d:f1ce
-
     {db tmp999=0;MYCOPY(unk_56b80)} // 393d:f1d0
     {db tmp999[32]={0};MYCOPY(dummy0_485a1)} // 393d:f1d1
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56ba6)} // 393d:f1f6
-
     {db tmp999=0;MYCOPY(unk_56ba8)} // 393d:f1f8
     {db tmp999=0;MYCOPY(unk_56ba9)} // 393d:f1f9
-
     {db tmp999=0;MYCOPY(unk_56bab)} // 393d:f1fb
-
     {db tmp999=0;MYCOPY(unk_56bad)} // 393d:f1fd
     {db tmp999=0;MYCOPY(unk_56bae)} // 393d:f1fe
     {db tmp999=0;MYCOPY(unk_56baf)} // 393d:f1ff
-
     {db tmp999=0;MYCOPY(unk_56bb1)} // 393d:f201
-
     {db tmp999=0;MYCOPY(unk_56bb3)} // 393d:f203
-
     {db tmp999=0;MYCOPY(unk_56bb5)} // 393d:f205
-
     {db tmp999=0;MYCOPY(unk_56bb7)} // 393d:f207
-
     {db tmp999=0;MYCOPY(unk_56bb9)} // 393d:f209
-
     {db tmp999=0;MYCOPY(unk_56bbb)} // 393d:f20b
-
     {db tmp999=0;MYCOPY(unk_56bbd)} // 393d:f20d
-
     {db tmp999=0;MYCOPY(unk_56bbf)} // 393d:f20f
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56bd7)} // 393d:f227
     {db tmp999=0;MYCOPY(unk_56bd8)} // 393d:f228
     {db tmp999=0;MYCOPY(unk_56bd9)} // 393d:f229
-
     {db tmp999=0;MYCOPY(unk_56bdb)} // 393d:f22b
-
     {db tmp999=0;MYCOPY(unk_56bdd)} // 393d:f22d
-
     {db tmp999=0;MYCOPY(unk_56bdf)} // 393d:f22f
-
     {db tmp999=0;MYCOPY(unk_56be1)} // 393d:f231
-
     {db tmp999=0;MYCOPY(unk_56be3)} // 393d:f233
-
     {db tmp999=0;MYCOPY(unk_56be5)} // 393d:f235
-
     {db tmp999=0;MYCOPY(unk_56be7)} // 393d:f237
-
     {db tmp999=0;MYCOPY(unk_56be9)} // 393d:f239
     {db tmp999=0;MYCOPY(unk_56bea)} // 393d:f23a
-
     {db tmp999=0;MYCOPY(unk_56bec)} // 393d:f23c
-
     {db tmp999=0;MYCOPY(unk_56bee)} // 393d:f23e
-
     {db tmp999=0;MYCOPY(unk_56bf0)} // 393d:f240
     {db tmp999[32]={0};MYCOPY(dummy0_48611)} // 393d:f241
     {db tmp999[32]={0};MYCOPY(dummy0_48631)} // 393d:f261
     {db tmp999[32]={0};MYCOPY(dummy0_48651)} // 393d:f281
     {db tmp999[32]={0};MYCOPY(dummy0_48671)} // 393d:f2a1
-
     {db tmp999=0;MYCOPY(unk_56c72)} // 393d:f2c2
-
     {db tmp999=0;MYCOPY(unk_56c74)} // 393d:f2c4
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56c7d)} // 393d:f2cd
     {db tmp999[32]={0};MYCOPY(dummy0_4869e)} // 393d:f2ce
     {db tmp999[32]={0};MYCOPY(dummy0_486be)} // 393d:f2ee
     {db tmp999[32]={0};MYCOPY(dummy0_486de)} // 393d:f30e
     {db tmp999[32]={0};MYCOPY(dummy0_486fe)} // 393d:f32e
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56d0a)} // 393d:f35a
-
     {db tmp999=0;MYCOPY(unk_56d0c)} // 393d:f35c
-
     {db tmp999=0;MYCOPY(unk_56d0e)} // 393d:f35e
-
     {db tmp999=0;MYCOPY(unk_56d10)} // 393d:f360
-
     {db tmp999=0;MYCOPY(unk_56d12)} // 393d:f362
-
     {db tmp999=0;MYCOPY(unk_56d14)} // 393d:f364
-
     {db tmp999=0;MYCOPY(unk_56d16)} // 393d:f366
-
     {db tmp999=0;MYCOPY(unk_56d18)} // 393d:f368
-
     {db tmp999=0;MYCOPY(unk_56d1a)} // 393d:f36a
-
     {db tmp999=0;MYCOPY(unk_56d1c)} // 393d:f36c
-
     {db tmp999=0;MYCOPY(unk_56d1e)} // 393d:f36e
-
     {db tmp999=0;MYCOPY(unk_56d20)} // 393d:f370
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56d2a)} // 393d:f37a
     {db tmp999=0;MYCOPY(unk_56d2b)} // 393d:f37b
     {db tmp999[32]={0};MYCOPY(dummy0_4874c)} // 393d:f37c
     {db tmp999[32]={0};MYCOPY(dummy0_4876c)} // 393d:f39c
     {db tmp999[32]={0};MYCOPY(dummy0_4878c)} // 393d:f3bc
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56d90)} // 393d:f3e0
-
     {db tmp999=0;MYCOPY(unk_56d92)} // 393d:f3e2
-
     {db tmp999=0;MYCOPY(unk_56d94)} // 393d:f3e4
-
     {db tmp999=0;MYCOPY(unk_56d96)} // 393d:f3e6
-
     {db tmp999=0;MYCOPY(unk_56d98)} // 393d:f3e8
-
     {db tmp999=0;MYCOPY(unk_56d9a)} // 393d:f3ea
-
     {db tmp999=0;MYCOPY(unk_56d9c)} // 393d:f3ec
-
     {db tmp999=0;MYCOPY(unk_56d9e)} // 393d:f3ee
-
     {db tmp999=0;MYCOPY(unk_56da0)} // 393d:f3f0
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56da6)} // 393d:f3f6
-
     {db tmp999=0;MYCOPY(unk_56da8)} // 393d:f3f8
-
     {db tmp999=0;MYCOPY(unk_56daa)} // 393d:f3fa
-
     {db tmp999=0;MYCOPY(unk_56dac)} // 393d:f3fc
-
     {db tmp999=0;MYCOPY(unk_56dae)} // 393d:f3fe
-
     {db tmp999=0;MYCOPY(unk_56db0)} // 393d:f400
-
     {db tmp999=0;MYCOPY(unk_56db2)} // 393d:f402
-
     {db tmp999=0;MYCOPY(unk_56db4)} // 393d:f404
-
     {db tmp999=0;MYCOPY(unk_56db6)} // 393d:f406
-
     {db tmp999=0;MYCOPY(unk_56db8)} // 393d:f408
-
     {db tmp999=0;MYCOPY(unk_56dba)} // 393d:f40a
-
     {db tmp999=0;MYCOPY(unk_56dbc)} // 393d:f40c
-
     {db tmp999=0;MYCOPY(unk_56dbe)} // 393d:f40e
-
     {db tmp999=0;MYCOPY(unk_56dc0)} // 393d:f410
-
     {db tmp999=0;MYCOPY(unk_56dc2)} // 393d:f412
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56dcc)} // 393d:f41c
-
     {db tmp999=0;MYCOPY(unk_56dce)} // 393d:f41e
     {db tmp999=0;MYCOPY(unk_56dcf)} // 393d:f41f
-
     {db tmp999=0;MYCOPY(unk_56dd1)} // 393d:f421
-
-
-
     {db tmp999=0;MYCOPY(unk_56dd5)} // 393d:f425
-
     {db tmp999=0;MYCOPY(unk_56dd7)} // 393d:f427
-
     {db tmp999=0;MYCOPY(unk_56dd9)} // 393d:f429
-
     {db tmp999=0;MYCOPY(unk_56ddb)} // 393d:f42b
-
     {db tmp999=0;MYCOPY(unk_56ddd)} // 393d:f42d
-
     {db tmp999=0;MYCOPY(unk_56ddf)} // 393d:f42f
-
     {db tmp999=0;MYCOPY(unk_56de1)} // 393d:f431
-
     {db tmp999=0;MYCOPY(unk_56de3)} // 393d:f433
-
     {db tmp999=0;MYCOPY(unk_56de5)} // 393d:f435
-
     {db tmp999=0;MYCOPY(unk_56de7)} // 393d:f437
-
     {db tmp999=0;MYCOPY(unk_56de9)} // 393d:f439
-
-
     {db tmp999=0;MYCOPY(unk_56dec)} // 393d:f43c
-
-
     {db tmp999=0;MYCOPY(unk_56def)} // 393d:f43f
-
     {db tmp999=0;MYCOPY(unk_56df1)} // 393d:f441
-
     {db tmp999=0;MYCOPY(unk_56df3)} // 393d:f443
     {db tmp999=0;MYCOPY(unk_56df4)} // 393d:f444
     {db tmp999=0;MYCOPY(unk_56df5)} // 393d:f445
-
     {db tmp999=0;MYCOPY(unk_56df7)} // 393d:f447
     {db tmp999=0;MYCOPY(unk_56df8)} // 393d:f448
     {db tmp999=0;MYCOPY(unk_56df9)} // 393d:f449
-
     {db tmp999=0;MYCOPY(unk_56dfb)} // 393d:f44b
-
     {db tmp999=0;MYCOPY(unk_56dfd)} // 393d:f44d
-
     {db tmp999=0;MYCOPY(unk_56dff)} // 393d:f44f
-
     {db tmp999=0;MYCOPY(unk_56e01)} // 393d:f451
-
     {db tmp999=0;MYCOPY(unk_56e03)} // 393d:f453
-
     {db tmp999=0;MYCOPY(unk_56e05)} // 393d:f455
     {db tmp999=0;MYCOPY(unk_56e06)} // 393d:f456
     {db tmp999=0;MYCOPY(unk_56e07)} // 393d:f457
@@ -22426,109 +18803,23 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=0;MYCOPY(unk_56e0b)} // 393d:f45b
     {db tmp999=0;MYCOPY(unk_56e0c)} // 393d:f45c
     {db tmp999=0;MYCOPY(unk_56e0d)} // 393d:f45d
-
     {db tmp999=0;MYCOPY(unk_56e0f)} // 393d:f45f
-
     {db tmp999=0;MYCOPY(unk_56e11)} // 393d:f461
     {db tmp999=0;MYCOPY(unk_56e12)} // 393d:f462
-
     {db tmp999=0;MYCOPY(unk_56e14)} // 393d:f464
     {db tmp999[32]={0};MYCOPY(dummy0_48835)} // 393d:f465
     {db tmp999[32]={0};MYCOPY(dummy0_48855)} // 393d:f485
     {db tmp999[32]={0};MYCOPY(dummy0_48875)} // 393d:f4a5
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56e86)} // 393d:f4d6
-
     {db tmp999=0;MYCOPY(unk_56e88)} // 393d:f4d8
-
     {db tmp999=0;MYCOPY(unk_56e8a)} // 393d:f4da
-
     {db tmp999=0;MYCOPY(unk_56e8c)} // 393d:f4dc
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56e92)} // 393d:f4e2
-
     {db tmp999=0;MYCOPY(unk_56e94)} // 393d:f4e4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56eb0)} // 393d:f500
     {db tmp999=0;MYCOPY(unk_56eb1)} // 393d:f501
     {db tmp999=0;MYCOPY(unk_56eb2)} // 393d:f502
     {db tmp999=0;MYCOPY(unk_56eb3)} // 393d:f503
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56ed2)} // 393d:f522
     {db tmp999[32]={0};MYCOPY(dummy0_488f3)} // 393d:f523
     {db tmp999[32]={0};MYCOPY(dummy0_48913)} // 393d:f543
@@ -22536,171 +18827,65 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[32]={0};MYCOPY(dummy0_48953)} // 393d:f583
     {db tmp999[32]={0};MYCOPY(dummy0_48973)} // 393d:f5a3
     {db tmp999[32]={0};MYCOPY(dummy0_48993)} // 393d:f5c3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56fa6)} // 393d:f5f6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56fba)} // 393d:f60a
-
-
-
     {db tmp999=0;MYCOPY(unk_56fbe)} // 393d:f60e
     {db tmp999=0;MYCOPY(unk_56fbf)} // 393d:f60f
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_56fd2)} // 393d:f622
-
     {db tmp999=0;MYCOPY(unk_56fd4)} // 393d:f624
     {db tmp999=0;MYCOPY(unk_56fd5)} // 393d:f625
     {db tmp999=0;MYCOPY(unk_56fd6)} // 393d:f626
-
     {db tmp999=0;MYCOPY(unk_56fd8)} // 393d:f628
-
     {db tmp999=0;MYCOPY(unk_56fda)} // 393d:f62a
-
     {db tmp999=0;MYCOPY(unk_56fdc)} // 393d:f62c
-
-    {db tmp999=0;MYCOPY(unk_56fde)} // 393d:f62e
-
-    {db tmp999=0;MYCOPY(unk_56fe0)} // 393d:f630
-
+    {dw tmp999=0;MYCOPY(word_56fde)} // 393d:f62e
+    {dw tmp999=0;MYCOPY(word_56fe0)} // 393d:f630
     {db tmp999=0;MYCOPY(unk_56fe2)} // 393d:f632
     {db tmp999=0;MYCOPY(unk_56fe3)} // 393d:f633
-
     {db tmp999=0;MYCOPY(unk_56fe5)} // 393d:f635
-
     {db tmp999=0;MYCOPY(unk_56fe7)} // 393d:f637
-
     {db tmp999=0;MYCOPY(unk_56fe9)} // 393d:f639
-
     {db tmp999=0;MYCOPY(unk_56feb)} // 393d:f63b
     {db tmp999=0;MYCOPY(unk_56fec)} // 393d:f63c
     {db tmp999=0;MYCOPY(unk_56fed)} // 393d:f63d
     {db tmp999=0;MYCOPY(unk_56fee)} // 393d:f63e
     {db tmp999=0;MYCOPY(unk_56fef)} // 393d:f63f
     {db tmp999=0;MYCOPY(unk_56ff0)} // 393d:f640
-
     {db tmp999=0;MYCOPY(unk_56ff2)} // 393d:f642
-
     {db tmp999=0;MYCOPY(unk_56ff4)} // 393d:f644
     {db tmp999=0;MYCOPY(unk_56ff5)} // 393d:f645
-
     {db tmp999=0;MYCOPY(unk_56ff7)} // 393d:f647
-
     {db tmp999=0;MYCOPY(unk_56ff9)} // 393d:f649
     {db tmp999=0;MYCOPY(unk_56ffa)} // 393d:f64a
-
     {db tmp999=0;MYCOPY(unk_56ffc)} // 393d:f64c
-
     {db tmp999=0;MYCOPY(unk_56ffe)} // 393d:f64e
-
     {db tmp999=0;MYCOPY(unk_57000)} // 393d:f650
-
     {db tmp999=0;MYCOPY(unk_57002)} // 393d:f652
-
     {db tmp999=0;MYCOPY(unk_57004)} // 393d:f654
-
     {db tmp999=0;MYCOPY(unk_57006)} // 393d:f656
-
     {db tmp999=0;MYCOPY(unk_57008)} // 393d:f658
-
     {db tmp999=0;MYCOPY(unk_5700a)} // 393d:f65a
-
     {db tmp999=0;MYCOPY(unk_5700c)} // 393d:f65c
-
     {db tmp999=0;MYCOPY(unk_5700e)} // 393d:f65e
-
     {db tmp999=0;MYCOPY(unk_57010)} // 393d:f660
-
     {db tmp999=0;MYCOPY(unk_57012)} // 393d:f662
-
     {db tmp999=0;MYCOPY(unk_57014)} // 393d:f664
-
     {db tmp999=0;MYCOPY(unk_57016)} // 393d:f666
-
     {db tmp999=0;MYCOPY(unk_57018)} // 393d:f668
-
     {db tmp999=0;MYCOPY(unk_5701a)} // 393d:f66a
-
     {db tmp999=0;MYCOPY(unk_5701c)} // 393d:f66c
-
     {db tmp999=0;MYCOPY(unk_5701e)} // 393d:f66e
-
     {db tmp999=0;MYCOPY(unk_57020)} // 393d:f670
-
     {db tmp999=0;MYCOPY(unk_57022)} // 393d:f672
     {db tmp999=0;MYCOPY(unk_57023)} // 393d:f673
-
     {db tmp999=0;MYCOPY(unk_57025)} // 393d:f675
-
     {db tmp999=0;MYCOPY(unk_57027)} // 393d:f677
     {db tmp999=0;MYCOPY(unk_57028)} // 393d:f678
-
     {db tmp999=0;MYCOPY(unk_5702a)} // 393d:f67a
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_57030)} // 393d:f680
-
     {db tmp999=0;MYCOPY(unk_57032)} // 393d:f682
-
     {db tmp999=0;MYCOPY(unk_57034)} // 393d:f684
-
     {db tmp999=0;MYCOPY(unk_57036)} // 393d:f686
-
     {db tmp999=0;MYCOPY(unk_57038)} // 393d:f688
     {db tmp999=0;MYCOPY(unk_57039)} // 393d:f689
     {db tmp999=0;MYCOPY(unk_5703a)} // 393d:f68a
@@ -22716,307 +18901,130 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=0;MYCOPY(unk_57044)} // 393d:f694
     {db tmp999=0;MYCOPY(unk_57045)} // 393d:f695
     {db tmp999=0;MYCOPY(unk_57046)} // 393d:f696
-
-
-
     {db tmp999=0;MYCOPY(unk_5704a)} // 393d:f69a
-
-
-
     {db tmp999=0;MYCOPY(unk_5704e)} // 393d:f69e
-
-
-
     {db tmp999=0;MYCOPY(unk_57052)} // 393d:f6a2
-
-
-
     {db tmp999=0;MYCOPY(unk_57056)} // 393d:f6a6
-
     {db tmp999=0;MYCOPY(unk_57058)} // 393d:f6a8
-
-    {db tmp999=0;MYCOPY(unk_5705a)} // 393d:f6aa
-
-    {db tmp999=0;MYCOPY(unk_5705c)} // 393d:f6ac
-
-
-
-
-
-
-
-
-
-
-
+    {dw tmp999=0;MYCOPY(word_5705a)} // 393d:f6aa
+    {dw tmp999=0;MYCOPY(word_5705c)} // 393d:f6ac
     {db tmp999=0;MYCOPY(unk_57068)} // 393d:f6b8
     {db tmp999[32]={0};MYCOPY(dummy0_48a89)} // 393d:f6b9
     {db tmp999[32]={0};MYCOPY(dummy0_48aa9)} // 393d:f6d9
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_570ba)} // 393d:f70a
-
     {db tmp999=0;MYCOPY(unk_570bc)} // 393d:f70c
-
     {db tmp999=0;MYCOPY(unk_570be)} // 393d:f70e
-
     {db tmp999=0;MYCOPY(unk_570c0)} // 393d:f710
-
     {db tmp999=0;MYCOPY(unk_570c2)} // 393d:f712
-
     {db tmp999=0;MYCOPY(unk_570c4)} // 393d:f714
-
     {db tmp999=0;MYCOPY(unk_570c6)} // 393d:f716
-
     {db tmp999=0;MYCOPY(unk_570c8)} // 393d:f718
-
     {db tmp999=0;MYCOPY(unk_570ca)} // 393d:f71a
-
     {db tmp999=0;MYCOPY(unk_570cc)} // 393d:f71c
-
     {db tmp999=0;MYCOPY(unk_570ce)} // 393d:f71e
-
     {db tmp999=0;MYCOPY(unk_570d0)} // 393d:f720
-
     {db tmp999=0;MYCOPY(unk_570d2)} // 393d:f722
-
     {db tmp999=0;MYCOPY(unk_570d4)} // 393d:f724
-
     {db tmp999=0;MYCOPY(unk_570d6)} // 393d:f726
-
     {db tmp999=0;MYCOPY(unk_570d8)} // 393d:f728
-
     {db tmp999=0;MYCOPY(unk_570da)} // 393d:f72a
-
     {db tmp999=0;MYCOPY(unk_570dc)} // 393d:f72c
-
     {db tmp999=0;MYCOPY(unk_570de)} // 393d:f72e
-
     {db tmp999=0;MYCOPY(unk_570e0)} // 393d:f730
-
     {db tmp999=0;MYCOPY(unk_570e2)} // 393d:f732
-
     {db tmp999=0;MYCOPY(unk_570e4)} // 393d:f734
-
     {db tmp999=0;MYCOPY(unk_570e6)} // 393d:f736
-
     {db tmp999=0;MYCOPY(unk_570e8)} // 393d:f738
-
     {db tmp999=0;MYCOPY(unk_570ea)} // 393d:f73a
-
     {db tmp999=0;MYCOPY(unk_570ec)} // 393d:f73c
     {db tmp999=0;MYCOPY(unk_570ed)} // 393d:f73d
     {db tmp999=0;MYCOPY(unk_570ee)} // 393d:f73e
-
     {db tmp999=0;MYCOPY(unk_570f0)} // 393d:f740
-
     {db tmp999=0;MYCOPY(unk_570f2)} // 393d:f742
-
     {db tmp999=0;MYCOPY(unk_570f4)} // 393d:f744
-
     {db tmp999=0;MYCOPY(unk_570f6)} // 393d:f746
-
     {db tmp999=0;MYCOPY(unk_570f8)} // 393d:f748
     {db tmp999=0;MYCOPY(unk_570f9)} // 393d:f749
     {db tmp999=0;MYCOPY(unk_570fa)} // 393d:f74a
-
     {db tmp999=0;MYCOPY(unk_570fc)} // 393d:f74c
-
     {db tmp999=0;MYCOPY(unk_570fe)} // 393d:f74e
     {db tmp999=0;MYCOPY(unk_570ff)} // 393d:f74f
-
     {db tmp999=0;MYCOPY(unk_57101)} // 393d:f751
-
     {db tmp999=0;MYCOPY(unk_57103)} // 393d:f753
-
     {db tmp999=0;MYCOPY(unk_57105)} // 393d:f755
-
     {db tmp999=0;MYCOPY(unk_57107)} // 393d:f757
-
     {db tmp999=0;MYCOPY(unk_57109)} // 393d:f759
-
     {db tmp999=0;MYCOPY(unk_5710b)} // 393d:f75b
     {db tmp999=0;MYCOPY(unk_5710c)} // 393d:f75c
-
     {db tmp999=0;MYCOPY(unk_5710e)} // 393d:f75e
-
     {db tmp999=0;MYCOPY(unk_57110)} // 393d:f760
     {db tmp999=0;MYCOPY(unk_57111)} // 393d:f761
-
     {db tmp999=0;MYCOPY(unk_57113)} // 393d:f763
     {db tmp999=0;MYCOPY(unk_57114)} // 393d:f764
-
     {db tmp999=0;MYCOPY(unk_57116)} // 393d:f766
-
     {db tmp999=0;MYCOPY(unk_57118)} // 393d:f768
-
     {db tmp999=0;MYCOPY(unk_5711a)} // 393d:f76a
-
     {db tmp999=0;MYCOPY(unk_5711c)} // 393d:f76c
-
     {db tmp999=0;MYCOPY(unk_5711e)} // 393d:f76e
-
     {db tmp999=0;MYCOPY(unk_57120)} // 393d:f770
-
     {db tmp999=0;MYCOPY(unk_57122)} // 393d:f772
-
     {db tmp999=0;MYCOPY(unk_57124)} // 393d:f774
-
     {db tmp999=0;MYCOPY(unk_57126)} // 393d:f776
-
     {db tmp999=0;MYCOPY(unk_57128)} // 393d:f778
-
     {db tmp999=0;MYCOPY(unk_5712a)} // 393d:f77a
-
     {db tmp999=0;MYCOPY(unk_5712c)} // 393d:f77c
-
     {db tmp999=0;MYCOPY(unk_5712e)} // 393d:f77e
-
     {db tmp999=0;MYCOPY(unk_57130)} // 393d:f780
-
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_5713e)} // 393d:f78e
-
     {db tmp999=0;MYCOPY(unk_57140)} // 393d:f790
-
     {db tmp999=0;MYCOPY(unk_57142)} // 393d:f792
-
     {db tmp999=0;MYCOPY(unk_57144)} // 393d:f794
-
     {db tmp999=0;MYCOPY(unk_57146)} // 393d:f796
-
     {db tmp999=0;MYCOPY(unk_57148)} // 393d:f798
     {db tmp999=0;MYCOPY(unk_57149)} // 393d:f799
     {db tmp999=0;MYCOPY(unk_5714a)} // 393d:f79a
     {db tmp999=0;MYCOPY(unk_5714b)} // 393d:f79b
-
-
     {db tmp999=0;MYCOPY(unk_5714e)} // 393d:f79e
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_57159)} // 393d:f7a9
-
     {db tmp999=0;MYCOPY(unk_5715b)} // 393d:f7ab
     {db tmp999=0;MYCOPY(unk_5715c)} // 393d:f7ac
-
-
     {db tmp999=0;MYCOPY(unk_5715f)} // 393d:f7af
     {db tmp999=0;MYCOPY(unk_57160)} // 393d:f7b0
     {db tmp999=0;MYCOPY(unk_57161)} // 393d:f7b1
     {db tmp999=0;MYCOPY(unk_57162)} // 393d:f7b2
     {db tmp999=0;MYCOPY(unk_57163)} // 393d:f7b3
-
-
     {db tmp999=0;MYCOPY(unk_57166)} // 393d:f7b6
     {db tmp999=0;MYCOPY(unk_57167)} // 393d:f7b7
-
     {db tmp999=0;MYCOPY(unk_57169)} // 393d:f7b9
-
     {db tmp999=0;MYCOPY(unk_5716b)} // 393d:f7bb
-
     {db tmp999=0;MYCOPY(unk_5716d)} // 393d:f7bd
-
     {db tmp999=0;MYCOPY(unk_5716f)} // 393d:f7bf
     {db tmp999=0;MYCOPY(unk_57170)} // 393d:f7c0
-
     {db tmp999=0;MYCOPY(unk_57172)} // 393d:f7c2
-
     {db tmp999=0;MYCOPY(unk_57174)} // 393d:f7c4
     {db tmp999=0;MYCOPY(unk_57175)} // 393d:f7c5
     {db tmp999=0;MYCOPY(unk_57176)} // 393d:f7c6
     {db tmp999=0;MYCOPY(unk_57177)} // 393d:f7c7
-
     {db tmp999=0;MYCOPY(unk_57179)} // 393d:f7c9
-
     {db tmp999=0;MYCOPY(unk_5717b)} // 393d:f7cb
-
     {db tmp999=0;MYCOPY(unk_5717d)} // 393d:f7cd
-
     {db tmp999=0;MYCOPY(unk_5717f)} // 393d:f7cf
     {db tmp999[32]={0};MYCOPY(dummy0_48ba0)} // 393d:f7d0
     {db tmp999[32]={0};MYCOPY(dummy0_48bc0)} // 393d:f7f0
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_571c5)} // 393d:f815
     {db tmp999=0;MYCOPY(unk_571c6)} // 393d:f816
-
     {db tmp999=0;MYCOPY(unk_571c8)} // 393d:f818
-
     {db tmp999=0;MYCOPY(unk_571ca)} // 393d:f81a
-
     {db tmp999=0;MYCOPY(unk_571cc)} // 393d:f81c
-
     {db tmp999=0;MYCOPY(unk_571ce)} // 393d:f81e
-
     {db tmp999=0;MYCOPY(unk_571d0)} // 393d:f820
-
     {db tmp999=0;MYCOPY(unk_571d2)} // 393d:f822
-
     {db tmp999=0;MYCOPY(unk_571d4)} // 393d:f824
-
     {db tmp999=0;MYCOPY(unk_571d6)} // 393d:f826
-
-
-
-
-
-
-
-
-
-
-
-
     {db tmp999=0;MYCOPY(unk_571e3)} // 393d:f833
-
     {db tmp999=0;MYCOPY(unk_571e5)} // 393d:f835
-
     {db tmp999=0;MYCOPY(unk_571e7)} // 393d:f837
-
     {db tmp999=0;MYCOPY(unk_571e9)} // 393d:f839
-
-
-
-
-
-
     {db tmp999[1504]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,175,254,0,240,6,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};MYCOPY(dummy0_48c10)} // 48c1:0000
 
 }

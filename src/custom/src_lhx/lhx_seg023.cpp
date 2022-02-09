@@ -1865,7 +1865,6 @@ cs=0x275c;eip=0x000f51; 	R(RETN(8));	// 86852 retn    8 ;~ 275C:0F51
         case m2c::kloc_365ba: 	goto loc_365ba;
         case m2c::kloc_3660f: 	goto loc_3660f;
         case m2c::kloc_36610: 	goto loc_36610;
-        case m2c::kloc_36614: 	goto loc_36614;
         case m2c::kloc_36640: 	goto loc_36640;
         case m2c::kloc_36643: 	goto loc_36643;
         case m2c::kloc_36658: 	goto loc_36658;
@@ -1915,7 +1914,7 @@ cs=0x275c;eip=0x000f51; 	R(RETN(8));	// 86852 retn    8 ;~ 275C:0F51
         case m2c::kloc_36aeb: 	goto loc_36aeb;
         case m2c::klocret_35c43: 	goto locret_35c43;
         case m2c::klocret_3609d: 	goto locret_3609d;
-//        case m2c::kseg023_proc: 	goto seg023_proc;
+        case m2c::kseg023_proc: 	goto seg023_proc;
         case m2c::ksub_35bae: 	goto sub_35bae;
         case m2c::ksub_35bc3: 	goto sub_35bc3;
         case m2c::ksub_35c17: 	goto sub_35c17;
@@ -1932,7 +1931,7 @@ cs=0x275c;eip=0x000f51; 	R(RETN(8));	// 86852 retn    8 ;~ 275C:0F51
         case m2c::ksub_367e0: 	goto sub_367e0;
         case m2c::ksub_36891: 	goto sub_36891;
         case m2c::ksub_368b7: 	goto sub_368b7;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

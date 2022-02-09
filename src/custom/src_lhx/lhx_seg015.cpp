@@ -114,7 +114,7 @@ cs=0x2128;eip=0x0000ad; 	X(POP(bp));	// 70860 pop     bp ;~ 2128:00AD
 cs=0x2128;eip=0x0000ae; 	R(RETF(0));	// 70861 retf ;~ 2128:00AE
 sub_2f90f:
 	// 70868 
-cs=0x2128;eip=0x0000af; 	T(CMP(*(dw*)((&unk_47b2e)), 0));	// 70870 cmp     word ptr unk_47B2E, 0 ;~ 2128:00AF
+cs=0x2128;eip=0x0000af; 	T(CMP(*(dw*)((&byte_47b2e)), 0));	// 70870 cmp     word ptr byte_47B2E, 0 ;~ 2128:00AF
 cs=0x2128;eip=0x0000b4; 	R(JNZ(loc_2f91b));	// 70871 jnz     short loc_2F91B ;~ 2128:00B4
 cs=0x2128;eip=0x0000b6; 	T(MOV(ax, 0x0FF0F));	// 70872 mov     ax, 0FF0Fh ;~ 2128:00B6
 cs=0x2128;eip=0x0000b9; 	R(JMP(loc_2f91e));	// 70873 jmp     short loc_2F91E ;~ 2128:00B9
@@ -143,7 +143,7 @@ cs=0x2128;eip=0x0000c8; 	X(PUSH(di));	// 70898 push    di ;~ 2128:00C8
 cs=0x2128;eip=0x0000c9; 	X(PUSH(si));	// 70899 push    si ;~ 2128:00C9
 cs=0x2128;eip=0x0000ca; 	R(CALLF(sub_203b0,0));	// 70900 call    sub_203B0 ;~ 2128:00CA
 cs=0x2128;eip=0x0000cf; 	R(CALL(sub_2f90f,0));	// 70901 call    sub_2F90F ;~ 2128:00CF
-cs=0x2128;eip=0x0000d2; 	T(TEST(unk_5687c, 2));	// 70902 test    byte ptr unk_5687C, 2 ;~ 2128:00D2
+cs=0x2128;eip=0x0000d2; 	T(TEST(byte_5687c, 2));	// 70902 test    byte_5687C, 2 ;~ 2128:00D2
 cs=0x2128;eip=0x0000d7; 	R(JZ(loc_2f966));	// 70903 jz      short loc_2F966 ;~ 2128:00D7
 cs=0x2128;eip=0x0000d9; 	T(MOV(ax, *(dw*)((&unk_5651c))));	// 70904 mov     ax, word ptr unk_5651C ;~ 2128:00D9
 cs=0x2128;eip=0x0000dc; 	X(MOV(*(dw*)((&unk_54146)), ax));	// 70905 mov     word ptr unk_54146, ax ;~ 2128:00DC
@@ -158,11 +158,11 @@ cs=0x2128;eip=0x0000e9; 	T(MOV(cx, 5));	// 70912 mov     cx, 5 ;~ 2128:00E9
 cs=0x2128;eip=0x0000ec; 	X(	REPNE MOVSW);	// 70913 repne movsw ;~ 2128:00EC
 cs=0x2128;eip=0x0000ee; 	X(POP(di));	// 70914 pop     di ;~ 2128:00EE
 cs=0x2128;eip=0x0000ef; 	X(POP(si));	// 70915 pop     si ;~ 2128:00EF
-cs=0x2128;eip=0x0000f0; 	X(PUSH(*(dw*)((&unk_5651a))));	// 70916 push    word ptr unk_5651A ;~ 2128:00F0
+cs=0x2128;eip=0x0000f0; 	X(PUSH(word_5651a));	// 70916 push    word_5651A ;~ 2128:00F0
 cs=0x2128;eip=0x0000f4; 	R(CALLF(sub_202f1,0));	// 70917 call    sub_202F1 ;~ 2128:00F4
-cs=0x2128;eip=0x0000f9; 	X(PUSH(*(dw*)((&unk_5651a))));	// 70918 push    word ptr unk_5651A ;~ 2128:00F9
+cs=0x2128;eip=0x0000f9; 	X(PUSH(word_5651a));	// 70918 push    word_5651A ;~ 2128:00F9
 cs=0x2128;eip=0x0000fd; 	T(MOV(ax, 1));	// 70919 mov     ax, 1 ;~ 2128:00FD
-cs=0x2128;eip=0x000100; 	T(SUB(ax, *(dw*)((&unk_5651a))));	// 70920 sub     ax, word ptr unk_5651A ;~ 2128:0100
+cs=0x2128;eip=0x000100; 	T(SUB(ax, word_5651a));	// 70920 sub     ax, word_5651A ;~ 2128:0100
 cs=0x2128;eip=0x000104; 	R(JMP(loc_2f98b));	// 70921 jmp     short loc_2F98B ;~ 2128:0104
 loc_2f966:
 	// 8909 
@@ -1139,7 +1139,7 @@ cs=0x2128;eip=0x0007a9; 	X(PUSH(ax));	// 71925 push    ax ;~ 2128:07A9
 cs=0x2128;eip=0x0007aa; 	R(CALL(sub_2ff59,0));	// 71926 call    sub_2FF59 ;~ 2128:07AA
 cs=0x2128;eip=0x0007ad; 	T(MOV(ax, 0x200));	// 71927 mov     ax, 200h ;~ 2128:07AD
 cs=0x2128;eip=0x0007b0; 	X(PUSH(ax));	// 71928 push    ax ;~ 2128:07B0
-cs=0x2128;eip=0x0007b1; 	T(CMP(unk_55204, 2));	// 71929 cmp     byte ptr unk_55204, 2 ;~ 2128:07B1
+cs=0x2128;eip=0x0007b1; 	T(CMP(byte_55204, 2));	// 71929 cmp     byte_55204, 2 ;~ 2128:07B1
 cs=0x2128;eip=0x0007b6; 	R(JNZ(loc_3001d));	// 71930 jnz     short loc_3001D ;~ 2128:07B6
 cs=0x2128;eip=0x0007b8; 	T(MOV(ax, 1));	// 71931 mov     ax, 1 ;~ 2128:07B8
 cs=0x2128;eip=0x0007bb; 	R(JMP(loc_3001f));	// 71932 jmp     short loc_3001F ;~ 2128:07BB
@@ -1152,7 +1152,7 @@ cs=0x2128;eip=0x0007bf; 	X(PUSH(ax));	// 71939 push    ax ;~ 2128:07BF
 cs=0x2128;eip=0x0007c0; 	R(CALL(sub_2ff59,0));	// 71940 call    sub_2FF59 ;~ 2128:07C0
 cs=0x2128;eip=0x0007c3; 	T(MOV(ax, 0x201));	// 71941 mov     ax, 201h ;~ 2128:07C3
 cs=0x2128;eip=0x0007c6; 	X(PUSH(ax));	// 71942 push    ax ;~ 2128:07C6
-cs=0x2128;eip=0x0007c7; 	T(CMP(unk_55204, 1));	// 71943 cmp     byte ptr unk_55204, 1 ;~ 2128:07C7
+cs=0x2128;eip=0x0007c7; 	T(CMP(byte_55204, 1));	// 71943 cmp     byte_55204, 1 ;~ 2128:07C7
 cs=0x2128;eip=0x0007cc; 	R(JNZ(loc_30033));	// 71944 jnz     short loc_30033 ;~ 2128:07CC
 cs=0x2128;eip=0x0007ce; 	T(MOV(ax, 1));	// 71945 mov     ax, 1 ;~ 2128:07CE
 cs=0x2128;eip=0x0007d1; 	R(JMP(loc_30035));	// 71946 jmp     short loc_30035 ;~ 2128:07D1
@@ -1165,7 +1165,7 @@ cs=0x2128;eip=0x0007d5; 	X(PUSH(ax));	// 71953 push    ax ;~ 2128:07D5
 cs=0x2128;eip=0x0007d6; 	R(CALL(sub_2ff59,0));	// 71954 call    sub_2FF59 ;~ 2128:07D6
 cs=0x2128;eip=0x0007d9; 	T(MOV(ax, 0x202));	// 71955 mov     ax, 202h ;~ 2128:07D9
 cs=0x2128;eip=0x0007dc; 	X(PUSH(ax));	// 71956 push    ax ;~ 2128:07DC
-cs=0x2128;eip=0x0007dd; 	T(CMP(unk_55204, 3));	// 71957 cmp     byte ptr unk_55204, 3 ;~ 2128:07DD
+cs=0x2128;eip=0x0007dd; 	T(CMP(byte_55204, 3));	// 71957 cmp     byte_55204, 3 ;~ 2128:07DD
 cs=0x2128;eip=0x0007e2; 	R(JNZ(loc_30049));	// 71958 jnz     short loc_30049 ;~ 2128:07E2
 cs=0x2128;eip=0x0007e4; 	T(MOV(ax, 1));	// 71959 mov     ax, 1 ;~ 2128:07E4
 cs=0x2128;eip=0x0007e7; 	R(JMP(loc_3004b));	// 71960 jmp     short loc_3004B ;~ 2128:07E7
@@ -1178,7 +1178,7 @@ cs=0x2128;eip=0x0007eb; 	X(PUSH(ax));	// 71967 push    ax ;~ 2128:07EB
 cs=0x2128;eip=0x0007ec; 	R(CALL(sub_2ff59,0));	// 71968 call    sub_2FF59 ;~ 2128:07EC
 cs=0x2128;eip=0x0007ef; 	T(MOV(ax, 0x203));	// 71969 mov     ax, 203h ;~ 2128:07EF
 cs=0x2128;eip=0x0007f2; 	X(PUSH(ax));	// 71970 push    ax ;~ 2128:07F2
-cs=0x2128;eip=0x0007f3; 	T(CMP(unk_55204, 4));	// 71971 cmp     byte ptr unk_55204, 4 ;~ 2128:07F3
+cs=0x2128;eip=0x0007f3; 	T(CMP(byte_55204, 4));	// 71971 cmp     byte_55204, 4 ;~ 2128:07F3
 cs=0x2128;eip=0x0007f8; 	R(JNZ(loc_3005f));	// 71972 jnz     short loc_3005F ;~ 2128:07F8
 cs=0x2128;eip=0x0007fa; 	T(MOV(ax, 1));	// 71973 mov     ax, 1 ;~ 2128:07FA
 cs=0x2128;eip=0x0007fd; 	R(JMP(loc_30061));	// 71974 jmp     short loc_30061 ;~ 2128:07FD
@@ -2162,7 +2162,7 @@ cs=0x2128;eip=0x000d3a; 	R(RETN(0));	// 72854 retn ;~ 2128:0D3A
         case m2c::ksub_2ff8f: 	goto sub_2ff8f;
         case m2c::ksub_2ffca: 	goto sub_2ffca;
         case m2c::ksub_30501: 	goto sub_30501;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

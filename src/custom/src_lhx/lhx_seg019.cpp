@@ -389,7 +389,7 @@ cs=0x2266;eip=0x000342; 	R(RETF(0));	// 74354 retf ;~ 2266:0342
         case m2c::ksub_30cdf: 	goto sub_30cdf;
         case m2c::ksub_30d15: 	goto sub_30d15;
         case m2c::ksub_30d56: 	goto sub_30d56;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

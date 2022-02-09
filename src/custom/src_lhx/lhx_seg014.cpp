@@ -94,7 +94,7 @@ cs=0x2120;eip=0x000076; 	R(CALL(sub_2f7e0,0));	// 70751 call    near ptr sub_2F7
         case m2c::ksub_2f7e0: 	goto sub_2f7e0;
         case m2c::ksub_2f82e: 	goto sub_2f82e;
         case m2c::ksub_2f838: 	goto sub_2f838;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

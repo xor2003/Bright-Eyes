@@ -12,7 +12,6 @@
     X86_REGREF
     __disp = _i;
 db int_num=0;
-
     if (__disp == 0) goto _begin;
     else goto __dispatch_call;
     _group1:
@@ -539,6 +538,7 @@ cs=0x1a2;eip=0x000352; 	T(MOV(di, *(dw*)(raddr(ds,di+0x0A))));	// 667 mov     di
 cs=0x1a2;eip=0x000355; 	X(PUSH(bp));	// 668 push    bp ;~ 01A2:0355
 R(_INT(int_num));
 if (int_num==0x25 || int_num==0x26) sp+=2;
+
 //cs=0x1a2;eip=0x000356; 	R(CALLF(__dispatch_call,*(dd*)(raddr(ss,bp+var_e))));	// 669 call    [bp+var_E] ;~ 01A2:0356
 cs=0x1a2;eip=0x000359; 	X(POP(bp));	// 670 pop     bp ;~ 01A2:0359
 cs=0x1a2;eip=0x00035a; 	T(CLD);	// 671 cld ;~ 01A2:035A
@@ -1291,7 +1291,7 @@ cs=0x1a2;eip=0x0006c8; 	R(RETF(8));	// 1403 retf    8 ;~ 01A2:06C8
         case m2c::ksub_10626: 	goto sub_10626;
         case m2c::ksub_10648: 	goto sub_10648;
         case m2c::ksub_1066a: 	goto sub_1066a;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

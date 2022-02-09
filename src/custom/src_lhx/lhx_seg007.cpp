@@ -66,7 +66,7 @@ cs=0x202a;eip=0x00003d; 	X(MOV(*(dw*)((&unk_4801c)), ax));	// 68028 mov     word
 cs=0x202a;eip=0x000040; 	T(MOV(ax, *(dw*)(raddr(ss,bp+arg_0))));	// 68029 mov     ax, [bp+arg_0] ;~ 202A:0040
 cs=0x202a;eip=0x000043; 	X(MOV(*(dw*)((&unk_4801e)), ax));	// 68030 mov     word ptr unk_4801E, ax ;~ 202A:0043
 cs=0x202a;eip=0x000046; 	T(MOV(bp, bx));	// 68031 mov     bp, bx ;~ 202A:0046
-cs=0x202a;eip=0x000048; 	T(MOV(si, *(dw*)((&unk_47b2e))));	// 68032 mov     si, word ptr unk_47B2E ;~ 202A:0048
+cs=0x202a;eip=0x000048; 	T(MOV(si, *(dw*)((&byte_47b2e))));	// 68032 mov     si, word ptr byte_47B2E ;~ 202A:0048
 cs=0x202a;eip=0x00004c; 	T(MOV(ax, *(dw*)(raddr(ss,bp+arg_0))));	// 68033 mov     ax, [bp+arg_0] ;~ 202A:004C
 cs=0x202a;eip=0x00004f; 	X(MOV(*(dw*)((&unk_48046)), ax));	// 68034 mov     word ptr unk_48046, ax ;~ 202A:004F
 cs=0x202a;eip=0x000052; 	T(MOV(ax, *(dw*)((&unk_4801c))));	// 68035 mov     ax, word ptr unk_4801C ;~ 202A:0052
@@ -220,7 +220,7 @@ cs=0x202a;eip=0x0001e5; 	T(MOV(al, 0x0FF));	// 68186 mov     al, 0FFh ;~ 202A:01
 	// 68187 rep stosb ;~ 202A:01E7
 cs=0x202a;eip=0x0001e7; 	X(	REP STOSB);	// 68187 rep stosb ;~ 202A:01E7
 cs=0x202a;eip=0x0001e9; 	X(POP(di));	// 68188 pop     di ;~ 202A:01E9
-cs=0x202a;eip=0x0001ea; 	T(MOV(bx, *(dw*)((&unk_47b2e))));	// 68189 mov     bx, word ptr unk_47B2E ;~ 202A:01EA
+cs=0x202a;eip=0x0001ea; 	T(MOV(bx, *(dw*)((&byte_47b2e))));	// 68189 mov     bx, word ptr byte_47B2E ;~ 202A:01EA
 cs=0x202a;eip=0x0001ee; 	T(SHL(bx, 1));	// 68190 shl     bx, 1 ;~ 202A:01EE
 cs=0x202a;eip=0x0001f0; 	T(MOV(bx, *(dw*)(raddr(ds,bx+0x698))));	// 68191 mov     bx, [bx+698h] ;~ 202A:01F0
 cs=0x202a;eip=0x0001f4; 	R(CALL(__dispatch_call,bx));	// 68192 call    bx ;~ 202A:01F4
@@ -565,7 +565,7 @@ cs=0x202a;eip=0x00046d; 	R(JMP(loc_2ec4c));	// 68533 jmp     loc_2EC4C ;~ 202A:0
         case m2c::kret_202a_39e: 	goto ret_202a_39e;
         case m2c::kseg007_proc: 	goto seg007_proc;
         case m2c::ksub_2e88a: 	goto sub_2e88a;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 

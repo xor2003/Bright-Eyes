@@ -184,7 +184,7 @@ cs=0x20f0;eip=0x000128; 	R(RETF(0x0C));	// 70298 retf    0Ch ;~ 20F0:0128
         case m2c::kloc_2f5fa: 	goto loc_2f5fa;
         case m2c::kloc_2f605: 	goto loc_2f605;
         case m2c::ksub_2f4ee: 	goto sub_2f4ee;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, _source);m2c::stackDump(_state); abort();
     };
 }
 
