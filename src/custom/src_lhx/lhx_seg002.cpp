@@ -6679,7 +6679,7 @@ cs=0x210;eip=0x003176; 	T(MOV(bp, sp));	// 8112 mov     bp, sp ;~ 0210:3176
 cs=0x210;eip=0x003178; 	T(SUB(sp, 0x1C));	// 8113 sub     sp, 1Ch ;~ 0210:3178
 cs=0x210;eip=0x00317b; 	X(PUSH(di));	// 8114 push    di ;~ 0210:317B
 cs=0x210;eip=0x00317c; 	X(PUSH(si));	// 8115 push    si ;~ 0210:317C
-cs=0x210;eip=0x00317d; 	X(MOV(unk_56ba8, 0));	// 8116 mov     byte ptr unk_56BA8, 0 ;~ 0210:317D
+cs=0x210;eip=0x00317d; 	X(MOV(byte_56ba8, 0));	// 8116 mov     byte_56BA8, 0 ;~ 0210:317D
 cs=0x210;eip=0x003182; 	X(PUSH(*(dw*)(raddr(ss,bp+arg_0))));	// 8117 push    [bp+arg_0] ;~ 0210:3182
 cs=0x210;eip=0x003185; 	T(ax = bp+var_16);	// 8118 lea     ax, [bp+var_16] ;~ 0210:3185
 cs=0x210;eip=0x003188; 	X(PUSH(ax));	// 8119 push    ax ;~ 0210:3188

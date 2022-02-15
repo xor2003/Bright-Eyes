@@ -4,16 +4,6 @@
 
 
 
-//#include <setjmp.h>
-/*
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
-#include <math.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <assert.h>
-*/
 #include <cstdlib>
 #include <cstdarg>
 #include <cmath>
@@ -99,8 +89,9 @@ typedef float real4;
 typedef double real8;
 typedef long double real10;
 
-
+#ifndef DOSBOX
 #include "memmgr.h"
+#endif
 
 namespace m2c {
 
@@ -301,9 +292,11 @@ static int log_debug(const char *format, ...);
 template<class S>
 inline void check_type(const S& s)
 {
+#if DEBUG >=4
   size_t addr = (((db*)&s)-((db*)&m2c::m));
   if (addr >= (0x1920+0x100) && addr < (0x1920+0x10000) && ( *(S*)(((db*)&m2c::types)+addr) )==0 && s !=0)
      log_debug("Read of uninit addr:%zx size:%zd %zx\n",addr-0x1920,(size_t)sizeof(S),(*(S*)(((db*)&m2c::types)+addr)) );
+#endif
 }
 
 template<>
@@ -589,8 +582,9 @@ inline void POP_(dd& a)
 
 #define CMP(a, b) m2c::CMP_(a, b, m2cflags)
 template <class D, class S>
-inline void CMP_(const D& dest, const S& src, m2c::eflags& m2cflags)
+inline void CMP_(const D& dest_, const S& src_, m2c::eflags& m2cflags)
 {
+const D dest = m2c::getdata<D>(dest_); const S src = m2c::getdata<S>(src_);
  D result=dest-src; 
 		AFFECT_CF(result>dest); 
        static const D highestbitset = (1<<( m2c::bitsizeof(dest)-1));
@@ -1090,13 +1084,14 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define MUL3_2(a,b,c) {dd averytemporary=(dd)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>16));}
 #define MUL3_4(a,b,c) {dq averytemporary=(dq)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>32));}
 
-#define IDIV1(a) {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}
-#define IDIV2(a) {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}
-#define IDIV4(a) {int64_t averytemporary=(((int64_t)(int32_t)edx)<<32)|eax;eax=averytemporary/((int32_t)a);edx=averytemporary%((int32_t)a); AFFECT_OF(false);}
+// TODO properly handle divide by zero
+#define IDIV1(a) {if (a) {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}}
+#define IDIV2(a) {if (a) {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}}
+#define IDIV4(a) {if (a) {int64_t averytemporary=(((int64_t)(int32_t)edx)<<32)|eax;eax=averytemporary/((int32_t)a);edx=averytemporary%((int32_t)a); AFFECT_OF(false);}}
 
-#define DIV1(a) {dw averytemporary=ax;al=averytemporary/(a);ah=averytemporary%(a); AFFECT_OF(false);}
-#define DIV2(a) {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}
-#define DIV4(a) {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}
+#define DIV1(a) {if (a) {dw averytemporary=ax;al=averytemporary/(a);ah=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV2(a) {if (a) {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV4(a) {if (a) {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}}
 
 #define NOT(a) {a= ~(a);};// AFFECT_ZFifz(a) //TODO
 
@@ -1407,8 +1402,8 @@ X86_REGREF
 
 #if DEBUG==2
     #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
-    #define T(a) R(a)
-    #define X(a) R(a)
+    #define T(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
+    #define X(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
 #elif DEBUG==3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
@@ -1419,11 +1414,8 @@ X86_REGREF
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
     #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
-
-// Run emulated instruction and compare with m2c instruction results
-
-    #define T(a) R(a)
-    #define X(a) R(a)
+    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
+    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
 
 #elif DEBUG>=4
 // clean format

@@ -14,11 +14,98 @@
 #include <unistd.h>
 #include <vector>
 
+//#define _GNU_SOURCE
+//#include <fenv.h>
+//#include <signal.h>
+
 static Bit8u custom_runs;
 volatile bool defered_custom_call = false;
 
 static Bit8u init_runs;
 Bit16u custom_oldCS, custom_oldIP;
+static int init=0;
+ bool __dispatch_call(m2c::_offsets __i, struct m2c::_STATE* _state);
+namespace m2c
+{
+extern void   Initializer();
+}
+
+void masm2c_exit(unsigned char exit)
+{
+		init++;
+		m2c::log_info("masm2c_exit Exiting\n");
+}
+
+int init_callf(unsigned selector, unsigned offs)
+{
+//	if (selector == ss)
+//		return 0;
+	if (selector >= 0xa000)
+		return 0;
+
+	{
+                return __dispatch_call((selector<<16) + offs, 0);
+	}
+
+	return 0;
+}
+
+//#include <cstdio>
+void init_entrypoint(Bit16u relocate)
+{
+    X86_REGREF
+   m2c::log_debug("Starting program\n");
+   m2c::log_debug("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
+//   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
+   m2c::Initializer();
+/*
+FILE* file_to_write = 0;
+if((file_to_write = fopen("goody.com", "wb")) != 0){
+
+    fwrite(((db*)&m2c::m)+0x1920+0x100, 0xff00, 1, file_to_write);
+    fclose(file_to_write);
+}
+*/
+  (*m2c::_ENTRY_POINT_)(0,0);
+}
+
+extern bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state);
+// Is the game running?
+/**
+	init_get_fname - copies the filename from src to dst
+	@src:	pathname to a file
+	@dst:	string where the filename shoukld be stored
+*/
+void init_get_fname(char *dst, char *src) {
+	char *p = NULL;
+	char *c = src;
+
+	while (*c != '\0') {
+		if (*c == '\\')
+			p = c + 1;
+		c++;
+	}
+
+	/* No backslash in src*/
+	if (p == NULL)
+		p = src;
+
+	while ((*dst++ = tolower(*p++)));
+	*dst = '\0';
+}
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+#include "init.h"
+
+
+int init_callf(unsigned selector, unsigned offs);
+
+void init_entrypoint(Bit16u relocate);
+*/
 
 
 void
@@ -31,6 +118,7 @@ custom_init_prog (char *name, Bit16u relocate, Bit16u init_cs, Bit16u init_ip)
       init_runs++;
     }
 }
+
 
 void
 custom_exit_prog (Bit8u exitcode)
@@ -74,14 +162,21 @@ custom_init (Section * sec)
   fprintf (stderr, "Masm2c/DOSBOX lib, build date %s\n", __DATE__);
 
   X86_REGREF m2c::_STATE * _state = 0;
+/*
+    fedisableexcept(FE_INVALID   | 
+                   FE_DIVBYZERO | 
+                   FE_OVERFLOW  | 
+                   FE_UNDERFLOW);
 
+  struct sigaction my_action;
+
+  my_action.sa_handler = SIG_IGN;
+  my_action.sa_flags = SA_RESTART;
+  sigaction(SIGFPE, &my_action, NULL);
+*/
   R (MOV (ax, 0x3000));
   R (_INT (0x21));
   fprintf (stderr, "DOS ver:%d\n", al);
-
-  R (MOV (ah, 0x2c));
-  R (_INT (0x21));
-  fprintf (stderr, "%d:%d:%d\n", ch, cl, dh);
 }
 
 void
@@ -99,6 +194,7 @@ custom_init_entrypoint (char *name, Bit16u relocate)
 
 namespace m2c
 {
+extern void   Initializer();
 
   db om[1024 * 1024];           // for instruction trace compare
   db rm[1024 * 1024];
@@ -492,4 +588,5 @@ namespace m2c
 
 
 }
+
 #endif /* DOSBOX_CUSTOM */

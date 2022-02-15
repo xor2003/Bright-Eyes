@@ -1,9 +1,9 @@
-AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -fpermissive -finline-limit=50 -ftime-report -DDEBUG=4 # -v -Q
+AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -fpermissive -finline-limit=50 -ftime-report -DDEBUG=3 # -v -Q
 
 SUBDIRS = 
 
 noinst_LIBRARIES = libsrc.a
-libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  lhx.cpp  lhx.h lhx_seg000.cpp lhx_seg001.cpp lhx_seg002.cpp lhx_seg003.cpp lhx_seg004.cpp lhx_seg005.cpp lhx_seg006.cpp lhx_seg007.cpp lhx_seg008.cpp lhx_seg009.cpp lhx_seg010.cpp lhx_seg011.cpp lhx_seg012.cpp lhx_seg013.cpp lhx_seg014.cpp lhx_seg015.cpp lhx_seg016.cpp lhx_seg017.cpp lhx_seg018.cpp lhx_seg019.cpp lhx_seg020.cpp lhx_seg021.cpp lhx_seg022.cpp lhx_seg023.cpp lhx_seg024.cpp lhx_seg025.cpp lhx_seg026.cpp lhx_seg027.cpp lhx_seg028.cpp lhx_seg029.cpp lhx_seg030.cpp lhx_seg031.cpp lhx_seg032.cpp lhx_default_seg.cpp
+libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  tdiii.cpp  tdiii.h tdiii_default_seg.cpp tdiii_seg000.cpp tdiii_seg001.cpp tdiii_seg002.cpp tdiii_seg003.cpp tdiii_seg004.cpp tdiii_seg005.cpp tdiii_seg006.cpp tdiii_seg007.cpp tdiii_seg008.cpp tdiii_seg009.cpp tdiii_seg010.cpp tdiii_seg011.cpp tdiii_seg012.cpp tdiii_seg013.cpp tdiii_seg014.cpp tdiii_seg015.cpp tdiii_seg016.cpp tdiii_seg017.cpp tdiii_seg018.cpp tdiii_seg019.cpp tdiii_seg020.cpp tdiii_seg021.cpp tdiii_seg022.cpp tdiii_seg023.cpp tdiii_seg024.cpp tdiii_seg025.cpp tdiii_seg026.cpp tdiii_seg027.cpp tdiii_seg028.cpp tdiii_seg029.cpp tdiii_seg030.cpp tdiii_seg031.cpp tdiii_seg032.cpp tdiii_seg033.cpp tdiii_seg034.cpp tdiii_seg035.cpp tdiii_seg036.cpp tdiii_seg037.cpp tdiii_seg038.cpp tdiii_seg039.cpp
 
 #EXTRA_DIST = schick.h
 
