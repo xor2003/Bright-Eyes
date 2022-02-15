@@ -5,7 +5,7 @@
 
 #pragma pack(push, 1)
 struct cmd_arg_s {
-  db name_;
+  db name_[3];
   dw ofs;
   dw storerest;
 };

@@ -28,9 +28,6 @@
 #undef arg_ger
 #define arg_ger 8
 	// 18 ARG_GER          = 8
-#undef res_map_size
-#define res_map_size 0x0C5F9
-	// 23 RES_MAP_SIZE     = 0C5F9h
 	R(CALL(start,0));	R(RETN(0));
     assert(0);
     __dispatch_call:

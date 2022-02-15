@@ -9,10 +9,13 @@
 
 #include "asm.h"
 
+#undef res_map_size
+#define res_map_size 0x0C5F9
+	// 23 RES_MAP_SIZE     = 0C5F9h
 
 #pragma pack(push, 1)
 struct cmd_arg_s {
-  db name_;
+  db name_[3];
   dw ofs;
   dw storerest;
 };
