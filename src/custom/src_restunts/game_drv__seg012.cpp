@@ -12962,7 +12962,7 @@ cs=0x2044;eip=0x005ba5; 	T(MOV(ds, fontdefseg));	// 77133 mov     ds, fontdefseg
 cs=0x2044;eip=0x005ba9; 	T(MOV(ax, *(dw*)(raddr(ss,bp+arg_2))));	// 77134 mov     ax, [bp+arg_2] ;~ 2044:5BA9
 cs=0x2044;eip=0x005bac; 	X(MOV(*(dw*)(raddr(ds,8)), ax));	// 77135 mov     ds:8, ax ;~ 2044:5BAC
 cs=0x2044;eip=0x005baf; 	T(MOV(ax, *(dw*)(raddr(ss,bp+arg_4))));	// 77136 mov     ax, [bp+arg_4] ;~ 2044:5BAF
-cs=0x2044;eip=0x005bb2; 	X(MOV(word_3b77a, ax));	// 77137 mov     word_3B77A, ax ;~ 2044:5BB2
+cs=0x2044;eip=0x005bb2; 	X(MOV(*(dw*)(raddr(ds,0xa)), ax));	// 77137 mov     word_3B77A, ax ;~ 2044:5BB2
 cs=0x2044;eip=0x005bb5; 	R(JMP(loc_345e5));	// 77138 jmp     short loc_345E5 ;~ 2044:5BB5
 ret_2044_5bb8:
 	// 9817 
@@ -12998,10 +12998,10 @@ cs=0x2044;eip=0x005bec; 	T(CMP(al, 0x0A));	// 77170 cmp     al, 0Ah ;~ 2044:5BEC
 cs=0x2044;eip=0x005bee; 	R(JNZ(loc_345eb));	// 77171 jnz     short loc_345EB ;~ 2044:5BEE
 loc_34610:
 	// 9820 
-cs=0x2044;eip=0x005bf0; 	T(MOV(ax, word_3b774));	// 77174 mov     ax, word_3B774 ;~ 2044:5BF0
-cs=0x2044;eip=0x005bf3; 	X(MOV(amsruntimelibrarycop, ax));	// 77175 mov     aMsRunTimeLibraryCop, ax ;~ 2044:5BF3
-cs=0x2044;eip=0x005bf6; 	T(MOV(ax, word_3b782));	// 77176 mov     ax, word_3B782 ;~ 2044:5BF6
-cs=0x2044;eip=0x005bf9; 	X(ADD(word_3b77a, ax));	// 77177 add     word_3B77A, ax ;~ 2044:5BF9
+cs=0x2044;eip=0x005bf0; 	T(MOV(ax, *(dw*)(raddr(ds,4))));	// 77174 mov     ax, word_3B774 ;~ 2044:5BF0
+cs=0x2044;eip=0x005bf3; 	X(MOV(*(dw*)(raddr(ds,8)), ax));	// 77175 mov     aMsRunTimeLibraryCop, ax ;~ 2044:5BF3
+cs=0x2044;eip=0x005bf6; 	T(MOV(ax, *(dw*)(raddr(ds,0x12))));	// 77176 mov     ax, word_3B782 ;~ 2044:5BF6
+cs=0x2044;eip=0x005bf9; 	X(ADD(*(dw*)(raddr(ds,0xa)), ax));	// 77177 add     word_3B77A, ax ;~ 2044:5BF9
 cs=0x2044;eip=0x005bfd; 	R(JMP(loc_345eb));	// 77178 jmp     short loc_345EB ;~ 2044:5BFD
 loc_3461f:
 	// 9821 
@@ -13013,26 +13013,26 @@ cs=0x2044;eip=0x005c04; 	X(POP(bp));	// 77186 pop     bp ;~ 2044:5C04
 cs=0x2044;eip=0x005c05; 	R(RETF(0));	// 77187 retf ;~ 2044:5C05
 loc_34626:
 	// 9822 
-cs=0x2044;eip=0x005c06; 	T(MOV(ax, amsruntimelibrarycop));	// 77191 mov     ax, aMsRunTimeLibraryCop ;~ 2044:5C06
+cs=0x2044;eip=0x005c06; 	T(MOV(ax, *(dw*)(raddr(ds,8))));	// 77191 mov     ax, aMsRunTimeLibraryCop ;~ 2044:5C06
 cs=0x2044;eip=0x005c09; 	X(MOV(*(dw*)(raddr(ss,bp+var_2)), ax));	// 77192 mov     [bp+var_2], ax ;~ 2044:5C09
-cs=0x2044;eip=0x005c0c; 	T(CMP(byte_3b784, 0));	// 77193 cmp     byte_3B784, 0 ;~ 2044:5C0C
+cs=0x2044;eip=0x005c0c; 	T(CMP(*(raddr(ds,0x14)), 0));	// 77193 cmp     byte_3B784, 0 ;~ 2044:5C0C
 cs=0x2044;eip=0x005c11; 	R(JZ(loc_34647));	// 77194 jz      short loc_34647 ;~ 2044:5C11
 cs=0x2044;eip=0x005c13; 	T(MOV(al, *(raddr(ds,si))));	// 77195 mov     al, [si] ;~ 2044:5C13
 cs=0x2044;eip=0x005c15; 	T(XOR(ah, ah));	// 77196 xor     ah, ah ;~ 2044:5C15
 cs=0x2044;eip=0x005c17; 	T(INC(si));	// 77197 inc     si ;~ 2044:5C17
-cs=0x2044;eip=0x005c18; 	X(MOV(word_3b780, ax));	// 77198 mov     word_3B780, ax ;~ 2044:5C18
+cs=0x2044;eip=0x005c18; 	X(MOV(*(dw*)raddr(ds,0x10), ax));	// 77198 mov     word_3B780, ax ;~ 2044:5C18
 cs=0x2044;eip=0x005c1b; 	T(ADD(ax, 7));	// 77199 add     ax, 7 ;~ 2044:5C1B
 cs=0x2044;eip=0x005c1e; 	T(SHR(ax, 1));	// 77200 shr     ax, 1 ;~ 2044:5C1E
 cs=0x2044;eip=0x005c20; 	T(SHR(ax, 1));	// 77201 shr     ax, 1 ;~ 2044:5C20
 cs=0x2044;eip=0x005c22; 	T(SHR(ax, 1));	// 77202 shr     ax, 1 ;~ 2044:5C22
-cs=0x2044;eip=0x005c24; 	X(MOV(byte_3b77c, al));	// 77203 mov     byte_3B77C, al ;~ 2044:5C24
+cs=0x2044;eip=0x005c24; 	X(MOV(*raddr(ds,0xc), al));	// 77203 mov     byte_3B77C, al ;~ 2044:5C24
 loc_34647:
 	// 9823 
-cs=0x2044;eip=0x005c27; 	T(MOV(al, byte_3b770));	// 77206 mov     al, byte_3B770 ;~ 2044:5C27
-cs=0x2044;eip=0x005c2a; 	T(MOV(ah, *(db*)(((db*)&word_3b772))));	// 77207 mov     ah, byte ptr word_3B772 ;~ 2044:5C2A
-cs=0x2044;eip=0x005c2e; 	T(MOV(cx, word_3b77e));	// 77208 mov     cx, word_3B77E ;~ 2044:5C2E
+cs=0x2044;eip=0x005c27; 	T(MOV(al, *raddr(ds,0)));	// 77206 mov     al, byte_3B770 ;~ 2044:5C27
+cs=0x2044;eip=0x005c2a; 	T(MOV(ah, *raddr(ds,2)));	// 77207 mov     ah, byte ptr word_3B772 ;~ 2044:5C2A
+cs=0x2044;eip=0x005c2e; 	T(MOV(cx, *(dw*)(raddr(ds,0xe))));	// 77208 mov     cx, word_3B77E ;~ 2044:5C2E
 cs=0x2044;eip=0x005c32; 	X(MOV(*(dw*)(raddr(ss,bp+var_4)), cx));	// 77209 mov     [bp+var_4], cx ;~ 2044:5C32
-cs=0x2044;eip=0x005c35; 	T(MOV(bx, word_3b77a));	// 77210 mov     bx, word_3B77A ;~ 2044:5C35
+cs=0x2044;eip=0x005c35; 	T(MOV(bx, *(dw*)(raddr(ds,0xa))));	// 77210 mov     bx, word_3B77A ;~ 2044:5C35
 cs=0x2044;eip=0x005c39; 	T(SHL(bx, 1));	// 77211 shl     bx, 1 ;~ 2044:5C39
 	cs=seg_offset(seg012);
 cs=0x2044;eip=0x005c3b; 	T(ADD(bx, *(dw*)(((db*)&word_3494a))));	// 77212 add     bx, cs:word_3494A ;~ 2044:5C3B
@@ -13040,7 +13040,7 @@ loc_34660:
 	// 9824 
 cs=0x2044;eip=0x005c40; 	T(MOV(di, *(dw*)(raddr(cs,bx))));	// 77215 mov     di, cs:[bx] ;~ 2044:5C40
 cs=0x2044;eip=0x005c43; 	T(ADD(di, *(dw*)(raddr(ss,bp+var_2))));	// 77216 add     di, [bp+var_2] ;~ 2044:5C43
-cs=0x2044;eip=0x005c46; 	T(MOV(dh, byte_3b77c));	// 77217 mov     dh, byte_3B77C ;~ 2044:5C46
+cs=0x2044;eip=0x005c46; 	T(MOV(dh, *raddr(ds,0xc)));	// 77217 mov     dh, byte_3B77C ;~ 2044:5C46
 loc_3466a:
 	// 9825 
 cs=0x2044;eip=0x005c4a; 	T(MOV(cx, 8));	// 77221 mov     cx, 8 ;~ 2044:5C4A
@@ -13060,8 +13060,8 @@ cs=0x2044;eip=0x005c5b; 	T(INC(bx));	// 77235 inc     bx ;~ 2044:5C5B
 cs=0x2044;eip=0x005c5c; 	T(INC(bx));	// 77236 inc     bx ;~ 2044:5C5C
 cs=0x2044;eip=0x005c5d; 	X(DEC(*(dw*)(raddr(ss,bp+var_4))));	// 77237 dec     [bp+var_4] ;~ 2044:5C5D
 cs=0x2044;eip=0x005c60; 	R(JG(loc_34660));	// 77238 jg      short loc_34660 ;~ 2044:5C60
-cs=0x2044;eip=0x005c62; 	T(MOV(ax, word_3b780));	// 77239 mov     ax, word_3B780 ;~ 2044:5C62
-cs=0x2044;eip=0x005c65; 	X(ADD(amsruntimelibrarycop, ax));	// 77240 add     aMsRunTimeLibraryCop, ax ;~ 2044:5C65
+cs=0x2044;eip=0x005c62; 	T(MOV(ax, *(dw*)(raddr(ds,0x10))));	// 77239 mov     ax, word_3B780 ;~ 2044:5C62
+cs=0x2044;eip=0x005c65; 	X(ADD(*(dw*)(raddr(ds,8)), ax));	// 77240 add     aMsRunTimeLibraryCop, ax ;~ 2044:5C65
 cs=0x2044;eip=0x005c69; 	R(JMP(loc_345eb));	// 77241 jmp     loc_345EB ;~ 2044:5C69
 loc_3468c:
 	// 9828 
