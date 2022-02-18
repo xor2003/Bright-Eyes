@@ -243,7 +243,7 @@ cs=0x1bcd;eip=0x000013; 	X(PUSH(di));	// 52217 push    di ;~ 1BCD:0013
 cs=0x1bcd;eip=0x000014; 	X(PUSH(si));	// 52218 push    si ;~ 1BCD:0014
 cs=0x1bcd;eip=0x000015; 	T(MOV(ax, offset(dseg,asdtedit)));	// 52219 mov     ax, offset aSdtedit ; "sdtedit" ;~ 1BCD:0015
 cs=0x1bcd;eip=0x000018; 	X(PUSH(ax));	// 52220 push    ax ;~ 1BCD:0018
-cs=0x1bcd;eip=0x000019; 	R(CALLF(file_load_shape2d_fatal_thunk,0));	// 52221 call    file_load_shape2d_fatal_thunk ;~ 1BCD:0019
+cs=0x1bcd;eip=0x000019; 	R(CALLF(file_load_shape2d_fatal,0));	// 52221 call    file_load_shape2d_fatal_thunk ;~ 1BCD:0019
 cs=0x1bcd;eip=0x00001e; 	T(ADD(sp, 2));	// 52222 add     sp, 2 ;~ 1BCD:001E
 cs=0x1bcd;eip=0x000021; 	X(MOV(*(dw*)(raddr(ss,bp+var_2a)), ax));	// 52223 mov     [bp+var_2A], ax ;~ 1BCD:0021
 cs=0x1bcd;eip=0x000024; 	X(MOV(*(dw*)(raddr(ss,bp+var_28)), dx));	// 52224 mov     [bp+var_28], dx ;~ 1BCD:0024

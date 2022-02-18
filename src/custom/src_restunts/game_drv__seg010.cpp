@@ -11,7 +11,7 @@
  bool _group11(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
-
+db int_num;
     if (__disp == 0) goto _begin;
     else goto __dispatch_call;
     _group11:
@@ -661,6 +661,7 @@ cs=0x1e67;eip=0x000436; 	X(PUSH(ss));	// 57783 push    ss ;~ 1E67:0436
 cs=0x1e67;eip=0x000437; 	X(POP(ds));	// 57784 pop     ds ;~ 1E67:0437
 cs=0x1e67;eip=0x000438; 	X(MOV(*(dw*)(raddr(ds,bx)), 0));	// 57785 mov     word ptr [bx], 0 ;~ 1E67:0438
 cs=0x1e67;eip=0x00043c; __disp=dword_3ee26;
+return;
 	R(JMP(__dispatch_call));	// 57786 jmp     dword_3EE26 ;~ 1E67:043C
 __setenvp:
 	// 57794 
@@ -678,11 +679,11 @@ cs=0x1e67;eip=0x00044a; 	T(MOV(ax, cx));	// 57803 mov     ax, cx ;~ 1E67:044A
 cs=0x1e67;eip=0x00044c; 	T(MOV(bp, cx));	// 57804 mov     bp, cx ;~ 1E67:044C
 cs=0x1e67;eip=0x00044e; 	T(MOV(di, cx));	// 57805 mov     di, cx ;~ 1E67:044E
 cs=0x1e67;eip=0x000450; 	T(DEC(cx));	// 57806 dec     cx              ; cx = 0ffffh ;~ 1E67:0450
-cs=0x1e67;eip=0x000451; 	T(MOV(si, word_3b79c));	// 57807 mov     si, word_3B79C  ; psp:2c = environment segment ;~ 1E67:0451
+cs=0x1e67;eip=0x000451; 	T(MOV(si, *(dw*)raddr(ds,0x2c)));	// 57807 mov     si, word_3B79C  ; psp:2c = environment segment ;~ 1E67:0451
 cs=0x1e67;eip=0x000455; 	T(OR(si, si));	// 57808 or      si, si ;~ 1E67:0455
 cs=0x1e67;eip=0x000457; 	R(JZ(loc_2d0b9));	// 57809 jz      short loc_2D0B9 ;~ 1E67:0457
 cs=0x1e67;eip=0x000459; 	T(MOV(es, si));	// 57810 mov     es, si ;~ 1E67:0459
-cs=0x1e67;eip=0x00045b; 	T(CMP(*(&byte_39310), 0));	// 57812 cmp     es:byte_39310, 0 ;~ 1E67:045B
+cs=0x1e67;eip=0x00045b; 	T(CMP(*raddr(es,0), 0));	// 57812 cmp     es:byte_39310, 0 ;~ 1E67:045B
 cs=0x1e67;eip=0x000461; 	R(JZ(loc_2d0b9));	// 57813 jz      short loc_2D0B9 ; empty environment? ;~ 1E67:0461
 loc_2d0b3:
 	// 8301 
@@ -3685,6 +3686,7 @@ cs=0x1e67;eip=0x0017c1; 	T(SUB(sp, 0x0A));	// 61219 sub     sp, 0Ah ;~ 1E67:17C1
 cs=0x1e67;eip=0x0017c4; 	X(MOV(*(raddr(ss,bp+var_a)), 0x0CD));	// 61220 mov     [bp+var_A], 0CDh ; 'Í' ;~ 1E67:17C4
 cs=0x1e67;eip=0x0017c8; 	T(MOV(ax, *(dw*)((dw*)(raddr(ss,bp+arg_0)))));	// 61221 mov     ax, word ptr [bp+arg_0] ;~ 1E67:17C8
 cs=0x1e67;eip=0x0017cb; 	X(MOV(*(raddr(ss,bp+var_9)), al));	// 61222 mov     [bp+var_9], al ;~ 1E67:17CB
+int_num=al;
 cs=0x1e67;eip=0x0017ce; 	T(CMP(al, 0x25));	// 61223 cmp     al, 25h ; '%' ;~ 1E67:17CE
 cs=0x1e67;eip=0x0017d0; 	R(JZ(loc_2e42c));	// 61224 jz      short loc_2E42C ;~ 1E67:17D0
 cs=0x1e67;eip=0x0017d2; 	T(CMP(al, 0x26));	// 61225 cmp     al, 26h ; '&' ;~ 1E67:17D2
@@ -3709,7 +3711,9 @@ cs=0x1e67;eip=0x0017fc; 	T(MOV(dx, *(dw*)(raddr(ds,di+6))));	// 61245 mov     dx
 cs=0x1e67;eip=0x0017ff; 	T(MOV(si, *(dw*)(raddr(ds,di+8))));	// 61246 mov     si, [di+8] ;~ 1E67:17FF
 cs=0x1e67;eip=0x001802; 	T(MOV(di, *(dw*)(raddr(ds,di+0x0A))));	// 61247 mov     di, [di+0Ah] ;~ 1E67:1802
 cs=0x1e67;eip=0x001805; 	X(PUSH(bp));	// 61248 push    bp ;~ 1E67:1805
-cs=0x1e67;eip=0x001806; 	R(CALLF(__dispatch_call,*(dd*)(raddr(ss,bp+var_e))));	// 61249 call    [bp+var_E] ;~ 1E67:1806
+cs=0x1e67;eip=0x001806;// 	R(CALLF(__dispatch_call,*(dd*)(raddr(ss,bp+var_e))));	// 61249 call    [bp+var_E] ;~ 1E67:1806
+R(_INT(int_num));
+if (int_num==0x25 || int_num==0x26) sp+=2;
 cs=0x1e67;eip=0x001809; 	X(POP(bp));	// 61250 pop     bp ;~ 1E67:1809
 cs=0x1e67;eip=0x00180a; 	T(CLD);	// 61251 cld ;~ 1E67:180A
 cs=0x1e67;eip=0x00180b; 	X(PUSH(di));	// 61252 push    di ;~ 1E67:180B

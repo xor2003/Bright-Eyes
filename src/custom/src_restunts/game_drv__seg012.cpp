@@ -2368,6 +2368,7 @@ cs=0x2044;eip=0x0019a7; 	X(MOV(byte_3f880, 0));	// 65882 mov     byte_3F880, 0 ;
 cs=0x2044;eip=0x0019ac; 	X(MOV(byte_3f881, 0));	// 65883 mov     byte_3F881, 0 ;~ 2044:19AC
 loc_303d1:
 	// 8909 
+printf("dword_3f874=%x",dword_3f874);
 cs=0x2044;eip=0x0019b1; 	X(PUSHF);	// 65887 pushf ;~ 2044:19B1
 cs=0x2044;eip=0x0019b2; 	R(CALLF(__dispatch_call,dword_3f874));	// 65888 call    dword_3F874 ;~ 2044:19B2
 cs=0x2044;eip=0x0019b6; 	R(RETN(0));	// 65889 retn ;~ 2044:19B6
@@ -3177,7 +3178,11 @@ loc_309bd:
 cs=0x2044;eip=0x001f9d; 	T(STI);	// 66866 sti ;~ 2044:1F9D
 cs=0x2044;eip=0x001f9e; 	X(POP(ds));	// 66867 pop     ds ;~ 2044:1F9E
 cs=0x2044;eip=0x001f9f; 	X(POP(bx));	// 66868 pop     bx ;~ 2044:1F9F
-cs=0x2044;eip=0x001fa0; 	R(RETF(2));	// 66869 retf    2 ;~ 2044:1FA0
+cs=0x2044;eip=0x001fa0;// 	R(RETF(2));	// 66869 retf    2 ;~ 2044:1FA0
+R(POP(ip));
+R(POP(cs));
+sp+=2;
+m2c::execute_irqs();return;
 loc_309c3:
 	// 9009 
 cs=0x2044;eip=0x001fa3; 	T(CLI);	// 66873 cli ;~ 2044:1FA3
@@ -3205,7 +3210,13 @@ cs=0x2044;eip=0x001fd7; 	T(MOV(bx, kb_intr_data2));	// 66895 mov     bx, kb_intr
 cs=0x2044;eip=0x001fdb; 	T(MOV(ax, *(dw*)(((db*)kb_intr_data_array)+bx)));	// 66896 mov     ax, kb_intr_data_array[bx] ;~ 2044:1FDB
 cs=0x2044;eip=0x001fdf; 	X(POP(ds));	// 66897 pop     ds ;~ 2044:1FDF
 cs=0x2044;eip=0x001fe0; 	X(POP(bx));	// 66898 pop     bx ;~ 2044:1FE0
-cs=0x2044;eip=0x001fe1; 	R(RETF(2));	// 66899 retf    2 ;~ 2044:1FE1
+cs=0x2044;eip=0x001fe1;// 	R(RETF(2));	// 66899 retf    2 ;~ 2044:1FE1
+R(POP(ip));
+R(POP(cs));
+sp+=2;
+m2c::execute_irqs();
+return;
+
 loc_30a04:
 	// 9012 
 cs=0x2044;eip=0x001fe4; 	T(MOV(al, byte_3fc04));	// 66903 mov     al, byte_3FC04 ;~ 2044:1FE4
@@ -10427,25 +10438,25 @@ cs=0x2044;eip=0x004e24; 	T(ADD(sp, 4));	// 74685 add     sp, 4 ;~ 2044:4E24
 cs=0x2044;eip=0x004e27; 	R(RETF(0));	// 74686 retf ;~ 2044:4E27
 file_load_shape2d_res_fatal_thunk:
 	// 74694 
-cs=0x2044;eip=0x004e28; 	R(JMP(file_load_shape2d_res_fatal));	// 74695 jmp     file_load_shape2d_res_fatal ;~ 2044:4E28
+assert(0);//cs=0x2044;eip=0x004e28; 	R(JMP(file_load_shape2d_res_fatal));	// 74695 jmp     file_load_shape2d_res_fatal ;~ 2044:4E28
 file_load_shape2d_res_nofatal_thunk:
 	// 74703 
-cs=0x2044;eip=0x004e2d; 	R(JMP(file_load_shape2d_res_nofatal));	// 74705 jmp     file_load_shape2d_res_nofatal ;~ 2044:4E2D
+assert(0);//cs=0x2044;eip=0x004e2d; 	R(JMP(file_load_shape2d_res_nofatal));	// 74705 jmp     file_load_shape2d_res_nofatal ;~ 2044:4E2D
 file_load_shape2d_res_thunk:
 	// 74713 
-cs=0x2044;eip=0x004e32; 	R(JMP(file_load_shape2d_res));	// 74714 jmp     file_load_shape2d_res ;~ 2044:4E32
+assert(0);//cs=0x2044;eip=0x004e32; 	R(JMP(file_load_shape2d_res));	// 74714 jmp     file_load_shape2d_res ;~ 2044:4E32
 parse_shape2d_thunk:
 	// 74722 
-cs=0x2044;eip=0x004e37; 	R(JMP(parse_shape2d));	// 74723 jmp     parse_shape2d ;~ 2044:4E37
+assert(0);//cs=0x2044;eip=0x004e37; 	R(JMP(parse_shape2d));	// 74723 jmp     parse_shape2d ;~ 2044:4E37
 file_load_shape2d_fatal_thunk:
 	// 74731 
-cs=0x2044;eip=0x004e3c; 	R(JMP(file_load_shape2d_fatal));	// 74733 jmp     file_load_shape2d_fatal ;~ 2044:4E3C
+assert(0);//cs=0x2044;eip=0x004e3c; 	R(JMP(file_load_shape2d_fatal));	// 74733 jmp     file_load_shape2d_fatal ;~ 2044:4E3C
 file_load_shape2d_nofatal_thunk:
 	// 74741 
-cs=0x2044;eip=0x004e41; 	R(JMP(file_load_shape2d_nofatal));	// 74744 jmp     file_load_shape2d_nofatal ;~ 2044:4E41
+assert(0);//cs=0x2044;eip=0x004e41; 	R(JMP(file_load_shape2d_nofatal));	// 74744 jmp     file_load_shape2d_nofatal ;~ 2044:4E41
 file_load_shape2d_thunk:
 	// 74752 
-cs=0x2044;eip=0x004e46; 	R(JMP(file_load_shape2d));	// 74753 jmp     file_load_shape2d ;~ 2044:4E46
+assert(0);//cs=0x2044;eip=0x004e46; 	R(JMP(file_load_shape2d));	// 74753 jmp     file_load_shape2d ;~ 2044:4E46
 sprite_putimage_and_alt2:
 	// 74763 
 #undef var_4

@@ -26,7 +26,7 @@ ret_2b83_4:
 cs=0x2b83;eip=0x000004; 	X(PUSH(bp));	// 87646 push    bp ;~ 2B83:0004
 cs=0x2b83;eip=0x000005; 	T(MOV(bp, sp));	// 87647 mov     bp, sp ;~ 2B83:0005
 cs=0x2b83;eip=0x000007; 	X(PUSH(*(dw*)(raddr(ss,bp+arg_0))));	// 87648 push    [bp+arg_0] ;~ 2B83:0007
-cs=0x2b83;eip=0x00000a; 	R(CALLF(file_load_shape2d_nofatal_thunk,0));	// 87649 call    file_load_shape2d_nofatal_thunk ;~ 2B83:000A
+cs=0x2b83;eip=0x00000a; 	R(CALLF(file_load_shape2d_nofatal,0));	// 87649 call    file_load_shape2d_nofatal_thunk ;~ 2B83:000A
 cs=0x2b83;eip=0x00000f; 	T(ADD(sp, 2));	// 87650 add     sp, 2 ;~ 2B83:000F
 cs=0x2b83;eip=0x000012; 	X(POP(bp));	// 87651 pop     bp ;~ 2B83:0012
 cs=0x2b83;eip=0x000013; 	R(RETF(0));	// 87652 retf ;~ 2B83:0013
@@ -653,7 +653,7 @@ cs=0x2b83;eip=0x0004b3; 	T(SUB(sp, 0x312));	// 88304 sub     sp, 312h ;~ 2B83:04
 cs=0x2b83;eip=0x0004b7; 	X(PUSH(si));	// 88305 push    si ;~ 2B83:04B7
 cs=0x2b83;eip=0x0004b8; 	T(MOV(ax, offset(dseg,asdmain)));	// 88306 mov     ax, offset aSdmain ; "sdmain" ;~ 2B83:04B8
 cs=0x2b83;eip=0x0004bb; 	X(PUSH(ax));	// 88307 push    ax ;~ 2B83:04BB
-cs=0x2b83;eip=0x0004bc; 	R(CALLF(file_load_shape2d_fatal_thunk,0));	// 88308 call    file_load_shape2d_fatal_thunk ;~ 2B83:04BC
+cs=0x2b83;eip=0x0004bc; 	R(CALLF(file_load_shape2d_fatal,0));	// 88308 call    file_load_shape2d_fatal_thunk ;~ 2B83:04BC
 cs=0x2b83;eip=0x0004c1; 	T(ADD(sp, 2));	// 88309 add     sp, 2 ;~ 2B83:04C1
 cs=0x2b83;eip=0x0004c4; 	X(MOV(*(dw*)(raddr(ss,bp+var_30c)), ax));	// 88310 mov     [bp+var_30C], ax ;~ 2B83:04C4
 cs=0x2b83;eip=0x0004c8; 	X(MOV(*(dw*)(raddr(ss,bp+var_30a)), dx));	// 88311 mov     [bp+var_30A], dx ;~ 2B83:04C8
@@ -731,7 +731,7 @@ cs=0x2b83;eip=0x0005b3; 	X(MOV(*(dw*)(((db*)&mouseunkspriteptr)), ax));	// 88382
 cs=0x2b83;eip=0x0005b6; 	X(MOV(*(dw*)(((db*)&mouseunkspriteptr)+2), dx));	// 88383 mov     word ptr mouseunkspriteptr+2, dx ;~ 2B83:05B6
 cs=0x2b83;eip=0x0005ba; 	T(MOV(ax, offset(dseg,asdmain_0)));	// 88384 mov     ax, offset aSdmain_0 ; "sdmain" ;~ 2B83:05BA
 cs=0x2b83;eip=0x0005bd; 	X(PUSH(ax));	// 88385 push    ax ;~ 2B83:05BD
-cs=0x2b83;eip=0x0005be; 	R(CALLF(file_load_shape2d_fatal_thunk,0));	// 88386 call    file_load_shape2d_fatal_thunk ;~ 2B83:05BE
+cs=0x2b83;eip=0x0005be; 	R(CALLF(file_load_shape2d_fatal,0));	// 88386 call    file_load_shape2d_fatal_thunk ;~ 2B83:05BE
 cs=0x2b83;eip=0x0005c3; 	T(ADD(sp, 2));	// 88387 add     sp, 2 ;~ 2B83:05C3
 cs=0x2b83;eip=0x0005c6; 	X(MOV(*(dw*)(raddr(ss,bp+var_30c)), ax));	// 88388 mov     [bp+var_30C], ax ;~ 2B83:05C6
 cs=0x2b83;eip=0x0005ca; 	X(MOV(*(dw*)(raddr(ss,bp+var_30a)), dx));	// 88389 mov     [bp+var_30A], dx ;~ 2B83:05CA

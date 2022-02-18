@@ -8,13 +8,13 @@
 
                 
 
- bool toupper(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool toupper_(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
     if (__disp == 0) goto _begin;
     else goto __dispatch_call;
-    toupper:
+    toupper_:
     _begin:
 #undef arg_0
 #define arg_0 6
@@ -43,7 +43,7 @@ cs=0x28ad;eip=0x000021; 	R(RETF(0));	// 81096 retf ;~ 28AD:0021
 #endif
     switch (__disp) {
         case m2c::kloc_370cd: 	goto loc_370cd;
-        case m2c::ktoupper: 	goto toupper;
+        case m2c::ktoupper_: 	goto toupper_;
         default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
     };
 }

@@ -75,14 +75,14 @@ cs=0x2b4f;eip=0x00004a; 	T(LES(bx, *(dd*)(raddr(ss,bp+arg_6))));	// 87168 les   
 cs=0x2b4f;eip=0x00004d; 	T(MOV(al, *(raddr(es,bx))));	// 87169 mov     al, es:[bx] ;~ 2B4F:004D
 cs=0x2b4f;eip=0x000050; 	T(SUB(ah, ah));	// 87170 sub     ah, ah ;~ 2B4F:0050
 cs=0x2b4f;eip=0x000052; 	X(PUSH(ax));	// 87171 push    ax ;~ 2B4F:0052
-cs=0x2b4f;eip=0x000053; 	R(CALLF(toupper,0));	// 87172 call    toupper ;~ 2B4F:0053
+cs=0x2b4f;eip=0x000053; 	R(CALLF(toupper_,0));	// 87172 call    toupper_ ;~ 2B4F:0053
 cs=0x2b4f;eip=0x000058; 	T(ADD(sp, 2));	// 87173 add     sp, 2 ;~ 2B4F:0058
 cs=0x2b4f;eip=0x00005b; 	T(LES(bx, *(dd*)(raddr(ss,bp+arg_2))));	// 87174 les     bx, [bp+arg_2] ;~ 2B4F:005B
 cs=0x2b4f;eip=0x00005e; 	T(MOV(cl, *(raddr(es,bx))));	// 87175 mov     cl, es:[bx] ;~ 2B4F:005E
 cs=0x2b4f;eip=0x000061; 	T(SUB(ch, ch));	// 87176 sub     ch, ch ;~ 2B4F:0061
 cs=0x2b4f;eip=0x000063; 	X(PUSH(cx));	// 87177 push    cx ;~ 2B4F:0063
 cs=0x2b4f;eip=0x000064; 	X(MOV(*(dw*)(raddr(ss,bp+var_2)), ax));	// 87178 mov     [bp+var_2], ax ;~ 2B4F:0064
-cs=0x2b4f;eip=0x000067; 	R(CALLF(toupper,0));	// 87179 call    toupper ;~ 2B4F:0067
+cs=0x2b4f;eip=0x000067; 	R(CALLF(toupper_,0));	// 87179 call    toupper_ ;~ 2B4F:0067
 cs=0x2b4f;eip=0x00006c; 	T(ADD(sp, 2));	// 87180 add     sp, 2 ;~ 2B4F:006C
 cs=0x2b4f;eip=0x00006f; 	T(CMP(ax, *(dw*)(raddr(ss,bp+var_2))));	// 87181 cmp     ax, [bp+var_2] ;~ 2B4F:006F
 cs=0x2b4f;eip=0x000072; 	R(JNZ(loc_39b09));	// 87182 jnz     short loc_39B09 ;~ 2B4F:0072

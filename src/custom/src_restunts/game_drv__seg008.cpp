@@ -5011,12 +5011,12 @@ cs=0x18ed;eip=0x002560; 	R(JMP(loc_29a00));	// 50879 jmp     short loc_29A00 ;~ 
 loc_29a12:
 	// 7859 
 cs=0x18ed;eip=0x002562; 	X(PUSH(*(dw*)((dw*)(raddr(ss,bp+arg_2)))));	// 50884 push    word ptr [bp+arg_2] ; jumptable 000299DE case 2 ;~ 18ED:2562
-cs=0x18ed;eip=0x002565; 	R(CALLF(file_load_shape2d_nofatal_thunk,0));	// 50885 call    file_load_shape2d_nofatal_thunk ;~ 18ED:2565
+cs=0x18ed;eip=0x002565; 	R(CALLF(file_load_shape2d_nofatal,0));	// 50885 call    file_load_shape2d_nofatal_thunk ;~ 18ED:2565
 cs=0x18ed;eip=0x00256a; 	R(JMP(loc_299ec));	// 50886 jmp     short loc_299EC ;~ 18ED:256A
 loc_29a1c:
 	// 7860 
 cs=0x18ed;eip=0x00256c; 	X(PUSH(*(dw*)((dw*)(raddr(ss,bp+arg_2)))));	// 50891 push    word ptr [bp+arg_2] ; jumptable 000299DE case 3 ;~ 18ED:256C
-cs=0x18ed;eip=0x00256f; 	R(CALLF(file_load_shape2d_res_nofatal_thunk,0));	// 50892 call    file_load_shape2d_res_nofatal_thunk ;~ 18ED:256F
+cs=0x18ed;eip=0x00256f; 	R(CALLF(file_load_shape2d_res_nofatal,0));	// 50892 call    file_load_shape2d_res_nofatal_thunk ;~ 18ED:256F
 cs=0x18ed;eip=0x002574; 	R(JMP(loc_299ec));	// 50893 jmp     short loc_299EC ;~ 18ED:2574
 loc_29a26:
 	// 7861 

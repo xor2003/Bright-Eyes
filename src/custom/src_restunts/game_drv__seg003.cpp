@@ -6731,7 +6731,7 @@ cs=0xb93;eip=0x0038ce; 	T(SHL(ax, 1));	// 25892 shl     ax, 1 ;~ 0B93:38CE
 cs=0xb93;eip=0x0038d0; 	T(ADD(ax, cx));	// 25893 add     ax, cx ;~ 0B93:38D0
 cs=0xb93;eip=0x0038d2; 	T(ADD(ax, offset(dseg,adesert)));	// 25894 add     ax, offset aDesert ; "desert" ;~ 0B93:38D2
 cs=0xb93;eip=0x0038d5; 	X(PUSH(ax));	// 25895 push    ax ;~ 0B93:38D5
-cs=0xb93;eip=0x0038d6; 	R(CALLF(file_load_shape2d_fatal_thunk,0));	// 25896 call    file_load_shape2d_fatal_thunk ;~ 0B93:38D6
+cs=0xb93;eip=0x0038d6; 	R(CALLF(file_load_shape2d_fatal,0));	// 25896 call    file_load_shape2d_fatal_thunk ;~ 0B93:38D6
 cs=0xb93;eip=0x0038db; 	T(ADD(sp, 2));	// 25897 add     sp, 2 ;~ 0B93:38DB
 cs=0xb93;eip=0x0038de; 	X(MOV(skybox_res_ofs, ax));	// 25898 mov     skybox_res_ofs, ax ;~ 0B93:38DE
 cs=0xb93;eip=0x0038e1; 	X(MOV(skybox_res_seg, dx));	// 25899 mov     skybox_res_seg, dx ;~ 0B93:38E1

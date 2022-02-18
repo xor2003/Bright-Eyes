@@ -3566,7 +3566,7 @@ cs=0x1a2;eip=0x001e6e; 	X(MOV(*(raddr(ss,bp+var_3e)), 0x0FF));	// 3460 mov     [
 cs=0x1a2;eip=0x001e72; 	X(MOV(backlights_paint_override, 0x2D));	// 3461 mov     backlights_paint_override, 2Dh ; '-' ; default backlights paintjob 2Dh ;~ 01A2:1E72
 cs=0x1a2;eip=0x001e77; 	T(MOV(ax, offset(dseg,asdcsel)));	// 3462 mov     ax, offset aSdcsel ; "sdcsel" ;~ 01A2:1E77
 cs=0x1a2;eip=0x001e7a; 	X(PUSH(ax));	// 3463 push    ax ;~ 01A2:1E7A
-cs=0x1a2;eip=0x001e7b; 	R(CALLF(file_load_shape2d_fatal_thunk,0));	// 3464 call    file_load_shape2d_fatal_thunk ;~ 01A2:1E7B
+cs=0x1a2;eip=0x001e7b; 	R(CALLF(file_load_shape2d_fatal,0));	// 3464 call    file_load_shape2d_fatal_thunk ;~ 01A2:1E7B
 cs=0x1a2;eip=0x001e80; 	T(ADD(sp, 2));	// 3465 add     sp, 2 ;~ 01A2:1E80
 cs=0x1a2;eip=0x001e83; 	X(MOV(*(dw*)(raddr(ss,bp+var_36)), ax));	// 3466 mov     [bp+var_36], ax ;~ 01A2:1E83
 cs=0x1a2;eip=0x001e86; 	X(MOV(*(dw*)(raddr(ss,bp+var_34)), dx));	// 3467 mov     [bp+var_34], dx ;~ 01A2:1E86

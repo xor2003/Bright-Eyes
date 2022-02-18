@@ -1331,7 +1331,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
  bool __dispatch_call(m2c::_offsets __i, struct m2c::_STATE* _state){
     X86_REGREF
     if ((__i>>16) == 0) {__i |= ((dd)cs) << 16;}
+
     __disp=__i;
+    if ((__disp >> 16) == 0xf000)
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();if (from_callf) m2c::interpret_unknown_callf(cs,eip);return;}
     switch (__i) {
         case m2c::kmainproc: 	mainproc(0, _state); break;
         case m2c::kret_2042_8: 	polarradius3d(__disp, _state); break;
@@ -1369,8 +1372,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kret_28a4_e: 	sub_3702e(__disp, _state); break;
         case m2c::kloc_370b5: 	sub_3702e(__disp, _state); break;
         case m2c::kloc_3707f: 	sub_3702e(__disp, _state); break;
-        case m2c::kret_28ad_a: 	toupper(__disp, _state); break;
-        case m2c::kloc_370cd: 	toupper(__disp, _state); break;
+        case m2c::kret_28ad_a: 	toupper_(__disp, _state); break;
+        case m2c::kloc_370cd: 	toupper_(__disp, _state); break;
         case m2c::kret_2b6e_e: 	audio_make_filename(__disp, _state); break;
         case m2c::kloc_39d1b: 	audio_make_filename(__disp, _state); break;
         case m2c::kloc_39d6a: 	audio_make_filename(__disp, _state); break;
@@ -12949,7 +12952,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[41]={13,13,13,13,13,13,13,12,12,12,12,12,12,12,11,11,11,11,11,11,11,11,11,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,9,9,9};MYCOPY(dummy0_38bf0)} // 37eb:0cf3
     {db tmp999[64]={8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4};MYCOPY(dummy0_38c19)} // 37eb:0cf3
     {db tmp999[87]={3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,144,144,144,144,144,144,144,144,144,144,144,144,144};MYCOPY(dummy0_38c59)} // 37eb:0cf3
-    {db tmp999[8000]={0};MYCOPY(dummy0_38cb0)} // 38cb:0000
+//    {db tmp999[8000]={0};MYCOPY(dummy0_38cb0)} // 38cb:0000
 
 }
 #ifndef DOSBOX
