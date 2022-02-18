@@ -31539,7 +31539,7 @@ cs=0x1a2;eip=0x00e5a1; 	T(CLD);	// 37887 cld ;~ 01A2:E5A1
 cs=0x1a2;eip=0x00e5a2; 	T(XOR(ax, ax));	// 37888 xor     ax, ax ;~ 01A2:E5A2
 	// 37889 rep stosb ;~ 01A2:E5A4
 cs=0x1a2;eip=0x00e5a4; 	X(	REP STOSB);	// 37889 rep stosb ;~ 01A2:E5A4
-cs=0x1a2;eip=0x00e5a6; 	T(MOV(ax, *(dw*)(((db*)&word_1f4b2))));	// 37890 mov     ax, ds:word_1F4B2 ;~ 01A2:E5A6
+cs=0x1a2;eip=0x00e5a6; 	T(MOV(ax, *(dw*)raddr(ds,2)));	// 37890 mov     ax, ds:word_1F4B2 ;~ 01A2:E5A6
 cs=0x1a2;eip=0x00e5a9; 	X(PUSH(es));	// 37891 push    es ;~ 01A2:E5A9
 cs=0x1a2;eip=0x00e5aa; 	X(POP(ds));	// 37892 pop     ds ;~ 01A2:E5AA
 cs=0x1a2;eip=0x00e5ab; 	X(MOV(_word_2c318_allocator_last_free_seg, ax));	// 37894 mov     _word_2C318_allocator_last_free_seg, ax ;~ 01A2:E5AB
@@ -32905,8 +32905,8 @@ loc_1efa2:
 	// 7772 
 cs=0x1a2;eip=0x00efa2; 	X(POP(es));	// 39481 pop     es ;~ 01A2:EFA2
 cs=0x1a2;eip=0x00efa3; 	X(DEC(byte_2c322));	// 39482 dec     byte_2C322 ;~ 01A2:EFA3
-cs=0x1a2;eip=0x00efa7; __disp=off_1efd5;
-	R(JS(__dispatch_call));	// 39483 js      short near ptr off_1EFD5 ;~ 01A2:EFA7
+cs=0x1a2;eip=0x00efa7;
+	R(JS(loc_1efd5));	// 39483 js      short near ptr off_1EFD5 ;~ 01A2:EFA7
 cs=0x1a2;eip=0x00efa9; 	T(MOV(al, 0x20));	// 39484 mov     al, 20h ; ' ' ;~ 01A2:EFA9
 cs=0x1a2;eip=0x00efab; 	R(OUT(0x20, al));	// 39485 out     20h, al         ; Interrupt controller, 8259A. ;~ 01A2:EFAB
 cs=0x1a2;eip=0x00efad; 	T(CMP(_byte_2d065_hnm_flag_msb, 0));	// 39486 cmp     _byte_2D065_hnm_flag_msb, 0 ;~ 01A2:EFAD
@@ -32934,6 +32934,13 @@ loc_1efd3:
 	// 7775 
 cs=0x1a2;eip=0x00efd3; 	X(POP(bx));	// 39512 pop     bx ;~ 01A2:EFD3
 cs=0x1a2;eip=0x00efd4; 	R(RETN(0));	// 39513 retn ;~ 01A2:EFD4
+loc_1efd5:
+cs=0x1a2;eip=0x00efd5;                 X(MOV(*raddr(ds,0xce72),0xa));
+cs=0x1a2;eip=0x00efda;                 X(POP(ds));
+cs=0x1a2;eip=0x00efdb;                 X(POP(ax));
+
+loc_1efdc:
+cs=0x1a2;eip=0x00efdc;                 R(JMP(loc_1ef6a));
 seg000_efe1_proc:
 	// 39527 
 loc_1efe1:
@@ -33500,10 +33507,10 @@ cs=0x1a2;eip=0x00f32b; 	T(SUB(cx, 0x10));	// 40282 sub     cx, 10h ;~ 01A2:F32B
 cs=0x1a2;eip=0x00f32e; 	T(NEG(cx));	// 40283 neg     cx              ; cx = dune.dat entry filename length ;~ 01A2:F32E
 cs=0x1a2;eip=0x00f330; 	X(POP(si));	// 40284 pop     si ;~ 01A2:F330
 cs=0x1a2;eip=0x00f331; 	T(XOR(dx, dx));	// 40285 xor     dx, dx ;~ 01A2:F331
-cs=0x1a2;eip=0x00f333; 	T(MOV(ax, *(dw*)(((db*)&_word_2c328_resource_index))));	// 40286 mov     ax, ds:_word_2C328_resource_index ;~ 01A2:F333
+cs=0x1a2;eip=0x00f333; 	T(MOV(ax, *(dw*)raddr(ds,0xce78)));	// 40286 mov     ax, ds:_word_2C328_resource_index ;~ 01A2:F333
 cs=0x1a2;eip=0x00f336; 	T(MOV(di, ax));	// 40287 mov     di, ax ;~ 01A2:F336
 cs=0x1a2;eip=0x00f338; 	T(SHL(di, 1));	// 40288 shl     di, 1 ;~ 01A2:F338
-cs=0x1a2;eip=0x00f33a; 	T(MOV(di, *(dw*)(((db*)&_off_226af_resource_names)+di)));	// 40289 mov     di, ds:_off_226AF_resource_names[di] ;~ 01A2:F33A
+cs=0x1a2;eip=0x00f33a; 	T(MOV(di, *(dw*)(((db*)raddr(ds,0x31ff)+di))));	// 40289 mov     di, ds:_off_226AF_resource_names[di] ;~ 01A2:F33A
 cs=0x1a2;eip=0x00f33e; 	T(ADD(di, 2));	// 40290 add     di, 2 ;~ 01A2:F33E
 cs=0x1a2;eip=0x00f341; 	X(PUSH(cx));	// 40291 push    cx ;~ 01A2:F341
 cs=0x1a2;eip=0x00f342; 	X(PUSH(si));	// 40292 push    si ;~ 01A2:F342

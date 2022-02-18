@@ -7524,6 +7524,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::klocret_1b2bd: 	_group1(__disp, _state); break;
         case m2c::ksub_119df: 	_group1(__disp, _state); break;
         case m2c::kloc_10063: 	_group1(__disp, _state); break;
+/*
         case m2c::kseg002_0_proc: 	_group2(__disp, _state); break;
         case m2c::kloc_34118: 	_group2(__disp, _state); break;
         case m2c::kloc_34cac: 	_group2(__disp, _state); break;
@@ -8492,7 +8493,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::ksub_5d6d3: 	_group4(__disp, _state); break;
         case m2c::kloc_5d4af: 	_group4(__disp, _state); break;
         case m2c::kret_4e73_930: 	_group4(__disp, _state); break;
-        default: m2c::log_error("Don't know how to call to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+*/
+        default: m2c::log_error("cs=%x ip=%x Don't know how to call to 0x%x. See " __FILE__ " line %d\n", cs,ip,__disp, __LINE__);
+m2c::interpret_unknown_callf(__disp>>16,__disp&0xffff);return true;
+//m2c::stackDump(_state); abort();
      };
      return true;
 }
@@ -9006,7 +9010,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999=0;MYCOPY(_word_1ee8a_xms_memory_block)} // 01a2:ee8a
     {dd tmp999=0;MYCOPY(_dword_1ee8c_xms_driver_addr)} // 01a2:ee8c
     {dw tmp999=0;MYCOPY(word_1ee90)} // 01a2:ee90
-    {db tmp999[3]={byte_1f576,word_1f4b6,unk_1f522};MYCOPY(off_1efd5)} // 01a2:efd5
+//    {db tmp999[3]={byte_1f576,word_1f4b6,unk_1f522};MYCOPY(off_1efd5)} // 01a2:efd5
     {db tmp999=unk_1f57e;MYCOPY(dummy9_109f8)} // 01a2:efd5
     {db tmp999=10;MYCOPY(byte_1efd9)} // 01a2:efd9
     {db tmp999[5]={31,88,234,106,239};MYCOPY(byte_1efda)} // 01a2:efda
