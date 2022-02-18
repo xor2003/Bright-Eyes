@@ -600,10 +600,10 @@ const D dest = m2c::getdata<D>(dest_); const S src = m2c::getdata<S>(src_);
 template <class D, class S>
 inline void OR_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
-   D d = m2c::getdata<D>(dest);
-   m2c::setdata(&dest, d | static_cast<D>(m2c::getdata<S>(src)));
-		AFFECT_ZFifz(dest); 
-		AFFECT_SF_(dest,dest); 
+   D result = m2c::getdata<D>(dest) | static_cast<D>(m2c::getdata<S>(src));
+   m2c::setdata(&dest, result);
+		AFFECT_ZFifz(result); 
+		AFFECT_SF_(result,result); 
 		AFFECT_CF(0);
 		AFFECT_OF(0);
  }
@@ -612,10 +612,10 @@ inline void OR_(D& dest, const S& src, m2c::eflags& m2cflags)
 template <class D, class S>
 inline void XOR_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
-   D d = m2c::getdata<D>(dest);
-   m2c::setdata(&dest, d ^ static_cast<D>(m2c::getdata<S>(src)));
-		AFFECT_ZFifz(dest); 
-		AFFECT_SF_(dest,dest); 
+   D result = m2c::getdata<D>(dest) ^ static_cast<D>(m2c::getdata<S>(src));
+   m2c::setdata(&dest, result);
+		AFFECT_ZFifz(result); 
+		AFFECT_SF_(result,result); 
 		AFFECT_CF(0);
 		AFFECT_OF(0);
  }
@@ -624,10 +624,10 @@ inline void XOR_(D& dest, const S& src, m2c::eflags& m2cflags)
 template <class D, class S>
 inline void AND_(D& dest, const S& src, m2c::eflags& m2cflags)
 {
-   D d = m2c::getdata<D>(dest);
-   m2c::setdata(&dest, d & static_cast<D>(m2c::getdata<S>(src)));
-		AFFECT_ZFifz(dest); 
-		AFFECT_SF_(dest,dest); 
+   D result = m2c::getdata<D>(dest) & static_cast<D>(m2c::getdata<S>(src));
+   m2c::setdata(&dest, result);
+		AFFECT_ZFifz(result); 
+		AFFECT_SF_(result,result); 
 		AFFECT_CF(0);
 		AFFECT_OF(0);
  }
@@ -1079,8 +1079,8 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define IMUL3_4(a,b,c) {int64_t averytemporary = ((int64_t)(b)) * ((int32_t)(c)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>=-((int64_t)(2147483647)+1)) && (averytemporary<=(int64_t)2147483647)?false:true));}
 
 #define MUL1_1(a) {ax=(dw)al*(a); AFFECT_OF(AFFECT_CF(ah));AFFECT_ZFifz(al);}
-#define MUL1_2(a) {dd averytemporary=(dd)ax*(a);ax=averytemporary;dx=averytemporary>>16; AFFECT_ZFifz(averytemporary);AFFECT_OF(AFFECT_CF(dx));}
-#define MUL1_4(a) {dq averytemporary=(dq)eax*(a);eax=averytemporary;edx=averytemporary>>32; AFFECT_ZFifz(averytemporary); AFFECT_OF(AFFECT_CF(edx));}
+#define MUL1_2(a) {dd averytemporary=(dd)ax*(a);ax=averytemporary;dx=averytemporary>>16; AFFECT_ZFifz(ax);AFFECT_OF(AFFECT_CF(dx));}
+#define MUL1_4(a) {dq averytemporary=(dq)eax*(a);eax=averytemporary;edx=averytemporary>>32; AFFECT_ZFifz(eax); AFFECT_OF(AFFECT_CF(edx));}
 #define MUL2_2(a,b) {dd averytemporary=(dd)(a)*(b);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>16));}
 #define MUL2_4(a,b) {dq averytemporary=(dq)(a)*(b);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>32));}
 #define MUL3_2(a,b,c) {dd averytemporary=(dd)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>16));}
