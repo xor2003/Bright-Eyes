@@ -21,36 +21,37 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
 
  #define REP cx++;while (--cx != 0)
  #define REPE if (cx) {AFFECT_ZFifz(0);};cx++;while (--cx != 0 && GET_ZF())
- #define REPNE if (cx) {AFFECT_ZFifz(1);};cx++;while (--cx != 0 && !GET_ZF())
+ #define REPNE if (cx) {m2c::oldZF=GET_ZF();m2c::repForMov=true;AFFECT_ZFifz(1);};cx++;while (--cx != 0 && !GET_ZF())
+
  #define XLAT {al = *m2c::raddr_(ds,bx+al);}
  #define CMPSB \
 	{ \
 			db* src=realAddress(si,ds); db* dest=realAddress(di,es); \
 			CMP(*src, *dest); di+=(GET_DF()==0)?1:-1; si+=(GET_DF()==0)?1:-1; \
-	}
+	} {m2c::repForMov=false;}
  #define CMPSW \
 	{ \
 			dw* src=(dw*)realAddress(si,ds); dw* dest=(dw*)realAddress(di,es); \
 			CMP(*src, *dest); di+=(GET_DF()==0)?2:-2; si+=(GET_DF()==0)?2:-2; \
-	}
+	} {m2c::repForMov=false;}
  #define CMPSD \
 	{  \
 			dd* src=(dd*)realAddress(si,ds); dd* dest=(dd*)realAddress(di,es); \
 			CMP(*src, *dest); di+=(GET_DF()==0)?4:-4; si+=(GET_DF()==0)?4:-4; \
-	}
+	} {m2c::repForMov=false;}
 
  #define SCASB \
 	{ \
 			CMP(al, *realAddress(di,es)); di+=(GET_DF()==0)?1:-1; \
-	}
+	} {m2c::repForMov=false;}
  #define SCASW \
 	{  \
 			CMP(ax, *(dw*)realAddress(di,es)); di+=(GET_DF()==0)?2:-2; \
-	}
+	} {m2c::repForMov=false;}
  #define SCASD \
 	{  \
 			CMP(eax, *(dd*)realAddress(di,es)); di+=(GET_DF()==0)?4:-4; \
-	}
+	} {m2c::repForMov=false;}
 
  #define LODS(addr,destreg,s) {memcpy (((db *)&eax), &(addr), s);; destreg+=(GET_DF()==0)?s:-s;}
  #define LODSS(a,b) {memcpy (((db *)&eax)+b, realAddress(si,ds), a); si+=(GET_DF()==0)?a:-a;}
@@ -89,18 +90,18 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
  #define MOVSS(a) {void * dest;void * src;src=realAddress(si,ds); dest=realAddress(di,es); \
 		memmove(dest,src,a); di+=(GET_DF()==0)?a:-a; si+=(GET_DF()==0)?a:-a; }
 
-   #define MOVSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readb(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?1:-1;di+=(GET_DF()==0)?1:-1;}
-   #define MOVSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readw(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?2:-2;}
-   #define MOVSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readd(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?4:-4;di+=(GET_DF()==0)?4:-4;}
+   #define MOVSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readb(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?1:-1;di+=(GET_DF()==0)?1:-1;} {if (m2c::repForMov) AFFECT_ZF(m2c::oldZF); m2c::repForMov=false;}
+   #define MOVSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readw(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?2:-2;di+=(GET_DF()==0)?2:-2;} {if (m2c::repForMov) AFFECT_ZF(m2c::oldZF); m2c::repForMov=false;}
+   #define MOVSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, mem_readd(realAddress(si,ds)-(db*)&m2c::m));si+=(GET_DF()==0)?4:-4;di+=(GET_DF()==0)?4:-4;} {if (m2c::repForMov) AFFECT_ZF(m2c::oldZF); m2c::repForMov=false;}
 
-   #define STOSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;}
-   #define STOSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;}
-   #define STOSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, eax);di+=(GET_DF()==0)?4:-4;}
+   #define STOSB {mem_writeb((db*)m2c::raddr_(es,di)-(db*)&m2c::m, al);di+=(GET_DF()==0)?1:-1;} {m2c::repForMov=false;}
+   #define STOSW {mem_writew((db*)m2c::raddr_(es,di)-(db*)&m2c::m, ax);di+=(GET_DF()==0)?2:-2;} {m2c::repForMov=false;}
+   #define STOSD {mem_writed((db*)m2c::raddr_(es,di)-(db*)&m2c::m, eax);di+=(GET_DF()==0)?4:-4;} {m2c::repForMov=false;}
  #endif
 // #define STOSD STOS(4,0)
 
- #define INSB {db averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?1:-1;}
- #define INSW {dw averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?2:-2;}
+ #define INSB {db averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?1:-1;} {m2c::repForMov=false;}
+ #define INSW {dw averytemporary3; IN(averytemporary3,dx);*realAddress(di,es)=averytemporary3;di+=(GET_DF()==0)?2:-2;} {m2c::repForMov=false;}
 
 #define LOOP(label) if (--cx) GOTOLABEL(label)
 #define LOOPE(label) if (--cx && GET_ZF()) GOTOLABEL(label)

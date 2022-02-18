@@ -1179,11 +1179,7 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 */
 
 
-#if DEBUG >= 3
-#define MOV(dest,src) {m2c::log_debug("%x := (%x)\n",&dest, src); m2c::MOV_(&dest,src);}
-#else
 #define MOV(dest,src) {m2c::MOV_(&dest,src);}
-#endif
 
 template <class D, class S>
 inline void MOV_(D* dest, const S& src)
@@ -1295,7 +1291,7 @@ inline void MOV_(D* dest, const S& src)
 
 #if SINGLEPROC
 
-#if DEBUG>=2
+#if DEBUG==2 || DEBUG==3
  #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	m2c::log_debug("after ret %x\n",stackPointer); \
@@ -1326,7 +1322,7 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  X86_REGREF
 from_callf=true;
 	  MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
-#if DEBUG
+#if DEBUG == 3
 	  m2c::log_debug("after call %x\n",stackPointer);
 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
 #endif
@@ -1335,7 +1331,7 @@ from_callf=true;
 
 #else
 // Multiproc
- #if DEBUG>=2
+ #if DEBUG==2 || DEBUG==3
  
   #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
@@ -1367,9 +1363,10 @@ from_callf=true;
   X86_REGREF
   from_callf=true;
 	  MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
- #if DEBUG
+ #if  DEBUG==2 || DEBUG==3
  	  m2c::log_debug("after call %x\n",stackPointer);
 // 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
+          m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);
  #endif
 	  label(_i, _state);
   }
@@ -1424,7 +1421,7 @@ void run_hw_interrupts();
 //    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
+    #define R(a) { m2c::run_hw_interrupts(); /*m2c::log_regs(__LINE__,#a,_state);*/} {a;}
 
 // Run emulated instruction and compare with m2c instruction results
 
@@ -1588,7 +1585,11 @@ extern void Tend(int line, const char * instr);
 extern bool Xstart(int line, const char * instr);
 extern void Xend(int line, const char * instr);
 extern void log_regs(int line, const char * instr, struct _STATE* _state);
+extern void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s);
 extern void interpret_unknown_callf(dw cs, dd eip);
+
+static bool oldZF=false;
+static bool repForMov=false;
 
 #define TODB(X) (*(db*)(&(X)))
 #define TODW(X) (*(dw*)(&(X)))

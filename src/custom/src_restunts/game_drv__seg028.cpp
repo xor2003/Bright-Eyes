@@ -569,6 +569,9 @@ cs=0x2a05;eip=0x000471; 	X(POP(si));	// 84926 pop     si ;~ 2A05:0471
 cs=0x2a05;eip=0x000472; 	X(POP(di));	// 84927 pop     di ;~ 2A05:0472
 cs=0x2a05;eip=0x000473; 	T(MOV(sp, bp));	// 84928 mov     sp, bp ;~ 2A05:0473
 cs=0x2a05;eip=0x000475; 	X(POP(bp));	// 84929 pop     bp ;~ 2A05:0475
+
+//exit(0);
+
 cs=0x2a05;eip=0x000476; 	R(RETF(0));	// 84930 retf ;~ 2A05:0476
 seg028_478_proc:
 	// 84935 

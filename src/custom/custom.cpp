@@ -17,6 +17,9 @@
 //#define _GNU_SOURCE
 //#include <fenv.h>
 //#include <signal.h>
+bool compare_instructions = true;
+
+static const size_t COMPARE_SIZE = 0xf0000;
 extern Bitu Normal_Loop(void);
 
 static Bit8u custom_runs;
@@ -186,8 +189,8 @@ namespace m2c
 {
 extern void   Initializer();
 
-  db om[1024 * 1024];           // for instruction trace compare
-  db rm[1024 * 1024];
+  db om[COMPARE_SIZE];           // for instruction trace compare
+  db rm[COMPARE_SIZE];
   dd oldip;
   Segments oldSegs;
   CPU_Regs oldcpu_regs;
@@ -195,7 +198,7 @@ extern void   Initializer();
   Segments realSegs;
   CPU_Regs realcpu_regs;
 
-  db lm[1024 * 1024]; // memory after load to trace self-modified code
+  db lm[COMPARE_SIZE]; // memory after load to trace self-modified code
 
 
   db _indent = 0;
@@ -301,7 +304,7 @@ extern void   Initializer();
     if (res)
       {
         log_debug ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
-        void *p = memmem (((db *) & m2c::m) + 0x1920, 1024 * 1024, s, size);
+        void *p = memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
         if (size > 3 && p)
           {
             log_debug (" found at %x", ((db *) p) - d);
@@ -482,20 +485,20 @@ extern void   Initializer();
   bool Tstart (int line, const char *instr)
   {
     oldip = cpu_regs.ip.dword[0];
-//        hexDump (raddr (Segs.val[1], oldip), 8);
-//        hexDump (m2c::lm+(Segs.val[1]<<4)+oldip, 8);
     run_hw_interrupts ();
-    log_debug ("b ");
-    log_regs (line, instr, 0);
-    oldSegs = Segs; oldcpu_regs = cpu_regs;
 
+bool compare(compare_instructions);
+if (compare) {
+    oldSegs = Segs; oldcpu_regs = cpu_regs;
+}
     dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
     single_step ();
+if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     dd ip2 = cpu_regs.ip.dword[0]; 
     size_t instr_size = ip2 - ip1;
     if (memcmp (m2c::lm+(seg<<4)+ip1, ((db*)&m2c::m)+(seg<<4)+ip1, instr_size) != 0)
     {
-       log_error("~self-modified instruction ");
+       log_info("~self-modified instruction ");
        hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
        return false;
     }
@@ -518,41 +521,43 @@ extern void   Initializer();
       {
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
-        log_debug ("/-----------------------------Error-----------------------------------------\\\n");
+    log_debug ("before ");
+    log_regs_dbx(line, instr, oldcpu_regs, oldSegs);
+        log_error("/-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.dword[0] = oldip;
-        log_debug ("cs:ip: ");
+        log_error("cs:ip: ");
         hexDump (raddr (Segs.val[1], oldip), 8);
 
-        log_debug ("~m2c ");
-        log_regs (line, instr, 0);
+        log_error("~m2c ");
+    log_regs_dbx(line, instr, cpu_regs, Segs);
 
     if (regs_ch)
       {
-        log_debug ("reg ");
+        log_error("reg ");
         hexDump (&cpu_regs, sizeof (CPU_Regs));
       }
     if (segs_ch)
       {
-        log_debug ("seg ");
+        log_error("seg ");
         hexDump (&Segs, sizeof (Segments));
       }
 
         Segs = realSegs; cpu_regs = realcpu_regs;
 
-        log_debug ("~dbx ");
-        log_regs (line, instr, 0);
+        log_error("~dbx ");
+    log_regs_dbx(line, instr, realcpu_regs, realSegs);
     if (regs_ch)
       {
-        log_debug ("reg ");
+        log_error("reg ");
         hexDump (&cpu_regs, sizeof (CPU_Regs));
       }
     if (segs_ch)
       {
-        log_debug ("seg ");
+        log_error("seg ");
         hexDump (&Segs, sizeof (Segments));
       }
         exit (1);
-        log_debug("\\-----------------------------Error-----------------------------------------/\n");
+        log_error("\\-----------------------------Error-----------------------------------------/\n");
       }
     cpu_regs.flags = realflags;
   }
@@ -561,19 +566,20 @@ extern void   Initializer();
   {
     oldip = cpu_regs.ip.dword[0];
     run_hw_interrupts ();
-    log_debug ("b ");
-    log_regs (line, instr, 0);
 
+bool compare(compare_instructions);
+if (compare) {
     oldSegs = Segs; oldcpu_regs = cpu_regs;
-    memcpy (om, &m, 1024 * 1024);
-
+    memcpy (om, &m, COMPARE_SIZE);
+}
     dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
     single_step ();
+if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     dd ip2 = cpu_regs.ip.dword[0]; 
     size_t instr_size = ip2 - ip1;
     if (memcmp (m2c::lm+(seg<<4)+ip1, ((db*)&m2c::m)+(seg<<4)+ip1, instr_size) != 0)
     {
-       log_error("~self-modified instruction ");
+       log_info("~self-modified instruction ");
        hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
        return false;
     }
@@ -582,10 +588,10 @@ extern void   Initializer();
     realflags = cpu_regs.flags;
     cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF;// | FLAG_OF;
     realSegs = Segs; realcpu_regs = cpu_regs;
-    memcpy (rm, &m, 1024 * 1024);
+    memcpy (rm, &m, COMPARE_SIZE);
 
     Segs = oldSegs; cpu_regs = oldcpu_regs;
-    memcpy (&m, om, 1024 * 1024);
+    memcpy (&m, om, COMPARE_SIZE);
        return true;
     }
   }
@@ -596,59 +602,73 @@ extern void   Initializer();
     cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF;// | FLAG_OF;
     cpu_regs.ip = realcpu_regs.ip;
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0 ||
-        memcmp (&m, rm, 1024 * 1024) != 0)
+        memcmp (&m, rm, COMPARE_SIZE) != 0)
       {
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
-        bool mem_ch = memcmp (&m, rm, 1024 * 1024);
-        log_debug ("/-----------------------------Error-----------------------------------------\\\n");
+        bool mem_ch = memcmp (&m, rm, COMPARE_SIZE);
+    log_debug ("before ");
+    log_regs_dbx(line, instr, oldcpu_regs, oldSegs);
+        log_error("/-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.dword[0] = oldip;
-        log_debug ("cs:ip: ");
+        log_error("cs:ip: ");
         hexDump (raddr (Segs.val[1], oldip), 8);
-        log_debug ("~m2c ");
-        log_regs (line, instr, 0);
+        log_error("~m2c ");
+    log_regs_dbx(line, instr, cpu_regs, Segs);
     if (regs_ch)
       {
-        log_debug ("reg ");
+        log_error("reg ");
         hexDump (&cpu_regs, sizeof (CPU_Regs));
       }
     if (segs_ch)
       {
-        log_debug ("seg ");
+        log_error("seg ");
         hexDump (&Segs, sizeof (Segments));
       }
 
         Segs = realSegs; cpu_regs = realcpu_regs;
-        log_debug ("~dbx ");
-        log_regs (line, instr, 0);
+        log_error("~dbx ");
+    log_regs_dbx(line, instr, realcpu_regs, realSegs);
     if (regs_ch)
       {
-        log_debug ("reg ");
+        log_error("reg ");
         hexDump (&cpu_regs, sizeof (CPU_Regs));
       }
     if (segs_ch)
       {
-        log_debug ("seg ");
+        log_error("seg ");
         hexDump (&Segs, sizeof (Segments));
       }
     if (mem_ch)
       {
-        log_debug ("~mem m2c / dbx\n");
-        cmpHexDump (&m, rm, 1024 * 1024);
+        log_error("~mem m2c / dbx\n");
+        cmpHexDump (&m, rm, COMPARE_SIZE);
       }
         exit (1);
-        log_debug("\\-----------------------------Error-----------------------------------------/\n");
+        log_error("\\-----------------------------Error-----------------------------------------/\n");
       }
     cpu_regs.flags = realflags;
   }
 
-void log_regs(int line, const char * instr, struct _STATE* _state)
-{
-X86_REGREF
-//  log_debug("%06d %04X:%08X %s%-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
-//                         line,cs,eip,_str,instr,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
-  log_debug("%06d %04X:%08X %s%-54s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
-                         line,cs,eip,_str,instr,       ax,     bx,     cx,     dx,     si,     di,     bp,     sp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
+void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s)
+{/*
+enum SegNames { es=0,cs=1,ss=2,ds=3,fs=4,gs=5};
+struct Segments {
+	Bit16u val[8];
+};
+union GenReg32 {
+	Bit32u dword[1];
+};
+struct CPU_Regs {
+	GenReg32 regs[8],ip;
+	Bitu flags;
+	REGI_AX=0, REGI_CX=1, REGI_DX=2, REGI_BX=3,
+	REGI_SP=4, REGI_BP=5, REGI_SI=6, REGI_DI=7
+};
+#define reg_32(reg) (cpu_regs.regs[(reg)].dword[DW_INDEX])
+};*/
+  log_debug("%06d %04X:%08X %s%-54s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n", 
+                         line,s.val[1],r.ip,_str,instr, r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0], r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3], s.val[0], s.val[4], s.val[5], s.val[2], r.flags&FLAG_CF, r.flags&FLAG_ZF, r.flags&FLAG_SF, r.flags&FLAG_OF, r.flags&FLAG_AF, r.flags&FLAG_PF, r.flags&FLAG_IF);
 }
 
 void interpret_unknown_callf(dw newcs, dd newip)
@@ -657,7 +677,9 @@ X86_REGREF
   cs = newcs;
   eip = newip;
     fix_segs ();
+#if DEBUG
   log_debug("Enter interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
+#endif
 //  dw oldsp = sp;
   interpretation_deep = 1;
   do {
@@ -665,7 +687,9 @@ X86_REGREF
    } while (interpretation_deep>0);
   interpretation_deep = -1;
   CPU_Cycles = old_cycles;
+#if DEBUG
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
+#endif
 //  sp = oldsp;
 //  sp += 4;
 }
@@ -683,7 +707,7 @@ void init_entrypoint(Bit16u relocate)
 //   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
    m2c::Initializer();
 
-   memcpy (m2c::lm, &m2c::m, 1024 * 1024); // backup memory after program loaded
+   memcpy (m2c::lm, &m2c::m, COMPARE_SIZE); // backup memory after program loaded
 /*
 FILE* file_to_write = 0;
 if((file_to_write = fopen("goody.com", "wb")) != 0){
