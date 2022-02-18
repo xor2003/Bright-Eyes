@@ -17,3 +17,4 @@ lastbuild.log
 src/dosbox
 /visualc_2017/Debug
 /visualc_2017/Release
+/src/custom/src/*
