@@ -127,15 +127,16 @@ Bit32u ticksScheduled;
 bool ticksLocked;
 void increaseticks();
 
-static Bitu Normal_Loop(void) {
+Bitu Normal_Loop(void) {
 	Bits ret;
 	while (1) {
 		if (PIC_RunQueue()) {
 			if (defered_custom_call) {
+                                defered_custom_call = false;
+				from_callf = false;
 //				printf("Executing interrupt %x:%x\n",Segs.val[cs], reg_eip);
 			        custom_callf(Segs.val[cs], reg_eip);
 //				printf("Exited interrupt. new CS:IP %x:%x\n",Segs.val[cs], reg_eip);
-                                defered_custom_call = false;
                         } 
 			ret = (*cpudecoder)();
 			if (GCC_UNLIKELY(ret<0)) return 1;
@@ -147,6 +148,7 @@ static Bitu Normal_Loop(void) {
 #if C_DEBUG
 			if (DEBUG_ExitLoop()) return 0;
 #endif
+			if (interpretation_deep == 0) return 0;
 		} else {
 			GFX_Events();
 			if (ticksRemain>0) {

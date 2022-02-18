@@ -134,13 +134,23 @@ static INLINE Bit32u Fetchd() {
 #include "core_normal/support.h"
 #include "core_normal/string.h"
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+extern void DEBUG_LogInstruction(Bit16u segValue, Bit32u eipValue,  ofstream& out);
 
 #define EALookupTable (core.ea_table)
 
 Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
 		LOADIP;
-if (SegBase(cs)!=0xf0000)printf("~%x:%x\n",SegBase(cs),cpu_regs.ip);
+
+if (SegBase(cs)!=0xf0000)
+{
+ printf("~%x:%x %x\n",SegBase(cs),cpu_regs.ip.dword[0],*((Bit8u*)MemBase+SegBase(cs)+cpu_regs.ip.dword[0]));
+//ofstream s( "/dev/tty" ); 
+// DEBUG_LogInstruction(SegBase(cs)>>8,cpu_regs.ip.dword[0],s);
+}
 		core.opcode_index=cpu.code.big*0x200;
 		core.prefixes=cpu.code.big;
 		core.ea_table=&EATable[cpu.code.big*256];

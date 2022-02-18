@@ -783,7 +783,7 @@ cs=0x37eb;eip=0x000515; 	T(XCHG(al, ah));	// 118977 xchg    al, ah ;~ 37EB:0515
 cs=0x37eb;eip=0x000517; 	R(IN(al, 0x42));	// 118978 in      al, 42h         ; Timer 8253-5 (AT: 8254.2). ;~ 37EB:0517
 cs=0x37eb;eip=0x000519; 	T(XCHG(al, ah));	// 118979 xchg    al, ah ;~ 37EB:0519
 cs=0x37eb;eip=0x00051b; 	T(CMP(ax, cx));	// 118980 cmp     ax, cx ;~ 37EB:051B
-cs=0x37eb;eip=0x00051d; 	R(JNC(loc_4699f));	// 118981 jnb     short loc_4699F ;~ 37EB:051D
+//cs=0x37eb;eip=0x00051d; 	R(JNC(loc_4699f));	// 118981 jnb     short loc_4699F ;~ 37EB:051D
 cs=0x37eb;eip=0x00051f; 	R(IN(al, 0x61));	// 118982 in      al, 61h         ; PC/XT PPI port B bits: ;~ 37EB:051F
 cs=0x37eb;eip=0x000521; 	T(AND(al, 0x0FE));	// 118990 and     al, 0FEh ;~ 37EB:0521
 cs=0x37eb;eip=0x000523; 	R(OUT(0x61, al));	// 118991 out     61h, al         ; PC/XT PPI port B bits: ;~ 37EB:0523

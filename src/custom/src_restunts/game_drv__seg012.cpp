@@ -2368,7 +2368,6 @@ cs=0x2044;eip=0x0019a7; 	X(MOV(byte_3f880, 0));	// 65882 mov     byte_3F880, 0 ;
 cs=0x2044;eip=0x0019ac; 	X(MOV(byte_3f881, 0));	// 65883 mov     byte_3F881, 0 ;~ 2044:19AC
 loc_303d1:
 	// 8909 
-printf("dword_3f874=%x",dword_3f874);
 cs=0x2044;eip=0x0019b1; 	X(PUSHF);	// 65887 pushf ;~ 2044:19B1
 cs=0x2044;eip=0x0019b2; 	R(CALLF(__dispatch_call,dword_3f874));	// 65888 call    dword_3F874 ;~ 2044:19B2
 cs=0x2044;eip=0x0019b6; 	R(RETN(0));	// 65889 retn ;~ 2044:19B6

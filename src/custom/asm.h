@@ -32,6 +32,8 @@
 #include <vector>
 
 extern Bit32u ticksRemain;
+extern volatile bool from_callf;
+
 void increaseticks();
 #endif
 
@@ -375,7 +377,7 @@ static int log_debug(const char *format, ...)
     va_list args;
 
     va_start(args, format);
-    result = vfprintf(stderr, format, args);
+    result = vfprintf(stdout, format, args);
     //printf("\n");
     va_end(args);
 
@@ -387,7 +389,7 @@ static int log_error(const char *format, ...)
     va_list args;
 
     va_start(args, format);
-    result = vfprintf(stderr, format, args);
+    result = vfprintf(stdout, format, args);
     //printf("\n");
     va_end(args);
 
@@ -399,7 +401,7 @@ static int log_info(const char *format, ...)
     va_list args;
 
     va_start(args, format);
-    result = vfprintf(stderr, format, args);
+    result = vfprintf(stdout, format, args);
     //printf("\n");
     va_end(args);
 
@@ -1189,10 +1191,10 @@ inline void MOV_(D* dest, const S& src)
 //{ *dest = static_cast<D>(src); }
 
 #define LEAVE {MOV(esp, ebp));POP(ebp);}
-#define LFS(dest,src) {dest = src; fs= *(dw*)((db*)&(src) + sizeof(dest));}
-#define LES(dest,src) {dest = src; es = *(dw*)((db*)&(src) + sizeof(dest));}
-#define LGS(dest,src) {dest = src; gs = *(dw*)((db*)&(src) + sizeof(dest));}
-#define LDS(dest,src) {dest = src; ds = *(dw*)((db*)&(src) + sizeof(dest));}
+#define LFS(dest,src) {fs= *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
+#define LES(dest,src) {es = *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
+#define LGS(dest,src) {gs = *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
+#define LDS(dest,src) {ds = *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
 
 #define MOVZX(dest,src) {dest = src;}
 #define MOVSX(dest,src) {if (ISNEGATIVE(src,src)) { dest = ((-1 ^ (( 1 << (m2c::bitsizeof(src)) )-1)) | src ); } else { dest = src; }}
@@ -1274,7 +1276,7 @@ inline void MOV_(D* dest, const S& src)
 #define RETF {log_debug("before ret %d\n",stackPointer); db averytemporary5=0; POP(averytemporary5); if (averytemporary5!='x') {log_error("Stack corrupted.\n");exit(1);} \
  		POP(jmpbuffer); stackPointer-=2; log_debug("after retf %d\n",stackPointer);longjmp(jmpbuffer, 0);}
 */
-#define CALLF(label, disp) {PUSH(cs);CALL(label, disp);}
+#define CALLF(label, disp) {PUSH(ip);CALL(label, disp);}
 /*
 #define CALL(label) \
 	{ db averytemporary6='x';  \
@@ -1322,6 +1324,7 @@ inline void MOV_(D* dest, const S& src)
 #define CALL(label, disp) {m2c::CALL_(label, _state, disp);if (disp) {__disp=disp;} else {__disp=m2c::k##label;}goto __dispatch_call;}
 static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  X86_REGREF
+from_callf=true;
 	  MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
 #if DEBUG
 	  m2c::log_debug("after call %x\n",stackPointer);
@@ -1362,6 +1365,7 @@ static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
 #define CALL(label, disp) {m2c::_indent+=2;m2c::_str=m2c::log_spaces(m2c::_indent);m2c::CALL_(label, _state, disp);}
  static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
   X86_REGREF
+  from_callf=true;
 	  MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
  #if DEBUG
  	  m2c::log_debug("after call %x\n",stackPointer);
@@ -1393,17 +1397,11 @@ bool fix_segs();
 
 void run_hw_interrupts();
 
-static void log_regs(int line, const char * instr, struct _STATE* _state)
-{
-X86_REGREF
-  log_debug("%06d %04X:%08X %s%-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", 
-                         line,cs,eip,_str,instr,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());
-}
 
 #if DEBUG==2
-    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
-    #define T(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
-    #define X(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n",_str,__LINE__,#a);}; a
+    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n","",__LINE__,#a);}; a
+    #define T(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n","",__LINE__,#a);}; a
+    #define X(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n","",__LINE__,#a);}; a
 #elif DEBUG==3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
@@ -1430,14 +1428,14 @@ X86_REGREF
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {m2c::Tstart(__LINE__,#a); \
+    #define T(a) {if (m2c::Tstart(__LINE__,#a)){ \
 	{a;} \
-        m2c::Tend(__LINE__,#a); \
+        m2c::Tend(__LINE__,#a);} \
         }
 
-    #define X(a) {m2c::Xstart(__LINE__,#a); \
+    #define X(a) {if (m2c::Xstart(__LINE__,#a)){ \
 	{a;} \
-        m2c::Xend(__LINE__,#a); \
+        m2c::Xend(__LINE__,#a);} \
         }
 
 #else
@@ -1585,11 +1583,12 @@ extern db vgaPalette[256*3];
 extern db(& stack)[STACK_SIZE];
 extern db(& heap)[HEAP_SIZE];
 extern  m2cf* _ENTRY_POINT_;
-extern void Tstart(int line, const char * instr);
+extern bool Tstart(int line, const char * instr);
 extern void Tend(int line, const char * instr);
-extern void Xstart(int line, const char * instr);
+extern bool Xstart(int line, const char * instr);
 extern void Xend(int line, const char * instr);
-
+extern void log_regs(int line, const char * instr, struct _STATE* _state);
+extern void interpret_unknown_callf(dw cs, dd eip);
 
 #define TODB(X) (*(db*)(&(X)))
 #define TODW(X) (*(dw*)(&(X)))
