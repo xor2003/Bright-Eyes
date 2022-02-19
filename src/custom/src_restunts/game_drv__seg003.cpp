@@ -6122,7 +6122,7 @@ cs=0xb93;eip=0x0033e9; 	X(PUSH(ax));	// 25277 push    ax              ; __int16 
 cs=0xb93;eip=0x0033ea; 	X(PUSH(word_45dca));	// 25278 push    word_45DCA      ; left arrow shape ;~ 0B93:33EA
 #undef shapeptr
 #define shapeptr 6
-cs=0xb93;eip=0x0033ee; 	X(PUSH(shapeptr));	// 25279 push    shapeptr        ; left arrow shape ;~ 0B93:33EE
+cs=0xb93;eip=0x0033ee; 	X(PUSH(shapeptr_));	// 25279 push    shapeptr        ; left arrow shape ;~ 0B93:33EE
 loc_1d302:
 	// 5999 
 cs=0xb93;eip=0x0033f2; 	R(CALLF(sprite_putimage_transparent,0));	// 25282 call    sprite_putimage_transparent ;~ 0B93:33F2
