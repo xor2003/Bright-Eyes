@@ -2837,7 +2837,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
  bool __dispatch_call(m2c::_offsets __i, struct m2c::_STATE* _state){
     X86_REGREF
     if ((__i>>16) == 0) {__i |= ((dd)cs) << 16;}
+
     __disp=__i;
+    if ((__disp >> 16) == 0xf000)
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();if (from_callf) m2c::interpret_unknown_callf(cs,eip);return;}
     switch (__i) {
         case m2c::kmainproc: 	mainproc(0, _state); break;
         case m2c::kstart: 	_group1(__disp, _state); break;
@@ -9011,7 +9014,7 @@ m2c::interpret_unknown_callf(__disp>>16,__disp&0xffff);return true;
     {dd tmp999=0;MYCOPY(_dword_1ee8c_xms_driver_addr)} // 01a2:ee8c
     {dw tmp999=0;MYCOPY(word_1ee90)} // 01a2:ee90
 //    {db tmp999[3]={byte_1f576,word_1f4b6,unk_1f522};MYCOPY(off_1efd5)} // 01a2:efd5
-    {db tmp999=unk_1f57e;MYCOPY(dummy9_109f8)} // 01a2:efd5
+
     {db tmp999=10;MYCOPY(byte_1efd9)} // 01a2:efd9
     {db tmp999[5]={31,88,234,106,239};MYCOPY(byte_1efda)} // 01a2:efda
     {dw tmp999=seg_offset(seg000);MYCOPY(dummy9_109ff)} // 01a2:efdf
