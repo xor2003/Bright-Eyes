@@ -123,7 +123,7 @@ custom_exit_prog (Bit8u exitcode)
   if (init_runs)
     {
       masm2c_exit (exitcode);
-      sleep (30);
+      //sleep (30);
       exit (0);
 
       init_runs--;

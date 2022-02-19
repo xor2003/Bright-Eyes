@@ -1187,10 +1187,10 @@ inline void MOV_(D* dest, const S& src)
 //{ *dest = static_cast<D>(src); }
 
 #define LEAVE {MOV(esp, ebp));POP(ebp);}
-#define LFS(dest,src) {fs= *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
-#define LES(dest,src) {es = *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
-#define LGS(dest,src) {gs = *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
-#define LDS(dest,src) {ds = *(dw*)((db*)&(src) + sizeof(dest));dest = src;}
+#define LFS(dest,src) {dw seg= *(dw*)((db*)&(src) + sizeof(dest));dest = src;fs=seg;}
+#define LES(dest,src) {dw seg= *(dw*)((db*)&(src) + sizeof(dest));dest = src;es=seg;}
+#define LGS(dest,src) {dw seg= *(dw*)((db*)&(src) + sizeof(dest));dest = src;gs=seg;}
+#define LDS(dest,src) {dw seg= *(dw*)((db*)&(src) + sizeof(dest));dest = src;ds=seg;}
 
 #define MOVZX(dest,src) {dest = src;}
 #define MOVSX(dest,src) {if (ISNEGATIVE(src,src)) { dest = ((-1 ^ (( 1 << (m2c::bitsizeof(src)) )-1)) | src ); } else { dest = src; }}
