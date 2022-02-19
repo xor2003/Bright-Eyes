@@ -3800,7 +3800,7 @@ cs=0x1e67;eip=0x001891; 	X(POP(di));	// 61335 pop     di ;~ 1E67:1891
 cs=0x1e67;eip=0x001892; 	T(MOV(sp, bp));	// 61336 mov     sp, bp ;~ 1E67:1892
 cs=0x1e67;eip=0x001894; 	X(POP(bp));	// 61337 pop     bp ;~ 1E67:1894
 cs=0x1e67;eip=0x001895; 	R(RETF(0));	// 61338 retf ;~ 1E67:1895
-_stricmp:
+_stricmp_:
 	// 61347 
 #undef arg_0
 #define arg_0 6
@@ -4741,7 +4741,7 @@ cs=0x1e67;eip=0x001db4; 	R(RETF(8));	// 62331 retf    8 ;~ 1E67:1DB4
         case m2c::k_sprintf: 	goto _sprintf;
         case m2c::k_stackavail: 	goto _stackavail;
         case m2c::k_strcat: 	goto _strcat;
-        case m2c::k_stricmp: 	goto _stricmp;
+        case m2c::k_stricmp_: 	goto _stricmp_;
         case m2c::k_strrchr: 	goto _strrchr;
         case m2c::kdef_2d739: 	goto def_2d739;
         case m2c::kfprint: 	goto fprint;

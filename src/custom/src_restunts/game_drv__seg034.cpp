@@ -183,7 +183,7 @@ cs=0x2c3f;eip=0x0000e7; 	T(MOV(ax, offset(dseg,a_pvs)));	// 89373 mov     ax, of
 cs=0x2c3f;eip=0x0000ea; 	X(PUSH(ax));	// 89374 push    ax ;~ 2C3F:00EA
 cs=0x2c3f;eip=0x0000eb; 	T(ax = bp+var_c+2);	// 89375 lea     ax, [bp+var_C+2] ;~ 2C3F:00EB
 cs=0x2c3f;eip=0x0000ee; 	X(PUSH(ax));	// 89376 push    ax              ; char * ;~ 2C3F:00EE
-cs=0x2c3f;eip=0x0000ef; 	R(CALLF(_stricmp,0));	// 89377 call    _stricmp ;~ 2C3F:00EF
+cs=0x2c3f;eip=0x0000ef; 	R(CALLF(_stricmp_,0));	// 89377 call    _stricmp_ ;~ 2C3F:00EF
 cs=0x2c3f;eip=0x0000f4; 	T(ADD(sp, 4));	// 89378 add     sp, 4 ;~ 2C3F:00F4
 cs=0x2c3f;eip=0x0000f7; 	T(OR(ax, ax));	// 89379 or      ax, ax ;~ 2C3F:00F7
 cs=0x2c3f;eip=0x0000f9; 	R(JNZ(_try_load_xvs));	// 89380 jnz     short _try_load_xvs ;~ 2C3F:00F9
@@ -224,7 +224,7 @@ cs=0x2c3f;eip=0x000154; 	T(MOV(ax, offset(dseg,a_xvs)));	// 89415 mov     ax, of
 cs=0x2c3f;eip=0x000157; 	X(PUSH(ax));	// 89416 push    ax ;~ 2C3F:0157
 cs=0x2c3f;eip=0x000158; 	T(ax = bp+var_c+2);	// 89417 lea     ax, [bp+var_C+2] ;~ 2C3F:0158
 cs=0x2c3f;eip=0x00015b; 	X(PUSH(ax));	// 89418 push    ax              ; char * ;~ 2C3F:015B
-cs=0x2c3f;eip=0x00015c; 	R(CALLF(_stricmp,0));	// 89419 call    _stricmp ;~ 2C3F:015C
+cs=0x2c3f;eip=0x00015c; 	R(CALLF(_stricmp_,0));	// 89419 call    _stricmp_ ;~ 2C3F:015C
 cs=0x2c3f;eip=0x000161; 	T(ADD(sp, 4));	// 89420 add     sp, 4 ;~ 2C3F:0161
 cs=0x2c3f;eip=0x000164; 	T(OR(ax, ax));	// 89421 or      ax, ax ;~ 2C3F:0164
 cs=0x2c3f;eip=0x000166; 	R(JNZ(_try_load_pes));	// 89422 jnz     short _try_load_pes ;~ 2C3F:0166
@@ -244,7 +244,7 @@ cs=0x2c3f;eip=0x000180; 	T(MOV(ax, offset(dseg,a_pes)));	// 89436 mov     ax, of
 cs=0x2c3f;eip=0x000183; 	X(PUSH(ax));	// 89437 push    ax ;~ 2C3F:0183
 cs=0x2c3f;eip=0x000184; 	T(ax = bp+var_c+2);	// 89438 lea     ax, [bp+var_C+2] ;~ 2C3F:0184
 cs=0x2c3f;eip=0x000187; 	X(PUSH(ax));	// 89439 push    ax              ; char * ;~ 2C3F:0187
-cs=0x2c3f;eip=0x000188; 	R(CALLF(_stricmp,0));	// 89440 call    _stricmp ;~ 2C3F:0188
+cs=0x2c3f;eip=0x000188; 	R(CALLF(_stricmp_,0));	// 89440 call    _stricmp_ ;~ 2C3F:0188
 cs=0x2c3f;eip=0x00018d; 	T(ADD(sp, 4));	// 89441 add     sp, 4 ;~ 2C3F:018D
 cs=0x2c3f;eip=0x000190; 	T(OR(ax, ax));	// 89442 or      ax, ax ;~ 2C3F:0190
 cs=0x2c3f;eip=0x000192; 	R(JZ(loc_3ab67));	// 89443 jz      short loc_3AB67 ;~ 2C3F:0192
@@ -331,7 +331,7 @@ cs=0x2c3f;eip=0x00024c; 	T(MOV(ax, offset(dseg,a_esh)));	// 89526 mov     ax, of
 cs=0x2c3f;eip=0x00024f; 	X(PUSH(ax));	// 89527 push    ax ;~ 2C3F:024F
 cs=0x2c3f;eip=0x000250; 	T(ax = bp+var_c+2);	// 89528 lea     ax, [bp+var_C+2] ;~ 2C3F:0250
 cs=0x2c3f;eip=0x000253; 	X(PUSH(ax));	// 89529 push    ax              ; char * ;~ 2C3F:0253
-cs=0x2c3f;eip=0x000254; 	R(CALLF(_stricmp,0));	// 89530 call    _stricmp ;~ 2C3F:0254
+cs=0x2c3f;eip=0x000254; 	R(CALLF(_stricmp_,0));	// 89530 call    _stricmp_ ;~ 2C3F:0254
 cs=0x2c3f;eip=0x000259; 	T(ADD(sp, 4));	// 89531 add     sp, 4 ;~ 2C3F:0259
 cs=0x2c3f;eip=0x00025c; 	T(OR(ax, ax));	// 89532 or      ax, ax ;~ 2C3F:025C
 cs=0x2c3f;eip=0x00025e; 	R(JNZ(loc_3ac50));	// 89533 jnz     short loc_3AC50 ;~ 2C3F:025E

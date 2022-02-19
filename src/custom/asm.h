@@ -1584,7 +1584,7 @@ extern bool Tstart(int line, const char * instr);
 extern void Tend(int line, const char * instr);
 extern bool Xstart(int line, const char * instr);
 extern void Xend(int line, const char * instr);
-extern void log_regs(int line, const char * instr, struct _STATE* _state);
+//extern void log_regs(int line, const char * instr, struct _STATE* _state);
 extern void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s);
 extern void interpret_unknown_callf(dw cs, dd eip);
 

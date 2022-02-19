@@ -100,7 +100,7 @@
 
  bool _strcpy(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcpy, _state);}
 
- bool _stricmp(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_stricmp, _state);}
+ bool _stricmp_(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_stricmp_, _state);}
 
  bool _strlen(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strlen, _state);}
 
@@ -5698,7 +5698,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kret_1e67_1bb1: 	_group11(__disp, _state); break;
         case m2c::klocret_2de05: 	_group11(__disp, _state); break;
         case m2c::kloc_2d764: 	_group11(__disp, _state); break;
-        case m2c::k_stricmp: 	_group11(__disp, _state); break;
+        case m2c::k_stricmp_: 	_group11(__disp, _state); break;
         case m2c::kloc_2d1e1: 	_group11(__disp, _state); break;
         case m2c::kloc_2d85c: 	_group11(__disp, _state); break;
         case m2c::kloc_2d960: 	_group11(__disp, _state); break;

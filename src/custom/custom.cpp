@@ -305,7 +305,7 @@ extern void   Initializer();
     if (res)
       {
         log_debug ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
-        void *p = memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
+        void *p = 0;//memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
         if (size > 3 && p)
           {
             log_debug (" found at %x", ((db *) p) - d);
