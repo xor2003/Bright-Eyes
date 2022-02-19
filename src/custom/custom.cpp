@@ -197,6 +197,7 @@ extern void   Initializer();
   Bitu realflags;
   Segments realSegs;
   CPU_Regs realcpu_regs;
+  bool already_checked[COMPARE_SIZE]={0};
 
   db lm[COMPARE_SIZE]; // memory after load to trace self-modified code
 
@@ -487,19 +488,22 @@ extern void   Initializer();
     oldip = cpu_regs.ip.dword[0];
     run_hw_interrupts ();
 
-bool compare(compare_instructions);
+    dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
+bool compare(compare_instructions && !already_checked[(seg<<4)+ip1]);
 if (compare) {
     oldSegs = Segs; oldcpu_regs = cpu_regs;
 }
-    dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
     single_step ();
 if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
+    already_checked[(seg<<4)+ip1] = true;
+
     dd ip2 = cpu_regs.ip.dword[0]; 
     size_t instr_size = ip2 - ip1;
-    if (memcmp (m2c::lm+(seg<<4)+ip1, ((db*)&m2c::m)+(seg<<4)+ip1, instr_size) != 0)
+    if (memcmp (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size) != 0)
     {
        log_info("~self-modified instruction ");
-       hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
+//       hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
+        cmpHexDump (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size);
        return false;
     }
     else
@@ -567,20 +571,23 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     oldip = cpu_regs.ip.dword[0];
     run_hw_interrupts ();
 
-bool compare(compare_instructions);
+    dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
+bool compare(compare_instructions && !already_checked[(seg<<4)+ip1]);
 if (compare) {
     oldSegs = Segs; oldcpu_regs = cpu_regs;
     memcpy (om, &m, COMPARE_SIZE);
 }
-    dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
     single_step ();
 if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
+    already_checked[(seg<<4)+ip1] = true;
+
     dd ip2 = cpu_regs.ip.dword[0]; 
     size_t instr_size = ip2 - ip1;
-    if (memcmp (m2c::lm+(seg<<4)+ip1, ((db*)&m2c::m)+(seg<<4)+ip1, instr_size) != 0)
+    if (memcmp (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size) != 0)
     {
        log_info("~self-modified instruction ");
-       hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
+//       hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
+        cmpHexDump (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size);
        return false;
     }
     else
@@ -677,21 +684,20 @@ X86_REGREF
   cs = newcs;
   eip = newip;
     fix_segs ();
-#if DEBUG
+//#if DEBUG > 0
   log_debug("Enter interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
-#endif
-//  dw oldsp = sp;
+//#endif
   interpretation_deep = 1;
   do {
+  log_debug("start\n");
   Normal_Loop();
+  log_debug("stop\n");
    } while (interpretation_deep>0);
   interpretation_deep = -1;
   CPU_Cycles = old_cycles;
-#if DEBUG
+//#if DEBUG > 0
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
-#endif
-//  sp = oldsp;
-//  sp += 4;
+//#endif
 }
 
 }
