@@ -145,7 +145,7 @@ Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
 		LOADIP;
 
-if (SegBase(cs)!=0xf0000)
+if (SegBase(cs)!=0xf0000&&SegBase(cs)!=0xc7ff0)
 {
  printf("~%x:%x %x\n",SegBase(cs),cpu_regs.ip.dword[0],*((Bit8u*)MemBase+SegBase(cs)+cpu_regs.ip.dword[0]));
 //ofstream s( "/dev/tty" ); 

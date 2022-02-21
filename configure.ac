@@ -508,7 +508,7 @@ int main(int argc,char * argv[]) {
 
 dnl Some target detection and actions for them
 case "$host" in
-    *-*-cygwin* | *-*-mingw32*)
+    *-*-cygwin* | *-*-mingw32* | *-*-msys)
        LIBS="$LIBS -lwinmm"
        AC_CHECK_HEADERS(ddraw.h)
        AC_DEFINE(C_DIRECTSERIAL, 1, [ Define to 1 if you want serial passthrough support (Win32, Posix and OS/2 only).])
