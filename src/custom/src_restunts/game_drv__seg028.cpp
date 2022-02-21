@@ -1627,8 +1627,7 @@ cs=0x2a05;eip=0x000c92; 	X(MOV(*(dw*)(raddr(ss,bp-0x0C)), si));	// 86032 mov    
 loc_392c5:
 	// 10289 
 cs=0x2a05;eip=0x000c95; 	T(CMP(*(dw*)(raddr(ss,bp-0x0E)), 0x0FFFF));	// 86035 cmp     word ptr [bp-0Eh], 0FFFFh ;~ 2A05:0C95
-cs=0x2a05;eip=0x000c99; __disp=byte_3930e;
-	R(JZ(__dispatch_call));	// 86036 jz      short near ptr byte_3930E ;~ 2A05:0C99
+cs=0x2a05;eip=0x000c99; 	R(JZ(loc_3930e));	// 86036 jz      short near ptr byte_3930E ;~ 2A05:0C99
 loc_392cb:
 	// 10290 
 cs=0x2a05;eip=0x000c9b; 	T(MOV(ax, 0x2E));	// 86040 mov     ax, 2Eh ; '.' ;~ 2A05:0C9B
@@ -1654,6 +1653,12 @@ cs=0x2a05;eip=0x000cd2; 	X(MOV(*(dw*)(raddr(ss,bp-0x16)), ax));	// 86059 mov    
 cs=0x2a05;eip=0x000cd5; 	R(CALLF(__dispatch_call,*(dd*)(raddr(ss,bp-0x16))));	// 86060 call    dword ptr [bp-16h] ;~ 2A05:0CD5
 cs=0x2a05;eip=0x000cd8; 	T(ADD(sp, 4));	// 86061 add     sp, 4 ;~ 2A05:0CD8
 cs=0x2a05;eip=0x000cdb; 	R(JMP(loc_3918d));	// 86062 jmp     loc_3918D ;~ 2A05:0CDB
+
+loc_3930e:
+cs = 0x2a05; eip = 0x000cde;                 T(CMP(*(dw*)raddr(ss, bp - 0x10), 0xFFFF));
+cs = 0x2a05; eip = 0x000ce2;                 R(JNZ(loc_39317));
+cs = 0x2a05; eip = 0x000ce4;                 R(JMP(loc_390f7));
+
 ret_2a05_ce1:
 	// 10291 
 cs=0x2a05;eip=0x000ce1; 	X(PUSH(*(dw*)(raddr(ds,di+3))));	// 86067 push    word ptr [di+3] ;~ 2A05:0CE1
@@ -2624,7 +2629,7 @@ cs=0x2a05;eip=0x0014a0; 	R(RETF(0));	// 87100 retf ;~ 2A05:14A0
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {

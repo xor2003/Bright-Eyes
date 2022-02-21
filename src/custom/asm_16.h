@@ -54,7 +54,12 @@ static inline db* raddr_(dw segment,dw offset) {return (db *)&m + (segment<<4) +
 	} {m2c::repForMov=false;}
 
  #define LODS(addr,destreg,s) {memcpy (((db *)&eax), &(addr), s);; destreg+=(GET_DF()==0)?s:-s;}
- #define LODSS(a,b) {memcpy (((db *)&eax)+b, realAddress(si,ds), a); si+=(GET_DF()==0)?a:-a;}
+
+// #define LODSS(a,b) {memcpy (((db *)&eax)+b, realAddress(si,ds), a); si+=(GET_DF()==0)?a:-a;}
+#define LODSB {al = mem_readb((db*)m2c::raddr_(ds,si)-(db*)&m2c::m); si+=(GET_DF()==0)?1:-1;}
+#define LODSW {ax = mem_readw((db*)m2c::raddr_(ds,si)-(db*)&m2c::m); si+=(GET_DF()==0)?2:-2;}
+#define LODSD {eax = mem_readd((db*)m2c::raddr_(ds,si)-(db*)&m2c::m); si+=(GET_DF()==0)?4:-4;}
+
 
  #ifdef MSB_FIRST
   #define STOSB STOS(1,3)

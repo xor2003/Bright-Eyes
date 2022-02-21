@@ -661,7 +661,7 @@ cs=0x1e67;eip=0x000436; 	X(PUSH(ss));	// 57783 push    ss ;~ 1E67:0436
 cs=0x1e67;eip=0x000437; 	X(POP(ds));	// 57784 pop     ds ;~ 1E67:0437
 cs=0x1e67;eip=0x000438; 	X(MOV(*(dw*)(raddr(ds,bx)), 0));	// 57785 mov     word ptr [bx], 0 ;~ 1E67:0438
 cs=0x1e67;eip=0x00043c; __disp=dword_3ee26;
-return;
+return true;
 	R(JMP(__dispatch_call));	// 57786 jmp     dword_3EE26 ;~ 1E67:043C
 __setenvp:
 	// 57794 
@@ -1947,7 +1947,7 @@ cs=0x1e67;eip=0x000d52; 	X(PUSH(*(dw*)(raddr(ss,bp+arg_0))));	// 59247 push    [
 cs=0x1e67;eip=0x000d55; 	X(PUSH(di));	// 59248 push    di              ; char * ;~ 1E67:0D55
 cs=0x1e67;eip=0x000d56; 	X(PUSH(*(dw*)((dw*)(raddr(ss,bp+var_4+2)))));	// 59249 push    word ptr [bp+var_4+2] ;~ 1E67:0D56
 cs=0x1e67;eip=0x000d59; 	X(PUSH(*(dw*)((dw*)(raddr(ss,bp+var_4)))));	// 59250 push    word ptr [bp+var_4] ; unsigned __int32 ;~ 1E67:0D59
-cs=0x1e67;eip=0x000d5c; 	R(CALLF(_ultoa,0));	// 59251 call    far ptr _ultoa ;~ 1E67:0D5C
+cs=0x1e67;eip=0x000d5c; 	R(CALLF(_ultoa_,0));	// 59251 call    far ptr _ultoa_ ;~ 1E67:0D5C
 cs=0x1e67;eip=0x000d61; 	T(ADD(sp, 8));	// 59252 add     sp, 8 ;~ 1E67:0D61
 cs=0x1e67;eip=0x000d64; 	T(CMP(word_428aa, 0));	// 59253 cmp     word_428AA, 0 ;~ 1E67:0D64
 cs=0x1e67;eip=0x000d69; 	R(JZ(loc_2d9de));	// 59254 jz      short loc_2D9DE ;~ 1E67:0D69
@@ -3560,7 +3560,7 @@ cs=0x1e67;eip=0x00174a; 	T(XCHG(ax, cx));	// 61075 xchg    ax, cx ;~ 1E67:174A
 cs=0x1e67;eip=0x00174b; 	T(MOV(di, dx));	// 61076 mov     di, dx ;~ 1E67:174B
 cs=0x1e67;eip=0x00174d; 	X(POP(bp));	// 61077 pop     bp ;~ 1E67:174D
 cs=0x1e67;eip=0x00174e; 	R(RETF(0));	// 61078 retf ;~ 1E67:174E
-_itoa:
+_itoa_:
 	// 61089 
 #undef arg_0
 #define arg_0 6
@@ -3585,7 +3585,7 @@ loc_2e3b5:
 	// 8598 
 cs=0x1e67;eip=0x001765; 	T(MOV(di, *(dw*)((dw*)(raddr(ss,bp+arg_0+2)))));	// 61109 mov     di, word ptr [bp+arg_0+2] ;~ 1E67:1765
 cs=0x1e67;eip=0x001768; 	R(JMP(__cxtoa));	// 61110 jmp     __cxtoa ;~ 1E67:1768
-_ultoa:
+_ultoa_:
 	// 61121 
 #undef arg_2
 #define arg_2 6
@@ -4699,7 +4699,7 @@ cs=0x1e67;eip=0x001db4; 	R(RETF(8));	// 62331 retf    8 ;~ 1E67:1DB4
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -4732,7 +4732,7 @@ cs=0x1e67;eip=0x001db4; 	R(RETF(8));	// 62331 retf    8 ;~ 1E67:1DB4
         case m2c::k_flushall: 	goto _flushall;
         case m2c::k_int86: 	goto _int86;
         case m2c::k_isatty: 	goto _isatty;
-        case m2c::k_itoa: 	goto _itoa;
+        case m2c::k_itoa_: 	goto _itoa_;
         case m2c::k_no_stack_overflow: 	goto _no_stack_overflow;
         case m2c::k_out: 	goto _out;
         case m2c::k_raise: 	goto _raise;

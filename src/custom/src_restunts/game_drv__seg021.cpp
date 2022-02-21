@@ -122,7 +122,7 @@ cs=0x2860;eip=0x00009d; 	R(RETF(0));	// 80526 retf ;~ 2860:009D
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {

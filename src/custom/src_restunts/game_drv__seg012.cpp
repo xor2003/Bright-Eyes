@@ -3181,7 +3181,7 @@ cs=0x2044;eip=0x001fa0;// 	R(RETF(2));	// 66869 retf    2 ;~ 2044:1FA0
 R(POP(ip));
 R(POP(cs));
 sp+=2;
-m2c::execute_irqs();return;
+m2c::execute_irqs();return true;
 loc_309c3:
 	// 9009 
 cs=0x2044;eip=0x001fa3; 	T(CLI);	// 66873 cli ;~ 2044:1FA3
@@ -3214,7 +3214,7 @@ R(POP(ip));
 R(POP(cs));
 sp+=2;
 m2c::execute_irqs();
-return;
+return true;
 
 loc_30a04:
 	// 9012 
@@ -14873,7 +14873,7 @@ cs=0x2044;eip=0x00779a; 	R(JMP(loc_3614e));	// 79055 jmp     short loc_3614E ;~ 
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {

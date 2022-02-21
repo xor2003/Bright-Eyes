@@ -232,37 +232,37 @@ union eflags{
 db& al =  cpu_regs.regs[REGI_AX].byte[BL_INDEX]; \
 db& ah =  cpu_regs.regs[REGI_AX].byte[BH_INDEX]; \
 dw& ax =  cpu_regs.regs[REGI_AX].word[W_INDEX]; \
-dd& eax =  cpu_regs.regs[REGI_AX].dword[DW_INDEX]; \
+dd& eax =  *(dd*)&cpu_regs.regs[REGI_AX].dword[DW_INDEX]; \
  \
 db& bl =  cpu_regs.regs[REGI_BX].byte[BL_INDEX]; \
 db& bh =  cpu_regs.regs[REGI_BX].byte[BH_INDEX]; \
 dw& bx =  cpu_regs.regs[REGI_BX].word[W_INDEX]; \
-dd& ebx =  cpu_regs.regs[REGI_BX].dword[DW_INDEX]; \
+dd& ebx =  *(dd*)&cpu_regs.regs[REGI_BX].dword[DW_INDEX]; \
  \
 db& cl =  cpu_regs.regs[REGI_CX].byte[BL_INDEX]; \
 db& ch =  cpu_regs.regs[REGI_CX].byte[BH_INDEX]; \
 dw& cx =  cpu_regs.regs[REGI_CX].word[W_INDEX]; \
-dd& ecx =  cpu_regs.regs[REGI_CX].dword[DW_INDEX]; \
+dd& ecx =  *(dd*)&cpu_regs.regs[REGI_CX].dword[DW_INDEX]; \
  \
 db& dl =  cpu_regs.regs[REGI_DX].byte[BL_INDEX]; \
 db& dh =  cpu_regs.regs[REGI_DX].byte[BH_INDEX]; \
 dw& dx =  cpu_regs.regs[REGI_DX].word[W_INDEX]; \
-dd& edx =  cpu_regs.regs[REGI_DX].dword[DW_INDEX]; \
+dd& edx =  *(dd*)&cpu_regs.regs[REGI_DX].dword[DW_INDEX]; \
  \
 dw& si =  cpu_regs.regs[REGI_SI].word[W_INDEX]; \
-dd& esi =  cpu_regs.regs[REGI_SI].dword[DW_INDEX]; \
+dd& esi =  *(dd*)&cpu_regs.regs[REGI_SI].dword[DW_INDEX]; \
  \
 dw& di =  cpu_regs.regs[REGI_DI].word[W_INDEX]; \
-dd& edi =  cpu_regs.regs[REGI_DI].dword[DW_INDEX]; \
+dd& edi =  *(dd*)&cpu_regs.regs[REGI_DI].dword[DW_INDEX]; \
  \
 dw& sp =  cpu_regs.regs[REGI_SP].word[W_INDEX]; \
-dd& esp =  cpu_regs.regs[REGI_SP].dword[DW_INDEX]; \
+dd& esp =  *(dd*)&cpu_regs.regs[REGI_SP].dword[DW_INDEX]; \
  \
 dw& bp =  cpu_regs.regs[REGI_BP].word[W_INDEX]; \
-dd& ebp =  cpu_regs.regs[REGI_BP].dword[DW_INDEX]; \
+dd& ebp =  *(dd*)&cpu_regs.regs[REGI_BP].dword[DW_INDEX]; \
  \
 dw& ip =  cpu_regs.ip.word[W_INDEX]; \
-dd& eip =  cpu_regs.ip.dword[DW_INDEX]; \
+dd& eip =  *(dd*)&cpu_regs.ip.dword[DW_INDEX]; \
 dw& cs = Segs.val[SegNames::cs]; \
 dw& ds = Segs.val[SegNames::ds]; \
 dw& es = Segs.val[SegNames::es]; \
@@ -273,14 +273,14 @@ dw& ss = Segs.val[SegNames::ss]; \
 m2c::eflags& m2cflags= *(m2c::eflags*)&cpu_regs.flags; \
 dd& stackPointer = esp;\
 m2c::_offsets __disp; \
-dw _source;
+dd _source;
 
 extern db _indent; 
 extern const char *_str;
  
 #endif
 
-typedef void m2cf(_offsets, struct _STATE*); // common masm2c function
+typedef bool m2cf(_offsets, struct _STATE*); // common masm2c function
 template <class S>
 constexpr bool isaddrbelongtom(const S * const a)
 { return ((const db* const)&m < (const db* const)a) && ((const db* const)&m + 16*1024*1024 > (const db*const)a); }
@@ -1224,12 +1224,12 @@ inline void MOV_(D* dest, const S& src)
 #ifdef MSB_FIRST
  #define LODSB LODSS(1,3)
  #define LODSW LODSS(2,2)
-#else
- #define LODSB LODSS(1,0)
- #define LODSW LODSS(2,0)
+//#else
+// #define LODSB LODSS(1,0)
+// #define LODSW LODSS(2,0)
 #endif
 
-#define LODSD LODSS(4,0)
+//#define LODSD LODSS(4,0)
 
 
 // JMP - Unconditional Jump
@@ -1337,25 +1337,25 @@ from_callf=true;
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
  	esp+=i; m2c::log_debug("after ret %x\n",stackPointer); \
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
-	return;}
+	return true;}
  
   #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
  	dw averytemporary11;POP(averytemporary11);  \
 	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	esp+=i; m2c::log_debug("after retf %x\n",stackPointer); \
-	 return;}
+	 return true;}
  #else
  
  #define RETN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
 	esp+=i; \
-	return;}
+	return true;}
  
   #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
     if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
         dw averytemporary11;POP(averytemporary11); esp+=i; \
-	return;}
+	return true;}
  #endif
  
 #define CALL(label, disp) {m2c::_indent+=2;m2c::_str=m2c::log_spaces(m2c::_indent);m2c::CALL_(label, _state, disp);}
@@ -1382,7 +1382,7 @@ from_callf=true;
         POPF; \
 	return;}
 */
-#define IRET {CPU_IRET(false,0);m2c::execute_irqs();return;}
+#define IRET {CPU_IRET(false,0);m2c::execute_irqs();return true;}
 
 #define BSWAP(op1)														\
 	op1 = (op1>>24)|((op1>>8)&0xFF00)|((op1<<8)&0xFF0000)|((op1<<24)&0xFF000000);

@@ -10,7 +10,7 @@
 #include "custom_hooks.h"
 
 #include "asm.h"
-#include "init.h"
+//#include "init.h"
 #include <unistd.h>
 #include <vector>
 
@@ -447,7 +447,10 @@ extern void   Initializer();
 
   void stackDump (struct _STATE *_state)
   {
-    X86_REGREF log_debug ("is_little_endian()=%d\n", __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__);
+    X86_REGREF 
+#ifdef __BYTE_ORDER__
+    log_debug ("is_little_endian()=%d\n", __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__);
+#endif
     log_debug ("sizeof(dd)=%zu\n", sizeof (dd));
     log_debug ("sizeof(dd *)=%zu\n", sizeof (dd *));
     log_debug ("sizeof(dw)=%zu\n", sizeof (dw));

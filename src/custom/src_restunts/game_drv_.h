@@ -7,7 +7,7 @@
  *
  */
 
-#include "asm.h"
+#include "../asm.h"
 
 #undef tarmac
 #define tarmac 1
@@ -12458,10 +12458,10 @@ static const dd kret_1e67_1708 = 0x1e671708;
 static const dd kloc_2e37d = 0x1e67172d;
 static const dd k_strlen = 0x1e671734;
 static const dd kret_1e67_1734 = 0x1e671734;
-static const dd k_itoa = 0x1e671750;
+static const dd k_itoa_ = 0x1e671750;
 static const dd kret_1e67_1750 = 0x1e671750;
 static const dd kloc_2e3b5 = 0x1e671765;
-static const dd k_ultoa = 0x1e67176c;
+static const dd k_ultoa_ = 0x1e67176c;
 static const dd kret_1e67_176c = 0x1e67176c;
 static const dd k_abort = 0x1e671776;
 static const dd kret_1e67_1777 = 0x1e671777;
@@ -15047,7 +15047,7 @@ bool _group8(m2c::_offsets, struct m2c::_STATE*);
 bool _group9(m2c::_offsets, struct m2c::_STATE*);
 bool _int86(m2c::_offsets, struct m2c::_STATE*);
 bool _isatty(m2c::_offsets, struct m2c::_STATE*);
-bool _itoa(m2c::_offsets, struct m2c::_STATE*);
+bool _itoa_(m2c::_offsets, struct m2c::_STATE*);
 bool _lseek(m2c::_offsets, struct m2c::_STATE*);
 bool _out(m2c::_offsets, struct m2c::_STATE*);
 bool _outc(m2c::_offsets, struct m2c::_STATE*);
@@ -15064,7 +15064,7 @@ bool _strcpy(m2c::_offsets, struct m2c::_STATE*);
 bool _stricmp_(m2c::_offsets, struct m2c::_STATE*);
 bool _strlen(m2c::_offsets, struct m2c::_STATE*);
 bool _strrchr(m2c::_offsets, struct m2c::_STATE*);
-bool _ultoa(m2c::_offsets, struct m2c::_STATE*);
+bool _ultoa_(m2c::_offsets, struct m2c::_STATE*);
 bool _write(m2c::_offsets, struct m2c::_STATE*);
 bool add_exit_handler(m2c::_offsets, struct m2c::_STATE*);
 bool audio_add_driver_timer(m2c::_offsets, struct m2c::_STATE*);

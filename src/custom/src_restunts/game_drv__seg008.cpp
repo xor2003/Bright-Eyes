@@ -4531,7 +4531,7 @@ cs=0x18ed;eip=0x002238; 	T(MOV(ax, 0x0A));	// 50356 mov     ax, 0Ah ;~ 18ED:2238
 cs=0x18ed;eip=0x00223b; 	X(PUSH(ax));	// 50357 push    ax              ; char * ;~ 18ED:223B
 cs=0x18ed;eip=0x00223c; 	X(PUSH(*(dw*)(raddr(ss,bp+arg_0))));	// 50358 push    [bp+arg_0]      ; char * ;~ 18ED:223C
 cs=0x18ed;eip=0x00223f; 	X(PUSH(*(dw*)((dw*)(raddr(ss,bp+arg_2)))));	// 50359 push    word ptr [bp+arg_2] ; int ;~ 18ED:223F
-cs=0x18ed;eip=0x002242; 	R(CALLF(_itoa,0));	// 50360 call    _itoa ;~ 18ED:2242
+cs=0x18ed;eip=0x002242; 	R(CALLF(_itoa_,0));	// 50360 call    _itoa_ ;~ 18ED:2242
 cs=0x18ed;eip=0x002247; 	T(ADD(sp, 6));	// 50361 add     sp, 6 ;~ 18ED:2247
 cs=0x18ed;eip=0x00224a; 	T(CMP(*(dw*)(raddr(ss,bp+arg_6)), 0));	// 50362 cmp     [bp+arg_6], 0 ;~ 18ED:224A
 cs=0x18ed;eip=0x00224e; 	R(JZ(loc_2974d));	// 50363 jz      short loc_2974D ;~ 18ED:224E
@@ -6197,7 +6197,7 @@ cs=0x18ed;eip=0x002e0b; 	R(RETF(0));	// 52122 retf ;~ 18ED:2E0B
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {

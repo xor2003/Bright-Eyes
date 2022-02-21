@@ -8,1323 +8,1323 @@
 
 
 
- bool __affblmul(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__affblmul, _state);}
+ bool __affblmul(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__affblmul, _state);return true;}
 
- bool __afldiv(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__afldiv, _state);}
+ bool __afldiv(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__afldiv, _state);return true;}
 
- bool __aflmul(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__aflmul, _state);}
+ bool __aflmul(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__aflmul, _state);return true;}
 
- bool __aflshr(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__aflshr, _state);}
+ bool __aflshr(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__aflshr, _state);return true;}
 
- bool __afuldiv(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__afuldiv, _state);}
+ bool __afuldiv(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__afuldiv, _state);return true;}
 
- bool __amalloc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amalloc, _state);}
+ bool __amalloc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amalloc, _state);return true;}
 
- bool __amallocbrk(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amallocbrk, _state);}
+ bool __amallocbrk(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amallocbrk, _state);return true;}
 
- bool __amexpand(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amexpand, _state);}
+ bool __amexpand(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amexpand, _state);return true;}
 
- bool __amlink(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amlink, _state);}
+ bool __amlink(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__amlink, _state);return true;}
 
- bool __chkstk(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__chkstk, _state);}
+ bool __chkstk(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__chkstk, _state);return true;}
 
- bool __ff_msgbanner(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__ff_msgbanner, _state);}
+ bool __ff_msgbanner(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__ff_msgbanner, _state);return true;}
 
- bool __flsbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__flsbuf, _state);}
+ bool __flsbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__flsbuf, _state);return true;}
 
- bool __fptrap(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__fptrap, _state);}
+ bool __fptrap(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__fptrap, _state);return true;}
 
- bool __ftbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__ftbuf, _state);}
+ bool __ftbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__ftbuf, _state);return true;}
 
- bool __getbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__getbuf, _state);}
+ bool __getbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__getbuf, _state);return true;}
 
- bool __maperror(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__maperror, _state);}
+ bool __maperror(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__maperror, _state);return true;}
 
- bool __myalloc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__myalloc, _state);}
+ bool __myalloc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__myalloc, _state);return true;}
 
- bool __nmsg_text(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__nmsg_text, _state);}
+ bool __nmsg_text(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__nmsg_text, _state);return true;}
 
- bool __nmsg_write(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__nmsg_write, _state);}
+ bool __nmsg_write(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__nmsg_write, _state);return true;}
 
- bool __nullcheck(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__nullcheck, _state);}
+ bool __nullcheck(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__nullcheck, _state);return true;}
 
- bool __output(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__output, _state);}
+ bool __output(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__output, _state);return true;}
 
- bool __setargv(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__setargv, _state);}
+ bool __setargv(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__setargv, _state);return true;}
 
- bool __setenvp(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__setenvp, _state);}
+ bool __setenvp(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__setenvp, _state);return true;}
 
- bool __sigentry(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__sigentry, _state);}
+ bool __sigentry(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__sigentry, _state);return true;}
 
- bool __stbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__stbuf, _state);}
+ bool __stbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k__stbuf, _state);return true;}
 
- bool _abort(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_abort, _state);}
+ bool _abort(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_abort, _state);return true;}
 
- bool _abs(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_abs, _state);}
+ bool _abs(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_abs, _state);return true;}
 
- bool _brkctl(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_brkctl, _state);}
+ bool _brkctl(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_brkctl, _state);return true;}
 
- bool _fflush(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_fflush, _state);}
+ bool _fflush(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_fflush, _state);return true;}
 
- bool _flushall(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_flushall, _state);}
+ bool _flushall(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_flushall, _state);return true;}
 
- bool _int86(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_int86, _state);}
+ bool _int86(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_int86, _state);return true;}
 
- bool _isatty(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_isatty, _state);}
+ bool _isatty(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_isatty, _state);return true;}
 
- bool _itoa(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_itoa, _state);}
+ bool _itoa_(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_itoa_, _state);return true;}
 
- bool _lseek(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_lseek, _state);}
+ bool _lseek(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_lseek, _state);return true;}
 
- bool _out(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_out, _state);}
+ bool _out(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_out, _state);return true;}
 
- bool _outc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_outc, _state);}
+ bool _outc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_outc, _state);return true;}
 
- bool _printf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_printf, _state);}
+ bool _printf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_printf, _state);return true;}
 
- bool _raise(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_raise, _state);}
+ bool _raise(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_raise, _state);return true;}
 
- bool _rand(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_rand, _state);}
+ bool _rand(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_rand, _state);return true;}
 
- bool _signal(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_signal, _state);}
+ bool _signal(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_signal, _state);return true;}
 
- bool _sprintf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_sprintf, _state);}
+ bool _sprintf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_sprintf, _state);return true;}
 
- bool _srand(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_srand, _state);}
+ bool _srand(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_srand, _state);return true;}
 
- bool _stackavail(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_stackavail, _state);}
+ bool _stackavail(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_stackavail, _state);return true;}
 
- bool _strcat(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcat, _state);}
+ bool _strcat(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcat, _state);return true;}
 
- bool _strcmp(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcmp, _state);}
+ bool _strcmp(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcmp, _state);return true;}
 
- bool _strcpy(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcpy, _state);}
+ bool _strcpy(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strcpy, _state);return true;}
 
- bool _stricmp_(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_stricmp_, _state);}
+ bool _stricmp_(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_stricmp_, _state);return true;}
 
- bool _strlen(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strlen, _state);}
+ bool _strlen(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strlen, _state);return true;}
 
- bool _strrchr(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strrchr, _state);}
+ bool _strrchr(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_strrchr, _state);return true;}
 
- bool _ultoa(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_ultoa, _state);}
+ bool _ultoa_(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_ultoa_, _state);return true;}
 
- bool _write(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_write, _state);}
+ bool _write(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::k_write, _state);return true;}
 
- bool add_exit_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kadd_exit_handler, _state);}
+ bool add_exit_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kadd_exit_handler, _state);return true;}
 
- bool audio_add_driver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_add_driver_timer, _state);}
+ bool audio_add_driver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_add_driver_timer, _state);return true;}
 
- bool audio_carstate(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kaudio_carstate, _state);}
+ bool audio_carstate(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kaudio_carstate, _state);return true;}
 
- bool audio_check_flag(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_check_flag, _state);}
+ bool audio_check_flag(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_check_flag, _state);return true;}
 
- bool audio_check_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_check_flag2, _state);}
+ bool audio_check_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_check_flag2, _state);return true;}
 
- bool audio_disable_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_disable_flag2, _state);}
+ bool audio_disable_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_disable_flag2, _state);return true;}
 
- bool audio_disable_flag6(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_disable_flag6, _state);}
+ bool audio_disable_flag6(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_disable_flag6, _state);return true;}
 
- bool audio_driver_func1e(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kaudio_driver_func1e, _state);}
+ bool audio_driver_func1e(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kaudio_driver_func1e, _state);return true;}
 
- bool audio_driver_func3f(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_driver_func3f, _state);}
+ bool audio_driver_func3f(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_driver_func3f, _state);return true;}
 
- bool audio_driver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_driver_timer, _state);}
+ bool audio_driver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_driver_timer, _state);return true;}
 
- bool audio_enable_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_enable_flag2, _state);}
+ bool audio_enable_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_enable_flag2, _state);return true;}
 
- bool audio_enable_flag6(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_enable_flag6, _state);}
+ bool audio_enable_flag6(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_enable_flag6, _state);return true;}
 
- bool audio_function2(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_function2, _state);}
+ bool audio_function2(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_function2, _state);return true;}
 
- bool audio_function2_wrap(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_function2_wrap, _state);}
+ bool audio_function2_wrap(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_function2_wrap, _state);return true;}
 
- bool audio_init_chunk(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_init_chunk, _state);}
+ bool audio_init_chunk(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_init_chunk, _state);return true;}
 
- bool audio_init_chunk2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_init_chunk2, _state);}
+ bool audio_init_chunk2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_init_chunk2, _state);return true;}
 
- bool audio_init_engine(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_init_engine, _state);}
+ bool audio_init_engine(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_init_engine, _state);return true;}
 
- bool audio_load_driver(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_load_driver, _state);}
+ bool audio_load_driver(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_load_driver, _state);return true;}
 
- bool audio_map_song_instruments(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_map_song_instruments, _state);}
+ bool audio_map_song_instruments(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_map_song_instruments, _state);return true;}
 
- bool audio_map_song_tracks(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_map_song_tracks, _state);}
+ bool audio_map_song_tracks(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_map_song_tracks, _state);return true;}
 
- bool audio_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk, _state);}
+ bool audio_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk, _state);return true;}
 
- bool audio_op_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk2, _state);}
+ bool audio_op_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk2, _state);return true;}
 
- bool audio_op_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk3, _state);}
+ bool audio_op_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk3, _state);return true;}
 
- bool audio_op_unk4(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk4, _state);}
+ bool audio_op_unk4(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk4, _state);return true;}
 
- bool audio_op_unk5(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk5, _state);}
+ bool audio_op_unk5(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk5, _state);return true;}
 
- bool audio_op_unk6(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk6, _state);}
+ bool audio_op_unk6(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk6, _state);return true;}
 
- bool audio_op_unk7(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk7, _state);}
+ bool audio_op_unk7(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_op_unk7, _state);return true;}
 
- bool audio_remove_driver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_remove_driver_timer, _state);}
+ bool audio_remove_driver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kaudio_remove_driver_timer, _state);return true;}
 
- bool audio_stop_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kaudio_stop_unk, _state);}
+ bool audio_stop_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kaudio_stop_unk, _state);return true;}
 
- bool audio_toggle_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_toggle_flag2, _state);}
+ bool audio_toggle_flag2(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_toggle_flag2, _state);return true;}
 
- bool audio_toggle_flag6(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_toggle_flag6, _state);}
+ bool audio_toggle_flag6(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_toggle_flag6, _state);return true;}
 
- bool audio_unk(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_unk, _state);}
+ bool audio_unk(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudio_unk, _state);return true;}
 
- bool audio_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kaudio_unk2, _state);}
+ bool audio_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kaudio_unk2, _state);return true;}
 
- bool audio_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kaudio_unk3, _state);}
+ bool audio_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kaudio_unk3, _state);return true;}
 
- bool audio_unload(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kaudio_unload, _state);}
+ bool audio_unload(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kaudio_unload, _state);return true;}
 
- bool audiodriver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kaudiodriver_timer, _state);}
+ bool audiodriver_timer(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kaudiodriver_timer, _state);return true;}
 
- bool audiodrv_atexit(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudiodrv_atexit, _state);}
+ bool audiodrv_atexit(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudiodrv_atexit, _state);return true;}
 
- bool audioresource_compare_chunknames(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_compare_chunknames, _state);}
+ bool audioresource_compare_chunknames(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_compare_chunknames, _state);return true;}
 
- bool audioresource_copy_4_bytes(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudioresource_copy_4_bytes, _state);}
+ bool audioresource_copy_4_bytes(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudioresource_copy_4_bytes, _state);return true;}
 
- bool audioresource_copy_n_bytes(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_copy_n_bytes, _state);}
+ bool audioresource_copy_n_bytes(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_copy_n_bytes, _state);return true;}
 
- bool audioresource_find(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_find, _state);}
+ bool audioresource_find(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_find, _state);return true;}
 
- bool audioresource_get_chunk_index(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_get_chunk_index, _state);}
+ bool audioresource_get_chunk_index(m2c::_offsets, struct m2c::_STATE* _state){_group19(m2c::kaudioresource_get_chunk_index, _state);return true;}
 
- bool audioresource_get_dword(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudioresource_get_dword, _state);}
+ bool audioresource_get_dword(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudioresource_get_dword, _state);return true;}
 
- bool audioresource_get_word(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudioresource_get_word, _state);}
+ bool audioresource_get_word(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kaudioresource_get_word, _state);return true;}
 
- bool bto_auxiliary1(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kbto_auxiliary1, _state);}
+ bool bto_auxiliary1(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kbto_auxiliary1, _state);return true;}
 
- bool build_track_object(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kbuild_track_object, _state);}
+ bool build_track_object(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kbuild_track_object, _state);return true;}
 
- bool calc_sincos80(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kcalc_sincos80, _state);}
+ bool calc_sincos80(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kcalc_sincos80, _state);return true;}
 
- bool call_exitlist(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcall_exitlist, _state);}
+ bool call_exitlist(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcall_exitlist, _state);return true;}
 
- bool call_exitlist2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcall_exitlist2, _state);}
+ bool call_exitlist2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcall_exitlist2, _state);return true;}
 
- bool call_read_line(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kcall_read_line, _state);}
+ bool call_read_line(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kcall_read_line, _state);return true;}
 
- bool car_car_coll_detect_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kcar_car_coll_detect_maybe, _state);}
+ bool car_car_coll_detect_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kcar_car_coll_detect_maybe, _state);return true;}
 
- bool car_car_speed_adjust_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kcar_car_speed_adjust_maybe, _state);}
+ bool car_car_speed_adjust_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kcar_car_speed_adjust_maybe, _state);return true;}
 
- bool carstate_rc_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kcarstate_rc_op, _state);}
+ bool carstate_rc_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kcarstate_rc_op, _state);return true;}
 
- bool check_input(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kcheck_input, _state);}
+ bool check_input(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kcheck_input, _state);return true;}
 
- bool compare_ds_ss(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcompare_ds_ss, _state);}
+ bool compare_ds_ss(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcompare_ds_ss, _state);return true;}
 
- bool copy_material_list_pointers(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kcopy_material_list_pointers, _state);}
+ bool copy_material_list_pointers(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kcopy_material_list_pointers, _state);return true;}
 
- bool copy_paras_reverse(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcopy_paras_reverse, _state);}
+ bool copy_paras_reverse(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcopy_paras_reverse, _state);return true;}
 
- bool copy_string(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kcopy_string, _state);}
+ bool copy_string(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kcopy_string, _state);return true;}
 
- bool cos_fast(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcos_fast, _state);}
+ bool cos_fast(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcos_fast, _state);return true;}
 
- bool criterr_exithandler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcriterr_exithandler, _state);}
+ bool criterr_exithandler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcriterr_exithandler, _state);return true;}
 
- bool criterr_interrupt_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcriterr_interrupt_handler, _state);}
+ bool criterr_interrupt_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kcriterr_interrupt_handler, _state);return true;}
 
- bool detect_penalty(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kdetect_penalty, _state);}
+ bool detect_penalty(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kdetect_penalty, _state);return true;}
 
- bool do_dea_textres(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_dea_textres, _state);}
+ bool do_dea_textres(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_dea_textres, _state);return true;}
 
- bool do_dos_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_dos_restext, _state);}
+ bool do_dos_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_dos_restext, _state);return true;}
 
- bool do_fileselect_dialog(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_fileselect_dialog, _state);}
+ bool do_fileselect_dialog(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_fileselect_dialog, _state);return true;}
 
- bool do_joy_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_joy_restext, _state);}
+ bool do_joy_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_joy_restext, _state);return true;}
 
- bool do_key_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_key_restext, _state);}
+ bool do_key_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_key_restext, _state);return true;}
 
- bool do_mer_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mer_restext, _state);}
+ bool do_mer_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mer_restext, _state);return true;}
 
- bool do_mof_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mof_restext, _state);}
+ bool do_mof_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mof_restext, _state);return true;}
 
- bool do_mou_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mou_restext, _state);}
+ bool do_mou_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mou_restext, _state);return true;}
 
- bool do_mrl_textres(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mrl_textres, _state);}
+ bool do_mrl_textres(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_mrl_textres, _state);return true;}
 
- bool do_opponent_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kdo_opponent_op, _state);}
+ bool do_opponent_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kdo_opponent_op, _state);return true;}
 
- bool do_pau_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_pau_restext, _state);}
+ bool do_pau_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_pau_restext, _state);return true;}
 
- bool do_savefile_dialog(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_savefile_dialog, _state);}
+ bool do_savefile_dialog(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_savefile_dialog, _state);return true;}
 
- bool do_sinking(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kdo_sinking, _state);}
+ bool do_sinking(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kdo_sinking, _state);return true;}
 
- bool do_sonsof_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_sonsof_restext, _state);}
+ bool do_sonsof_restext(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdo_sonsof_restext, _state);return true;}
 
- bool draw_2dtrackmap(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::kdraw_2dtrackmap, _state);}
+ bool draw_2dtrackmap(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::kdraw_2dtrackmap, _state);return true;}
 
- bool draw_button(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdraw_button, _state);}
+ bool draw_button(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdraw_button, _state);return true;}
 
- bool draw_filled_lines(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_filled_lines, _state);}
+ bool draw_filled_lines(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_filled_lines, _state);return true;}
 
- bool draw_ingame_text(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kdraw_ingame_text, _state);}
+ bool draw_ingame_text(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kdraw_ingame_text, _state);return true;}
 
- bool draw_line_related(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_line_related, _state);}
+ bool draw_line_related(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_line_related, _state);return true;}
 
- bool draw_line_related_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_line_related_alt, _state);}
+ bool draw_line_related_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_line_related_alt, _state);return true;}
 
- bool draw_lines_unk(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdraw_lines_unk, _state);}
+ bool draw_lines_unk(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kdraw_lines_unk, _state);return true;}
 
- bool draw_patterned_lines(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_patterned_lines, _state);}
+ bool draw_patterned_lines(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_patterned_lines, _state);return true;}
 
- bool draw_track_preview(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kdraw_track_preview, _state);}
+ bool draw_track_preview(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kdraw_track_preview, _state);return true;}
 
- bool draw_unknown_lines(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_unknown_lines, _state);}
+ bool draw_unknown_lines(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kdraw_unknown_lines, _state);return true;}
 
- bool end_hiscore(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kend_hiscore, _state);}
+ bool end_hiscore(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kend_hiscore, _state);return true;}
 
- bool ensure_file_exists(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kensure_file_exists, _state);}
+ bool ensure_file_exists(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kensure_file_exists, _state);return true;}
 
- bool enter_hiscore(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kenter_hiscore, _state);}
+ bool enter_hiscore(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kenter_hiscore, _state);return true;}
 
- bool fatal_error(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfatal_error, _state);}
+ bool fatal_error(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfatal_error, _state);return true;}
 
- bool file_build_path(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_build_path, _state);}
+ bool file_build_path(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_build_path, _state);return true;}
 
- bool file_combine_and_find(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kfile_combine_and_find, _state);}
+ bool file_combine_and_find(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kfile_combine_and_find, _state);return true;}
 
- bool file_decomp(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp, _state);}
+ bool file_decomp(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp, _state);return true;}
 
- bool file_decomp_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_fatal, _state);}
+ bool file_decomp_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_fatal, _state);return true;}
 
- bool file_decomp_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_nofatal, _state);}
+ bool file_decomp_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_nofatal, _state);return true;}
 
- bool file_decomp_paras(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_paras, _state);}
+ bool file_decomp_paras(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_paras, _state);return true;}
 
- bool file_decomp_rle(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_rle, _state);}
+ bool file_decomp_rle(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_rle, _state);return true;}
 
- bool file_decomp_rle_seq(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_rle_seq, _state);}
+ bool file_decomp_rle_seq(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_rle_seq, _state);return true;}
 
- bool file_decomp_rle_single(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_rle_single, _state);}
+ bool file_decomp_rle_single(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_rle_single, _state);return true;}
 
- bool file_decomp_vle(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_vle, _state);}
+ bool file_decomp_vle(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_decomp_vle, _state);return true;}
 
- bool file_find(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_find, _state);}
+ bool file_find(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_find, _state);return true;}
 
- bool file_find_next(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_find_next, _state);}
+ bool file_find_next(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_find_next, _state);return true;}
 
- bool file_find_next_alt(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kfile_find_next_alt, _state);}
+ bool file_find_next_alt(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kfile_find_next_alt, _state);return true;}
 
- bool file_get_res_shape_count(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_get_res_shape_count, _state);}
+ bool file_get_res_shape_count(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_get_res_shape_count, _state);return true;}
 
- bool file_get_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_get_shape2d, _state);}
+ bool file_get_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_get_shape2d, _state);return true;}
 
- bool file_load_3dres(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_3dres, _state);}
+ bool file_load_3dres(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_3dres, _state);return true;}
 
- bool file_load_audiores(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_audiores, _state);}
+ bool file_load_audiores(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_audiores, _state);return true;}
 
- bool file_load_binary(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_binary, _state);}
+ bool file_load_binary(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_binary, _state);return true;}
 
- bool file_load_binary_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_binary_nofatal, _state);}
+ bool file_load_binary_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_binary_nofatal, _state);return true;}
 
- bool file_load_replay(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kfile_load_replay, _state);}
+ bool file_load_replay(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kfile_load_replay, _state);return true;}
 
- bool file_load_resfile(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_resfile, _state);}
+ bool file_load_resfile(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_resfile, _state);return true;}
 
- bool file_load_resource(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_resource, _state);}
+ bool file_load_resource(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfile_load_resource, _state);return true;}
 
- bool file_load_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d, _state);}
+ bool file_load_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d, _state);return true;}
 
- bool file_load_shape2d_expand(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_expand, _state);}
+ bool file_load_shape2d_expand(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_expand, _state);return true;}
 
- bool file_load_shape2d_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d_fatal, _state);}
+ bool file_load_shape2d_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d_fatal, _state);return true;}
 
- bool file_load_shape2d_fatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_fatal_thunk, _state);}
+ bool file_load_shape2d_fatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_fatal_thunk, _state);return true;}
 
- bool file_load_shape2d_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d_nofatal, _state);}
+ bool file_load_shape2d_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d_nofatal, _state);return true;}
 
- bool file_load_shape2d_nofatal2(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kfile_load_shape2d_nofatal2, _state);}
+ bool file_load_shape2d_nofatal2(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kfile_load_shape2d_nofatal2, _state);return true;}
 
- bool file_load_shape2d_nofatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_nofatal_thunk, _state);}
+ bool file_load_shape2d_nofatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_nofatal_thunk, _state);return true;}
 
- bool file_load_shape2d_palmap_apply(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_palmap_apply, _state);}
+ bool file_load_shape2d_palmap_apply(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_palmap_apply, _state);return true;}
 
- bool file_load_shape2d_palmap_init(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d_palmap_init, _state);}
+ bool file_load_shape2d_palmap_init(m2c::_offsets, struct m2c::_STATE* _state){_group23(m2c::kfile_load_shape2d_palmap_init, _state);return true;}
 
- bool file_load_shape2d_res(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kfile_load_shape2d_res, _state);}
+ bool file_load_shape2d_res(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kfile_load_shape2d_res, _state);return true;}
 
- bool file_load_shape2d_res_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kfile_load_shape2d_res_fatal, _state);}
+ bool file_load_shape2d_res_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kfile_load_shape2d_res_fatal, _state);return true;}
 
- bool file_load_shape2d_res_fatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_res_fatal_thunk, _state);}
+ bool file_load_shape2d_res_fatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_res_fatal_thunk, _state);return true;}
 
- bool file_load_shape2d_res_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kfile_load_shape2d_res_nofatal, _state);}
+ bool file_load_shape2d_res_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kfile_load_shape2d_res_nofatal, _state);return true;}
 
- bool file_load_shape2d_res_nofatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_res_nofatal_thunk, _state);}
+ bool file_load_shape2d_res_nofatal_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_res_nofatal_thunk, _state);return true;}
 
- bool file_load_shape2d_res_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_res_thunk, _state);}
+ bool file_load_shape2d_res_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_res_thunk, _state);return true;}
 
- bool file_load_shape2d_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_thunk, _state);}
+ bool file_load_shape2d_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_load_shape2d_thunk, _state);return true;}
 
- bool file_paras(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_paras, _state);}
+ bool file_paras(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_paras, _state);return true;}
 
- bool file_read(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_read, _state);}
+ bool file_read(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_read, _state);return true;}
 
- bool file_read_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_read_fatal, _state);}
+ bool file_read_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_read_fatal, _state);return true;}
 
- bool file_read_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_read_nofatal, _state);}
+ bool file_read_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_read_nofatal, _state);return true;}
 
- bool file_unflip_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_unflip_shape2d, _state);}
+ bool file_unflip_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_unflip_shape2d, _state);return true;}
 
- bool file_unflip_shape2d_pes(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_unflip_shape2d_pes, _state);}
+ bool file_unflip_shape2d_pes(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_unflip_shape2d_pes, _state);return true;}
 
- bool file_write_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_write_fatal, _state);}
+ bool file_write_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_write_fatal, _state);return true;}
 
- bool file_write_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_write_nofatal, _state);}
+ bool file_write_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfile_write_nofatal, _state);return true;}
 
- bool file_write_replay(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kfile_write_replay, _state);}
+ bool file_write_replay(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kfile_write_replay, _state);return true;}
 
- bool flagchar(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kflagchar, _state);}
+ bool flagchar(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kflagchar, _state);return true;}
 
- bool flush_stdin(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kflush_stdin, _state);}
+ bool flush_stdin(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kflush_stdin, _state);return true;}
 
- bool font_draw_text(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_draw_text, _state);}
+ bool font_draw_text(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_draw_text, _state);return true;}
 
- bool font_op(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_op, _state);}
+ bool font_op(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_op, _state);return true;}
 
- bool font_op2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_op2, _state);}
+ bool font_op2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_op2, _state);return true;}
 
- bool font_op2_alt(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfont_op2_alt, _state);}
+ bool font_op2_alt(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfont_op2_alt, _state);return true;}
 
- bool font_set_fontdef(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfont_set_fontdef, _state);}
+ bool font_set_fontdef(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfont_set_fontdef, _state);return true;}
 
- bool font_set_fontdef2(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfont_set_fontdef2, _state);}
+ bool font_set_fontdef2(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kfont_set_fontdef2, _state);return true;}
 
- bool font_set_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_set_unk, _state);}
+ bool font_set_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kfont_set_unk, _state);return true;}
 
- bool format_frame_as_string(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kformat_frame_as_string, _state);}
+ bool format_frame_as_string(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kformat_frame_as_string, _state);return true;}
 
- bool fprint(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kfprint, _state);}
+ bool fprint(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kfprint, _state);return true;}
 
- bool frame_callback(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kframe_callback, _state);}
+ bool frame_callback(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kframe_callback, _state);return true;}
 
- bool free_player_cars(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kfree_player_cars, _state);}
+ bool free_player_cars(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kfree_player_cars, _state);return true;}
 
- bool free_sdgame2(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kfree_sdgame2, _state);}
+ bool free_sdgame2(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kfree_sdgame2, _state);return true;}
 
- bool get_0(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kget_0, _state);}
+ bool get_0(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kget_0, _state);return true;}
 
- bool get_a_poly_info(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kget_a_poly_info, _state);}
+ bool get_a_poly_info(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kget_a_poly_info, _state);return true;}
 
- bool get_joy_flags(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kget_joy_flags, _state);}
+ bool get_joy_flags(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kget_joy_flags, _state);return true;}
 
- bool get_kb_or_joy_flags(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kget_kb_or_joy_flags, _state);}
+ bool get_kb_or_joy_flags(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kget_kb_or_joy_flags, _state);return true;}
 
- bool get_kevinrandom(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kget_kevinrandom, _state);}
+ bool get_kevinrandom(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kget_kevinrandom, _state);return true;}
 
- bool get_kevinrandom_seed(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kget_kevinrandom_seed, _state);}
+ bool get_kevinrandom_seed(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kget_kevinrandom_seed, _state);return true;}
 
- bool get_super_random(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kget_super_random, _state);}
+ bool get_super_random(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kget_super_random, _state);return true;}
 
- bool getnum(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kgetnum, _state);}
+ bool getnum(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kgetnum, _state);return true;}
 
- bool handle_ingame_kb_shortcuts(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::khandle_ingame_kb_shortcuts, _state);}
+ bool handle_ingame_kb_shortcuts(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::khandle_ingame_kb_shortcuts, _state);return true;}
 
- bool highscore_text_unk(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::khighscore_text_unk, _state);}
+ bool highscore_text_unk(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::khighscore_text_unk, _state);return true;}
 
- bool highscore_write_a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::khighscore_write_a, _state);}
+ bool highscore_write_a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::khighscore_write_a, _state);return true;}
 
- bool highscore_write_b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::khighscore_write_b, _state);}
+ bool highscore_write_b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::khighscore_write_b, _state);return true;}
 
- bool hiscore_draw_text(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::khiscore_draw_text, _state);}
+ bool hiscore_draw_text(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::khiscore_draw_text, _state);return true;}
 
- bool init_audio_resources(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kinit_audio_resources, _state);}
+ bool init_audio_resources(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kinit_audio_resources, _state);return true;}
 
- bool init_carstate_from_simd(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kinit_carstate_from_simd, _state);}
+ bool init_carstate_from_simd(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kinit_carstate_from_simd, _state);return true;}
 
- bool init_crak(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kinit_crak, _state);}
+ bool init_crak(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kinit_crak, _state);return true;}
 
- bool init_div0(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kinit_div0, _state);}
+ bool init_div0(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kinit_div0, _state);return true;}
 
- bool init_game_state(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kinit_game_state, _state);}
+ bool init_game_state(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kinit_game_state, _state);return true;}
 
- bool init_kevinrandom(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kinit_kevinrandom, _state);}
+ bool init_kevinrandom(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kinit_kevinrandom, _state);return true;}
 
- bool init_main(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kinit_main, _state);}
+ bool init_main(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kinit_main, _state);return true;}
 
- bool init_plantrak(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kinit_plantrak, _state);}
+ bool init_plantrak(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kinit_plantrak, _state);return true;}
 
- bool init_polyinfo(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kinit_polyinfo, _state);}
+ bool init_polyinfo(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kinit_polyinfo, _state);return true;}
 
- bool init_rect_arrays(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kinit_rect_arrays, _state);}
+ bool init_rect_arrays(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kinit_rect_arrays, _state);return true;}
 
- bool init_unknown(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kinit_unknown, _state);}
+ bool init_unknown(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kinit_unknown, _state);return true;}
 
- bool input_checking(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_checking, _state);}
+ bool input_checking(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_checking, _state);return true;}
 
- bool input_do_checking(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_do_checking, _state);}
+ bool input_do_checking(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_do_checking, _state);return true;}
 
- bool input_pop_status(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_pop_status, _state);}
+ bool input_pop_status(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_pop_status, _state);return true;}
 
- bool input_push_status(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_push_status, _state);}
+ bool input_push_status(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_push_status, _state);return true;}
 
- bool input_repeat_check(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_repeat_check, _state);}
+ bool input_repeat_check(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kinput_repeat_check, _state);return true;}
 
- bool intr0_handler(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kintr0_handler, _state);}
+ bool intr0_handler(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kintr0_handler, _state);return true;}
 
- bool intro_draw_text(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kintro_draw_text, _state);}
+ bool intro_draw_text(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kintro_draw_text, _state);return true;}
 
- bool intro_op(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kintro_op, _state);}
+ bool intro_op(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kintro_op, _state);return true;}
 
- bool iprint(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kiprint, _state);}
+ bool iprint(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kiprint, _state);return true;}
 
- bool kb_call_readchar_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_call_readchar_callback, _state);}
+ bool kb_call_readchar_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_call_readchar_callback, _state);return true;}
 
- bool kb_check(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_check, _state);}
+ bool kb_check(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_check, _state);return true;}
 
- bool kb_checking(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_checking, _state);}
+ bool kb_checking(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_checking, _state);return true;}
 
- bool kb_exit_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_exit_handler, _state);}
+ bool kb_exit_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_exit_handler, _state);return true;}
 
- bool kb_get_char(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_get_char, _state);}
+ bool kb_get_char(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_get_char, _state);return true;}
 
- bool kb_get_key_state(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_get_key_state, _state);}
+ bool kb_get_key_state(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_get_key_state, _state);return true;}
 
- bool kb_init_interrupt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_init_interrupt, _state);}
+ bool kb_init_interrupt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_init_interrupt, _state);return true;}
 
- bool kb_int16_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_int16_handler, _state);}
+ bool kb_int16_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_int16_handler, _state);return true;}
 
- bool kb_int9_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_int9_handler, _state);}
+ bool kb_int9_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_int9_handler, _state);return true;}
 
- bool kb_parse_key(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_parse_key, _state);}
+ bool kb_parse_key(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_parse_key, _state);return true;}
 
- bool kb_read_char(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_read_char, _state);}
+ bool kb_read_char(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_read_char, _state);return true;}
 
- bool kb_reg_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_reg_callback, _state);}
+ bool kb_reg_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kkb_reg_callback, _state);return true;}
 
- bool kb_shift_checking1(m2c::_offsets, struct m2c::_STATE* _state){_group15(m2c::kkb_shift_checking1, _state);}
+ bool kb_shift_checking1(m2c::_offsets, struct m2c::_STATE* _state){_group15(m2c::kkb_shift_checking1, _state);return true;}
 
- bool kb_shift_checking2(m2c::_offsets, struct m2c::_STATE* _state){_group15(m2c::kkb_shift_checking2, _state);}
+ bool kb_shift_checking2(m2c::_offsets, struct m2c::_STATE* _state){_group15(m2c::kkb_shift_checking2, _state);return true;}
 
- bool libsub_quit_to_dos(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::klibsub_quit_to_dos, _state);}
+ bool libsub_quit_to_dos(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::klibsub_quit_to_dos, _state);return true;}
 
- bool libsub_quit_to_dos_alt(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::klibsub_quit_to_dos_alt, _state);}
+ bool libsub_quit_to_dos_alt(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::klibsub_quit_to_dos_alt, _state);return true;}
 
- bool load_audio_finalize(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_audio_finalize, _state);}
+ bool load_audio_finalize(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_audio_finalize, _state);return true;}
 
- bool load_intro_resources(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kload_intro_resources, _state);}
+ bool load_intro_resources(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kload_intro_resources, _state);return true;}
 
- bool load_opponent_data(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kload_opponent_data, _state);}
+ bool load_opponent_data(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kload_opponent_data, _state);return true;}
 
- bool load_palandcursor(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kload_palandcursor, _state);}
+ bool load_palandcursor(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kload_palandcursor, _state);return true;}
 
- bool load_sdgame2_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kload_sdgame2_shapes, _state);}
+ bool load_sdgame2_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kload_sdgame2_shapes, _state);return true;}
 
- bool load_sfx_file(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_sfx_file, _state);}
+ bool load_sfx_file(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_sfx_file, _state);return true;}
 
- bool load_sfx_ge(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_sfx_ge, _state);}
+ bool load_sfx_ge(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_sfx_ge, _state);return true;}
 
- bool load_skybox(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kload_skybox, _state);}
+ bool load_skybox(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kload_skybox, _state);return true;}
 
- bool load_song_file(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_song_file, _state);}
+ bool load_song_file(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_song_file, _state);return true;}
 
- bool load_tracks_menu_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::kload_tracks_menu_shapes, _state);}
+ bool load_tracks_menu_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::kload_tracks_menu_shapes, _state);return true;}
 
- bool load_voice_file(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_voice_file, _state);}
+ bool load_voice_file(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kload_voice_file, _state);return true;}
 
- bool locate_many_resources(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::klocate_many_resources, _state);}
+ bool locate_many_resources(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::klocate_many_resources, _state);return true;}
 
- bool locate_shape_alt(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::klocate_shape_alt, _state);}
+ bool locate_shape_alt(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::klocate_shape_alt, _state);return true;}
 
- bool locate_shape_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::klocate_shape_fatal, _state);}
+ bool locate_shape_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::klocate_shape_fatal, _state);return true;}
 
- bool locate_shape_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::klocate_shape_nofatal, _state);}
+ bool locate_shape_nofatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::klocate_shape_nofatal, _state);return true;}
 
- bool locate_sound_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::klocate_sound_fatal, _state);}
+ bool locate_sound_fatal(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::klocate_sound_fatal, _state);return true;}
 
- bool locate_text_res(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::klocate_text_res, _state);}
+ bool locate_text_res(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::klocate_text_res, _state);return true;}
 
- bool loop_game(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kloop_game, _state);}
+ bool loop_game(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kloop_game, _state);return true;}
 
- bool mat_invert(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmat_invert, _state);}
+ bool mat_invert(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmat_invert, _state);return true;}
 
- bool mat_mul_vector(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmat_mul_vector, _state);}
+ bool mat_mul_vector(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmat_mul_vector, _state);return true;}
 
- bool mat_mul_vector2(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kmat_mul_vector2, _state);}
+ bool mat_mul_vector2(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kmat_mul_vector2, _state);return true;}
 
- bool mat_multiply(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmat_multiply, _state);}
+ bool mat_multiply(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmat_multiply, _state);return true;}
 
- bool mat_rot_x(m2c::_offsets, struct m2c::_STATE* _state){_group16(m2c::kmat_rot_x, _state);}
+ bool mat_rot_x(m2c::_offsets, struct m2c::_STATE* _state){_group16(m2c::kmat_rot_x, _state);return true;}
 
- bool mat_rot_y(m2c::_offsets, struct m2c::_STATE* _state){_group16(m2c::kmat_rot_y, _state);}
+ bool mat_rot_y(m2c::_offsets, struct m2c::_STATE* _state){_group16(m2c::kmat_rot_y, _state);return true;}
 
- bool mat_rot_z(m2c::_offsets, struct m2c::_STATE* _state){_group16(m2c::kmat_rot_z, _state);}
+ bool mat_rot_z(m2c::_offsets, struct m2c::_STATE* _state){_group16(m2c::kmat_rot_z, _state);return true;}
 
- bool mat_rot_zxy(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kmat_rot_zxy, _state);}
+ bool mat_rot_zxy(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kmat_rot_zxy, _state);return true;}
 
- bool mmgr_alloc_a000(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_alloc_a000, _state);}
+ bool mmgr_alloc_a000(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_alloc_a000, _state);return true;}
 
- bool mmgr_alloc_pages(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_alloc_pages, _state);}
+ bool mmgr_alloc_pages(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_alloc_pages, _state);return true;}
 
- bool mmgr_alloc_resbytes(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kmmgr_alloc_resbytes, _state);}
+ bool mmgr_alloc_resbytes(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kmmgr_alloc_resbytes, _state);return true;}
 
- bool mmgr_alloc_resmem(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_alloc_resmem, _state);}
+ bool mmgr_alloc_resmem(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_alloc_resmem, _state);return true;}
 
- bool mmgr_copy_paras(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_copy_paras, _state);}
+ bool mmgr_copy_paras(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_copy_paras, _state);return true;}
 
- bool mmgr_find_free(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_find_free, _state);}
+ bool mmgr_find_free(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_find_free, _state);return true;}
 
- bool mmgr_free(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_free, _state);}
+ bool mmgr_free(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_free, _state);return true;}
 
- bool mmgr_get_chunk_by_name(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_get_chunk_by_name, _state);}
+ bool mmgr_get_chunk_by_name(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_get_chunk_by_name, _state);return true;}
 
- bool mmgr_get_chunk_size(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_get_chunk_size, _state);}
+ bool mmgr_get_chunk_size(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_get_chunk_size, _state);return true;}
 
- bool mmgr_get_chunk_size_bytes(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kmmgr_get_chunk_size_bytes, _state);}
+ bool mmgr_get_chunk_size_bytes(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kmmgr_get_chunk_size_bytes, _state);return true;}
 
- bool mmgr_get_ofs_diff(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_get_ofs_diff, _state);}
+ bool mmgr_get_ofs_diff(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_get_ofs_diff, _state);return true;}
 
- bool mmgr_get_res_ofs_diff_scaled(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kmmgr_get_res_ofs_diff_scaled, _state);}
+ bool mmgr_get_res_ofs_diff_scaled(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::kmmgr_get_res_ofs_diff_scaled, _state);return true;}
 
- bool mmgr_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_op_unk, _state);}
+ bool mmgr_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_op_unk, _state);return true;}
 
- bool mmgr_path_to_name(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_path_to_name, _state);}
+ bool mmgr_path_to_name(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_path_to_name, _state);return true;}
 
- bool mmgr_release(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_release, _state);}
+ bool mmgr_release(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_release, _state);return true;}
 
- bool mmgr_resize_memory(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_resize_memory, _state);}
+ bool mmgr_resize_memory(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmmgr_resize_memory, _state);return true;}
 
- bool mouse_draw_opaque(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_opaque, _state);}
+ bool mouse_draw_opaque(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_opaque, _state);return true;}
 
- bool mouse_draw_opaque_check(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_opaque_check, _state);}
+ bool mouse_draw_opaque_check(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_opaque_check, _state);return true;}
 
- bool mouse_draw_transparent(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_transparent, _state);}
+ bool mouse_draw_transparent(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_transparent, _state);return true;}
 
- bool mouse_draw_transparent_check(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_transparent_check, _state);}
+ bool mouse_draw_transparent_check(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_draw_transparent_check, _state);return true;}
 
- bool mouse_get_state(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_get_state, _state);}
+ bool mouse_get_state(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_get_state, _state);return true;}
 
- bool mouse_init(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_init, _state);}
+ bool mouse_init(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_init, _state);return true;}
 
- bool mouse_minmax_position(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kmouse_minmax_position, _state);}
+ bool mouse_minmax_position(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kmouse_minmax_position, _state);return true;}
 
- bool mouse_multi_hittest(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_multi_hittest, _state);}
+ bool mouse_multi_hittest(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_multi_hittest, _state);return true;}
 
- bool mouse_set_minmax(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_set_minmax, _state);}
+ bool mouse_set_minmax(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_set_minmax, _state);return true;}
 
- bool mouse_set_pixratio(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_set_pixratio, _state);}
+ bool mouse_set_pixratio(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_set_pixratio, _state);return true;}
 
- bool mouse_set_position(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_set_position, _state);}
+ bool mouse_set_position(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kmouse_set_position, _state);return true;}
 
- bool mouse_timer_sprite_unk(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_timer_sprite_unk, _state);}
+ bool mouse_timer_sprite_unk(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_timer_sprite_unk, _state);return true;}
 
- bool mouse_track_op(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_track_op, _state);}
+ bool mouse_track_op(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kmouse_track_op, _state);return true;}
 
- bool multiply_and_scale(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmultiply_and_scale, _state);}
+ bool multiply_and_scale(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kmultiply_and_scale, _state);return true;}
 
- bool nopsub_19de8(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19de8, _state);}
+ bool nopsub_19de8(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19de8, _state);return true;}
 
- bool nopsub_19dff(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19dff, _state);}
+ bool nopsub_19dff(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19dff, _state);return true;}
 
- bool nopsub_19e09(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19e09, _state);}
+ bool nopsub_19e09(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19e09, _state);return true;}
 
- bool nopsub_19e13(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19e13, _state);}
+ bool nopsub_19e13(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::knopsub_19e13, _state);return true;}
 
- bool nopsub_26552(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::knopsub_26552, _state);}
+ bool nopsub_26552(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::knopsub_26552, _state);return true;}
 
- bool nopsub_27220(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_27220, _state);}
+ bool nopsub_27220(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_27220, _state);return true;}
 
- bool nopsub_2726c(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_2726c, _state);}
+ bool nopsub_2726c(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_2726c, _state);return true;}
 
- bool nopsub_272b0(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_272b0, _state);}
+ bool nopsub_272b0(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_272b0, _state);return true;}
 
- bool nopsub_27489(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_27489, _state);}
+ bool nopsub_27489(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::knopsub_27489, _state);return true;}
 
- bool nopsub_28f26(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::knopsub_28f26, _state);}
+ bool nopsub_28f26(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::knopsub_28f26, _state);return true;}
 
- bool nopsub_2f424(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_2f424, _state);}
+ bool nopsub_2f424(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_2f424, _state);return true;}
 
- bool nopsub_2f436(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_2f436, _state);}
+ bool nopsub_2f436(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_2f436, _state);return true;}
 
- bool nopsub_30180(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_30180, _state);}
+ bool nopsub_30180(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_30180, _state);return true;}
 
- bool nopsub_304af(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_304af, _state);}
+ bool nopsub_304af(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_304af, _state);return true;}
 
- bool nopsub_304b6(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_304b6, _state);}
+ bool nopsub_304b6(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_304b6, _state);return true;}
 
- bool nopsub_305c8(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_305c8, _state);}
+ bool nopsub_305c8(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_305c8, _state);return true;}
 
- bool nopsub_307fa(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_307fa, _state);}
+ bool nopsub_307fa(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_307fa, _state);return true;}
 
- bool nopsub_30a77(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_30a77, _state);}
+ bool nopsub_30a77(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_30a77, _state);return true;}
 
- bool nopsub_30a97(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_30a97, _state);}
+ bool nopsub_30a97(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_30a97, _state);return true;}
 
- bool nopsub_310fe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_310fe, _state);}
+ bool nopsub_310fe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_310fe, _state);return true;}
 
- bool nopsub_3111d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3111d, _state);}
+ bool nopsub_3111d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3111d, _state);return true;}
 
- bool nopsub_31157(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31157, _state);}
+ bool nopsub_31157(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31157, _state);return true;}
 
- bool nopsub_31169(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31169, _state);}
+ bool nopsub_31169(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31169, _state);return true;}
 
- bool nopsub_31429(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31429, _state);}
+ bool nopsub_31429(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31429, _state);return true;}
 
- bool nopsub_31525(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31525, _state);}
+ bool nopsub_31525(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31525, _state);return true;}
 
- bool nopsub_31f39(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31f39, _state);}
+ bool nopsub_31f39(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31f39, _state);return true;}
 
- bool nopsub_31f55(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31f55, _state);}
+ bool nopsub_31f55(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_31f55, _state);return true;}
 
- bool nopsub_3215a(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3215a, _state);}
+ bool nopsub_3215a(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3215a, _state);return true;}
 
- bool nopsub_3216c(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3216c, _state);}
+ bool nopsub_3216c(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3216c, _state);return true;}
 
- bool nopsub_3219d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3219d, _state);}
+ bool nopsub_3219d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3219d, _state);return true;}
 
- bool nopsub_322b4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_322b4, _state);}
+ bool nopsub_322b4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_322b4, _state);return true;}
 
- bool nopsub_322c0(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_322c0, _state);}
+ bool nopsub_322c0(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_322c0, _state);return true;}
 
- bool nopsub_322df(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_322df, _state);}
+ bool nopsub_322df(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_322df, _state);return true;}
 
- bool nopsub_326ba(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_326ba, _state);}
+ bool nopsub_326ba(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_326ba, _state);return true;}
 
- bool nopsub_32738(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32738, _state);}
+ bool nopsub_32738(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32738, _state);return true;}
 
- bool nopsub_32746(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32746, _state);}
+ bool nopsub_32746(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32746, _state);return true;}
 
- bool nopsub_32751(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32751, _state);}
+ bool nopsub_32751(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32751, _state);return true;}
 
- bool nopsub_3276a(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3276a, _state);}
+ bool nopsub_3276a(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3276a, _state);return true;}
 
- bool nopsub_328c9(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_328c9, _state);}
+ bool nopsub_328c9(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_328c9, _state);return true;}
 
- bool nopsub_328db(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_328db, _state);}
+ bool nopsub_328db(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_328db, _state);return true;}
 
- bool nopsub_32fee(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32fee, _state);}
+ bool nopsub_32fee(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_32fee, _state);return true;}
 
- bool nopsub_33006(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33006, _state);}
+ bool nopsub_33006(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33006, _state);return true;}
 
- bool nopsub_3320e(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3320e, _state);}
+ bool nopsub_3320e(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_3320e, _state);return true;}
 
- bool nopsub_33330(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33330, _state);}
+ bool nopsub_33330(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33330, _state);return true;}
 
- bool nopsub_339fa(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_339fa, _state);}
+ bool nopsub_339fa(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_339fa, _state);return true;}
 
- bool nopsub_33ac0(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33ac0, _state);}
+ bool nopsub_33ac0(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33ac0, _state);return true;}
 
- bool nopsub_33ae4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33ae4, _state);}
+ bool nopsub_33ae4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33ae4, _state);return true;}
 
- bool nopsub_33b98(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33b98, _state);}
+ bool nopsub_33b98(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33b98, _state);return true;}
 
- bool nopsub_33d0c(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33d0c, _state);}
+ bool nopsub_33d0c(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33d0c, _state);return true;}
 
- bool nopsub_33dbe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33dbe, _state);}
+ bool nopsub_33dbe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33dbe, _state);return true;}
 
- bool nopsub_33e90(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33e90, _state);}
+ bool nopsub_33e90(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_33e90, _state);return true;}
 
- bool nopsub_34736(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_34736, _state);}
+ bool nopsub_34736(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_34736, _state);return true;}
 
- bool nopsub_367e4(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::knopsub_367e4, _state);}
+ bool nopsub_367e4(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::knopsub_367e4, _state);return true;}
 
- bool nopsub_36826(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::knopsub_36826, _state);}
+ bool nopsub_36826(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::knopsub_36826, _state);return true;}
 
- bool nopsub_36868(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::knopsub_36868, _state);}
+ bool nopsub_36868(m2c::_offsets, struct m2c::_STATE* _state){_group13(m2c::knopsub_36868, _state);return true;}
 
- bool nopsub_36a9a(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::knopsub_36a9a, _state);}
+ bool nopsub_36a9a(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::knopsub_36a9a, _state);return true;}
 
- bool nopsub_36aca(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::knopsub_36aca, _state);}
+ bool nopsub_36aca(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::knopsub_36aca, _state);return true;}
 
- bool nopsub_373fe(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_373fe, _state);}
+ bool nopsub_373fe(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_373fe, _state);return true;}
 
- bool nopsub_37456(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37456, _state);}
+ bool nopsub_37456(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37456, _state);return true;}
 
- bool nopsub_37750(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37750, _state);}
+ bool nopsub_37750(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37750, _state);return true;}
 
- bool nopsub_37898(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37898, _state);}
+ bool nopsub_37898(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37898, _state);return true;}
 
- bool nopsub_378ae(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_378ae, _state);}
+ bool nopsub_378ae(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_378ae, _state);return true;}
 
- bool nopsub_378bc(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_378bc, _state);}
+ bool nopsub_378bc(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_378bc, _state);return true;}
 
- bool nopsub_37d7a(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37d7a, _state);}
+ bool nopsub_37d7a(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::knopsub_37d7a, _state);return true;}
 
- bool nopsub_kb_get_readchar_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_kb_get_readchar_callback, _state);}
+ bool nopsub_kb_get_readchar_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_kb_get_readchar_callback, _state);return true;}
 
- bool nopsub_kb_set_readchar_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_kb_set_readchar_callback, _state);}
+ bool nopsub_kb_set_readchar_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::knopsub_kb_set_readchar_callback, _state);return true;}
 
- bool nullsub_1(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::knullsub_1, _state);}
+ bool nullsub_1(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::knullsub_1, _state);return true;}
 
- bool nullsub_2(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::knullsub_2, _state);}
+ bool nullsub_2(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::knullsub_2, _state);return true;}
 
- bool opponent_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kopponent_op, _state);}
+ bool opponent_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kopponent_op, _state);return true;}
 
- bool pad_id(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kpad_id, _state);}
+ bool pad_id(m2c::_offsets, struct m2c::_STATE* _state){_group8(m2c::kpad_id, _state);return true;}
 
- bool parse_filepath_separators(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kparse_filepath_separators, _state);}
+ bool parse_filepath_separators(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kparse_filepath_separators, _state);return true;}
 
- bool parse_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kparse_shape2d, _state);}
+ bool parse_shape2d(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kparse_shape2d, _state);return true;}
 
- bool parse_shape2d_helper(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kparse_shape2d_helper, _state);}
+ bool parse_shape2d_helper(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kparse_shape2d_helper, _state);return true;}
 
- bool parse_shape2d_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kparse_shape2d_helper2, _state);}
+ bool parse_shape2d_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kparse_shape2d_helper2, _state);return true;}
 
- bool parse_shape2d_helper3(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kparse_shape2d_helper3, _state);}
+ bool parse_shape2d_helper3(m2c::_offsets, struct m2c::_STATE* _state){_group24(m2c::kparse_shape2d_helper3, _state);return true;}
 
- bool parse_shape2d_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kparse_shape2d_thunk, _state);}
+ bool parse_shape2d_thunk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kparse_shape2d_thunk, _state);return true;}
 
- bool plane_origin_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kplane_origin_op, _state);}
+ bool plane_origin_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kplane_origin_op, _state);return true;}
 
- bool plane_rotate_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kplane_rotate_op, _state);}
+ bool plane_rotate_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kplane_rotate_op, _state);return true;}
 
- bool player_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kplayer_op, _state);}
+ bool player_op(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kplayer_op, _state);return true;}
 
- bool polarangle(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kpolarangle, _state);}
+ bool polarangle(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kpolarangle, _state);return true;}
 
- bool polarradius2d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kpolarradius2d, _state);}
+ bool polarradius2d(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kpolarradius2d, _state);return true;}
 
- bool polyinfo_reset(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kpolyinfo_reset, _state);}
+ bool polyinfo_reset(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kpolyinfo_reset, _state);return true;}
 
- bool prerender_default(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_default, _state);}
+ bool prerender_default(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_default, _state);return true;}
 
- bool prerender_default_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_default_alt, _state);}
+ bool prerender_default_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_default_alt, _state);return true;}
 
- bool prerender_helper(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_helper, _state);}
+ bool prerender_helper(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_helper, _state);return true;}
 
- bool prerender_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_helper2, _state);}
+ bool prerender_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_helper2, _state);return true;}
 
- bool prerender_helper3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_helper3, _state);}
+ bool prerender_helper3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_helper3, _state);return true;}
 
- bool prerender_icons(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::kprerender_icons, _state);}
+ bool prerender_icons(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::kprerender_icons, _state);return true;}
 
- bool prerender_line(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_line, _state);}
+ bool prerender_line(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_line, _state);return true;}
 
- bool prerender_patterned(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_patterned, _state);}
+ bool prerender_patterned(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_patterned, _state);return true;}
 
- bool prerender_sphere(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_sphere, _state);}
+ bool prerender_sphere(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_sphere, _state);return true;}
 
- bool prerender_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_unk, _state);}
+ bool prerender_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_unk, _state);return true;}
 
- bool prerender_wheel_helper4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_wheel_helper4, _state);}
+ bool prerender_wheel_helper4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kprerender_wheel_helper4, _state);return true;}
 
- bool print_highscore_entry(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kprint_highscore_entry, _state);}
+ bool print_highscore_entry(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kprint_highscore_entry, _state);return true;}
 
- bool print_int_as_string_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kprint_int_as_string_maybe, _state);}
+ bool print_int_as_string_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kprint_int_as_string_maybe, _state);return true;}
 
- bool putbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputbuf, _state);}
+ bool putbuf(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputbuf, _state);return true;}
 
- bool putpad(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputpad, _state);}
+ bool putpad(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputpad, _state);return true;}
 
- bool putpixel_iconfillings(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_iconfillings, _state);}
+ bool putpixel_iconfillings(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_iconfillings, _state);return true;}
 
- bool putpixel_iconmask(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_iconmask, _state);}
+ bool putpixel_iconmask(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_iconmask, _state);return true;}
 
- bool putpixel_line1_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_line1_maybe, _state);}
+ bool putpixel_line1_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_line1_maybe, _state);return true;}
 
- bool putpixel_single_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_single_maybe, _state);}
+ bool putpixel_single_maybe(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kputpixel_single_maybe, _state);return true;}
 
- bool putprefix(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputprefix, _state);}
+ bool putprefix(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputprefix, _state);return true;}
 
- bool putsign(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputsign, _state);}
+ bool putsign(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kputsign, _state);return true;}
 
- bool random_wait(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::krandom_wait, _state);}
+ bool random_wait(m2c::_offsets, struct m2c::_STATE* _state){_group20(m2c::krandom_wait, _state);return true;}
 
- bool read_line(m2c::_offsets, struct m2c::_STATE* _state){_group21(m2c::kread_line, _state);}
+ bool read_line(m2c::_offsets, struct m2c::_STATE* _state){_group21(m2c::kread_line, _state);return true;}
 
- bool read_line_helper(m2c::_offsets, struct m2c::_STATE* _state){_group21(m2c::kread_line_helper, _state);}
+ bool read_line_helper(m2c::_offsets, struct m2c::_STATE* _state){_group21(m2c::kread_line_helper, _state);return true;}
 
- bool read_line_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group21(m2c::kread_line_helper2, _state);}
+ bool read_line_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group21(m2c::kread_line_helper2, _state);return true;}
 
- bool rect_adjust_from_point(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_adjust_from_point, _state);}
+ bool rect_adjust_from_point(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_adjust_from_point, _state);return true;}
 
- bool rect_array_sort_by_top(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_array_sort_by_top, _state);}
+ bool rect_array_sort_by_top(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_array_sort_by_top, _state);return true;}
 
- bool rect_compare_point(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_compare_point, _state);}
+ bool rect_compare_point(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_compare_point, _state);return true;}
 
- bool rect_intersect(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_intersect, _state);}
+ bool rect_intersect(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_intersect, _state);return true;}
 
- bool rect_is_adjacent(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_is_adjacent, _state);}
+ bool rect_is_adjacent(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_is_adjacent, _state);return true;}
 
- bool rect_is_inside(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_is_inside, _state);}
+ bool rect_is_inside(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_is_inside, _state);return true;}
 
- bool rect_is_overlapping(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_is_overlapping, _state);}
+ bool rect_is_overlapping(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_is_overlapping, _state);return true;}
 
- bool rect_union(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_union, _state);}
+ bool rect_union(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krect_union, _state);return true;}
 
- bool rectlist_add_rect(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krectlist_add_rect, _state);}
+ bool rectlist_add_rect(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krectlist_add_rect, _state);return true;}
 
- bool rectlist_add_rects(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krectlist_add_rects, _state);}
+ bool rectlist_add_rects(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::krectlist_add_rects, _state);return true;}
 
- bool remove_frame_callback(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kremove_frame_callback, _state);}
+ bool remove_frame_callback(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kremove_frame_callback, _state);return true;}
 
- bool replay_unk(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kreplay_unk, _state);}
+ bool replay_unk(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kreplay_unk, _state);return true;}
 
- bool replay_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kreplay_unk2, _state);}
+ bool replay_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kreplay_unk2, _state);return true;}
 
- bool restore_gamestate(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::krestore_gamestate, _state);}
+ bool restore_gamestate(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::krestore_gamestate, _state);return true;}
 
- bool run_car_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_car_menu, _state);}
+ bool run_car_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_car_menu, _state);return true;}
 
- bool run_game(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::krun_game, _state);}
+ bool run_game(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::krun_game, _state);return true;}
 
- bool run_intro(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_intro, _state);}
+ bool run_intro(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_intro, _state);return true;}
 
- bool run_intro_looped(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_intro_looped, _state);}
+ bool run_intro_looped(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_intro_looped, _state);return true;}
 
- bool run_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_menu, _state);}
+ bool run_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_menu, _state);return true;}
 
- bool run_opponent_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_opponent_menu, _state);}
+ bool run_opponent_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_opponent_menu, _state);return true;}
 
- bool run_option_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_option_menu, _state);}
+ bool run_option_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_option_menu, _state);return true;}
 
- bool run_tracks_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_tracks_menu, _state);}
+ bool run_tracks_menu(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::krun_tracks_menu, _state);return true;}
 
- bool security_check(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksecurity_check, _state);}
+ bool security_check(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksecurity_check, _state);return true;}
 
- bool seg000_44ce_proc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kseg000_44ce_proc, _state);}
+ bool seg000_44ce_proc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kseg000_44ce_proc, _state);return true;}
 
- bool seg000_599_proc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kseg000_599_proc, _state);}
+ bool seg000_599_proc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kseg000_599_proc, _state);return true;}
 
- bool seg002_147_proc(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kseg002_147_proc, _state);}
+ bool seg002_147_proc(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kseg002_147_proc, _state);return true;}
 
- bool seg010_13ce_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_13ce_proc, _state);}
+ bool seg010_13ce_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_13ce_proc, _state);return true;}
 
- bool seg010_146e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_146e_proc, _state);}
+ bool seg010_146e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_146e_proc, _state);return true;}
 
- bool seg010_1794_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_1794_proc, _state);}
+ bool seg010_1794_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_1794_proc, _state);return true;}
 
- bool seg010_18d8_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_18d8_proc, _state);}
+ bool seg010_18d8_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_18d8_proc, _state);return true;}
 
- bool seg010_1af7_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_1af7_proc, _state);}
+ bool seg010_1af7_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_1af7_proc, _state);return true;}
 
- bool seg010_546_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_546_proc, _state);}
+ bool seg010_546_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_546_proc, _state);return true;}
 
- bool seg010_f17_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_f17_proc, _state);}
+ bool seg010_f17_proc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kseg010_f17_proc, _state);return true;}
 
- bool seg012_2530_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_2530_proc, _state);}
+ bool seg012_2530_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_2530_proc, _state);return true;}
 
- bool seg012_354e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_354e_proc, _state);}
+ bool seg012_354e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_354e_proc, _state);return true;}
 
- bool seg012_3852_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_3852_proc, _state);}
+ bool seg012_3852_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_3852_proc, _state);return true;}
 
- bool seg012_4649_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_4649_proc, _state);}
+ bool seg012_4649_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_4649_proc, _state);return true;}
 
- bool seg012_4c3a_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_4c3a_proc, _state);}
+ bool seg012_4c3a_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_4c3a_proc, _state);return true;}
 
- bool seg012_57ce_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_57ce_proc, _state);}
+ bool seg012_57ce_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_57ce_proc, _state);return true;}
 
- bool seg012_5894_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5894_proc, _state);}
+ bool seg012_5894_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5894_proc, _state);return true;}
 
- bool seg012_596c_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_596c_proc, _state);}
+ bool seg012_596c_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_596c_proc, _state);return true;}
 
- bool seg012_5ac4_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5ac4_proc, _state);}
+ bool seg012_5ac4_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5ac4_proc, _state);return true;}
 
- bool seg012_5b74_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5b74_proc, _state);}
+ bool seg012_5b74_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5b74_proc, _state);return true;}
 
- bool seg012_5c7a_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5c7a_proc, _state);}
+ bool seg012_5c7a_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_5c7a_proc, _state);return true;}
 
- bool seg012_6107_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_6107_proc, _state);}
+ bool seg012_6107_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_6107_proc, _state);return true;}
 
- bool seg012_6168_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_6168_proc, _state);}
+ bool seg012_6168_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_6168_proc, _state);return true;}
 
- bool seg012_74b9_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_74b9_proc, _state);}
+ bool seg012_74b9_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_74b9_proc, _state);return true;}
 
- bool seg012_d5_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_d5_proc, _state);}
+ bool seg012_d5_proc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kseg012_d5_proc, _state);return true;}
 
- bool seg017_110_proc(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kseg017_110_proc, _state);}
+ bool seg017_110_proc(m2c::_offsets, struct m2c::_STATE* _state){_group14(m2c::kseg017_110_proc, _state);return true;}
 
- bool seg018_2_proc(m2c::_offsets, struct m2c::_STATE* _state){_group15(m2c::kseg018_2_proc, _state);}
+ bool seg018_2_proc(m2c::_offsets, struct m2c::_STATE* _state){_group15(m2c::kseg018_2_proc, _state);return true;}
 
- bool seg027_14a0_proc(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kseg027_14a0_proc, _state);}
+ bool seg027_14a0_proc(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::kseg027_14a0_proc, _state);return true;}
 
- bool seg028_478_proc(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kseg028_478_proc, _state);}
+ bool seg028_478_proc(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kseg028_478_proc, _state);return true;}
 
- bool seg028_a98_proc(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kseg028_a98_proc, _state);}
+ bool seg028_a98_proc(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::kseg028_a98_proc, _state);return true;}
 
- bool seg041_0_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_0_proc, _state);}
+ bool seg041_0_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_0_proc, _state);return true;}
 
- bool seg041_5b_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_5b_proc, _state);}
+ bool seg041_5b_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_5b_proc, _state);return true;}
 
- bool seg041_a7e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_a7e_proc, _state);}
+ bool seg041_a7e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_a7e_proc, _state);return true;}
 
- bool seg041_c2e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_c2e_proc, _state);}
+ bool seg041_c2e_proc(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::kseg041_c2e_proc, _state);return true;}
 
- bool select_cliprect_rotate(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kselect_cliprect_rotate, _state);}
+ bool select_cliprect_rotate(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kselect_cliprect_rotate, _state);return true;}
 
- bool set_add_value(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_add_value, _state);}
+ bool set_add_value(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_add_value, _state);return true;}
 
- bool set_bios_mode3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_bios_mode3, _state);}
+ bool set_bios_mode3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_bios_mode3, _state);return true;}
 
- bool set_criterr_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_criterr_handler, _state);}
+ bool set_criterr_handler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_criterr_handler, _state);return true;}
 
- bool set_default_car(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kset_default_car, _state);}
+ bool set_default_car(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kset_default_car, _state);return true;}
 
- bool set_fontdefseg(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_fontdefseg, _state);}
+ bool set_fontdefseg(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_fontdefseg, _state);return true;}
 
- bool set_frame_callback(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kset_frame_callback, _state);}
+ bool set_frame_callback(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::kset_frame_callback, _state);return true;}
 
- bool set_projection(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_projection, _state);}
+ bool set_projection(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kset_projection, _state);return true;}
 
- bool setup_aero_trackdata(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksetup_aero_trackdata, _state);}
+ bool setup_aero_trackdata(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksetup_aero_trackdata, _state);return true;}
 
- bool setup_car_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::ksetup_car_shapes, _state);}
+ bool setup_car_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::ksetup_car_shapes, _state);return true;}
 
- bool setup_intro(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::ksetup_intro, _state);}
+ bool setup_intro(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::ksetup_intro, _state);return true;}
 
- bool setup_mcgawnd1(m2c::_offsets, struct m2c::_STATE* _state){_group22(m2c::ksetup_mcgawnd1, _state);}
+ bool setup_mcgawnd1(m2c::_offsets, struct m2c::_STATE* _state){_group22(m2c::ksetup_mcgawnd1, _state);return true;}
 
- bool setup_mcgawnd2(m2c::_offsets, struct m2c::_STATE* _state){_group22(m2c::ksetup_mcgawnd2, _state);}
+ bool setup_mcgawnd2(m2c::_offsets, struct m2c::_STATE* _state){_group22(m2c::ksetup_mcgawnd2, _state);return true;}
 
- bool setup_player_cars(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::ksetup_player_cars, _state);}
+ bool setup_player_cars(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::ksetup_player_cars, _state);return true;}
 
- bool shape2d_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk, _state);}
+ bool shape2d_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk, _state);return true;}
 
- bool shape2d_op_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk2, _state);}
+ bool shape2d_op_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk2, _state);return true;}
 
- bool shape2d_op_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk3, _state);}
+ bool shape2d_op_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk3, _state);return true;}
 
- bool shape2d_op_unk4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk4, _state);}
+ bool shape2d_op_unk4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk4, _state);return true;}
 
- bool shape2d_op_unk5(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk5, _state);}
+ bool shape2d_op_unk5(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_op_unk5, _state);return true;}
 
- bool shape2d_render_bmp_as_mask(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_render_bmp_as_mask, _state);}
+ bool shape2d_render_bmp_as_mask(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape2d_render_bmp_as_mask, _state);return true;}
 
- bool shape3d_free_all(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_free_all, _state);}
+ bool shape3d_free_all(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_free_all, _state);return true;}
 
- bool shape3d_free_car_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_free_car_shapes, _state);}
+ bool shape3d_free_car_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_free_car_shapes, _state);return true;}
 
- bool shape3d_init_shape(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kshape3d_init_shape, _state);}
+ bool shape3d_init_shape(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kshape3d_init_shape, _state);return true;}
 
- bool shape3d_load_all(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_load_all, _state);}
+ bool shape3d_load_all(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_load_all, _state);return true;}
 
- bool shape3d_load_car_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_load_car_shapes, _state);}
+ bool shape3d_load_car_shapes(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::kshape3d_load_car_shapes, _state);return true;}
 
- bool shape_op_explosion(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape_op_explosion, _state);}
+ bool shape_op_explosion(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kshape_op_explosion, _state);return true;}
 
- bool show_dialog(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kshow_dialog, _state);}
+ bool show_dialog(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kshow_dialog, _state);return true;}
 
- bool show_waiting(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kshow_waiting, _state);}
+ bool show_waiting(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kshow_waiting, _state);return true;}
 
- bool sin_fast(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksin_fast, _state);}
+ bool sin_fast(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksin_fast, _state);return true;}
 
- bool skybox_op(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kskybox_op, _state);}
+ bool skybox_op(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kskybox_op, _state);return true;}
 
- bool skybox_op_helper(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kskybox_op_helper, _state);}
+ bool skybox_op_helper(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kskybox_op_helper, _state);return true;}
 
- bool skybox_op_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kskybox_op_helper2, _state);}
+ bool skybox_op_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kskybox_op_helper2, _state);return true;}
 
- bool sprint(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksprint, _state);}
+ bool sprint(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksprint, _state);return true;}
 
- bool sprite_1_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_1_unk, _state);}
+ bool sprite_1_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_1_unk, _state);return true;}
 
- bool sprite_1_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_1_unk2, _state);}
+ bool sprite_1_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_1_unk2, _state);return true;}
 
- bool sprite_1_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_1_unk3, _state);}
+ bool sprite_1_unk3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_1_unk3, _state);return true;}
 
- bool sprite_blit_to_video(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_blit_to_video, _state);}
+ bool sprite_blit_to_video(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_blit_to_video, _state);return true;}
 
- bool sprite_clear_1_color(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_clear_1_color, _state);}
+ bool sprite_clear_1_color(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_clear_1_color, _state);return true;}
 
- bool sprite_clear_shape(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_clear_shape, _state);}
+ bool sprite_clear_shape(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_clear_shape, _state);return true;}
 
- bool sprite_clear_shape_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_clear_shape_alt, _state);}
+ bool sprite_clear_shape_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_clear_shape_alt, _state);return true;}
 
- bool sprite_copy_2_to_1(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_copy_2_to_1, _state);}
+ bool sprite_copy_2_to_1(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_copy_2_to_1, _state);return true;}
 
- bool sprite_copy_2_to_1_2(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_2_to_1_2, _state);}
+ bool sprite_copy_2_to_1_2(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_2_to_1_2, _state);return true;}
 
- bool sprite_copy_2_to_1_clear(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_2_to_1_clear, _state);}
+ bool sprite_copy_2_to_1_clear(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_2_to_1_clear, _state);return true;}
 
- bool sprite_copy_arg_to_both(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_copy_arg_to_both, _state);}
+ bool sprite_copy_arg_to_both(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_copy_arg_to_both, _state);return true;}
 
- bool sprite_copy_both_to_arg(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_copy_both_to_arg, _state);}
+ bool sprite_copy_both_to_arg(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_copy_both_to_arg, _state);return true;}
 
- bool sprite_copy_wnd_to_1(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_wnd_to_1, _state);}
+ bool sprite_copy_wnd_to_1(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_wnd_to_1, _state);return true;}
 
- bool sprite_copy_wnd_to_1_clear(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_wnd_to_1_clear, _state);}
+ bool sprite_copy_wnd_to_1_clear(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksprite_copy_wnd_to_1_clear, _state);return true;}
 
- bool sprite_free_wnd(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_free_wnd, _state);}
+ bool sprite_free_wnd(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_free_wnd, _state);return true;}
 
- bool sprite_make_wnd(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_make_wnd, _state);}
+ bool sprite_make_wnd(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_make_wnd, _state);return true;}
 
- bool sprite_putimage(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage, _state);}
+ bool sprite_putimage(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage, _state);return true;}
 
- bool sprite_putimage_and(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_and, _state);}
+ bool sprite_putimage_and(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_and, _state);return true;}
 
- bool sprite_putimage_and_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_and_alt, _state);}
+ bool sprite_putimage_and_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_and_alt, _state);return true;}
 
- bool sprite_putimage_and_alt2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_and_alt2, _state);}
+ bool sprite_putimage_and_alt2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_and_alt2, _state);return true;}
 
- bool sprite_putimage_or(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_or, _state);}
+ bool sprite_putimage_or(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_or, _state);return true;}
 
- bool sprite_putimage_or_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_or_alt, _state);}
+ bool sprite_putimage_or_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_or_alt, _state);return true;}
 
- bool sprite_putimage_transparent(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_transparent, _state);}
+ bool sprite_putimage_transparent(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_putimage_transparent, _state);return true;}
 
- bool sprite_set_1_from_argptr(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_set_1_from_argptr, _state);}
+ bool sprite_set_1_from_argptr(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_set_1_from_argptr, _state);return true;}
 
- bool sprite_set_1_size(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_set_1_size, _state);}
+ bool sprite_set_1_size(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_set_1_size, _state);return true;}
 
- bool sprite_shape_to_1(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_shape_to_1, _state);}
+ bool sprite_shape_to_1(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_shape_to_1, _state);return true;}
 
- bool sprite_shape_to_1_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_shape_to_1_alt, _state);}
+ bool sprite_shape_to_1_alt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksprite_shape_to_1_alt, _state);return true;}
 
- bool start(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kstart, _state);}
+ bool start(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kstart, _state);return true;}
 
- bool state_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kstate_op_unk, _state);}
+ bool state_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kstate_op_unk, _state);return true;}
 
- bool stuntsmain(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kstuntsmain, _state);}
+ bool stuntsmain(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kstuntsmain, _state);return true;}
 
- bool sub_18d06(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksub_18d06, _state);}
+ bool sub_18d06(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksub_18d06, _state);return true;}
 
- bool sub_18d60(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksub_18d60, _state);}
+ bool sub_18d60(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksub_18d60, _state);return true;}
 
- bool sub_19ba0(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksub_19ba0, _state);}
+ bool sub_19ba0(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::ksub_19ba0, _state);return true;}
 
- bool sub_19f14(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::ksub_19f14, _state);}
+ bool sub_19f14(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::ksub_19f14, _state);return true;}
 
- bool sub_204ae(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::ksub_204ae, _state);}
+ bool sub_204ae(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::ksub_204ae, _state);return true;}
 
- bool sub_2298c(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::ksub_2298c, _state);}
+ bool sub_2298c(m2c::_offsets, struct m2c::_STATE* _state){_group6(m2c::ksub_2298c, _state);return true;}
 
- bool sub_274b0(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_274b0, _state);}
+ bool sub_274b0(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_274b0, _state);return true;}
 
- bool sub_275c6(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_275c6, _state);}
+ bool sub_275c6(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_275c6, _state);return true;}
 
- bool sub_29772(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_29772, _state);}
+ bool sub_29772(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_29772, _state);return true;}
 
- bool sub_29a86(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_29a86, _state);}
+ bool sub_29a86(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ksub_29a86, _state);return true;}
 
- bool sub_2c81c(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::ksub_2c81c, _state);}
+ bool sub_2c81c(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::ksub_2c81c, _state);return true;}
 
- bool sub_2c9b4(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::ksub_2c9b4, _state);}
+ bool sub_2c9b4(m2c::_offsets, struct m2c::_STATE* _state){_group10(m2c::ksub_2c9b4, _state);return true;}
 
- bool sub_2cd28(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2cd28, _state);}
+ bool sub_2cd28(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2cd28, _state);return true;}
 
- bool sub_2ce4a(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2ce4a, _state);}
+ bool sub_2ce4a(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2ce4a, _state);return true;}
 
- bool sub_2ce77(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2ce77, _state);}
+ bool sub_2ce77(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2ce77, _state);return true;}
 
- bool sub_2d1bc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2d1bc, _state);}
+ bool sub_2d1bc(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2d1bc, _state);return true;}
 
- bool sub_2dfd0(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2dfd0, _state);}
+ bool sub_2dfd0(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2dfd0, _state);return true;}
 
- bool sub_2e290(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2e290, _state);}
+ bool sub_2e290(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::ksub_2e290, _state);return true;}
 
- bool sub_2ead4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_2ead4, _state);}
+ bool sub_2ead4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_2ead4, _state);return true;}
 
- bool sub_2eb07(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_2eb07, _state);}
+ bool sub_2eb07(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_2eb07, _state);return true;}
 
- bool sub_2eb1e(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_2eb1e, _state);}
+ bool sub_2eb1e(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_2eb1e, _state);return true;}
 
- bool sub_303ba(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_303ba, _state);}
+ bool sub_303ba(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_303ba, _state);return true;}
 
- bool sub_307b4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_307b4, _state);}
+ bool sub_307b4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_307b4, _state);return true;}
 
- bool sub_307d2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_307d2, _state);}
+ bool sub_307d2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_307d2, _state);return true;}
 
- bool sub_307e3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_307e3, _state);}
+ bool sub_307e3(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_307e3, _state);return true;}
 
- bool sub_34526(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_34526, _state);}
+ bool sub_34526(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_34526, _state);return true;}
 
- bool sub_345bc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_345bc, _state);}
+ bool sub_345bc(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_345bc, _state);return true;}
 
- bool sub_35b76(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35b76, _state);}
+ bool sub_35b76(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35b76, _state);return true;}
 
- bool sub_35c4e(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35c4e, _state);}
+ bool sub_35c4e(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35c4e, _state);return true;}
 
- bool sub_35dc8(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35dc8, _state);}
+ bool sub_35dc8(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35dc8, _state);return true;}
 
- bool sub_35de6(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35de6, _state);}
+ bool sub_35de6(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35de6, _state);return true;}
 
- bool sub_35e08(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35e08, _state);}
+ bool sub_35e08(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ksub_35e08, _state);return true;}
 
- bool sub_372f4(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_372f4, _state);}
+ bool sub_372f4(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_372f4, _state);return true;}
 
- bool sub_3736a(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_3736a, _state);}
+ bool sub_3736a(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_3736a, _state);return true;}
 
- bool sub_37470(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_37470, _state);}
+ bool sub_37470(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_37470, _state);return true;}
 
- bool sub_374de(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_374de, _state);}
+ bool sub_374de(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_374de, _state);return true;}
 
- bool sub_3771e(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_3771e, _state);}
+ bool sub_3771e(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_3771e, _state);return true;}
 
- bool sub_37868(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_37868, _state);}
+ bool sub_37868(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_37868, _state);return true;}
 
- bool sub_37c38(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_37c38, _state);}
+ bool sub_37c38(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_37c38, _state);return true;}
 
- bool sub_3803c(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_3803c, _state);}
+ bool sub_3803c(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_3803c, _state);return true;}
 
- bool sub_38156(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_38156, _state);}
+ bool sub_38156(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_38156, _state);return true;}
 
- bool sub_38178(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_38178, _state);}
+ bool sub_38178(m2c::_offsets, struct m2c::_STATE* _state){_group17(m2c::ksub_38178, _state);return true;}
 
- bool sub_3868a(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3868a, _state);}
+ bool sub_3868a(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3868a, _state);return true;}
 
- bool sub_386d6(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_386d6, _state);}
+ bool sub_386d6(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_386d6, _state);return true;}
 
- bool sub_38702(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38702, _state);}
+ bool sub_38702(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38702, _state);return true;}
 
- bool sub_38ac4(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38ac4, _state);}
+ bool sub_38ac4(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38ac4, _state);return true;}
 
- bool sub_38aea(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38aea, _state);}
+ bool sub_38aea(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38aea, _state);return true;}
 
- bool sub_38bea(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38bea, _state);}
+ bool sub_38bea(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38bea, _state);return true;}
 
- bool sub_38cf8(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38cf8, _state);}
+ bool sub_38cf8(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38cf8, _state);return true;}
 
- bool sub_38de6(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38de6, _state);}
+ bool sub_38de6(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_38de6, _state);return true;}
 
- bool sub_39050(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_39050, _state);}
+ bool sub_39050(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_39050, _state);return true;}
 
- bool sub_39088(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_39088, _state);}
+ bool sub_39088(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_39088, _state);return true;}
 
- bool sub_3945a(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3945a, _state);}
+ bool sub_3945a(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3945a, _state);return true;}
 
- bool sub_3963c(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3963c, _state);}
+ bool sub_3963c(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3963c, _state);return true;}
 
- bool sub_3968a(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3968a, _state);}
+ bool sub_3968a(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_3968a, _state);return true;}
 
- bool sub_39700(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_39700, _state);}
+ bool sub_39700(m2c::_offsets, struct m2c::_STATE* _state){_group18(m2c::ksub_39700, _state);return true;}
 
- bool sub_464cf(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_464cf, _state);}
+ bool sub_464cf(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_464cf, _state);return true;}
 
- bool sub_46986(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46986, _state);}
+ bool sub_46986(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46986, _state);return true;}
 
- bool sub_469b8(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_469b8, _state);}
+ bool sub_469b8(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_469b8, _state);return true;}
 
- bool sub_46a15(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46a15, _state);}
+ bool sub_46a15(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46a15, _state);return true;}
 
- bool sub_46a8b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46a8b, _state);}
+ bool sub_46a8b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46a8b, _state);return true;}
 
- bool sub_46ac1(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46ac1, _state);}
+ bool sub_46ac1(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46ac1, _state);return true;}
 
- bool sub_46ad7(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46ad7, _state);}
+ bool sub_46ad7(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46ad7, _state);return true;}
 
- bool sub_46aee(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46aee, _state);}
+ bool sub_46aee(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46aee, _state);return true;}
 
- bool sub_46b0e(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b0e, _state);}
+ bool sub_46b0e(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b0e, _state);return true;}
 
- bool sub_46b24(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b24, _state);}
+ bool sub_46b24(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b24, _state);return true;}
 
- bool sub_46b3b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b3b, _state);}
+ bool sub_46b3b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b3b, _state);return true;}
 
- bool sub_46b5b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b5b, _state);}
+ bool sub_46b5b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b5b, _state);return true;}
 
- bool sub_46b89(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b89, _state);}
+ bool sub_46b89(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46b89, _state);return true;}
 
- bool sub_46bb0(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46bb0, _state);}
+ bool sub_46bb0(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46bb0, _state);return true;}
 
- bool sub_46bc0(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46bc0, _state);}
+ bool sub_46bc0(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46bc0, _state);return true;}
 
- bool sub_46c57(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46c57, _state);}
+ bool sub_46c57(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46c57, _state);return true;}
 
- bool sub_46c95(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46c95, _state);}
+ bool sub_46c95(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46c95, _state);return true;}
 
- bool sub_46ca0(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46ca0, _state);}
+ bool sub_46ca0(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46ca0, _state);return true;}
 
- bool sub_46f7a(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46f7a, _state);}
+ bool sub_46f7a(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_46f7a, _state);return true;}
 
- bool sub_47017(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_47017, _state);}
+ bool sub_47017(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_47017, _state);return true;}
 
- bool sub_4707b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_4707b, _state);}
+ bool sub_4707b(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_4707b, _state);return true;}
 
- bool sub_47154(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_47154, _state);}
+ bool sub_47154(m2c::_offsets, struct m2c::_STATE* _state){_group25(m2c::ksub_47154, _state);return true;}
 
- bool subst_hillroad_track(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::ksubst_hillroad_track, _state);}
+ bool subst_hillroad_track(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::ksubst_hillroad_track, _state);return true;}
 
- bool timer_compare_dx(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_compare_dx, _state);}
+ bool timer_compare_dx(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_compare_dx, _state);return true;}
 
- bool timer_copy_counter(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_copy_counter, _state);}
+ bool timer_copy_counter(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_copy_counter, _state);return true;}
 
- bool timer_custom_delta(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_custom_delta, _state);}
+ bool timer_custom_delta(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_custom_delta, _state);return true;}
 
- bool timer_get_counter(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_get_counter, _state);}
+ bool timer_get_counter(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_get_counter, _state);return true;}
 
- bool timer_get_counter_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_get_counter_unk, _state);}
+ bool timer_get_counter_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_get_counter_unk, _state);return true;}
 
- bool timer_get_delta(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_get_delta, _state);}
+ bool timer_get_delta(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_get_delta, _state);return true;}
 
- bool timer_get_delta_alt(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ktimer_get_delta_alt, _state);}
+ bool timer_get_delta_alt(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::ktimer_get_delta_alt, _state);return true;}
 
- bool timer_intr_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_intr_callback, _state);}
+ bool timer_intr_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_intr_callback, _state);return true;}
 
- bool timer_reg_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_reg_callback, _state);}
+ bool timer_reg_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_reg_callback, _state);return true;}
 
- bool timer_remove_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_remove_callback, _state);}
+ bool timer_remove_callback(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_remove_callback, _state);return true;}
 
- bool timer_reset(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_reset, _state);}
+ bool timer_reset(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_reset, _state);return true;}
 
- bool timer_setup_interrupt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_setup_interrupt, _state);}
+ bool timer_setup_interrupt(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_setup_interrupt, _state);return true;}
 
- bool timer_wait_for_dx(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_wait_for_dx, _state);}
+ bool timer_wait_for_dx(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktimer_wait_for_dx, _state);return true;}
 
- bool track_setup(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::ktrack_setup, _state);}
+ bool track_setup(m2c::_offsets, struct m2c::_STATE* _state){_group5(m2c::ktrack_setup, _state);return true;}
 
- bool transformed_shape_add_for_sort(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::ktransformed_shape_add_for_sort, _state);}
+ bool transformed_shape_add_for_sort(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::ktransformed_shape_add_for_sort, _state);return true;}
 
- bool transformed_shape_op(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::ktransformed_shape_op, _state);}
+ bool transformed_shape_op(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::ktransformed_shape_op, _state);return true;}
 
- bool transformed_shape_op_helper(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::ktransformed_shape_op_helper, _state);}
+ bool transformed_shape_op_helper(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::ktransformed_shape_op_helper, _state);return true;}
 
- bool transformed_shape_op_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktransformed_shape_op_helper2, _state);}
+ bool transformed_shape_op_helper2(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::ktransformed_shape_op_helper2, _state);return true;}
 
- bool transformed_shape_op_helper3(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::ktransformed_shape_op_helper3, _state);}
+ bool transformed_shape_op_helper3(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::ktransformed_shape_op_helper3, _state);return true;}
 
- bool unknown_libname_1(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_1, _state);}
+ bool unknown_libname_1(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_1, _state);return true;}
 
- bool unknown_libname_2(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_2, _state);}
+ bool unknown_libname_2(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_2, _state);return true;}
 
- bool unknown_libname_3(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_3, _state);}
+ bool unknown_libname_3(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_3, _state);return true;}
 
- bool unknown_libname_4(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_4, _state);}
+ bool unknown_libname_4(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_4, _state);return true;}
 
- bool unknown_libname_5(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_5, _state);}
+ bool unknown_libname_5(m2c::_offsets, struct m2c::_STATE* _state){_group11(m2c::kunknown_libname_5, _state);return true;}
 
- bool unload_resource(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kunload_resource, _state);}
+ bool unload_resource(m2c::_offsets, struct m2c::_STATE* _state){_group9(m2c::kunload_resource, _state);return true;}
 
- bool unload_skybox(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kunload_skybox, _state);}
+ bool unload_skybox(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kunload_skybox, _state);return true;}
 
- bool upd_statef20_from_steer_input(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupd_statef20_from_steer_input, _state);}
+ bool upd_statef20_from_steer_input(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupd_statef20_from_steer_input, _state);return true;}
 
- bool update_car_speed(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_car_speed, _state);}
+ bool update_car_speed(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_car_speed, _state);return true;}
 
- bool update_crash_state(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_crash_state, _state);}
+ bool update_crash_state(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_crash_state, _state);return true;}
 
- bool update_frame(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kupdate_frame, _state);}
+ bool update_frame(m2c::_offsets, struct m2c::_STATE* _state){_group4(m2c::kupdate_frame, _state);return true;}
 
- bool update_gamestate(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_gamestate, _state);}
+ bool update_gamestate(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_gamestate, _state);return true;}
 
- bool update_grip(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_grip, _state);}
+ bool update_grip(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_grip, _state);return true;}
 
- bool update_player_state(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_player_state, _state);}
+ bool update_player_state(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kupdate_player_state, _state);return true;}
 
- bool update_rpm_from_speed(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kupdate_rpm_from_speed, _state);}
+ bool update_rpm_from_speed(m2c::_offsets, struct m2c::_STATE* _state){_group3(m2c::kupdate_rpm_from_speed, _state);return true;}
 
- bool vec_normalinnerproduct(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kvec_normalinnerproduct, _state);}
+ bool vec_normalinnerproduct(m2c::_offsets, struct m2c::_STATE* _state){_group2(m2c::kvec_normalinnerproduct, _state);return true;}
 
- bool vector_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvector_op_unk, _state);}
+ bool vector_op_unk(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvector_op_unk, _state);return true;}
 
- bool vector_op_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kvector_op_unk2, _state);}
+ bool vector_op_unk2(m2c::_offsets, struct m2c::_STATE* _state){_group7(m2c::kvector_op_unk2, _state);return true;}
 
- bool vector_to_point(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvector_to_point, _state);}
+ bool vector_to_point(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvector_to_point, _state);return true;}
 
- bool video_add_exithandler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_add_exithandler, _state);}
+ bool video_add_exithandler(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_add_exithandler, _state);return true;}
 
- bool video_clear_color(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_clear_color, _state);}
+ bool video_clear_color(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_clear_color, _state);return true;}
 
- bool video_get_status(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_get_status, _state);}
+ bool video_get_status(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_get_status, _state);return true;}
 
- bool video_on_exit(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_on_exit, _state);}
+ bool video_on_exit(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_on_exit, _state);return true;}
 
- bool video_set_mode4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_mode4, _state);}
+ bool video_set_mode4(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_mode4, _state);return true;}
 
- bool video_set_mode7(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_mode7, _state);}
+ bool video_set_mode7(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_mode7, _state);return true;}
 
- bool video_set_mode_13h(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_mode_13h, _state);}
+ bool video_set_mode_13h(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_mode_13h, _state);return true;}
 
- bool video_set_palette(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_palette, _state);}
+ bool video_set_palette(m2c::_offsets, struct m2c::_STATE* _state){_group12(m2c::kvideo_set_palette, _state);return true;}
 
 namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         
@@ -1334,7 +1334,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 
     __disp=__i;
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();if (from_callf) m2c::interpret_unknown_callf(cs,eip);return;}
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();if (from_callf) m2c::interpret_unknown_callf(cs,eip);return true;}
     switch (__i) {
         case m2c::kmainproc: 	mainproc(0, _state); break;
         case m2c::kret_2042_8: 	polarradius3d(__disp, _state); break;
@@ -5427,7 +5427,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_2e476: 	_group11(__disp, _state); break;
         case m2c::kloc_2e715: 	_group11(__disp, _state); break;
         case m2c::klocret_2ce89: 	_group11(__disp, _state); break;
-        case m2c::k_itoa: 	_group11(__disp, _state); break;
+        case m2c::k_itoa_: 	_group11(__disp, _state); break;
         case m2c::kloc_2e168: 	_group11(__disp, _state); break;
         case m2c::kputprefix: 	_group11(__disp, _state); break;
         case m2c::kloc_2d752: 	_group11(__disp, _state); break;
@@ -7896,14 +7896,14 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 #endif
 {
     {db tmp999[2]={144,144};MYCOPY(dummy0_20ba)} // 01a2:069a
-    {dw tmp999=m2c::kloc_13144;MYCOPY(jpt_13049)} // 01a2:314a
-    {dw tmp999=m2c::kloc_1304e;MYCOPY(dummy0_4b6c)} // 01a2:314a
-    {dw tmp999=m2c::kloc_130d2;MYCOPY(dummy0_4b6e)} // 01a2:314a
-    {dw tmp999=m2c::kloc_130da;MYCOPY(dummy0_4b70)} // 01a2:314a
-    {dw tmp999=m2c::kloc_130e2;MYCOPY(dummy0_4b72)} // 01a2:314a
-    {dw tmp999=m2c::kloc_13134;MYCOPY(dummy0_4b74)} // 01a2:314a
-    {dw tmp999=m2c::kloc_1313c;MYCOPY(dummy0_4b76)} // 01a2:314a
-    {dw tmp999=m2c::kloc_13144;MYCOPY(dummy0_4b78)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_13144;MYCOPY(jpt_13049)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_1304e;MYCOPY(dummy0_4b6c)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_130d2;MYCOPY(dummy0_4b6e)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_130da;MYCOPY(dummy0_4b70)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_130e2;MYCOPY(dummy0_4b72)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_13134;MYCOPY(dummy0_4b74)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_1313c;MYCOPY(dummy0_4b76)} // 01a2:314a
+    {dw tmp999=(dw)m2c::kloc_13144;MYCOPY(dummy0_4b78)} // 01a2:314a
     {db tmp999[2]={144,144};MYCOPY(dummy0_65c6)} // 0613:0496
     {db tmp999[3]={144,144,144};MYCOPY(dummy0_8a1b)} // 0613:28eb
     {db tmp999[2]={144,144};MYCOPY(dummy0_8d26)} // 0613:2bf6
@@ -7942,170 +7942,170 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999[3]={m2c::kcode_bto_gasstation,m2c::kcode_bto_joes,m2c::kcode_bto_office};MYCOPY(dummy0_111f4)} // 0fbc:15b0
     {dw tmp999[3]={m2c::kcode_bto_windmill,m2c::kcode_bto_ship,m2c::kcode_bto_blank};MYCOPY(dummy0_111fa)} // 0fbc:15b0
     {dw tmp999[3]={m2c::kcode_bto_blank,m2c::kcode_bto_blank,m2c::kcode_bto_blank};MYCOPY(dummy0_11200)} // 0fbc:15b0
-    {dw tmp999=m2c::kloc_1f82a;MYCOPY(jpt_1f825)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f832;MYCOPY(dummy0_112a0)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f84e;MYCOPY(dummy0_112a2)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f866;MYCOPY(dummy0_112a4)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f82a;MYCOPY(dummy0_112a6)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f832;MYCOPY(dummy0_112a8)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f84e;MYCOPY(dummy0_112aa)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f866;MYCOPY(dummy0_112ac)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f82a;MYCOPY(dummy0_112ae)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f832;MYCOPY(dummy0_112b0)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f84e;MYCOPY(dummy0_112b2)} // 0fbc:16de
-    {dw tmp999=m2c::kloc_1f866;MYCOPY(dummy0_112b4)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f82a;MYCOPY(jpt_1f825)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f832;MYCOPY(dummy0_112a0)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f84e;MYCOPY(dummy0_112a2)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f866;MYCOPY(dummy0_112a4)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f82a;MYCOPY(dummy0_112a6)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f832;MYCOPY(dummy0_112a8)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f84e;MYCOPY(dummy0_112aa)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f866;MYCOPY(dummy0_112ac)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f82a;MYCOPY(dummy0_112ae)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f832;MYCOPY(dummy0_112b0)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f84e;MYCOPY(dummy0_112b2)} // 0fbc:16de
+    {dw tmp999=(dw)m2c::kloc_1f866;MYCOPY(dummy0_112b4)} // 0fbc:16de
     {db tmp999[2]={144,144};MYCOPY(dummy0_112de)} // 0fbc:171e
     {db tmp999[3]={144,144,144};MYCOPY(dummy0_11c19)} // 0fbc:2059
     {db tmp999[2]={144,144};MYCOPY(dummy0_125ea)} // 0fbc:2a2a
-    {dw tmp999=m2c::kloc_21414;MYCOPY(jpt_2140f)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2143e;MYCOPY(dummy0_12e9e)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_21456;MYCOPY(dummy0_12ea0)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2142e;MYCOPY(dummy0_12ea2)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_21420;MYCOPY(dummy0_12ea4)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2142a;MYCOPY(dummy0_12ea6)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_21462;MYCOPY(dummy0_12ea8)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2146c;MYCOPY(dummy0_12eaa)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_21474;MYCOPY(dummy0_12eac)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2143a;MYCOPY(dummy0_12eae)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2144e;MYCOPY(dummy0_12eb0)} // 0fbc:32dc
-    {dw tmp999=m2c::kloc_2144a;MYCOPY(dummy0_12eb2)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_21414;MYCOPY(jpt_2140f)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2143e;MYCOPY(dummy0_12e9e)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_21456;MYCOPY(dummy0_12ea0)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2142e;MYCOPY(dummy0_12ea2)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_21420;MYCOPY(dummy0_12ea4)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2142a;MYCOPY(dummy0_12ea6)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_21462;MYCOPY(dummy0_12ea8)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2146c;MYCOPY(dummy0_12eaa)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_21474;MYCOPY(dummy0_12eac)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2143a;MYCOPY(dummy0_12eae)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2144e;MYCOPY(dummy0_12eb0)} // 0fbc:32dc
+    {dw tmp999=(dw)m2c::kloc_2144a;MYCOPY(dummy0_12eb2)} // 0fbc:32dc
     {db tmp999[2]={144,144};MYCOPY(dummy0_13376)} // 0fbc:37b6
     {db tmp999[2]={144,144};MYCOPY(dummy0_13516)} // 0fbc:3956
     {db tmp999[2]={144,144};MYCOPY(dummy0_1374a)} // 1359:01ba
     {db tmp999[2]={144,144};MYCOPY(dummy0_13e8e)} // 1359:08fe
     {db tmp999[2]={144,144};MYCOPY(dummy0_1405c)} // 1359:0acc
     {db tmp999[2]={144,144};MYCOPY(dummy0_14592)} // 1359:1002
-    {dw tmp999=m2c::kloc_24748;MYCOPY(jpt_24411)} // 1359:2caa
-    {dw tmp999=m2c::kloc_24416;MYCOPY(dummy0_1623c)} // 1359:2caa
-    {dw tmp999=m2c::kloc_2444c;MYCOPY(dummy0_1623e)} // 1359:2caa
-    {dw tmp999=m2c::kloc_2450a;MYCOPY(dummy0_16240)} // 1359:2caa
-    {dw tmp999=m2c::kloc_24630;MYCOPY(dummy0_16242)} // 1359:2caa
-    {dw tmp999=m2c::kloc_24776;MYCOPY(dummy0_16244)} // 1359:2caa
-    {dw tmp999=m2c::kloc_24760;MYCOPY(dummy0_16246)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_24748;MYCOPY(jpt_24411)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_24416;MYCOPY(dummy0_1623c)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_2444c;MYCOPY(dummy0_1623e)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_2450a;MYCOPY(dummy0_16240)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_24630;MYCOPY(dummy0_16242)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_24776;MYCOPY(dummy0_16244)} // 1359:2caa
+    {dw tmp999=(dw)m2c::kloc_24760;MYCOPY(dummy0_16246)} // 1359:2caa
     {db tmp999[2]={144,144};MYCOPY(dummy0_16476)} // 1359:2ee6
-    {dw tmp999=m2c::kloc_24830;MYCOPY(jpt_24340)} // 1359:31b0
-    {dw tmp999=m2c::kloc_24a28;MYCOPY(dummy0_16742)} // 1359:31b0
-    {dw tmp999=m2c::kloc_24d04;MYCOPY(dummy0_16744)} // 1359:31b0
-    {dw tmp999=m2c::kloc_24c5a;MYCOPY(dummy0_16746)} // 1359:31b0
-    {dw tmp999=m2c::kloc_24c74;MYCOPY(dummy0_16748)} // 1359:31b0
-    {dw tmp999=m2c::kloc_24ca6;MYCOPY(dummy0_1674a)} // 1359:31b0
-    {dw tmp999=m2c::kloc_24346;MYCOPY(dummy0_1674c)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24830;MYCOPY(jpt_24340)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24a28;MYCOPY(dummy0_16742)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24d04;MYCOPY(dummy0_16744)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24c5a;MYCOPY(dummy0_16746)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24c74;MYCOPY(dummy0_16748)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24ca6;MYCOPY(dummy0_1674a)} // 1359:31b0
+    {dw tmp999=(dw)m2c::kloc_24346;MYCOPY(dummy0_1674c)} // 1359:31b0
     {db tmp999[2]={144,144};MYCOPY(dummy0_17a02)} // 1678:1282
-    {dw tmp999=m2c::kloc_262a4;MYCOPY(dummy0_17d82)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_262a4;MYCOPY(dummy0_17d82)} // 1678:1602
     {dw tmp999=m2c::kdef_26292;MYCOPY(dummy0_17d84)} // 1678:1602
-    {dw tmp999=m2c::kloc_26333;MYCOPY(dummy0_17d86)} // 1678:1602
-    {dw tmp999=m2c::kloc_262aa;MYCOPY(dummy0_17d88)} // 1678:1602
-    {dw tmp999=m2c::kloc_2635d;MYCOPY(dummy0_17d8a)} // 1678:1602
-    {dw tmp999=m2c::kloc_262d4;MYCOPY(dummy0_17d8c)} // 1678:1602
-    {dw tmp999=m2c::kloc_262ee;MYCOPY(dummy0_17d8e)} // 1678:1602
-    {dw tmp999=m2c::kloc_26308;MYCOPY(dummy0_17d90)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_26333;MYCOPY(dummy0_17d86)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_262aa;MYCOPY(dummy0_17d88)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_2635d;MYCOPY(dummy0_17d8a)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_262d4;MYCOPY(dummy0_17d8c)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_262ee;MYCOPY(dummy0_17d8e)} // 1678:1602
+    {dw tmp999=(dw)m2c::kloc_26308;MYCOPY(dummy0_17d90)} // 1678:1602
     {db tmp999[2]={144,144};MYCOPY(dummy0_19644)} // 18ed:0774
     {db tmp999[2]={144,144};MYCOPY(dummy0_19e20)} // 18ed:0f50
     {db tmp999[2]={144,144};MYCOPY(dummy0_1a252)} // 18ed:1382
-    {dw tmp999=m2c::kloc_299e4;MYCOPY(jpt_299de)} // 18ed:259e
-    {dw tmp999=m2c::kloc_299f8;MYCOPY(dummy0_1b470)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a12;MYCOPY(dummy0_1b472)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a1c;MYCOPY(dummy0_1b474)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a26;MYCOPY(dummy0_1b476)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a30;MYCOPY(dummy0_1b478)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a3a;MYCOPY(dummy0_1b47a)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a08;MYCOPY(dummy0_1b47c)} // 18ed:259e
-    {dw tmp999=m2c::kloc_29a44;MYCOPY(dummy0_1b47e)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_299e4;MYCOPY(jpt_299de)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_299f8;MYCOPY(dummy0_1b470)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a12;MYCOPY(dummy0_1b472)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a1c;MYCOPY(dummy0_1b474)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a26;MYCOPY(dummy0_1b476)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a30;MYCOPY(dummy0_1b478)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a3a;MYCOPY(dummy0_1b47a)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a08;MYCOPY(dummy0_1b47c)} // 18ed:259e
+    {dw tmp999=(dw)m2c::kloc_29a44;MYCOPY(dummy0_1b47e)} // 18ed:259e
     {db tmp999[2]={144,144};MYCOPY(dummy0_1b6c6)} // 18ed:27f6
     {db tmp999[2]={144,144};MYCOPY(dummy0_1d76c)} // 1bcd:1a9c
     {db tmp999[3]={144,144,144};MYCOPY(dummy0_1e3ad)} // 1bcd:26dd
     {db tmp999[16]={0};MYCOPY(dummy0_1e672)} // 1e67:0002
     {db tmp999=144;MYCOPY(dummy0_1ebf6)} // 1e67:0586
-    {dw tmp999=m2c::kloc_2d83e;MYCOPY(jpt_2d739)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d756;MYCOPY(dummy0_1f2b8)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d844;MYCOPY(dummy0_1f2ba)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d844;MYCOPY(dummy0_1f2bc)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d844;MYCOPY(dummy0_1f2be)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d83e;MYCOPY(jpt_2d739)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d756;MYCOPY(dummy0_1f2b8)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d844;MYCOPY(dummy0_1f2ba)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d844;MYCOPY(dummy0_1f2bc)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d844;MYCOPY(dummy0_1f2be)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2c0)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d756;MYCOPY(dummy0_1f2c2)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d756;MYCOPY(dummy0_1f2c2)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2c4)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2c6)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2c8)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2ca)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d73e;MYCOPY(dummy0_1f2cc)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d76a;MYCOPY(dummy0_1f2ce)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d770;MYCOPY(dummy0_1f2d0)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d73e;MYCOPY(dummy0_1f2cc)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d76a;MYCOPY(dummy0_1f2ce)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d770;MYCOPY(dummy0_1f2d0)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2d2)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2d4)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d834;MYCOPY(dummy0_1f2d6)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d834;MYCOPY(dummy0_1f2d6)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2d8)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d752;MYCOPY(dummy0_1f2da)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2d752;MYCOPY(dummy0_1f2da)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2dc)} // 1e67:0c46
     {dw tmp999=m2c::kdef_2d739;MYCOPY(dummy0_1f2de)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2d82e;MYCOPY(dummy0_1f2e0)} // 1e67:0c46
-    {dw tmp999=m2c::kloc_2e635;MYCOPY(jpt_2e5ed)} // 1e67:194e
-    {dw tmp999=m2c::kloc_2e626;MYCOPY(dummy0_1ffc0)} // 1e67:194e
-    {dw tmp999=m2c::kloc_2e61e;MYCOPY(dummy0_1ffc2)} // 1e67:194e
-    {dw tmp999=m2c::kloc_2e626;MYCOPY(dummy0_1ffc4)} // 1e67:194e
-    {dw tmp999=m2c::kloc_2e626;MYCOPY(dummy0_1ffc6)} // 1e67:194e
-    {dw tmp999=m2c::kloc_2e626;MYCOPY(dummy0_1ffc8)} // 1e67:194e
+    {dw tmp999=(dw)m2c::kloc_2d82e;MYCOPY(dummy0_1f2e0)} // 1e67:0c46
+    {dw tmp999=(dw)m2c::kloc_2e635;MYCOPY(jpt_2e5ed)} // 1e67:194e
+    {dw tmp999=(dw)m2c::kloc_2e626;MYCOPY(dummy0_1ffc0)} // 1e67:194e
+    {dw tmp999=(dw)m2c::kloc_2e61e;MYCOPY(dummy0_1ffc2)} // 1e67:194e
+    {dw tmp999=(dw)m2c::kloc_2e626;MYCOPY(dummy0_1ffc4)} // 1e67:194e
+    {dw tmp999=(dw)m2c::kloc_2e626;MYCOPY(dummy0_1ffc6)} // 1e67:194e
+    {dw tmp999=(dw)m2c::kloc_2e626;MYCOPY(dummy0_1ffc8)} // 1e67:194e
     {db tmp999=144;MYCOPY(dummy0_20054)} // 1e67:19e4
     {db tmp999[6]={2,4,8,11,15,22};MYCOPY(dummy0_20096)} // 1e67:1a26
     {db tmp999=144;MYCOPY(dummy0_20154)} // 1e67:1ae4
-    {dw tmp999=m2c::kloc_2eab0;MYCOPY(off_2ea9b)} // 2044:007b
-    {dw tmp999=m2c::kloc_2eaab;MYCOPY(dummy0_204bd)} // 2044:007d
-    {dw tmp999=m2c::kloc_2eab8;MYCOPY(dummy0_204bf)} // 2044:007f
-    {dw tmp999=m2c::kloc_2eab3;MYCOPY(dummy0_204c1)} // 2044:0081
-    {dw tmp999=m2c::kloc_2eabf;MYCOPY(dummy0_204c3)} // 2044:0083
-    {dw tmp999=m2c::kloc_2eac3;MYCOPY(dummy0_204c5)} // 2044:0085
-    {dw tmp999=m2c::kloc_2eacf;MYCOPY(dummy0_204c7)} // 2044:0087
-    {dw tmp999=m2c::kloc_2eac8;MYCOPY(dummy0_204c9)} // 2044:0089
+    {dw tmp999=(dw)m2c::kloc_2eab0;MYCOPY(off_2ea9b)} // 2044:007b
+    {dw tmp999=(dw)m2c::kloc_2eaab;MYCOPY(dummy0_204bd)} // 2044:007d
+    {dw tmp999=(dw)m2c::kloc_2eab8;MYCOPY(dummy0_204bf)} // 2044:007f
+    {dw tmp999=(dw)m2c::kloc_2eab3;MYCOPY(dummy0_204c1)} // 2044:0081
+    {dw tmp999=(dw)m2c::kloc_2eabf;MYCOPY(dummy0_204c3)} // 2044:0083
+    {dw tmp999=(dw)m2c::kloc_2eac3;MYCOPY(dummy0_204c5)} // 2044:0085
+    {dw tmp999=(dw)m2c::kloc_2eacf;MYCOPY(dummy0_204c7)} // 2044:0087
+    {dw tmp999=(dw)m2c::kloc_2eac8;MYCOPY(dummy0_204c9)} // 2044:0089
     {db tmp999=144;MYCOPY(dummy0_20660)} // 2044:0220
     {db tmp999=144;MYCOPY(dummy0_20688)} // 2044:0248
     {db tmp999=144;MYCOPY(dummy0_206ae)} // 2044:026e
-    {dw tmp999=m2c::kloc_2ecd9;MYCOPY(jpt_2ecb4)} // 2044:0299
-    {dw tmp999=m2c::kloc_2f01f;MYCOPY(dummy0_206db)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ee78;MYCOPY(dummy0_206dd)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ee78;MYCOPY(dummy0_206df)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206e1)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206e3)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206e5)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206e7)} // 2044:0299
-    {dw tmp999=m2c::kloc_2eda5;MYCOPY(dummy0_206e9)} // 2044:0299
-    {dw tmp999=m2c::kloc_2eda5;MYCOPY(dummy0_206eb)} // 2044:0299
-    {dw tmp999=m2c::kloc_2eda5;MYCOPY(dummy0_206ed)} // 2044:0299
-    {dw tmp999=m2c::kloc_2eda5;MYCOPY(dummy0_206ef)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206f1)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206f3)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206f5)} // 2044:0299
-    {dw tmp999=m2c::kloc_2ece1;MYCOPY(dummy0_206f7)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ecd9;MYCOPY(jpt_2ecb4)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2f01f;MYCOPY(dummy0_206db)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ee78;MYCOPY(dummy0_206dd)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ee78;MYCOPY(dummy0_206df)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206e1)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206e3)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206e5)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206e7)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2eda5;MYCOPY(dummy0_206e9)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2eda5;MYCOPY(dummy0_206eb)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2eda5;MYCOPY(dummy0_206ed)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2eda5;MYCOPY(dummy0_206ef)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206f1)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206f3)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206f5)} // 2044:0299
+    {dw tmp999=(dw)m2c::kloc_2ece1;MYCOPY(dummy0_206f7)} // 2044:0299
     {dw tmp999=0;MYCOPY(word_2ecf8)} // 2044:02d8
-    {dw tmp999=m2c::kloc_2ed0a;MYCOPY(dummy0_2071c)} // 2044:02dc
-    {dw tmp999=m2c::kloc_2ed10;MYCOPY(dummy0_2071e)} // 2044:02de
-    {dw tmp999=m2c::kloc_2ed19;MYCOPY(dummy0_20720)} // 2044:02e0
-    {dw tmp999=m2c::kloc_2ed22;MYCOPY(dummy0_20722)} // 2044:02e2
-    {dw tmp999=m2c::kloc_2ed32;MYCOPY(dummy0_20724)} // 2044:02e4
-    {dw tmp999=m2c::kloc_2ed42;MYCOPY(dummy0_20726)} // 2044:02e6
-    {dw tmp999=m2c::kloc_2ed7e;MYCOPY(dummy0_20728)} // 2044:02e8
+    {dw tmp999=(dw)m2c::kloc_2ed0a;MYCOPY(dummy0_2071c)} // 2044:02dc
+    {dw tmp999=(dw)m2c::kloc_2ed10;MYCOPY(dummy0_2071e)} // 2044:02de
+    {dw tmp999=(dw)m2c::kloc_2ed19;MYCOPY(dummy0_20720)} // 2044:02e0
+    {dw tmp999=(dw)m2c::kloc_2ed22;MYCOPY(dummy0_20722)} // 2044:02e2
+    {dw tmp999=(dw)m2c::kloc_2ed32;MYCOPY(dummy0_20724)} // 2044:02e4
+    {dw tmp999=(dw)m2c::kloc_2ed42;MYCOPY(dummy0_20726)} // 2044:02e6
+    {dw tmp999=(dw)m2c::kloc_2ed7e;MYCOPY(dummy0_20728)} // 2044:02e8
     {dw tmp999=0;MYCOPY(word_2edbd)} // 2044:039d
-    {dw tmp999=m2c::kloc_2edcf;MYCOPY(dummy0_207e1)} // 2044:03a1
-    {dw tmp999=m2c::kloc_2edd5;MYCOPY(dummy0_207e3)} // 2044:03a3
-    {dw tmp999=m2c::kloc_2edde;MYCOPY(dummy0_207e5)} // 2044:03a5
-    {dw tmp999=m2c::kloc_2ede7;MYCOPY(dummy0_207e7)} // 2044:03a7
-    {dw tmp999=m2c::kloc_2ee0b;MYCOPY(dummy0_207e9)} // 2044:03a9
-    {dw tmp999=m2c::kloc_2ee2a;MYCOPY(dummy0_207eb)} // 2044:03ab
-    {dw tmp999=m2c::kloc_2ee53;MYCOPY(dummy0_207ed)} // 2044:03ad
+    {dw tmp999=(dw)m2c::kloc_2edcf;MYCOPY(dummy0_207e1)} // 2044:03a1
+    {dw tmp999=(dw)m2c::kloc_2edd5;MYCOPY(dummy0_207e3)} // 2044:03a3
+    {dw tmp999=(dw)m2c::kloc_2edde;MYCOPY(dummy0_207e5)} // 2044:03a5
+    {dw tmp999=(dw)m2c::kloc_2ede7;MYCOPY(dummy0_207e7)} // 2044:03a7
+    {dw tmp999=(dw)m2c::kloc_2ee0b;MYCOPY(dummy0_207e9)} // 2044:03a9
+    {dw tmp999=(dw)m2c::kloc_2ee2a;MYCOPY(dummy0_207eb)} // 2044:03ab
+    {dw tmp999=(dw)m2c::kloc_2ee53;MYCOPY(dummy0_207ed)} // 2044:03ad
     {dw tmp999=0;MYCOPY(word_2ee82)} // 2044:0462
-    {dw tmp999=m2c::kloc_2ef98;MYCOPY(dummy0_208a6)} // 2044:0466
-    {dw tmp999=m2c::kloc_2ee94;MYCOPY(dummy0_208a8)} // 2044:0468
-    {dw tmp999=m2c::kloc_2eead;MYCOPY(dummy0_208aa)} // 2044:046a
-    {dw tmp999=m2c::kloc_2eec6;MYCOPY(dummy0_208ac)} // 2044:046c
-    {dw tmp999=m2c::kloc_2eefe;MYCOPY(dummy0_208ae)} // 2044:046e
-    {dw tmp999=m2c::kloc_2ef31;MYCOPY(dummy0_208b0)} // 2044:0470
-    {dw tmp999=m2c::kloc_2ef61;MYCOPY(dummy0_208b2)} // 2044:0472
+    {dw tmp999=(dw)m2c::kloc_2ef98;MYCOPY(dummy0_208a6)} // 2044:0466
+    {dw tmp999=(dw)m2c::kloc_2ee94;MYCOPY(dummy0_208a8)} // 2044:0468
+    {dw tmp999=(dw)m2c::kloc_2eead;MYCOPY(dummy0_208aa)} // 2044:046a
+    {dw tmp999=(dw)m2c::kloc_2eec6;MYCOPY(dummy0_208ac)} // 2044:046c
+    {dw tmp999=(dw)m2c::kloc_2eefe;MYCOPY(dummy0_208ae)} // 2044:046e
+    {dw tmp999=(dw)m2c::kloc_2ef31;MYCOPY(dummy0_208b0)} // 2044:0470
+    {dw tmp999=(dw)m2c::kloc_2ef61;MYCOPY(dummy0_208b2)} // 2044:0472
     {dw tmp999=0;MYCOPY(word_2f02b)} // 2044:060b
-    {dw tmp999=m2c::kloc_2f03d;MYCOPY(dummy0_20a4f)} // 2044:060f
-    {dw tmp999=m2c::kloc_2f043;MYCOPY(dummy0_20a51)} // 2044:0611
-    {dw tmp999=m2c::kloc_2f05c;MYCOPY(dummy0_20a53)} // 2044:0613
-    {dw tmp999=m2c::kloc_2f076;MYCOPY(dummy0_20a55)} // 2044:0615
-    {dw tmp999=m2c::kloc_2f0a3;MYCOPY(dummy0_20a57)} // 2044:0617
-    {dw tmp999=m2c::kloc_2f0d7;MYCOPY(dummy0_20a59)} // 2044:0619
-    {dw tmp999=m2c::kloc_2f110;MYCOPY(dummy0_20a5b)} // 2044:061b
+    {dw tmp999=(dw)m2c::kloc_2f03d;MYCOPY(dummy0_20a4f)} // 2044:060f
+    {dw tmp999=(dw)m2c::kloc_2f043;MYCOPY(dummy0_20a51)} // 2044:0611
+    {dw tmp999=(dw)m2c::kloc_2f05c;MYCOPY(dummy0_20a53)} // 2044:0613
+    {dw tmp999=(dw)m2c::kloc_2f076;MYCOPY(dummy0_20a55)} // 2044:0615
+    {dw tmp999=(dw)m2c::kloc_2f0a3;MYCOPY(dummy0_20a57)} // 2044:0617
+    {dw tmp999=(dw)m2c::kloc_2f0d7;MYCOPY(dummy0_20a59)} // 2044:0619
+    {dw tmp999=(dw)m2c::kloc_2f110;MYCOPY(dummy0_20a5b)} // 2044:061b
     {dw tmp999=0;MYCOPY(word_2f354)} // 2044:0934
     {dw tmp999=0;MYCOPY(word_2f356)} // 2044:0936
     {dw tmp999=0;MYCOPY(word_2f358)} // 2044:0938
@@ -8933,33 +8933,33 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=144;MYCOPY(dummy0_22dba)} // 2044:297a
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(jpt_31a7d)} // 2044:3062
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(dummy0_234a4)} // 2044:3062
-    {dw tmp999=m2c::kloc_31a96;MYCOPY(dummy0_234a6)} // 2044:3062
-    {dw tmp999=m2c::kloc_31aa4;MYCOPY(dummy0_234a8)} // 2044:3062
-    {dw tmp999=m2c::kloc_31ab3;MYCOPY(dummy0_234aa)} // 2044:3062
-    {dw tmp999=m2c::kloc_31ac2;MYCOPY(dummy0_234ac)} // 2044:3062
-    {dw tmp999=m2c::kloc_31ae1;MYCOPY(dummy0_234ae)} // 2044:3062
-    {dw tmp999=m2c::kloc_31b00;MYCOPY(dummy0_234b0)} // 2044:3062
-    {dw tmp999=m2c::kloc_31b2c;MYCOPY(dummy0_234b2)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31a96;MYCOPY(dummy0_234a6)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31aa4;MYCOPY(dummy0_234a8)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31ab3;MYCOPY(dummy0_234aa)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31ac2;MYCOPY(dummy0_234ac)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31ae1;MYCOPY(dummy0_234ae)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31b00;MYCOPY(dummy0_234b0)} // 2044:3062
+    {dw tmp999=(dw)m2c::kloc_31b2c;MYCOPY(dummy0_234b2)} // 2044:3062
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(dummy0_234b4)} // 2044:3062
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(jpt_31b7f)} // 2044:3164
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(dummy0_235a6)} // 2044:3164
-    {dw tmp999=m2c::kloc_31b98;MYCOPY(dummy0_235a8)} // 2044:3164
-    {dw tmp999=m2c::kloc_31bb7;MYCOPY(dummy0_235aa)} // 2044:3164
-    {dw tmp999=m2c::kloc_31bdb;MYCOPY(dummy0_235ac)} // 2044:3164
-    {dw tmp999=m2c::kloc_31bff;MYCOPY(dummy0_235ae)} // 2044:3164
-    {dw tmp999=m2c::kloc_31c37;MYCOPY(dummy0_235b0)} // 2044:3164
-    {dw tmp999=m2c::kloc_31c6f;MYCOPY(dummy0_235b2)} // 2044:3164
-    {dw tmp999=m2c::kloc_31cb1;MYCOPY(dummy0_235b4)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31b98;MYCOPY(dummy0_235a8)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31bb7;MYCOPY(dummy0_235aa)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31bdb;MYCOPY(dummy0_235ac)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31bff;MYCOPY(dummy0_235ae)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31c37;MYCOPY(dummy0_235b0)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31c6f;MYCOPY(dummy0_235b2)} // 2044:3164
+    {dw tmp999=(dw)m2c::kloc_31cb1;MYCOPY(dummy0_235b4)} // 2044:3164
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(dummy0_235b6)} // 2044:3164
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(jpt_31b7a)} // 2044:32d7
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(dummy0_23719)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31d0b;MYCOPY(dummy0_2371b)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31d31;MYCOPY(dummy0_2371d)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31d5c;MYCOPY(dummy0_2371f)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31d87;MYCOPY(dummy0_23721)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31dca;MYCOPY(dummy0_23723)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31e0d;MYCOPY(dummy0_23725)} // 2044:32d7
-    {dw tmp999=m2c::kloc_31e61;MYCOPY(dummy0_23727)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31d0b;MYCOPY(dummy0_2371b)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31d31;MYCOPY(dummy0_2371d)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31d5c;MYCOPY(dummy0_2371f)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31d87;MYCOPY(dummy0_23721)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31dca;MYCOPY(dummy0_23723)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31e0d;MYCOPY(dummy0_23725)} // 2044:32d7
+    {dw tmp999=(dw)m2c::kloc_31e61;MYCOPY(dummy0_23727)} // 2044:32d7
     {dw tmp999=m2c::klocret_31aa3;MYCOPY(dummy0_23729)} // 2044:32d7
     {db tmp999=144;MYCOPY(dummy0_2386c)} // 2044:342c
     {db tmp999=144;MYCOPY(dummy0_23880)} // 2044:3440
@@ -8972,10 +8972,10 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999=144;MYCOPY(dummy0_23e2e)} // 2044:39ee
     {db tmp999=144;MYCOPY(dummy0_23e50)} // 2044:3a10
     {db tmp999=144;MYCOPY(dummy0_23f2a)} // 2044:3aea
-    {dw tmp999=m2c::kloc_326fa;MYCOPY(jpt_326ed)} // 2044:3cd2
-    {dw tmp999=m2c::kloc_32704;MYCOPY(dummy0_24114)} // 2044:3cd2
-    {dw tmp999=m2c::kloc_32711;MYCOPY(dummy0_24116)} // 2044:3cd2
-    {dw tmp999=m2c::kloc_3271d;MYCOPY(dummy0_24118)} // 2044:3cd2
+    {dw tmp999=(dw)m2c::kloc_326fa;MYCOPY(jpt_326ed)} // 2044:3cd2
+    {dw tmp999=(dw)m2c::kloc_32704;MYCOPY(dummy0_24114)} // 2044:3cd2
+    {dw tmp999=(dw)m2c::kloc_32711;MYCOPY(dummy0_24116)} // 2044:3cd2
+    {dw tmp999=(dw)m2c::kloc_3271d;MYCOPY(dummy0_24118)} // 2044:3cd2
     {db tmp999=144;MYCOPY(dummy0_24262)} // 2044:3e22
     {dw tmp999=m2c::kfliptype0;MYCOPY(fliphandlers)} // 2044:40bc
     {dw tmp999=m2c::kfliptype1;MYCOPY(dummy0_244fe)} // 2044:40bc
@@ -8984,16 +8984,16 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {db tmp999[318]={0};MYCOPY(byte_32c3e)} // 2044:421e
     {db tmp999=144;MYCOPY(dummy0_2489e)} // 2044:445e
     {db tmp999=144;MYCOPY(dummy0_24bcc)} // 2044:478c
-    {dw tmp999=m2c::kloc_3341e;MYCOPY(jpt_33405)} // 2044:49ea
-    {dw tmp999=m2c::kloc_3341e;MYCOPY(dummy0_24e2c)} // 2044:49ea
-    {dw tmp999=m2c::kloc_33458;MYCOPY(dummy0_24e2e)} // 2044:49ea
-    {dw tmp999=m2c::kloc_3347c;MYCOPY(dummy0_24e30)} // 2044:49ea
-    {dw tmp999=m2c::kloc_334a1;MYCOPY(dummy0_24e32)} // 2044:49ea
-    {dw tmp999=m2c::kloc_334c6;MYCOPY(dummy0_24e34)} // 2044:49ea
-    {dw tmp999=m2c::kloc_334f3;MYCOPY(dummy0_24e36)} // 2044:49ea
-    {dw tmp999=m2c::kloc_33520;MYCOPY(dummy0_24e38)} // 2044:49ea
-    {dw tmp999=m2c::kloc_3354c;MYCOPY(dummy0_24e3a)} // 2044:49ea
-    {dw tmp999=m2c::kloc_3343c;MYCOPY(dummy0_24e3c)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_3341e;MYCOPY(jpt_33405)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_3341e;MYCOPY(dummy0_24e2c)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_33458;MYCOPY(dummy0_24e2e)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_3347c;MYCOPY(dummy0_24e30)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_334a1;MYCOPY(dummy0_24e32)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_334c6;MYCOPY(dummy0_24e34)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_334f3;MYCOPY(dummy0_24e36)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_33520;MYCOPY(dummy0_24e38)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_3354c;MYCOPY(dummy0_24e3a)} // 2044:49ea
+    {dw tmp999=(dw)m2c::kloc_3343c;MYCOPY(dummy0_24e3c)} // 2044:49ea
     {db tmp999=144;MYCOPY(dummy0_24fee)} // 2044:4bae
     {db tmp999=11;MYCOPY(byte_33646)} // 2044:4c26
     {db tmp999[11]={5,8,2,10,4,7,1,9,3,6,0};MYCOPY(dummy0_25067)} // 2044:4c27
@@ -9115,61 +9115,61 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
     {dw tmp999=m2c::k_trkdata_case14_15;MYCOPY(dummy0_29dde)} // 28af:12d0
     {dw tmp999=m2c::k_trkdata_case3__5_7__9_11_16_17;MYCOPY(dummy0_29de0)} // 28af:12d0
     {dw tmp999=m2c::k_trkdata_case3__5_7__9_11_16_17;MYCOPY(dummy0_29de2)} // 28af:12d0
-    {dw tmp999=m2c::kloc_3878c;MYCOPY(jpt_38787)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38844;MYCOPY(dummy0_2a440)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38886;MYCOPY(dummy0_2a442)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_388a2;MYCOPY(dummy0_2a444)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38936;MYCOPY(dummy0_2a446)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38952;MYCOPY(dummy0_2a448)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38962;MYCOPY(dummy0_2a44a)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_3897a;MYCOPY(dummy0_2a44c)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38986;MYCOPY(dummy0_2a44e)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38992;MYCOPY(dummy0_2a450)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_389c0;MYCOPY(dummy0_2a452)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_389f8;MYCOPY(dummy0_2a454)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38a10;MYCOPY(dummy0_2a456)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_3881c;MYCOPY(dummy0_2a458)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_3878c;MYCOPY(jpt_38787)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38844;MYCOPY(dummy0_2a440)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38886;MYCOPY(dummy0_2a442)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_388a2;MYCOPY(dummy0_2a444)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38936;MYCOPY(dummy0_2a446)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38952;MYCOPY(dummy0_2a448)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38962;MYCOPY(dummy0_2a44a)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_3897a;MYCOPY(dummy0_2a44c)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38986;MYCOPY(dummy0_2a44e)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38992;MYCOPY(dummy0_2a450)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_389c0;MYCOPY(dummy0_2a452)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_389f8;MYCOPY(dummy0_2a454)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38a10;MYCOPY(dummy0_2a456)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_3881c;MYCOPY(dummy0_2a458)} // 2a05:03ee
     {dw tmp999=m2c::kdef_38787;MYCOPY(dummy0_2a45a)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_387ea;MYCOPY(dummy0_2a45c)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38a04;MYCOPY(dummy0_2a45e)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_3880e;MYCOPY(dummy0_2a460)} // 2a05:03ee
-    {dw tmp999=m2c::kloc_38e32;MYCOPY(jpt_38e2d)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_387ea;MYCOPY(dummy0_2a45c)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38a04;MYCOPY(dummy0_2a45e)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_3880e;MYCOPY(dummy0_2a460)} // 2a05:03ee
+    {dw tmp999=(dw)m2c::kloc_38e32;MYCOPY(jpt_38e2d)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8a0)} // 2a05:084e
-    {dw tmp999=m2c::kloc_38e42;MYCOPY(dummy0_2a8a2)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_38e42;MYCOPY(dummy0_2a8a2)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8a4)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8a6)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8a8)} // 2a05:084e
-    {dw tmp999=m2c::kloc_38e60;MYCOPY(dummy0_2a8aa)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_38e60;MYCOPY(dummy0_2a8aa)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8ac)} // 2a05:084e
-    {dw tmp999=m2c::kloc_38e6a;MYCOPY(dummy0_2a8ae)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_38e6a;MYCOPY(dummy0_2a8ae)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8b0)} // 2a05:084e
-    {dw tmp999=m2c::kloc_38e6a;MYCOPY(dummy0_2a8b2)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_38e6a;MYCOPY(dummy0_2a8b2)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8b4)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8b6)} // 2a05:084e
-    {dw tmp999=m2c::kloc_38e4c;MYCOPY(dummy0_2a8b8)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_38e4c;MYCOPY(dummy0_2a8b8)} // 2a05:084e
     {dw tmp999=m2c::kdef_38e2d;MYCOPY(dummy0_2a8ba)} // 2a05:084e
-    {dw tmp999=m2c::kloc_38e56;MYCOPY(dummy0_2a8bc)} // 2a05:084e
+    {dw tmp999=(dw)m2c::kloc_38e56;MYCOPY(dummy0_2a8bc)} // 2a05:084e
     {db tmp999[2]={131,126};MYCOPY(byte_3930e)} // 2a05:0cde
     {db tmp999=240;MYCOPY(byte_39310)} // 2a05:0ce0
     {db tmp999[2]={144,144};MYCOPY(dummy0_2ada4)} // 2a05:0d54
     {dw tmp999=m2c::kdef_394d5;MYCOPY(jpt_394d5)} // 2a05:0f78
     {dw tmp999=m2c::kdef_394d5;MYCOPY(dummy0_2afca)} // 2a05:0f78
     {dw tmp999=m2c::kdef_394d5;MYCOPY(dummy0_2afcc)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afce)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afd0)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afd2)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39566;MYCOPY(dummy0_2afd4)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afd6)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afd8)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afda)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afce)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afd0)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afd2)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39566;MYCOPY(dummy0_2afd4)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afd6)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afd8)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afda)} // 2a05:0f78
     {dw tmp999=m2c::kdef_394d5;MYCOPY(dummy0_2afdc)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afde)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_3958a;MYCOPY(dummy0_2afe0)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_3952a;MYCOPY(dummy0_2afe2)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39518;MYCOPY(dummy0_2afe4)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_394da;MYCOPY(dummy0_2afe6)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afe8)} // 2a05:0f78
-    {dw tmp999=m2c::kloc_39554;MYCOPY(dummy0_2afea)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afde)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_3958a;MYCOPY(dummy0_2afe0)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_3952a;MYCOPY(dummy0_2afe2)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39518;MYCOPY(dummy0_2afe4)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_394da;MYCOPY(dummy0_2afe6)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afe8)} // 2a05:0f78
+    {dw tmp999=(dw)m2c::kloc_39554;MYCOPY(dummy0_2afea)} // 2a05:0f78
     {db tmp999[2]={144,144};MYCOPY(dummy0_2b23c)} // 2a05:11ec
     {db tmp999[3]={144,0,0};MYCOPY(dummy0_2b4f1)} // 2b4f:0001
     {db tmp999[2]={144,144};MYCOPY(dummy0_2b534)} // 2b4f:0044
