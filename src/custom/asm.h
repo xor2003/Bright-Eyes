@@ -666,7 +666,7 @@ inline void SHR_(D& a, const S& b, m2c::eflags& m2cflags)
 	if (b) {AFFECT_CF((a>>(b-1))&1);
 		static const D highestbitset = (1<<( m2c::bitsizeof(a)-1));
                 D res=a>>b;
-		AFFECT_OF((b&0x1f)==1? a>highestbitset : false);
+		AFFECT_OF((b&0x1f)==1? (a&highestbitset)!=0 : false);
 		AFFECT_ZFifz(res);
 		AFFECT_SF_(res,res);
 //log_debug("SHR a=%x b=%x h=%x res=%x OF=%d\n",a,b,highestbitset,res,GET_OF());
@@ -1076,9 +1076,9 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 
 
 // #num_args _ #bytes
-#define IMUL1_1(a) {ax=((int8_t)al)*((int8_t)(a)); AFFECT_OF(AFFECT_CF((ax & 0xff80)!=0xff80&&(ax & 0xff80)!=0));}
-#define IMUL1_2(a) {int32_t averytemporary=(int32_t)((int16_t)ax)*((int16_t)(a));ax=averytemporary;dx=averytemporary>>16; AFFECT_OF(AFFECT_CF((averytemporary & 0xffff8000)!=0xffff8000&&(averytemporary & 0xffff8000)!=0));}
-#define IMUL1_4(a) {int64_t averytemporary=(int64_t)((int32_t)eax)*((int32_t)(a));eax=averytemporary;edx=averytemporary>>32; AFFECT_OF(AFFECT_CF((averytemporary & 0xffffffff80000000)!=0xffffffff80000000&&(averytemporary & 0xffffffff80000000)!=0));}
+#define IMUL1_1(a) {ax=((int8_t)al)*((int8_t)(a)); AFFECT_OF(AFFECT_CF((ax & 0xff80)!=0xff80&&(ax & 0xff80)!=0));AFFECT_ZFifz(al);AFFECT_SF_(al,al);}
+#define IMUL1_2(a) {int32_t averytemporary=(int32_t)((int16_t)ax)*((int16_t)(a));ax=averytemporary;dx=averytemporary>>16; AFFECT_OF(AFFECT_CF((averytemporary & 0xffff8000)!=0xffff8000&&(averytemporary & 0xffff8000)!=0));AFFECT_ZFifz(ax);AFFECT_SF_(ax,ax);}
+#define IMUL1_4(a) {int64_t averytemporary=(int64_t)((int32_t)eax)*((int32_t)(a));eax=averytemporary;edx=averytemporary>>32; AFFECT_OF(AFFECT_CF((averytemporary & 0xffffffff80000000)!=0xffffffff80000000&&(averytemporary & 0xffffffff80000000)!=0));AFFECT_ZFifz(eax);AFFECT_SF_(eax,eax);}
 #define IMUL2_2(a,b) {int32_t averytemporary = ((int16_t)(a)) * ((int16_t)(b)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>= -32768)  && (averytemporary<=32767)?false:true));}
 #define IMUL2_4(a,b) {int64_t averytemporary = ((int64_t)(a)) * ((int32_t)(b)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>=-((int64_t)(2147483647)+1)) && (averytemporary<=(int64_t)2147483647)?false:true));}
 #define IMUL3_2(a,b,c) {int32_t averytemporary = ((int16_t)(b)) * ((int16_t)(c)); a=averytemporary;AFFECT_OF(AFFECT_CF((averytemporary>= -32768)  && (averytemporary<=32767)?false:true));}
@@ -1093,13 +1093,13 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define MUL3_4(a,b,c) {dq averytemporary=(dq)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>32));}
 
 // TODO properly handle divide by zero
-#define IDIV1(a) {if (a) {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}}
-#define IDIV2(a) {if (a) {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}}
-#define IDIV4(a) {if (a) {int64_t averytemporary=(((int64_t)(int32_t)edx)<<32)|eax;eax=averytemporary/((int32_t)a);edx=averytemporary%((int32_t)a); AFFECT_OF(false);}}
+#define IDIV1(a) {if(!a) {if (GET_OF()) _INT(4);} else {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}}
+#define IDIV2(a) {if(!a) {if (GET_OF()) _INT(4);} else {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}}
+#define IDIV4(a) {if(!a) {if (GET_OF()) _INT(4);} else {int64_t averytemporary=(((int64_t)(int32_t)edx)<<32)|eax;eax=averytemporary/((int32_t)a);edx=averytemporary%((int32_t)a); AFFECT_OF(false);}}
 
-#define DIV1(a) {if (a) {dw averytemporary=ax;al=averytemporary/(a);ah=averytemporary%(a); AFFECT_OF(false);}}
-#define DIV2(a) {if (a) {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}}
-#define DIV4(a) {if (a) {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV1(a) {if(!a) {if (GET_OF()) _INT(4);} else {dw averytemporary=ax;al=averytemporary/(a);ah=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV2(a) {if(!a) {if (GET_OF()) _INT(4);} else {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV4(a) {if(!a) {if (GET_OF()) _INT(4);} else {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}}
 
 #define NOT(a) {a= ~(a);};// AFFECT_ZFifz(a) //TODO
 
@@ -1414,9 +1414,9 @@ void run_hw_interrupts();
 //    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
-    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
-    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs(__LINE__,#a,_state);} {a;}
+    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__LINE__,#a, cpu_regs, Segs);} {a;}
+    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__LINE__,#a, cpu_regs, Segs);} {a;}
+    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__LINE__,#a, cpu_regs, Segs);} {a;}
 
 #elif DEBUG>=4
 // clean format

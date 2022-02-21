@@ -302,14 +302,18 @@ extern void   Initializer();
   {
     m2c::fix_segs ();
     old_cycles = CPU_Cycles;
-    dd oldeip = cpu_regs.ip.dword[0];
+    dd oldeip = (Segs.val[1]<<16)+cpu_regs.ip.word[0];
+    dd neweip(oldeip);
     Bits nc_retcode;
+//log_debug("s1 %x:%x\n",Segs.val[1],cpu_regs.ip.word[0]);
     do
       {
         CPU_Cycles = 1;
         nc_retcode = CPU_Core_Normal_Run ();
+        neweip = (Segs.val[1]<<16)+cpu_regs.ip.word[0];
       }
-    while (oldeip == cpu_regs.ip.dword[0]); // for REP*
+    while (neweip <= oldeip || neweip > oldeip + 10); // to handle REP* and INTO
+//log_debug("s2 %x:%x\n",Segs.val[1],cpu_regs.ip.word[0]);
     // // if (!nc_retcode)
       //{
         CPU_Cycles = old_cycles;
@@ -508,10 +512,10 @@ extern void   Initializer();
 
   bool Tstart (int line, const char *instr)
   {
-    oldip = cpu_regs.ip.dword[0];
+    oldip = cpu_regs.ip.word[0];
     run_hw_interrupts ();
 
-    dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
+    dd ip1 = cpu_regs.ip.word[0]; dw seg = Segs.val[1];
 bool compare(compare_instructions && !already_checked[(seg<<4)+ip1]);
 if (compare) {
     oldSegs = Segs; oldcpu_regs = cpu_regs;
@@ -520,19 +524,20 @@ if (compare) {
 if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     already_checked[(seg<<4)+ip1] = true;
 
-    dd ip2 = cpu_regs.ip.dword[0]; 
+    dd ip2 = cpu_regs.ip.word[0]; 
     size_t instr_size = ip2 - ip1;
     if (memcmp (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size) != 0)
     {
-       log_info("~self-modified instruction ");
-//       hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
+       log_info("~self-modified instruction %x:%x\n",seg,ip1);
+        hexDump (m2c::lm+(seg<<4)+ip1, 5);
+        hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
         cmpHexDump (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size);
        return false;
     }
     else
     {
     realflags = cpu_regs.flags;
-    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF;// | FLAG_OF;
+    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     realSegs = Segs; realcpu_regs = cpu_regs;
     Segs = oldSegs; cpu_regs = oldcpu_regs;
        return true;
@@ -542,8 +547,9 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
   void Tend (int line, const char *instr)
   {
     fix_segs ();
-    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF;// | FLAG_OF;
+    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     cpu_regs.ip = realcpu_regs.ip;
+
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0)
       {
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
@@ -551,7 +557,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     log_debug ("before ");
     log_regs_dbx(line, instr, oldcpu_regs, oldSegs);
         log_error("/-----------------------------Error-----------------------------------------\\\n");
-//        cpu_regs.ip.dword[0] = oldip;
+//        cpu_regs.ip.word[0] = oldip;
         log_error("cs:ip: ");
         hexDump (raddr (Segs.val[1], oldip), 8);
 
@@ -591,10 +597,10 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
 
   bool Xstart (int line, const char *instr)
   {
-    oldip = cpu_regs.ip.dword[0];
+    oldip = cpu_regs.ip.word[0];
     run_hw_interrupts ();
 
-    dd ip1 = cpu_regs.ip.dword[0]; dw seg = Segs.val[1];
+    dd ip1 = cpu_regs.ip.word[0]; dw seg = Segs.val[1];
 bool compare(compare_instructions && !already_checked[(seg<<4)+ip1]);
 if (compare) {
     oldSegs = Segs; oldcpu_regs = cpu_regs;
@@ -604,19 +610,20 @@ if (compare) {
 if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     already_checked[(seg<<4)+ip1] = true;
 
-    dd ip2 = cpu_regs.ip.dword[0]; 
+    dd ip2 = cpu_regs.ip.word[0]; 
     size_t instr_size = ip2 - ip1;
     if (memcmp (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size) != 0)
     {
-       log_info("~self-modified instruction ");
-//       hexDump (((db*)&m2c::m)+(seg<<16)+ip1, instr_size);
+       log_info("~self-modified instruction %x:%x\n",seg,ip1);
+        hexDump (m2c::lm+(seg<<4)+ip1, 5);
+        hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
         cmpHexDump (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size);
        return false;
     }
     else
     {
     realflags = cpu_regs.flags;
-    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF;// | FLAG_OF;
+    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     realSegs = Segs; realcpu_regs = cpu_regs;
     memcpy (rm, &m, COMPARE_SIZE);
 
@@ -629,8 +636,9 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
   void Xend (int line, const char *instr)
   {
     fix_segs ();
-    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF;// | FLAG_OF;
+    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     cpu_regs.ip = realcpu_regs.ip;
+
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0 ||
         memcmp (&m, rm, COMPARE_SIZE) != 0)
       {
@@ -640,7 +648,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     log_debug ("before ");
     log_regs_dbx(line, instr, oldcpu_regs, oldSegs);
         log_error("/-----------------------------Error-----------------------------------------\\\n");
-//        cpu_regs.ip.dword[0] = oldip;
+//        cpu_regs.ip.word[0] = oldip;
         log_error("cs:ip: ");
         hexDump (raddr (Segs.val[1], oldip), 8);
         log_error("~m2c ");
