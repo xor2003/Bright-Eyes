@@ -326,8 +326,11 @@ inline long getdata<long>(const long& s)
 template<class S>
 inline void set_type(const S& s)
 {
+#if DEBUG>0
   size_t addr = (((db*)&s)-((db*)&m2c::m));
+  if (addr<0xf0000)
   memset((((db*)&m2c::types)+addr),0xff,sizeof(S));
+#endif
 }
 
 static void setdata(db* d, db s)

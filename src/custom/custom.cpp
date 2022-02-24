@@ -41,6 +41,26 @@ namespace m2c
 extern void   Initializer();
 }
 
+#if __WIN32__
+void* memmem(const void* haystack, size_t haystack_len,
+    const void* const needle, const size_t needle_len)
+{
+    if (haystack == NULL) return NULL; // or assert(haystack != NULL);
+    if (haystack_len == 0) return NULL;
+    if (needle == NULL) return NULL; // or assert(needle != NULL);
+    if (needle_len == 0) return NULL;
+
+    for (const char* h = (const char*) haystack;
+        haystack_len >= needle_len;
+        ++h, --haystack_len) {
+        if (!memcmp(h, needle, needle_len)) {
+            return (void*)h;
+        }
+    }
+    return NULL;
+}
+#endif
+
 void masm2c_exit(unsigned char exit)
 {
 		init++;
@@ -305,7 +325,7 @@ extern void   Initializer();
     if (res)
       {
         log_debug ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
-        void *p = 0;//memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
+        void *p = memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
         if (size > 3 && p)
           {
             log_debug (" found at %x", ((db *) p) - d);
@@ -316,9 +336,9 @@ extern void   Initializer();
         hexDump (d, size);
       }
 #else
-   memcpy(d,s,size);
-   log_debug("Init %zx %zd\n",d-((db*)&m)-0x1920,size);
-   memset(((db*)&types)+(d-((db*)&m)),0xff,size);
+      log_debug("Init %zx %zd\n", d - ((db*)&m), size);
+      memcpy(d,s,size);
+      memset(((db*)&types)+(d-((db*)&m)),0xff,size);
 #endif
   }
 
