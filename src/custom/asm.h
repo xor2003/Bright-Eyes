@@ -1386,7 +1386,7 @@ inline void MOV_(D* dest, const S& src)
 #define RETF {log_debug("before ret %d\n",stackPointer); db averytemporary5=0; POP(averytemporary5); if (averytemporary5!='x') {log_error("Stack corrupted.\n");exit(1);} \
  		POP(jmpbuffer); stackPointer-=2; log_debug("after retf %d\n",stackPointer);longjmp(jmpbuffer, 0);}
 */
-#define CALLF(label, disp) {PUSH(ip);CALL(label, disp);}
+#define CALLF(label, disp) {PUSH(cs);CALL(label, disp);}
 /*
 #define CALL(label) \
 	{ db averytemporary6='x';  \

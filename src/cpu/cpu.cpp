@@ -545,9 +545,6 @@ void CPU_Exception(Bitu which,Bitu error ) {
 
 Bit8u lastint;
 void CPU_Interrupt(Bitu num,Bitu type,Bitu oldeip) {
-
-	if (interpretation_deep>0) ++interpretation_deep;
-
 	lastint=num;
 	FillFlags();
 #if C_DEBUG
@@ -780,10 +777,6 @@ void CPU_IRET(bool use32,Bitu oldeip) {
 		}
 		cpu.code.big=false;
 		DestroyConditionFlags();
-
-		if (interpretation_deep>0 && --interpretation_deep==0)
-		{old_cycles = CPU_Cycles; CPU_Cycles = 0;} // stop interpretation
-
 		return;
 	} else {	/* Protected mode IRET */
 		if (reg_flags & FLAG_VM) {
@@ -1093,8 +1086,6 @@ void CPU_CALL(bool use32,Bitu selector,Bitu offset,Bitu oldeip) {
 		}
 		return;
 	}
-	else
-	++interpretation_deep;
 
 	if (!cpu.pmode || (reg_flags & FLAG_VM)) {
 		if (!use32) {
@@ -1345,10 +1336,6 @@ void CPU_RET(bool use32,Bitu bytes,Bitu oldeip) {
 		SegSet16(cs,new_cs);
 		reg_eip=new_ip;
 		cpu.code.big=false;
-		
-		if (interpretation_deep>0 && --interpretation_deep==0)
-		{old_cycles = CPU_Cycles; CPU_Cycles = 0;} // stop interpretation
-
 		return;
 	} else {
 		Bitu offset,selector;

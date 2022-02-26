@@ -19,7 +19,8 @@ class custom_prog {
 extern volatile bool defered_custom_call; // int was call by interpreter and which m2c have to execute later
 extern volatile bool from_callf; // check if m2c's interrupt called from interp or callf from m2c to interp bios
 extern Bitu old_cycles; // backup remaining cycles
-extern int interpretation_deep; // to track when to return from interpreter
+extern Bit32u return_point;
+
 #if DOSBOX_CUSTOM
 // old values of CS:IP (directly before the call), usable for diagnosis
 extern Bit16u custom_oldCS, custom_oldIP;

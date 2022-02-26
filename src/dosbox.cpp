@@ -148,7 +148,7 @@ Bitu Normal_Loop(void) {
 #if C_DEBUG
 			if (DEBUG_ExitLoop()) return 0;
 #endif
-			if (interpretation_deep == 0) return 0;
+			if (return_point && return_point==(Segs.val[cs]<<16) + reg_eip&0xffff) return 0;
 		} else {
 			GFX_Events();
 			if (ticksRemain>0) {

@@ -23,8 +23,10 @@ static const size_t COMPARE_SIZE = 0xf0000;
 extern Bitu Normal_Loop(void);
 
 static Bit8u custom_runs;
+
 Bitu old_cycles; // to stop interpretation but remmember the cycles remain
-int interpretation_deep=-1; // -1 means real execution. 0 stop, 1+ means call stack deep
+//int interpretation_deep=-1; // -1 means real execution. 0 stop, 1+ means call stack deep
+dd return_point=0;
 
 volatile bool defered_custom_call = false;
 volatile bool from_callf = false;
@@ -528,6 +530,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
         log_error("/-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error("cs:ip: ");
+print_instruction(Segs.val[1]>>4, oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
 
         log_error("~m2c ");
@@ -621,6 +624,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
         log_error("/-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error("cs:ip: ");
+print_instruction(Segs.val[1]>>4, oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
         log_error("~m2c ");
     log_regs_dbx("",line, instr, cpu_regs, Segs);
@@ -686,21 +690,25 @@ void interpret_unknown_callf(dw newcs, dd newip)
 X86_REGREF
   cs = newcs;
   eip = newip;
+  dw oldsp=sp;
     fix_segs ();
-//#if DEBUG > 0
+#if DEBUG > 0
   log_debug("Enter interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
-//#endif
-  interpretation_deep = 1;
+#endif
+  return_point=*(dd*)raddr(ss,sp);
+//  interpretation_deep = 1;
   do {
 //  log_debug("start\n");
   Normal_Loop();
 //  log_debug("stop\n");
-   } while (interpretation_deep>0);
-  interpretation_deep = -1;
-  CPU_Cycles = old_cycles;
-//#if DEBUG > 0
+   } while (return_point!=(cs<<16)+ip);
+  return_point=0;
+//  interpretation_deep = -1;
+//  CPU_Cycles = old_cycles;
+  if (oldsp+4!=sp)   {log_error("Error it should consume 4 bytes from stack\n"); stackDump(0);exit(1);}
+#if DEBUG > 0
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
-//#endif
+#endif
 }
 }
 

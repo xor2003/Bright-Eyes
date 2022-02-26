@@ -142,31 +142,33 @@ using namespace std;
 
 extern Bitu DasmI386(char* buffer, PhysPt pc, Bitu cur_ip, bool bit32);
 
+namespace m2c {
+extern void log_regs_dbx(const char * file,int line, const char * instr, const CPU_Regs& r, const Segments& s);
+}
+
 void print_instruction(Bit16u newcs, Bit32u newip)
 {
   char dline[20];
-  ::DasmI386(dline,(newcs<<4)+newip,newip,false);
+  DasmI386(dline,(newcs<<4)+newip,newip,false);
+  m2c::log_regs_dbx("",-1,dline,cpu_regs,Segs);
 }
 
-namespace m2c {
-extern void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s);
-}
 Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
 		LOADIP;
 
 if (SegBase(cs)!=0xf0000)
 {
-/*
-char dline[20];
-DasmI386(dline,SegBase(cs)+cpu_regs.ip.dword[0],cpu_regs.ip.dword[0],false);
-m2c::log_regs_dbx(-1,dline,cpu_regs,Segs);
-*/
-//print_instruction(SegBase(cs)>>4,cpu_regs.ip.dword[0]);
+print_instruction(SegBase(cs)>>4,cpu_regs.ip.dword[0]);
 
 //printf("i%x:%x %s\n",SegBase(cs)>>4,cpu_regs.ip.dword[0], dline);
 
 }
+		if (return_point && return_point==(SegBase(cs)<<12)+cpu_regs.ip.word[0])
+		{SAVEIP;
+		FillFlags();
+		return CBRET_NONE;} // stop interpretation
+
 		core.opcode_index=cpu.code.big*0x200;
 		core.prefixes=cpu.code.big;
 		core.ea_table=&EATable[cpu.code.big*256];
