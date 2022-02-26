@@ -33087,11 +33087,11 @@ cs=0x1a2;eip=0x00f0b5; 	X(POP(di));	// 39732 pop     di ;~ 01A2:F0B5
 cs=0x1a2;eip=0x00f0b6; 	R(JMP(_sub_1f403_hsq_decomp_skip_header_dssi_to_esdi));	// 39733 jmp     _sub_1F403_hsq_decomp_skip_header_dssi_to_esdi ;~ 01A2:F0B6
 _sub_1f0b9_open_resource_by_index_si:
 	// 39741 
-cs=0x1a2;eip=0x00f0b9; 	X(MOV(*(dw*)(((db*)&_word_2c328_resource_index)), si));	// 39744 mov     ds:_word_2C328_resource_index, si ;~ 01A2:F0B9
+cs=0x1a2;eip=0x00f0b9; 	X(MOV(*(dw*)raddr(ds,0xce78), si));	// 39744 mov     ds:_word_2C328_resource_index, si ;~ 01A2:F0B9
 ret_1a2_f0bd:
 	// 7788 
 cs=0x1a2;eip=0x00f0bd; 	T(SHL(si, 1));	// 39745 shl     si, 1 ;~ 01A2:F0BD
-cs=0x1a2;eip=0x00f0bf; 	T(MOV(si, *(dw*)(((db*)&_off_226af_resource_names)+si)));	// 39746 mov     si, ds:_off_226AF_resource_names[si] ;~ 01A2:F0BF
+cs=0x1a2;eip=0x00f0bf; 	T(MOV(si, *(dw*)raddr(ds,si+0x31ff)));	// 39746 mov     si, ds:_off_226AF_resource_names[si] ;~ 01A2:F0BF
 cs=0x1a2;eip=0x00f0c3; 	T(LODSW);	// 39747 lodsw ;~ 01A2:F0C3
 cs=0x1a2;eip=0x00f0c4; 	T(MOV(dx, si));	// 39748 mov     dx, si ;~ 01A2:F0C4
 cs=0x1a2;eip=0x00f0c6; 	T(OR(ax, ax));	// 39749 or      ax, ax ;~ 01A2:F0C6
@@ -33145,12 +33145,12 @@ cs=0x1a2;eip=0x00f119; 	R(JA(_loc_1f131_out_of_memory_error));	// 39819 ja      
 cs=0x1a2;eip=0x00f11b; 	R(RETN(0));	// 39820 retn ;~ 01A2:F11B
 _sub_1f11c_alloc_cx_pages_to_di:
 	// 39827 
-cs=0x1a2;eip=0x00f11c; 	T(LES(di, *(dd*)(((db*)&_word_22e67_allocator_next_free_ofs))));	// 39830 les     di, dword ptr ds:_word_22E67_allocator_next_free_ofs ;~ 01A2:F11C
+cs=0x1a2;eip=0x00f11c; 	T(LES(di, *(dw*)raddr(ds,0x39b7)));	// 39830 les     di, dword ptr ds:_word_22E67_allocator_next_free_ofs ;~ 01A2:F11C
 ret_1a2_f120:
 	// 7793 
 cs=0x1a2;eip=0x00f120; 	T(MOV(ax, es));	// 39831 mov     ax, es ;~ 01A2:F120
 cs=0x1a2;eip=0x00f122; 	T(ADD(ax, cx));	// 39832 add     ax, cx ;~ 01A2:F122
-cs=0x1a2;eip=0x00f124; 	T(CMP(ax, *(dw*)(((db*)&_word_2c318_allocator_last_free_seg))));	// 39833 cmp     ax, ds:_word_2C318_allocator_last_free_seg ;~ 01A2:F124
+cs=0x1a2;eip=0x00f124; 	T(CMP(ax, *(dw*)raddr(ds,0xce68)));	// 39833 cmp     ax, ds:_word_2C318_allocator_last_free_seg ;~ 01A2:F124
 cs=0x1a2;eip=0x00f128; 	R(JNC(loc_1f12b));	// 39834 jnb     short loc_1F12B ;~ 01A2:F128
 cs=0x1a2;eip=0x00f12a; 	R(RETN(0));	// 39835 retn ;~ 01A2:F12A
 loc_1f12b:
@@ -33173,7 +33173,7 @@ _sub_1f13f_allocator_attempt_to_free_space:
 cs=0x1a2;eip=0x00f13f; 	X(PUSH(cx));	// 39869 push    cx ;~ 01A2:F13F
 ret_1a2_f140:
 	// 7797 
-cs=0x1a2;eip=0x00f140; 	T(MOV(bp, word_1f4b2));	// 39870 mov     bp, word_1F4B2 ;~ 01A2:F140
+cs=0x1a2;eip=0x00f140; 	T(MOV(bp, *(dw*)raddr(ds,2)));	// 39870 mov     bp, word_1F4B2 ;~ 01A2:F140
 cs=0x1a2;eip=0x00f144; 	T(MOV(si, offset(seg001,unk_2ccf4)));	// 39871 mov     si, offset unk_2CCF4 ;~ 01A2:F144
 cs=0x1a2;eip=0x00f147; 	T(MOV(di, offset(seg001,_word_2cf3c_open_res_info)));	// 39872 mov     di, offset _word_2CF3C_open_res_info ;~ 01A2:F147
 cs=0x1a2;eip=0x00f14a; 	T(MOV(cx, 0x91));	// 39873 mov     cx, 91h ; '‘' ;~ 01A2:F14A
@@ -33201,9 +33201,9 @@ cs=0x1a2;eip=0x00f170; 	T(MOV(ax, bx));	// 39895 mov     ax, bx ;~ 01A2:F170
 cs=0x1a2;eip=0x00f172; 	T(SUB(ax, offset(seg001,unk_2ccf4)));	// 39896 sub     ax, offset unk_2CCF4 ;~ 01A2:F172
 cs=0x1a2;eip=0x00f175; 	T(SHR(ax, 1));	// 39897 shr     ax, 1 ;~ 01A2:F175
 cs=0x1a2;eip=0x00f177; 	T(SHR(ax, 1));	// 39898 shr     ax, 1 ;~ 01A2:F177
-cs=0x1a2;eip=0x00f179; 	T(CMP(ax, _word_21c34_resource_id));	// 39899 cmp     ax, _word_21C34_resource_id ;~ 01A2:F179
+cs=0x1a2;eip=0x00f179; 	T(CMP(ax, *(dw*)raddr(ds,0x2784)));	// 39899 cmp     ax, _word_21C34_resource_id ;~ 01A2:F179
 cs=0x1a2;eip=0x00f17d; 	R(JNZ(loc_1f185));	// 39900 jnz     short loc_1F185 ;~ 01A2:F17D
-cs=0x1a2;eip=0x00f17f; 	X(MOV(_word_21c34_resource_id, 0x0FFFF));	// 39901 mov     _word_21C34_resource_id, 0FFFFh ;~ 01A2:F17F
+cs=0x1a2;eip=0x00f17f; 	X(MOV(*(dw*)raddr(ds,0x2784), 0x0FFFF));	// 39901 mov     _word_21C34_resource_id, 0FFFFh ;~ 01A2:F17F
 loc_1f185:
 	// 7800 
 cs=0x1a2;eip=0x00f185; 	T(XOR(dx, dx));	// 39904 xor     dx, dx ;~ 01A2:F185

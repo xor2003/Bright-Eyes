@@ -76,8 +76,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-pc-linux-gnu
+build_triplet = x86_64-unknown-linux-gnu
+host_triplet = x86_64-unknown-linux-gnu
 subdir = src/custom/src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
@@ -225,12 +225,12 @@ AUTOMAKE = ${SHELL} /home/user/Bright-Eyes/missing automake-1.13
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O0
+CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS =  -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
 CXX = g++
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O0 -mno-ms-bitfields 
+CXXFLAGS = -g -O2 -mno-ms-bitfields 
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -281,22 +281,22 @@ am__quote =
 am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-pc-linux-gnu
+build = x86_64-unknown-linux-gnu
 build_alias = 
 build_cpu = x86_64
 build_os = linux-gnu
-build_vendor = pc
+build_vendor = unknown
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-pc-linux-gnu
+host = x86_64-unknown-linux-gnu
 host_alias = 
 host_cpu = x86_64
 host_os = linux-gnu
-host_vendor = pc
+host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
@@ -320,7 +320,7 @@ target_alias =
 top_build_prefix = ../../../
 top_builddir = ../../..
 top_srcdir = ../../..
-AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -fpermissive -finline-limit=50 -ftime-report -DDEBUG=4 -O3 # -v -Q
+AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -fpermissive -finline-limit=50 -ftime-report -DDEBUG=3 # -v -Q
 SUBDIRS = 
 noinst_LIBRARIES = libsrc.a
 libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  dnprgdrv.cpp dnprgdrv.h dnprgdrv_default_seg.cpp dnprgdrv_seg000.cpp dnprgdrv_seg002.cpp dnprgdrv_seg003.cpp dnprgdrv_seg004.cpp
