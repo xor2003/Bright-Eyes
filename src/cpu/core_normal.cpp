@@ -137,19 +137,35 @@ static INLINE Bit32u Fetchd() {
 #include <iostream>
 #include <fstream>
 using namespace std;
-extern void DEBUG_LogInstruction(Bit16u segValue, Bit32u eipValue,  ofstream& out);
 
 #define EALookupTable (core.ea_table)
 
+extern Bitu DasmI386(char* buffer, PhysPt pc, Bitu cur_ip, bool bit32);
+
+void print_instruction(Bit16u newcs, Bit32u newip)
+{
+  char dline[20];
+  ::DasmI386(dline,(newcs<<4)+newip,newip,false);
+}
+
+namespace m2c {
+extern void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s);
+}
 Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
 		LOADIP;
 
-if (SegBase(cs)!=0xf0000&&SegBase(cs)!=0xc7ff0)
+if (SegBase(cs)!=0xf0000)
 {
-printf("~%x:%x %x\n",SegBase(cs),cpu_regs.ip.dword[0],*((Bit8u*)MemBase+SegBase(cs)+cpu_regs.ip.dword[0]));
-//ofstream s( "/dev/tty" ); 
-// DEBUG_LogInstruction(SegBase(cs)>>8,cpu_regs.ip.dword[0],s);
+/*
+char dline[20];
+DasmI386(dline,SegBase(cs)+cpu_regs.ip.dword[0],cpu_regs.ip.dword[0],false);
+m2c::log_regs_dbx(-1,dline,cpu_regs,Segs);
+*/
+//print_instruction(SegBase(cs)>>4,cpu_regs.ip.dword[0]);
+
+//printf("i%x:%x %s\n",SegBase(cs)>>4,cpu_regs.ip.dword[0], dline);
+
 }
 		core.opcode_index=cpu.code.big*0x200;
 		core.prefixes=cpu.code.big;

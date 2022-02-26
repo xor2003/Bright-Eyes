@@ -97,6 +97,8 @@ typedef long double real10;
 
 namespace m2c {
 
+extern size_t counter;
+
 extern void execute_irqs();
 extern void single_step();
 
@@ -280,6 +282,8 @@ extern const char *_str;
  
 #endif
 
+
+
 typedef bool m2cf(_offsets, struct _STATE*); // common masm2c function
 template <class S>
 constexpr bool isaddrbelongtom(const S * const a)
@@ -423,6 +427,75 @@ void log_debug2(const char *fmt, ...);
 
 const char* log_spaces(int n);
 #endif
+class ShadowStack{
+ struct Frame
+ {
+ const char *file;
+ size_t line;
+ dd sp;
+ dw cs;
+ dd ip;
+ dd value;
+ size_t addcounter;
+ size_t remcounter;
+ };
+
+std::vector<Frame> m_ss;
+size_t m_current;
+public:
+ShadowStack():m_current(0)
+{}
+
+void push(const char *file, size_t line, _STATE *_state, dd value)
+ { 
+#if DEBUG>0 && DEBUG<4
+    X86_REGREF 
+     Frame f;
+     f.file=file;f.line=line;f.cs=cs;f.ip=eip;f.sp=sp;f.value=value;f.addcounter=m2c::counter;f.remcounter=0;
+     if (m_current==m_ss.size())
+	     m_ss.resize(m_current+1);
+     m_ss[m_current++]=f;
+     m2c::log_info("ssize=%d\n",m_ss.size());
+#endif
+ }
+
+void pop(_STATE *_state)
+ {
+#if DEBUG>0 && DEBUG<4
+    X86_REGREF 
+    m2c::log_info("ssize=%d\n",m_ss.size() );
+    if ( !m_ss.empty() && m_current) 
+    {
+        dd tsp;
+        size_t tcount=0;
+        do{
+           tsp=m_ss[m_current-1].sp;
+           if ( (tcount++)>0 ) 
+              m2c::log_error("uncontrolled pop was before %x\n",tsp);
+           if (tsp<=sp) m_ss[--m_current].remcounter=m2c::counter;
+          } while (tsp<sp);
+    }
+#endif
+ }
+
+void print(_STATE *_state)
+ {
+#if DEBUG>0 && DEBUG<4
+    X86_REGREF 
+if(!m_ss.empty())
+    for(int i=m_ss.size()-1;i>=0;i--)
+    {
+  Frame f=m_ss[i];
+  if (i==m_current-1)
+         log_debug("  ");
+  log_debug("%8x %8x %s:%06d %04x:%04x sp=%04x %x\n",f.addcounter,f.remcounter,f.file,f.line,f.cs,f.ip,f.sp,f.value);
+    }
+#endif
+ }
+
+};
+
+extern ShadowStack shadow_stack;
 
 #define VGARAM_SIZE (320*200)
 
@@ -505,16 +578,8 @@ inline db MSB(D a)  // get highest bit
 #define PUSHA {dw oldsp=sp;PUSH(ax);PUSH(cx);PUSH(dx);PUSH(bx); PUSH(oldsp);PUSH(bp);PUSH(si);PUSH(di);}
 #define POPA {POP(di);POP(si);POP(bp); POP(bx); POP(bx);POP(dx);POP(cx);POP(ax); }
 
-/*
-#define PUSH(a) {memcpy (&stack[stackPointer], &a, sizeof (a)); stackPointer+=sizeof(a); assert(stackPointer<STACK_SIZE);\
-	log_debug("after push %d\n",stackPointer);}
-
-#define POP(a) {log_debug("before pop %d\n",stackPointer); \
-	stackPointer-=sizeof(a); memcpy (&a, &stack[stackPointer], sizeof (a));}
-#define PUSH(a) {stackPointer-=sizeof(a); memcpy (&m.stack[stackPointer], &a, sizeof (a));  assert(stackPointer>8);}
-*/
 #ifdef DOSBOX
- #define PUSH(a) m2c::PUSH_(a)
+ #define PUSH(a) {m2c::PUSH_(a);m2c::shadow_stack.push(__FILE__,__LINE__,0,(dd)(a));}
 /*
 inline void PUSH_(const dw& a)
 {CPU_Push16(a);}
@@ -542,7 +607,7 @@ template<>
 inline void PUSH_<int>(int a)
 {CPU_Push32(a);}
 
- #define POP(a) m2c::POP_(a)
+ #define POP(a) {m2c::shadow_stack.pop(0); m2c::POP_(a);}
 inline void POP_(dw& a)
 {a = CPU_Pop16();}
 
@@ -762,7 +827,7 @@ template <class D>
 inline void SHRD_(D& Destination, D Source, size_t Count, m2c::eflags& m2cflags)
 { 
  if(Count != 0) {
-int TCount = Count&(2*m2c::bitsizeof(Destination)-1);
+size_t TCount = Count&(2*m2c::bitsizeof(Destination)-1);
 
 if (TCount>m2c::bitsizeof(Destination)) {SHLD_(Destination, Source, 2*m2c::bitsizeof(Destination)-TCount, m2cflags);} 
 else
@@ -797,7 +862,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 static void SHLD_(dw& Destination, dw Source, size_t Count, m2c::eflags& m2cflags)
 { 
  if(Count != 0) {
-   int TCount = Count&(2*m2c::bitsizeof(Destination)-1);
+   size_t TCount = Count&(2*m2c::bitsizeof(Destination)-1);
    if (TCount>m2c::bitsizeof(Destination))
       {SHRD_(Destination, Source, 2*m2c::bitsizeof(Destination)-TCount, m2cflags);} 
    else
@@ -1092,14 +1157,57 @@ inline void DEC_(D& a, m2c::eflags& m2cflags)
 #define MUL3_2(a,b,c) {dd averytemporary=(dd)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>16));}
 #define MUL3_4(a,b,c) {dq averytemporary=(dq)(b)*(c);a=averytemporary; AFFECT_ZFifz(a); AFFECT_OF(AFFECT_CF(averytemporary>>32));}
 
-// TODO properly handle divide by zero
-#define IDIV1(a) {if(!a) {if (GET_OF()) _INT(4);} else {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}}
-#define IDIV2(a) {if(!a) {if (GET_OF()) _INT(4);} else {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}}
-#define IDIV4(a) {if(!a) {if (GET_OF()) _INT(4);} else {int64_t averytemporary=(((int64_t)(int32_t)edx)<<32)|eax;eax=averytemporary/((int32_t)a);edx=averytemporary%((int32_t)a); AFFECT_OF(false);}}
+// TODO properly handle divide by zero: if(!a) {if (GET_OF()) _INT(4);} else 
+/*
+#define IDIV1(a) {SETFLAGBIT(OF,0);if(a) {int16_t averytemporary=ax;al=averytemporary/((int8_t)a); ah=averytemporary%((int8_t)a); AFFECT_OF(false);}}
+#define IDIV2(a) {SETFLAGBIT(OF,0);if(a) {int32_t averytemporary=(((int32_t)(int16_t)dx)<<16)|ax; ax=averytemporary/((int16_t)a);dx=averytemporary%((int16_t)a); AFFECT_OF(false);}}
+#define IDIV4(a) {SETFLAGBIT(OF,0);if(a) {int64_t averytemporary=(((int64_t)(int32_t)edx)<<32)|eax;eax=averytemporary/((int32_t)a);edx=averytemporary%((int32_t)a); AFFECT_OF(false);}}
+*/
+#define IDIV1(op1)								\
+{															\
+	Bits val=(int8_t)(op1);							\
+	if (val==0)	CPU_Exception(0);								\
+	Bits quo=((int16_t)ax) / val;						\
+	int8_t rem=(int8_t)((int16_t)ax % val);				\
+	int8_t quo8s=(int8_t)(quo&0xff);							\
+	if (quo!=(int16_t)quo8s) CPU_Exception(0);					\
+	ah=rem;												\
+	al=quo8s;											\
+	AFFECT_OF(false);									\
+}
 
-#define DIV1(a) {if(!a) {if (GET_OF()) _INT(4);} else {dw averytemporary=ax;al=averytemporary/(a);ah=averytemporary%(a); AFFECT_OF(false);}}
-#define DIV2(a) {if(!a) {if (GET_OF()) _INT(4);} else {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}}
-#define DIV4(a) {if(!a) {if (GET_OF()) _INT(4);} else {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}}
+
+#define IDIV2(op1)								\
+{															\
+	Bits val=(int16_t)(op1);							\
+	if (val==0) CPU_Exception(0);									\
+	Bits num=(int32_t)((dx<<16)|ax);					\
+	Bits quo=num/val;										\
+	int16_t rem=(int16_t)(num % val);							\
+	int16_t quo16s=(int16_t)quo;								\
+	if (quo!=(int32_t)quo16s) CPU_Exception(0);					\
+	dx=rem;												\
+	ax=quo16s;											\
+	AFFECT_OF(false);									\
+}
+
+#define IDIV4(op1)								\
+{															\
+	Bits val=(int32_t)(op1);							\
+	if (val==0) CPU_Exception(0);									\
+	int64_t num=(((Bit64u)edx)<<32)|eax;				\
+	int64_t quo=num/val;										\
+	int32_t rem=(int32_t)(num % val);							\
+	int32_t quo32s=(int32_t)(quo&0xffffffff);					\
+	if (quo!=(int64_t)quo32s) CPU_Exception(0);					\
+	edx=rem;											\
+	eax=quo32s;											\
+	AFFECT_OF(false);									\
+}
+
+#define DIV1(a) {if(a) {dw averytemporary=ax;al=averytemporary/(a);ah=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV2(a) {if(a) {dd averytemporary=((((dd)dx)<<16)|ax);ax=averytemporary/(a);dx=averytemporary%(a); AFFECT_OF(false);}}
+#define DIV4(a) {if(a) {uint64_t averytemporary=((((dq)edx)<<32)|eax);eax=averytemporary/(a);edx=averytemporary%(a); AFFECT_OF(false);}}
 
 #define NOT(a) {a= ~(a);};// AFFECT_ZFifz(a) //TODO
 
@@ -1297,7 +1405,7 @@ inline void MOV_(D* dest, const S& src)
 
 #if SINGLEPROC
 
-#if DEBUG==2 || DEBUG==3
+#if ((DEBUG==2) || (DEBUG==3))
  #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
    eip=averytemporary9; \
 	m2c::log_debug("after ret %x\n",stackPointer); \
@@ -1337,42 +1445,42 @@ from_callf=true;
 
 #else
 // Multiproc
- #if DEBUG==2 || DEBUG==3
+ #if ((DEBUG==2) || (DEBUG==3))
  
   #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
  	esp+=i; m2c::log_debug("after ret %x\n",stackPointer); \
-	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
+	m2c::_indent-=1;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	return true;}
  
   #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
  	dw averytemporary11;POP(averytemporary11);  \
-	m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);\
+	m2c::_indent-=1;m2c::_str=m2c::log_spaces(m2c::_indent);\
 	esp+=i; m2c::log_debug("after retf %x\n",stackPointer); \
 	 return true;}
  #else
  
  #define RETN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
 	esp+=i; \
 	return true;}
  
   #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);exit(1);} \
+    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
         dw averytemporary11;POP(averytemporary11); esp+=i; \
 	return true;}
  #endif
  
-#define CALL(label, disp) {m2c::_indent+=2;m2c::_str=m2c::log_spaces(m2c::_indent);m2c::CALL_(label, _state, disp);}
+#define CALL(label, disp) {m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);m2c::CALL_(label, _state, disp);}
  static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
   X86_REGREF
   from_callf=true;
-	  MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
- #if  DEBUG==2 || DEBUG==3
+	  
+ #if  (DEBUG==2) || (DEBUG==3)
  	  m2c::log_debug("after call %x\n",stackPointer);
 // 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
-          m2c::_indent-=2;m2c::_str=m2c::log_spaces(m2c::_indent);
+          m2c::_indent+=1;m2c::_str=m2c::log_spaces(m2c::_indent);
  #endif
 	  label(_i, _state);
   }
@@ -1388,7 +1496,7 @@ from_callf=true;
         POPF; \
 	return;}
 */
-#define IRET {CPU_IRET(false,0);m2c::execute_irqs();return true;}
+#define IRET {CPU_IRET(false,0);m2c::execute_irqs();m2c::shadow_stack.pop(0);m2c::shadow_stack.pop(0);m2c::shadow_stack.pop(0);return true;}
 
 #define BSWAP(op1)														\
 	op1 = (op1>>24)|((op1>>8)&0xFF00)|((op1<<8)&0xFF0000)|((op1<<24)&0xFF000000);
@@ -1414,9 +1522,9 @@ void run_hw_interrupts();
 //    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__LINE__,#a, cpu_regs, Segs);} {a;}
-    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__LINE__,#a, cpu_regs, Segs);} {a;}
-    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__LINE__,#a, cpu_regs, Segs);} {a;}
+    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
+    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
+    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
 
 #elif DEBUG>=4
 // clean format
@@ -1427,7 +1535,7 @@ void run_hw_interrupts();
 //    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define R(a) { m2c::run_hw_interrupts(); /*m2c::log_regs(__LINE__,#a,_state);*/} {a;}
+    #define R(a) { m2c::run_hw_interrupts(); {a;} }
 
 // Run emulated instruction and compare with m2c instruction results
 
@@ -1443,7 +1551,7 @@ void run_hw_interrupts();
 
 #else
 
-    #define R(a) {m2c::run_hw_interrupts();} {a;}
+    #define R(a) {m2c::run_hw_interrupts(); {a;}}
     #define T(a) R(a)
     #define X(a) R(a)
 
@@ -1591,8 +1699,9 @@ extern void Tend(int line, const char * instr);
 extern bool Xstart(int line, const char * instr);
 extern void Xend(int line, const char * instr);
 //extern void log_regs(int line, const char * instr, struct _STATE* _state);
-extern void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s);
+extern void log_regs_dbx(const char * file, int line, const char * instr, const CPU_Regs& r, const Segments& s);
 extern void interpret_unknown_callf(dw cs, dd eip);
+
 
 static bool oldZF=false;
 static bool repForMov=false;
@@ -1602,7 +1711,9 @@ static bool repForMov=false;
 #define TODD(X) (*(dd*)(&(X)))
 #define TODQ(X) (*(dq*)(&(X)))
 
+
 }
+extern void print_instruction(dw newcs, dd newip);
 
 extern struct SDL_Renderer *renderer;
 

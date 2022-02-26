@@ -889,7 +889,7 @@ cs=0x2128;eip=0x0005f2; 	T(MOV(ax, ds));	// 72251 mov     ax, ds ;~ 2128:05F2
 cs=0x2128;eip=0x0005f4; 	T(MOV(es, ax));	// 72252 mov     es, ax ;~ 2128:05F4
 cs=0x2128;eip=0x0005f6; 	T(MOV(ax, 0x20));	// 72254 mov     ax, 20h ; ' ' ;~ 2128:05F6
 	// 72255 repne stosb ;~ 2128:05F9
-cs=0x2128;eip=0x0005f9; 	X(	REPNE STOSB);	// 72255 repne stosb ;~ 2128:05F9
+cs=0x2128;eip=0x0005f9; 	R(REPNE STOSB);	// 72255 repne stosb ;~ 2128:05F9
 cs=0x2128;eip=0x0005fb; 	T(ADD(si, 4));	// 72256 add     si, 4 ;~ 2128:05FB
 cs=0x2128;eip=0x0005fe; 	R(JMP(loc_2fe69));	// 72257 jmp     short loc_2FE69 ;~ 2128:05FE
 loc_2fe60:

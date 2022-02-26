@@ -2,7 +2,6 @@
 
 #ifdef DOSBOX_CUSTOM
 
-#include <stdio.h>
 
 #include "setup.h"
 #include "regs.h"
@@ -10,7 +9,8 @@
 #include "custom_hooks.h"
 
 #include "asm.h"
-//#include "init.h"
+
+#include <stdio.h>
 #include <unistd.h>
 #include <vector>
 
@@ -65,6 +65,7 @@ void masm2c_exit(unsigned char exit)
 {
 		init++;
 		m2c::log_info("masm2c_exit Exiting\n");
+		m2c::stackDump(0);
 }
 
 int init_callf(unsigned selector, unsigned offs)
@@ -209,6 +210,9 @@ namespace m2c
 {
 extern void   Initializer();
 
+  size_t counter=0;
+  ShadowStack shadow_stack;;
+
   db om[COMPARE_SIZE];           // for instruction trace compare
   db rm[COMPARE_SIZE];
   dd oldip;
@@ -227,7 +231,7 @@ extern void   Initializer();
   const char *log_spaces (int n)
   {
     static const char s[] = "                                                                                          ";
-      return s + (88 - n);
+      return n <= 88 ? s + (88 - n) : "";
   }
 
 
@@ -312,7 +316,7 @@ extern void   Initializer();
         nc_retcode = CPU_Core_Normal_Run ();
         neweip = (Segs.val[1]<<16)+cpu_regs.ip.word[0];
       }
-    while (neweip <= oldeip || neweip > oldeip + 10); // to handle REP* and INTO
+    while (neweip == oldeip); // to handle REP*
 //log_debug("s2 %x:%x\n",Segs.val[1],cpu_regs.ip.word[0]);
     // // if (!nc_retcode)
       //{
@@ -471,43 +475,7 @@ extern void   Initializer();
 
   void stackDump (struct _STATE *_state)
   {
-    X86_REGREF 
-#ifdef __BYTE_ORDER__
-    log_debug ("is_little_endian()=%d\n", __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__);
-#endif
-    log_debug ("sizeof(dd)=%zu\n", sizeof (dd));
-    log_debug ("sizeof(dd *)=%zu\n", sizeof (dd *));
-    log_debug ("sizeof(dw)=%zu\n", sizeof (dw));
-    log_debug ("sizeof(db)=%zu\n", sizeof (db));
-//      log_debug("sizeof(jmp_buf)=%zu\n",sizeof(jmp_buf));
-//      log_debug("sizeof(mem)=%zu\n",sizeof(m));
-    log_debug ("eax: %x\n", eax);
-//      hexDump(&eax,sizeof(dd));
-    log_debug ("ebx: %x\n", ebx);
-    log_debug ("ecx: %x\n", ecx);
-    log_debug ("edx: %x\n", edx);
-    log_debug ("ebp: %x\n", ebp);
-    log_debug ("cs: %d -> %p\n", cs, (void *) realAddress (0, cs));
-    log_debug ("ds: %d -> %p\n", ds, (void *) realAddress (0, ds));
-    log_debug ("esi: %x\n", esi);
-    log_debug ("ds:esi %p\n", (void *) realAddress (esi, ds));
-    log_debug ("es: %d -> %p\n", es, (void *) realAddress (0, es));
-    hexDump (&es, sizeof (dd));
-    log_debug ("edi: %x\n", edi);
-    log_debug ("es:edi %p\n", (void *) realAddress (edi, es));
-    hexDump ((void *) realAddress (edi, es), 50);
-    log_debug ("fs: %d -> %p\n", fs, (void *) realAddress (0, fs));
-    log_debug ("gs: %d -> %p\n", gs, (void *) realAddress (0, gs));
-//      log_debug("adress heap: %p\n",(void *) &m.heap);
-#ifndef NOSDL
-#if SDL_MAJOR_VERSION == 2
-    log_debug ("adress vgaRam: %p\n", (void *) &vgaRam);
-    log_debug ("first pixels vgaRam: %x\n", *vgaRam);
-#endif
-#endif
-    log_debug ("flags: ZF = %d\n", GET_ZF ());
-    log_debug ("top stack=%d\n", stackPointer);
-//      checkIfVgaRamEmpty();
+	shadow_stack.print(_state);
   }
 
   bool Tstart (int line, const char *instr)
@@ -529,8 +497,9 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     if (memcmp (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size) != 0)
     {
        log_info("~self-modified instruction %x:%x\n",seg,ip1);
-        hexDump (m2c::lm+(seg<<4)+ip1, 5);
-        hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
+        //hexDump (m2c::lm+(seg<<4)+ip1, 5);
+        //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
+        print_instruction(seg,ip1);
         cmpHexDump (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size);
        return false;
     }
@@ -555,14 +524,14 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
     log_debug ("before ");
-    log_regs_dbx(line, instr, oldcpu_regs, oldSegs);
+    log_regs_dbx("",line, instr, oldcpu_regs, oldSegs);
         log_error("/-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error("cs:ip: ");
         hexDump (raddr (Segs.val[1], oldip), 8);
 
         log_error("~m2c ");
-    log_regs_dbx(line, instr, cpu_regs, Segs);
+    log_regs_dbx("",line, instr, cpu_regs, Segs);
 
     if (regs_ch)
       {
@@ -578,7 +547,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
         Segs = realSegs; cpu_regs = realcpu_regs;
 
         log_error("~dbx ");
-    log_regs_dbx(line, instr, realcpu_regs, realSegs);
+    log_regs_dbx("",line, instr, realcpu_regs, realSegs);
     if (regs_ch)
       {
         log_error("reg ");
@@ -597,6 +566,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
 
   bool Xstart (int line, const char *instr)
   {
+
     oldip = cpu_regs.ip.word[0];
     run_hw_interrupts ();
 
@@ -615,8 +585,9 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     if (memcmp (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size) != 0)
     {
        log_info("~self-modified instruction %x:%x\n",seg,ip1);
-        hexDump (m2c::lm+(seg<<4)+ip1, 5);
-        hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
+        //hexDump (m2c::lm+(seg<<4)+ip1, 5);
+        //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
+        print_instruction(seg,ip1);
         cmpHexDump (m2c::lm+(seg<<4)+ip1, (db*)&m2c::m+(seg<<4)+ip1, instr_size);
        return false;
     }
@@ -646,13 +617,13 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
         bool mem_ch = memcmp (&m, rm, COMPARE_SIZE);
     log_debug ("before ");
-    log_regs_dbx(line, instr, oldcpu_regs, oldSegs);
+    log_regs_dbx("",line, instr, oldcpu_regs, oldSegs);
         log_error("/-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error("cs:ip: ");
         hexDump (raddr (Segs.val[1], oldip), 8);
         log_error("~m2c ");
-    log_regs_dbx(line, instr, cpu_regs, Segs);
+    log_regs_dbx("",line, instr, cpu_regs, Segs);
     if (regs_ch)
       {
         log_error("reg ");
@@ -666,7 +637,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
 
         Segs = realSegs; cpu_regs = realcpu_regs;
         log_error("~dbx ");
-    log_regs_dbx(line, instr, realcpu_regs, realSegs);
+    log_regs_dbx("",line, instr, realcpu_regs, realSegs);
     if (regs_ch)
       {
         log_error("reg ");
@@ -688,8 +659,9 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     cpu_regs.flags = realflags;
   }
 
-void log_regs_dbx(int line, const char * instr, const CPU_Regs& r, const Segments& s)
-{/*
+void log_regs_dbx(const char * file, int line, const char * instr, const CPU_Regs& r, const Segments& s)
+{
+/*
 enum SegNames { es=0,cs=1,ss=2,ds=3,fs=4,gs=5};
 struct Segments {
 	Bit16u val[8];
@@ -705,8 +677,8 @@ struct CPU_Regs {
 };
 #define reg_32(reg) (cpu_regs.regs[(reg)].dword[DW_INDEX])
 };*/
-  log_debug("%06d %04X:%08X %s%-54s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n", 
-                         line,s.val[1],r.ip,_str,instr, r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0], r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3], s.val[0], s.val[4], s.val[5], s.val[2], r.flags&FLAG_CF, r.flags&FLAG_ZF, r.flags&FLAG_SF, r.flags&FLAG_OF, r.flags&FLAG_AF, r.flags&FLAG_PF, r.flags&FLAG_IF);
+  log_debug("%8x %s:%06d %04X:%04X %s%-54s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n", 
+                         ++counter, file,line,s.val[1],r.ip,_str,instr, r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0], r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3], s.val[0], s.val[4], s.val[5], s.val[2], r.flags&FLAG_CF, r.flags&FLAG_ZF, r.flags&FLAG_SF, r.flags&FLAG_OF, r.flags&FLAG_AF, r.flags&FLAG_PF, r.flags&FLAG_IF);
 }
 
 void interpret_unknown_callf(dw newcs, dd newip)
@@ -720,9 +692,9 @@ X86_REGREF
 //#endif
   interpretation_deep = 1;
   do {
-  log_debug("start\n");
+//  log_debug("start\n");
   Normal_Loop();
-  log_debug("stop\n");
+//  log_debug("stop\n");
    } while (interpretation_deep>0);
   interpretation_deep = -1;
   CPU_Cycles = old_cycles;
@@ -730,8 +702,8 @@ X86_REGREF
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
 //#endif
 }
-
 }
+
 
 //#include <cstdio>
 void init_entrypoint(Bit16u relocate)

@@ -1114,7 +1114,7 @@ cs=0x26a9;eip=0x0006e2; 	T(MOV(ax, ss));	// 84987 mov     ax, ss ;~ 26A9:06E2
 cs=0x26a9;eip=0x0006e4; 	T(MOV(es, ax));	// 84988 mov     es, ax ;~ 26A9:06E4
 cs=0x26a9;eip=0x0006e6; 	T(SUB(ax, ax));	// 84989 sub     ax, ax ;~ 26A9:06E6
 	// 84990 repne stosb ;~ 26A9:06E8
-cs=0x26a9;eip=0x0006e8; 	X(	REPNE STOSB);	// 84990 repne stosb ;~ 26A9:06E8
+cs=0x26a9;eip=0x0006e8; 	R(REPNE STOSB);	// 84990 repne stosb ;~ 26A9:06E8
 cs=0x26a9;eip=0x0006ea; 	T(ax = bp+var_50);	// 84991 lea     ax, [bp+var_50] ;~ 26A9:06EA
 cs=0x26a9;eip=0x0006ed; 	X(PUSH(ax));	// 84992 push    ax ;~ 26A9:06ED
 cs=0x26a9;eip=0x0006ee; 	X(PUSH(*(dw*)((&unk_47b34))));	// 84993 push    word ptr unk_47B34 ;~ 26A9:06EE

@@ -488,7 +488,7 @@ cs=0x229a;eip=0x0002b4; 	T(MOV(ax, ds));	// 75374 mov     ax, ds ;~ 229A:02B4
 cs=0x229a;eip=0x0002b6; 	T(MOV(es, ax));	// 75375 mov     es, ax ;~ 229A:02B6
 cs=0x229a;eip=0x0002b8; 	T(SUB(ax, ax));	// 75376 sub     ax, ax ;~ 229A:02B8
 	// 75377 repne stosb ;~ 229A:02BA
-cs=0x229a;eip=0x0002ba; 	X(	REPNE STOSB);	// 75377 repne stosb ;~ 229A:02BA
+cs=0x229a;eip=0x0002ba; 	R(REPNE STOSB);	// 75377 repne stosb ;~ 229A:02BA
 cs=0x229a;eip=0x0002bc; 	X(POP(di));	// 75378 pop     di ;~ 229A:02BC
 cs=0x229a;eip=0x0002bd; 	R(RETF(0));	// 75379 retf ;~ 229A:02BD
 sub_3123e:
