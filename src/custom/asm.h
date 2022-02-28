@@ -559,13 +559,13 @@ void print(_STATE *_state)
     X86_REGREF 
 if(!m_ss.empty())
 log_debug(" Stack dump:\n");
-log_debug("%8s %10s:%6s %4s:%4s %7s %s %8s %s\n","Alloc","File","Line","cs","ip","sp","Value","Dealloc", "Current value");
+log_debug("%8s %15s:%6s %4s:%4s %7s %4s %8s %s\n","Alloc","File","Line","cs","ip","sp","Value","Dealloc", "Current value");
     for(int i=m_ss.size()-1;i>=0;i--)
     {
   Frame f=m_ss[i];
   if (i==m_current-1)
          log_debug("  ");
-  log_debug("%8x %s:%06d %04x:%04x sp=%04x %x %8x",f.addcounter,f.file,f.line,f.cs,f.ip,f.sp,f.value,f.remcounter);
+  log_debug("%8x %s:%06d %04x:%04x sp=%04x %4x %8x",f.addcounter,f.file,f.line,f.cs,f.ip,f.sp,f.value,f.remcounter);
   if (*f.pointer_ != f.value)
   log_debug(" %x\n",*f.pointer_);
   else

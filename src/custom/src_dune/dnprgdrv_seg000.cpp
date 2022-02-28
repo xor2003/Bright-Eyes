@@ -7352,7 +7352,13 @@ cs=0x1a2;eip=0x003a76; 	T(ADD(bx, 0x0A));	// 9344 add     bx, 0Ah ;~ 01A2:3A76
 cs=0x1a2;eip=0x003a79; 	R(LOOP(loc_13a6a));	// 9345 loop    loc_13A6A ;~ 01A2:3A79
 locret_13a7b:
 	// 5102 
-cs=0x1a2;eip=0x003a7b; 	R(RETN(0));	// 9349 retn ;~ 01A2:3A7B
+cs=0x1a2;eip=0x003a7b;
+dw tt;
+R(POP(tt));
+__disp=tt;
+if (__disp=='xy') return true;
+R(JMP(__dispatch_call));
+// 	R(RETN(0));	// 9349 retn ;~ 01A2:3A7B
 sub_13a7c:
 	// 9356 
 cs=0x1a2;eip=0x003a7c; 	R(CALL(sub_139e6,0));	// 9358 call    sub_139E6 ;~ 01A2:3A7C
@@ -20146,6 +20152,7 @@ cs=0x1a2;eip=0x0095dc; 	T(MOV(ah, 2));	// 24240 mov     ah, 2 ;~ 01A2:95DC
 loc_195de:
 	// 6486 
 cs=0x1a2;eip=0x0095de; 	X(MOV(*(raddr(ds,0x23)), ah));	// 24244 mov     ds:23h, ah ;~ 01A2:95DE
+loc_1a295e2:
 cs=0x1a2;eip=0x0095e2; 	R(CALL(sub_1a1c4,0));	// 24245 call    sub_1A1C4 ;~ 01A2:95E2
 cs=0x1a2;eip=0x0095e5; 	T(MOV(ax, 5));	// 24246 mov     ax, 5 ;~ 01A2:95E5
 cs=0x1a2;eip=0x0095e8; 	R(CALL(sub_19f31,0));	// 24247 call    sub_19F31 ;~ 01A2:95E8
@@ -38468,6 +38475,7 @@ cs=0x1a2;eip=0x00f4a8; 	R(RETN(0));	// 40565 retn ;~ 01A2:F4A8
         case m2c::ksub_1f29b: 	goto sub_1f29b;
         case m2c::ksub_1f2e7: 	goto sub_1f2e7;
         case m2c::ksub_1f3a7: 	goto sub_1f3a7;
+        case m2c::kloc_1a295e2: 	goto loc_1a295e2;
         default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
     };
 }

@@ -29223,6 +29223,7 @@ static const dd kloc_5d772 = 0x4e730a62;
 static const dd ksub_5d797 = 0x4e730a87;
 static const dd kret_4e73_a89 = 0x4e730a89;
 static const dd kloc_5d79f = 0x4e730a8f;
+static const dd kloc_1a295e2 = 0x1a295e2;
 static const dd ksub_5d7b2 = 0x4e730aa2;
 static const dd k_group1 = 0x1a20000;
 static const dd k_group2 = 0x24ed0000;
