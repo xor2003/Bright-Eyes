@@ -29271,7 +29271,13 @@ cs=0x1a2;eip=0x00d612; 	X(POP(si));	// 35189 pop     si ;~ 01A2:D612
 cs=0x1a2;eip=0x00d613; 	X(POP(dx));	// 35190 pop     dx ;~ 01A2:D613
 cs=0x1a2;eip=0x00d614; 	X(POP(cx));	// 35191 pop     cx ;~ 01A2:D614
 cs=0x1a2;eip=0x00d615; 	X(POP(bx));	// 35192 pop     bx ;~ 01A2:D615
-cs=0x1a2;eip=0x00d616; 	R(RETN(0));	// 35193 retn ;~ 01A2:D616
+cs=0x1a2;eip=0x00d616;
+dw t;
+R(POP(t));
+__disp=t;
+if (__disp=='xy') return true;
+R(JMP(__dispatch_call));
+// 	R(RETN(0));	// 35193 retn ;~ 01A2:D616
 sub_1d617:
 	// 35200 
 cs=0x1a2;eip=0x00d617; 	X(PUSH(ax));	// 35201 push    ax ;~ 01A2:D617
@@ -33048,7 +33054,7 @@ cs=0x1a2;eip=0x00f080; 	T(MOV(al, 0x20));	// 39682 mov     al, 20h ; ' ' ;~ 01A2
 cs=0x1a2;eip=0x00f082; 	T(CLI);	// 39683 cli ;~ 01A2:F082
 cs=0x1a2;eip=0x00f083; 	R(OUT(0x20, al));	// 39684 out     20h, al         ; Interrupt controller, 8259A. ;~ 01A2:F083
 cs=0x1a2;eip=0x00f085; 	X(PUSH(ds));	// 39685 push    ds ;~ 01A2:F085
-cs=0x1a2;eip=0x00f086; 	X(POP(ss));	// 39686 pop     ss ;~ 01A2:F086
+cs=0x1a2;eip=0x00f086; 	R(POP(ss));	// 39686 pop     ss ;~ 01A2:F086
 cs=0x1a2;eip=0x00f087; 	T(MOV(sp, offset(seg001,_word_2316c_error_msg)));	// 39688 mov     sp, offset _word_2316C_error_msg ;~ 01A2:F087
 cs=0x1a2;eip=0x00f08a; 	R(JMP(_1003a_exit_with_error));	// 39689 jmp     _1003A_exit_with_error ;~ 01A2:F08A
 locret_1f08d:

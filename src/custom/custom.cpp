@@ -67,7 +67,6 @@ void masm2c_exit(unsigned char exit)
 {
 		init++;
 		m2c::log_info("masm2c_exit Exiting\n");
-		m2c::stackDump(0);
 }
 
 int init_callf(unsigned selector, unsigned offs)

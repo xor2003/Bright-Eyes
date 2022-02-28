@@ -157,17 +157,18 @@ Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
 		LOADIP;
 
-if (SegBase(cs)!=0xf0000)
-{
-print_instruction(SegBase(cs)>>4,cpu_regs.ip.dword[0]);
-
-//printf("i%x:%x %s\n",SegBase(cs)>>4,cpu_regs.ip.dword[0], dline);
-
-}
 		if (return_point && return_point==(SegBase(cs)<<12)+cpu_regs.ip.word[0])
 		{SAVEIP;
 		FillFlags();
 		return CBRET_NONE;} // stop interpretation
+
+if (SegBase(cs)!=0xf0000)
+{
+//print_instruction(SegBase(cs)>>4,cpu_regs.ip.dword[0]);
+
+//printf("i%x:%x %s\n",SegBase(cs)>>4,cpu_regs.ip.dword[0], dline);
+
+}
 
 		core.opcode_index=cpu.code.big*0x200;
 		core.prefixes=cpu.code.big;

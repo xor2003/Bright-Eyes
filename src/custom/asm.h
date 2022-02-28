@@ -427,75 +427,6 @@ void log_debug2(const char *fmt, ...);
 
 const char* log_spaces(int n);
 #endif
-class ShadowStack{
- struct Frame
- {
- const char *file;
- size_t line;
- dd sp;
- dw cs;
- dd ip;
- dd value;
- size_t addcounter;
- size_t remcounter;
- };
-
-std::vector<Frame> m_ss;
-size_t m_current;
-public:
-ShadowStack():m_current(0)
-{}
-
-void push(const char *file, size_t line, _STATE *_state, dd value)
- { 
-#if DEBUG>0 && DEBUG<4
-    X86_REGREF 
-     Frame f;
-     f.file=file;f.line=line;f.cs=cs;f.ip=eip;f.sp=sp;f.value=value;f.addcounter=m2c::counter;f.remcounter=0;
-     if (m_current==m_ss.size())
-	     m_ss.resize(m_current+1);
-     m_ss[m_current++]=f;
-     m2c::log_info("ssize=%d\n",m_ss.size());
-#endif
- }
-
-void pop(_STATE *_state)
- {
-#if DEBUG>0 && DEBUG<4
-    X86_REGREF 
-    m2c::log_info("ssize=%d\n",m_ss.size() );
-    if ( !m_ss.empty() && m_current) 
-    {
-        dd tsp;
-        size_t tcount=0;
-        do{
-           tsp=m_ss[m_current-1].sp;
-           if ( (tcount++)>0 ) 
-              m2c::log_error("uncontrolled pop was before %x\n",tsp);
-           if (tsp<=sp) m_ss[--m_current].remcounter=m2c::counter;
-          } while (tsp<sp);
-    }
-#endif
- }
-
-void print(_STATE *_state)
- {
-#if DEBUG>0 && DEBUG<4
-    X86_REGREF 
-if(!m_ss.empty())
-    for(int i=m_ss.size()-1;i>=0;i--)
-    {
-  Frame f=m_ss[i];
-  if (i==m_current-1)
-         log_debug("  ");
-  log_debug("%8x %8x %s:%06d %04x:%04x sp=%04x %x\n",f.addcounter,f.remcounter,f.file,f.line,f.cs,f.ip,f.sp,f.value);
-    }
-#endif
- }
-
-};
-
-extern ShadowStack shadow_stack;
 
 #define VGARAM_SIZE (320*200)
 
@@ -568,6 +499,84 @@ inline db MSB(D a)  // get highest bit
 #define RM_TO_LINEAR(addr)    (((((size_t)addr) & 0xFFFF0000) >> 12) + (((size_t)addr) & 0xFFFF))
 #define RM_OFFSET(addr)       (((size_t)addr) & 0xF)
 #define RM_SEGMENT(addr)      ((((size_t)addr) >> 4) & 0xFFFF)
+
+class ShadowStack{
+ struct Frame
+ {
+ const char *file;
+ size_t line;
+ dd sp;
+ dw cs;
+ dd ip;
+ dd value;
+ dw* pointer_;
+ size_t addcounter;
+ size_t remcounter;
+ };
+
+std::vector<Frame> m_ss;
+size_t m_current;
+public:
+ShadowStack():m_current(0)
+{}
+
+void push(const char *file, size_t line, _STATE *_state, dd value)
+ { 
+#if DEBUG>0 && DEBUG<4
+    X86_REGREF 
+     Frame f;
+     f.file=file;f.line=line;f.cs=cs;f.ip=eip;f.sp=sp;f.value=value;f.addcounter=m2c::counter;f.remcounter=0;
+     f.pointer_=(dw*)m2c::raddr_(ss,sp);
+     if (m_current==m_ss.size())
+	     m_ss.resize(m_current+1);
+     m_ss[m_current++]=f;
+     m2c::log_info("ssize=%d\n",m_ss.size());
+#endif
+ }
+
+void pop(_STATE *_state)
+ {
+#if DEBUG>0 && DEBUG<4
+    X86_REGREF 
+    m2c::log_info("ssize=%d\n",m_ss.size() );
+    if ( !m_ss.empty() && m_current) 
+    {
+        dd tsp;
+        size_t tcount=0;
+        do{
+           tsp=m_ss[m_current-1].sp;
+           if ( (tcount++)>0 ) 
+              m2c::log_error("uncontrolled pop was before %x\n",tsp);
+           if (tsp<=sp) m_ss[--m_current].remcounter=m2c::counter;
+          } while (tsp<sp);
+    }
+#endif
+ }
+
+void print(_STATE *_state)
+ {
+#if DEBUG>0 && DEBUG<4
+    X86_REGREF 
+if(!m_ss.empty())
+log_debug(" Stack dump:\n");
+log_debug("%8s %10s:%6s %4s:%4s %7s %s %8s %s\n","Alloc","File","Line","cs","ip","sp","Value","Dealloc", "Current value");
+    for(int i=m_ss.size()-1;i>=0;i--)
+    {
+  Frame f=m_ss[i];
+  if (i==m_current-1)
+         log_debug("  ");
+  log_debug("%8x %s:%06d %04x:%04x sp=%04x %x %8x",f.addcounter,f.file,f.line,f.cs,f.ip,f.sp,f.value,f.remcounter);
+  if (*f.pointer_ != f.value)
+  log_debug(" %x\n",*f.pointer_);
+  else
+  log_debug("\n");
+    }
+#endif
+ }
+
+};
+
+extern ShadowStack shadow_stack;
 
 
 //pusha AX, CX, DX, BX, SP, BP, SI, DI
