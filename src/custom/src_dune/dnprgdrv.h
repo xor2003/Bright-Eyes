@@ -510,8 +510,8 @@ extern dw& dummy9_bdb0;
 extern dw& dummy9_bdb2;
 extern dw& dummy9_bdb4;
 extern db& dummy9_c6de;
-extern db& off_1c13b;
-extern db& byte_1c13c;
+extern dw& off_1c13b;
+//extern db& byte_1c13c;
 extern db& _byte_1c21a_pal_offset;
 extern dw& word_1cc92;
 extern dw& _word_1cc94_bltfunc;
@@ -24194,6 +24194,10 @@ static const dd kret_1a2_2569 = 0x1a22569;
 static const dd kloc_12587 = 0x1a22587;
 static const dd kloc_1258d = 0x1a2258d;
 static const dd kloc_125b3 = 0x1a225b3;
+
+static const dd kloc_125b8 = 0x1a225b8;
+static const dd kloc_12bb8 = 0x1a22bb8;
+
 static const dd kloc_1260b = 0x1a2260b;
 static const dd kloc_1263e = 0x1a2263e;
 static const dd kloc_12642 = 0x1a22642;

@@ -688,6 +688,7 @@ print_instruction(Segs.val[1]>>4, oldip);
 
 void log_regs_dbx(const char * file, int line, const char * instr, const CPU_Regs& r, const Segments& s)
 {
+++counter;
  if (trace_instructions){
 /*
 enum SegNames { es=0,cs=1,ss=2,ds=3,fs=4,gs=5};
@@ -706,7 +707,7 @@ struct CPU_Regs {
 #define reg_32(reg) (cpu_regs.regs[(reg)].dword[DW_INDEX])
 };*/
   log_debug("%8x %s:%06d %04X:%04X %s%-54s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n", 
-                         ++counter, file,line,s.val[1],r.ip,_str,instr, r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0], r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3], s.val[0], s.val[4], s.val[5], s.val[2], r.flags&FLAG_CF, r.flags&FLAG_ZF, r.flags&FLAG_SF, r.flags&FLAG_OF, r.flags&FLAG_AF, r.flags&FLAG_PF, r.flags&FLAG_IF);
+                         counter, file,line,s.val[1],r.ip,_str,instr, r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0], r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3], s.val[0], s.val[4], s.val[5], s.val[2], r.flags&FLAG_CF, r.flags&FLAG_ZF, r.flags&FLAG_SF, r.flags&FLAG_OF, r.flags&FLAG_AF, r.flags&FLAG_PF, r.flags&FLAG_IF);
  }
 }
 
@@ -727,12 +728,70 @@ X86_REGREF
 //  log_debug("stop\n");
    } while (return_point!=(cs<<16)+ip);
   if (return_point!=(cs<<16)+ip)   {log_error("Error cs:ip != return_point %x\n",return_point);}
-  if (oldsp+4!=sp)   {log_error("Error it should consume 4 bytes from stack\n"); stackDump(0);exit(1);}
 #if DEBUG > 0
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
 #endif
+  if (oldsp+4!=sp)   {log_error("Error it should consume 4 bytes from stack\n"); stackDump(0);exit(1);}
   return_point=0;
 }
+
+void ShadowStack::push(_STATE *_state, dd value)
+ { 
+  if (m2c::debug)
+  {
+    X86_REGREF 
+     Frame f;
+     f.cs=cs;f.ip=eip;f.sp=sp;f.value=value;f.addcounter=m2c::counter;f.remcounter=0;
+     f.pointer_=(dw*)m2c::raddr_(ss,sp);
+     if (m_current==m_ss.size())
+	     m_ss.resize(m_current+1);
+     m_ss[m_current++]=f;
+//     m2c::log_info("ssize=%d\n",m_ss.size());
+   }
+ }
+
+void ShadowStack::pop(_STATE *_state)
+ {
+  if (m2c::debug)
+  {
+    X86_REGREF 
+//    m2c::log_info("ssize=%d\n",m_ss.size() );
+    if ( !m_ss.empty() && m_current) 
+    {
+        dd tsp;
+        size_t tcount=0;
+        do{
+           tsp=m_ss[m_current-1].sp;
+           if ( (tcount++)>0 ) 
+              m2c::log_error("uncontrolled pop was before %x\n",tsp);
+           if (tsp<=sp) m_ss[--m_current].remcounter=m2c::counter;
+          } while (tsp<sp);
+    }
+  }
+ }
+
+void ShadowStack::print(_STATE *_state)
+ {
+  if (m2c::debug)
+  {
+    X86_REGREF 
+if(!m_ss.empty())
+log_debug(" Stack dump:\n");
+log_debug("%8s %8s %4s:%4s %4s %4s %4s\n","Alloc","Dealloc","cs","ip","sp","Value", "Current value");
+    for(int i=m_ss.size()-1;i>=0;i--)
+    {
+  Frame f=m_ss[i];
+  if (i==m_current-1)
+         log_debug("  ");
+  log_debug("%8x %8x %04x:%04x %4x %4x",f.addcounter,f.remcounter,f.cs,f.ip,f.sp,f.value);
+  if (*f.pointer_ != f.value)
+  log_debug(" %4x\n",*f.pointer_);
+  else
+  log_debug("\n");
+    }
+  }
+ }
+
 }
 
 
@@ -758,5 +817,6 @@ if((file_to_write = fopen("goody.com", "wb")) != 0){
 */
   (*m2c::_ENTRY_POINT_)(0,0);
 }
+
 
 #endif /* DOSBOX_CUSTOM */
