@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <iterator>
 
-#include "asm.h"
+#include "../asm.h"
 
 
 
@@ -165,22 +165,22 @@ static const dd kloc_1044a = 0x1b2034a;
 static const dd kloc_10458 = 0x1b20358;
 static const dd k_group1 = 0x1b20000;
 }
-void _group1(m2c::_offsets, struct m2c::_STATE*);
-void delay(m2c::_offsets, struct m2c::_STATE*);
-void dispdigit(m2c::_offsets, struct m2c::_STATE*);
-void dispnum(m2c::_offsets, struct m2c::_STATE*);
-void draw(m2c::_offsets, struct m2c::_STATE*);
-void fruitgeneration(m2c::_offsets, struct m2c::_STATE*);
-void keyboardfunctions(m2c::_offsets, struct m2c::_STATE*);
-void asmmain(m2c::_offsets, struct m2c::_STATE*);
-static void mainproc(m2c::_offsets, struct m2c::_STATE*);
-void printbox(m2c::_offsets, struct m2c::_STATE*);
-void readchar(m2c::_offsets, struct m2c::_STATE*);
-void readcharat(m2c::_offsets, struct m2c::_STATE*);
-void setcursorpos(m2c::_offsets, struct m2c::_STATE*);
-void shiftsnake(m2c::_offsets, struct m2c::_STATE*);
-void writecharat(m2c::_offsets, struct m2c::_STATE*);
-void writestringat(m2c::_offsets, struct m2c::_STATE*);
+bool _group1(m2c::_offsets, struct m2c::_STATE*);
+bool delay(m2c::_offsets, struct m2c::_STATE*);
+bool dispdigit(m2c::_offsets, struct m2c::_STATE*);
+bool dispnum(m2c::_offsets, struct m2c::_STATE*);
+bool draw(m2c::_offsets, struct m2c::_STATE*);
+bool fruitgeneration(m2c::_offsets, struct m2c::_STATE*);
+bool keyboardfunctions(m2c::_offsets, struct m2c::_STATE*);
+bool asmmain(m2c::_offsets, struct m2c::_STATE*);
+static bool mainproc(m2c::_offsets, struct m2c::_STATE*);
+bool printbox(m2c::_offsets, struct m2c::_STATE*);
+bool readchar(m2c::_offsets, struct m2c::_STATE*);
+bool readcharat(m2c::_offsets, struct m2c::_STATE*);
+bool setcursorpos(m2c::_offsets, struct m2c::_STATE*);
+bool shiftsnake(m2c::_offsets, struct m2c::_STATE*);
+bool writecharat(m2c::_offsets, struct m2c::_STATE*);
+bool writestringat(m2c::_offsets, struct m2c::_STATE*);
 
 #ifndef DOSBOX
 static

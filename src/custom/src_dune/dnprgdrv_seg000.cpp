@@ -8761,6 +8761,7 @@ cs=0x1a2;eip=0x00449d; 	T(MOV(si, 0x44AB));	// 10939 mov     si, 44ABh ;~ 01A2:4
 cs=0x1a2;eip=0x0044a0; 	T(MOV(bp, 0x12C));	// 10940 mov     bp, 12Ch ;~ 01A2:44A0
 cs=0x1a2;eip=0x0044a3; 	R(CALL(sub_1da25,0));	// 10941 call    sub_1DA25 ;~ 01A2:44A3
 cs=0x1a2;eip=0x0044a6; 	X(MOV(*(raddr(ds,0x4751)), 0));	// 10942 mov     byte ptr ds:4751h, 0 ;~ 01A2:44A6
+ret_0x1a244ab:
 cs=0x1a2;eip=0x0044ab; 	X(INC(*(raddr(ds,0x4751))));	// 10943 inc     byte ptr ds:4751h ;~ 01A2:44AB
 cs=0x1a2;eip=0x0044af; 	X(PUSH(*(dw*)(((db*)&_word_2d08a_framebuffer_active))));	// 10944 push    ds:_word_2D08A_framebuffer_active ;~ 01A2:44AF
 cs=0x1a2;eip=0x0044b3; 	R(CALL(_sub_1c08e_set_screen_as_active_framebuffer,0));	// 10945 call    _sub_1C08E_set_screen_as_active_framebuffer ;~ 01A2:44B3
@@ -38475,6 +38476,7 @@ cs=0x1a2;eip=0x00f4a8; 	R(RETN(0));	// 40565 retn ;~ 01A2:F4A8
         case m2c::ksub_1f29b: 	goto sub_1f29b;
         case m2c::ksub_1f2e7: 	goto sub_1f2e7;
         case m2c::ksub_1f3a7: 	goto sub_1f3a7;
+        case m2c::kret_0x1a244ab: goto ret_0x1a244ab;
         case m2c::kloc_1a295e2: 	goto loc_1a295e2;
         default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
     };

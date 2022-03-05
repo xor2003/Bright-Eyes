@@ -17,7 +17,13 @@
 //#define _GNU_SOURCE
 //#include <fenv.h>
 //#include <signal.h>
-bool compare_instructions = true;
+
+namespace m2c{
+extern size_t debug;
+}
+
+bool compare_instructions = m2c::debug == 4;
+bool trace_instructions = m2c::debug>0 && m2c::debug<4? true : false;
 
 static const size_t COMPARE_SIZE = 0xf0000;
 extern Bitu Normal_Loop(void);
@@ -67,6 +73,7 @@ void masm2c_exit(unsigned char exit)
 {
 		init++;
 		m2c::log_info("masm2c_exit Exiting\n");
+		m2c::stackDump(0);
 }
 
 int init_callf(unsigned selector, unsigned offs)
@@ -210,6 +217,11 @@ custom_init_entrypoint (char *name, Bit16u relocate)
 namespace m2c
 {
 extern void   Initializer();
+#ifdef DEBUG
+size_t debug = DEBUG;
+#else
+size_t debug = 0;
+#endif
 
   size_t counter=0;
   ShadowStack shadow_stack;;
@@ -479,12 +491,16 @@ extern void   Initializer();
 	shadow_stack.print(_state);
   }
 
-  bool Tstart (int line, const char *instr)
+  bool Tstart (const char * file, int line, const char *instr)
   {
+    m2c::log_regs_dbx(file,line,instr, cpu_regs, Segs);
+    if (!compare_instructions) return true;
+
     oldip = cpu_regs.ip.word[0];
-    run_hw_interrupts ();
+//    run_hw_interrupts ();
 
     dd ip1 = cpu_regs.ip.word[0]; dw seg = Segs.val[1];
+
 bool compare(compare_instructions && !already_checked[(seg<<4)+ip1]);
 if (compare) {
     oldSegs = Segs; oldcpu_regs = cpu_regs;
@@ -514,14 +530,17 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     }
   }
 
-  void Tend (int line, const char *instr)
+  void Tend (const char * file, int line, const char *instr)
   {
+    if (!compare_instructions) return;
+
     fix_segs ();
     cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     cpu_regs.ip = realcpu_regs.ip;
 
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0)
       {
+        trace_instructions=true;
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
     log_debug ("before ");
@@ -566,11 +585,13 @@ print_instruction(Segs.val[1]>>4, oldip);
     cpu_regs.flags = realflags;
   }
 
-  bool Xstart (int line, const char *instr)
+  bool Xstart (const char * file, int line, const char *instr)
   {
+    m2c::log_regs_dbx(file,line,instr, cpu_regs, Segs);
+    if (!compare_instructions) return true;
 
     oldip = cpu_regs.ip.word[0];
-    run_hw_interrupts ();
+//    run_hw_interrupts ();
 
     dd ip1 = cpu_regs.ip.word[0]; dw seg = Segs.val[1];
 bool compare(compare_instructions && !already_checked[(seg<<4)+ip1]);
@@ -606,8 +627,10 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     }
   }
 
-  void Xend (int line, const char *instr)
+  void Xend (const char * file, int line, const char *instr)
   {
+    if (!compare_instructions) return;
+
     fix_segs ();
     cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     cpu_regs.ip = realcpu_regs.ip;
@@ -615,6 +638,7 @@ if (!compare) {if (CPU_Cycles>0) --CPU_Cycles; return false;}
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0 ||
         memcmp (&m, rm, COMPARE_SIZE) != 0)
       {
+        trace_instructions=true;
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
         bool mem_ch = memcmp (&m, rm, COMPARE_SIZE);
@@ -664,6 +688,7 @@ print_instruction(Segs.val[1]>>4, oldip);
 
 void log_regs_dbx(const char * file, int line, const char * instr, const CPU_Regs& r, const Segments& s)
 {
+ if (trace_instructions){
 /*
 enum SegNames { es=0,cs=1,ss=2,ds=3,fs=4,gs=5};
 struct Segments {
@@ -682,6 +707,7 @@ struct CPU_Regs {
 };*/
   log_debug("%8x %s:%06d %04X:%04X %s%-54s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n", 
                          ++counter, file,line,s.val[1],r.ip,_str,instr, r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0], r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3], s.val[0], s.val[4], s.val[5], s.val[2], r.flags&FLAG_CF, r.flags&FLAG_ZF, r.flags&FLAG_SF, r.flags&FLAG_OF, r.flags&FLAG_AF, r.flags&FLAG_PF, r.flags&FLAG_IF);
+ }
 }
 
 void interpret_unknown_callf(dw newcs, dd newip)
@@ -691,23 +717,21 @@ X86_REGREF
   eip = newip;
   dw oldsp=sp;
     fix_segs ();
-#if DEBUG > 0
-  log_debug("Enter interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
-#endif
   return_point=*(dd*)raddr(ss,sp);
-//  interpretation_deep = 1;
+#if DEBUG > 0
+  log_debug("Enter interp current cs=%x ip=%x sp=%x ret_point:%x\n",cs, ip, sp,return_point);
+#endif
   do {
 //  log_debug("start\n");
   Normal_Loop();
 //  log_debug("stop\n");
    } while (return_point!=(cs<<16)+ip);
-  return_point=0;
-//  interpretation_deep = -1;
-//  CPU_Cycles = old_cycles;
+  if (return_point!=(cs<<16)+ip)   {log_error("Error cs:ip != return_point %x\n",return_point);}
   if (oldsp+4!=sp)   {log_error("Error it should consume 4 bytes from stack\n"); stackDump(0);exit(1);}
 #if DEBUG > 0
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
 #endif
+  return_point=0;
 }
 }
 

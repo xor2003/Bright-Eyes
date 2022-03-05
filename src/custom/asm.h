@@ -33,6 +33,7 @@
 
 extern Bit32u ticksRemain;
 extern volatile bool from_callf;
+extern bool trace_instructions;
 
 void increaseticks();
 #endif
@@ -97,10 +98,13 @@ typedef long double real10;
 
 namespace m2c {
 
+extern size_t debug;
+
 extern size_t counter;
 
 extern void execute_irqs();
 extern void single_step();
+void stackDump (struct _STATE *_state);
 
 struct /*__attribute__((__packed__))*/ Memory;
 extern Memory& m;
@@ -298,11 +302,13 @@ static int log_debug(const char *format, ...);
 template<class S>
 inline void check_type(const S& s)
 {
+/*
 #if DEBUG >=4
   size_t addr = (((db*)&s)-((db*)&m2c::m));
   if (addr >= (0x1920+0x100) && addr < (0x1920+0x10000) && ( *(S*)(((db*)&m2c::types)+addr) )==0 && s !=0)
      log_debug("Read of uninit addr:%zx size:%zd %zx\n",addr-0x1920,(size_t)sizeof(S),(*(S*)(((db*)&m2c::types)+addr)) );
 #endif
+*/
 }
 
 template<>
@@ -333,11 +339,13 @@ inline long long getdata<long long>(const long long& s)
 template<class S>
 inline void set_type(const S& s)
 {
+/*
 #if DEBUG>0
   size_t addr = (((db*)&s)-((db*)&m2c::m));
   if (addr<0xf0000)
   memset((((db*)&m2c::types)+addr),0xff,sizeof(S));
 #endif
+*/
 }
 
 static void setdata(db* d, db s)
@@ -520,25 +528,27 @@ public:
 ShadowStack():m_current(0)
 {}
 
-void push(const char *file, size_t line, _STATE *_state, dd value)
+void push(_STATE *_state, dd value)
  { 
-#if DEBUG>0 && DEBUG<4
+  if (trace_instructions)
+  {
     X86_REGREF 
      Frame f;
-     f.file=file;f.line=line;f.cs=cs;f.ip=eip;f.sp=sp;f.value=value;f.addcounter=m2c::counter;f.remcounter=0;
+     f.cs=cs;f.ip=eip;f.sp=sp;f.value=value;f.addcounter=m2c::counter;f.remcounter=0;
      f.pointer_=(dw*)m2c::raddr_(ss,sp);
      if (m_current==m_ss.size())
 	     m_ss.resize(m_current+1);
      m_ss[m_current++]=f;
-     m2c::log_info("ssize=%d\n",m_ss.size());
-#endif
+//     m2c::log_info("ssize=%d\n",m_ss.size());
+   }
  }
 
 void pop(_STATE *_state)
  {
-#if DEBUG>0 && DEBUG<4
+  if (trace_instructions)
+  {
     X86_REGREF 
-    m2c::log_info("ssize=%d\n",m_ss.size() );
+//    m2c::log_info("ssize=%d\n",m_ss.size() );
     if ( !m_ss.empty() && m_current) 
     {
         dd tsp;
@@ -550,28 +560,26 @@ void pop(_STATE *_state)
            if (tsp<=sp) m_ss[--m_current].remcounter=m2c::counter;
           } while (tsp<sp);
     }
-#endif
+  }
  }
 
 void print(_STATE *_state)
  {
-#if DEBUG>0 && DEBUG<4
     X86_REGREF 
 if(!m_ss.empty())
 log_debug(" Stack dump:\n");
-log_debug("%8s %15s:%6s %4s:%4s %7s %4s %8s %s\n","Alloc","File","Line","cs","ip","sp","Value","Dealloc", "Current value");
+log_debug("%8s %8s %4s:%4s %4s %4s %4s\n","Alloc","Dealloc","cs","ip","sp","Value", "Current value");
     for(int i=m_ss.size()-1;i>=0;i--)
     {
   Frame f=m_ss[i];
   if (i==m_current-1)
          log_debug("  ");
-  log_debug("%8x %s:%06d %04x:%04x sp=%04x %4x %8x",f.addcounter,f.file,f.line,f.cs,f.ip,f.sp,f.value,f.remcounter);
+  log_debug("%8x %8s %04x:%04x %4x %4x",f.addcounter,f.remcounter,f.cs,f.ip,f.sp,f.value);
   if (*f.pointer_ != f.value)
-  log_debug(" %x\n",*f.pointer_);
+  log_debug(" %4x\n",*f.pointer_);
   else
   log_debug("\n");
     }
-#endif
  }
 
 };
@@ -579,16 +587,9 @@ log_debug("%8s %15s:%6s %4s:%4s %7s %4s %8s %s\n","Alloc","File","Line","cs","ip
 extern ShadowStack shadow_stack;
 
 
-//pusha AX, CX, DX, BX, SP, BP, SI, DI
-//pushad EAX, ECX, EDX, EBX, ESP, EBP, ESI, EDI
-#define PUSHAD {dw oldesp=esp;PUSH(eax);PUSH(ecx);PUSH(edx);PUSH(ebx); PUSH(oldesp);PUSH(ebp);PUSH(esi);PUSH(edi);}
-#define POPAD {POP(edi);POP(esi);POP(ebp); POP(ebx); POP(ebx);POP(edx);POP(ecx);POP(eax); }
-
-#define PUSHA {dw oldsp=sp;PUSH(ax);PUSH(cx);PUSH(dx);PUSH(bx); PUSH(oldsp);PUSH(bp);PUSH(si);PUSH(di);}
-#define POPA {POP(di);POP(si);POP(bp); POP(bx); POP(bx);POP(dx);POP(cx);POP(ax); }
 
 #ifdef DOSBOX
- #define PUSH(a) {m2c::PUSH_(a);m2c::shadow_stack.push(__FILE__,__LINE__,0,(dd)(a));}
+ #define PUSH(a) {m2c::PUSH_(a);m2c::shadow_stack.push(0,(dd)(a));}
 /*
 inline void PUSH_(const dw& a)
 {CPU_Push16(a);}
@@ -624,21 +625,25 @@ inline void POP_(dd& a)
 {a = CPU_Pop32();}
 #else
 
-#ifdef DEBUG
- #define PUSH(a) {dd averytemporary=a;stackPointer-=sizeof(a); \
-		memcpy (m2c::raddr_(ss,stackPointer), &averytemporary, sizeof (a)); \
-		m2c::log_debug("after push %x\n",stackPointer);}
-//		assert((raddr(ss,stackPointer) - ((db*)&stack))>8);}
-
- #define POP(a) { m2c::log_debug("before pop %x\n",stackPointer);memcpy (&a, m2c::raddr_(ss,stackPointer), sizeof (a));stackPointer+=sizeof(a);}
-#else
  #define PUSH(a) {dd averytemporary=a;stackPointer-=sizeof(a); \
 		memcpy (m2c::raddr_(ss,stackPointer), &averytemporary, sizeof (a));}
 
  #define POP(a) {memcpy (&a, m2c::raddr_(ss,stackPointer), sizeof (a));stackPointer+=sizeof(a);}
-#endif
 
 #endif
+
+#define PUSHAD m2c::PUSHAD_()
+static void PUSHAD_() {
+    X86_REGREF 
+dw oldesp=esp;PUSH(eax);PUSH(ecx);PUSH(edx);PUSH(ebx); PUSH(oldesp);PUSH(ebp);PUSH(esi);PUSH(edi);}
+
+#define POPAD m2c::POPAD_()
+static void POPAD_() {
+    X86_REGREF 
+POP(edi);POP(esi);POP(ebp); POP(ebx); POP(ebx);POP(edx);POP(ecx);POP(eax);}
+
+#define PUSHA {dw oldsp=sp;PUSH(ax);PUSH(cx);PUSH(dx);PUSH(bx); PUSH(oldsp);PUSH(bp);PUSH(si);PUSH(di);}
+#define POPA {POP(di);POP(si);POP(bp); POP(bx); POP(bx);POP(dx);POP(cx);POP(ax); }
 
 #define GET_DF() m2cflags.bits.getDF()
 #define GET_CF() m2cflags.bits.getCF()
@@ -1326,7 +1331,10 @@ inline void MOV_(D* dest, const S& src)
 // LEA - Load Effective Address
 #define LEA(dest,src) {dest = src;}
 
-#define XCHG(dest,src) {dd averytemporary = (dd) dest; dest = src; src = averytemporary;}//std::swap(dest,src); TODO
+#define XCHG(dest,src) m2c::XCHG_(dest,src)
+template <class D>
+inline void XCHG_(D& dest, D& src)
+{D t = dest; dest = src; src = t;}//std::swap(dest,src); TODO
 
 
 #define MOVS(dest,src,destreg,srcreg,s)  {dest=src; destreg+=(GET_DF()==0)?s:-s; srcreg+=(GET_DF()==0)?s:-s; }
@@ -1379,118 +1387,88 @@ inline void MOV_(D* dest, const S& src)
 #define LAHF {ah= m2cflags.value ;}
 #define SAHF {*(db*)&m2cflags.value = ah;}
 
-/*
-#define CALLF(label) {log_debug("before callf %d\n",stackPointer);PUSH(cs);CALL(label);}
-#define CALL(label) \
-	{ log_debug("before call %d\n",stackPointer); db averytemporary4='x';  \
-	if (setjmp(jmpbuffer) == 0) { \
-		PUSH(jmpbuffer); PUSH(averytemporary4);\
-		JMP(label); \
-	} }
-
-#define RET {log_debug("before ret %d\n",stackPointer); db averytemporary5=0; POP(averytemporary5); if (averytemporary5!='x') {log_error("Stack corrupted.\n");exit(1);} \
- 		POP(jmpbuffer); log_debug("after ret %d\n",stackPointer);longjmp(jmpbuffer, 0);}
-
-#define RETN RET
-#define RETF {log_debug("before ret %d\n",stackPointer); db averytemporary5=0; POP(averytemporary5); if (averytemporary5!='x') {log_error("Stack corrupted.\n");exit(1);} \
- 		POP(jmpbuffer); stackPointer-=2; log_debug("after retf %d\n",stackPointer);longjmp(jmpbuffer, 0);}
-*/
 #define CALLF(label, disp) {PUSH(cs);CALL(label, disp);}
-/*
-#define CALL(label) \
-	{ db averytemporary6='x';  \
-	if (setjmp(jmpbuffer) == 0) { \
-		PUSH(jmpbuffer); PUSH(averytemporary6);\
-		JMP(label); \
-	} }
-
-#define RET {db averytemporary7=0; POP(averytemporary7); if (averytemporary7!='x') {log_error("Stack corrupted.\n");exit(1);} \
- 		POP(jmpbuffer); longjmp(jmpbuffer, 0);}
-#define RETF {db averytemporary7=0; POP(averytemporary7); if (averytemporary7!='x') {log_error("Stack corrupted.\n");exit(1);} \
- 		POP(jmpbuffer); stackPointer-=2; longjmp(jmpbuffer, 0);}
-*/
-
-//#define RETF RETFN(0)
 
 #if SINGLEPROC
 
-#if ((DEBUG==2) || (DEBUG==3))
- #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-   eip=averytemporary9; \
-	m2c::log_debug("after ret %x\n",stackPointer); \
-	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);} esp+=i; \
-   m2c::log_debug("return eip %x\n",eip);__disp=eip;goto __dispatch_call;}
+  #define RETN(i) {m2c::RETN_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
+static void RETN_(size_t i)
+{
+   if (trace_instructions) m2c::log_debug("before ret %x\n",stackPointer); 
+   m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
+   eip=averytemporary9;
+   esp+=i;
+   if (trace_instructions) {m2c::log_debug("after ret %x\n",stackPointer); 
+      if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);} 
+      m2c::log_debug("return eip %x\n",eip);}
+}
 
- #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-   eip=averytemporary9; \
-	dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
-	m2c::log_debug("after retf %x\n",stackPointer); \
-	if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}; esp+=i; \
-   m2c::log_debug("return eip %x\n",eip);__disp=(cs<<16)+eip;goto __dispatch_call;}
-#else
- #define RETN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-     eip=averytemporary9; \
-        esp+=i;\
-   __disp=eip;goto __dispatch_call;}
+  #define RETF(i) {m2c::RETF_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
+static void RETF_(size_t i)
+{
+   if (trace_instructions) m2c::log_debug("before retf %x\n",stackPointer); 
+   m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
+   eip=averytemporary9;
+	dw averytemporary11;POP(averytemporary11); cs=averytemporary11;
+   esp+=i;
+   if (trace_instructions) {m2c::log_debug("after retf %x\n",stackPointer); 
+      if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);} 
+      m2c::log_debug("return eip %x\n",eip);}
+}
 
- #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-      eip=averytemporary9; \
-        dw averytemporary11;POP(averytemporary11); cs=averytemporary11; \
-        esp+=i;\
-   __disp=(cs<<16)+eip;goto __dispatch_call;}
-#endif
 
 #define CALL(label, disp) {m2c::CALL_(label, _state, disp);if (disp) {__disp=disp;} else {__disp=m2c::k##label;}goto __dispatch_call;}
 static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
  X86_REGREF
 from_callf=true;
 	  MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
-#if DEBUG == 3
-	  m2c::log_debug("after call %x\n",stackPointer);
-	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
-#endif
-//	  label(_i, _state);
+
+	  if (trace_instructions) {m2c::log_debug("after call %x\n",stackPointer);
+	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};}
  }
 
 #else
 // Multiproc
- #if ((DEBUG==2) || (DEBUG==3))
  
-  #define RETN(i) {m2c::log_debug("before ret %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
- 	esp+=i; m2c::log_debug("after ret %x\n",stackPointer); \
-	m2c::_indent-=1;m2c::_str=m2c::log_spaces(m2c::_indent);\
-	return true;}
- 
-  #define RETF(i) {m2c::log_debug("before retf %x\n",stackPointer); m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
- 	dw averytemporary11;POP(averytemporary11);  \
-	m2c::_indent-=1;m2c::_str=m2c::log_spaces(m2c::_indent);\
-	esp+=i; m2c::log_debug("after retf %x\n",stackPointer); \
-	 return true;}
- #else
- 
- #define RETN(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
-	esp+=i; \
-	return true;}
- 
-  #define RETF(i) {m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); \
-    if (averytemporary9!='xy') {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);} \
-        dw averytemporary11;POP(averytemporary11); esp+=i; \
-	return true;}
- #endif
- 
-#define CALL(label, disp) {m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);m2c::CALL_(label, _state, disp);}
+  #define RETN(i) {m2c::RETN_(i); return true;}
+
+static void RETN_(size_t i) 
+{
+  X86_REGREF
+  if (trace_instructions) m2c::log_debug("before ret %x\n",stackPointer); 
+  m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); 
+  if (averytemporary9!='xy') 
+     {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);}
+ 	esp+=i;
+  if (trace_instructions) {m2c::log_debug("after ret %x\n",stackPointer);
+	m2c::_indent-=1;m2c::_str=m2c::log_spaces(m2c::_indent);}
+}
+
+  #define RETF(i) {m2c::RETF_(i); return true;}
+
+static void RETF_(size_t i) 
+{
+  X86_REGREF
+  if (trace_instructions) m2c::log_debug("before retf %x\n",stackPointer); 
+  m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9); 
+  if (averytemporary9!='xy') 
+     {m2c::log_error("Emulated stack corruption detected (found %x)\n",averytemporary9);m2c::stackDump(0);exit(1);}
+        dw averytemporary11;POP(averytemporary11);
+ 	esp+=i;
+  if (trace_instructions) {m2c::log_debug("after retf %x\n",stackPointer); 
+	m2c::_indent-=1;m2c::_str=m2c::log_spaces(m2c::_indent);}
+}
+  
+#define CALL(label, disp) {m2c::CALL_(label, _state, disp);}
  static void CALL_(m2cf* label, struct _STATE* _state, _offsets _i=0) {
   X86_REGREF
   from_callf=true;
-	  
- #if  (DEBUG==2) || (DEBUG==3)
- 	  m2c::log_debug("after call %x\n",stackPointer);
+  m2c::MWORDSIZE averytemporary8='xy'; PUSH(averytemporary8);
+
+ 	  if (trace_instructions) {m2c::log_debug("after call %x\n",stackPointer);
 // 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
-          m2c::_indent+=1;m2c::_str=m2c::log_spaces(m2c::_indent);
- #endif
+          m2c::_indent+=1;m2c::_str=m2c::log_spaces(m2c::_indent);}
+
 	  label(_i, _state);
   }
  
@@ -1518,11 +1496,7 @@ bool fix_segs();
 void run_hw_interrupts();
 
 
-#if DEBUG==2
-    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n","",__LINE__,#a);}; a
-    #define T(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n","",__LINE__,#a);}; a
-    #define X(a) {m2c::run_hw_interrupts();m2c::log_debug("l:%s%d:%s\n","",__LINE__,#a);}; a
-#elif DEBUG==3
+#if DEBUG //== 1 || DEBUG==2 || DEBUG==3
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
@@ -1531,11 +1505,11 @@ void run_hw_interrupts();
 //    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
-    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
-    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
+//    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
+//    #define T(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
+//    #define X(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
 
-#elif DEBUG>=4
+//#elif DEBUG>=4
 // clean format
 //    #define R(a) {log_debug("%s%x:%d:%s eax: %x ebx: %x ecx: %x edx: %x ebp: %x ds: %x esi: %x es: %x edi: %x fs: %x esp: %x\n",_state->_str,cs/*pthread_self()*/,__LINE__,#a, \
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
@@ -1544,18 +1518,20 @@ void run_hw_interrupts();
 //    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-    #define R(a) { m2c::run_hw_interrupts(); {a;} }
+    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;} }
 
 // Run emulated instruction and compare with m2c instruction results
 
-    #define T(a) {if (m2c::Tstart(__LINE__,#a)){ \
+    #define T(a) {m2c::run_hw_interrupts();  \
+        if (m2c::Tstart(__FILE__,__LINE__,#a)){ \
 	{a;} \
-        m2c::Tend(__LINE__,#a);} \
+        m2c::Tend(__FILE__,__LINE__,#a);} \
         }
 
-    #define X(a) {if (m2c::Xstart(__LINE__,#a)){ \
+    #define X(a) {m2c::run_hw_interrupts();  \
+        if (m2c::Xstart(__FILE__,__LINE__,#a)){ \
 	{a;} \
-        m2c::Xend(__LINE__,#a);} \
+        m2c::Xend(__FILE__,__LINE__,#a);} \
         }
 
 #else
@@ -1703,10 +1679,10 @@ extern db vgaPalette[256*3];
 extern db(& stack)[STACK_SIZE];
 extern db(& heap)[HEAP_SIZE];
 extern  m2cf* _ENTRY_POINT_;
-extern bool Tstart(int line, const char * instr);
-extern void Tend(int line, const char * instr);
-extern bool Xstart(int line, const char * instr);
-extern void Xend(int line, const char * instr);
+extern bool Tstart(const char * file, int line, const char * instr);
+extern void Tend(const char * file, int line, const char * instr);
+extern bool Xstart(const char * file, int line, const char * instr);
+extern void Xend(const char * file, int line, const char * instr);
 //extern void log_regs(int line, const char * instr, struct _STATE* _state);
 extern void log_regs_dbx(const char * file, int line, const char * instr, const CPU_Regs& r, const Segments& s);
 extern void interpret_unknown_callf(dw cs, dd eip);
@@ -1723,7 +1699,6 @@ static bool repForMov=false;
 
 }
 extern void print_instruction(dw newcs, dd newip);
-
 extern struct SDL_Renderer *renderer;
 
 #endif

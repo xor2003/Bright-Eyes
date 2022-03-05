@@ -12,13 +12,13 @@
 namespace m2c{ m2cf* _ENTRY_POINT_ = &asmmain;}
 
 
- void delay(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kdelay, _state);}
+ bool delay(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kdelay, _state);}
 
- void asmmain(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kmain, _state);}
+ bool asmmain(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kmain, _state);}
 
 
 
- void mainproc(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool mainproc(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -33,7 +33,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &asmmain;}
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -44,7 +44,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &asmmain;}
 
 
 
- void fruitgeneration(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool fruitgeneration(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -108,7 +108,7 @@ cs=0x1b2;eip=0x000121; 	R(RETN(0));	// 288 retn ;~ 01B2:0121
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -123,7 +123,7 @@ cs=0x1b2;eip=0x000121; 	R(RETN(0));	// 288 retn ;~ 01B2:0121
 
 
 
- void dispdigit(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool dispdigit(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -140,7 +140,7 @@ cs=0x1b2;eip=0x000129; 	R(RETN(0));	// 300 retn ;~ 01B2:0129
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -151,7 +151,7 @@ cs=0x1b2;eip=0x000129; 	R(RETN(0));	// 300 retn ;~ 01B2:0129
 
 
 
- void dispnum(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool dispnum(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -179,7 +179,7 @@ cs=0x1b2;eip=0x000140; 	R(RETN(0));	// 323 retn ;~ 01B2:0140
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -193,7 +193,7 @@ cs=0x1b2;eip=0x000140; 	R(RETN(0));	// 323 retn ;~ 01B2:0140
 
 
 
- void setcursorpos(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool setcursorpos(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -212,7 +212,7 @@ cs=0x1b2;eip=0x000149; 	R(RETN(0));	// 338 retn ;~ 01B2:0149
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -223,7 +223,7 @@ cs=0x1b2;eip=0x000149; 	R(RETN(0));	// 338 retn ;~ 01B2:0149
 
 
 
- void draw(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool draw(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -266,7 +266,7 @@ cs=0x1b2;eip=0x00018b; 	R(RETN(0));	// 373 retn ;~ 01B2:018B
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -284,7 +284,7 @@ cs=0x1b2;eip=0x00018b; 	R(RETN(0));	// 373 retn ;~ 01B2:018B
 
 
 
- void readchar(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool readchar(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -307,7 +307,7 @@ cs=0x1b2;eip=0x00019b; 	R(RETN(0));	// 396 retn ;~ 01B2:019B
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -319,7 +319,7 @@ cs=0x1b2;eip=0x00019b; 	R(RETN(0));	// 396 retn ;~ 01B2:019B
 
 
 
- void keyboardfunctions(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool keyboardfunctions(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -369,7 +369,7 @@ cs=0x1b2;eip=0x0001f5; 	R(RETN(0));	// 449 retn ;~ 01B2:01F5
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -386,7 +386,7 @@ cs=0x1b2;eip=0x0001f5; 	R(RETN(0));	// 449 retn ;~ 01B2:01F5
 
 
 
- void shiftsnake(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool shiftsnake(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -488,7 +488,7 @@ cs=0x1b2;eip=0x00029e; 	R(RETN(0));	// 558 retn ;~ 01B2:029E
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -510,7 +510,7 @@ cs=0x1b2;eip=0x00029e; 	R(RETN(0));	// 558 retn ;~ 01B2:029E
 
 
 
- void printbox(m2c::_offsets _i, struct m2c::_STATE* _state){
+bool printbox(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -551,7 +551,7 @@ cs=0x1b2;eip=0x0002cd; 	R(RETN(0));	// 593 retn ;~ 01B2:02CD
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -570,7 +570,7 @@ cs=0x1b2;eip=0x0002cd; 	R(RETN(0));	// 593 retn ;~ 01B2:02CD
 
 
 
- void writecharat(m2c::_offsets _i, struct m2c::_STATE* _state){
+bool writecharat(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -605,7 +605,7 @@ cs=0x1b2;eip=0x0002f8; 	R(RETN(0));	// 623 retn ;~ 01B2:02F8
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -616,7 +616,7 @@ cs=0x1b2;eip=0x0002f8; 	R(RETN(0));	// 623 retn ;~ 01B2:02F8
 
 
 
- void readcharat(m2c::_offsets _i, struct m2c::_STATE* _state){
+bool readcharat(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -651,7 +651,7 @@ cs=0x1b2;eip=0x000323; 	R(RETN(0));	// 653 retn ;~ 01B2:0323
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -662,7 +662,7 @@ cs=0x1b2;eip=0x000323; 	R(RETN(0));	// 653 retn ;~ 01B2:0323
 
 
 
- void writestringat(m2c::_offsets _i, struct m2c::_STATE* _state){
+bool writestringat(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -706,7 +706,7 @@ cs=0x1b2;eip=0x000359; 	R(RETN(0));	// 695 retn ;~ 01B2:0359
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {
@@ -719,7 +719,7 @@ cs=0x1b2;eip=0x000359; 	R(RETN(0));	// 695 retn ;~ 01B2:0359
 
 
 
- void _group1(m2c::_offsets _i, struct m2c::_STATE* _state){
+bool _group1(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -814,7 +814,7 @@ cs=0x1b2;eip=0x0000a2; 	R(RETN(0));	// 221 retn ;~ 01B2:00A2
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return true;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {

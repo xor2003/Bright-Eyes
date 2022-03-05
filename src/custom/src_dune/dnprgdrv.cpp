@@ -6993,6 +6993,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::ksub_16639: 	_group1(__disp, _state); break;
         case m2c::kret_1a2_1cdd: 	_group1(__disp, _state); break;
         case m2c::kloc_12194: 	_group1(__disp, _state); break;
+        case m2c::kret_0x1a244ab: 	_group1(__disp, _state); break;
         case m2c::kloc_137aa: 	_group1(__disp, _state); break;
         case m2c::ksub_1aec6: 	_group1(__disp, _state); break;
         case m2c::kret_1a2_a87f: 	_group1(__disp, _state); break;

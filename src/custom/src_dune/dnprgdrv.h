@@ -23482,6 +23482,7 @@ static const dd kbegin = 0x1001;
 static const dd kmainproc = 0x1002;
 static const dd kstart = 0x1a20000;
 static const dd kret_1a2_3 = 0x1a20003;
+static const dd kret_0x1a244ab = 0x1a244ab;
 static const dd k_1003a_exit_with_error = 0x1a2003a;
 static const dd kloc_10056 = 0x1a20056;
 static const dd kloc_10063 = 0x1a20063;

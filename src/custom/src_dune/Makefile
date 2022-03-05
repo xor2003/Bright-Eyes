@@ -225,7 +225,7 @@ AUTOMAKE = ${SHELL} /home/user/Bright-Eyes/missing automake-1.13
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g
+CFLAGS = -g 
 CPP = gcc -E
 CPPFLAGS =  -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
 CXX = g++
@@ -320,7 +320,7 @@ target_alias =
 top_build_prefix = ../../../
 top_builddir = ../../..
 top_srcdir = ../../..
-AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -fpermissive -finline-limit=50 -ftime-report -DDEBUG=4 # -v -Q
+AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -DDOSBOX -I../ -mno-ms-bitfields -Wno-multichar -Wno-address-of-packed-member -I/include/ncurses  -I. -L.  -ggdb3 -lSDL -std=c++11 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-strict-aliasing -Wno-narrowing -Wno-unused-function -Wno-comment -fpermissive -finline-limit=50 -ftime-report -DDEBUG # -v -Q
 SUBDIRS = 
 noinst_LIBRARIES = libsrc.a
 libsrc_a_SOURCES = _data.cpp  _data.h init.cpp init.h  dnprgdrv.cpp dnprgdrv.h dnprgdrv_default_seg.cpp dnprgdrv_seg000.cpp dnprgdrv_seg002.cpp dnprgdrv_seg003.cpp dnprgdrv_seg004.cpp
