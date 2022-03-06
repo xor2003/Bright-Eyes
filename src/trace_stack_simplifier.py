@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-import re
+import re,sys
 
-with open("/home/user/Bright-Eyes/src/d_.log", "rt") as f:
+with open(sys.argv[1], "rt") as f:
     content = f.read().splitlines()
 
 r = re.compile(r' SP:([0-9A-F]{4}) ')
@@ -13,7 +13,7 @@ i = 0
 def process_call(i):
     global content
     first_line = content[i]
-    print(f'CALL {i} {first_line}\n')
+    #print(f'CALL {i} {first_line}\n')
     j = 1
     while i + j < len(content):
         second_line = content[i + j]
@@ -55,6 +55,6 @@ while i < len(content):
             continue
     i = i + 1
 
-with open("/home/user/Bright-Eyes/src/d_processed.log", "wt") as fw:
+with open(sys.argv[2], "wt") as fw:
     for line in content:
         fw.write(f'{line}\n')

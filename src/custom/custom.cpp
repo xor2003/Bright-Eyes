@@ -31,8 +31,7 @@ extern Bitu Normal_Loop(void);
 static Bit8u custom_runs;
 
 Bitu old_cycles; // to stop interpretation but remmember the cycles remain
-//int interpretation_deep=-1; // -1 means real execution. 0 stop, 1+ means call stack deep
-dd return_point=0;
+std::stack<Bit32u> return_point;
 
 volatile bool defered_custom_call = false;
 volatile bool from_callf = false;
@@ -714,25 +713,26 @@ struct CPU_Regs {
 void interpret_unknown_callf(dw newcs, dd newip)
 {
 X86_REGREF
+  if (cs == newcs) return;
   cs = newcs;
   eip = newip;
   dw oldsp=sp;
     fix_segs ();
-  return_point=*(dd*)raddr(ss,sp);
+  return_point.push(*(dd*)raddr(ss,sp));
 #if DEBUG > 0
-  log_debug("Enter interp current cs=%x ip=%x sp=%x ret_point:%x\n",cs, ip, sp,return_point);
+  log_debug("Enter interp current cs=%x ip=%x sp=%x ret_point:%x retp.size()=%d\n",cs, ip, sp,return_point.top(),return_point.size());
 #endif
   do {
 //  log_debug("start\n");
   Normal_Loop();
 //  log_debug("stop\n");
-   } while (return_point!=(cs<<16)+ip);
-  if (return_point!=(cs<<16)+ip)   {log_error("Error cs:ip != return_point %x\n",return_point);}
+   } while (return_point.top()!=(cs<<16)+ip);
+  if (return_point.top()!=(cs<<16)+ip)   {log_error("Error cs:ip != return_point %x\n",return_point.top());}
 #if DEBUG > 0
   log_debug("Exit interp cs=%x ip=%x sp=%x\n",cs, ip, sp);
 #endif
-  if (oldsp+4!=sp)   {log_error("Error it should consume 4 bytes from stack\n"); stackDump(0);exit(1);}
-  return_point=0;
+  if (oldsp+4!=sp && cs!=0xf000)   {log_error("Error it should consume 4 bytes from stack\n"); stackDump(0);exit(1);}
+  return_point.pop();
 }
 
 void ShadowStack::push(_STATE *_state, dd value)

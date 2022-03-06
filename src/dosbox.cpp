@@ -132,11 +132,12 @@ Bitu Normal_Loop(void) {
 	while (1) {
 		if (PIC_RunQueue()) {
 			if (defered_custom_call) {
+//				printf("defered_custom_call = false;\n");
                                 defered_custom_call = false;
 				from_callf = false;
-//				printf("Executing interrupt %x:%x\n",Segs.val[cs], reg_eip);
+				printf("Executing interrupt %x:%x\n",Segs.val[cs], reg_eip);
 			        custom_callf(Segs.val[cs], reg_eip);
-//				printf("Exited interrupt. new CS:IP %x:%x\n",Segs.val[cs], reg_eip);
+				printf("Exited interrupt. new CS:IP %x:%x\n",Segs.val[cs], reg_eip);
                         } 
 			ret = (*cpudecoder)();
 			if (GCC_UNLIKELY(ret<0)) return 1;
@@ -148,7 +149,7 @@ Bitu Normal_Loop(void) {
 #if C_DEBUG
 			if (DEBUG_ExitLoop()) return 0;
 #endif
-			if (return_point && return_point==(Segs.val[cs]<<16) + reg_eip&0xffff) return 0;
+			if (!return_point.empty() && return_point.top()==(Segs.val[cs]<<16) + reg_eip&0xffff) return 0;
 		} else {
 			GFX_Events();
 			if (ticksRemain>0) {

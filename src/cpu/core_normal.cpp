@@ -157,7 +157,7 @@ Bits CPU_Core_Normal_Run(void) {
 	while (CPU_Cycles-->0) {
 		LOADIP;
 
-		if (return_point && return_point==(SegBase(cs)<<12)+cpu_regs.ip.word[0])
+		if (!return_point.empty() && return_point.top()==(SegBase(cs)<<12)+cpu_regs.ip.word[0])
 		{
                   SAVEIP;
 		  FillFlags();
