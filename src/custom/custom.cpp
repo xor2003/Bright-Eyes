@@ -713,7 +713,7 @@ struct CPU_Regs {
 void interpret_unknown_callf(dw newcs, dd newip)
 {
 X86_REGREF
-  if (cs == newcs) return;
+  if (cs == newcs && newip == eip) return; // Most probably a call of interpreter int from interpreter
   cs = newcs;
   eip = newip;
   dw oldsp=sp;
