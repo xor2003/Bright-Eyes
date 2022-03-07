@@ -340,6 +340,24 @@ static void setdata(dw* d, dw s)
 static void setdata(dd* d, dd s)
 { if (m2c::isaddrbelongtom(d)) {set_type(*d);mem_writed((db*)d-(db*)&m, s);} else *d = s; }
 /*
+static void setdata(dq* d, dq s)
+{
+	if (m2c::isaddrbelongtom(d)) { set_type(*d); mem_writed((db*)d - (db*)&m, s); }
+	else *d = s;
+}
+static void setdata(int* d, int s)
+{
+	if (m2c::isaddrbelongtom(d)) { set_type(*d); mem_writed((db*)d - (db*)&m, s); }
+	else *d = s;
+}
+*/
+static void setdata(char* d, char s)
+{
+	if (m2c::isaddrbelongtom(d)) { set_type(*d); mem_writeb((db*)d - (db*)&m, s); }
+	else *d = s;
+}
+
+/*
 template<>
 inline db getdata<db>(const db& s)
 { return s; }

@@ -324,6 +324,7 @@ extern void   Initializer();
     int res = memcmp (d, s, size);
     if (res)
       {
+        log_debug("m=%x MemBase=%x d=%x\n", &m2c::m, MemBase,d);
         log_debug ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
         void *p = memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
         if (size > 3 && p)
