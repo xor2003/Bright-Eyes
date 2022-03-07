@@ -6736,7 +6736,7 @@ cs=0x24ed;eip=0x00337d; 	R(RETN(0));	// 125804 retn ;~ 24ED:337D
         case m2c::ksub_3656a: 	goto sub_3656a;
         case m2c::ksub_36612: 	goto sub_36612;
         case m2c::ksub_3676d: 	goto sub_3676d;
-        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__); exit(1);
     };
 }
 

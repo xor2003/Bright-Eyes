@@ -109,7 +109,7 @@ namespace m2c {
 
     extern void single_step();
 
-    void stackDump(struct _STATE *_state);
+    void stackDump(/*struct _STATE *_state*/);
 
     struct /*__attribute__((__packed__))*/ Memory;
     extern Memory &m;
@@ -487,6 +487,7 @@ static void setdata(dd* d, dd s)
 // Asm functions
 #ifdef DOSBOX
 
+/*
     static int log_debug(const char *format, ...) {
         int result;
         va_list args;
@@ -522,6 +523,10 @@ static void setdata(dd* d, dd s)
 
         return result;
     }
+*/
+#define log_debug printf
+#define log_error printf
+#define log_info printf
 
     extern const char *log_spaces(int n);
 
@@ -1465,26 +1470,26 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #define RETN(i) {m2c::RETN_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
     static void RETN_(size_t i)
     {
-       if (trace_instructions) m2c::log_debug("before ret %x\n",stackPointer);
+       if (trace_instructions) log_debug("before ret %x\n",stackPointer);
        m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
        eip=averytemporary9;
        esp+=i;
-       if (trace_instructions) {m2c::log_debug("after ret %x\n",stackPointer);
+       if (trace_instructions) {log_debug("after ret %x\n",stackPointer);
           if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}
-          m2c::log_debug("return eip %x\n",eip);}
+          log_debug("return eip %x\n",eip);}
     }
 
 #define RETF(i) {m2c::RETF_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
     static void RETF_(size_t i)
     {
-       if (trace_instructions) m2c::log_debug("before retf %x\n",stackPointer);
+       if (trace_instructions) log_debug("before retf %x\n",stackPointer);
        m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
        eip=averytemporary9;
         dw averytemporary11;POP(averytemporary11); cs=averytemporary11;
        esp+=i;
-       if (trace_instructions) {m2c::log_debug("after retf %x\n",stackPointer);
+       if (trace_instructions) {log_debug("after retf %x\n",stackPointer);
           if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}
-          m2c::log_debug("return eip %x\n",eip);}
+          log_debug("return eip %x\n",eip);}
     }
 
 
@@ -1494,7 +1499,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
     from_callf=true;
           MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
 
-          if (trace_instructions) {m2c::log_debug("after call %x\n",stackPointer);
+          if (trace_instructions) {log_debug("after call %x\n",stackPointer);
           if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};}
      }
 
@@ -1505,15 +1510,15 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 
     static void RETN_(size_t i) {
         X86_REGREF
-        if (trace_instructions) m2c::log_debug("before ret %x\n", stackPointer);
+        if (trace_instructions) log_debug("before ret %x\n", stackPointer);
         POP(ip);
         if (ip != 'xy') {
-            m2c::log_error("Emulated stack corruption detected (found %x)\n", ip);
-            m2c::stackDump(0);
+            log_error("Emulated stack corruption detected (found %x)\n", ip);
+            m2c::stackDump();
         }
         esp += i;
         if (trace_instructions) {
-            m2c::log_debug("after ret %x\n", stackPointer);
+            log_debug("after ret %x\n", stackPointer);
             m2c::_indent -= 1;
             m2c::_str = m2c::log_spaces(m2c::_indent);
         }
@@ -1523,19 +1528,19 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 
     static void RETF_(size_t i) {
         X86_REGREF
-        if (trace_instructions) m2c::log_debug("before retf %x\n", stackPointer);
+        if (trace_instructions) log_debug("before retf %x\n", stackPointer);
         m2c::MWORDSIZE averytemporary9 = 0;
         POP(averytemporary9);
         if (averytemporary9 != 'xy') {
-            m2c::log_error("Emulated stack corruption detected (found %x)\n", averytemporary9);
-            m2c::stackDump(0);
+            log_error("Emulated stack corruption detected (found %x)\n", averytemporary9);
+//            m2c::stackDump();
             exit(1);
         }
         dw averytemporary11;
         POP(averytemporary11);
         esp += i;
         if (trace_instructions) {
-            m2c::log_debug("after retf %x\n", stackPointer);
+            log_debug("after retf %x\n", stackPointer);
             m2c::_indent -= 1;
             m2c::_str = m2c::log_spaces(m2c::_indent);
         }
@@ -1550,7 +1555,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
         PUSH(averytemporary8);
 
         if (trace_instructions) {
-            m2c::log_debug("after call %x\n", stackPointer);
+            log_debug("after call %x\n", stackPointer);
 // 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
             m2c::_indent += 1;
             m2c::_str = m2c::log_spaces(m2c::_indent);
@@ -1589,7 +1594,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
 //	a 
 // dosbox logcpu format
-//    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+//    #define R(a) {m2c::run_hw_interrupts();log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
 //    #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;}}
@@ -1602,7 +1607,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 //eax, ebx, ecx, edx, ebp, ds, esi, es, edi, fs, esp);} \
 //	a 
 // dosbox logcpu format
-//    #define R(a) {m2c::run_hw_interrupts();m2c::log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
+//    #define R(a) {m2c::run_hw_interrupts();log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
 #define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;} }
@@ -1648,7 +1653,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #endif
 
 // ---------unimplemented
-#define UNIMPLEMENTED m2c::log_debug("unimplemented\n");
+#define UNIMPLEMENTED log_debug("unimplemented\n");
 /*
 #define CMPXCHG8B(a) UNIMPLEMENTED // not in dosbox
 #define CMOVA(a,b) UNIMPLEMENTED // not in dosbox

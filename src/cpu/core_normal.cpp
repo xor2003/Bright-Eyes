@@ -29,6 +29,8 @@
 #include "paging.h"
 #include "custom.h"
 
+#include<unordered_set>
+
 #if C_DEBUG
 #include "debug.h"
 #endif
@@ -149,8 +151,9 @@ extern void log_regs_dbx(const char * file,int line, const char * instr, const C
 void print_instruction(Bit16u newcs, Bit32u newip)
 {
   char dline[20];
+  static std::unordered_set<std::string> instr_names;
   DasmI386(dline,(newcs<<4)+newip,newip,false);
-  m2c::log_regs_dbx("",-1,dline,cpu_regs,Segs);
+  m2c::log_regs_dbx("",-1, instr_names.insert(dline).first->c_str() ,cpu_regs,Segs);
 }
 
 Bits CPU_Core_Normal_Run(void) {

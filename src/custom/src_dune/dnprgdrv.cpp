@@ -8500,7 +8500,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_5d4af: 	_group4(__disp, _state); break;
         case m2c::kret_4e73_930: 	_group4(__disp, _state); break;
 */
-        default: m2c::log_error("cs=%x ip=%x Don't know how to call to 0x%x. See " __FILE__ " line %d\n", cs,ip,__disp, __LINE__);
+        default: log_error("cs=%x ip=%x Don't know how to call to 0x%x. See " __FILE__ " line %d\n", cs,ip,__disp, __LINE__);
 m2c::interpret_unknown_callf(__disp>>16,__disp&0xffff);return true;
 //m2c::stackDump(_state); abort();
      };
