@@ -153,7 +153,8 @@ void print_instruction(Bit16u newcs, Bit32u newip)
   char dline[20];
   static std::unordered_set<std::string> instr_names;
   DasmI386(dline,(newcs<<4)+newip,newip,false);
-  m2c::log_regs_dbx("",-1, instr_names.insert(dline).first->c_str() ,cpu_regs,Segs);
+  const char * instr = instr_names.insert(dline).first->c_str();
+  m2c::log_regs_dbx("",-1, instr ,cpu_regs,Segs);
 }
 
 Bits CPU_Core_Normal_Run(void) {
@@ -170,10 +171,9 @@ Bits CPU_Core_Normal_Run(void) {
 if (SegBase(cs)!=0xf0000 && trace_instructions)
 {
   print_instruction(SegBase(cs)>>4,cpu_regs.ip.dword[0]);
-
 //printf("i%x:%x %s\n",SegBase(cs)>>4,cpu_regs.ip.dword[0], dline);
-
 }
+//    compare_jump = false;
 
 		core.opcode_index=cpu.code.big*0x200;
 		core.prefixes=cpu.code.big;

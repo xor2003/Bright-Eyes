@@ -1074,8 +1074,9 @@ void CPU_CALL(bool use32,Bitu selector,Bitu offset,Bitu oldeip) {
 	if custom_callf() returns true we set the IP to the next instruction
 	and bypass the call
 */
+from_interpreter = true;
 	if (custom_callf(selector, offset)) {
-
+             from_interpreter = false;
 		/* handle different call instructions */
 		Bit8u inst = real_readb(SegValue(cs), reg_ip);
 
@@ -1087,6 +1088,7 @@ void CPU_CALL(bool use32,Bitu selector,Bitu offset,Bitu oldeip) {
 		}
 		return;
 	}
+ from_interpreter = false;
 
 	if (!cpu.pmode || (reg_flags & FLAG_VM)) {
 		if (!use32) {

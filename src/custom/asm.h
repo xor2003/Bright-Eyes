@@ -33,6 +33,7 @@
 
 extern Bit32u ticksRemain;
 extern volatile bool from_callf;
+extern volatile bool from_interpreter;
 extern bool trace_instructions;
 
 void increaseticks();
@@ -98,6 +99,8 @@ typedef long double real10;
 #ifndef DOSBOX
 #include "memmgr.h"
 #endif
+
+extern volatile bool compare_jump;
 
 namespace m2c {
 
@@ -1610,9 +1613,15 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 //    #define R(a) {m2c::run_hw_interrupts();log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-#define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); {a;} }
+#define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); \
+               if (compare_jump) {m2c::Jend();} {a;} }
 
 // Run emulated instruction and compare with m2c instruction results
+
+#define J(a) {  \
+        if (m2c::Jstart(__FILE__,__LINE__,#a)){ \
+    {a;}} \
+        }
 
 #define T(a) {  \
         if (m2c::Tstart(__FILE__,__LINE__,#a)){ \
@@ -1629,6 +1638,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #else
 
 #define R(a) {m2c::run_hw_interrupts(); {a;}}
+#define J(a) R(a)
 #define T(a) R(a)
 #define X(a) R(a)
 
@@ -1780,6 +1790,10 @@ dw _source;
     extern db(&stack)[STACK_SIZE];
     extern db(&heap)[HEAP_SIZE];
     extern m2cf *_ENTRY_POINT_;
+
+    extern bool Jstart(const char *file, int line, const char *instr);
+
+    extern void Jend();
 
     extern bool Tstart(const char *file, int line, const char *instr);
 

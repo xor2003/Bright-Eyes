@@ -21,7 +21,7 @@ namespace m2c
 
 bool compare_instructions = m2c::debug == 1;
 bool
-  trace_instructions = m2c::debug > 1;
+  trace_instructions = m2c::debug > 0;
 
 static const size_t
   COMPARE_SIZE = 0xf0000;
@@ -38,6 +38,9 @@ std::stack < Bit32u > return_point;
 
 volatile bool defered_custom_call = false;
 volatile bool from_callf = false;
+volatile bool from_interpreter = false;
+
+volatile bool compare_jump=false;
 
 static int init_runs = 0;
 static int init = 0;
@@ -487,10 +490,237 @@ namespace m2c
     shadow_stack.print (0);
   }
 
-  bool Tstart (const char *file, int line, const char *instr)
+  static void log_regs_dbx_real (size_t counter_, const char *file, int line, db indent, const char *instr, const CPU_Regs & r,
+                                 const Segments & s)
+  {
+/*
+enum SegNames { es=0,cs=1,ss=2,ds=3,fs=4,gs=5};
+struct Segments {
+	Bit16u val[8];
+};
+union GenReg32 {
+	Bit32u dword[1];
+};
+struct CPU_Regs {
+	GenReg32 regs[8],ip;
+	Bitu flags;
+	REGI_AX=0, REGI_CX=1, REGI_DX=2, REGI_BX=3,
+	REGI_SP=4, REGI_BP=5, REGI_SI=6, REGI_DI=7
+};
+#define reg_32(reg) (cpu_regs.regs[(reg)].dword[DW_INDEX])
+};*/
+//   if (trace_instructions)
+    log_debug
+      ("%8x %s:%06d %04X:%04X %s%s%s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n",
+       counter_, file, line, s.val[1], r.ip, log_spaces(indent), instr, log_spaces(84-indent-strlen(instr)), r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0],
+       r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3],
+       s.val[0], s.val[4], s.val[5], s.val[2], (r.flags & FLAG_CF)!=0, (r.flags & FLAG_ZF)!=0, (r.flags & FLAG_SF)!=0,
+       (r.flags & FLAG_OF)!=0, (r.flags & FLAG_AF)!=0, (r.flags & FLAG_PF)!=0, (r.flags & FLAG_IF)!=0);
+  }
+
+  struct CPU_State
+  {
+    size_t counter;
+    const char *file;
+    int line;
+    db indent;
+    const char *instr;
+    CPU_Regs regs;
+    Segments segs;
+  };
+
+  CircularBuffer < CPU_State > trace_store (100000);
+
+  static void print_traces ()
+  {
+    while (!trace_store.empty ())
+      {
+        CPU_State& cs = trace_store.front ();
+        log_regs_dbx_real (cs.counter, cs.file, cs.line, cs.indent, cs.instr, cs.regs, cs.segs);
+        trace_store.pop_front ();
+      }
+  }
+
+  void log_regs_dbx (const char *file, int line, const char *instr, const CPU_Regs & r, const Segments & s)
+  {
+    ++counter;
+    if (trace_instructions)
+      {
+        if (debug == 2 || debug == 1)
+          {
+        CPU_State cs={counter, file, line, _indent, instr, r, s};
+        trace_store.push_back (cs);
+          }
+        else
+          {
+        log_regs_dbx_real(counter, file, line, _indent, instr, r, s);
+          }
+      }
+  }
+
+char jump_name[100]="";
+  bool Jstart (const char *file, int line, const char *instr)
   {
     run_hw_interrupts ();
-    m2c::log_regs_dbx (file, line, instr, cpu_regs, Segs);
+    log_regs_dbx(file, line, instr, cpu_regs, Segs);
+    if (!compare_instructions)
+      return true;
+
+    oldip = cpu_regs.ip.word[0];
+
+    dd ip1 = cpu_regs.ip.word[0];
+    dw seg = Segs.val[1];
+
+    bool compare (compare_instructions /*&& !already_checked[(seg << 4) + ip1]*/);
+    if (compare)
+      {
+        oldSegs = Segs;
+        oldcpu_regs = cpu_regs;
+        strcpy(jump_name,instr);
+        compare_jump = true;
+      }
+    single_step ();
+    if (!compare)
+      {
+        if (CPU_Cycles > 0)
+          --CPU_Cycles;
+        return false;
+      }
+//    already_checked[(seg << 4) + ip1] = true;
+
+    size_t instr_size = 1;
+db op1 = *raddr(seg,ip1);
+if (op1>=0x70 && op1<=0x7f) //j
+  instr_size = 2;
+else if (op1 == 0x9a) //callf
+  instr_size = 5;
+else if (op1 == 0xc2) //retn n
+  instr_size = 3;
+else if (op1 == 0xc3) //retn
+  instr_size = 1;
+else if (op1 == 0xca) //retf n
+  instr_size = 3;
+else if (op1 == 0xcb) //retf
+  instr_size = 1;
+else if (op1 == 0xcf) //iret
+  instr_size = 1;
+else if (op1>=0xe0 && op1<=0xe3) //loop
+  instr_size = 2;
+else if (op1 == 0xe8 || op1 == 0xe9) //jmp
+  instr_size = 3;
+else if (op1 == 0xea) //jmpf
+  instr_size = 5;
+else if (op1 == 0xeb) //jmpf
+  instr_size = 2;
+else if (op1 == 0xff) //jmpf
+{
+  db op2 = *raddr(seg,ip1+1);
+  if (op2>=0x10 && op2 <= 0x2f ) //call/jmp 
+    instr_size = 2;
+  else if (op2>=0x50 && op2 <= 0x6f ) //call/jmp 
+    instr_size = 3;
+  else if (op2 >= 0x90 && op2<=0xAf) //call/jmp 
+    instr_size = 4;
+}
+else if (op1 == 0x0f) //j
+{
+  db op2 = *raddr(seg,ip1+1);
+  if (op2>=0x80 && op2 <= 0x8f ) //call/jmp r/m16
+    instr_size = 4;
+}
+
+    if (memcmp (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size) != 0)
+      {
+        log_info ("~self-modified instruction %x:%x\n", seg, ip1);
+        //hexDump (m2c::lm+(seg<<4)+ip1, 5);
+        //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
+        print_instruction (seg, ip1);
+        cmpHexDump (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size);
+        compare_jump = false;
+        return false;
+      }
+    else
+      {
+	if (compare_jump==false) 
+        { log_debug ("Cannot compare instruction. Interpreter was called\n");
+          return false;}
+        realflags = cpu_regs.flags;
+        cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
+        realSegs = Segs;
+        realcpu_regs = cpu_regs;
+        Segs = oldSegs;
+        cpu_regs = oldcpu_regs;
+        return true;
+      }
+  }
+
+  void Jend()
+  {
+    if (!compare_instructions || !compare_jump)
+      return;
+
+    const char * instr = jump_name;
+    compare_jump = false;
+    fix_segs ();
+    cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
+//    cpu_regs.ip = realcpu_regs.ip;
+
+    if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0)
+      {
+stackDump();
+        trace_instructions = true;
+        bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
+        bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
+        log_debug ("before ");
+        log_regs_dbx_real (0,"", 0, 0, instr, oldcpu_regs, oldSegs);
+        log_error ("/j-----------------------------Error-----------------------------------------\\\n");
+//        cpu_regs.ip.word[0] = oldip;
+        log_error ("cs:ip: ");
+        print_instruction (oldSegs.val[1], oldip);
+        hexDump (raddr (Segs.val[1], oldip), 8);
+
+        log_error ("~m2c ");
+        log_regs_dbx_real (0,"", 0, 0, instr, cpu_regs, Segs);
+
+        if (regs_ch)
+          {
+            log_error ("reg ");
+            hexDump (&cpu_regs, sizeof (CPU_Regs));
+          }
+        if (segs_ch)
+          {
+            log_error ("seg ");
+            hexDump (&Segs, sizeof (Segments));
+          }
+
+        Segs = realSegs;
+        cpu_regs = realcpu_regs;
+
+        log_error ("~dbx ");
+        log_regs_dbx_real (0,"", 0, 0, instr, realcpu_regs, realSegs);
+        if (regs_ch)
+          {
+            log_error ("reg ");
+            hexDump (&cpu_regs, sizeof (CPU_Regs));
+          }
+        if (segs_ch)
+          {
+            log_error ("seg ");
+            hexDump (&Segs, sizeof (Segments));
+          }
+        log_error ("\\j-----------------------------Error-----------------------------------------/\n");
+        exit (1);
+      }
+    cpu_regs.flags = realflags;
+  }
+
+  bool Tstart (const char *file, int line, const char *instr)
+  {
+    if (compare_jump) Jend();
+
+    run_hw_interrupts ();
+
+    log_regs_dbx(file, line, instr, cpu_regs, Segs);
     if (!compare_instructions)
       return true;
 
@@ -548,19 +778,20 @@ namespace m2c
 
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 || memcmp (&Segs, &realSegs, sizeof (Segments)) != 0)
       {
+stackDump();
         trace_instructions = true;
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
         log_debug ("before ");
-        log_regs_dbx ("", line, instr, oldcpu_regs, oldSegs);
-        log_error ("/-----------------------------Error-----------------------------------------\\\n");
+        log_regs_dbx_real (0,"", line, 0, instr, oldcpu_regs, oldSegs);
+        log_error ("/t-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error ("cs:ip: ");
-        print_instruction (Segs.val[1] >> 4, oldip);
+        print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
 
         log_error ("~m2c ");
-        log_regs_dbx ("", line, instr, cpu_regs, Segs);
+        log_regs_dbx_real (0, file, line, 0, instr, cpu_regs, Segs);
 
         if (regs_ch)
           {
@@ -577,7 +808,7 @@ namespace m2c
         cpu_regs = realcpu_regs;
 
         log_error ("~dbx ");
-        log_regs_dbx ("", line, instr, realcpu_regs, realSegs);
+        log_regs_dbx_real (0,file, line, 0, instr, realcpu_regs, realSegs);
         if (regs_ch)
           {
             log_error ("reg ");
@@ -588,16 +819,18 @@ namespace m2c
             log_error ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
+        log_error ("\\t-----------------------------Error-----------------------------------------/\n");
         exit (1);
-        log_error ("\\-----------------------------Error-----------------------------------------/\n");
       }
     cpu_regs.flags = realflags;
   }
 
   bool Xstart (const char *file, int line, const char *instr)
   {
+    if (compare_jump) Jend();
+
     run_hw_interrupts ();
-    m2c::log_regs_dbx (file, line, instr, cpu_regs, Segs);
+    log_regs_dbx(file, line, instr, cpu_regs, Segs);
     if (!compare_instructions)
       return true;
 
@@ -659,19 +892,20 @@ namespace m2c
     if (memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs)) != 0 ||
         memcmp (&Segs, &realSegs, sizeof (Segments)) != 0 || memcmp (&m, rm, COMPARE_SIZE) != 0)
       {
+stackDump();
         trace_instructions = true;
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
         bool mem_ch = memcmp (&m, rm, COMPARE_SIZE);
         log_debug ("before ");
-        log_regs_dbx ("", line, instr, oldcpu_regs, oldSegs);
-        log_error ("/-----------------------------Error-----------------------------------------\\\n");
+        log_regs_dbx_real (0,"", line, 0, instr, oldcpu_regs, oldSegs);
+        log_error ("/x-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error ("cs:ip: ");
-        print_instruction (Segs.val[1] >> 4, oldip);
+        print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
         log_error ("~m2c ");
-        log_regs_dbx ("", line, instr, cpu_regs, Segs);
+        log_regs_dbx_real (0, file, line, 0, instr, cpu_regs, Segs);
         if (regs_ch)
           {
             log_error ("reg ");
@@ -686,7 +920,7 @@ namespace m2c
         Segs = realSegs;
         cpu_regs = realcpu_regs;
         log_error ("~dbx ");
-        log_regs_dbx ("", line, instr, realcpu_regs, realSegs);
+        log_regs_dbx_real (0,file, line, 0, instr, realcpu_regs, realSegs);
         if (regs_ch)
           {
             log_error ("reg ");
@@ -702,83 +936,22 @@ namespace m2c
             log_error ("~mem m2c / dbx\n");
             cmpHexDump (&m, rm, COMPARE_SIZE);
           }
+        log_error ("\\x-----------------------------Error-----------------------------------------/\n");
         exit (1);
-        log_error ("\\-----------------------------Error-----------------------------------------/\n");
       }
     cpu_regs.flags = realflags;
   }
 
-  static void log_regs_dbx_real (size_t counter_, const char *file, int line, db indent, const char *instr, const CPU_Regs & r,
-                                 const Segments & s)
-  {
-/*
-enum SegNames { es=0,cs=1,ss=2,ds=3,fs=4,gs=5};
-struct Segments {
-	Bit16u val[8];
-};
-union GenReg32 {
-	Bit32u dword[1];
-};
-struct CPU_Regs {
-	GenReg32 regs[8],ip;
-	Bitu flags;
-	REGI_AX=0, REGI_CX=1, REGI_DX=2, REGI_BX=3,
-	REGI_SP=4, REGI_BP=5, REGI_SI=6, REGI_DI=7
-};
-#define reg_32(reg) (cpu_regs.regs[(reg)].dword[DW_INDEX])
-};*/
-    log_debug
-      ("%8x %s:%06d %04X:%04X %s%s%s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n",
-       counter_, file, line, s.val[1], r.ip, log_spaces(indent), instr, log_spaces(84-indent-strlen(instr)), r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0],
-       r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3],
-       s.val[0], s.val[4], s.val[5], s.val[2], (r.flags & FLAG_CF)!=0, (r.flags & FLAG_ZF)!=0, (r.flags & FLAG_SF)!=0,
-       (r.flags & FLAG_OF)!=0, (r.flags & FLAG_AF)!=0, (r.flags & FLAG_PF)!=0, (r.flags & FLAG_IF)!=0);
-  }
-
-  struct CPU_State
-  {
-    size_t counter;
-    const char *file;
-    int line;
-    db indent;
-    const char *instr;
-    CPU_Regs regs;
-    Segments segs;
-  };
-
-  CircularBuffer < CPU_State > trace_store (100000);
-
-  static void print_traces ()
-  {
-    while (!trace_store.empty ())
-      {
-        CPU_State& cs = trace_store.front ();
-        log_regs_dbx_real (cs.counter, cs.file, cs.line, cs.indent, cs.instr, cs.regs, cs.segs);
-        trace_store.pop_front ();
-      }
-  }
-
-  void log_regs_dbx (const char *file, int line, const char *instr, const CPU_Regs & r, const Segments & s)
-  {
-    ++counter;
-    if (trace_instructions)
-      {
-        if (debug == 2)
-          {
-        CPU_State cs={counter, file, line, _indent, instr, r, s};
-        trace_store.push_back (cs);
-          }
-        else
-          {
-        log_regs_dbx_real(counter, file, line, _indent, instr, r, s);
-          }
-      }
-  }
 
   void interpret_unknown_callf (dw newcs, dd newip)
   {
-    X86_REGREF if (cs == newcs && newip == eip)
+    X86_REGREF 
+    if (cs == newcs && newip == eip)
       return;                   // Most probably a call of interpreter int from interpreter
+    if (from_interpreter)
+    { from_interpreter = false;
+      return; }
+
     cs = newcs;
     eip = newip;
     dw oldsp = sp;
