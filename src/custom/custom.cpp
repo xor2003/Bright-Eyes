@@ -49,6 +49,8 @@ void init_entrypoint (Bit16u relocate);
 
 bool __dispatch_call (m2c::_offsets __i, struct m2c::_STATE * _state);
 
+extern void print_backtrace(uintptr_t pc);
+
 namespace m2c
 {
   extern void Initializer ();
@@ -487,6 +489,7 @@ namespace m2c
   void stackDump()//struct _STATE *_state)
   {
     m2c::print_traces();
+print_backtrace(0);
     shadow_stack.print (0);
   }
 
@@ -1031,7 +1034,7 @@ stackDump();
     if (m2c::debug)
       {
         X86_REGREF if (!m_ss.empty ())
-          log_debug (" Stack dump:\n");
+          log_debug (" Emulated Stack dump:\n");
         log_debug ("%8s %8s %4s:%4s %4s %4s %4s\n", "Alloc", "Dealloc", "cs", "ip", "sp", "Value", "Current value");
         for (int i = m_ss.size () - 1; i >= 0; i--)
           {

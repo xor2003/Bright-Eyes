@@ -114,8 +114,8 @@ namespace m2c {
 
     void stackDump(/*struct _STATE *_state*/);
 
-    struct /*__attribute__((__packed__))*/ Memory;
-    extern Memory &m;
+    extern struct /*__attribute__((__packed__))*/ Memory m;
+//    extern Memory &m;
 
     typedef dd _offsets;
 
@@ -324,7 +324,7 @@ dd _source;
     template<class S>
     S getdata(const S &s);
 
-    extern struct Memory &types;
+    extern struct Memory types;
 
     static int log_debug(const char *format, ...);
 

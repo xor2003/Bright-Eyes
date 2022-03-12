@@ -1,4 +1,4 @@
-AM_CPPFLAGS = -I$(top_srcdir)/include
+AM_CPPFLAGS = -I$(top_srcdir)/include -rdynamic
 
 SUBDIRS = cpu debug dos fpu gui hardware libs ints misc shell platform custom
 

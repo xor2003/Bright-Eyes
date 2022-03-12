@@ -539,8 +539,7 @@ void PreparePCJRCartRom(void) {
 HostPt GetMemBase(void) { return MemBase; }
 
 namespace m2c {
-struct Memory;
-extern Memory& m;
+extern struct Memory m;
 }
 
 class MEMORY:public Module_base{
