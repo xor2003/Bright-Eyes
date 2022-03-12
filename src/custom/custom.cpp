@@ -564,6 +564,8 @@ struct CPU_Regs {
 char jump_name[100]="";
   bool Jstart (const char *file, int line, const char *instr)
   {
+    if (compare_jump) Jend();
+
     run_hw_interrupts ();
     log_regs_dbx(file, line, instr, cpu_regs, Segs);
     if (!compare_instructions)
