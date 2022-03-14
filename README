@@ -2,6 +2,10 @@ LibDosBox
 
 It is a fork of vanila DOSBox with game code executed on real hardware but DOS ints and hardware emulated by DOSBox.
 
+[![Test drive 3](http://img.youtube.com/vi/MzK9RVgeWGM/0.jpg)](http://www.youtube.com/watch?v=MzK9RVgeWGM "Test drive 3")
+
+[![Cryo Dune](http://img.youtube.com/vi/f-HArAmtXTc/0.jpg)](http://www.youtube.com/watch?v=f-HArAmtXTc "Cryo Dune")
+
 To translate game code:
 1. upload the game into IDA Pro.
 2. Make sure code is code, data is data.
