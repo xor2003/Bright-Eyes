@@ -4588,9 +4588,6 @@ cs=0x1a2;eip=0x0025b3; 	T(OR(ah, 0x80));	// 6136 or      ah, 80h ;~ 01A2:25B3
 cs=0x1a2;eip=0x0025b6; 	X(MOV(*(raddr(ds,0x0BF)), ah));	// 6137 mov     ds:0BFh, ah ;~ 01A2:25B6
 cs=0x1a2;eip=0x0025ba; 	T(MOV(si, offset(seg001,unk_2063d)));	// 6138 mov     si, offset unk_2063D ;~ 01A2:25BA
 loc_125b8:
-cs=0x1a2;eip=0x0025b8; 	T(MOV(di,0x0BE00));	// 6137 mov     ds:0BFh, ah ;~ 01A2:25B6
-cs=0x1a2;eip=0x0025bb; 	T(dx = bx + di);	// 6137 mov     ds:0BFh, ah ;~ 01A2:25B6
-
 
 cs=0x1a2;eip=0x0025bd; 	X(ADD(*(dw*)(raddr(ds,si)), bx));	// 6139 add     [si], bx ;~ 01A2:25BD
 cs=0x1a2;eip=0x0025bf; 	T(MOV(bl, *(raddr(ds,0x0C3))));	// 6140 mov     bl, ds:0C3h ;~ 01A2:25BF
@@ -10081,7 +10078,7 @@ cs=0x1a2;eip=0x004e7f; 	T(MOV(cx, *(dw*)(raddr(ds,0x4733))));	// 12473 mov     c
 cs=0x1a2;eip=0x004e83; 	T(MOV(cl, *(raddr(ds,0x46FF))));	// 12474 mov     cl, ds:46FFh ;~ 01A2:4E83
 cs=0x1a2;eip=0x004e87; 	T(XOR(ch, ch));	// 12475 xor     ch, ch ;~ 01A2:4E87
 cs=0x1a2;eip=0x004e89; 	J(JCXZ(locret_14e8c));	// 12476 jcxz    short locret_14E8C ;~ 01A2:4E89
-	// 12477 nop ;~ 01A2:4E8B
+T(NOP);	// 12477 nop ;~ 01A2:4E8B
 locret_14e8c:
 	// 5379 
 cs=0x1a2;eip=0x004e8c; 	R(RETN(0));	// 12481 retn ;~ 01A2:4E8C
@@ -26164,6 +26161,8 @@ cs=0x1a2;eip=0x00c137; 	T(XOR(ax, ax));	// 31379 xor     ax, ax ;~ 01A2:C137
 ret_1a2_c139:
 	// 7096 
 cs=0x1a2;eip=0x00c139; 	J(JMP(_sub_1c13e_open_sprite_sheet));	// 31380 jmp     short _sub_1C13E_open_sprite_sheet ; RES_ICONES_HSQ ;~ 01A2:C139
+ret_1a2_c13b:
+cs=0x1a2;eip=0x00c13b; 	T(MOV(ax, 0x25));	// 31395 or      ax, ax ;~ 01A2:C13E
 _sub_1c13e_open_sprite_sheet:
 	// 31393 
 cs=0x1a2;eip=0x00c13e; 	T(OR(ax, ax));	// 31395 or      ax, ax ;~ 01A2:C13E
@@ -37171,6 +37170,7 @@ cs=0x1a2;eip=0x00f4a8; 	R(RETN(0));	// 40565 retn ;~ 01A2:F4A8
         case m2c::kret_1a2_c0f7: 	goto ret_1a2_c0f7;
         case m2c::kret_1a2_c106: 	goto ret_1a2_c106;
         case m2c::kret_1a2_c139: 	goto ret_1a2_c139;
+        case m2c::kret_1a2_c13b: 	goto ret_1a2_c13b;
         case m2c::kret_1a2_c140: 	goto ret_1a2_c140;
         case m2c::kret_1a2_c1ad: 	goto ret_1a2_c1ad;
         case m2c::kret_1a2_c1f5: 	goto ret_1a2_c1f5;

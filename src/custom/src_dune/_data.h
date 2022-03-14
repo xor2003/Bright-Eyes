@@ -530,8 +530,8 @@ dw dummy9_bdb4; // 01a2:a394
 db dummy9_bdb6[2344];
 db dummy9_c6de; // 01a2:acbe
 db dummy9_c6df[5244];
-dw off_1c13b; // 01a2:c13b
-//db byte_1c13c; // 01a2:c13c
+db off_1c13b; // 01a2:c13b
+db byte_1c13c; // 01a2:c13c
 db dummy9_db5d[221];
 db _byte_1c21a_pal_offset; // 01a2:c21a
 db dummy9_dc3b[2679];

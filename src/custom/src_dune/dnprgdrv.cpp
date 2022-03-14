@@ -6284,6 +6284,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::ksub_14aad: 	_group1(__disp, _state); break;
         case m2c::kloc_16056: 	_group1(__disp, _state); break;
         case m2c::kloc_1688c: 	_group1(__disp, _state); break;
+        case m2c::kret_1a2_c13b: 	_group1(__disp, _state); break;
         case m2c::kret_1a2_c140: 	_group1(__disp, _state); break;
         case m2c::kloc_18f25: 	_group1(__disp, _state); break;
         case m2c::kloc_1d5c7: 	_group1(__disp, _state); break;
@@ -8962,8 +8963,8 @@ m2c::interpret_unknown_callf(__disp>>16,__disp&0xffff);return true;
     {dw tmp999=m2c::kloc_1a36f;MYCOPY(dummy9_bdb2)} // 01a2:a392
     {dw tmp999=m2c::kloc_1a36f;MYCOPY(dummy9_bdb4)} // 01a2:a394
     {db tmp999=144;MYCOPY(dummy9_c6de)} // 01a2:acbe
-    {dw tmp999=m2c::kloc_125b8;MYCOPY(off_1c13b)} // 01a2:c13b
-//    {db tmp999=37;MYCOPY(byte_1c13c)} // 01a2:c13c
+    {db tmp999=0xb8;MYCOPY(off_1c13b)} // 01a2:c13b
+    {db tmp999=37;MYCOPY(byte_1c13c)} // 01a2:c13c
     {db tmp999=0;MYCOPY(_byte_1c21a_pal_offset)} // 01a2:c21a
     {dw tmp999=307;MYCOPY(word_1cc92)} // 01a2:cc92
     {dw tmp999=0;MYCOPY(_word_1cc94_bltfunc)} // 01a2:cc94

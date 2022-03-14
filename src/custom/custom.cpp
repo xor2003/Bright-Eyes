@@ -21,7 +21,7 @@ namespace m2c
 
 bool compare_instructions = m2c::debug == 1;
 bool
-  trace_instructions = m2c::debug > 0;
+  trace_instructions = m2c::debug > 1;
 
 static const size_t
   COMPARE_SIZE = 0xf0000;
