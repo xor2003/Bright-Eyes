@@ -1075,7 +1075,7 @@ void CPU_CALL(bool use32,Bitu selector,Bitu offset,Bitu oldeip) {
 	and bypass the call
 */
 from_interpreter = true;
-	if (custom_callf(selector, offset)) {
+	if (!doing_single_step && custom_callf(selector, offset)) {
              from_interpreter = false;
 		/* handle different call instructions */
 		Bit8u inst = real_readb(SegValue(cs), reg_ip);

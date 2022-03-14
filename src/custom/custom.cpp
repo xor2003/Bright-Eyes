@@ -41,6 +41,7 @@ volatile bool from_callf = false;
 volatile bool from_interpreter = false;
 
 volatile bool compare_jump=false;
+volatile bool doing_single_step=false;
 
 static int init_runs = 0;
 static int init = 0;
@@ -327,6 +328,7 @@ namespace m2c
     dd oldeip = (Segs.val[1] << 16) + cpu_regs.ip.word[0];
     dd neweip (oldeip);
     Bits nc_retcode;
+    doing_single_step=true;
 //log_debug("s1 %x:%x\n",Segs.val[1],cpu_regs.ip.word[0]);
     do
       {
@@ -335,6 +337,7 @@ namespace m2c
         neweip = (Segs.val[1] << 16) + cpu_regs.ip.word[0];
       }
     while (neweip == oldeip);   // to handle REP*
+    doing_single_step=false;
 //log_debug("s2 %x:%x\n",Segs.val[1],cpu_regs.ip.word[0]);
     CPU_Cycles = old_cycles;
     // // log_debug ("CPU_Cycles=%d CPU_CycleLeft=%d\n", CPU_Cycles, CPU_CycleLeft);
@@ -549,6 +552,7 @@ struct CPU_Regs {
     ++counter;
     if (trace_instructions)
       {
+
         if (debug == 2 || debug == 1)
           {
         CPU_State cs={counter, file, line, _indent, instr, r, s};
@@ -576,22 +580,26 @@ char jump_name[100]="";
     dd ip1 = cpu_regs.ip.word[0];
     dw seg = Segs.val[1];
 
-    bool compare (compare_instructions /*&& !already_checked[(seg << 4) + ip1]*/);
-    if (compare)
-      {
+    bool compare (compare_instructions && !already_checked[(seg << 4) + ip1]);
+
         oldSegs = Segs;
         oldcpu_regs = cpu_regs;
+
+    if (compare)
+      {
         strcpy(jump_name,instr);
         compare_jump = true;
       }
     single_step ();
+/*
     if (!compare)
       {
         if (CPU_Cycles > 0)
           --CPU_Cycles;
         return false;
       }
-//    already_checked[(seg << 4) + ip1] = true;
+*/
+    already_checked[(seg << 4) + ip1] = true;
 
     size_t instr_size = 1;
 db op1 = *raddr(seg,ip1);
@@ -634,6 +642,7 @@ else if (op1 == 0x0f) //j
     instr_size = 4;
 }
 
+
     if (memcmp (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size) != 0)
       {
         log_info ("~self-modified instruction %x:%x\n", seg, ip1);
@@ -642,21 +651,19 @@ else if (op1 == 0x0f) //j
         print_instruction (seg, ip1);
         cmpHexDump (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size);
         compare_jump = false;
-        return false;
       }
     else
       {
-	if (compare_jump==false) 
-        { log_debug ("Cannot compare instruction. Interpreter was called\n");
-          return false;}
-        realflags = cpu_regs.flags;
-        cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
+//	if (compare_jump==false) 
+//        { log_debug ("Cannot compare instruction. Interpreter was called\n");
+//          return true;}
         realSegs = Segs;
         realcpu_regs = cpu_regs;
+      }
         Segs = oldSegs;
         cpu_regs = oldcpu_regs;
+cpu_regs.ip.word[0] += instr_size; // for call
         return true;
-      }
   }
 
   void Jend()
@@ -667,6 +674,9 @@ else if (op1 == 0x0f) //j
     const char * instr = jump_name;
     compare_jump = false;
     fix_segs ();
+    Bitu bckpflags = cpu_regs.flags;
+
+    realcpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
     cpu_regs.flags &= FLAG_CF | FLAG_SF | FLAG_ZF | FLAG_OF;
 //    cpu_regs.ip = realcpu_regs.ip;
 
@@ -716,7 +726,7 @@ stackDump();
         log_error ("\\j-----------------------------Error-----------------------------------------/\n");
         exit (1);
       }
-    cpu_regs.flags = realflags;
+    cpu_regs.flags = bckpflags;
   }
 
   bool Tstart (const char *file, int line, const char *instr)
@@ -956,6 +966,7 @@ stackDump();
     if (from_interpreter)
     { from_interpreter = false;
       return; }
+    compare_jump = false;
 
     cs = newcs;
     eip = newip;

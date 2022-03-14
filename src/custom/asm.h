@@ -20,6 +20,7 @@
 #endif
 
 #ifdef DOSBOX
+#include <typeinfo>
 
 #include "regs.h"
 #include "cpu.h"
@@ -321,8 +322,8 @@ dd _source;
                                                                 (const db *const) a);
     }
 
-    template<class S>
-    S getdata(const S &s);
+    //template<class S>
+    //S getdata(const S &s);
 
     extern struct Memory types;
 
@@ -339,8 +340,8 @@ dd _source;
 */
     }
 
-    template<>
-    inline db getdata<db>(const db &s) {
+//    template<>
+    inline db getdata(const db &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readb((db *) &s - (db *) &m);
@@ -348,8 +349,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline dw getdata<dw>(const dw &s) {
+//    template<>
+    inline dw getdata(const dw &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readw((db *) &s - (db *) &m);
@@ -357,8 +358,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline dd getdata<dd>(const dd &s) {
+  //  template<>
+    inline dd getdata(const dd &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readd((db *) &s - (db *) &m);
@@ -366,8 +367,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline char getdata<char>(const char &s) {
+//    template<>
+    inline db getdata(const char &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readb((db *) &s - (db *) &m);
@@ -375,8 +376,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline short int getdata<short int>(const short int &s) {
+//    template<>
+    inline dw getdata(const short int &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readw((db *) &s - (db *) &m);
@@ -384,8 +385,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline int getdata<int>(const int &s) {
+//    template<>
+    inline dd getdata(const int &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readd((db *) &s - (db *) &m);
@@ -393,8 +394,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline long getdata<long>(const long &s) {
+//    template<>
+    inline dd getdata(const long &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readd((db *) &s - (db *) &m);
@@ -402,8 +403,8 @@ dd _source;
         else return s;
     }
 
-    template<>
-    inline long long getdata<long long>(const long long &s) {
+//    template<>
+    inline dd getdata(const long long &s) {
         if (m2c::isaddrbelongtom(&s)) {
             check_type(s);
             return mem_readd((db *) &s - (db *) &m);
@@ -736,10 +737,12 @@ static void setdata(dd* d, dd s)
 
     template<class D, class S>
     inline void CMP_(const D &dest_, const S &src_, m2c::eflags &m2cflags) {
-        const D dest = m2c::getdata<D>(dest_);
-        const S src = m2c::getdata<S>(src_);
-        D result = dest - src;
+//printf("\n\n%s %s ",typeid(D).name(),typeid(S).name());
+        auto dest = m2c::getdata(dest_);
+        auto src = m2c::getdata(src_);
+        decltype(dest) result = dest - src;
         AFFECT_CF(result > dest);
+//printf("%x %x - %x %x ~~ %x %x %x\n\n",dest_,dest,src_,src, result ,result > dest,GET_CF());
         static const D highestbitset = (1 << (m2c::bitsizeof(dest) - 1));
         AFFECT_OF(((dest ^ src) & (dest ^ result)) & highestbitset);
         AFFECT_ZFifz(result);
@@ -751,7 +754,7 @@ static void setdata(dd* d, dd s)
 
     template<class D, class S>
     inline void OR_(D &dest, const S &src, m2c::eflags &m2cflags) {
-        D result = m2c::getdata<D>(dest) | static_cast<D>(m2c::getdata<S>(src));
+        D result = m2c::getdata(dest) | static_cast<D>(m2c::getdata(src));
         m2c::setdata(&dest, result);
         AFFECT_ZFifz(result);
         AFFECT_SF_(result, result);
@@ -763,7 +766,7 @@ static void setdata(dd* d, dd s)
 
     template<class D, class S>
     inline void XOR_(D &dest, const S &src, m2c::eflags &m2cflags) {
-        D result = m2c::getdata<D>(dest) ^ static_cast<D>(m2c::getdata<S>(src));
+        D result = m2c::getdata(dest) ^ static_cast<D>(m2c::getdata(src));
         m2c::setdata(&dest, result);
         AFFECT_ZFifz(result);
         AFFECT_SF_(result, result);
@@ -775,7 +778,7 @@ static void setdata(dd* d, dd s)
 
     template<class D, class S>
     inline void AND_(D &dest, const S &src, m2c::eflags &m2cflags) {
-        D result = m2c::getdata<D>(dest) & static_cast<D>(m2c::getdata<S>(src));
+        D result = m2c::getdata(dest) & static_cast<D>(m2c::getdata(src));
         m2c::setdata(&dest, result);
         AFFECT_ZFifz(result);
         AFFECT_SF_(result, result);
@@ -1386,7 +1389,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #define MOV(dest, src) {m2c::MOV_(&dest,src);}
 
     template<class D, class S>
-    inline void MOV_(D *dest, const S &src) { m2c::setdata(dest, static_cast<D>(m2c::getdata<S>(src))); }
+    inline void MOV_(D *dest, const S &src) { m2c::setdata(dest, static_cast<D>(m2c::getdata(src))); }
 //{ *dest = static_cast<D>(src); }
 
 #define LEAVE {MOV(esp, ebp));POP(ebp);}
@@ -1613,8 +1616,9 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 //    #define R(a) {m2c::run_hw_interrupts();log_debug("%05d %04X:%08X  %-54s EAX:%08X EBX:%08X ECX:%08X EDX:%08X ESI:%08X EDI:%08X EBP:%08X ESP:%08X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%d ZF:%d SF:%d OF:%d AF:%d PF:%d IF:%d\n", \
 //                         __LINE__,cs,eip,#a,       eax,     ebx,     ecx,     edx,     esi,     edi,     ebp,     esp,     ds,     es,     fs,     gs,     ss,     GET_CF(), GET_ZF(), GET_SF(), GET_OF(), GET_AF(), GET_PF(), GET_IF());} 
 
-#define R(a) { m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); \
-               if (compare_jump) {m2c::Jend();} {a;} }
+#define R(a) { if (compare_jump) {m2c::Jend();}\
+              m2c::run_hw_interrupts(); m2c::log_regs_dbx(__FILE__,__LINE__,#a, cpu_regs, Segs); \
+                {a;} }
 
 // Run emulated instruction and compare with m2c instruction results
 

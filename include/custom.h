@@ -21,6 +21,7 @@ extern bool trace_instructions;
 extern volatile bool defered_custom_call; // int was called by interpreter which m2c have to execute later
 extern volatile bool from_callf; // check if m2c's interrupt called from interpreter or callf from m2c to interperter's bios
 extern volatile bool from_interpreter;
+extern volatile bool doing_single_step;
 extern volatile bool compare_jump;
 extern Bitu old_cycles; // backup remaining cycles
 extern std::stack<Bit32u> return_point; // where interpreter should return cntrol to m2c

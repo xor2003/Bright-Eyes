@@ -34,7 +34,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &_main;}
     __dispatch_call:
     switch (__disp) {
         case m2c::kmainproc: 	goto mainproc;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);stackDump(_state); abort();
+        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -76,7 +76,7 @@ l:
 //goto l;
 cs=0x192;eip=0x000126; 	T(MOV(ah, 0));	// 29 mov     ah, 0 ;~ 0192:0126
 cs=0x192;eip=0x000128; 	R(_INT(0x16));	// 30 int     16h             ; KEYBOARD - READ CHAR FROM BUFFER, WAIT IF EMPTY ;~ 0192:0128
-cs=0x192;eip=0x00012a; 	R(RETN);	// 32 retn ;~ 0192:012A
+cs=0x192;eip=0x00012a; 	J(RETN(0));	// 32 RETN(0) ;~ 0192:012A
 _int8:	// 40 
 cs=0x192;eip=0x00012b; 	X(PUSHA);	// 41 pusha ;~ 0192:012B
 cs=0x192;eip=0x00012c; 	T(MOV(ax, 0x0B800));	// 42 mov     ax, 0B800h ;~ 0192:012C
@@ -88,7 +88,7 @@ cs=0x192;eip=0x000136; 	T(si = offset(_text,byte_10164));	// 49 lea     si, byte
 cs=0x192;eip=0x00013a; 	T(MOV(al, *(raddr(ds,si))));	// 50 mov     al, [si] ;~ 0192:013A
 cs=0x192;eip=0x00013c; 	T(INC(al));	// 51 inc     al ;~ 0192:013C
 cs=0x192;eip=0x00013e; 	T(CMP(al, 'Z'));	// 52 cmp     al, 'Z' ;~ 0192:013E
-cs=0x192;eip=0x000140; 		R(JBE(loc_10154));	// 53 jbe     short loc_10154 ;~ 0192:0140
+cs=0x192;eip=0x000140; 	J(JBE(loc_10154));	// 53 jbe     short loc_10154 ;~ 0192:0140
 cs=0x192;eip=0x000142; 	T(MOV(al, 'A'));	// 54 mov     al, 'A' ;~ 0192:0142
 cs=0x192;eip=0x000144; loc_10154:	// 4369 
 cs=0x192;eip=0x000144; 	X(MOV(*(raddr(ds,si)), al));	// 57 mov     [si], al ;~ 0192:0144
@@ -107,7 +107,7 @@ cs=0x192;eip=0x000153; 	R(IRET);	// 65 iret ;~ 0192:0153
         case m2c::k_int8: 	goto _int8;
         case m2c::k_main: 	goto _main;
         case m2c::kloc_10154: 	goto loc_10154;
-        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);/*stackDump(_state);*/ abort();
+        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);/*stackDump();*/ abort();
     };
 }
 
@@ -119,25 +119,37 @@ bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state){
         case m2c::kloc_10154: 	_group1(__disp, _state); break;
         case m2c::k_int8: 	_group1(__disp, _state); break;
         case m2c::kmainproc: 	mainproc(0, _state); break;
-        default: return false;//m2c::log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);stackDump(_state); abort();
+        default: return false;//m2c::log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);stackDump(); abort();
      };
      return true;
 }
 
 #include <algorithm>
 #include <iterator>
-#define MYCOPY(x) {int res = std::inner_product(std::begin(tmp999),std::end(tmp999),std::begin(x), 0, std::plus<int>(), std::not_equal_to<int>());\
-if (res) {printf("not equal "#x);abort();};std::copy(std::begin(tmp999),std::end(tmp999),std::begin(x));}
+#ifdef DOSBOX
+#include <numeric>
 
-namespace m2c {
-//struct Initializer {
-void   Initializer()
-   {
+ #define MYCOPY(x) {m2c::set_type(x);m2c::mycopy((db*)&x,(db*)&tmp999,sizeof(tmp999),#x);}
 
-
+ namespace m2c {
+  void   Initializer()
+#else
+ #define MYCOPY(x) std::copy(std::begin(tmp999),std::end(tmp999),std::begin(x));
+ namespace {
+  struct Initializer {
+   Initializer()
+#endif
+  {
     {char tmp999[1]={'A'};MYCOPY(byte_10164)}
 
    }
+
+
+#ifndef DOSBOX
+  };
+ static const Initializer i;
+#endif
+
 
  }
 
