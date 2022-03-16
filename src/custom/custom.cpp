@@ -86,7 +86,7 @@ void
 masm2c_exit (unsigned char exit)
 {
   init++;
-  m2c::log_debug ("masm2c_exit Exiting\n");
+  printf ("masm2c_exit Exiting\n");
   //m2c::stackDump();
 }
 
@@ -343,19 +343,19 @@ namespace m2c
     int res = memcmp (d, s, size);
     if (res)
       {
-        log_debug ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
+        printf ("non-equal %s addr=%x size=%d", name, d - ((db *) & m2c::m), size);
         void *p = memmem (((db *) & m2c::m) + 0x1920, COMPARE_SIZE, s, size);
         if (size > 3 && p)
           {
-            log_debug (" found at %x", ((db *) p) - d);
+            printf (" found at %x", ((db *) p) - d);
           }
-        log_debug ("\nm2c ");
+        printf ("\nm2c ");
         hexDump (s, size);
-        log_debug ("memory ");
+        printf ("memory ");
         hexDump (d, size);
       }
 #else
-    //      log_debug("Init %zx %zd\n", d - ((db*)&m), size);
+    //      printf("Init %zx %zd\n", d - ((db*)&m), size);
     memcpy (d, s, size);
     memset (((db *) & types) + (d - ((db *) & m)), 0xff, size);
 #endif
@@ -368,16 +368,16 @@ namespace m2c
     unsigned char buff[17];
     unsigned char *pc = (unsigned char *) addr;
     (void) buff;
-    log_debug ("hexDump %p:\n", addr);
+    printf ("hexDump %p:\n", addr);
 
     if (len == 0)
       {
-        log_debug ("  ZERO LENGTH\n");
+        printf ("  ZERO LENGTH\n");
         return;
       }
     if (len < 0)
       {
-        log_debug ("  NEGATIVE LENGTH: %i\n", len);
+        printf ("  NEGATIVE LENGTH: %i\n", len);
         return;
       }
 
@@ -390,14 +390,14 @@ namespace m2c
           {
             // Just don't print ASCII for the zeroth line.
             if (i != 0)
-              log_debug ("  %s\n", buff);
+              printf ("  %s\n", buff);
 
             // Output the offset.
-            log_debug ("  %04x ", i);
+            printf ("  %04x ", i);
           }
 
         // Now the hex code for the specific character.
-        log_debug (" %02x", pc[i]);
+        printf (" %02x", pc[i]);
 
         // And store a printable ASCII character for later.
         if ((pc[i] < 0x20) || (pc[i] > 0x7e))
@@ -410,12 +410,12 @@ namespace m2c
     // Pad out last line if not exactly 16 characters.
     while ((i % 16) != 0)
       {
-        log_debug ("   ");
+        printf ("   ");
         i++;
       }
 
     // And print the final ASCII bit.
-    log_debug ("  %s\n", buff);
+    printf ("  %s\n", buff);
   }
 
   void cmpHexDump (void *addr1, void *addr2, int len)
@@ -425,16 +425,16 @@ namespace m2c
     unsigned char buff2[17];
     unsigned char *pc1 = (unsigned char *) addr1;
     unsigned char *pc2 = (unsigned char *) addr2;
-    log_debug ("cmpHexDump %p %p:\n", pc1, pc2);
+    printf ("cmpHexDump %p %p:\n", pc1, pc2);
 
     if (len == 0)
       {
-        log_debug ("  ZERO LENGTH\n");
+        printf ("  ZERO LENGTH\n");
         return;
       }
     if (len < 0)
       {
-        log_debug ("  NEGATIVE LENGTH: %i\n", len);
+        printf ("  NEGATIVE LENGTH: %i\n", len);
         return;
       }
 
@@ -446,12 +446,12 @@ namespace m2c
         if (memcmp (&pc1[i], &pc2[i], size) != 0)
           {
             // Output the offset.
-            log_debug ("  %04x ", i);
+            printf ("  %04x ", i);
 
             for (j = 0; j < size; j++)
               {
                 // Now the hex code for the specific character.
-                log_debug (" %02x", pc1[i + j]);
+                printf (" %02x", pc1[i + j]);
 
                 // And store a printable ASCII character for later.
                 if ((pc1[i + j] < 0x20) || (pc1[i + j] > 0x7e))
@@ -461,12 +461,12 @@ namespace m2c
               }
             buff1[j] = '\0';
 
-            log_debug ("  %s\n", buff1);
-            log_debug ("       ");
+            printf ("  %s\n", buff1);
+            printf ("       ");
             for (j = 0; j < size; j++)
               {
                 // Now the hex code for the specific character.
-                log_debug (" %02x", pc2[i + j]);
+                printf (" %02x", pc2[i + j]);
 
                 // And store a printable ASCII character for later.
                 if ((pc2[i + j] < 0x20) || (pc2[i + j] > 0x7e))
@@ -477,7 +477,7 @@ namespace m2c
             buff2[j + 1] = '\0';
 
             // And print the final ASCII bit.
-            log_debug ("  %s\n", buff2);
+            printf ("  %s\n", buff2);
           }
         i += size;
       }
@@ -658,7 +658,7 @@ else if (op1 == 0x0f) //j
 
     if (memcmp (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size) != 0)
       {
-        log_info ("~self-modified instruction %x:%x\n", seg, ip1);
+        printf ("~self-modified instruction %x:%x\n", seg, ip1);
         //hexDump (m2c::lm+(seg<<4)+ip1, 5);
         //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
         ::print_instruction (seg, ip1);
@@ -699,44 +699,44 @@ stackDump();
         trace_instructions = true;
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
-        log_debug ("before ");
+        printf ("before ");
         log_regs_dbx_real (0,"", 0, 0, instr, oldcpu_regs, oldSegs);
-        log_error ("/j-----------------------------Error-----------------------------------------\\\n");
+        printf ("/j-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
-        log_error ("cs:ip: ");
+        printf ("cs:ip: ");
         ::print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
 
-        log_error ("~m2c ");
+        printf ("~m2c ");
         log_regs_dbx_real (0,"", 0, 0, instr, cpu_regs, Segs);
 
         if (regs_ch)
           {
-            log_error ("reg ");
+            printf ("reg ");
             hexDump (&cpu_regs, sizeof (CPU_Regs));
           }
         if (segs_ch)
           {
-            log_error ("seg ");
+            printf ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
 
         Segs = realSegs;
         cpu_regs = realcpu_regs;
 
-        log_error ("~dbx ");
+        printf ("~dbx ");
         log_regs_dbx_real (0,"", 0, 0, instr, realcpu_regs, realSegs);
         if (regs_ch)
           {
-            log_error ("reg ");
+            printf ("reg ");
             hexDump (&cpu_regs, sizeof (CPU_Regs));
           }
         if (segs_ch)
           {
-            log_error ("seg ");
+            printf ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
-        log_error ("\\j-----------------------------Error-----------------------------------------/\n");
+        printf ("\\j-----------------------------Error-----------------------------------------/\n");
         exit (1);
       }
     cpu_regs.flags = bckpflags;
@@ -810,44 +810,44 @@ stackDump();
         trace_instructions = true;
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
-        log_debug ("before ");
+        printf ("before ");
         log_regs_dbx_real (0,"", line, 0, instr, oldcpu_regs, oldSegs);
-        log_error ("/t-----------------------------Error-----------------------------------------\\\n");
+        printf ("/t-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
-        log_error ("cs:ip: ");
+        printf ("cs:ip: ");
         ::print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
 
-        log_error ("~m2c ");
+        printf ("~m2c ");
         log_regs_dbx_real (0, file, line, 0, instr, cpu_regs, Segs);
 
         if (regs_ch)
           {
-            log_error ("reg ");
+            printf ("reg ");
             hexDump (&cpu_regs, sizeof (CPU_Regs));
           }
         if (segs_ch)
           {
-            log_error ("seg ");
+            printf ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
 
         Segs = realSegs;
         cpu_regs = realcpu_regs;
 
-        log_error ("~dbx ");
+        printf ("~dbx ");
         log_regs_dbx_real (0,file, line, 0, instr, realcpu_regs, realSegs);
         if (regs_ch)
           {
-            log_error ("reg ");
+            printf ("reg ");
             hexDump (&cpu_regs, sizeof (CPU_Regs));
           }
         if (segs_ch)
           {
-            log_error ("seg ");
+            printf ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
-        log_error ("\\t-----------------------------Error-----------------------------------------/\n");
+        printf ("\\t-----------------------------Error-----------------------------------------/\n");
         exit (1);
       }
     cpu_regs.flags = realflags;
@@ -925,46 +925,46 @@ stackDump();
         bool regs_ch = memcmp (&cpu_regs, &realcpu_regs, sizeof (CPU_Regs));
         bool segs_ch = memcmp (&Segs, &realSegs, sizeof (Segments));
         bool mem_ch = memcmp (&m, rm, COMPARE_SIZE);
-        log_debug ("before ");
+        printf ("before ");
         log_regs_dbx_real (0,"", line, 0, instr, oldcpu_regs, oldSegs);
-        log_error ("/x-----------------------------Error-----------------------------------------\\\n");
+        printf ("/x-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
-        log_error ("cs:ip: ");
+        printf ("cs:ip: ");
         ::print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
-        log_error ("~m2c ");
+        printf ("~m2c ");
         log_regs_dbx_real (0, file, line, 0, instr, cpu_regs, Segs);
         if (regs_ch)
           {
-            log_error ("reg ");
+            printf ("reg ");
             hexDump (&cpu_regs, sizeof (CPU_Regs));
           }
         if (segs_ch)
           {
-            log_error ("seg ");
+            printf ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
 
         Segs = realSegs;
         cpu_regs = realcpu_regs;
-        log_error ("~dbx ");
+        printf ("~dbx ");
         log_regs_dbx_real (0,file, line, 0, instr, realcpu_regs, realSegs);
         if (regs_ch)
           {
-            log_error ("reg ");
+            printf ("reg ");
             hexDump (&cpu_regs, sizeof (CPU_Regs));
           }
         if (segs_ch)
           {
-            log_error ("seg ");
+            printf ("seg ");
             hexDump (&Segs, sizeof (Segments));
           }
         if (mem_ch)
           {
-            log_error ("~mem m2c / dbx\n");
+            printf ("~mem m2c / dbx\n");
             cmpHexDump (&m, rm, COMPARE_SIZE);
           }
-        log_error ("\\x-----------------------------Error-----------------------------------------/\n");
+        printf ("\\x-----------------------------Error-----------------------------------------/\n");
         exit (1);
       }
     cpu_regs.flags = realflags;
@@ -1065,18 +1065,18 @@ if (debug > 0)
     if (m2c::debug)
       {
         X86_REGREF if (!m_ss.empty ())
-          log_debug (" Emulated Stack dump:\n");
-        log_debug ("%8s %8s %4s:%4s %4s %4s %4s\n", "Alloc", "Dealloc", "cs", "ip", "sp", "Value", "Current value");
+          printf (" Emulated Stack dump:\n");
+        printf ("%8s %8s %4s:%4s %4s %4s %4s\n", "Alloc", "Dealloc", "cs", "ip", "sp", "Value", "Current value");
         for (int i = m_ss.size () - 1; i >= 0; i--)
           {
             Frame f = m_ss[i];
             if (i == m_current - 1)
-              log_debug ("  ");
-            log_debug ("%8x %8x %04x:%04x %4x %4x", f.addcounter, f.remcounter, f.cs, f.ip, f.sp, f.value);
+              printf ("  ");
+            printf ("%8x %8x %04x:%04x %4x %4x", f.addcounter, f.remcounter, f.cs, f.ip, f.sp, f.value);
             if (*f.pointer_ != f.value)
-              log_debug (" %4x\n", *f.pointer_);
+              printf (" %4x\n", *f.pointer_);
             else
-              log_debug ("\n");
+              printf ("\n");
           }
       }
   }
@@ -1089,8 +1089,8 @@ void
 init_entrypoint (Bit16u relocate)
 {
   X86_REGREF 
-  m2c::log_debug ("Starting m2c\n");
-  m2c::log_debug ("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
+  printf ("Starting m2c\n");
+  printf ("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
 
 //   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
   m2c::Initializer ();
