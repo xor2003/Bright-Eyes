@@ -49,8 +49,9 @@ static int init = 0;
 void init_entrypoint (Bit16u relocate);
 
 //bool __dispatch_call (m2c::_offsets __i, struct m2c::_STATE * _state, db source=0);
-
+#ifndef __WIN32__
 extern void print_backtrace(uintptr_t pc);
+#endif
 
 namespace m2c
 {
@@ -90,7 +91,7 @@ masm2c_exit (unsigned char exit)
 }
 
 
-extern bool __dispatch_call (m2c::_offsets __disp, struct m2c::_STATE * _state, db source=0);
+extern bool __dispatch_call (m2c::_offsets __disp, struct m2c::_STATE * _state);
 // Is the game running?
 /**
 	init_get_fname - copies the filename from src to dst
@@ -159,9 +160,9 @@ custom_callf (Bitu CS, Bitu IP)
 
   if (init_runs)
   {
-     if (CS >= 0xa000) return 0;
+     if (CS >= 0xa000 || (CS==0 && cs==0xf000)) return 0;
 
-     return __dispatch_call ((CS << 16) + IP, 0, 3);
+     return __dispatch_call((CS << 16) + IP, (m2c::_STATE*)3);
   }
 
   return 0;
@@ -485,7 +486,9 @@ namespace m2c
   void stackDump()//struct _STATE *_state)
   {
     m2c::print_traces();
+#ifndef __WIN32__
 print_backtrace(0);
+#endif
     shadow_stack.print (0);
   }
 
@@ -658,7 +661,7 @@ else if (op1 == 0x0f) //j
         log_info ("~self-modified instruction %x:%x\n", seg, ip1);
         //hexDump (m2c::lm+(seg<<4)+ip1, 5);
         //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
-        print_instruction (seg, ip1);
+        ::print_instruction (seg, ip1);
         cmpHexDump (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size);
         compare_jump = false;
       }
@@ -701,7 +704,7 @@ stackDump();
         log_error ("/j-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error ("cs:ip: ");
-        print_instruction (oldSegs.val[1], oldip);
+        ::print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
 
         log_error ("~m2c ");
@@ -776,7 +779,7 @@ stackDump();
         log_info ("~self-modified instruction %x:%x\n", seg, ip1);
         //hexDump (m2c::lm+(seg<<4)+ip1, 5);
         //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
-        print_instruction (seg, ip1);
+        ::print_instruction (seg, ip1);
         cmpHexDump (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size);
         return false;
       }
@@ -812,7 +815,7 @@ stackDump();
         log_error ("/t-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error ("cs:ip: ");
-        print_instruction (oldSegs.val[1], oldip);
+        ::print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
 
         log_error ("~m2c ");
@@ -886,7 +889,7 @@ stackDump();
         log_info ("~self-modified instruction %x:%x\n", seg, ip1);
         //hexDump (m2c::lm+(seg<<4)+ip1, 5);
         //hexDump ((db*)&m2c::m+(seg<<4)+ip1, 5);
-        print_instruction (seg, ip1);
+        ::print_instruction (seg, ip1);
         cmpHexDump (m2c::lm + (seg << 4) + ip1, (db *) & m2c::m + (seg << 4) + ip1, instr_size);
         return false;
       }
@@ -927,7 +930,7 @@ stackDump();
         log_error ("/x-----------------------------Error-----------------------------------------\\\n");
 //        cpu_regs.ip.word[0] = oldip;
         log_error ("cs:ip: ");
-        print_instruction (oldSegs.val[1], oldip);
+        ::print_instruction (oldSegs.val[1], oldip);
         hexDump (raddr (Segs.val[1], oldip), 8);
         log_error ("~m2c ");
         log_regs_dbx_real (0, file, line, 0, instr, cpu_regs, Segs);

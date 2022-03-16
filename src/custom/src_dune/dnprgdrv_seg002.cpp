@@ -514,20 +514,16 @@ cs=0x24ed;eip=0x000b6b; 	T(CLI);	// 119892 cli ;~ 24ED:0B6B
 cs=0x24ed;eip=0x000b6c; 	T(MOV(dx, 0x3C8));	// 119893 mov     dx, 3C8h ;~ 24ED:0B6C
 cs=0x24ed;eip=0x000b6f; 	T(MOV(al, bl));	// 119894 mov     al, bl ;~ 24ED:0B6F
 cs=0x24ed;eip=0x000b71; 	R(OUT(dx, al));	// 119895 out     dx, al ;~ 24ED:0B71
-cs=0x24ed;eip=0x000b72; 	R(
-);	// 119896 jmp     short $+2 ;~ 24ED:0B72
+cs=0x24ed;eip=0x000b72; 		// 119896 jmp     short $+2 ;~ 24ED:0B72
 loc_34024:
 	// 7919 
-cs=0x24ed;eip=0x000b74; 	R(
-);	// 119900 jmp     short $+2 ;~ 24ED:0B74
+cs=0x24ed;eip=0x000b74; 		// 119900 jmp     short $+2 ;~ 24ED:0B74
 loc_34026:
 	// 7920 
-cs=0x24ed;eip=0x000b76; 	R(
-);	// 119904 jmp     short $+2 ;~ 24ED:0B76
+cs=0x24ed;eip=0x000b76; 		// 119904 jmp     short $+2 ;~ 24ED:0B76
 loc_34028:
 	// 7921 
-cs=0x24ed;eip=0x000b78; 	R(
-);	// 119908 jmp     short $+2 ;~ 24ED:0B78
+cs=0x24ed;eip=0x000b78; 		// 119908 jmp     short $+2 ;~ 24ED:0B78
 loc_3402a:
 	// 7922 
 cs=0x24ed;eip=0x000b7a; 	T(INC(dx));	// 119912 inc     dx ;~ 24ED:0B7A

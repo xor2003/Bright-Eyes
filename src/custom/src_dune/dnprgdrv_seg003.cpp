@@ -400,8 +400,7 @@ cs=0x4907;eip=0x0003be; 	T(MOV(al, 0x20));	// 126537 mov     al, 20h ; ' ' ;~ 49
 cs=0x4907;eip=0x0003c0; 	T(CMP(*(&byte_578d7), 8));	// 126538 cmp     cs:byte_578D7, 8 ;~ 4907:03C0
 cs=0x4907;eip=0x0003c6; 	R(JC(loc_57a1c));	// 126539 jb      short loc_57A1C ;~ 4907:03C6
 cs=0x4907;eip=0x0003c8; 	R(OUT(0x0A0, al));	// 126540 out     0A0h, al        ; PIC 2  same as 0020 for PIC 1 ;~ 4907:03C8
-cs=0x4907;eip=0x0003ca; 	R(
-);	// 126541 jmp     short $+2 ;~ 4907:03CA
+cs=0x4907;eip=0x0003ca; 		// 126541 jmp     short $+2 ;~ 4907:03CA
 loc_57a1c:
 	// 8526 
 cs=0x4907;eip=0x0003cc; 	R(OUT(0x20, al));	// 126546 out     20h, al         ; Interrupt controller, 8259A. ;~ 4907:03CC
@@ -699,8 +698,7 @@ cs=0x4907;eip=0x0005a1; 	T(MOV(al, 0x20));	// 126896 mov     al, 20h ; ' ' ;~ 49
 cs=0x4907;eip=0x0005a3; 	T(CMP(*(&byte_578d7), 8));	// 126897 cmp     cs:byte_578D7, 8 ;~ 4907:05A3
 cs=0x4907;eip=0x0005a9; 	R(JC(loc_57bff));	// 126898 jb      short loc_57BFF ;~ 4907:05A9
 cs=0x4907;eip=0x0005ab; 	R(OUT(0x0A0, al));	// 126899 out     0A0h, al        ; PIC 2  same as 0020 for PIC 1 ;~ 4907:05AB
-cs=0x4907;eip=0x0005ad; 	R(
-);	// 126900 jmp     short $+2 ;~ 4907:05AD
+cs=0x4907;eip=0x0005ad; 		// 126900 jmp     short $+2 ;~ 4907:05AD
 loc_57bff:
 	// 8548 
 cs=0x4907;eip=0x0005af; 	R(OUT(0x20, al));	// 126905 out     20h, al         ; Interrupt controller, 8259A. ;~ 4907:05AF

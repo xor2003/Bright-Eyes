@@ -318,6 +318,7 @@ dd _source;
 
 
     typedef bool m2cf(_offsets, struct _STATE *); // common masm2c function
+    
     template<class S>
     constexpr bool isaddrbelongtom(const S *const a) {
         return ((const db *const) &m < (const db *const) a) && ((const db *const) &m + 16 * 1024 * 1024 >
@@ -1826,7 +1827,7 @@ dw _source;
 
 }
 
-extern void print_instruction(dw newcs, dd newip);
+extern void print_instruction(Bit16u newcs, Bit32u newip);
 
 extern struct SDL_Renderer *renderer;
 

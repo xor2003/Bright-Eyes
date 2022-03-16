@@ -7,7 +7,7 @@
  *
  */
 
-#include "asm.h"
+#include "../asm.h"
 
 #undef res_map_size
 #define res_map_size 0x0C5F9
@@ -30657,7 +30657,7 @@ bool sub_5d7b2(m2c::_offsets, struct m2c::_STATE*);
 #ifndef DOSBOX
 static
 #endif
-bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state, db source=0);
+bool __dispatch_call(m2c::_offsets __disp, struct m2c::_STATE* _state);
 
 
 #endif

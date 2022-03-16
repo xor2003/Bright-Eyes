@@ -29660,8 +29660,8 @@ cs=0x1a2;eip=0x00d884; 	J(JNZ(loc_1d893));	// 35627 jnz     short loc_1D893 ;~ 0
 cs=0x1a2;eip=0x00d886; 	J(CALL(sub_1d50f,0));	// 35628 call    sub_1D50F ;~ 01A2:D886
 cs=0x1a2;eip=0x00d889; 	T(MOV(ax, cx));	// 35629 mov     ax, cx ;~ 01A2:D889
 cs=0x1a2;eip=0x00d88b; 	T(OR(ax, di));	// 35630 or      ax, di ;~ 01A2:D88B
-cs=0x1a2;eip=0x00d88d; 	R(
-);	// 35631 jz      short $+2 ;~ 01A2:D88D
+cs=0x1a2;eip=0x00d88d; 	
+	// 35631 jz      short $+2 ;~ 01A2:D88D
 loc_1d88f:
 	// 7446 
 cs=0x1a2;eip=0x00d88f; 	J(CALL(__dispatch_call,*(dw*)(raddr(ds,si))));	// 35634 call    word ptr [si] ;~ 01A2:D88F
@@ -33799,7 +33799,7 @@ cs=0x1a2;eip=0x00f4a8; 	R(RETN(0));	// 40565 retn ;~ 01A2:F4A8
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return false;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
     switch (__disp) {

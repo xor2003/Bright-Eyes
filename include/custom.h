@@ -25,6 +25,7 @@ extern volatile bool doing_single_step;
 extern volatile bool compare_jump;
 extern Bitu old_cycles; // backup remaining cycles
 extern std::stack<Bit32u> return_point; // where interpreter should return cntrol to m2c
+extern void print_instruction(Bit16u newcs, Bit32u newip);
 
 #if DOSBOX_CUSTOM
 // old values of CS:IP (directly before the call), usable for diagnosis
