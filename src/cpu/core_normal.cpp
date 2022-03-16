@@ -150,7 +150,7 @@ extern void log_regs_dbx(const char * file,int line, const char * instr, const C
 
 void print_instruction(Bit16u newcs, Bit32u newip)
 {
-  char dline[20];
+  char dline[120];
 //  static std::unordered_set<std::string> instr_names;
   DasmI386(dline,(newcs<<4)+newip,newip,false);
 //  const char * instr = instr_names.insert(dline).first->c_str();
