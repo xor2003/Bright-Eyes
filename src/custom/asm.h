@@ -105,6 +105,8 @@ extern volatile bool compare_jump;
 
 namespace m2c {
 
+    extern void log_regs_dbx(const char *file, int line, const char *instr, const CPU_Regs &r, const Segments &s);
+
     extern size_t debug;
 
     extern size_t counter;
@@ -491,19 +493,21 @@ static void setdata(dd* d, dd s)
 // Asm functions
 #ifdef DOSBOX
 
-/*
+
     static int log_debug(const char *format, ...) {
         int result;
         va_list args;
 
         va_start(args, format);
-        result = vfprintf(stdout, format, args);
+        char str[256];
+        result = vsprintf(str, format, args);
+        log_regs_dbx("", 0, str, cpu_regs, Segs);
         //printf("\n");
         va_end(args);
 
         return result;
     }
-
+/*
     static int log_error(const char *format, ...) {
         int result;
         va_list args;
@@ -528,9 +532,9 @@ static void setdata(dd* d, dd s)
         return result;
     }
 */
-#define log_debug printf
-#define log_error printf
-#define log_info printf
+//#define log_debug printf
+#define log_error log_debug
+#define log_info log_debug
 
     extern const char *log_spaces(int n);
 
@@ -1476,11 +1480,11 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #define RETN(i) {m2c::RETN_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
     static void RETN_(size_t i)
     {
-       if (trace_instructions) log_debug("before ret %x\n",stackPointer);
+       if (debug>2) log_debug("before ret %x\n",stackPointer);
        m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
        eip=averytemporary9;
        esp+=i;
-       if (trace_instructions) {log_debug("after ret %x\n",stackPointer);
+       if (debug>2) {log_debug("after ret %x\n",stackPointer);
           if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}
           log_debug("return eip %x\n",eip);}
     }
@@ -1488,12 +1492,12 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #define RETF(i) {m2c::RETF_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
     static void RETF_(size_t i)
     {
-       if (trace_instructions) log_debug("before retf %x\n",stackPointer);
+       if (debug>2) log_debug("before retf %x\n",stackPointer);
        m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
        eip=averytemporary9;
         dw averytemporary11;POP(averytemporary11); cs=averytemporary11;
        esp+=i;
-       if (trace_instructions) {log_debug("after retf %x\n",stackPointer);
+       if (debug>2) {log_debug("after retf %x\n",stackPointer);
           if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}
           log_debug("return eip %x\n",eip);}
     }
@@ -1505,7 +1509,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
     from_callf=true;
           MWORDSIZE averytemporary8=eip+2; PUSH(averytemporary8);
 
-          if (trace_instructions) {log_debug("after call %x\n",stackPointer);
+          if (debug>2) {log_debug("after call %x\n",stackPointer);
           if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};}
      }
 
@@ -1516,14 +1520,14 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 
     static void RETN_(size_t i) {
         X86_REGREF
-        if (trace_instructions) log_debug("before ret %x\n", stackPointer);
+        if (debug>2) log_debug("before ret %x\n", stackPointer);
         POP(ip);
         if (ip != 'xy') {
             log_error("Emulated stack corruption detected (found %x)\n", ip);
             m2c::stackDump();
         }
         esp += i;
-        if (trace_instructions) {
+        if (debug>2) {
             log_debug("after ret %x\n", stackPointer);
             m2c::_indent -= 1;
             m2c::_str = m2c::log_spaces(m2c::_indent);
@@ -1534,7 +1538,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 
     static void RETF_(size_t i) {
         X86_REGREF
-        if (trace_instructions) log_debug("before retf %x\n", stackPointer);
+        if (debug>2) log_debug("before retf %x\n", stackPointer);
         m2c::MWORDSIZE averytemporary9 = 0;
         POP(averytemporary9);
         if (averytemporary9 != 'xy') {
@@ -1545,7 +1549,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
         dw averytemporary11;
         POP(averytemporary11);
         esp += i;
-        if (trace_instructions) {
+        if (debug>2) {
             log_debug("after retf %x\n", stackPointer);
             m2c::_indent -= 1;
             m2c::_str = m2c::log_spaces(m2c::_indent);
@@ -1560,7 +1564,7 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
         m2c::MWORDSIZE averytemporary8 = 'xy';
         PUSH(averytemporary8);
 
-        if (trace_instructions) {
+        if (debug>2) {
             log_debug("after call %x\n", stackPointer);
 // 	  if (_state) {++_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);};
             m2c::_indent += 1;
@@ -1808,9 +1812,8 @@ dw _source;
     extern void Xend(const char *file, int line, const char *instr);
 
 //extern void log_regs(int line, const char * instr, struct _STATE* _state);
-    extern void log_regs_dbx(const char *file, int line, const char *instr, const CPU_Regs &r, const Segments &s);
 
-    extern void interpret_unknown_callf(dw cs, dd eip);
+    extern void interpret_unknown_callf(dw cs, dd eip, db source=0);
 
     static bool oldZF = false;
     static bool repForMov = false;

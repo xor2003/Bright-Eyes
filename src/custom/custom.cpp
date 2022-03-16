@@ -19,7 +19,7 @@ namespace m2c
   extern size_t debug;
 }
 
-bool compare_instructions = m2c::debug == 1;
+bool compare_instructions = m2c::debug == 1 || m2c::debug == 2;
 bool
   trace_instructions = m2c::debug > 1;
 
@@ -48,7 +48,7 @@ static int init = 0;
 
 void init_entrypoint (Bit16u relocate);
 
-bool __dispatch_call (m2c::_offsets __i, struct m2c::_STATE * _state);
+//bool __dispatch_call (m2c::_offsets __i, struct m2c::_STATE * _state, db source=0);
 
 extern void print_backtrace(uintptr_t pc);
 
@@ -85,23 +85,12 @@ void
 masm2c_exit (unsigned char exit)
 {
   init++;
-  log_debug ("masm2c_exit Exiting\n");
+  m2c::log_debug ("masm2c_exit Exiting\n");
   //m2c::stackDump();
 }
 
-int
-init_callf (unsigned selector, unsigned offs)
-{
-//      if (selector == ss)
-//              return 0;
-  if (selector >= 0xa000)
-    return 0;
 
-  return __dispatch_call ((selector << 16) + offs, 0);
-}
-
-
-extern bool __dispatch_call (m2c::_offsets __disp, struct m2c::_STATE * _state);
+extern bool __dispatch_call (m2c::_offsets __disp, struct m2c::_STATE * _state, db source=0);
 // Is the game running?
 /**
 	init_get_fname - copies the filename from src to dst
@@ -169,7 +158,11 @@ custom_callf (Bitu CS, Bitu IP)
     return 0;
 
   if (init_runs)
-    return init_callf (CS, IP);
+  {
+     if (CS >= 0xa000) return 0;
+
+     return __dispatch_call ((CS << 16) + IP, 0, 3);
+  }
 
   return 0;
 }
@@ -496,7 +489,7 @@ print_backtrace(0);
     shadow_stack.print (0);
   }
 
-  static void log_regs_dbx_real (size_t counter_, const char *file, int line, db indent, const char *instr, const CPU_Regs & r,
+  void log_regs_dbx_real (size_t counter_, const char *file, int line, db indent, const char *instr, const CPU_Regs & r,
                                  const Segments & s)
   {
 /*
@@ -516,7 +509,7 @@ struct CPU_Regs {
 #define reg_32(reg) (cpu_regs.regs[(reg)].dword[DW_INDEX])
 };*/
 //   if (trace_instructions)
-    log_debug
+    printf
       ("%8x %s:%06d %04X:%04X %s%s%s AX:%04X BX:%04X CX:%04X DX:%04X SI:%04X DI:%04X BP:%04X SP:%04X DS:%04X ES:%04X FS:%04X GS:%04X SS:%04X CF:%x ZF:%x SF:%x OF:%x AF:%x PF:%x IF:%x\n",
        counter_, file, line, s.val[1], r.ip, log_spaces(indent), instr, log_spaces(84-indent-strlen(instr)), r.regs[0].dword[0], r.regs[3].dword[0], r.regs[1].dword[0],
        r.regs[2].dword[0], r.regs[6].dword[0], r.regs[7].dword[0], r.regs[5].dword[0], r.regs[4].dword[0], s.val[3],
@@ -525,12 +518,28 @@ struct CPU_Regs {
   }
 
   struct CPU_State
-  {
+  {/*
+    CPU_State(size_t counter,
+    const char *file,
+    int line,
+    db indent,
+    const char* instr,
+    CPU_Regs regs,
+    Segments segs):
+    counter(counter),
+    file(file),
+    line(line),
+    indent(indent),
+    instr(instr),
+    regs(regs),
+    segs(segs)
+    {}*/
+
     size_t counter;
     const char *file;
     int line;
     db indent;
-    const char *instr;
+    std::string instr;
     CPU_Regs regs;
     Segments segs;
   };
@@ -542,7 +551,7 @@ struct CPU_Regs {
     while (!trace_store.empty ())
       {
         CPU_State& cs = trace_store.front ();
-        log_regs_dbx_real (cs.counter, cs.file, cs.line, cs.indent, cs.instr, cs.regs, cs.segs);
+        log_regs_dbx_real (cs.counter, cs.file, cs.line, cs.indent, cs.instr.c_str(), cs.regs, cs.segs);
         trace_store.pop_front ();
       }
   }
@@ -556,6 +565,7 @@ struct CPU_Regs {
         if (debug == 2 || debug == 1)
           {
         CPU_State cs={counter, file, line, _indent, instr, r, s};
+        
         trace_store.push_back (cs);
           }
         else
@@ -958,25 +968,30 @@ stackDump();
   }
 
 
-  void interpret_unknown_callf (dw newcs, dd newip)
+  void interpret_unknown_callf(dw newcs, dd newip, db source)
   {
     X86_REGREF 
     if (cs == newcs && newip == eip)
+    {
+    log_debug ("Called from interpreter. return1");
       return;                   // Most probably a call of interpreter int from interpreter
+    }
+    cs = newcs;
+    eip = newip;
+
     if (from_interpreter)
     { from_interpreter = false;
+    log_debug ("Called from interpreter. return2");
       return; }
     compare_jump = false;
 
-    cs = newcs;
-    eip = newip;
     dw oldsp = sp;
     fix_segs ();
     return_point.push (*(dd *) raddr (ss, sp));
-#if DEBUG > 0
+if (debug > 0)
     log_debug ("Enter interp current cs=%x ip=%x sp=%x ret_point:%x retp.size()=%d\n", cs, ip, sp,
                return_point.top (), return_point.size ());
-#endif
+
     do
       {
 //  log_debug("start\n");
@@ -988,9 +1003,9 @@ stackDump();
       {
         log_error ("Error cs:ip != return_point %x\n", return_point.top ());
       }
-#if DEBUG > 0
+if (debug > 0)
     log_debug ("Exit interp cs=%x ip=%x sp=%x\n", cs, ip, sp);
-#endif
+
     if (oldsp + 4 != sp && cs != 0xf000)
       {
         log_error ("Error it should consume 4 bytes from stack\n");
@@ -1070,8 +1085,9 @@ stackDump();
 void
 init_entrypoint (Bit16u relocate)
 {
-  X86_REGREF log_debug ("Starting program\n");
-  log_debug ("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
+  X86_REGREF 
+  m2c::log_debug ("Starting m2c\n");
+  m2c::log_debug ("\n\nCS:IP 0x%x:0x%x\tMemBase: %p\n", cs, eip, MemBase);
 
 //   memset(((db*)&m2c::m)+0x1920+0x100,0,0xfef0);
   m2c::Initializer ();

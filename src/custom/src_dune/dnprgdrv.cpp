@@ -2840,7 +2840,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 
     __disp=__i;
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();if (from_callf) m2c::interpret_unknown_callf(cs,eip);return true;}
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();if (from_callf) m2c::interpret_unknown_callf(cs,eip);m2c::log_debug("doing return1\n");return true;}
     switch (__i) {
         case m2c::kmainproc: 	mainproc(0, _state); break;
         case m2c::kstart: 	_group1(__disp, _state); break;
@@ -8501,8 +8501,8 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
         case m2c::kloc_5d4af: 	_group4(__disp, _state); break;
         case m2c::kret_4e73_930: 	_group4(__disp, _state); break;
 */
-        default: log_error("cs=%x ip=%x Don't know how to call to 0x%x. See " __FILE__ " line %d\n", cs,ip,__disp, __LINE__);
-m2c::interpret_unknown_callf(__disp>>16,__disp&0xffff);return true;
+        default: m2c::log_error("cs=%x ip=%x Don't know how to call to 0x%x. See " __FILE__ " line %d\n", cs,ip,__disp, __LINE__);
+m2c::interpret_unknown_callf(__disp>>16,__disp&0xffff);m2c::log_debug("doing return2\n");return true;
 //m2c::stackDump(_state); abort();
      };
      return true;

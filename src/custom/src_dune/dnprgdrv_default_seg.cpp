@@ -41,7 +41,7 @@
 #endif
     switch (__disp) {
         case m2c::kmainproc: 	goto mainproc;
-        default: log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);exit(1);
+        default: m2c::log_error("Don't know how to jump to 0x%x. See " __FILE__ " line %d\n", __disp, __LINE__);exit(1);
     };
 }
 
