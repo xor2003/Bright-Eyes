@@ -12,473 +12,473 @@
 namespace m2c{ m2cf* _ENTRY_POINT_ = &start;}
 
 
- void callsubbx(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kcallsubbx, _state);}
+ bool callsubbx(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kcallsubbx, _state);}
 
- void conv_13334(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kconv_13334, _state);}
+ bool conv_13334(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kconv_13334, _state);}
 
- void mainproc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kmainproc, _state);}
+ bool mainproc(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kmainproc, _state);}
 
- void nullsub_1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::knullsub_1, _state);}
+ bool nullsub_1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::knullsub_1, _state);}
 
- void nullsub_2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::knullsub_2, _state);}
+ bool nullsub_2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::knullsub_2, _state);}
 
- void resettable1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kresettable1, _state);}
+ bool resettable1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kresettable1, _state);}
 
- void settable1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksettable1, _state);}
+ bool settable1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksettable1, _state);}
 
- void start(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::kstart, _state);}
+ bool start(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::kstart, _state);}
 
- void sub_1021b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1021b, _state);}
+ bool sub_1021b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1021b, _state);}
 
- void sub_10224(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10224, _state);}
+ bool sub_10224(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10224, _state);}
 
- void sub_1022e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1022e, _state);}
+ bool sub_1022e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1022e, _state);}
 
- void sub_10247(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10247, _state);}
+ bool sub_10247(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10247, _state);}
 
- void sub_10276(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10276, _state);}
+ bool sub_10276(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10276, _state);}
 
- void sub_102c1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_102c1, _state);}
+ bool sub_102c1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_102c1, _state);}
 
- void sub_102ca(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_102ca, _state);}
+ bool sub_102ca(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_102ca, _state);}
 
- void sub_102de(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_102de, _state);}
+ bool sub_102de(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_102de, _state);}
 
- void sub_102f7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_102f7, _state);}
+ bool sub_102f7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_102f7, _state);}
 
- void sub_1031d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1031d, _state);}
+ bool sub_1031d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1031d, _state);}
 
- void sub_103d5(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_103d5, _state);}
+ bool sub_103d5(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_103d5, _state);}
 
- void sub_103e8(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_103e8, _state);}
+ bool sub_103e8(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_103e8, _state);}
 
- void sub_1040b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1040b, _state);}
+ bool sub_1040b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1040b, _state);}
 
- void sub_1044b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1044b, _state);}
+ bool sub_1044b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1044b, _state);}
 
- void sub_1048e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1048e, _state);}
+ bool sub_1048e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1048e, _state);}
 
- void sub_10587(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10587, _state);}
+ bool sub_10587(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10587, _state);}
 
- void sub_1058f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1058f, _state);}
+ bool sub_1058f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1058f, _state);}
 
- void sub_1064d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1064d, _state);}
+ bool sub_1064d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1064d, _state);}
 
- void sub_106d1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_106d1, _state);}
+ bool sub_106d1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_106d1, _state);}
 
- void sub_107f3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_107f3, _state);}
+ bool sub_107f3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_107f3, _state);}
 
- void sub_1085c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1085c, _state);}
+ bool sub_1085c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1085c, _state);}
 
- void sub_10907(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10907, _state);}
+ bool sub_10907(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10907, _state);}
 
- void sub_10976(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10976, _state);}
+ bool sub_10976(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10976, _state);}
 
- void sub_109aa(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_109aa, _state);}
+ bool sub_109aa(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_109aa, _state);}
 
- void sub_109ef(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_109ef, _state);}
+ bool sub_109ef(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_109ef, _state);}
 
- void sub_10a19(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10a19, _state);}
+ bool sub_10a19(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10a19, _state);}
 
- void sub_10a79(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10a79, _state);}
+ bool sub_10a79(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10a79, _state);}
 
- void sub_10a7c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10a7c, _state);}
+ bool sub_10a7c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10a7c, _state);}
 
- void sub_10a8e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10a8e, _state);}
+ bool sub_10a8e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10a8e, _state);}
 
- void sub_10aba(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10aba, _state);}
+ bool sub_10aba(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10aba, _state);}
 
- void sub_10b0d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10b0d, _state);}
+ bool sub_10b0d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10b0d, _state);}
 
- void sub_10b21(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10b21, _state);}
+ bool sub_10b21(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10b21, _state);}
 
- void sub_10b26(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10b26, _state);}
+ bool sub_10b26(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10b26, _state);}
 
- void sub_10b2c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10b2c, _state);}
+ bool sub_10b2c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10b2c, _state);}
 
- void sub_10bba(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10bba, _state);}
+ bool sub_10bba(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10bba, _state);}
 
- void sub_10bed(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10bed, _state);}
+ bool sub_10bed(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10bed, _state);}
 
- void sub_10c1a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10c1a, _state);}
+ bool sub_10c1a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10c1a, _state);}
 
- void sub_10d18(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10d18, _state);}
+ bool sub_10d18(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10d18, _state);}
 
- void sub_10d1d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10d1d, _state);}
+ bool sub_10d1d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10d1d, _state);}
 
- void sub_10d41(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10d41, _state);}
+ bool sub_10d41(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10d41, _state);}
 
- void sub_10dc8(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10dc8, _state);}
+ bool sub_10dc8(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10dc8, _state);}
 
- void sub_10dec(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10dec, _state);}
+ bool sub_10dec(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10dec, _state);}
 
- void sub_10e0c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10e0c, _state);}
+ bool sub_10e0c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10e0c, _state);}
 
- void sub_10e33(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10e33, _state);}
+ bool sub_10e33(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10e33, _state);}
 
- void sub_10ed2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10ed2, _state);}
+ bool sub_10ed2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10ed2, _state);}
 
- void sub_10f67(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10f67, _state);}
+ bool sub_10f67(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10f67, _state);}
 
- void sub_10f82(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10f82, _state);}
+ bool sub_10f82(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10f82, _state);}
 
- void sub_10ff6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10ff6, _state);}
+ bool sub_10ff6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10ff6, _state);}
 
- void sub_10ffc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_10ffc, _state);}
+ bool sub_10ffc(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_10ffc, _state);}
 
- void sub_11058(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11058, _state);}
+ bool sub_11058(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11058, _state);}
 
- void sub_11065(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11065, _state);}
+ bool sub_11065(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11065, _state);}
 
- void sub_110d5(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_110d5, _state);}
+ bool sub_110d5(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_110d5, _state);}
 
- void sub_110f3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_110f3, _state);}
+ bool sub_110f3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_110f3, _state);}
 
- void sub_11111(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11111, _state);}
+ bool sub_11111(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11111, _state);}
 
- void sub_11139(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11139, _state);}
+ bool sub_11139(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11139, _state);}
 
- void sub_1114f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1114f, _state);}
+ bool sub_1114f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1114f, _state);}
 
- void sub_11157(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11157, _state);}
+ bool sub_11157(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11157, _state);}
 
- void sub_11162(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11162, _state);}
+ bool sub_11162(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11162, _state);}
 
- void sub_11181(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11181, _state);}
+ bool sub_11181(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11181, _state);}
 
- void sub_111b1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_111b1, _state);}
+ bool sub_111b1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_111b1, _state);}
 
- void sub_111f3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_111f3, _state);}
+ bool sub_111f3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_111f3, _state);}
 
- void sub_1120d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1120d, _state);}
+ bool sub_1120d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1120d, _state);}
 
- void sub_11229(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11229, _state);}
+ bool sub_11229(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11229, _state);}
 
- void sub_11274(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11274, _state);}
+ bool sub_11274(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11274, _state);}
 
- void sub_11292(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11292, _state);}
+ bool sub_11292(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11292, _state);}
 
- void sub_112a7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_112a7, _state);}
+ bool sub_112a7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_112a7, _state);}
 
- void sub_112d3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_112d3, _state);}
+ bool sub_112d3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_112d3, _state);}
 
- void sub_11327(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11327, _state);}
+ bool sub_11327(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11327, _state);}
 
- void sub_11348(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11348, _state);}
+ bool sub_11348(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11348, _state);}
 
- void sub_11355(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11355, _state);}
+ bool sub_11355(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11355, _state);}
 
- void sub_11385(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11385, _state);}
+ bool sub_11385(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11385, _state);}
 
- void sub_113c0(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_113c0, _state);}
+ bool sub_113c0(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_113c0, _state);}
 
- void sub_11459(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11459, _state);}
+ bool sub_11459(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11459, _state);}
 
- void sub_1147c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1147c, _state);}
+ bool sub_1147c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1147c, _state);}
 
- void sub_114ae(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_114ae, _state);}
+ bool sub_114ae(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_114ae, _state);}
 
- void sub_114e3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_114e3, _state);}
+ bool sub_114e3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_114e3, _state);}
 
- void sub_11506(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11506, _state);}
+ bool sub_11506(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11506, _state);}
 
- void sub_1153d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1153d, _state);}
+ bool sub_1153d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1153d, _state);}
 
- void sub_115a7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_115a7, _state);}
+ bool sub_115a7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_115a7, _state);}
 
- void sub_116b7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_116b7, _state);}
+ bool sub_116b7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_116b7, _state);}
 
- void sub_1199f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1199f, _state);}
+ bool sub_1199f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1199f, _state);}
 
- void sub_11ae7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11ae7, _state);}
+ bool sub_11ae7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11ae7, _state);}
 
- void sub_11b15(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11b15, _state);}
+ bool sub_11b15(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11b15, _state);}
 
- void sub_11d1a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11d1a, _state);}
+ bool sub_11d1a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11d1a, _state);}
 
- void sub_11d44(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11d44, _state);}
+ bool sub_11d44(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11d44, _state);}
 
- void sub_11d4a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11d4a, _state);}
+ bool sub_11d4a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11d4a, _state);}
 
- void sub_11d7b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11d7b, _state);}
+ bool sub_11d7b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11d7b, _state);}
 
- void sub_11d85(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11d85, _state);}
+ bool sub_11d85(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11d85, _state);}
 
- void sub_11d99(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11d99, _state);}
+ bool sub_11d99(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11d99, _state);}
 
- void sub_11da7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11da7, _state);}
+ bool sub_11da7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11da7, _state);}
 
- void sub_11dc3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11dc3, _state);}
+ bool sub_11dc3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11dc3, _state);}
 
- void sub_11e85(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11e85, _state);}
+ bool sub_11e85(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11e85, _state);}
 
- void sub_11ea3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11ea3, _state);}
+ bool sub_11ea3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11ea3, _state);}
 
- void sub_11ee1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11ee1, _state);}
+ bool sub_11ee1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11ee1, _state);}
 
- void sub_11f08(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11f08, _state);}
+ bool sub_11f08(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11f08, _state);}
 
- void sub_11f34(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11f34, _state);}
+ bool sub_11f34(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11f34, _state);}
 
- void sub_11f49(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11f49, _state);}
+ bool sub_11f49(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11f49, _state);}
 
- void sub_11f5e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11f5e, _state);}
+ bool sub_11f5e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11f5e, _state);}
 
- void sub_11f67(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11f67, _state);}
+ bool sub_11f67(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11f67, _state);}
 
- void sub_11f98(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11f98, _state);}
+ bool sub_11f98(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11f98, _state);}
 
- void sub_11fbc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_11fbc, _state);}
+ bool sub_11fbc(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_11fbc, _state);}
 
- void sub_12011(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12011, _state);}
+ bool sub_12011(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12011, _state);}
 
- void sub_120f5(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_120f5, _state);}
+ bool sub_120f5(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_120f5, _state);}
 
- void sub_1212a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1212a, _state);}
+ bool sub_1212a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1212a, _state);}
 
- void sub_1215f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1215f, _state);}
+ bool sub_1215f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1215f, _state);}
 
- void sub_12221(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12221, _state);}
+ bool sub_12221(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12221, _state);}
 
- void sub_12240(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12240, _state);}
+ bool sub_12240(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12240, _state);}
 
- void sub_122c7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_122c7, _state);}
+ bool sub_122c7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_122c7, _state);}
 
- void sub_122ea(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_122ea, _state);}
+ bool sub_122ea(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_122ea, _state);}
 
- void sub_122fd(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_122fd, _state);}
+ bool sub_122fd(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_122fd, _state);}
 
- void sub_1231a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1231a, _state);}
+ bool sub_1231a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1231a, _state);}
 
- void sub_12321(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12321, _state);}
+ bool sub_12321(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12321, _state);}
 
- void sub_12373(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12373, _state);}
+ bool sub_12373(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12373, _state);}
 
- void sub_123a8(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_123a8, _state);}
+ bool sub_123a8(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_123a8, _state);}
 
- void sub_123da(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_123da, _state);}
+ bool sub_123da(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_123da, _state);}
 
- void sub_1244e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1244e, _state);}
+ bool sub_1244e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1244e, _state);}
 
- void sub_12469(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12469, _state);}
+ bool sub_12469(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12469, _state);}
 
- void sub_124b9(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_124b9, _state);}
+ bool sub_124b9(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_124b9, _state);}
 
- void sub_124c9(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_124c9, _state);}
+ bool sub_124c9(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_124c9, _state);}
 
- void sub_124e2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_124e2, _state);}
+ bool sub_124e2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_124e2, _state);}
 
- void sub_1266f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1266f, _state);}
+ bool sub_1266f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1266f, _state);}
 
- void sub_1268b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1268b, _state);}
+ bool sub_1268b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1268b, _state);}
 
- void sub_126c6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_126c6, _state);}
+ bool sub_126c6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_126c6, _state);}
 
- void sub_126e2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_126e2, _state);}
+ bool sub_126e2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_126e2, _state);}
 
- void sub_12849(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12849, _state);}
+ bool sub_12849(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12849, _state);}
 
- void sub_12868(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12868, _state);}
+ bool sub_12868(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12868, _state);}
 
- void sub_12879(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12879, _state);}
+ bool sub_12879(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12879, _state);}
 
- void sub_128c6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_128c6, _state);}
+ bool sub_128c6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_128c6, _state);}
 
- void sub_128e6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_128e6, _state);}
+ bool sub_128e6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_128e6, _state);}
 
- void sub_12923(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12923, _state);}
+ bool sub_12923(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12923, _state);}
 
- void sub_1292a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1292a, _state);}
+ bool sub_1292a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1292a, _state);}
 
- void sub_12965(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12965, _state);}
+ bool sub_12965(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12965, _state);}
 
- void sub_12b25(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12b25, _state);}
+ bool sub_12b25(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12b25, _state);}
 
- void sub_12bb9(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12bb9, _state);}
+ bool sub_12bb9(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12bb9, _state);}
 
- void sub_12bd2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12bd2, _state);}
+ bool sub_12bd2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12bd2, _state);}
 
- void sub_12c34(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12c34, _state);}
+ bool sub_12c34(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12c34, _state);}
 
- void sub_12c50(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12c50, _state);}
+ bool sub_12c50(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12c50, _state);}
 
- void sub_12c57(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12c57, _state);}
+ bool sub_12c57(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12c57, _state);}
 
- void sub_12c70(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12c70, _state);}
+ bool sub_12c70(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12c70, _state);}
 
- void sub_12c79(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12c79, _state);}
+ bool sub_12c79(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12c79, _state);}
 
- void sub_12ca4(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12ca4, _state);}
+ bool sub_12ca4(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12ca4, _state);}
 
- void sub_12cb1(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12cb1, _state);}
+ bool sub_12cb1(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12cb1, _state);}
 
- void sub_12cbe(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12cbe, _state);}
+ bool sub_12cbe(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12cbe, _state);}
 
- void sub_12cd6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12cd6, _state);}
+ bool sub_12cd6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12cd6, _state);}
 
- void sub_12ce2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12ce2, _state);}
+ bool sub_12ce2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12ce2, _state);}
 
- void sub_12d0b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d0b, _state);}
+ bool sub_12d0b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d0b, _state);}
 
- void sub_12d2a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d2a, _state);}
+ bool sub_12d2a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d2a, _state);}
 
- void sub_12d43(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d43, _state);}
+ bool sub_12d43(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d43, _state);}
 
- void sub_12d52(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d52, _state);}
+ bool sub_12d52(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d52, _state);}
 
- void sub_12d58(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d58, _state);}
+ bool sub_12d58(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d58, _state);}
 
- void sub_12d83(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d83, _state);}
+ bool sub_12d83(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d83, _state);}
 
- void sub_12d89(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d89, _state);}
+ bool sub_12d89(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d89, _state);}
 
- void sub_12d99(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12d99, _state);}
+ bool sub_12d99(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12d99, _state);}
 
- void sub_12dad(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12dad, _state);}
+ bool sub_12dad(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12dad, _state);}
 
- void sub_12dbf(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12dbf, _state);}
+ bool sub_12dbf(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12dbf, _state);}
 
- void sub_12e7a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12e7a, _state);}
+ bool sub_12e7a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12e7a, _state);}
 
- void sub_12ef6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12ef6, _state);}
+ bool sub_12ef6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12ef6, _state);}
 
- void sub_12f7c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12f7c, _state);}
+ bool sub_12f7c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12f7c, _state);}
 
- void sub_12f8e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_12f8e, _state);}
+ bool sub_12f8e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_12f8e, _state);}
 
- void sub_13001(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13001, _state);}
+ bool sub_13001(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13001, _state);}
 
- void sub_1303f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1303f, _state);}
+ bool sub_1303f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1303f, _state);}
 
- void sub_13059(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13059, _state);}
+ bool sub_13059(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13059, _state);}
 
- void sub_130a8(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_130a8, _state);}
+ bool sub_130a8(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_130a8, _state);}
 
- void sub_130ea(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_130ea, _state);}
+ bool sub_130ea(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_130ea, _state);}
 
- void sub_13259(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13259, _state);}
+ bool sub_13259(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13259, _state);}
 
- void sub_13279(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13279, _state);}
+ bool sub_13279(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13279, _state);}
 
- void sub_13297(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13297, _state);}
+ bool sub_13297(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13297, _state);}
 
- void sub_132bd(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_132bd, _state);}
+ bool sub_132bd(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_132bd, _state);}
 
- void sub_132d0(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_132d0, _state);}
+ bool sub_132d0(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_132d0, _state);}
 
- void sub_13314(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13314, _state);}
+ bool sub_13314(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13314, _state);}
 
- void sub_13388(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13388, _state);}
+ bool sub_13388(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13388, _state);}
 
- void sub_133b6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_133b6, _state);}
+ bool sub_133b6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_133b6, _state);}
 
- void sub_133c3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_133c3, _state);}
+ bool sub_133c3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_133c3, _state);}
 
- void sub_133d8(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_133d8, _state);}
+ bool sub_133d8(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_133d8, _state);}
 
- void sub_1342c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1342c, _state);}
+ bool sub_1342c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1342c, _state);}
 
- void sub_13608(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13608, _state);}
+ bool sub_13608(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13608, _state);}
 
- void sub_1361d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1361d, _state);}
+ bool sub_1361d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1361d, _state);}
 
- void sub_13646(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13646, _state);}
+ bool sub_13646(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13646, _state);}
 
- void sub_13669(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13669, _state);}
+ bool sub_13669(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13669, _state);}
 
- void sub_1368e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1368e, _state);}
+ bool sub_1368e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1368e, _state);}
 
- void sub_136cc(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_136cc, _state);}
+ bool sub_136cc(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_136cc, _state);}
 
- void sub_136e3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_136e3, _state);}
+ bool sub_136e3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_136e3, _state);}
 
- void sub_136f3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_136f3, _state);}
+ bool sub_136f3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_136f3, _state);}
 
- void sub_13748(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13748, _state);}
+ bool sub_13748(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13748, _state);}
 
- void sub_13779(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13779, _state);}
+ bool sub_13779(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13779, _state);}
 
- void sub_13782(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13782, _state);}
+ bool sub_13782(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13782, _state);}
 
- void sub_1379e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1379e, _state);}
+ bool sub_1379e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1379e, _state);}
 
- void sub_1381e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1381e, _state);}
+ bool sub_1381e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1381e, _state);}
 
- void sub_13833(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13833, _state);}
+ bool sub_13833(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13833, _state);}
 
- void sub_13839(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13839, _state);}
+ bool sub_13839(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13839, _state);}
 
- void sub_1383f(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1383f, _state);}
+ bool sub_1383f(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1383f, _state);}
 
- void sub_13851(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13851, _state);}
+ bool sub_13851(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13851, _state);}
 
- void sub_13895(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13895, _state);}
+ bool sub_13895(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13895, _state);}
 
- void sub_138ad(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_138ad, _state);}
+ bool sub_138ad(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_138ad, _state);}
 
- void sub_138b9(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_138b9, _state);}
+ bool sub_138b9(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_138b9, _state);}
 
- void sub_138ea(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_138ea, _state);}
+ bool sub_138ea(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_138ea, _state);}
 
- void sub_13944(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13944, _state);}
+ bool sub_13944(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13944, _state);}
 
- void sub_1395a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_1395a, _state);}
+ bool sub_1395a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_1395a, _state);}
 
- void sub_13969(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13969, _state);}
+ bool sub_13969(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13969, _state);}
 
- void sub_139a9(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_139a9, _state);}
+ bool sub_139a9(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_139a9, _state);}
 
- void sub_139ee(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_139ee, _state);}
+ bool sub_139ee(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_139ee, _state);}
 
- void sub_139fe(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_139fe, _state);}
+ bool sub_139fe(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_139fe, _state);}
 
- void sub_13b61(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13b61, _state);}
+ bool sub_13b61(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13b61, _state);}
 
- void sub_13b8a(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13b8a, _state);}
+ bool sub_13b8a(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13b8a, _state);}
 
- void sub_13b95(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13b95, _state);}
+ bool sub_13b95(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13b95, _state);}
 
- void sub_13ba2(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13ba2, _state);}
+ bool sub_13ba2(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13ba2, _state);}
 
- void sub_13bf6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13bf6, _state);}
+ bool sub_13bf6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13bf6, _state);}
 
- void sub_13c03(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13c03, _state);}
+ bool sub_13c03(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13c03, _state);}
 
- void sub_13c10(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13c10, _state);}
+ bool sub_13c10(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13c10, _state);}
 
- void sub_13c19(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13c19, _state);}
+ bool sub_13c19(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13c19, _state);}
 
- void sub_13c9c(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13c9c, _state);}
+ bool sub_13c9c(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13c9c, _state);}
 
- void sub_13ca3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13ca3, _state);}
+ bool sub_13ca3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13ca3, _state);}
 
- void sub_13caa(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13caa, _state);}
+ bool sub_13caa(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13caa, _state);}
 
- void sub_13cb6(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13cb6, _state);}
+ bool sub_13cb6(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13cb6, _state);}
 
- void sub_13e31(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13e31, _state);}
+ bool sub_13e31(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13e31, _state);}
 
- void sub_13e4e(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13e4e, _state);}
+ bool sub_13e4e(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13e4e, _state);}
 
- void sub_13eb7(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13eb7, _state);}
+ bool sub_13eb7(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13eb7, _state);}
 
- void sub_13ef4(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13ef4, _state);}
+ bool sub_13ef4(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13ef4, _state);}
 
- void sub_13f08(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13f08, _state);}
+ bool sub_13f08(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13f08, _state);}
 
- void sub_13f1d(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13f1d, _state);}
+ bool sub_13f1d(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13f1d, _state);}
 
- void sub_13f5b(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13f5b, _state);}
+ bool sub_13f5b(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13f5b, _state);}
 
- void sub_13fb3(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13fb3, _state);}
+ bool sub_13fb3(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13fb3, _state);}
 
- void sub_13fcb(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_13fcb, _state);}
+ bool sub_13fcb(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_13fcb, _state);}
 
- void sub_14059(m2c::_offsets, struct m2c::_STATE* _state){_group1(m2c::ksub_14059, _state);}
+ bool sub_14059(m2c::_offsets, struct m2c::_STATE* _state){return _group1(m2c::ksub_14059, _state);}
 
 
 
- void _group1(m2c::_offsets _i, struct m2c::_STATE* _state){
+ bool _group1(m2c::_offsets _i, struct m2c::_STATE* _state){
     X86_REGREF
     __disp = _i;
 
@@ -1617,8 +1617,7 @@ cs=0x192;eip=0x000a20; 	R(CALL(sub_10aba,0))	// 1466 call    sub_10ABA ;~ 0192:0
 ret_192_a23:	// 4587 
 cs=0x192;eip=0x000a23; 	R(CALL(sub_12c79,0))	// 1467 call    sub_12C79 ;~ 0192:0A23
 ret_192_a26:	// 4588 
-cs=0x192;eip=0x000a26; 	R(
-)	// 1468 jmp     short $+2 ;~ 0192:0A26
+cs=0x192;eip=0x000a26; 		// 1468 jmp     short $+2 ;~ 0192:0A26
 ret_192_a28:	// 4589 
 cs=0x192;eip=0x000a28; 	T(MOV(cx, 0x20))	// 1469 mov     cx, 20h ; ' ' ;~ 0192:0A28
 cs=0x192;eip=0x000a2b; 	T(ADD(bx, cx))	// 1470 add     bx, cx ;~ 0192:0A2B
@@ -2968,8 +2967,7 @@ cs=0x192;eip=0x0013ed; 	R(RET)	// 3264 retn ;~ 0192:13ED
 loc_113ee:	// 4787 
 cs=0x192;eip=0x0013ee; 	T(MOV(ch, 0x0A))	// 3268 mov     ch, 0Ah ;~ 0192:13EE
 cs=0x192;eip=0x0013f0; 	T(MOV(cl, 7))	// 3269 mov     cl, 7 ;~ 0192:13F0
-cs=0x192;eip=0x0013f2; 	R(
-)	// 3270 jmp     short $+2 ;~ 0192:13F2
+cs=0x192;eip=0x0013f2; 		// 3270 jmp     short $+2 ;~ 0192:13F2
 loc_113f4:	// 4788 
 cs=0x192;eip=0x0013f4; 	X(PUSH(dx))	// 3274 push    dx ;~ 0192:13F4
 cs=0x192;eip=0x0013f5; 	X(PUSH(bx))	// 3275 push    bx ;~ 0192:13F5
@@ -5678,8 +5676,7 @@ cs=0x192;eip=0x002879; 	R(CALL(sub_12868,0))	// 6732 call    sub_12868 ;~ 0192:2
 ret_192_287c:	// 5285 
 cs=0x192;eip=0x00287c; 	T(XOR(ah, ah))	// 6733 xor     ah, ah ;~ 0192:287C
 cs=0x192;eip=0x00287e; 	X(MOV(*(raddr(ds,bx)), ah))	// 6734 mov     [bx], ah ;~ 0192:287E
-cs=0x192;eip=0x002880; 	R(
-)	// 6735 jmp     short $+2 ;~ 0192:2880
+cs=0x192;eip=0x002880; 		// 6735 jmp     short $+2 ;~ 0192:2880
 loc_12882:	// 5286 
 cs=0x192;eip=0x002882; 	X(PUSH(bx))	// 6738 push    bx ;~ 0192:2882
 cs=0x192;eip=0x002883; 	X(POP(si))	// 6739 pop     si ;~ 0192:2883
@@ -5927,8 +5924,7 @@ cs=0x192;eip=0x002a6e; 	T(XCHG(si, bx))	// 7029 xchg    si, bx ;~ 0192:2A6E
 cs=0x192;eip=0x002a70; 	T(XCHG(di, dx))	// 7030 xchg    di, dx ;~ 0192:2A70
 cs=0x192;eip=0x002a72; 	X(MOV(byte_1f0d3, ah))	// 7031 mov     byte_1F0D3, ah ;~ 0192:2A72
 cs=0x192;eip=0x002a76; 	T(MOV(bx, offset(seg000,byte_1f0b3)))	// 7032 mov     bx, offset byte_1F0B3 ;~ 0192:2A76
-cs=0x192;eip=0x002a79; 	R(
-)	// 7033 jmp     short $+2 ;~ 0192:2A79
+cs=0x192;eip=0x002a79; 		// 7033 jmp     short $+2 ;~ 0192:2A79
 loc_12a7b:	// 5323 
 cs=0x192;eip=0x002a7b; 	T(MOV(ch, 0x28))	// 7037 mov     ch, 28h ; '(' ;~ 0192:2A7B
 cs=0x192;eip=0x002a7d; 	T(MOV(dh, 0x12))	// 7038 mov     dh, 12h ;~ 0192:2A7D
@@ -7352,8 +7348,7 @@ cs=0x192;eip=0x0036f3; 	T(MOV(bx, offset(seg000,byte_1e163)))	// 9056 mov     bx
 cs=0x192;eip=0x0036f6; 	T(MOV(dx, 0x1900))	// 9057 mov     dx, 1900h ;~ 0192:36F6
 cs=0x192;eip=0x0036f9; 	T(MOV(cl, 0x50))	// 9058 mov     cl, 50h ; 'P' ;~ 0192:36F9
 cs=0x192;eip=0x0036fb; 	T(MOV(ch, 0x28))	// 9059 mov     ch, 28h ; '(' ;~ 0192:36FB
-cs=0x192;eip=0x0036fd; 	R(
-)	// 9060 jmp     short $+2 ;~ 0192:36FD
+cs=0x192;eip=0x0036fd; 		// 9060 jmp     short $+2 ;~ 0192:36FD
 ret_192_36ff:	// 5540 
 cs=0x192;eip=0x0036ff; 	X(PUSH(es))	// 9061 push    es ;~ 0192:36FF
 cs=0x192;eip=0x003700; 	T(MOV(ax, 0x0B800))	// 9062 mov     ax, 0B800h ;~ 0192:3700
@@ -8742,7 +8737,7 @@ cs=0x192;eip=0x00413a; 	R(RET)	// 10871 retn ;~ 0192:413A
     __dispatch_call:
 #ifdef DOSBOX
     if ((__disp >> 16) == 0xf000)
-	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return;}  // Jumping to BIOS
+	{cs=0xf000;eip=__disp&0xffff;m2c::fix_segs();return false;}  // Jumping to BIOS
     if ((__disp>>16) == 0) {__disp |= ((dd)cs) << 16;}
 #endif
 int try_=0;
@@ -10316,7 +10311,7 @@ __dispatch_call_:
         case m2c::ktable1_14: 	goto table1_14;
         default: 
 if (try_<4) {++try_;++__disp;goto __dispatch_call_;}
-m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -11892,7 +11887,7 @@ m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::
         case m2c::ksub_13fcb: 	_group1(__disp, _state); break;
         case m2c::ksub_14059: 	_group1(__disp, _state); break;
         case m2c::ktable1_14: 	_group1(__disp, _state); break;
-        default: m2c::log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(_state); abort();
+        default: m2c::log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
      };
      return true;
 }

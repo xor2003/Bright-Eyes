@@ -1481,25 +1481,29 @@ AFFECT_CF(((Destination<<m2c::bitsizeof(Destination)+Source) >> (32 - Count)) & 
 #define RETN(i) {m2c::RETN_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
     static void RETN_(size_t i)
     {
+        X86_REGREF
        if (debug>2) log_debug("before ret %x\n",stackPointer);
        m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
        eip=averytemporary9;
        esp+=i;
        if (debug>2) {log_debug("after ret %x\n",stackPointer);
-          if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}
+       m2c::_indent -= 1;
+       m2c::_str = m2c::log_spaces(m2c::_indent);
           log_debug("return eip %x\n",eip);}
     }
 
 #define RETF(i) {m2c::RETF_(i); __disp=(cs<<16)+eip;goto __dispatch_call;}
     static void RETF_(size_t i)
     {
-       if (debug>2) log_debug("before retf %x\n",stackPointer);
+        X86_REGREF
+            if (debug>2) log_debug("before retf %x\n",stackPointer);
        m2c::MWORDSIZE averytemporary9=0; POP(averytemporary9);
        eip=averytemporary9;
         dw averytemporary11;POP(averytemporary11); cs=averytemporary11;
        esp+=i;
        if (debug>2) {log_debug("after retf %x\n",stackPointer);
-          if (_state) {--_state->_indent;_state->_str=m2c::log_spaces(_state->_indent);}
+       m2c::_indent -= 1;
+       m2c::_str = m2c::log_spaces(m2c::_indent);
           log_debug("return eip %x\n",eip);}
     }
 

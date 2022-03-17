@@ -38,7 +38,7 @@ namespace m2c{ m2cf* _ENTRY_POINT_ = &asmmain;}
 #endif
     switch (__disp) {
         case m2c::kmainproc: 	goto mainproc;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -117,7 +117,7 @@ cs=0x1b2;eip=0x000121; 	R(RETN(0));	// 288 retn ;~ 01B2:0121
         case m2c::kloc_101ec: 	goto loc_101ec;
         case m2c::klocret_10221: 	goto locret_10221;
         case m2c::kret_1b2_108: 	goto ret_1b2_108;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -145,7 +145,7 @@ cs=0x1b2;eip=0x000129; 	R(RETN(0));	// 300 retn ;~ 01B2:0129
 #endif
     switch (__disp) {
         case m2c::kdispdigit: 	goto dispdigit;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -187,7 +187,7 @@ cs=0x1b2;eip=0x000140; 	R(RETN(0));	// 323 retn ;~ 01B2:0140
         case m2c::kloc_1023e: 	goto loc_1023e;
         case m2c::kret_1b2_139: 	goto ret_1b2_139;
         case m2c::kret_1b2_13d: 	goto ret_1b2_13d;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -217,7 +217,7 @@ cs=0x1b2;eip=0x000149; 	R(RETN(0));	// 338 retn ;~ 01B2:0149
 #endif
     switch (__disp) {
         case m2c::ksetcursorpos: 	goto setcursorpos;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -278,7 +278,7 @@ cs=0x1b2;eip=0x00018b; 	R(RETN(0));	// 373 retn ;~ 01B2:018B
         case m2c::kret_1b2_164: 	goto ret_1b2_164;
         case m2c::kret_1b2_174: 	goto ret_1b2_174;
         case m2c::kret_1b2_186: 	goto ret_1b2_186;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -313,7 +313,7 @@ cs=0x1b2;eip=0x00019b; 	R(RETN(0));	// 396 retn ;~ 01B2:019B
     switch (__disp) {
         case m2c::kloc_10295: 	goto loc_10295;
         case m2c::kreadchar: 	goto readchar;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -382,7 +382,7 @@ cs=0x1b2;eip=0x0001f5; 	R(RETN(0));	// 449 retn ;~ 01B2:01F5
         case m2c::kloc_102eb: 	goto loc_102eb;
         case m2c::kloc_102f1: 	goto loc_102f1;
         case m2c::kret_1b2_19f: 	goto ret_1b2_19f;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -506,7 +506,7 @@ cs=0x1b2;eip=0x00029e; 	R(RETN(0));	// 558 retn ;~ 01B2:029E
         case m2c::kret_1b2_255: 	goto ret_1b2_255;
         case m2c::kret_1b2_299: 	goto ret_1b2_299;
         case m2c::kshiftsnake: 	goto shiftsnake;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -566,7 +566,7 @@ cs=0x1b2;eip=0x0002cd; 	R(RETN(0));	// 593 retn ;~ 01B2:02CD
         case m2c::kret_1b2_2b5: 	goto ret_1b2_2b5;
         case m2c::kret_1b2_2bf: 	goto ret_1b2_2bf;
         case m2c::kret_1b2_2c9: 	goto ret_1b2_2c9;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -612,7 +612,7 @@ cs=0x1b2;eip=0x0002f8; 	R(RETN(0));	// 623 retn ;~ 01B2:02F8
 #endif
     switch (__disp) {
         case m2c::kwritecharat: 	goto writecharat;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -658,7 +658,7 @@ cs=0x1b2;eip=0x000323; 	R(RETN(0));	// 653 retn ;~ 01B2:0323
 #endif
     switch (__disp) {
         case m2c::kreadcharat: 	goto readcharat;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -715,7 +715,7 @@ cs=0x1b2;eip=0x000359; 	R(RETN(0));	// 695 retn ;~ 01B2:0359
         case m2c::kloc_1044a: 	goto loc_1044a;
         case m2c::kloc_10458: 	goto loc_10458;
         case m2c::kwritestringat: 	goto writestringat;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -838,7 +838,7 @@ cs=0x1b2;eip=0x0000a2; 	R(RETN(0));	// 221 retn ;~ 01B2:00A2
         case m2c::kret_1b2_6d: 	goto ret_1b2_6d;
         case m2c::kret_1b2_83: 	goto ret_1b2_83;
         case m2c::kret_1b2_86: 	goto ret_1b2_86;
-        default: log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Jump to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
     };
 }
 
@@ -921,7 +921,7 @@ cs=0x1b2;eip=0x0000a2; 	R(RETN(0));	// 221 retn ;~ 01B2:00A2
         case m2c::kshiftsnake: 	shiftsnake(0, _state); break;
         case m2c::kwritecharat: 	writecharat(0, _state); break;
         case m2c::kwritestringat: 	writestringat(0, _state); break;
-        default: log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
+        default: m2c::log_error("Call to nowhere to 0x%x. See line %d\n", __disp, __LINE__);m2c::stackDump(); abort();
      };
      return true;
 }
