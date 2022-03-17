@@ -582,7 +582,6 @@ src/shell/Makefile
 src/platform/Makefile
 src/platform/visualc/Makefile
 visualc_net/Makefile
-visualc_2008/Makefile
 include/Makefile
 docs/Makefile
 src/custom/Makefile

@@ -29,8 +29,6 @@
 #include "paging.h"
 #include "custom.h"
 
-#include<unordered_set>
-
 #if C_DEBUG
 #include "debug.h"
 #endif
@@ -136,9 +134,6 @@ static INLINE Bit32u Fetchd() {
 #include "core_normal/support.h"
 #include "core_normal/string.h"
 
-#include <iostream>
-#include <fstream>
-using namespace std;
 
 #define EALookupTable (core.ea_table)
 
